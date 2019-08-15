@@ -14,6 +14,16 @@
 		0510D92C2305782500BDBFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0510D92A2305782500BDBFF6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		05C1C6EA23057D8700A0AEC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0510D9172305782400BDBFF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0510D91E2305782400BDBFF6;
+			remoteInfo = JSTerminal;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0510D91F2305782400BDBFF6 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0510D9222305782400BDBFF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +87,24 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		05C1C6E623057D7F00A0AEC5 /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 05C1C6E923057D7F00A0AEC5 /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05C1C6EB23057D8700A0AEC5 /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		0510D91E2305782400BDBFF6 /* JSTerminal */ = {
 			isa = PBXNativeTarget;
@@ -108,6 +136,9 @@
 					0510D91E2305782400BDBFF6 = {
 						CreatedOnToolsVersion = 10.3;
 					};
+					05C1C6E623057D7F00A0AEC5 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 				};
 			};
 			buildConfigurationList = 0510D91A2305782400BDBFF6 /* Build configuration list for PBXProject "JSTerminal" */;
@@ -124,6 +155,7 @@
 			projectRoot = "";
 			targets = (
 				0510D91E2305782400BDBFF6 /* JSTerminal */,
+				05C1C6E623057D7F00A0AEC5 /* Install */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +184,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05C1C6EB23057D8700A0AEC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0510D91E2305782400BDBFF6 /* JSTerminal */;
+			targetProxy = 05C1C6EA23057D8700A0AEC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0510D92A2305782500BDBFF6 /* Main.storyboard */ = {
@@ -289,6 +329,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
 				INFOPLIST_FILE = JSTerminal/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -308,6 +349,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
 				INFOPLIST_FILE = JSTerminal/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -315,6 +357,33 @@
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		05C1C6E723057D7F00A0AEC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05C1C6E823057D7F00A0AEC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -335,6 +404,15 @@
 			buildConfigurations = (
 				0510D9322305782500BDBFF6 /* Debug */,
 				0510D9332305782500BDBFF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C1C6E923057D7F00A0AEC5 /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C1C6E723057D7F00A0AEC5 /* Debug */,
+				05C1C6E823057D7F00A0AEC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
