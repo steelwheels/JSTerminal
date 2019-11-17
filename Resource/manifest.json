@@ -1,0 +1,10 @@
+{
+  "application" : "application.amb",
+  "main_window" : "shell_window",
+  "engine" : [
+          "engine.js"
+  ],
+  "windows": {
+    "shell_window"  : "shell_window.amb",
+  }
+}

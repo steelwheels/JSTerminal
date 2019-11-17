@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  JTAppDelegate.swift
 //  JSTerminal
 //
 //  Created by Tomoo Hamada on 2019/11/16.
@@ -9,7 +9,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class JTAppDelegate: NSObject, NSApplicationDelegate {
 
 
 

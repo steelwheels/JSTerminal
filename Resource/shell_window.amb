@@ -1,0 +1,7 @@
+shell_window: Window {
+        terminal: Terminal {
+                normalColor:     Color green,
+                errorColor:      Color red,
+                backgroundColor: Color black
+        }
+}
