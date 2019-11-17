@@ -12,7 +12,8 @@ import Cocoa
 
 class JTViewController: AMCMultiViewController
 {
-	private var mDidLoaded	= false
+	private static var	mIsFirstWindow	= true
+	private var 		mDidLoaded	= false
 
 	#if os(OSX)
 	public override func viewDidAppear() {
@@ -45,6 +46,15 @@ class JTViewController: AMCMultiViewController
 	}
 
 	private func loadTerminalView(console cons: CNConsole){
+		if JTViewController.mIsFirstWindow {
+			loadFirstTerminalView(console: cons)
+			JTViewController.mIsFirstWindow = false
+		} else {
+			loadMoreTerminalView(console: cons)
+		}
+	}
+
+	private func loadFirstTerminalView(console cons: CNConsole){
 		/* Get URL for built-in package */
 		guard let baseurl  = Bundle.main.resourceURL else {
 			cons.error(string: "/* Failed to get resource URL */\n")
@@ -60,18 +70,12 @@ class JTViewController: AMCMultiViewController
 		}
 	}
 
-/*
-	private var mDidLoaded: Bool = false
-
-
-
-
-		let bootview = AMCSingleViewController(viewName: "boot_window", parentViewController: self, console: cons)
-		super.add(name: "boot_window", viewController: bootview)
-		if !super.pushViewController(byName: "boot_window") {
-			log(type: .error, string: "Failed to load boot_window", file: #file, line: #line, function: #function)
+	private func loadMoreTerminalView(console cons: CNConsole){
+		let shellview = AMCSingleViewController(viewName: "shell_window", parentViewController: self, console: cons)
+		super.add(name: "shell_window", viewController: shellview)
+		if !super.pushViewController(byName: "shell_window") {
+			log(type: .error, string: "Failed to load shell_window", file: #file, line: #line, function: #function)
 		}
 	}
-*/
 }
 
