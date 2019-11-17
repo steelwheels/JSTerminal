@@ -22,6 +22,7 @@
 		050F903323803059009E00EE /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F903223803059009E00EE /* Document.swift */; };
 		050F90352380305A009E00EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050F90342380305A009E00EE /* Assets.xcassets */; };
 		050F90382380305A009E00EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 050F90362380305A009E00EE /* Main.storyboard */; };
+		054559602381871B008A822A /* Credits.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 0545595F2381871B008A822A /* Credits.rtfd */; };
 		0557A6AF238037B0007DB243 /* KiwiControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0557A6AE238037B0007DB243 /* KiwiControls.framework */; };
 		0557A6B1238037CB007DB243 /* KiwiEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0557A6B0238037CA007DB243 /* KiwiEngine.framework */; };
 		0557A6B3238037DF007DB243 /* KiwiLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0557A6B2238037DF007DB243 /* KiwiLibrary.framework */; };
@@ -88,6 +89,7 @@
 		050F90372380305A009E00EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		050F90392380305A009E00EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050F903A2380305A009E00EE /* JSTerminal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTerminal.entitlements; sourceTree = "<group>"; };
+		0545595F2381871B008A822A /* Credits.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = Credits.rtfd; path = ../Resource/Documents/Credits.rtfd; sourceTree = "<group>"; };
 		0557A6AE238037B0007DB243 /* KiwiControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiControls.framework; path = ../../../Library/Frameworks/KiwiControls.framework; sourceTree = "<group>"; };
 		0557A6B0238037CA007DB243 /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
 		0557A6B2238037DF007DB243 /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		050F902223803059009E00EE = {
 			isa = PBXGroup;
 			children = (
+				0545595F2381871B008A822A /* Credits.rtfd */,
 				050F9040238031C9009E00EE /* Source */,
 				050B77662381241B008F7F10 /* Resource */,
 				050F902D23803059009E00EE /* Project */,
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054559602381871B008A822A /* Credits.rtfd in Resources */,
 				050F90352380305A009E00EE /* Assets.xcassets in Resources */,
 				050B776823812437008F7F10 /* manifest.json in Resources */,
 				050B776D238139F3008F7F10 /* shell_window.amb in Resources */,
