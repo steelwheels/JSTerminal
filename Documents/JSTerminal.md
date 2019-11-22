@@ -18,6 +18,9 @@ Following command line options are supported:
 |       |--version  |         |Display version information
 |       |--log      |string   |Set log level: "error", "warning", "flow" or "detail" |
 
+## Documents
+* [File system](https://github.com/steelwheels/JSTerminal/blob/master/Documents/filesystem.md): File system structure
+
 ## Related Links
 * [jsh-lang](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md): The language specification of jsh.
 * [JStools](https://github.com/steelwheels/JSTools): Command line tools for JavaScript processing. It contains command line version of [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md).
