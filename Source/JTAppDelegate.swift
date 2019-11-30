@@ -5,13 +5,15 @@
  *   Copyright (C) 2019 Steel Wheels Project
  */
 
+import CoconutData
 import Cocoa
 
 @NSApplicationMain
 class JTAppDelegate: NSObject, NSApplicationDelegate
 {
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
+		// Initialize the application
+		CNPreference.shared.applicationPreference.isWindowApplication = true
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
