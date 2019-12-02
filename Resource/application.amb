@@ -7,15 +7,15 @@ application: Application
   %},
 
   viewDidLoad: void function(viewName) %{
-    console.log("application: viewDidLoad: " + viewName) ;
+    //console.log("application: viewDidLoad: " + viewName) ;
   %},
 
   viewWillAppear: void function(viewName) %{
-    console.log("application: viewWillAppear: " + viewName) ;
+    //console.log("application: viewWillAppear: " + viewName) ;
   %},
 
   viewDidAppear: void function(viewName) %{
-    console.log("application: viewDidAppear: " + viewName) ;
+    //console.log("application: viewDidAppear: " + viewName) ;
     application.windows.shell_window.terminal.shell.start() ;
   %}
 }

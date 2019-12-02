@@ -41,6 +41,16 @@
 		0557A6C5238038E3007DB243 /* CoconutDatabase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0557A6C3238038D6007DB243 /* CoconutDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		05CBF93B23954CA30073963A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 050F902323803059009E00EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 050F902A23803059009E00EE;
+			remoteInfo = JSTerminal;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		050932BB238036F000160610 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -196,6 +206,24 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		05CBF93723954C8C0073963A /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 05CBF93A23954C8C0073963A /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05CBF93C23954CA30073963A /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		050F902A23803059009E00EE /* JSTerminal */ = {
 			isa = PBXNativeTarget;
@@ -229,6 +257,9 @@
 					050F902A23803059009E00EE = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
+					05CBF93723954C8C0073963A = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 050F902623803059009E00EE /* Build configuration list for PBXProject "JSTerminal" */;
@@ -245,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				050F902A23803059009E00EE /* JSTerminal */,
+				05CBF93723954C8C0073963A /* Install */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +310,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05CBF93C23954CA30073963A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 050F902A23803059009E00EE /* JSTerminal */;
+			targetProxy = 05CBF93B23954CA30073963A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		050F90362380305A009E00EE /* Main.storyboard */ = {
@@ -462,6 +502,33 @@
 			};
 			name = Release;
 		};
+		05CBF93823954C8C0073963A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05CBF93923954C8C0073963A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,6 +546,15 @@
 			buildConfigurations = (
 				050F903E2380305A009E00EE /* Debug */,
 				050F903F2380305A009E00EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05CBF93A23954C8C0073963A /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CBF93823954C8C0073963A /* Debug */,
+				05CBF93923954C8C0073963A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -63,8 +63,8 @@ class JTViewController: AMCMultiViewController
 		//cons.print(string: "Resource URL: \(baseurl.path)")
 
 		/* Load application */
-		if let mainname = AMCFileLoader.loadApplication(parentViewController: self, URL: baseurl, console: cons) {
-			cons.print(string: "Main name: \(mainname)\n")
+		if let _ = AMCFileLoader.loadApplication(parentViewController: self, URL: baseurl, console: cons) {
+			//cons.print(string: "Main name: \(mainname)\n")
 		} else {
 			cons.error(string: "No main name\n")
 		}
