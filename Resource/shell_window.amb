@@ -1,5 +1,6 @@
 shell_window: Window {
         terminal: Terminal {
+		fontSize:	 float 16.0,
                 normalColor:     Color green,
                 errorColor:      Color red,
                 backgroundColor: Color black
