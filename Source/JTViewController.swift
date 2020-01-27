@@ -77,5 +77,9 @@ class JTViewController: AMCMultiViewController
 			log(type: .error, string: "Failed to load shell_window", file: #file, line: #line, function: #function)
 		}
 	}
+
+	public func runScript() {
+		NSLog("run script")
+	}
 }
 
