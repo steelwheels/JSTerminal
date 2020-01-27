@@ -21,8 +21,6 @@
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
-			<key>LSItemContentTypes</key>
-			<array/>
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).Document</string>
 		</dict>
@@ -48,7 +46,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright (C) 2019 Steel Wheels Project. All rights reserved.</string>
+	<string>Copyright © 2020 Steel Wheels Project. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
@@ -57,44 +55,5 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
-	<key>UTImportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>com.apple.package</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>JavaScript package</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.github.steelwheels.jstools.script-package</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>jspkg</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.script</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>JavaScript file</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.netscape.javascript-source</string>
-			<key>UTTypeReferenceURL</key>
-			<string>https://github.com/steelwheels/JSTools/blob/master/Document/UTI-jspkg.txt</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>js</string>
-				</array>
-			</dict>
-		</dict>
-	</array>
 </dict>
 </plist>

@@ -2,8 +2,8 @@
 //  Document.swift
 //  JSTerminal
 //
-//  Created by Tomoo Hamada on 2019/11/16.
-//  Copyright © 2019 Steel Wheels Project. All rights reserved.
+//  Created by Tomoo Hamada on 2020/01/27.
+//  Copyright © 2020 Steel Wheels Project. All rights reserved.
 //
 
 import Cocoa
@@ -39,9 +39,6 @@ class Document: NSDocument {
 		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 	}
 
-	@IBAction func runScript(_ sender: Any){
-		NSLog("runScript")
-	}
 
 }
 
