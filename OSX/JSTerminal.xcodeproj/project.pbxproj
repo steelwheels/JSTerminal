@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD023DF287400E2B896 /* AppDelegate.swift */; };
-		05AF9FD323DF287400E2B896 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD223DF287400E2B896 /* ViewController.swift */; };
+		05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD223DF287400E2B896 /* ShellViewController.swift */; };
 		05AF9FD523DF287400E2B896 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD423DF287400E2B896 /* Document.swift */; };
 		05AF9FD723DF287900E2B896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AF9FD623DF287900E2B896 /* Assets.xcassets */; };
 		05AF9FDA23DF287900E2B896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AF9FD823DF287900E2B896 /* Main.storyboard */; };
@@ -24,7 +24,18 @@
 		05F9E3C423DF2AB300BA0765 /* KiwiControls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3AB23DF2A5700BA0765 /* KiwiControls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F9E3C523DF2AB400BA0765 /* KiwiEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3AF23DF2A6F00BA0765 /* KiwiEngine.framework */; };
 		05F9E3C623DF2AB400BA0765 /* KiwiEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3AF23DF2A6F00BA0765 /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05F9E3C823DF38B100BA0765 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9E3C723DF38B100BA0765 /* MultiViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05D7827B23E0817700E848D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05AF9FC523DF287400E2B896 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05AF9FCC23DF287400E2B896;
+			remoteInfo = JSTerminal;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		05F9E3B523DF2A6F00BA0765 /* Embed Frameworks */ = {
@@ -48,7 +59,7 @@
 /* Begin PBXFileReference section */
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05AF9FD223DF287400E2B896 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05AF9FD223DF287400E2B896 /* ShellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellViewController.swift; sourceTree = "<group>"; };
 		05AF9FD423DF287400E2B896 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		05AF9FD623DF287900E2B896 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05AF9FD923DF287900E2B896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +71,7 @@
 		05F9E3B623DF2A7F00BA0765 /* KiwiShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiShell.framework; path = ../../../Library/Frameworks/KiwiShell.framework; sourceTree = "<group>"; };
 		05F9E3B923DF2A9100BA0765 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutShell.framework; path = ../../../Library/Frameworks/CoconutShell.framework; sourceTree = "<group>"; };
 		05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutData.framework; path = ../../../Library/Frameworks/CoconutData.framework; sourceTree = "<group>"; };
+		05F9E3C723DF38B100BA0765 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				05AF9FD023DF287400E2B896 /* AppDelegate.swift */,
-				05AF9FD223DF287400E2B896 /* ViewController.swift */,
 				05AF9FD423DF287400E2B896 /* Document.swift */,
+				05F9E3C723DF38B100BA0765 /* MultiViewController.swift */,
+				05AF9FD223DF287400E2B896 /* ShellViewController.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -133,6 +146,24 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		05D7827723E0816F00E848D2 /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 05D7827823E0816F00E848D2 /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05D7827C23E0817700E848D2 /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		05AF9FCC23DF287400E2B896 /* JSTerminal */ = {
@@ -166,6 +197,9 @@
 					05AF9FCC23DF287400E2B896 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					05D7827723E0816F00E848D2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 05AF9FC823DF287400E2B896 /* Build configuration list for PBXProject "JSTerminal" */;
@@ -182,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				05AF9FCC23DF287400E2B896 /* JSTerminal */,
+				05D7827723E0816F00E848D2 /* Install */,
 			);
 		};
 /* End PBXProject section */
@@ -203,13 +238,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05AF9FD323DF287400E2B896 /* ViewController.swift in Sources */,
+				05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */,
 				05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */,
+				05F9E3C823DF38B100BA0765 /* MultiViewController.swift in Sources */,
 				05AF9FD523DF287400E2B896 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05D7827C23E0817700E848D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05AF9FCC23DF287400E2B896 /* JSTerminal */;
+			targetProxy = 05D7827B23E0817700E848D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		05AF9FD823DF287900E2B896 /* Main.storyboard */ = {
@@ -351,6 +395,7 @@
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -377,6 +422,7 @@
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -385,6 +431,33 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		05D7827923E0816F00E848D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05D7827A23E0816F00E848D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -405,6 +478,15 @@
 			buildConfigurations = (
 				05AF9FE023DF287900E2B896 /* Debug */,
 				05AF9FE123DF287900E2B896 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05D7827823E0816F00E848D2 /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D7827923E0816F00E848D2 /* Debug */,
+				05D7827A23E0816F00E848D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
