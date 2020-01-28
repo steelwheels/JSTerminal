@@ -5,9 +5,12 @@
  *   Copyright (C) 2020 Steel Wheels Project
  */
 
-import KiwiTerminal
 import KiwiControls
+#if os(OSX)
 import Cocoa
+#else
+import UIKit
+#endif
 
 class MultiViewController: KCMultiViewController
 {

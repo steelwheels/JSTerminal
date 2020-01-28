@@ -45,12 +45,21 @@ public class ShellViewController: KCSingleViewController
 		mShellThread = shell
 	}
 
+	#if os(OSX)
 	public override func viewDidAppear() {
 		super.viewDidAppear()
 		if let thread = mShellThread {
 			thread.start(arguments: [])
 		}
 	}
+	#else
+	public override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if let thread = mShellThread {
+			thread.start(arguments: [])
+		}
+	}
+	#endif
 }
 
 
