@@ -11,7 +11,40 @@ import KiwiEngine
 import CoconutData
 import JavaScriptCore
 
-public class ShellViewController: KCSingleViewController
+class ShellViewController: KCMultiViewController
+{
+	public override func loadView() {
+		super.loadView()
+
+		/* Allocate cosole */
+		let console = KCLogManager.shared.console
+		super.set(console: console)
+
+		/* Allocate terminal view */
+		let controller = ShellSubViewController(parentViewController: self, console: console)
+		self.add(name: "terminal", viewController: controller)
+	}
+
+	#if os(OSX)
+	open override func viewDidAppear() {
+		super.viewDidAppear()
+		viewDidAppearMain()
+	}
+	#else
+	open override func viewDidAppear(_ doanimate: Bool) {
+		super.viewDidAppear(doanimate)
+		viewDidAppearMain()
+	}
+	#endif
+
+	private func viewDidAppearMain() {
+		if !self.pushViewController(byName: "terminal") {
+			NSLog("Failed to push terminal controller")
+		}
+	}
+}
+
+public class ShellSubViewController: KCSingleViewController
 {
 	private var mTerminalView:	KCTerminalView? = nil
 	private var mShellThread:	KHShellThreadObject? = nil
@@ -39,7 +72,7 @@ public class ShellViewController: KCSingleViewController
 		let instrm:  CNFileStream = .fileHandle(termview.inputFileHandle)
 		let outstrm: CNFileStream = .fileHandle(termview.outputFileHandle)
 		let errstrm: CNFileStream = .fileHandle(termview.errorFileHandle)
-		let conf = KEConfig(kind: .Terminal, doStrict: true, logLevel: .warning)
+		let conf = KEConfig(applicationType: .window, doStrict: true, logLevel: .warning)
 
 		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
 		mShellThread = shell

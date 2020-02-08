@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05390BF523EE31F30066631F /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05390BF423EE31F30066631F /* PreferenceViewController.swift */; };
+		05390BF823EE359F0066631F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05390BF623EE359F0066631F /* Preference.storyboard */; };
 		059A94B923E1DB52007846FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 059A94B823E1DB52007846FB /* Credits.rtf */; };
 		05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD023DF287400E2B896 /* AppDelegate.swift */; };
 		05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD223DF287400E2B896 /* ShellViewController.swift */; };
@@ -25,7 +27,6 @@
 		05F9E3C423DF2AB300BA0765 /* KiwiControls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3AB23DF2A5700BA0765 /* KiwiControls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F9E3C523DF2AB400BA0765 /* KiwiEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3AF23DF2A6F00BA0765 /* KiwiEngine.framework */; };
 		05F9E3C623DF2AB400BA0765 /* KiwiEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3AF23DF2A6F00BA0765 /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05F9E3C823DF38B100BA0765 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F9E3C723DF38B100BA0765 /* MultiViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05390BF423EE31F30066631F /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		05390BF723EE359F0066631F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		05F9E3B623DF2A7F00BA0765 /* KiwiShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiShell.framework; path = ../../../Library/Frameworks/KiwiShell.framework; sourceTree = "<group>"; };
 		05F9E3B923DF2A9100BA0765 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutShell.framework; path = ../../../Library/Frameworks/CoconutShell.framework; sourceTree = "<group>"; };
 		05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutData.framework; path = ../../../Library/Frameworks/CoconutData.framework; sourceTree = "<group>"; };
-		05F9E3C723DF38B100BA0765 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				05AF9FD623DF287900E2B896 /* Assets.xcassets */,
 				05AF9FD823DF287900E2B896 /* Main.storyboard */,
+				05390BF623EE359F0066631F /* Preference.storyboard */,
 				05AF9FDB23DF287900E2B896 /* Info.plist */,
 				05AF9FDC23DF287900E2B896 /* JSTerminal.entitlements */,
 			);
@@ -137,8 +140,8 @@
 			children = (
 				05AF9FD023DF287400E2B896 /* AppDelegate.swift */,
 				05AF9FD423DF287400E2B896 /* Document.swift */,
-				05F9E3C723DF38B100BA0765 /* MultiViewController.swift */,
 				05AF9FD223DF287400E2B896 /* ShellViewController.swift */,
+				05390BF423EE31F30066631F /* PreferenceViewController.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -241,6 +244,7 @@
 				05AF9FD723DF287900E2B896 /* Assets.xcassets in Resources */,
 				059A94B923E1DB52007846FB /* Credits.rtf in Resources */,
 				05AF9FDA23DF287900E2B896 /* Main.storyboard in Resources */,
+				05390BF823EE359F0066631F /* Preference.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,9 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05390BF523EE31F30066631F /* PreferenceViewController.swift in Sources */,
 				05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */,
 				05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */,
-				05F9E3C823DF38B100BA0765 /* MultiViewController.swift in Sources */,
 				05AF9FD523DF287400E2B896 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +273,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		05390BF623EE359F0066631F /* Preference.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05390BF723EE359F0066631F /* Base */,
+			);
+			name = Preference.storyboard;
+			sourceTree = "<group>";
+		};
 		05AF9FD823DF287900E2B896 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

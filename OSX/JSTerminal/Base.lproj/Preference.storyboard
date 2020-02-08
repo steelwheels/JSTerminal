@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="O8x-pV-SEm">
+            <objects>
+                <windowController storyboardIdentifier="PreferenceWindowController" id="iOw-fQ-6x2" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="v48-Iu-Jgt">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="iOw-fQ-6x2" id="tTs-dy-sYI"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="pIS-6h-bjy" kind="relationship" relationship="window.shadowedContentViewController" id="vUE-hO-sPS"/>
+                    </connections>
+                </windowController>
+                <customObject id="d7t-en-RKW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="91" y="157"/>
+        </scene>
+        <!--Preference View Controller-->
+        <scene sceneID="ZXt-he-Q3i">
+            <objects>
+                <viewController storyboardIdentifier="PreferenceViewController" id="pIS-6h-bjy" customClass="PreferenceViewController" customModule="JSTerminal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="DvP-rs-qTn">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="4W5-Jg-tUr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="132"/>
+        </scene>
+    </scenes>
+</document>
