@@ -55,14 +55,25 @@ public class ShellSubViewController: KCSingleViewController
 	}
 
 	private func setupContext() {
+		if let termview = setupTerminalView() {
+			setupShell(terminalView: termview)
+		}
+	}
+
+	private func setupTerminalView() -> KCTerminalView? {
 		guard let rootview = super.rootView else {
 			NSLog("No root view")
-			return
+			return nil
 		}
 		let termview = KCTerminalView()
+		termview.fontPointSize = 24.0
+
 		rootview.setup(childView: termview)
 		mTerminalView = termview
+		return termview
+	}
 
+	private func setupShell(terminalView termview: KCTerminalView) {
 		guard let vm = JSVirtualMachine() else {
 			NSLog("Failed to allocate VM")
 			return
@@ -81,18 +92,20 @@ public class ShellSubViewController: KCSingleViewController
 	#if os(OSX)
 	public override func viewDidAppear() {
 		super.viewDidAppear()
-		if let thread = mShellThread {
-			thread.start(arguments: [])
-		}
+		viewDidAppearMain()
 	}
 	#else
 	public override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+		viewDidAppearMain()
+	}
+	#endif
+
+	private func viewDidAppearMain() {
 		if let thread = mShellThread {
 			thread.start(arguments: [])
 		}
 	}
-	#endif
 }
 
 
