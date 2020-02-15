@@ -66,7 +66,7 @@ public class ShellSubViewController: KCSingleViewController
 			return nil
 		}
 		let termview = KCTerminalView()
-		termview.fontPointSize = 24.0
+		//termview.fontPointSize = 24.0
 
 		rootview.setup(childView: termview)
 		mTerminalView = termview
