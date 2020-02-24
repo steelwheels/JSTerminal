@@ -11,7 +11,7 @@ import KiwiEngine
 import CoconutData
 import JavaScriptCore
 
-public class PreferenceViewController: KCPlaneViewController, NSWindowDelegate
+public class PreferenceViewController: KCPlaneViewController
 {
 	private var mPreferenceView:	KCTerminalPreferenceView? = nil
 
@@ -19,17 +19,13 @@ public class PreferenceViewController: KCPlaneViewController, NSWindowDelegate
 		super.loadView()
 		if let rootview = super.rootView {
 			let termview = KCTerminalPreferenceView()
-			rootview.addSubview(termview)
+			rootview.setup(childView: termview)
 			mPreferenceView = termview
 		}
 	}
 
 	override public func viewDidAppear() {
 		super.viewDidAppear()
-		/* Set delegate */
-		if let win = view.window {
-			win.delegate = self
-		}
 	}
 }
 

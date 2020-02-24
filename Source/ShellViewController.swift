@@ -11,7 +11,7 @@ import KiwiEngine
 import CoconutData
 import JavaScriptCore
 
-class ShellViewController: KCPlaneViewController, NSWindowDelegate
+class ShellViewController: KCPlaneViewController
 {
 	private var	mTerminalView:	KCTerminalView? = nil
 	private var	mShellThread: 	KHShellThreadObject? = nil
@@ -45,11 +45,6 @@ class ShellViewController: KCPlaneViewController, NSWindowDelegate
 
 	override func viewDidAppear() {
 		super.viewDidAppear()
-		/* Set delegate */
-		if let win = view.window {
-			win.delegate = self
-		}
-
 		/* Start shell */
 		if let shell = mShellThread {
 			//NSLog("start shell")
@@ -60,14 +55,6 @@ class ShellViewController: KCPlaneViewController, NSWindowDelegate
 	override var representedObject: Any? {
 		didSet {
 		// Update the view, if already loaded.
-		}
-	}
-
-	public func windowDidResize(_ notification: Notification) {
-		if let win = view.window, let termview = mTerminalView {
-			let newsize = win.frame.size
-			NSLog("Resize: \(newsize.description)")
-			termview.resize(newsize)
 		}
 	}
 }
