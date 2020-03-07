@@ -16,31 +16,28 @@ class ShellViewController: KCPlaneViewController
 	private var	mTerminalView:	KCTerminalView? = nil
 	private var	mShellThread: 	KHShellThreadObject? = nil
 
-	override func loadView() {
-		super.loadView()
+	open override func loadViewContext(rootView root: KCRootView) -> KCSize {
+		let termview = KCTerminalView()
+		root.setup(childView: termview)
+		mTerminalView = termview
 
-		/* Allocate preference view */
-		if let rootview = super.rootView {
-			let termview = KCTerminalView()
-			rootview.setup(childView: termview)
-			mTerminalView = termview
-
-			/* Allocate shell */
-			//NSLog("Launch shell")
-			guard let vm = JSVirtualMachine() else {
-				NSLog("Failed to allocate VM")
-				return
-			}
-			let queue    = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
-			let resource = KEResource(baseURL: Bundle.main.bundleURL)
-			let instrm:  CNFileStream = .fileHandle(termview.inputFileHandle)
-			let outstrm: CNFileStream = .fileHandle(termview.outputFileHandle)
-			let errstrm: CNFileStream = .fileHandle(termview.errorFileHandle)
-			let conf = KEConfig(applicationType: .window, doStrict: true, logLevel: .warning)
-
-			let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
-			mShellThread = shell
+		/* Allocate shell */
+		//NSLog("Launch shell")
+		guard let vm = JSVirtualMachine() else {
+			NSLog("Failed to allocate VM")
+			return termview.fittingSize
 		}
+		let queue    = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
+		let resource = KEResource(baseURL: Bundle.main.bundleURL)
+		let instrm:  CNFileStream = .fileHandle(termview.inputFileHandle)
+		let outstrm: CNFileStream = .fileHandle(termview.outputFileHandle)
+		let errstrm: CNFileStream = .fileHandle(termview.errorFileHandle)
+		let conf = KEConfig(applicationType: .window, doStrict: true, logLevel: .warning)
+
+		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
+		mShellThread = shell
+
+		return termview.fittingSize
 	}
 
 	override func viewDidAppear() {
