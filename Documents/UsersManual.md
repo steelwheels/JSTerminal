@@ -1,5 +1,11 @@
 # JSTerminal: Terminal application for JavaScript shell
 
+## Introduction
+The *JSTerminal* is a terminal application to execute JavaScript shell.
+The JavaScript shell (named *jsh*) is extended JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) for more details.
+
+This is a sample screen short of this application.
+![Main window](./Images/main-screenshot.png)
 
 ## Preference window
 You can change the terminal attributes by preference window.

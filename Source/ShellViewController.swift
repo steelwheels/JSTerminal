@@ -22,7 +22,6 @@ class ShellViewController: KCPlaneViewController
 		mTerminalView = termview
 
 		/* Allocate shell */
-		//NSLog("Launch shell")
 		guard let vm = JSVirtualMachine() else {
 			NSLog("Failed to allocate VM")
 			return termview.fittingSize
@@ -38,6 +37,13 @@ class ShellViewController: KCPlaneViewController
 		mShellThread = shell
 
 		return termview.fittingSize
+	}
+
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		if let window = self.view.window {
+			window.title = "JSTerminal"
+		}
 	}
 
 	override func viewDidAppear() {

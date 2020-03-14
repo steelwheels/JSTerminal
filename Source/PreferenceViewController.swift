@@ -24,6 +24,14 @@ public class PreferenceViewController: KCPlaneViewController
 		}
 	}
 
+	override public func viewWillAppear() {
+		super.viewWillAppear()
+		/* Update window title */
+		if let window = self.view.window {
+			window.title = "Terminal Setting"
+		}
+	}
+
 	override public func viewDidAppear() {
 		super.viewDidAppear()
 	}
