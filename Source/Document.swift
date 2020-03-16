@@ -1,14 +1,15 @@
-//
-//  Document.swift
-//  JSTerminal
-//
-//  Created by Tomoo Hamada on 2020/01/27.
-//  Copyright © 2020 Steel Wheels Project. All rights reserved.
-//
+/*
+ * @file Document.swift
+ * @brief Define Document class
+ * @par Copyright
+ *   Copyright (C) 2020 Steel Wheels Project
+ */
 
 import Cocoa
 
-class Document: NSDocument {
+class Document: NSDocument
+{
+	private var mScript: String? = nil
 
 	override init() {
 	    super.init()
@@ -24,6 +25,13 @@ class Document: NSDocument {
 		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
 		let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
 		self.addWindowController(windowController)
+
+		/* Set script*/
+		if let scr = mScript {
+			if let viewctrl = windowController.contentViewController as? ShellViewController {
+				viewctrl.set(mode: .script(scr))
+			}
+		}
 	}
 
 	override func data(ofType typeName: String) throws -> Data {
@@ -36,9 +44,11 @@ class Document: NSDocument {
 		// Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
 		// Alternatively, you could remove this method and override read(from:ofType:) instead.
 		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+		if let str = String(data: data, encoding: .utf8) {
+			mScript = str
+		} else {
+			throw NSError.fileError(message: "Failed to read script file")
+		}
 	}
-
-
 }
 
