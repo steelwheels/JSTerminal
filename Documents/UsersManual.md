@@ -7,6 +7,8 @@ The JavaScript shell (named *jsh*) is extended JavaScript to make shell scriptin
 This is a sample screen short of this application.
 ![Main window](./Images/main-screenshot.png)
 
+You can see some sample scripts at [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
+
 ## Menu
 This section describes about functions of desktop menu items.
 ### File Menu

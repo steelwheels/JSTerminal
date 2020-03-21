@@ -10,6 +10,10 @@
 		05019FAD241FB434007435AC /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05019FAB241FB3FF007435AC /* hello.js */; };
 		05390BF523EE31F30066631F /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05390BF423EE31F30066631F /* PreferenceViewController.swift */; };
 		05390BF823EE359F0066631F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05390BF623EE359F0066631F /* Preference.storyboard */; };
+		0565FC812426475D008761C7 /* colors.js in Resources */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
+		0565FC8324264766008761C7 /* keycode.js in Resources */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
+		0565FC8424264775008761C7 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
+		0565FC8524264775008761C7 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
 		059A94B923E1DB52007846FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 059A94B823E1DB52007846FB /* Credits.rtf */; };
 		05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD023DF287400E2B896 /* AppDelegate.swift */; };
 		05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD223DF287400E2B896 /* ShellViewController.swift */; };
@@ -47,6 +51,8 @@
 			dstPath = Samples;
 			dstSubfolderSpec = 7;
 			files = (
+				0565FC8424264775008761C7 /* keycode.js in CopyFiles */,
+				0565FC8524264775008761C7 /* colors.js in CopyFiles */,
 				05019FAD241FB434007435AC /* hello.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +79,8 @@
 		05019FAB241FB3FF007435AC /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
 		05390BF423EE31F30066631F /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		05390BF723EE359F0066631F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
+		0565FC802426475D008761C7 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
+		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +118,8 @@
 		05019FAA241FB3DD007435AC /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				0565FC8224264766008761C7 /* keycode.js */,
+				0565FC802426475D008761C7 /* colors.js */,
 				05019FAB241FB3FF007435AC /* hello.js */,
 			);
 			path = Sample;
@@ -266,6 +276,8 @@
 				05AF9FD723DF287900E2B896 /* Assets.xcassets in Resources */,
 				059A94B923E1DB52007846FB /* Credits.rtf in Resources */,
 				05AF9FDA23DF287900E2B896 /* Main.storyboard in Resources */,
+				0565FC8324264766008761C7 /* keycode.js in Resources */,
+				0565FC812426475D008761C7 /* colors.js in Resources */,
 				05390BF823EE359F0066631F /* Preference.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
