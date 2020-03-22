@@ -9,6 +9,19 @@ This is a sample screen short of this application.
 
 You can see some sample scripts at [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
 
+## How to use
+### Terminal
+There are input mode on terminal.
+The prompt `'>'` means *shell mode* and `'%'` is *script mode*.
+The shell mode accepts shell commands such as `ls` command.
+And the script mode accepts JavaScript code.
+You can switch these mode by `'>'` and `'%'`.
+
+![Two modes](Images/mode2.png)
+
+### JavaScript shell (aka jsh)
+You have to know about [JavaScript Shell (aka jsh)](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
+
 ## Menu
 This section describes about functions of desktop menu items.
 ### File Menu
