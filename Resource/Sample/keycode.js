@@ -3,6 +3,7 @@ function main(args)
 {
 	let c     = "?" ;
 	let prevc = "-" ;
+	console.log("Press `q` to quit\n") ;
 	while(c != "q"){
 		c = stdin.getc() ;
 		if(c != null && c != prevc){

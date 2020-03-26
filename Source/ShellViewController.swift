@@ -8,6 +8,7 @@
 import KiwiControls
 import KiwiShell
 import KiwiEngine
+import KiwiLibrary
 import CoconutData
 import JavaScriptCore
 
@@ -94,9 +95,7 @@ class ShellViewController: KCPlaneViewController
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
 		let conf = KHConfig(applicationType: .window, hasMainFunction: true, doStrict: true, logLevel: .warning)
 
-		let thread = KHScriptThreadObject(virtualMachine: vm, queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
-		let stmts  = scr.components(separatedBy: .newlines)
-		thread.setScript(script: .statements(stmts))
+		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
 		thread.start(arguments: [])
 
 		mScriptThreadObject = thread
