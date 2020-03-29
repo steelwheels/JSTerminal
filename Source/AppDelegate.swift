@@ -1,19 +1,20 @@
-//
-//  AppDelegate.swift
-//  JSTerminal
-//
-//  Created by Tomoo Hamada on 2020/01/27.
-//  Copyright © 2020 Steel Wheels Project. All rights reserved.
-//
+/*
+ * @file AppDelegate.swift
+ * @brief Define AppDelegate class
+ * @par Copyright
+ *   Copyright (C) 2020 Steel Wheels Project
+ */
 
 #if os(OSX)
 
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-
+class AppDelegate: NSObject, NSApplicationDelegate
+{
+	func applicationWillFinishLaunching(_ notification: Notification) {
+		UserDefaults.standard.applyDefaultSetting()
+	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
@@ -22,8 +23,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
-
-
 }
 
 #else
@@ -31,10 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		return true
@@ -53,8 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
 		// Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 	}
-
-
 }
 
 #endif

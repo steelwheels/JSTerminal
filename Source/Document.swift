@@ -5,9 +5,10 @@
  *   Copyright (C) 2020 Steel Wheels Project
  */
 
+import KiwiControls
 import Cocoa
 
-class Document: NSDocument
+class Document: KCDocument
 {
 	private var mScript: String? = nil
 
