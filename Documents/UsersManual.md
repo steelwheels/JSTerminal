@@ -9,6 +9,12 @@ This is a sample screen short of this application.
 
 You can see some sample scripts at [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
 
+## Setup
+### Set 
+
+### Set "Home Directory"
+
+
 ## How to use
 ### Terminal
 There are input mode on terminal.

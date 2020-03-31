@@ -64,6 +64,12 @@ class ShellViewController: KCPlaneViewController
 	}
 
 	private func startShell(in terminal: KCTerminalView) {
+		/* Change current directory */
+		let homedir = CNPreference.shared.userPreference.homeDirectory
+		if !FileManager.default.changeCurrentDirectoryPath(homedir.path) {
+			NSLog("Failed to change to home directory")
+		}
+
 		/* Allocate shell */
 		guard let vm = JSVirtualMachine() else {
 			NSLog("Failed to allocate VM")
