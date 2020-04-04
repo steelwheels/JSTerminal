@@ -64,25 +64,20 @@ class ShellViewController: KCPlaneViewController
 	}
 
 	private func startShell(in terminal: KCTerminalView) {
-		/* Change current directory */
-		let homedir = CNPreference.shared.userPreference.homeDirectory
-		if !FileManager.default.changeCurrentDirectoryPath(homedir.path) {
-			NSLog("Failed to change to home directory")
-		}
-
 		/* Allocate shell */
 		guard let vm = JSVirtualMachine() else {
 			NSLog("Failed to allocate VM")
 			return
 		}
-		let queue    = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
-		let resource = KEResource(baseURL: Bundle.main.bundleURL)
+		let queue       = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
+		let environment = CNEnvironment()
+		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
 		let outstrm: CNFileStream = .fileHandle(terminal.outputFileHandle)
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
 		let conf = KEConfig(applicationType: .window, doStrict: true, logLevel: .warning)
 
-		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
+		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		shell.start(arguments: [])
 
 		mShellThreadObject = shell
@@ -94,14 +89,15 @@ class ShellViewController: KCPlaneViewController
 			NSLog("Failed to allocate VM")
 			return
 		}
-		let queue    = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
-		let resource = KEResource(baseURL: Bundle.main.bundleURL)
+		let queue       = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
+		let environment = CNEnvironment()
+		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
 		let outstrm: CNFileStream = .fileHandle(terminal.outputFileHandle)
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
 		let conf = KHConfig(applicationType: .window, hasMainFunction: true, doStrict: true, logLevel: .warning)
 
-		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), queue: queue, resource: resource, input: instrm, output: outstrm, error: errstrm, config: conf)
+		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		thread.start(arguments: [])
 
 		mScriptThreadObject = thread
