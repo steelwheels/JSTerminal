@@ -10,10 +10,9 @@ This is a sample screen short of this application.
 You can see some sample scripts at [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
 
 ## Setup
-### Set 
-
-### Set "Home Directory"
-
+The *JSTerminal* is sandbox application to protect user from hacking.
+This application allows to access __under home directory only__.
+You can define home directory at the [Preference Window](#Preference).
 
 ## How to use
 ### Terminal
@@ -61,6 +60,15 @@ This section describes about functions of desktop menu items.
 ## Preference window
 You can change the terminal attributes by preference window.
 ![Preference window](./Images/preference-screenshot.png)
+
+### Home directory
+Set the home directory for you. Each users can have user's own directory.
+### Size
+Define the number of columns and rows in the terminal.
+### Font
+Define the kind of the font and it's size for the terminal.
+### Color
+Define the foreground and background color of the terminal.
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
