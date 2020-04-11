@@ -77,6 +77,10 @@ class ShellViewController: KCPlaneViewController
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
 		let conf = KEConfig(applicationType: .window, doStrict: true, logLevel: .warning)
 
+		/* Setup initial home directory */
+		let homedir = CNPreference.shared.userPreference.homeDirectory
+		environment.currentDirectory = homedir
+
 		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		shell.start(arguments: [])
 
