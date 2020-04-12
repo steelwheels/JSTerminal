@@ -70,6 +70,9 @@ Define the kind of the font and it's size for the terminal.
 ### Color
 Define the foreground and background color of the terminal.
 
+# Bug and Restrictions
+See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/Documents/restrictions.md).
+
 # Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
