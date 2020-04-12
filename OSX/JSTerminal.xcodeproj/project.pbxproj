@@ -14,6 +14,7 @@
 		0565FC8324264766008761C7 /* keycode.js in Resources */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8424264775008761C7 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8524264775008761C7 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
+		05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05703F7E2442BF1700FB2A9F /* JSTerminal.help */; };
 		059A94B923E1DB52007846FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 059A94B823E1DB52007846FB /* Credits.rtf */; };
 		05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD023DF287400E2B896 /* AppDelegate.swift */; };
 		05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD223DF287400E2B896 /* ShellViewController.swift */; };
@@ -81,6 +82,7 @@
 		05390BF723EE359F0066631F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
 		0565FC802426475D008761C7 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
 		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
+		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				05019FAA241FB3DD007435AC /* Sample */,
 				059A94B823E1DB52007846FB /* Credits.rtf */,
+				05703F7E2442BF1700FB2A9F /* JSTerminal.help */,
 			);
 			name = Resource;
 			path = ../Resource;
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05AF9FD723DF287900E2B896 /* Assets.xcassets in Resources */,
+				05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */,
 				059A94B923E1DB52007846FB /* Credits.rtf in Resources */,
 				05AF9FDA23DF287900E2B896 /* Main.storyboard in Resources */,
 				0565FC8324264766008761C7 /* keycode.js in Resources */,

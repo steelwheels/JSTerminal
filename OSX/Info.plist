@@ -65,6 +65,10 @@
 	<string>NSApplication</string>
 	<key>NSSupportsAutomaticTermination</key>
 	<true/>
+	<key>CFBundleHelpBookFolder</key>
+	<string>JSTerminal.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>github.com.steelwheels.JSTerminal.help</string>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
 </dict>
