@@ -81,6 +81,9 @@ class ShellViewController: KCPlaneViewController
 		let homedir = CNPreference.shared.userPreference.homeDirectory
 		environment.currentDirectory = homedir
 
+		/* Set default environment value */
+		setupEnvironment(environment: environment)
+
 		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		shell.start(arguments: [])
 
@@ -101,10 +104,19 @@ class ShellViewController: KCPlaneViewController
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
 		let conf = KHConfig(applicationType: .window, hasMainFunction: true, doStrict: true, logLevel: .warning)
 
+		/* Set default environment value */
+		setupEnvironment(environment: environment)
+
 		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		thread.start(arguments: [])
 
 		mScriptThreadObject = thread
+	}
+
+	private func setupEnvironment(environment env: CNEnvironment) {
+		env.set(name: "TERM", string: "xterm-16color")
+		env.set(name: "CLICOLOR", string: "1")
+		env.set(name: "CLICOLOR_FORCE", string: "1")
 	}
 
 	override var representedObject: Any? {
