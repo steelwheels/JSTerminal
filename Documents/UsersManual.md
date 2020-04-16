@@ -28,6 +28,8 @@ You can switch these mode by `'>'` and `'%'`.
 You have to know about JavaScript and [JavaScript Shell (aka jsh)](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
 See [language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md). And there are some sample programs. See [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
 
+The *jsh* supports custom JavaScript library named [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md).
+
 ## Execute the script file on JSTerminal
 ### Run command
 You can use *run* command to execute script on the JavaScript Shell.
@@ -75,4 +77,5 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
+* [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
