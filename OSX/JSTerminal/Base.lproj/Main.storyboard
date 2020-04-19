@@ -153,6 +153,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="uyl-h8-XO2"/>
+                                        <menuItem title="Stop" keyEquivalent="." id="7nD-vi-QCC">
+                                            <connections>
+                                                <action selector="stopChildProcess:" target="Ady-hI-5gd" id="enB-uk-1JW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="RFt-cC-sb8"/>
                                         <menuItem title="Find" id="4EN-yA-p0u">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Find" id="1b7-l0-nxx">

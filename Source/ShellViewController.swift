@@ -69,7 +69,6 @@ class ShellViewController: KCPlaneViewController
 			NSLog("Failed to allocate VM")
 			return
 		}
-		let queue       = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
 		let environment = CNEnvironment()
 		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
@@ -84,7 +83,7 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let shell = KHShellThreadObject(virtualMachine: vm, queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
+		let shell = KHShellThreadObject(virtualMachine: vm, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		shell.start(arguments: [])
 
 		mShellThreadObject = shell
@@ -123,6 +122,10 @@ class ShellViewController: KCPlaneViewController
 		didSet {
 		// Update the view, if already loaded.
 		}
+	}
+
+	@IBAction public func stopChildProcess(_ sender: Any) {
+		NSLog("stopChildProcess in ViewController ")
 	}
 }
 
