@@ -53,17 +53,21 @@ class ShellViewController: KCPlaneViewController
 				NSLog("Can not happen")
 				return
 			}
+
+			let procmgr = CNProcessManager()
+			let queue   = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
+
 			switch mMode {
 			case .shell:
-				startShell(in: termview)
+				startShell(processManager: procmgr, queue: queue, in: termview)
 			case .script(let script):
-				startScript(script: script, in: termview)
+				startScript(processManager: procmgr, queue: queue, script: script, in: termview)
 			}
 			mIs1stAppear = false
 		}
 	}
 
-	private func startShell(in terminal: KCTerminalView) {
+	private func startShell(processManager procmgr: CNProcessManager, queue disque: DispatchQueue, in terminal: KCTerminalView) {
 		/* Allocate shell */
 		guard let vm = JSVirtualMachine() else {
 			NSLog("Failed to allocate VM")
@@ -83,19 +87,19 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let shell = KHShellThreadObject(virtualMachine: vm, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
+		let shell = KHShellThreadObject(virtualMachine: vm, processManager: procmgr, queue: disque, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		shell.start(arguments: [])
 
 		mShellThreadObject = shell
 	}
 
-	private func startScript(script scr: String, in terminal: KCTerminalView) {
+	private func startScript(processManager procmgr: CNProcessManager, queue disque: DispatchQueue, script scr: String, in terminal: KCTerminalView) {
 		/* Allocate script thread */
 		guard let vm = JSVirtualMachine() else {
 			NSLog("Failed to allocate VM")
 			return
 		}
-		let queue       = DispatchQueue(label: "jsh", qos: .userInitiated, attributes: .concurrent)
+
 		let environment = CNEnvironment()
 		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
@@ -106,7 +110,7 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), queue: queue, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
+		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), processManager: procmgr, queue: disque, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		thread.start(arguments: [])
 
 		mScriptThreadObject = thread
