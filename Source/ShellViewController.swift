@@ -19,10 +19,13 @@ class ShellViewController: KCPlaneViewController
 		case script(String)
 	}
 
-	private var	mMode:			Mode = .shell
-	private var	mTerminalView:		KCTerminalView? = nil
-	private var 	mShellThreadObject:	KHShellThreadObject? = nil
-	private var 	mScriptThreadObject:	KHScriptThreadObject? = nil
+	private var	mMode:			Mode 			= .shell
+	private var 	mIs1stAppear:		Bool 			= true
+	private var	mTerminalView:		KCTerminalView?		= nil
+	private var	mProcessManager:	CNProcessManager?	= nil
+	private var	mQueue:			DispatchQueue?		= nil
+	private var 	mShellThreadObject:	KHShellThreadObject?	= nil
+	private var 	mScriptThreadObject:	KHScriptThreadObject?	= nil
 
 	open override func loadViewContext(rootView root: KCRootView) -> KCSize {
 		let termview = KCTerminalView()
@@ -43,7 +46,7 @@ class ShellViewController: KCPlaneViewController
 		}
 	}
 
-	private var mIs1stAppear: Bool = true
+
 
 	override func viewDidAppear() {
 		super.viewDidAppear()
@@ -63,7 +66,10 @@ class ShellViewController: KCPlaneViewController
 			case .script(let script):
 				startScript(processManager: procmgr, queue: queue, script: script, in: termview)
 			}
-			mIs1stAppear = false
+
+			mProcessManager	= procmgr
+			mQueue		= queue
+			mIs1stAppear	= false
 		}
 	}
 
@@ -129,7 +135,15 @@ class ShellViewController: KCPlaneViewController
 	}
 
 	@IBAction public func stopChildProcess(_ sender: Any) {
-		NSLog("stopChildProcess in ViewController ")
+
+		if let process = mShellThreadObject {
+			NSLog("Terminate shell thread")
+			process.terminate()
+		}
+		if let process = mScriptThreadObject {
+			NSLog("Terminate script thread")
+			process.terminate()
+		}
 	}
 }
 

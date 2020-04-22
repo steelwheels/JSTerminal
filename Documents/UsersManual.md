@@ -45,6 +45,10 @@ For more details, see [run command](https://github.com/steelwheels/JSTools/blob/
 You can select the script file by "open" menu.
 The opened script is executed on the new terminal window.
 
+### Stop the process
+You can stop the process in the current window by choosing
+_Stop menu item_ at Edit menu or pressing COMMAND-. key (`period` key + `command` key).
+
 ## Menu
 This section describes about functions of desktop menu items.
 ### File Menu
@@ -73,9 +77,9 @@ Define the kind of the font and it's size for the terminal.
 Define the foreground and background color of the terminal.
 
 # Bug and Restrictions
-See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/Documents/restrictions.md).
+See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Restrictions.md).
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
-* [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
+* [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.
