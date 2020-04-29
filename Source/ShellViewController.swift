@@ -94,7 +94,7 @@ class ShellViewController: KCPlaneViewController
 		setupEnvironment(environment: environment)
 
 		let shell = KHShellThreadObject(virtualMachine: vm, processManager: procmgr, queue: disque, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
-		shell.start(arguments: [])
+		shell.start(argument: .nullValue)
 
 		mShellThreadObject = shell
 	}
@@ -117,7 +117,7 @@ class ShellViewController: KCPlaneViewController
 		setupEnvironment(environment: environment)
 
 		let thread = KHScriptThreadObject(virtualMachine: vm, script: .script(scr), processManager: procmgr, queue: disque, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
-		thread.start(arguments: [])
+		thread.start(argument: .nullValue)
 
 		mScriptThreadObject = thread
 	}
