@@ -14,6 +14,8 @@ The *JSTerminal* is sandbox application to protect user from hacking.
 This application allows to access __under home directory only__.
 You can define home directory at the [Preference Window](#Preference).
 
+After definition of home directory, execute [setup command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/setup-man.md). This command initialize the file system under home directory.
+
 ## How to use
 ### Terminal
 There are input mode on terminal.
