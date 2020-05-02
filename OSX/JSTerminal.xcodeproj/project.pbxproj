@@ -49,7 +49,7 @@
 		05019FAC241FB420007435AC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Samples;
+			dstPath = Documents/Sample;
 			dstSubfolderSpec = 7;
 			files = (
 				0565FC8424264775008761C7 /* keycode.js in CopyFiles */,
