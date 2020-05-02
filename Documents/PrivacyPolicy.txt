@@ -2,3 +2,5 @@
 Privacy Policy of JSTerminal application
 ----------------------------------------
 
+Release data: 2020/05/02
+
