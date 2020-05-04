@@ -7,7 +7,11 @@ The JavaScript shell (named *jsh*) is extended JavaScript to make shell scriptin
 This is a sample screen short of this application.
 ![Main window](./Images/main-screenshot.png)
 
-You can see some sample scripts at [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
+In the following section, this document describes:
+* [Licence](#License): The license information
+* [How to use](#How): Step by step examination of the introduction to use this software
+
+## License
 
 ## How to use
 ### Boot
@@ -57,79 +61,65 @@ keycode.js
 jsh>
 ````
 
+### Execute shell command
+The prompt `'>'` means *shell mode* .
+The shell mode accepts shell commands such as `ls` command.
+````
+jsh> echo "Hello, world"
+Hello, world
+````
+You can execute the JavaScript by prepending `%` at the head of the statement.
+````
+jsh> % console.log("Hello, world") ;
+Hello, world
+````
+You can switch the *shell mode* into *JavaScript mode* by entering `%` key. The JavaScript mode accepts JavaScript code dynamically.
+````
+jsh> %
+jsh% let a = 10 ;
+jsh% console.log("a = " + a) ;
+a = 10
+jsh%
+````
+You can switch to shell mode by entering `>` key.
+````
+jsh% >
+jsh> ls
+Documents
+jsh>
+````
+
 ### Execute sample script
 You can use [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md) to execute the script (Both JavaScript and Shell scripts are supported).
+
+This is famous demo program for `jsh`.
+````
+jsh> run Documents/Sample/hello.js
+Hello, world !!
+````
+And this is sample program to test terminal color.
 ````
 run Documents/Sample/colors.js
 ````
 And you will get following outputs:
 ![Screenshot of colors script](./Images/script-colors.png)
 
-### Terminal
-There are input mode on terminal.
-The prompt `'>'` means *shell mode* and `'%'` is *script mode*.
-The shell mode accepts shell commands such as `ls` command.
-And the script mode accepts JavaScript code.
-You can switch these mode by `'>'` and `'%'`.
-
-![Two modes](Images/mode2.png)
-
-### JavaScript shell (aka jsh)
-You have to know about JavaScript and [JavaScript Shell (aka jsh)](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
-See [language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md). And there are some sample programs. See [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
-
-The *jsh* supports custom JavaScript library named [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md).
-
-## Execute the script file on JSTerminal
-### Run command
-You can use *run* command to execute script on the JavaScript Shell.
-````
-jsh> run /Users/steel_wheels/Develop/hello.js
-Hello, world !!
-````
-
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 
-### "Open" menu
-You can select the script file by "open" menu.
-The opened script is executed on the new terminal window.
-
-### Stop the process
+## Stop the process
 You can stop the process in the current window by choosing
 _Stop menu item_ at Edit menu or pressing COMMAND-. key (`period` key + `command` key).
 
-## Menu
-This section describes about functions of desktop menu items.
-### File Menu
-1. ___New___: Open the new window and execute *jsh* on it.
-2. ___Open___: Select script file and open the new window to execute it.
-3. ___Open Recent___: Select script files from the list of files that you opened.
-4. ___Close___: Close the current window
-5. Save
-6. Duplicate
-7. Rename
-8. Move to
+## For more information
+* [jsh: Extended JavaScript for Shell Scripting](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md): The language specification of `jsh`
+* [Terminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Terminal.md): The specification of the terminal
+* [Desktop menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md): The specification of the desktop menu
 
-### Edit Menu
-
-## Preference window
-You can change the terminal attributes by preference window.
-![Preference window](./Images/preference-screenshot.png)
-
-### Home directory
-Set the home directory for you. Each users can have user's own directory.
-### Size
-Define the number of columns and rows in the terminal.
-### Font
-Define the kind of the font and it's size for the terminal.
-### Color
-Define the foreground and background color of the terminal.
-
-# Bug and Restrictions
+## Bug and Restrictions
 See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Restrictions.md).
 
-# Related document
+## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
 * [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.
