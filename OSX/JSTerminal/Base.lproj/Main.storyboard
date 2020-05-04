@@ -216,6 +216,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Show Log window" keyEquivalent="l" id="sTL-Pw-Ecd">
+                                            <connections>
+                                                <action selector="openLogWindow:" target="Ady-hI-5gd" id="az6-V6-Wjl"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="APZ-I4-ya4"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>

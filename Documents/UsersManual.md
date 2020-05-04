@@ -9,14 +9,62 @@ This is a sample screen short of this application.
 
 You can see some sample scripts at [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md).
 
-## Setup
+## How to use
+### Boot
+Double click the icon of JSTerminal or execute following command at the `Terminal.app`.
+````
+open -a /Applications/JSTerminal.app
+````
+You will see the following window:
+![Boot window](./Images/boot-window.png)
+
+The word `jsh>` is called prompt. It encourage the input from the user.
+Type `ls -l Documents` on the window. You will see the contents of `documents` folder:
+````
+jsh> ls Documents
+iChats
+jsh>
+````
+
+### Set home directory
 The *JSTerminal* is sandbox application to protect user from hacking.
 This application allows to access __under home directory only__.
 You can define home directory at the [Preference Window](#Preference).
 
-After definition of home directory, execute [setup command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/setup-man.md). This command initialize the file system under home directory.
+You can use this application without changing home directory.
+But if you want to change your home directory, change the `Home directory` section by clicking `select` button:
+![Select home directory](./Images/preference-homedir.png)
 
-## How to use
+The setting will be activated for the next new window.
+Please select `New` menu item from the `File` menu.
+
+### Setup
+To install some scripts into the home directory, execute the [setup command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/setup-man.md). This command initialize the file system under home directory.
+````
+jsh> pwd
+/Users/tomoo/Development/Shell
+jsh> setup
+Make directory: /Users/tomoo/Development/Shell/Documents
+Make directory: /Users/tomoo/Development/Shell/Library
+Copy from /Applications/JSTerminal.app/Contents/Resources/Documents/Sample to /Users/tomoo/Development/Shell/Documents/Sample
+Setup file system ... done
+jsh> ls Documents
+Sample
+jsh> ls Documents/Sample
+colors.js
+hello.js
+keycode.js
+jsh>
+````
+
+### Execute sample script
+You can use [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md) to execute the script (Both JavaScript and Shell scripts are supported).
+````
+run Documents/Sample/colors.js
+````
+And you will get following outputs:
+![Screenshot of colors script](./Images/script-colors.png)
+
 ### Terminal
 There are input mode on terminal.
 The prompt `'>'` means *shell mode* and `'%'` is *script mode*.

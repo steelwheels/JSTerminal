@@ -46,8 +46,6 @@ class ShellViewController: KCPlaneViewController
 		}
 	}
 
-
-
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		/* Execute only once */
@@ -135,7 +133,6 @@ class ShellViewController: KCPlaneViewController
 	}
 
 	@IBAction public func stopChildProcess(_ sender: Any) {
-
 		if let process = mShellThreadObject {
 			NSLog("Terminate shell thread")
 			process.terminate()

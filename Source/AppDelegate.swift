@@ -7,6 +7,7 @@
 
 #if os(OSX)
 
+import KiwiControls
 import Cocoa
 
 @NSApplicationMain
@@ -22,6 +23,19 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
+	}
+
+	@IBAction public func openLogWindow(_ sender: Any) {
+		if let _ = sender as? NSMenuItem {
+			let manager = KCLogManager.shared
+			if manager.enable {
+				/* enable -> disable */
+				manager.enable = false
+			} else {
+				/* disable -> enable */
+				manager.enable = true
+			}
+		}
 	}
 }
 
