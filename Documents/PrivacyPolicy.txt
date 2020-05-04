@@ -1,6 +1,12 @@
 
 Privacy Policy of JSTerminal application
 ----------------------------------------
+Written date: 2020/05/02
 
-Release data: 2020/05/02
+The JSTerminal application DOES NOT COLLECT information about the user.
+And there are information is sent from this application because this does not have
+networking function.
 
+If you can not believe these statements, you can download the source code
+from github repository. And you can compile the application by yourself
+after checking the implementation.

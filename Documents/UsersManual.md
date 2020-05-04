@@ -4,6 +4,9 @@
 The *JSTerminal* is a terminal application to execute JavaScript shell.
 The JavaScript shell (named *jsh*) is extended JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) for more details.
 
+This application is open source software.
+If you have any question or suggestions please send e-mail to [Steel Wheels Project](mailto:steel.wheels.project@gmail.com) or write issue to the [Github repository](https://github.com/steelwheels/JSTerminal).
+
 This is a sample screen short of this application.
 ![Main window](./Images/main-screenshot.png)
 
@@ -39,6 +42,8 @@ jsh>
 The *JSTerminal* is sandbox application to protect user from hacking.
 This application allows to access __under home directory only__.
 You can define home directory at the [Preference Window](#Preference).
+
+The changing home directory means that you allow this application accesses your information. If you don't like it, do not change the home directory (See [Privacy Policy](https://github.com/steelwheels/JSTerminal/blob/master/Documents/PrivacyPolicy.txt)).
 
 You can use this application without changing home directory.
 But if you want to change your home directory, change the `Home directory` section by clicking `select` button:
