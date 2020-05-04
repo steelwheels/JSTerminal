@@ -11,7 +11,7 @@ It support shell scripting by JavaScript language.
 * Language for development: Swift and JavaScript
 
 ## Copyright
-Copyright (C) 2019 [Steel Wheels Project](https://github.com/steelwheels).
+Copyright (C) 2020 [Steel Wheels Project](https://github.com/steelwheels).
 This software is distributed under [GNU GENERAL PUBLIC LICENSE Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) and the document is distributed under [GNU Free Documentation License](https://www.gnu.org/licenses/fdl-1.3.en.html).
 
 ## Documents

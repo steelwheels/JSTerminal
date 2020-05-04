@@ -10,8 +10,13 @@ This is a sample screen short of this application.
 In the following section, this document describes:
 * [Licence](#License): The license information
 * [How to use](#How): Step by step examination of the introduction to use this software
+* [Programming](#Programming): Documents for programming
+* [Bug and restrictions](#Bug): Known problems
+* [Related documents](#Related): Links for references
 
 ## License
+Copyright (C) 2020 [Steel Wheels Project](https://github.com/steelwheels).
+This software is distributed under [GNU GENERAL PUBLIC LICENSE Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) and the document is distributed under [GNU Free Documentation License](https://www.gnu.org/licenses/fdl-1.3.en.html).
 
 ## How to use
 ### Boot
@@ -107,11 +112,11 @@ And you will get following outputs:
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 
-## Stop the process
+### Stop the process
 You can stop the process in the current window by choosing
 _Stop menu item_ at Edit menu or pressing COMMAND-. key (`period` key + `command` key).
 
-## For more information
+## Programming
 * [jsh: Extended JavaScript for Shell Scripting](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md): The language specification of `jsh`
 * [Terminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Terminal.md): The specification of the terminal
 * [Desktop menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md): The specification of the desktop menu
