@@ -144,6 +144,7 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |Version        |Date           |Description            |
 |:--            |:--            |:--                    |
 |1.0            |2020/05/05     |Initial Version        |
+|1.1            |?              |Update to support [Curses Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
