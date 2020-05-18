@@ -23,7 +23,8 @@ This software is distributed under [GNU GENERAL PUBLIC LICENSE Version 2](https:
 
 ## Download
 You can download this software from App Store.
-Please search by keyword "JSTerminal".
+[This page](https://apps.apple.com/jp/app/jsterminal/id1511276015?mt=12) links to the page to download this application.
+On the otherwise, please search by keyword "JSTerminal" on the .
 
 ## How to use
 ### Boot
