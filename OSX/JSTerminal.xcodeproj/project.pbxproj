@@ -10,6 +10,8 @@
 		05019FAD241FB434007435AC /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05019FAB241FB3FF007435AC /* hello.js */; };
 		05390BF523EE31F30066631F /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05390BF423EE31F30066631F /* PreferenceViewController.swift */; };
 		05390BF823EE359F0066631F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05390BF623EE359F0066631F /* Preference.storyboard */; };
+		054AB848247E5DBE00146F15 /* colorbar.js in Resources */ = {isa = PBXBuildFile; fileRef = 054AB847247E5DBE00146F15 /* colorbar.js */; };
+		054AB849247E5DD700146F15 /* colorbar.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 054AB847247E5DBE00146F15 /* colorbar.js */; };
 		0565FC812426475D008761C7 /* colors.js in Resources */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
 		0565FC8324264766008761C7 /* keycode.js in Resources */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8424264775008761C7 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
@@ -54,6 +56,7 @@
 			dstPath = Documents/Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				054AB849247E5DD700146F15 /* colorbar.js in CopyFiles */,
 				05B50DA72476BCB400CC5338 /* curses.js in CopyFiles */,
 				0565FC8424264775008761C7 /* keycode.js in CopyFiles */,
 				0565FC8524264775008761C7 /* colors.js in CopyFiles */,
@@ -83,6 +86,7 @@
 		05019FAB241FB3FF007435AC /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
 		05390BF423EE31F30066631F /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		05390BF723EE359F0066631F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
+		054AB847247E5DBE00146F15 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
 		0565FC802426475D008761C7 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
 		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		05019FAA241FB3DD007435AC /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				054AB847247E5DBE00146F15 /* colorbar.js */,
 				05B50DA52476BCA500CC5338 /* curses.js */,
 				0565FC8224264766008761C7 /* keycode.js */,
 				0565FC802426475D008761C7 /* colors.js */,
@@ -287,6 +292,7 @@
 				059A94B923E1DB52007846FB /* Credits.rtf in Resources */,
 				05AF9FDA23DF287900E2B896 /* Main.storyboard in Resources */,
 				0565FC8324264766008761C7 /* keycode.js in Resources */,
+				054AB848247E5DBE00146F15 /* colorbar.js in Resources */,
 				0565FC812426475D008761C7 /* colors.js in Resources */,
 				05390BF823EE359F0066631F /* Preference.storyboard in Resources */,
 			);
@@ -457,7 +463,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -470,6 +476,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -485,7 +492,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -498,6 +505,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

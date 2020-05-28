@@ -8,23 +8,42 @@ function main()
 	let width  = Curses.width ;
 	let height = Curses.height ;
 
+	/* Left: top -> bottom */
 	for(i=0 ; i<height ; i++){
 		Curses.moveTo(0, i) ;
 		console.print(i % 10) ;
 	}
-	for(i=0 ; i<width-1 ; i++){
-		Curses.moveTo(i, 0) ;
+	/* Right: top -> bottom */
+	for(i=0 ; i<height ; i++){
+		Curses.moveTo(width-1, i) ;
 		console.print(i % 10) ;
 	}
 
-	//Curses.moveTo(width/2, height/2) ;
-	//console.log("Press any key: " + width + "x" + height) ;
+	/* Top: left -> right */
+	for(i=0 ; i<width ; i++){
+		Curses.moveTo(i, 0) ;
+		console.print(i % 10) ;
+	}
+	/* Bottom: left -> right */
+	for(i=0 ; i<width ; i++){
+		Curses.moveTo(i, height-1) ;
+		console.print(i % 10) ;
+	}
 
-	while(true){
-		let c = stdin.getc() ;
-		if(c != null){
-			break ;
-		}
+	/* Cross */
+	for(i=0 ; i<width ; i++){
+		let y0 = Math.floor(i * height / width) ;
+		Curses.moveTo(i, y0) ;
+		console.print(i % 10) ;
+
+		let y1 = height - 1 - y0 ;
+		Curses.moveTo(i, y1) ;
+		console.print(i % 10) ;
+	}
+
+
+	while(Curses.inkey() == null){
+		sleep(0.1) ;
 	}
 
 	Curses.end() ;
