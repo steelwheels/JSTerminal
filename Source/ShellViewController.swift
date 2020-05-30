@@ -93,7 +93,6 @@ class ShellViewController: KCPlaneViewController
 	private func startScript(processManager procmgr: CNProcessManager, script scr: String, in terminal: KCTerminalView) {
 		/* Allocate script thread */
 		let environment = CNEnvironment()
-		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
 		let outstrm: CNFileStream = .fileHandle(terminal.outputFileHandle)
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
@@ -102,7 +101,7 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let thread = KHScriptThreadObject(script: .script(scr), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
+		let thread = KHScriptThreadObject(sourceFile: .script(scr), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, config: conf)
 		thread.start(argument: .nullValue)
 
 		mScriptThreadObject = thread

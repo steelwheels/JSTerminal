@@ -122,6 +122,24 @@ And you will get following outputs:
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 
+### File format
+The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
+For more details, see [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md).
+This is sample implementation of `manifest.json` file which presents the bundled files for an application script:
+````
+{
+	"application":	"main.js",
+	"libraries": [
+		"lib_a.js",
+		"lib_b.js"
+	],
+	"threads": {
+		"thread_a": "thread_a.js",
+		"thread_b": "thread_b.js"
+	}
+}
+````
+
 ### Execute script by menu
 You can select the script by menu. Select *Open* menu item from *File* menu. In this case, the new window will be opened to execute the script.
 
@@ -145,7 +163,8 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |Version        |Date           |Description            |
 |:--            |:--            |:--                    |
 |1.0            |2020/05/05     |Initial Version        |
-|1.1            |Not released yet   |Update to support [Curses Class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
+|1.1            |2020/05/28     |Update to support [Curses Class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
+|1.2            |Not released yet | Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md) |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.

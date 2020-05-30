@@ -17,6 +17,8 @@
 		0565FC8424264775008761C7 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8524264775008761C7 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
 		05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05703F7E2442BF1700FB2A9F /* JSTerminal.help */; };
+		0590355B2481551D00EE26A7 /* hello.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
+		0590355C2481552700EE26A7 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
 		059A94B923E1DB52007846FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 059A94B823E1DB52007846FB /* Credits.rtf */; };
 		05AF9FD123DF287400E2B896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD023DF287400E2B896 /* AppDelegate.swift */; };
 		05AF9FD323DF287400E2B896 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF9FD223DF287400E2B896 /* ShellViewController.swift */; };
@@ -56,6 +58,7 @@
 			dstPath = Documents/Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				0590355C2481552700EE26A7 /* hello.jspkg in CopyFiles */,
 				054AB849247E5DD700146F15 /* colorbar.js in CopyFiles */,
 				05B50DA72476BCB400CC5338 /* curses.js in CopyFiles */,
 				0565FC8424264775008761C7 /* keycode.js in CopyFiles */,
@@ -90,6 +93,7 @@
 		0565FC802426475D008761C7 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
 		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
+		0590355A2481551D00EE26A7 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hello.jspkg; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		05019FAA241FB3DD007435AC /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				0590355A2481551D00EE26A7 /* hello.jspkg */,
 				054AB847247E5DBE00146F15 /* colorbar.js */,
 				05B50DA52476BCA500CC5338 /* curses.js */,
 				0565FC8224264766008761C7 /* keycode.js */,
@@ -294,6 +299,7 @@
 				0565FC8324264766008761C7 /* keycode.js in Resources */,
 				054AB848247E5DBE00146F15 /* colorbar.js in Resources */,
 				0565FC812426475D008761C7 /* colors.js in Resources */,
+				0590355B2481551D00EE26A7 /* hello.jspkg in Resources */,
 				05390BF823EE359F0066631F /* Preference.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
