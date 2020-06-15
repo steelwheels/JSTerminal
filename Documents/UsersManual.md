@@ -122,23 +122,25 @@ And you will get following outputs:
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 
-### File format
+### File package
 The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
 For more details, see [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md).
 This is sample implementation of `manifest.json` file which presents the bundled files for an application script:
 ````
 {
-	"application":	"main.js",
-	"libraries": [
+	application:	"main.js",
+	libraries: [
 		"lib_a.js",
 		"lib_b.js"
 	],
-	"threads": {
+	threads: {
 		"thread_a": "thread_a.js",
 		"thread_b": "thread_b.js"
 	}
 }
 ````
+The format of `manifest.json` is defined in [extended JavaScript Object Notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md).
+
 
 ### Execute script by menu
 You can select the script by menu. Select *Open* menu item from *File* menu. In this case, the new window will be opened to execute the script.
