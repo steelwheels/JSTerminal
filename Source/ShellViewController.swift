@@ -108,9 +108,9 @@ class ShellViewController: KCPlaneViewController
 	}
 
 	private func setupEnvironment(environment env: CNEnvironment) {
-		env.set(name: "TERM", string: "xterm-16color")
-		env.set(name: "CLICOLOR", string: "1")
-		env.set(name: "CLICOLOR_FORCE", string: "1")
+		env.set(name: "TERM",           value: .stringValue("xterm-16color"))
+		env.set(name: "CLICOLOR",       value: .stringValue("1"))
+		env.set(name: "CLICOLOR_FORCE", value: .stringValue("1"))
 	}
 
 	override var representedObject: Any? {
