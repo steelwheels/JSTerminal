@@ -121,11 +121,11 @@ class ShellViewController: KCPlaneViewController
 
 	@IBAction public func stopChildProcess(_ sender: Any) {
 		if let process = mShellThreadObject {
-			NSLog("Terminate shell thread")
+			//NSLog("Terminate shell thread")
 			process.terminate()
 		}
 		if let process = mScriptThreadObject {
-			NSLog("Terminate script thread")
+			//NSLog("Terminate script thread")
 			process.terminate()
 		}
 	}
