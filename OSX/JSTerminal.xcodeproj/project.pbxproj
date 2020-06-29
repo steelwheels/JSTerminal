@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05019FAD241FB434007435AC /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05019FAB241FB3FF007435AC /* hello.js */; };
+		0504606F24AA1CF10033B4BD /* KiwiComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9B24AA181E00B17622 /* KiwiComponents.framework */; };
+		0504607024AA1CF10033B4BD /* KiwiComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9B24AA181E00B17622 /* KiwiComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05390BF523EE31F30066631F /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05390BF423EE31F30066631F /* PreferenceViewController.swift */; };
 		05390BF823EE359F0066631F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05390BF623EE359F0066631F /* Preference.storyboard */; };
 		054AB848247E5DBE00146F15 /* colorbar.js in Resources */ = {isa = PBXBuildFile; fileRef = 054AB847247E5DBE00146F15 /* colorbar.js */; };
@@ -16,6 +18,9 @@
 		0565FC8324264766008761C7 /* keycode.js in Resources */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8424264775008761C7 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8524264775008761C7 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
+		056A5A9824AA17B600B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
+		056A5A9924AA17C000B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
+		056A5A9A24AA17C600B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
 		05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05703F7E2442BF1700FB2A9F /* JSTerminal.help */; };
 		0590355B2481551D00EE26A7 /* hello.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
 		0590355C2481552700EE26A7 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
@@ -74,6 +79,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				05F9E3C023DF2AAF00BA0765 /* CoconutData.framework in Embed Frameworks */,
+				0504607024AA1CF10033B4BD /* KiwiComponents.framework in Embed Frameworks */,
 				05F9E3C223DF2AB100BA0765 /* CoconutShell.framework in Embed Frameworks */,
 				05F9E3C623DF2AB400BA0765 /* KiwiEngine.framework in Embed Frameworks */,
 				05F9E3B423DF2A6F00BA0765 /* KiwiLibrary.framework in Embed Frameworks */,
@@ -92,6 +98,8 @@
 		054AB847247E5DBE00146F15 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
 		0565FC802426475D008761C7 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
 		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
+		056A5A9724AA17B600B17622 /* KiwiShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiShell.framework; path = ../../../Library/Frameworks/KiwiShell.framework; sourceTree = "<group>"; };
+		056A5A9B24AA181E00B17622 /* KiwiComponents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiComponents.framework; path = ../../../Library/Frameworks/KiwiComponents.framework; sourceTree = "<group>"; };
 		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		0590355A2481551D00EE26A7 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hello.jspkg; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -117,11 +125,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056A5A9824AA17B600B17622 /* KiwiShell.framework in Frameworks */,
 				05F9E3BF23DF2AAF00BA0765 /* CoconutData.framework in Frameworks */,
+				0504606F24AA1CF10033B4BD /* KiwiComponents.framework in Frameworks */,
 				05F9E3C323DF2AB300BA0765 /* KiwiControls.framework in Frameworks */,
+				056A5A9924AA17C000B17622 /* KiwiShell.framework in Frameworks */,
 				05F9E3C523DF2AB400BA0765 /* KiwiEngine.framework in Frameworks */,
 				05F9E3B323DF2A6F00BA0765 /* KiwiLibrary.framework in Frameworks */,
 				05F9E3B723DF2A7F00BA0765 /* KiwiShell.framework in Frameworks */,
+				056A5A9A24AA17C600B17622 /* KiwiShell.framework in Frameworks */,
 				05F9E3C123DF2AB100BA0765 /* CoconutShell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +211,8 @@
 		05F9E3AA23DF2A5700BA0765 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				056A5A9B24AA181E00B17622 /* KiwiComponents.framework */,
+				056A5A9724AA17B600B17622 /* KiwiShell.framework */,
 				05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */,
 				05F9E3B923DF2A9100BA0765 /* CoconutShell.framework */,
 				05F9E3B623DF2A7F00BA0765 /* KiwiShell.framework */,
