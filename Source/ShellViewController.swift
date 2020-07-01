@@ -61,7 +61,7 @@ class ShellViewController: KCPlaneViewController
 			mProcessManager	= procmgr
 
 			/* Setup external compiler */
-			let extcomp = KMComponentCompiler()
+			let extcomp = KMComponentCompiler(viewController: self)
 
 			switch mMode {
 			case .shell:
@@ -72,7 +72,7 @@ class ShellViewController: KCPlaneViewController
 		}
 	}
 
-	private func startShell(processManager procmgr: CNProcessManager, externalCompiler extcomp: KHExternalCompiler?, in terminal: KCTerminalView) {
+	private func startShell(processManager procmgr: CNProcessManager, externalCompiler extcomp: KLExternalCompiler?, in terminal: KCTerminalView) {
 		/* Allocate shell */
 		let environment = CNEnvironment()
 		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
@@ -94,7 +94,7 @@ class ShellViewController: KCPlaneViewController
 		mShellThreadObject = shell
 	}
 
-	private func startScript(processManager procmgr: CNProcessManager, script scr: String, externalCompiler extcomp: KHExternalCompiler?, in terminal: KCTerminalView) {
+	private func startScript(processManager procmgr: CNProcessManager, script scr: String, externalCompiler extcomp: KLExternalCompiler?, in terminal: KCTerminalView) {
 		/* Allocate script thread */
 		let environment = CNEnvironment()
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
