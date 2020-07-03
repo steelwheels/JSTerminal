@@ -2,7 +2,7 @@
 
 ## Introduction
 The *JSTerminal* is a terminal application to execute JavaScript shell.
-The JavaScript shell (named *jsh*) is extended JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) for more details.
+The JavaScript shell (named *jsh*) is extended JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
 
 This application is open source software.
 If you have any question or suggestions please send e-mail to [Steel Wheels Project](mailto:steel.wheels.project@gmail.com) or write issue to the [Github repository](https://github.com/steelwheels/JSTerminal).
@@ -155,7 +155,6 @@ Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/ma
 
 ### Details
 For more details (except shell script function), See the following documents.
-* [Terminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Terminal.md): The specification of the terminal
 * [Desktop menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md): The specification of the desktop menu
 
 ## Bug and Restrictions
