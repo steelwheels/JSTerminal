@@ -106,6 +106,7 @@ jsh>
 
 ### Execute sample script
 You can use [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md) to execute the script (Both JavaScript and Shell scripts are supported).
+You can also execute the script by [open menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md).
 
 This is famous demo program for `jsh`.
 ````
@@ -141,13 +142,6 @@ This is sample implementation of `manifest.json` file which presents the bundled
 ````
 The format of `manifest.json` is defined in [extended JavaScript Object Notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md).
 
-
-### Execute script by menu
-You can select the script by menu. Select *Open* menu item from *File* menu. In this case, the new window will be opened to execute the script.
-
-### Stop the process
-You can stop the process in the current window by choosing
-_Stop menu item_ at Edit menu or pressing COMMAND-. key (`period` key + `command` key).
 
 ## How to program
 ### Programming
