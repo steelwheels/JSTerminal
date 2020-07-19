@@ -177,7 +177,8 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |:--            |:--		|:--                    |
 |1.0            |2020/05/05	|Initial Version        |
 |1.1            |2020/05/28	|Update to support [Curses Class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
-|1.2            |2020/06/28	| Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
+|1.2            |2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
+|1.3			|Not released |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
