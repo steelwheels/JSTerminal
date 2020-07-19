@@ -142,6 +142,24 @@ This is sample implementation of `manifest.json` file which presents the bundled
 ````
 The format of `manifest.json` is defined in [extended JavaScript Object Notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md).
 
+### `.jshrc` file
+If you put .jshrc JavScript file on your home directory, the file is parsed at the boot time (before outputting 1st prompt).
+
+This is a samle context of `.jshrc` file. You can get the version of shell and change the prompt on the shell by referencing/updating [Preference Object](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Preference.md).
+
+````
+/* Print version */
+console.log("jsh: version: " + Preference.system.version) ;
+
+/* Set prompt */
+Preference.shell.prompt = function() {
+        let orgcol = Preference.terminal.foregroundColor ;
+        let orgesc = EscapeCode.color(1, orgcol) ;
+        let newcol = Color.blue ;
+        let newesc = EscapeCode.color(1, newcol) ;
+        return newesc + "jsh" + orgesc ;
+} ;
+````
 
 ## How to program
 ### Programming
