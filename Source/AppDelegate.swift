@@ -8,17 +8,14 @@
 #if os(OSX)
 
 import KiwiControls
+import CoconutData
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate
+class AppDelegate: CNApplicationDelegate
 {
 	func applicationWillFinishLaunching(_ notification: Notification) {
 		UserDefaults.standard.applyDefaultSetting()
-	}
-
-	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -44,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
+class AppDelegate: CNApplicationDelegate
 {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
