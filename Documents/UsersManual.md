@@ -161,6 +161,15 @@ Preference.shell.prompt = function() {
 } ;
 ````
 
+### Cocoa Scripting
+This application supports [Cocoa Scripting](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html#//apple_ref/doc/uid/TP40001982-BCICHGIE). This is sample script to control this application. For more precise, see [Cocoa Scripting Support](https://github.com/steelwheels/Coconut/blob/master/CoconutScript/Document/cocoa-scripting-support.md).
+````
+tell application "JSTerminal"
+  set foreground color to green
+  set background color to black
+end tell
+````
+
 ## How to program
 ### Programming
 Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) to know how to describe the shell script by JavaScript.
@@ -175,10 +184,11 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 ## Release history
 |Version        |Date		|Description            |
 |:--            |:--		|:--                    |
-|1.0            |2020/05/05	|Initial Version        |
-|1.1            |2020/05/28	|Update to support [Curses Class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
-|1.2            |2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
-|1.3			|Not released |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
+|1.0   	|2020/05/05	|Initial Version        |
+|1.1	|2020/05/28	|Update to support [Curses Class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
+|1.2	|2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
+|1.3	|2020/07/13 |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
+|1.4	|Not released yet |Support Cocoa Scripting to be controlled by AppleScript. |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
