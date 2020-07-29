@@ -8,11 +8,12 @@
 #if os(OSX)
 
 import KiwiControls
+import CoconutScript
 import CoconutData
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: CNApplicationDelegate
+class AppDelegate: CNScriptableAppicationDelegate
 {
 	func applicationWillFinishLaunching(_ notification: Notification) {
 		UserDefaults.standard.applyDefaultSetting()

@@ -21,6 +21,9 @@
 		056A5A9824AA17B600B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
 		056A5A9924AA17C000B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
 		056A5A9A24AA17C600B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
+		056BD73A24D02A2D003D4549 /* CoconutScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056BD73924D02A2D003D4549 /* CoconutScript.framework */; };
+		056BD73B24D02A2D003D4549 /* CoconutScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 056BD73924D02A2D003D4549 /* CoconutScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		056BD74324D04CDF003D4549 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 056BD74124D04CCA003D4549 /* CoconutScript.sdef */; };
 		05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05703F7E2442BF1700FB2A9F /* JSTerminal.help */; };
 		0590355B2481551D00EE26A7 /* hello.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
 		0590355C2481552700EE26A7 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
@@ -81,6 +84,7 @@
 				05F9E3C023DF2AAF00BA0765 /* CoconutData.framework in Embed Frameworks */,
 				0504607024AA1CF10033B4BD /* KiwiComponents.framework in Embed Frameworks */,
 				05F9E3C223DF2AB100BA0765 /* CoconutShell.framework in Embed Frameworks */,
+				056BD73B24D02A2D003D4549 /* CoconutScript.framework in Embed Frameworks */,
 				05F9E3C623DF2AB400BA0765 /* KiwiEngine.framework in Embed Frameworks */,
 				05F9E3B423DF2A6F00BA0765 /* KiwiLibrary.framework in Embed Frameworks */,
 				05F9E3B823DF2A7F00BA0765 /* KiwiShell.framework in Embed Frameworks */,
@@ -100,8 +104,11 @@
 		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		056A5A9724AA17B600B17622 /* KiwiShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiShell.framework; path = ../../../Library/Frameworks/KiwiShell.framework; sourceTree = "<group>"; };
 		056A5A9B24AA181E00B17622 /* KiwiComponents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiComponents.framework; path = ../../../Library/Frameworks/KiwiComponents.framework; sourceTree = "<group>"; };
+		056BD73924D02A2D003D4549 /* CoconutScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutScript.framework; path = ../../../Library/Frameworks/CoconutScript.framework; sourceTree = "<group>"; };
+		056BD74124D04CCA003D4549 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		0590355A2481551D00EE26A7 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hello.jspkg; sourceTree = "<group>"; };
+		0596206524D0742600C6CE4A /* JSTerminalRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTerminalRelease.entitlements; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				056A5A9824AA17B600B17622 /* KiwiShell.framework in Frameworks */,
+				056BD73A24D02A2D003D4549 /* CoconutScript.framework in Frameworks */,
 				05F9E3BF23DF2AAF00BA0765 /* CoconutData.framework in Frameworks */,
 				0504606F24AA1CF10033B4BD /* KiwiComponents.framework in Frameworks */,
 				05F9E3C323DF2AB300BA0765 /* KiwiControls.framework in Frameworks */,
@@ -157,6 +165,7 @@
 		059A94B723E1DB24007846FB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				056BD74124D04CCA003D4549 /* CoconutScript.sdef */,
 				05019FAA241FB3DD007435AC /* Sample */,
 				059A94B823E1DB52007846FB /* Credits.rtf */,
 				05703F7E2442BF1700FB2A9F /* JSTerminal.help */,
@@ -187,6 +196,7 @@
 		05AF9FCF23DF287400E2B896 /* JSTerminal */ = {
 			isa = PBXGroup;
 			children = (
+				0596206524D0742600C6CE4A /* JSTerminalRelease.entitlements */,
 				05AF9FD623DF287900E2B896 /* Assets.xcassets */,
 				05AF9FD823DF287900E2B896 /* Main.storyboard */,
 				05390BF623EE359F0066631F /* Preference.storyboard */,
@@ -211,6 +221,7 @@
 		05F9E3AA23DF2A5700BA0765 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				056BD73924D02A2D003D4549 /* CoconutScript.framework */,
 				056A5A9B24AA181E00B17622 /* KiwiComponents.framework */,
 				056A5A9724AA17B600B17622 /* KiwiShell.framework */,
 				05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */,
@@ -305,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056BD74324D04CDF003D4549 /* CoconutScript.sdef in Resources */,
 				05AF9FD723DF287900E2B896 /* Assets.xcassets in Resources */,
 				05B50DA62476BCA500CC5338 /* curses.js in Resources */,
 				05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */,
@@ -508,7 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = JSTerminal/JSTerminal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = JSTerminal/JSTerminalRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

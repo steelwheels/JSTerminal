@@ -79,6 +79,8 @@
 	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright 2020 Steel Wheels Project. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
@@ -89,5 +91,7 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>OSAScriptingDefinition</key>
+	<string>CoconutScript.sdef</string>
 </dict>
 </plist>

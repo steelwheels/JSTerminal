@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="CoconutScript">
+  <suite name="Preference Suite" code="CcPS" description="Preferencence Suites by CoconutScript">
+   <class name="application" code="capp" description="The application's top-level scripting object.">
+     <cocoa class="NSApplication"/>
+     <!-- Terminal colors -->
+     <property name="foreground color" code="fgcl" description="Foreground color of the terminal" type="Color" access="rw"/>
+     <property name="background color" code="bgcl" description="Background color of the terminal" type="Color" access="rw"/>
+
+     <!-- Constants -->
+     <property name="black"   code="blak" description="Black color"   type="Color" access="r"/>
+     <property name="blue"    code="blue" description="Blue color"    type="Color" access="r"/>
+     <property name="red"     code="red " description="Red color"     type="Color" access="r"/>
+     <property name="magenta" code="mgnt" description="Magenta color" type="Color" access="r"/>
+     <property name="green"   code="gren" description="Green color"   type="Color" access="r"/>
+     <property name="yellow"  code="yell" description="Yellow color"  type="Color" access="r"/>
+     <property name="white"   code="whte" description="White color"   type="Color" access="r"/>
+   </class>
+   <value-type name="Color" code="cRGB">
+     <cocoa class="NSColor"/>
+   </value-type>
+  </suite>
+</dictionary> 
