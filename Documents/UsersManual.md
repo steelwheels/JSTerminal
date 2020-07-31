@@ -123,6 +123,20 @@ And you will get following outputs:
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 
+### Execute macOS application
+You can launch the macOS application by the command line.
+
+1. Launch by shell command:
+````
+ jsh> open -a /System/Application/TextEdit.app
+````
+2. Lanchy by JavaScript function 
+````
+ jsh% launch("/System/Application/TextEdit.app", null) :
+````
+
+About launch function, see [launch function](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Function/Launch.md) in [KiwiLibrary](https://github.com/steelwheels/KiwiScript/tree/master/KiwiLibrary).
+
 ### File package
 The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
 For more details, see [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md).
