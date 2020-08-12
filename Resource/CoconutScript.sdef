@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary title="CoconutScript">
-  <suite name="Preference Suite" code="CcPS" description="Preferencence Suites by CoconutScript">
+  <suite name="ApplicationSuite" code="SAPP" description="Application Suites">
    <class name="application" code="capp" description="The application's top-level scripting object.">
      <cocoa class="NSApplication"/>
      <!-- Terminal colors -->
