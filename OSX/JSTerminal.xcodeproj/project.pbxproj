@@ -19,10 +19,6 @@
 		0565FC8424264775008761C7 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC8224264766008761C7 /* keycode.js */; };
 		0565FC8524264775008761C7 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0565FC802426475D008761C7 /* colors.js */; };
 		056A5A9824AA17B600B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
-		056A5A9924AA17C000B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
-		056A5A9A24AA17C600B17622 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A5A9724AA17B600B17622 /* KiwiShell.framework */; };
-		056BD73A24D02A2D003D4549 /* CoconutScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056BD73924D02A2D003D4549 /* CoconutScript.framework */; };
-		056BD73B24D02A2D003D4549 /* CoconutScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 056BD73924D02A2D003D4549 /* CoconutScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		056BD74324D04CDF003D4549 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 056BD74124D04CCA003D4549 /* CoconutScript.sdef */; };
 		05703F7F2442BF1800FB2A9F /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05703F7E2442BF1700FB2A9F /* JSTerminal.help */; };
 		0590355B2481551D00EE26A7 /* hello.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0590355A2481551D00EE26A7 /* hello.jspkg */; };
@@ -37,7 +33,6 @@
 		05B50DA72476BCB400CC5338 /* curses.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B50DA52476BCA500CC5338 /* curses.js */; };
 		05F9E3B323DF2A6F00BA0765 /* KiwiLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3B023DF2A6F00BA0765 /* KiwiLibrary.framework */; };
 		05F9E3B423DF2A6F00BA0765 /* KiwiLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3B023DF2A6F00BA0765 /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05F9E3B723DF2A7F00BA0765 /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3B623DF2A7F00BA0765 /* KiwiShell.framework */; };
 		05F9E3B823DF2A7F00BA0765 /* KiwiShell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3B623DF2A7F00BA0765 /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F9E3BF23DF2AAF00BA0765 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */; };
 		05F9E3C023DF2AAF00BA0765 /* CoconutData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -84,7 +79,6 @@
 				05F9E3C023DF2AAF00BA0765 /* CoconutData.framework in Embed Frameworks */,
 				0504607024AA1CF10033B4BD /* KiwiComponents.framework in Embed Frameworks */,
 				05F9E3C223DF2AB100BA0765 /* CoconutShell.framework in Embed Frameworks */,
-				056BD73B24D02A2D003D4549 /* CoconutScript.framework in Embed Frameworks */,
 				05F9E3C623DF2AB400BA0765 /* KiwiEngine.framework in Embed Frameworks */,
 				05F9E3B423DF2A6F00BA0765 /* KiwiLibrary.framework in Embed Frameworks */,
 				05F9E3B823DF2A7F00BA0765 /* KiwiShell.framework in Embed Frameworks */,
@@ -104,7 +98,6 @@
 		0565FC8224264766008761C7 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		056A5A9724AA17B600B17622 /* KiwiShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiShell.framework; path = ../../../Library/Frameworks/KiwiShell.framework; sourceTree = "<group>"; };
 		056A5A9B24AA181E00B17622 /* KiwiComponents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiComponents.framework; path = ../../../Library/Frameworks/KiwiComponents.framework; sourceTree = "<group>"; };
-		056BD73924D02A2D003D4549 /* CoconutScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutScript.framework; path = ../../../Library/Frameworks/CoconutScript.framework; sourceTree = "<group>"; };
 		056BD74124D04CCA003D4549 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		0590355A2481551D00EE26A7 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hello.jspkg; sourceTree = "<group>"; };
@@ -133,15 +126,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				056A5A9824AA17B600B17622 /* KiwiShell.framework in Frameworks */,
-				056BD73A24D02A2D003D4549 /* CoconutScript.framework in Frameworks */,
 				05F9E3BF23DF2AAF00BA0765 /* CoconutData.framework in Frameworks */,
 				0504606F24AA1CF10033B4BD /* KiwiComponents.framework in Frameworks */,
 				05F9E3C323DF2AB300BA0765 /* KiwiControls.framework in Frameworks */,
-				056A5A9924AA17C000B17622 /* KiwiShell.framework in Frameworks */,
 				05F9E3C523DF2AB400BA0765 /* KiwiEngine.framework in Frameworks */,
 				05F9E3B323DF2A6F00BA0765 /* KiwiLibrary.framework in Frameworks */,
-				05F9E3B723DF2A7F00BA0765 /* KiwiShell.framework in Frameworks */,
-				056A5A9A24AA17C600B17622 /* KiwiShell.framework in Frameworks */,
 				05F9E3C123DF2AB100BA0765 /* CoconutShell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +210,6 @@
 		05F9E3AA23DF2A5700BA0765 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				056BD73924D02A2D003D4549 /* CoconutScript.framework */,
 				056A5A9B24AA181E00B17622 /* KiwiComponents.framework */,
 				056A5A9724AA17B600B17622 /* KiwiShell.framework */,
 				05F9E3BC23DF2AA200BA0765 /* CoconutData.framework */,
@@ -281,7 +269,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Steel Wheels Project";
 				TargetAttributes = {
 					05AF9FCC23DF287400E2B896 = {
