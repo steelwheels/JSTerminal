@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary title="CoconutScript">
-  <suite name="ApplicationSuite" code="SAPP" description="Application Suites">
+  <suite name="ApplicationSuite" code="????" description="Standard Suite">
+   <xi:include href="file://localhost/System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite/node()[not(self::command and ((@name = 'delete') or (@name = 'duplicate') or (@name = 'move')))])"/>
    <class name="application" code="capp" description="The application's top-level scripting object.">
      <cocoa class="NSApplication"/>
      <!-- Terminal colors -->

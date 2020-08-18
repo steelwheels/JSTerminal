@@ -12,7 +12,7 @@ import CoconutData
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: CNApplicationDelegate
+class AppDelegate: KCApplicationDelegate
 {
 	func applicationWillFinishLaunching(_ notification: Notification) {
 		UserDefaults.standard.applyDefaultSetting()
