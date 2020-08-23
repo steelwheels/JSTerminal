@@ -175,7 +175,7 @@ Preference.shell.prompt = function() {
 } ;
 ````
 
-### Cocoa Scripting
+### Control by AppleScript
 This application supports [Cocoa Scripting](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html#//apple_ref/doc/uid/TP40001982-BCICHGIE). This is sample script to control this application. For more precise, see [Cocoa Scripting Support](https://github.com/steelwheels/Coconut/blob/master/CoconutScript/Document/cocoa-scripting-support.md).
 ````
 tell application "JSTerminal"
@@ -183,6 +183,7 @@ tell application "JSTerminal"
   set background color to black
 end tell
 ````
+There are more sample scripts in [AppleScript](AppleScript.md).
 
 ## How to program
 ### Programming

@@ -1,0 +1,29 @@
+# AppleScript support
+This document contains sample AppleScript files to control [JSTerminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md) application.
+
+## Open and execute the script
+
+### Execute "*.js" file
+````
+m4_include(open-1.applescript)
+````
+
+### Execute "*.jspkg" file
+````
+m4_include(open-2.applescript)
+````
+
+## Change the terminal property
+Change the foreground color to green
+````
+m4_include(color-1.applescript)
+````
+
+Change the foreground and background color 
+````
+m4_include(color-2.applescript)
+````
+
+# References
+* [User's manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): User's manual of JSTerminal.
+
