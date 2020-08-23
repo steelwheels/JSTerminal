@@ -3,11 +3,12 @@
 <dictionary title="CoconutScript">
   <suite name="ApplicationSuite" code="????" description="Standard Suite">
    <xi:include href="file://localhost/System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite/node()[not(self::command and ((@name = 'delete') or (@name = 'duplicate') or (@name = 'move')))])"/>
+   <value-type name="Color" code="cRGB"/>
    <class name="application" code="capp" description="The application's top-level scripting object.">
      <cocoa class="NSApplication"/>
      <!-- Terminal colors -->
-     <property name="foreground color" code="fgcl" description="Foreground color of the terminal" type="Color" access="rw"/>
-     <property name="background color" code="bgcl" description="Background color of the terminal" type="Color" access="rw"/>
+     <property name="foreground color" code="ptxc" description="Text color of the terminal" type="Color" access="rw"/>
+     <property name="background color" code="pbcl" description="Background color of the terminal" type="Color" access="rw"/>
 
      <!-- Constants -->
      <property name="black"   code="blak" description="Black color"   type="Color" access="r"/>
@@ -16,10 +17,8 @@
      <property name="magenta" code="mgnt" description="Magenta color" type="Color" access="r"/>
      <property name="green"   code="gren" description="Green color"   type="Color" access="r"/>
      <property name="yellow"  code="yell" description="Yellow color"  type="Color" access="r"/>
+     <property name="cyan"    code="cyan" description="Cyan color"    type="Color" access="r"/>
      <property name="white"   code="whte" description="White color"   type="Color" access="r"/>
    </class>
-   <value-type name="Color" code="cRGB">
-     <cocoa class="NSColor"/>
-   </value-type>
   </suite>
 </dictionary> 

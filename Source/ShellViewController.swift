@@ -17,7 +17,7 @@ class ShellViewController: KCPlaneViewController
 {
 	public enum Mode {
 		case shell
-		case script(String)
+		case resource(KEResource)
 	}
 
 	private var	mMode:			Mode 			= .shell
@@ -66,8 +66,8 @@ class ShellViewController: KCPlaneViewController
 			switch mMode {
 			case .shell:
 				startShell(processManager: procmgr, externalCompiler: extcomp, in: termview)
-			case .script(let script):
-				startScript(processManager: procmgr, script: script, externalCompiler: extcomp, in: termview)
+			case .resource(let resource):
+				startScript(processManager: procmgr, resource: resource, externalCompiler: extcomp, in: termview)
 			}
 		}
 	}
@@ -94,7 +94,7 @@ class ShellViewController: KCPlaneViewController
 		mShellThreadObject = shell
 	}
 
-	private func startScript(processManager procmgr: CNProcessManager, script scr: String, externalCompiler extcomp: KLExternalCompiler?, in terminal: KCTerminalView) {
+	private func startScript(processManager procmgr: CNProcessManager, resource res: KEResource, externalCompiler extcomp: KLExternalCompiler?, in terminal: KCTerminalView) {
 		/* Allocate script thread */
 		let environment = CNEnvironment()
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
@@ -105,7 +105,7 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let thread = KHScriptThreadObject(sourceFile: .script(scr), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, externalCompiler: extcomp, environment: environment, config: conf)
+		let thread = KHScriptThreadObject(sourceFile: .resource(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, externalCompiler: extcomp, environment: environment, config: conf)
 		thread.start(argument: .nullValue)
 
 		mScriptThreadObject = thread

@@ -6,11 +6,13 @@
  */
 
 import KiwiControls
+import KiwiEngine
+import CoconutData
 import Cocoa
 
 class Document: KCDocument
 {
-	private var mScript: String? = nil
+	private var mResource: KEResource? = nil
 
 	override init() {
 	    super.init()
@@ -28,9 +30,9 @@ class Document: KCDocument
 		self.addWindowController(windowController)
 
 		/* Set script*/
-		if let scr = mScript {
+		if let res = mResource {
 			if let viewctrl = windowController.contentViewController as? ShellViewController {
-				viewctrl.set(mode: .script(scr))
+				viewctrl.set(mode: .resource(res))
 			}
 		}
 	}
@@ -41,14 +43,31 @@ class Document: KCDocument
 		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 	}
 
-	override func read(from data: Data, ofType typeName: String) throws {
-		// Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
-		// Alternatively, you could remove this method and override read(from:ofType:) instead.
-		// If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-		if let str = String(data: data, encoding: .utf8) {
-			mScript = str
+	override func read(from url: URL, ofType typeName: String) throws {
+		switch KEResource.allocateResource(from: url) {
+		case .ok(let res):
+			mResource = res
+		case .error(let err):
+			var diddisplayed = false
+			let controllers  = self.windowControllers
+			if controllers.count > 0 {
+				if let vcont = controllers[0].contentViewController {
+					let _ = KCAlert.runModal(error: err, in: vcont)
+					diddisplayed = true
+				}
+			}
+			if !diddisplayed {
+				NSLog("\(#function): [Error] \(err.toString())")
+			}
+		}
+	}
+
+	override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
+		if let fname = fileWrapper.filename {
+			let url = URL(fileURLWithPath: fname)
+			try self.read(from: url, ofType: typeName)
 		} else {
-			throw NSError.fileError(message: "Failed to read script file")
+			NSLog("No file name: \(fileWrapper.description)")
 		}
 	}
 }

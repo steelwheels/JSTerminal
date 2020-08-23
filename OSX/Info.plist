@@ -15,14 +15,12 @@
 			<string></string>
 			<key>CFBundleTypeName</key>
 			<string>DocumentType</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>????</string>
-			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).Document</string>
 		</dict>
@@ -37,8 +35,10 @@
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
 			<key>NSDocumentClass</key>
-			<string>Document</string>
+			<string>$(PRODUCT_MODULE_NAME).Document</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -51,8 +51,10 @@
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
 			<key>NSDocumentClass</key>
-			<string>Document</string>
+			<string>$(PRODUCT_MODULE_NAME).Document</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -93,5 +95,55 @@
 	<true/>
 	<key>OSAScriptingDefinition</key>
 	<string>CoconutScript.sdef</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+				<string>public.composite-content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>JavaScript Package</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.github.steelwheels.jstools.script-package</string>
+			<key>UTTypeReferenceURL</key>
+			<string>https://github.com/steelwheels/JSTools/blob/master/Document/UTI-jspkg.txt</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array/>
+				<key>public.filename-extension</key>
+				<array>
+					<string>jspkg</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+				<string>public.composite-content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>JavaScript Package</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.github.steelwheels.jstools.script-package</string>
+			<key>UTTypeReferenceURL</key>
+			<string>https://github.com/steelwheels/JSTools/blob/master/Document/UTI-jspkg.txt</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<array/>
+				<key>public.filename-extension</key>
+				<array>
+					<string>jspkg</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
