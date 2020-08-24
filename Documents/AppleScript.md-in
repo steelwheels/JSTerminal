@@ -1,6 +1,12 @@
 # AppleScript support
 This document contains sample AppleScript files to control [JSTerminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md) application.
 
+## Launch the application
+### Activate the window
+````
+m4_include(activate.applescript)
+````
+
 ## Open and execute the script
 
 ### Execute "*.js" file
@@ -22,6 +28,11 @@ m4_include(color-1.applescript)
 Change the foreground and background color 
 ````
 m4_include(color-2.applescript)
+````
+
+### Quit the application
+````
+m4_include(quit.applescript)
 ````
 
 # References

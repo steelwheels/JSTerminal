@@ -183,7 +183,7 @@ tell application "JSTerminal"
   set background color to black
 end tell
 ````
-There are more sample scripts in [AppleScript](AppleScript.md).
+There are more sample scripts in [sample AppleScript scripts](AppleScript.md).
 
 ## How to program
 ### Programming
