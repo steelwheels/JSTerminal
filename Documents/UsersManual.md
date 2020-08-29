@@ -1,10 +1,14 @@
 # JSTerminal: Terminal application for JavaScript shell
 
 ## Introduction
-The *JSTerminal* is a terminal application to execute JavaScript shell.
-The JavaScript shell (named *jsh*) is extended JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
+The *JSTerminal* is a terminal application.
+This application has following features:
+* _JavaScriptable_: You can write shell script by JavaScript.
+* _Controllable_: Support Cocoa Scripting to be controlled by AppleScript
 
-This application is open source software.
+The JavaScript shell (named *jsh*) is supported. It extend JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
+
+This product is open source software.
 If you have any question or suggestions please send e-mail to [Steel Wheels Project](mailto:steel.wheels.project@gmail.com) or write issue to the [Github repository](https://github.com/steelwheels/JSTerminal).
 
 This is a sample screen short of this application.
@@ -203,7 +207,7 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |1.1	|2020/05/28	|Update to support [Curses Class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md). |
 |1.2	|2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
 |1.3	|2020/07/13 |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
-|1.4	|Not released yet |Support Cocoa Scripting to be controlled by AppleScript. |
+|1.4	|2020/08/29 |Support AppleEvents to be controlled by AppleScript |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.

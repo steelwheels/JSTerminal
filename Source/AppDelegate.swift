@@ -26,7 +26,7 @@ class AppDelegate: KCApplicationDelegate
 		if let _ = sender as? NSMenuItem {
 			/* Update log level to output log */
 			let syspref = CNPreference.shared.systemPreference
-			syspref.logLevel = .flow
+			syspref.logLevel = .debug
 		}
 	}
 }
