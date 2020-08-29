@@ -3,7 +3,9 @@
 <dictionary title="CoconutScript">
   <suite name="ApplicationSuite" code="????" description="Standard Suite">
    <xi:include href="file://localhost/System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite/node()[not(self::command and ((@name = 'delete') or (@name = 'duplicate') or (@name = 'move')))])"/>
-   <value-type name="Color" code="cRGB"/>
+   <value-type name="Color" code="cRGB">
+	   <cocoa class="NSColor"/>
+   </value-type>
    <class name="application" code="capp" description="The application's top-level scripting object.">
      <cocoa class="NSApplication"/>
      <!-- Terminal colors -->
