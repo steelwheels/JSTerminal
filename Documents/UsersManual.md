@@ -18,6 +18,8 @@ In the following section, this document describes:
 * [Licence](#License): The license information
 * [How to use](#How): Step by step examination of the introduction to use this software
 * [Programming](#Programming): Documents for programming
+* [Debugging](#Debugging): How to debug on this terminal.
+* [Misc](#Misc): Miscellaneous information such as desktop menu
 * [Bug and restrictions](#Bug): Known problems
 * [Related documents](#Related): Links for references
 
@@ -189,11 +191,16 @@ end tell
 ````
 There are more sample scripts in [sample AppleScript scripts](AppleScript.md).
 
-## How to program
-### Programming
+## Programming
 Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) to know how to describe the shell script by JavaScript.
 
-### Details
+## Debugging
+### Log Window
+![Log Window](./Images/log-window.png)
+The log window is used to output debug log of this application.
+The window is shown the the [Log level](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Enum/LogLevel.md) is higher than `nolog`. You can change the log level at [preference window](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Preference.md) or [Preference variable](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Preference.md).
+
+## Misc
 For more details (except shell script function), See the following documents.
 * [Desktop menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md): The specification of the desktop menu
 
