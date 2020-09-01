@@ -215,6 +215,7 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |1.2	|2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
 |1.3	|2020/07/13 |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
 |1.4	|2020/08/29 |Support AppleEvents to be controlled by AppleScript |
+|1.5	|Not released|Support log window |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
