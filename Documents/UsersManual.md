@@ -191,6 +191,24 @@ end tell
 ````
 There are more sample scripts in [sample AppleScript scripts](AppleScript.md).
 
+### Sending AppleEvents to control other applications
+This application supports sending AppleEvents to control specific applications such as TextEdit.
+This is sample code to control TextEdit application.
+You can launch, activate and make new document TextEdit.app.
+````
+function main(args)
+{
+    let textedit = launch("/System/Applications/TextEdit.app") ;
+    if(textedit.activate()){
+    	if(textedit.makeNewDocument()) {
+			console.print("New document on TextEdit.app\n") ;
+    	} 
+    }
+    return 0 ;
+}
+````
+Fore more precise, see [Application class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Application.md) in [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md).
+
 ## Programming
 Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) to know how to describe the shell script by JavaScript.
 
@@ -215,7 +233,7 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |1.2	|2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
 |1.3	|2020/07/13 |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
 |1.4	|2020/08/29 |Support AppleEvents to be controlled by AppleScript |
-|1.5	|Not released|Support log window |
+|1.5	|Not released|Support log window, sending AppleEvent to some specific applications |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
