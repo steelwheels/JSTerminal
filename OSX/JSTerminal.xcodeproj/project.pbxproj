@@ -101,7 +101,6 @@
 		056BD74124D04CCA003D4549 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05703F7E2442BF1700FB2A9F /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		0590355A2481551D00EE26A7 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hello.jspkg; sourceTree = "<group>"; };
-		0596206524D0742600C6CE4A /* JSTerminalRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTerminalRelease.entitlements; sourceTree = "<group>"; };
 		059A94B823E1DB52007846FB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05AF9FCD23DF287400E2B896 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AF9FD023DF287400E2B896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,7 +184,6 @@
 		05AF9FCF23DF287400E2B896 /* JSTerminal */ = {
 			isa = PBXGroup;
 			children = (
-				0596206524D0742600C6CE4A /* JSTerminalRelease.entitlements */,
 				05AF9FD623DF287900E2B896 /* Assets.xcassets */,
 				05AF9FD823DF287900E2B896 /* Main.storyboard */,
 				05390BF623EE359F0066631F /* Preference.storyboard */,
@@ -509,7 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = JSTerminal/JSTerminalRelease.entitlements;
+				CODE_SIGN_ENTITLEMENTS = JSTerminal/JSTerminal.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
