@@ -3,10 +3,10 @@
 ## Introduction
 The *JSTerminal* is a terminal application.
 This application has following features:
-* _JavaScriptable_: You can write shell script by JavaScript.
-* _Controllable_: Support Cocoa Scripting to be controlled by AppleScript
+* _JavaScriptable_: You can write shell script by JavaScript.　The JavaScript shell (named *jsh*) is supported. It extend JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
+* _Controllable_: Control the other specific applications by AppleEvens and can be controlled by AppleScript. Now the following applications can be controlled by this software: [TextEdit](AppleEvent/TextEdit.md). 
 
-The JavaScript shell (named *jsh*) is supported. It extend JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
+
 
 This product is open source software.
 If you have any question or suggestions please send e-mail to [Steel Wheels Project](mailto:steel.wheels.project@gmail.com) or write issue to the [Github repository](https://github.com/steelwheels/JSTerminal).
@@ -191,8 +191,8 @@ end tell
 ````
 There are more sample scripts in [sample AppleScript scripts](AppleScript.md).
 
-### Sending AppleEvents to control other applications
-This application supports sending AppleEvents to control specific applications such as TextEdit.
+### Control the other specific applications
+This application supports sending AppleEvents to control specific applications: [TextEdit](AppleEvent/TextEdit.md).
 This is sample code to control TextEdit application.
 You can launch, activate and make new document TextEdit.app.
 ````

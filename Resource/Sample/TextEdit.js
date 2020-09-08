@@ -9,7 +9,33 @@ function main(args)
         if(textedit.activate()){
             console.print("try to make new document\n")
             if(textedit.makeNewDocument()) {
-                console.print("done\n") ;
+                if(textedit.setContentOfFrontWindow("Hello from JSTerminal\n")){
+                    let str = textedit.contentOfFrontWindow() ;
+                    if(str != null) {
+                        console.print("CONTENT OF FRONT WINDOW: " + str + "\n") ;
+                        if(textedit.setNameOfFrontWindow("new-name")) {
+                            let str = textedit.nameOfFrontWindow() ;
+                            if(str != null) {
+                                console.print("Name of front window: " + str + "\n") ;
+                                let dirurl  = FileManager.homeDirectory() ;
+                                let fileurl = dirurl.appendingPathComponent("new.txt") ;
+                                if(textedit.saveToFile(fileurl)) {
+                                    console.print("done\n") ;
+                                } else {
+                                    console.print("Failed to save the file " + fileurl.path + "\n") ;
+                                }
+                            } else {
+                                console.print("Failed to get name of front window") ;
+                            }
+                        } else {
+                            console.print("Failed to set name of front window") ;
+                        }
+                    } else {
+                        console.print("Failed to get content\n") ;
+                    }
+                } else {
+                    console.print("Failed to set content")
+                }
             } else {
                 console.print("Failed to make new document\n") ;
             }
