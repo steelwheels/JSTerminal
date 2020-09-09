@@ -7,6 +7,14 @@ function main(args)
     if(textedit != null){
         console.print("try to activate\n") ;
         if(textedit.activate()){
+            let furl = FileManager.homeDirectory().appendingPathComponent("/Documents/Sample/hello.js") ;
+            console.print("try to open document:" + furl.path + "\n") ;
+            if(textedit.open(furl)) {
+                console.log("Open document ... done\n") ;
+            } else {
+                console.log("Failed to open document\n") ;
+            }
+
             console.print("try to make new document\n")
             if(textedit.makeNewDocument()) {
                 if(textedit.setContentOfFrontWindow("Hello from JSTerminal\n")){
@@ -19,7 +27,7 @@ function main(args)
                                 console.print("Name of front window: " + str + "\n") ;
                                 let dirurl  = FileManager.homeDirectory() ;
                                 let fileurl = dirurl.appendingPathComponent("new.txt") ;
-                                if(textedit.saveToFile(fileurl)) {
+                                if(textedit.save(fileurl)) {
                                     console.print("done\n") ;
                                 } else {
                                     console.print("Failed to save the file " + fileurl.path + "\n") ;

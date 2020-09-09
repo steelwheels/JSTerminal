@@ -15,9 +15,16 @@ let result = textedit.makeNewDocument() ;
 ```` 
 The `result` has boolean value. When the new document is created without any errors, this value will be `true`.
 
+### Open the document
+````
+let result = textedit.open(url) ;
+````
+The parameter `url` is object of [URL class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/URL.md). It must present the location of the file to load the document into the new window.
+The `result` has boolean value. When the file is opened without any errors, this value will be `true`.
+
 ### Save the document
 ````
-let result = textedit.saveToFile(url) ;
+let result = textedit.save(url) ;
 ````
 The parameter `url` is object of [URL class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/URL.md). It must present the location of the file to save the content of the document in the front window.
 The `result` has boolean value. When the content is saved without any errors, this value will be `true`.
