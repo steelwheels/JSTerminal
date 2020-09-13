@@ -18,10 +18,16 @@
 		<array>
 			<string>com.apple.TextEdit</string>
 		</array>
+		<key>com.apple.mail</key>
+		<array>
+			<string>com.apple.mail</string>
+			<string>com.apple.mail.compose</string>
+		</array>
 	</dict>
 	<key>com.apple.security.temporary-exception.apple-events</key>
 	<array>
 		<string>com.apple.TextEdit</string>
+		<string>com.apple.mail</string>
 	</array>
 </dict>
 </plist>

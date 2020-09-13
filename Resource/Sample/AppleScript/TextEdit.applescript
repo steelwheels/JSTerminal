@@ -1,8 +1,8 @@
 -- TextEdit.applescript
-tell application "JSTerminal"
-	-- activate
+tell application "TextEdit"
 	activate
-	open POSIX file "/Users/Tomoo/tmp_dir/a.js"
+	open POSIX file "/Users/Tomoo/Project/JSTerminal/Resource/Sample/hello.js"
+	close front window
 	-- make new document
 	-- set text of front document to "Hello, world !!"
 	-- set name of front document to "a"

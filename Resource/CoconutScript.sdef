@@ -25,12 +25,6 @@
      <property name="yellow"  code="yell" description="Yellow color"  type="Color" access="r"/>
      <property name="cyan"    code="cyan" description="Cyan color"    type="Color" access="r"/>
      <property name="white"   code="whte" description="White color"   type="Color" access="r"/>
-
-     <command name="save" code="coresave" description="Save an object.">
-	     <direct-parameter type="specifier" description="the object for the command" />
-	     <parameter name="as" code="fltp" type="text" optional="yes" description="The file type in which to save the data." />
-	     <parameter name="in" code="kfil" type="alias" optional="yes" description="The file in which to save the object." />
-     </command>
    </class>
   </suite>
 </dictionary> 
