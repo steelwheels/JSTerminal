@@ -1,0 +1,736 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
+		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770EB2518788C004FCD84 /* KiwiLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */; };
+		05B770EC2518788C004FCD84 /* KiwiLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770ED2518788C004FCD84 /* CoconutData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E22518788C004FCD84 /* CoconutData.xcframework */; };
+		05B770EE2518788C004FCD84 /* CoconutData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E22518788C004FCD84 /* CoconutData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770EF2518788C004FCD84 /* KiwiShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E32518788C004FCD84 /* KiwiShell.xcframework */; };
+		05B770F02518788C004FCD84 /* KiwiShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E32518788C004FCD84 /* KiwiShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770F12518788C004FCD84 /* Cobalt.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E42518788C004FCD84 /* Cobalt.xcframework */; };
+		05B770F22518788C004FCD84 /* Cobalt.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E42518788C004FCD84 /* Cobalt.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770F32518788C004FCD84 /* CoconutDatabase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E52518788C004FCD84 /* CoconutDatabase.xcframework */; };
+		05B770F42518788C004FCD84 /* CoconutDatabase.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E52518788C004FCD84 /* CoconutDatabase.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770F52518788C004FCD84 /* KiwiControls.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E62518788C004FCD84 /* KiwiControls.xcframework */; };
+		05B770F62518788C004FCD84 /* KiwiControls.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E62518788C004FCD84 /* KiwiControls.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770F72518788C004FCD84 /* KiwiEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E72518788C004FCD84 /* KiwiEngine.xcframework */; };
+		05B770F82518788C004FCD84 /* KiwiEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E72518788C004FCD84 /* KiwiEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770F92518788C004FCD84 /* KiwiComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E82518788C004FCD84 /* KiwiComponents.xcframework */; };
+		05B770FA2518788C004FCD84 /* KiwiComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E82518788C004FCD84 /* KiwiComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B770FC251878B0004FCD84 /* Preference.storyboard */; };
+		05B7710E25187932004FCD84 /* hello_color.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710125187931004FCD84 /* hello_color.js */; };
+		05B7710F25187932004FCD84 /* loglevel.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710225187931004FCD84 /* loglevel.js */; };
+		05B7711025187932004FCD84 /* hello.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710325187931004FCD84 /* hello.jspkg */; };
+		05B7711125187932004FCD84 /* curses2.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710425187931004FCD84 /* curses2.jspkg */; };
+		05B7711225187932004FCD84 /* colors.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710525187931004FCD84 /* colors.js */; };
+		05B7711325187932004FCD84 /* getl.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710625187931004FCD84 /* getl.js */; };
+		05B7711425187932004FCD84 /* colorbar.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710725187931004FCD84 /* colorbar.js */; };
+		05B7711525187932004FCD84 /* Safari.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710825187931004FCD84 /* Safari.js */; };
+		05B7711625187932004FCD84 /* breakout.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710925187931004FCD84 /* breakout.jspkg */; };
+		05B7711725187932004FCD84 /* TextEdit.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710A25187931004FCD84 /* TextEdit.js */; };
+		05B7711825187932004FCD84 /* keycode.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710B25187931004FCD84 /* keycode.js */; };
+		05B7711925187932004FCD84 /* curses.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710C25187931004FCD84 /* curses.js */; };
+		05B7711A25187932004FCD84 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710D25187931004FCD84 /* hello.js */; };
+		05B7711C25187949004FCD84 /* alert.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7711B25187949004FCD84 /* alert.js */; };
+		05B7711E25187972004FCD84 /* alert.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7711B25187949004FCD84 /* alert.js */; };
+		05B7711F25187972004FCD84 /* breakout.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710925187931004FCD84 /* breakout.jspkg */; };
+		05B7712025187972004FCD84 /* colorbar.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710725187931004FCD84 /* colorbar.js */; };
+		05B7712125187972004FCD84 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710525187931004FCD84 /* colors.js */; };
+		05B7712225187972004FCD84 /* curses.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710C25187931004FCD84 /* curses.js */; };
+		05B7712325187972004FCD84 /* curses2.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710425187931004FCD84 /* curses2.jspkg */; };
+		05B7712425187972004FCD84 /* getl.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710625187931004FCD84 /* getl.js */; };
+		05B7712525187972004FCD84 /* hello_color.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710125187931004FCD84 /* hello_color.js */; };
+		05B7712625187972004FCD84 /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710D25187931004FCD84 /* hello.js */; };
+		05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710325187931004FCD84 /* hello.jspkg */; };
+		05B7712825187972004FCD84 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710B25187931004FCD84 /* keycode.js */; };
+		05B7712925187972004FCD84 /* loglevel.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710225187931004FCD84 /* loglevel.js */; };
+		05B7712A25187972004FCD84 /* Safari.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710825187931004FCD84 /* Safari.js */; };
+		05B7712B25187972004FCD84 /* TextEdit.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710A25187931004FCD84 /* TextEdit.js */; };
+		05B7712F251879BF004FCD84 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712C251879BF004FCD84 /* Credits.rtf */; };
+		05B77130251879BF004FCD84 /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712D251879BF004FCD84 /* JSTerminal.help */; };
+		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
+		05F7AE47251874820077F527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE46251874820077F527 /* AppDelegate.swift */; };
+		05F7AE49251874820077F527 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE48251874820077F527 /* ShellViewController.swift */; };
+		05F7AE4B251874820077F527 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE4A251874820077F527 /* Document.swift */; };
+		05F7AE4D251874830077F527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4C251874830077F527 /* Assets.xcassets */; };
+		05F7AE50251874830077F527 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4E251874830077F527 /* Main.storyboard */; };
+		05F7AE5A251877820077F527 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE59251877820077F527 /* PreferenceViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05D2561725187B8300431D77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05F7AE39251874670077F527 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05F7AE42251874820077F527;
+			remoteInfo = JSTerminal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05B770FB2518788C004FCD84 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				05B770F42518788C004FCD84 /* CoconutDatabase.xcframework in Embed Frameworks */,
+				05B770F02518788C004FCD84 /* KiwiShell.xcframework in Embed Frameworks */,
+				05B770F62518788C004FCD84 /* KiwiControls.xcframework in Embed Frameworks */,
+				05B770FA2518788C004FCD84 /* KiwiComponents.xcframework in Embed Frameworks */,
+				05B770F22518788C004FCD84 /* Cobalt.xcframework in Embed Frameworks */,
+				05B770EE2518788C004FCD84 /* CoconutData.xcframework in Embed Frameworks */,
+				05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */,
+				05B770EC2518788C004FCD84 /* KiwiLibrary.xcframework in Embed Frameworks */,
+				05B770F82518788C004FCD84 /* KiwiEngine.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05B7711D25187959004FCD84 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Documents/Sample;
+			dstSubfolderSpec = 7;
+			files = (
+				05B7711E25187972004FCD84 /* alert.js in CopyFiles */,
+				05B7711F25187972004FCD84 /* breakout.jspkg in CopyFiles */,
+				05B7712025187972004FCD84 /* colorbar.js in CopyFiles */,
+				05B7712125187972004FCD84 /* colors.js in CopyFiles */,
+				05B7712225187972004FCD84 /* curses.js in CopyFiles */,
+				05B7712325187972004FCD84 /* curses2.jspkg in CopyFiles */,
+				05B7712425187972004FCD84 /* getl.js in CopyFiles */,
+				05B7712525187972004FCD84 /* hello_color.js in CopyFiles */,
+				05B7712625187972004FCD84 /* hello.js in CopyFiles */,
+				05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */,
+				05B7712825187972004FCD84 /* keycode.js in CopyFiles */,
+				05B7712925187972004FCD84 /* loglevel.js in CopyFiles */,
+				05B7712A25187972004FCD84 /* Safari.js in CopyFiles */,
+				05B7712B25187972004FCD84 /* TextEdit.js in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
+		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
+		05B770E22518788C004FCD84 /* CoconutData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutData.xcframework; path = ../../../Library/Frameworks/CoconutData.xcframework; sourceTree = "<group>"; };
+		05B770E32518788C004FCD84 /* KiwiShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiShell.xcframework; path = ../../../Library/Frameworks/KiwiShell.xcframework; sourceTree = "<group>"; };
+		05B770E42518788C004FCD84 /* Cobalt.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Cobalt.xcframework; path = ../../../Library/Frameworks/Cobalt.xcframework; sourceTree = "<group>"; };
+		05B770E52518788C004FCD84 /* CoconutDatabase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutDatabase.xcframework; path = ../../../Library/Frameworks/CoconutDatabase.xcframework; sourceTree = "<group>"; };
+		05B770E62518788C004FCD84 /* KiwiControls.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiControls.xcframework; path = ../../../Library/Frameworks/KiwiControls.xcframework; sourceTree = "<group>"; };
+		05B770E72518788C004FCD84 /* KiwiEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiEngine.xcframework; path = ../../../Library/Frameworks/KiwiEngine.xcframework; sourceTree = "<group>"; };
+		05B770E82518788C004FCD84 /* KiwiComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiComponents.xcframework; path = ../../../Library/Frameworks/KiwiComponents.xcframework; sourceTree = "<group>"; };
+		05B770FD251878B0004FCD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preference.storyboard; sourceTree = "<group>"; };
+		05B7710125187931004FCD84 /* hello_color.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello_color.js; sourceTree = "<group>"; };
+		05B7710225187931004FCD84 /* loglevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = loglevel.js; sourceTree = "<group>"; };
+		05B7710325187931004FCD84 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = hello.jspkg; sourceTree = "<group>"; };
+		05B7710425187931004FCD84 /* curses2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = curses2.jspkg; sourceTree = "<group>"; };
+		05B7710525187931004FCD84 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
+		05B7710625187931004FCD84 /* getl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = getl.js; sourceTree = "<group>"; };
+		05B7710725187931004FCD84 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
+		05B7710825187931004FCD84 /* Safari.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Safari.js; sourceTree = "<group>"; };
+		05B7710925187931004FCD84 /* breakout.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = breakout.jspkg; sourceTree = "<group>"; };
+		05B7710A25187931004FCD84 /* TextEdit.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TextEdit.js; sourceTree = "<group>"; };
+		05B7710B25187931004FCD84 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
+		05B7710C25187931004FCD84 /* curses.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = curses.js; sourceTree = "<group>"; };
+		05B7710D25187931004FCD84 /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
+		05B7711B25187949004FCD84 /* alert.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = alert.js; sourceTree = "<group>"; };
+		05B7712C251879BF004FCD84 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		05B7712D251879BF004FCD84 /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
+		05B7712E251879BF004FCD84 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
+		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F7AE46251874820077F527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05F7AE48251874820077F527 /* ShellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellViewController.swift; sourceTree = "<group>"; };
+		05F7AE4A251874820077F527 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		05F7AE4C251874830077F527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05F7AE4F251874830077F527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05F7AE51251874830077F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05F7AE52251874830077F527 /* JSTerminal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTerminal.entitlements; sourceTree = "<group>"; };
+		05F7AE59251877820077F527 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05F7AE40251874820077F527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B770F32518788C004FCD84 /* CoconutDatabase.xcframework in Frameworks */,
+				05B770EF2518788C004FCD84 /* KiwiShell.xcframework in Frameworks */,
+				05B770F52518788C004FCD84 /* KiwiControls.xcframework in Frameworks */,
+				05B770F92518788C004FCD84 /* KiwiComponents.xcframework in Frameworks */,
+				05B770F12518788C004FCD84 /* Cobalt.xcframework in Frameworks */,
+				05B770ED2518788C004FCD84 /* CoconutData.xcframework in Frameworks */,
+				05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */,
+				05B770EB2518788C004FCD84 /* KiwiLibrary.xcframework in Frameworks */,
+				05B770F72518788C004FCD84 /* KiwiEngine.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05B770DF2518788C004FCD84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05B770E42518788C004FCD84 /* Cobalt.xcframework */,
+				05B770E22518788C004FCD84 /* CoconutData.xcframework */,
+				05B770E52518788C004FCD84 /* CoconutDatabase.xcframework */,
+				05B770E02518788C004FCD84 /* CoconutShell.xcframework */,
+				05B770E82518788C004FCD84 /* KiwiComponents.xcframework */,
+				05B770E62518788C004FCD84 /* KiwiControls.xcframework */,
+				05B770E72518788C004FCD84 /* KiwiEngine.xcframework */,
+				05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */,
+				05B770E32518788C004FCD84 /* KiwiShell.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05B770FF25187903004FCD84 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				05B7712E251879BF004FCD84 /* CoconutScript.sdef */,
+				05B7712C251879BF004FCD84 /* Credits.rtf */,
+				05B7712D251879BF004FCD84 /* JSTerminal.help */,
+				05B7710025187916004FCD84 /* Sample */,
+			);
+			name = Resource;
+			path = ../Resource;
+			sourceTree = "<group>";
+		};
+		05B7710025187916004FCD84 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				05B7711B25187949004FCD84 /* alert.js */,
+				05B7710925187931004FCD84 /* breakout.jspkg */,
+				05B7710725187931004FCD84 /* colorbar.js */,
+				05B7710525187931004FCD84 /* colors.js */,
+				05B7710C25187931004FCD84 /* curses.js */,
+				05B7710425187931004FCD84 /* curses2.jspkg */,
+				05B7710625187931004FCD84 /* getl.js */,
+				05B7710125187931004FCD84 /* hello_color.js */,
+				05B7710D25187931004FCD84 /* hello.js */,
+				05B7710325187931004FCD84 /* hello.jspkg */,
+				05B7710B25187931004FCD84 /* keycode.js */,
+				05B7710225187931004FCD84 /* loglevel.js */,
+				05B7710825187931004FCD84 /* Safari.js */,
+				05B7710A25187931004FCD84 /* TextEdit.js */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		05F7AE38251874670077F527 = {
+			isa = PBXGroup;
+			children = (
+				05F7AE572518748C0077F527 /* Source */,
+				05F7AE45251874820077F527 /* JSTerminal */,
+				05B770FF25187903004FCD84 /* Resource */,
+				05F7AE44251874820077F527 /* Products */,
+				05B770DF2518788C004FCD84 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		05F7AE44251874820077F527 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05F7AE43251874820077F527 /* JSTerminal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05F7AE45251874820077F527 /* JSTerminal */ = {
+			isa = PBXGroup;
+			children = (
+				05F7AE4C251874830077F527 /* Assets.xcassets */,
+				05F7AE4E251874830077F527 /* Main.storyboard */,
+				05B770FC251878B0004FCD84 /* Preference.storyboard */,
+				05F7AE51251874830077F527 /* Info.plist */,
+				05F7AE52251874830077F527 /* JSTerminal.entitlements */,
+			);
+			path = JSTerminal;
+			sourceTree = "<group>";
+		};
+		05F7AE572518748C0077F527 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				05F7AE46251874820077F527 /* AppDelegate.swift */,
+				05F7AE48251874820077F527 /* ShellViewController.swift */,
+				05F7AE4A251874820077F527 /* Document.swift */,
+				05F7AE59251877820077F527 /* PreferenceViewController.swift */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		05D2561325187B7C00431D77 /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 05D2561625187B7C00431D77 /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05D2561825187B8300431D77 /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		05F7AE42251874820077F527 /* JSTerminal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05F7AE53251874830077F527 /* Build configuration list for PBXNativeTarget "JSTerminal" */;
+			buildPhases = (
+				05F7AE3F251874820077F527 /* Sources */,
+				05F7AE40251874820077F527 /* Frameworks */,
+				05F7AE41251874820077F527 /* Resources */,
+				05B770FB2518788C004FCD84 /* Embed Frameworks */,
+				05B7711D25187959004FCD84 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSTerminal;
+			productName = JSTerminal;
+			productReference = 05F7AE43251874820077F527 /* JSTerminal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05F7AE39251874670077F527 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					05D2561325187B7C00431D77 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					05F7AE42251874820077F527 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 05F7AE3C251874670077F527 /* Build configuration list for PBXProject "JSTerminal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05F7AE38251874670077F527;
+			productRefGroup = 05F7AE44251874820077F527 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05F7AE42251874820077F527 /* JSTerminal */,
+				05D2561325187B7C00431D77 /* Install */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05F7AE41251874820077F527 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B77130251879BF004FCD84 /* JSTerminal.help in Resources */,
+				05F7AE4D251874830077F527 /* Assets.xcassets in Resources */,
+				05B7712F251879BF004FCD84 /* Credits.rtf in Resources */,
+				05F7AE50251874830077F527 /* Main.storyboard in Resources */,
+				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
+				05B7710E25187932004FCD84 /* hello_color.js in Resources */,
+				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
+				05B7711725187932004FCD84 /* TextEdit.js in Resources */,
+				05B7711625187932004FCD84 /* breakout.jspkg in Resources */,
+				05B7711C25187949004FCD84 /* alert.js in Resources */,
+				05B7711025187932004FCD84 /* hello.jspkg in Resources */,
+				05B7711A25187932004FCD84 /* hello.js in Resources */,
+				05B7710F25187932004FCD84 /* loglevel.js in Resources */,
+				05B7711425187932004FCD84 /* colorbar.js in Resources */,
+				05B7711925187932004FCD84 /* curses.js in Resources */,
+				05B7711825187932004FCD84 /* keycode.js in Resources */,
+				05B7711525187932004FCD84 /* Safari.js in Resources */,
+				05B7711325187932004FCD84 /* getl.js in Resources */,
+				05B7711225187932004FCD84 /* colors.js in Resources */,
+				05B7711125187932004FCD84 /* curses2.jspkg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05F7AE3F251874820077F527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F7AE49251874820077F527 /* ShellViewController.swift in Sources */,
+				05F7AE47251874820077F527 /* AppDelegate.swift in Sources */,
+				05F7AE4B251874820077F527 /* Document.swift in Sources */,
+				05F7AE5A251877820077F527 /* PreferenceViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05D2561825187B8300431D77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05F7AE42251874820077F527 /* JSTerminal */;
+			targetProxy = 05D2561725187B8300431D77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05B770FC251878B0004FCD84 /* Preference.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05B770FD251878B0004FCD84 /* Base */,
+			);
+			name = Preference.storyboard;
+			sourceTree = "<group>";
+		};
+		05F7AE4E251874830077F527 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05F7AE4F251874830077F527 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05D2561425187B7C00431D77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05D2561525187B7C00431D77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05F7AE3D251874670077F527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		05F7AE3E251874670077F527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		05F7AE54251874830077F527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = JSTerminal/JSTerminal.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 15;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = JSTerminal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSTerminal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		05F7AE55251874830077F527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = JSTerminal/JSTerminal.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 15;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = JSTerminal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSTerminal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05D2561625187B7C00431D77 /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D2561425187B7C00431D77 /* Debug */,
+				05D2561525187B7C00431D77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05F7AE3C251874670077F527 /* Build configuration list for PBXProject "JSTerminal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F7AE3D251874670077F527 /* Debug */,
+				05F7AE3E251874670077F527 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05F7AE53251874830077F527 /* Build configuration list for PBXNativeTarget "JSTerminal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F7AE54251874830077F527 /* Debug */,
+				05F7AE55251874830077F527 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05F7AE39251874670077F527 /* Project object */;
+}
