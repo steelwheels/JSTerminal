@@ -51,7 +51,7 @@ class ShellViewController: KCPlaneViewController
 		/* Execute only once */
 		if mIs1stAppear {
 			guard let termview = mTerminalView else {
-				NSLog("Can not happen")
+				CNLog(logLevel: .error, message: "Can not happen")
 				return
 			}
 			/* Block execution shell/script twice */
@@ -61,7 +61,7 @@ class ShellViewController: KCPlaneViewController
 			mProcessManager	= procmgr
 
 			/* Setup external compiler */
-			let extcomp = KMComponentCompiler(viewController: self)
+			let extcomp:KLExternalCompiler? = nil // KMComponentCompiler(viewController: self)
 
 			switch mMode {
 			case .shell:
@@ -125,11 +125,7 @@ class ShellViewController: KCPlaneViewController
 
 	@IBAction public func stopChildProcess(_ sender: Any) {
 		if let process = mShellThreadObject {
-			//NSLog("Terminate shell thread")
-			process.terminate()
-		}
-		if let process = mScriptThreadObject {
-			//NSLog("Terminate script thread")
+			//CNLog(logLevel: .detail, message: "Terminate shell thread")
 			process.terminate()
 		}
 	}

@@ -57,8 +57,10 @@ class Document: KCDocument
 				}
 			}
 			if !diddisplayed {
-				NSLog("\(#function): [Error] \(err.toString())")
+				CNLog(logLevel: .error, message: "\(#function): [Error] \(err.toString())")
 			}
+		@unknown default:
+			throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 		}
 	}
 
@@ -67,7 +69,7 @@ class Document: KCDocument
 			let url = URL(fileURLWithPath: fname)
 			try self.read(from: url, ofType: typeName)
 		} else {
-			NSLog("No file name: \(fileWrapper.description)")
+			CNLog(logLevel: .error, message: "No file name: \(fileWrapper.description)")
 		}
 	}
 }

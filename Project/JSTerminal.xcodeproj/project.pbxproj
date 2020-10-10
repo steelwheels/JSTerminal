@@ -57,6 +57,8 @@
 		05B7712F251879BF004FCD84 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712C251879BF004FCD84 /* Credits.rtf */; };
 		05B77130251879BF004FCD84 /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712D251879BF004FCD84 /* JSTerminal.help */; };
 		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
+		05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; };
+		05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F7AE47251874820077F527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE46251874820077F527 /* AppDelegate.swift */; };
 		05F7AE49251874820077F527 /* ShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE48251874820077F527 /* ShellViewController.swift */; };
 		05F7AE4B251874820077F527 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE4A251874820077F527 /* Document.swift */; };
@@ -83,6 +85,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				05B770F42518788C004FCD84 /* CoconutDatabase.xcframework in Embed Frameworks */,
+				05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */,
 				05B770F02518788C004FCD84 /* KiwiShell.xcframework in Embed Frameworks */,
 				05B770F62518788C004FCD84 /* KiwiControls.xcframework in Embed Frameworks */,
 				05B770FA2518788C004FCD84 /* KiwiComponents.xcframework in Embed Frameworks */,
@@ -148,6 +151,7 @@
 		05B7712C251879BF004FCD84 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		05B7712D251879BF004FCD84 /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		05B7712E251879BF004FCD84 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
+		05DB6EFB252F210000ADA7AD /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
 		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7AE46251874820077F527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05F7AE48251874820077F527 /* ShellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B770F32518788C004FCD84 /* CoconutDatabase.xcframework in Frameworks */,
+				05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */,
 				05B770EF2518788C004FCD84 /* KiwiShell.xcframework in Frameworks */,
 				05B770F52518788C004FCD84 /* KiwiControls.xcframework in Frameworks */,
 				05B770F92518788C004FCD84 /* KiwiComponents.xcframework in Frameworks */,
@@ -182,6 +187,7 @@
 		05B770DF2518788C004FCD84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05DB6EFB252F210000ADA7AD /* Amber.xcframework */,
 				05B770E42518788C004FCD84 /* Cobalt.xcframework */,
 				05B770E22518788C004FCD84 /* CoconutData.xcframework */,
 				05B770E52518788C004FCD84 /* CoconutDatabase.xcframework */,
@@ -329,7 +335,7 @@
 				};
 			};
 			buildConfigurationList = 05F7AE3C251874670077F527 /* Build configuration list for PBXProject "JSTerminal" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

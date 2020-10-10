@@ -14,10 +14,12 @@ function main(args)
 	    console.print("Failed to activate safari\n") ;
 	    return -1 ;
     }
-    if(safari.open("https://github.com/steelwheels")){
-        console.print("open web page\n") ;
-    } else {    
-        console.print("Failed to open web page\n") ;
+
+	let newtab = safari.newTab() ;
+	if(newtab != null) {
+        console.print("new tabl:" + newtab) ;
+    } else {
+        console.print("Failed to allocate tab") ;
         return -1 ;
     }
     console.print("launch safari ... done\n") ;
