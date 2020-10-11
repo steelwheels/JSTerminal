@@ -24,8 +24,8 @@ class ShellViewController: KCPlaneViewController
 	private var 	mIs1stAppear:		Bool 			= true
 	private var	mTerminalView:		KCTerminalView?		= nil
 	private var	mProcessManager:	CNProcessManager?	= nil
-	private var 	mShellThreadObject:	KHShellThreadObject?	= nil
-	private var 	mScriptThreadObject:	KHScriptThreadObject?	= nil
+	private var 	mShellThread:		KHShellThread?		= nil
+	private var 	mScriptThread:		KHScriptThread?		= nil
 
 	open override func loadViewContext(rootView root: KCRootView) -> KCSize {
 		let termview = KCTerminalView()
@@ -85,10 +85,10 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let shell = KHShellThreadObject(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
+		let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
 		shell.start(argument: .nullValue)
 
-		mShellThreadObject = shell
+		mShellThread = shell
 	}
 
 	private func startScript(processManager procmgr: CNProcessManager, resource res: KEResource, in terminal: KCTerminalView) {
@@ -102,10 +102,10 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let thread = KHScriptThreadObject(sourceFile: .resource(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, config: conf)
+		let thread = KHScriptThread(sourceFile: .resource(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, config: conf)
 		thread.start(argument: .nullValue)
 
-		mScriptThreadObject = thread
+		mScriptThread = thread
 	}
 
 	private func setupEnvironment(environment env: CNEnvironment) {
@@ -121,7 +121,7 @@ class ShellViewController: KCPlaneViewController
 	}
 
 	@IBAction public func stopChildProcess(_ sender: Any) {
-		if let process = mShellThreadObject {
+		if let process = mShellThread {
 			//CNLog(logLevel: .detail, message: "Terminate shell thread")
 			process.terminate()
 		}
