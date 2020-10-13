@@ -72,7 +72,6 @@ class ShellViewController: KCPlaneViewController
 	private func startShell(processManager procmgr: CNProcessManager, in terminal: KCTerminalView) {
 		/* Allocate shell */
 		let environment = CNEnvironment()
-		let resource    = KEResource(baseURL: Bundle.main.bundleURL)
 		let instrm:  CNFileStream = .fileHandle(terminal.inputFileHandle)
 		let outstrm: CNFileStream = .fileHandle(terminal.outputFileHandle)
 		let errstrm: CNFileStream = .fileHandle(terminal.errorFileHandle)
@@ -85,7 +84,7 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, resource: resource, config: conf)
+		let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, config: conf)
 		shell.start(argument: .nullValue)
 
 		mShellThread = shell
