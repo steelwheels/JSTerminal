@@ -101,7 +101,7 @@ class ShellViewController: KCPlaneViewController
 		/* Set default environment value */
 		setupEnvironment(environment: environment)
 
-		let thread = KHScriptThread(sourceFile: .resource(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, config: conf)
+		let thread = KHScriptThread(threadName: nil, resource: res, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: environment, config: conf)
 		thread.start(argument: .nullValue)
 
 		mScriptThread = thread
