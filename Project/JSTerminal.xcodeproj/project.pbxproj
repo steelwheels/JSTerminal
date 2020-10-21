@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058993FC253F17F700663275 /* JSTerminal.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 058993FB253F17F700663275 /* JSTerminal.jspkg */; };
+		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
 		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B770EB2518788C004FCD84 /* KiwiLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */; };
@@ -124,6 +126,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
+		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
 		05B770E22518788C004FCD84 /* CoconutData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutData.xcframework; path = ../../../Library/Frameworks/CoconutData.xcframework; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 		05B770FF25187903004FCD84 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				058993FB253F17F700663275 /* JSTerminal.jspkg */,
 				05B7712E251879BF004FCD84 /* CoconutScript.sdef */,
 				05B7712C251879BF004FCD84 /* Credits.rtf */,
 				05B7712D251879BF004FCD84 /* JSTerminal.help */,
@@ -269,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				05F7AE46251874820077F527 /* AppDelegate.swift */,
+				058993FD253F1B1600663275 /* MultiViewController.swift */,
 				05F7AE48251874820077F527 /* ShellViewController.swift */,
 				05F7AE4A251874820077F527 /* Document.swift */,
 				05F7AE59251877820077F527 /* PreferenceViewController.swift */,
@@ -372,6 +378,7 @@
 				05B7711A25187932004FCD84 /* hello.js in Resources */,
 				05B7710F25187932004FCD84 /* loglevel.js in Resources */,
 				05B7711425187932004FCD84 /* colorbar.js in Resources */,
+				058993FC253F17F700663275 /* JSTerminal.jspkg in Resources */,
 				05B7711925187932004FCD84 /* curses.js in Resources */,
 				05B7711825187932004FCD84 /* keycode.js in Resources */,
 				05B7711525187932004FCD84 /* Safari.js in Resources */,
@@ -389,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F7AE49251874820077F527 /* ShellViewController.swift in Sources */,
+				058993FE253F1B1600663275 /* MultiViewController.swift in Sources */,
 				05F7AE47251874820077F527 /* AppDelegate.swift in Sources */,
 				05F7AE4B251874820077F527 /* Document.swift in Sources */,
 				05F7AE5A251877820077F527 /* PreferenceViewController.swift in Sources */,

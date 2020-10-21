@@ -1,0 +1,14 @@
+top: VBox {
+    terminal_a: Terminal {
+	width:	Int 	80
+	height:	Int	25
+	shell: Shell {
+	}
+    }
+    button_a: Button {
+        title:  String "Hello, World !!"
+        pressed: Event() %{
+		console.log("pressed") ;
+        %}
+    }
+}

@@ -1,0 +1,7 @@
+{
+	application: "main.js",
+	views: {
+		terminal	: "terminal.amb"
+	}
+}
+
