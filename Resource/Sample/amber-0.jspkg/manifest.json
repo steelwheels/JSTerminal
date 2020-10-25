@@ -1,0 +1,7 @@
+{
+	application: "main.js"
+	views: {
+		buttons: "buttons-1.amb"
+	}
+}
+

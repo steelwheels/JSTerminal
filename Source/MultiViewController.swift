@@ -7,11 +7,14 @@
 
 import KiwiComponents
 import KiwiEngine
+import CoconutShell
 import Foundation
 
 public class MultiViewController: KMMultiComponentViewController
 {
 	public static let TerminalViewControllerName	= "terminal"
+
+	public var sourceURL: URL? = nil
 
 	open override func loadResource() -> KEResource {
 		if let path = Bundle.main.path(forResource: "JSTerminal", ofType: "jspkg") {

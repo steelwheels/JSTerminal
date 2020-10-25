@@ -9,6 +9,7 @@ import KiwiControls
 import KiwiShell
 import KiwiEngine
 import CoconutData
+import CoconutShell
 import JavaScriptCore
 
 public class PreferenceViewController: KCPlaneViewController

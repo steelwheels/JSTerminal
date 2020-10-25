@@ -8,11 +8,12 @@
 import KiwiControls
 import KiwiEngine
 import CoconutData
+import CoconutShell
 import Cocoa
 
 class Document: KCDocument
 {
-	private var mResource: KEResource? = nil
+	private var mSourceURL: URL? = nil
 
 	override init() {
 	    super.init()
@@ -30,9 +31,9 @@ class Document: KCDocument
 		self.addWindowController(windowController)
 
 		/* Set script*/
-		if let res = mResource {
-			if let viewctrl = windowController.contentViewController as? ShellViewController {
-				viewctrl.set(mode: .resource(res))
+		if let url = mSourceURL {
+			if let viewctrl = windowController.contentViewController as? MultiViewController {
+				viewctrl.sourceURL = url
 			}
 		}
 	}
@@ -44,24 +45,7 @@ class Document: KCDocument
 	}
 
 	override func read(from url: URL, ofType typeName: String) throws {
-		switch KEResource.allocateResource(from: url) {
-		case .ok(let res):
-			mResource = res
-		case .error(let err):
-			var diddisplayed = false
-			let controllers  = self.windowControllers
-			if controllers.count > 0 {
-				if let vcont = controllers[0].contentViewController {
-					let _ = KCAlert.runModal(error: err, in: vcont)
-					diddisplayed = true
-				}
-			}
-			if !diddisplayed {
-				CNLog(logLevel: .error, message: "\(#function): [Error] \(err.toString())")
-			}
-		@unknown default:
-			throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-		}
+		mSourceURL = url
 	}
 
 	override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {

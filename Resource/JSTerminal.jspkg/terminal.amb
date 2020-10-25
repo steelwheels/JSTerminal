@@ -5,10 +5,5 @@ top: VBox {
 	shell: Shell {
 	}
     }
-    button_a: Button {
-        title:  String "Hello, World !!"
-        pressed: Event() %{
-		console.log("pressed") ;
-        %}
-    }
 }
+
