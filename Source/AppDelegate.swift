@@ -18,6 +18,14 @@ class AppDelegate: KCApplicationDelegate
 		UserDefaults.standard.applyDefaultSetting()
 	}
 
+	override func applicationDidFinishLaunching(_ notification: Notification) {
+		/* Enable logging */
+		NSLog("Enable logging")
+		let _ = KCLogManager.shared
+		CNPreference.shared.systemPreference.logLevel = .defaultLevel
+		//CNLog(logLevel: .error, message: "Hello Log Message !!")
+	}
+
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
