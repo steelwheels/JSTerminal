@@ -36,7 +36,7 @@ public class MultiViewController: KMMultiComponentViewController
 		/* Add subview */
 		if let res = self.resource {
 			if let url = res.URLOfView(identifier: "terminal") {
-				super.pushViewController(sourceURL: url)
+				super.pushViewController(sourceURL: url, context: nil)
 			} else {
 				NSLog("Failed to get URL")
 			}
