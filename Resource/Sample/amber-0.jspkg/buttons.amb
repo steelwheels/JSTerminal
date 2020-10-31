@@ -1,5 +1,5 @@
 top: VBox {
-    alignment: Alignment center
+    alignment: Alignment leading
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{
