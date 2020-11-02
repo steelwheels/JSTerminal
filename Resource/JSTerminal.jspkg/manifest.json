@@ -1,6 +1,4 @@
 {
-	views: {
-		terminal	: "terminal.amb"
-	}
+	view: "terminal.amb"
 }
 

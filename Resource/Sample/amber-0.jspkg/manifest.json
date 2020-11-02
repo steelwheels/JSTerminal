@@ -1,6 +1,6 @@
 {
 	application: "main.js"
-	views: {
+	subviews: {
 		buttons: "buttons.amb"
 	}
 }

@@ -14,25 +14,23 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: KCApplicationDelegate
 {
-	func applicationWillFinishLaunching(_ notification: Notification) {
+	override func applicationWillFinishLaunching(_ notification: Notification) {
+		super.applicationWillFinishLaunching(notification)
 		UserDefaults.standard.applyDefaultSetting()
 	}
 
 	override func applicationDidFinishLaunching(_ notification: Notification) {
-		/* Enable logging */
-		NSLog("Enable logging")
-		let _ = KCLogManager.shared
-		CNPreference.shared.systemPreference.logLevel = .defaultLevel
-		//CNLog(logLevel: .error, message: "Hello Log Message !!")
+		super.applicationDidFinishLaunching(notification)
 	}
 
-	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
+	override func applicationWillTerminate(_ aNotification: Notification) {
+		super.applicationWillTerminate(aNotification)
 	}
 
 	@IBAction public func openLogWindow(_ sender: Any) {
 		if let _ = sender as? NSMenuItem {
 			/* Update log level to output log */
+			let _ = KCLogManager.shared
 			let syspref = CNPreference.shared.systemPreference
 			syspref.logLevel = .debug
 		}
