@@ -7,13 +7,13 @@
 
 import KiwiComponents
 import KiwiEngine
+import KiwiControls
+import CoconutData
 import CoconutShell
 import Foundation
 
 public class MultiViewController: KMMultiComponentViewController
 {
-	public static let TerminalViewControllerName	= "terminal"
-
 	public var sourceURL: URL? = nil
 
 	open override func loadResource() -> KEResource {
@@ -33,9 +33,14 @@ public class MultiViewController: KMMultiComponentViewController
 	open override func viewDidLoad() {
 		super.viewDidLoad()
 
+		/* Update log level */
+		//let _ = KCLogManager.shared
+		//let syspref = CNPreference.shared.systemPreference
+		//syspref.logLevel = .detail
+
 		/* Add subview */
 		if let res = self.resource {
-			super.pushViewController(source: .mainView(res), context: nil)
+			super.pushViewController(source: .mainView(res))
 		}
 	}
 }

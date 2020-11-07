@@ -1,17 +1,21 @@
 top: VBox {
     alignment: Alignment leading
+    label_a: Label {
+        text: String "Hello"
+    }
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{
-		    console.log("pressed: OK") ;
+		console.log("pressed: OK") ;
 	    	leaveView(1) ;
         %}
     }
     cancel_button: Button {
         title:  String "Cancel"
         pressed: Event() %{
-		    console.log("pressed: Cancel") ;
-		    leaveView(0) ;
+		console.log("pressed: Cancel") ;
+		leaveView(0) ;
         %}
     }
 }
+

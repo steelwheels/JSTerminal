@@ -5,7 +5,11 @@
 function main(args)
 {
 	console.log("Hello, world !!") ;
-	let result = enterView("buttons") ;
-	console.log("Result = " + result) ;
+	if(enterView("buttons")){
+		let retval = waitUntilActivate() ;
+		console.log("Result = " + retval) ;
+	} else {
+		console.log("[Error] Failed to open new view") ;
+	}
 }
 
