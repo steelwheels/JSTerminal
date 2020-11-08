@@ -4,8 +4,8 @@
 The *JSTerminal* is a terminal application.
 This application has following features:
 * _JavaScriptable_: You can write shell script by JavaScript.　The JavaScript shell (named *jsh*) is supported. It extend JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
-* _Designable_:  __You can implement GUI__ by component based language named [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-script-language.md). You can call the script from JavaScript code to display the graphical user interface. 
-* _Controllable_: Control the other specific applications by AppleEvens and can be controlled by AppleScript. Now the following applications can be controlled by this software: [TextEdit](AppleEvent/TextEdit.md). 
+* _Designable_:  __You can implement GUI__ by component based language named [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). You can call the script from JavaScript code to display the graphical user interface.
+* _Controllable_: Control the other specific applications by AppleEvens and can be controlled by AppleScript. Now the following applications can be controlled by this software: [TextEdit](AppleEvent/TextEdit.md).
 
 
 
@@ -141,7 +141,7 @@ You can launch the macOS application by the command line.
 ````
  jsh> open -a /System/Application/TextEdit.app
 ````
-2. Lanchy by JavaScript function 
+2. Lanchy by JavaScript function
 ````
  jsh% launch("/System/Application/TextEdit.app", null) :
 ````
@@ -207,7 +207,7 @@ function main(args)
     if(textedit.activate()){
     	if(textedit.makeNewDocument()) {
 			console.print("New document on TextEdit.app\n") ;
-    	} 
+    	}
     }
     return 0 ;
 }
@@ -218,8 +218,8 @@ Fore more precise, see [Application class](https://github.com/steelwheels/KiwiSc
 Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) to know how to describe the shell script by JavaScript.
 
 ## GUI
-You can implement GUI by [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-script-language.md). 
-To learn about the language, see the [programming examples](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-example.md).
+You can implement GUI by [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md).
+To learn about the language, see the [programming examples](https://github.com/steelwheels/Amber/blob/master/Document/amber-example.md).
 
 Here is the sample script written by Amber Programming Language.
 ````
@@ -267,10 +267,10 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |1.2	|2020/06/28	|Support [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md), Support command and file name completion by TAB key. |
 |1.3	|2020/07/13 |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
 |1.4	|2020/08/29 |Support AppleEvents to be controlled by AppleScript |
-|1.5	|Not released|Support [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-script-language.md) for GUI design | 
+|1.5	|Not released|Support [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md) for GUI design |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
-* [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-script-language.md): The specification of this language. See [sample scripts](AmberProgramming.md).   
+* [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md): The specification of this language. See [sample scripts](AmberProgramming.md).  
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
 * [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.
