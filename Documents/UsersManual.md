@@ -219,7 +219,7 @@ Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/ma
 
 ## GUI
 You can implement GUI by [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-script-language.md). 
-To learn about the language, see the [programming examples](AmberProgramming.md).
+To learn about the language, see the [programming examples](https://github.com/steelwheels/Amber/blob/master/Document/language/amber-example.md).
 
 Here is the sample script written by Amber Programming Language.
 ````
