@@ -5,7 +5,7 @@ The terminal view is not linked with `/dev/*` devices.
 It has the risk that the unix command does not think it is executed on the terminal.
 
 ### Can not detect CTRL-C
-The current software can not detect CTRL-C key binding.
+The current software can not detect `CTRL-C` key binding.
 Now COMMAND+. is used to stop the process instead of it.
 
 ## FileSystem
@@ -15,9 +15,6 @@ So the application which access the directory such as [wall command](https://git
 
 ## Restriction on command line application.
 Following functions are not supported command line application such as *jsh* in [JSTools](https://github.com/steelwheels/JSTools/blob/master/README.md).
-
-### Process management
-1. The `waitUntilExit` method on [Application class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Application.md)
 
 # Related link
 * [JSTerminal](https://github.com/steelwheels/JSTerminal): Main web page for JSTerminal.

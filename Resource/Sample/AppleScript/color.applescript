@@ -1,4 +1,4 @@
--- color2.applescript
+-- color.applescript
 tell application "JSTerminal"
 	set background color to blue
 	set foreground color to yellow

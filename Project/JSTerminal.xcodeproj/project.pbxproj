@@ -36,9 +36,7 @@
 		05B7711225187932004FCD84 /* colors.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710525187931004FCD84 /* colors.js */; };
 		05B7711325187932004FCD84 /* getl.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710625187931004FCD84 /* getl.js */; };
 		05B7711425187932004FCD84 /* colorbar.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710725187931004FCD84 /* colorbar.js */; };
-		05B7711525187932004FCD84 /* Safari.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710825187931004FCD84 /* Safari.js */; };
 		05B7711625187932004FCD84 /* breakout.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710925187931004FCD84 /* breakout.jspkg */; };
-		05B7711725187932004FCD84 /* TextEdit.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710A25187931004FCD84 /* TextEdit.js */; };
 		05B7711825187932004FCD84 /* keycode.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710B25187931004FCD84 /* keycode.js */; };
 		05B7711925187932004FCD84 /* curses.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710C25187931004FCD84 /* curses.js */; };
 		05B7711A25187932004FCD84 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = 05B7710D25187931004FCD84 /* hello.js */; };
@@ -55,8 +53,6 @@
 		05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710325187931004FCD84 /* hello.jspkg */; };
 		05B7712825187972004FCD84 /* keycode.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710B25187931004FCD84 /* keycode.js */; };
 		05B7712925187972004FCD84 /* loglevel.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710225187931004FCD84 /* loglevel.js */; };
-		05B7712A25187972004FCD84 /* Safari.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710825187931004FCD84 /* Safari.js */; };
-		05B7712B25187972004FCD84 /* TextEdit.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710A25187931004FCD84 /* TextEdit.js */; };
 		05B7712F251879BF004FCD84 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712C251879BF004FCD84 /* Credits.rtf */; };
 		05B77130251879BF004FCD84 /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712D251879BF004FCD84 /* JSTerminal.help */; };
 		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
@@ -118,8 +114,6 @@
 				05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */,
 				05B7712825187972004FCD84 /* keycode.js in CopyFiles */,
 				05B7712925187972004FCD84 /* loglevel.js in CopyFiles */,
-				05B7712A25187972004FCD84 /* Safari.js in CopyFiles */,
-				05B7712B25187972004FCD84 /* TextEdit.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +140,7 @@
 		05B7710525187931004FCD84 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
 		05B7710625187931004FCD84 /* getl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = getl.js; sourceTree = "<group>"; };
 		05B7710725187931004FCD84 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
-		05B7710825187931004FCD84 /* Safari.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Safari.js; sourceTree = "<group>"; };
 		05B7710925187931004FCD84 /* breakout.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = breakout.jspkg; sourceTree = "<group>"; };
-		05B7710A25187931004FCD84 /* TextEdit.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TextEdit.js; sourceTree = "<group>"; };
 		05B7710B25187931004FCD84 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		05B7710C25187931004FCD84 /* curses.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = curses.js; sourceTree = "<group>"; };
 		05B7710D25187931004FCD84 /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
@@ -234,8 +226,6 @@
 				05B7710325187931004FCD84 /* hello.jspkg */,
 				05B7710B25187931004FCD84 /* keycode.js */,
 				05B7710225187931004FCD84 /* loglevel.js */,
-				05B7710825187931004FCD84 /* Safari.js */,
-				05B7710A25187931004FCD84 /* TextEdit.js */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -371,7 +361,6 @@
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
 				05B7710E25187932004FCD84 /* hello_color.js in Resources */,
 				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
-				05B7711725187932004FCD84 /* TextEdit.js in Resources */,
 				0594390C2543963B00064E39 /* amber-0.jspkg in Resources */,
 				05B7711625187932004FCD84 /* breakout.jspkg in Resources */,
 				05B7711C25187949004FCD84 /* alert.js in Resources */,
@@ -382,7 +371,6 @@
 				058993FC253F17F700663275 /* JSTerminal.jspkg in Resources */,
 				05B7711925187932004FCD84 /* curses.js in Resources */,
 				05B7711825187932004FCD84 /* keycode.js in Resources */,
-				05B7711525187932004FCD84 /* Safari.js in Resources */,
 				05B7711325187932004FCD84 /* getl.js in Resources */,
 				05B7711225187932004FCD84 /* colors.js in Resources */,
 				05B7711125187932004FCD84 /* curses2.jspkg in Resources */,

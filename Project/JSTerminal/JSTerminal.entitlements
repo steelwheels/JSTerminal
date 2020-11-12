@@ -12,36 +12,5 @@
 	<true/>
 	<key>com.apple.security.files.user-selected.read-write</key>
 	<true/>
-	<key>com.apple.security.scripting-targets</key>
-	<dict>
-		<key>com.apple.TextEdit</key>
-		<array>
-			<string>com.apple.TextEdit</string>
-		</array>
-		<key>com.apple.Safari</key>
-		<array>
-			<string>com.apple.Safari</string>
-			<string>com.apple.Safari.show-extensions-preferences</string>
-			<string>com.apple.Safari.dispatch-message-to-extension</string>
-		</array>
-		<key>com.apple.mail</key>
-		<array>
-			<string>com.apple.mail</string>
-			<string>com.apple.mail.compose</string>
-		</array>
-		<key>com.apple.systemevents</key>
-		<array>
-			<string>com.apple.systemevents</string>
-			<string>com.apple.systemevents.window.position</string>
-		</array>
-	</dict>
-	<key>com.apple.security.temporary-exception.apple-events</key>
-	<array>
-		<string>com.apple.TextEdit</string>
-		<string>com.apple.Safari</string>
-		<string>com.apple.mail</string>
-		<string>com.apple.systemevents</string>
-	</array>
 </dict>
 </plist>
-

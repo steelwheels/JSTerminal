@@ -4,10 +4,7 @@
 The *JSTerminal* is a terminal application.
 This application has following features:
 * _JavaScriptable_: You can write shell script by JavaScript.　The JavaScript shell (named *jsh*) is supported. It extend JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
-* _Designable_:  __You can implement GUI__ by component based language named [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). You can call the script from JavaScript code to display the graphical user interface.
-* _Controllable_: Control the other specific applications by AppleEvens and can be controlled by AppleScript. Now the following applications can be controlled by this software: [TextEdit](AppleEvent/TextEdit.md).
-
-
+* _GUI Designable_:  You can implement GUI by component based language named [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). You can call the script from JavaScript code to display the graphical user interface.
 
 This product is open source software.
 If you have any question or suggestions please send e-mail to [Steel Wheels Project](mailto:steel.wheels.project@gmail.com) or write issue to the [Github repository](https://github.com/steelwheels/JSTerminal).
@@ -134,20 +131,6 @@ And you will get following outputs:
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 
-### Execute macOS application
-You can launch the macOS application by the command line.
-
-1. Launch by shell command:
-````
- jsh> open -a /System/Application/TextEdit.app
-````
-2. Lanchy by JavaScript function
-````
- jsh% launch("/System/Application/TextEdit.app", null) :
-````
-
-About launch function, see [launch function](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Function/Launch.md) in [KiwiLibrary](https://github.com/steelwheels/KiwiScript/tree/master/KiwiLibrary).
-
 ### File package
 The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
 For more details, see [JavaScript Package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md).
@@ -212,7 +195,6 @@ function main(args)
     return 0 ;
 }
 ````
-Fore more precise, see [Application class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Application.md) in [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md).
 
 ## Programming
 Please read [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) to know how to describe the shell script by JavaScript.

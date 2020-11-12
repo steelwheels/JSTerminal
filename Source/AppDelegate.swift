@@ -12,11 +12,10 @@ import CoconutData
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: KCApplicationDelegate
+class AppDelegate: CNApplicationDelegate
 {
 	override func applicationWillFinishLaunching(_ notification: Notification) {
 		super.applicationWillFinishLaunching(notification)
-		UserDefaults.standard.applyDefaultSetting()
 	}
 
 	override func applicationDidFinishLaunching(_ notification: Notification) {
@@ -42,7 +41,7 @@ class AppDelegate: KCApplicationDelegate
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: KCApplicationDelegate
+class AppDelegate: CNApplicationDelegate
 {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
