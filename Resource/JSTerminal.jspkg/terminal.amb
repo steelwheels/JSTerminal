@@ -1,7 +1,5 @@
 top: VBox {
     terminal_a: Terminal {
-	width:	Int 	80
-	height:	Int	25
 	shell: Shell {
 	}
     }

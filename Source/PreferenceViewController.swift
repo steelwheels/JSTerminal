@@ -16,13 +16,10 @@ public class PreferenceViewController: KCPlaneViewController
 {
 	private var mPreferenceView:	KCTerminalPreferenceView? = nil
 
-	public override func loadView() {
-		super.loadView()
-		if let rootview = super.rootView {
-			let termview = KCTerminalPreferenceView()
-			rootview.setup(childView: termview)
-			mPreferenceView = termview
-		}
+	public override func loadViewContext(rootView root: KCRootView) {
+		let termview = KCTerminalPreferenceView()
+		mPreferenceView = termview
+		root.setup(childView: termview)
 	}
 
 	override public func viewWillAppear() {
