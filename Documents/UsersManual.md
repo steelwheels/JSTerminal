@@ -53,13 +53,13 @@ jsh>
 
 ### Set home directory
 The *JSTerminal* is sandbox application to protect user from hacking.
-This application allows to access __under home directory only__.
+This application allows to access __under home directory only__ and the directory that you choosen at least only once.
 You can define home directory at the [Preference Window](#Preference).
 
 The changing home directory means that you allow this application accesses your files. If you don't like it, do not change the home directory (See [Privacy Policy](https://github.com/steelwheels/JSTerminal/blob/master/Documents/PrivacyPolicy.txt)).
 
-You can use this application without changing home directory.
-But if you want to change your home directory, change the `Home directory` section by clicking `select` button:
+The default home directory is your top home directory.
+You can change the `Home directory` section by clicking `select` button:
 ![Select home directory](./Images/preference-homedir.png)
 
 The setting will be activated for the next new window.
