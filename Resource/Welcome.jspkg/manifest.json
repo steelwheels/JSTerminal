@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		welcome: "welcome.amb"
+	}
+	images: {
+		logo: "amber-logo.png"
+	}
+}
+

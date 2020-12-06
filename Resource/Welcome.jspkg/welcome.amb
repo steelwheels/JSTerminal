@@ -1,0 +1,18 @@
+top: VBox {
+	message: HBox {
+		logo: Image {
+			name: String "logo"
+	    	}
+	    	text_a: Label {
+			text: String "Welcome to JSTerminal"
+	    	}
+	}
+	button: Button {
+		enable:	Bool	true
+		title: String	"OK"
+		pressed: Event() %{
+			leaveView(0) ;
+		%}
+	}
+}
+

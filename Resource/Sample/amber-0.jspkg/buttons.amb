@@ -1,8 +1,4 @@
 top: VBox {
-    alignment: Alignment leading
-    label_a: Label {
-        text: String "Hello"
-    }
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{
