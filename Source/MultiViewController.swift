@@ -40,7 +40,7 @@ public class MultiViewController: KMMultiComponentViewController
 
 		/* Add subview */
 		if let res = self.resource {
-			super.pushViewController(source: .mainView(res))
+			let _ = super.pushViewController(source: .mainView(res))
 		}
 	}
 }

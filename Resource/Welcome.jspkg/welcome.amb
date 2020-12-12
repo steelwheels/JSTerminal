@@ -2,17 +2,35 @@ top: VBox {
 	message: HBox {
 		logo: Image {
 			name: String "logo"
-	    	}
-	    	text_a: Label {
+	    }
+	    text_a: Label {
 			text: String "Welcome to JSTerminal"
-	    	}
+	    }
 	}
-	button: Button {
-		enable:	Bool	true
-		title: String	"OK"
-		pressed: Event() %{
-			leaveView(0) ;
-		%}
+	select: HBox {
+		select_button: Button {
+			enable:	Bool	true
+			title:  String	"Select"
+			pressed: Event() %{
+				console.log("Select") ;
+			%}
+		}
+	}
+	continue: HBox {
+		cancel_button: Button {
+			enable:	Bool	true
+			title: String	"Cancel"
+			pressed: Event() %{
+				leaveView(1) ;
+			%}
+		}
+		done_button: Button {
+			enable:	Bool	true
+			title: String	"OK"
+			pressed: Event() %{
+				leaveView(0) ;
+			%}
+		}
 	}
 }
 
