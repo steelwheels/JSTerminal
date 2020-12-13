@@ -40,7 +40,17 @@ public class MultiViewController: KMMultiComponentViewController
 
 		/* Add subview */
 		if let res = self.resource {
-			let _ = super.pushViewController(source: .mainView(res))
+			let cbfunc: KMMultiComponentViewController.ViewSwitchCallback = {
+				(_ val: CNNativeValue) -> Void in
+				let valstr: String
+				if let str = val.toString() {
+					valstr = str
+				} else {
+					valstr = "<unknown>"
+				}
+				NSLog("mainView: return_val=\(valstr)")
+			}
+			let _ = super.pushViewController(source: .mainView(res), callback: cbfunc)
 		}
 	}
 }
