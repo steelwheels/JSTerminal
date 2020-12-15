@@ -3,11 +3,19 @@ top: VBox {
 		logo: Image {
 			name: String "logo"
 	    }
-	    text_a: Label {
-			text: String "Welcome to JSTerminal"
+	    text_a: TextField {
+			text: String
+				"Welcome to JSTerminal.\n"
+				"Before using this software, "
+				"please select the home directory.\n"
+				"This application can access the files "
+				"only the directory for sequre reasons."
 	    }
 	}
 	select: HBox {
+		path_field: TextField {
+			text: String "<Select home directory>"
+		}
 		select_button: Button {
 			enable:	Bool	true
 			title:  String	"Select"
