@@ -14,13 +14,14 @@ top: VBox {
 	}
 	select: HBox {
 		path_field: TextField {
-			text: String "<Select home directory>"
+			text: String "<home directory>"
 		}
 		select_button: Button {
 			enable:	Bool	true
-			title:  String	"Select"
+			title:  String	"Select Home Directory"
 			pressed: Event() %{
-				console.log("Select") ;
+				console.log("Event:" + top) ;
+				//self.path_field.text = "Update" ;
 			%}
 		}
 	}
