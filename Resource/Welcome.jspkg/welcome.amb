@@ -20,8 +20,13 @@ top: VBox {
 			enable:	Bool	true
 			title:  String	"Select Home Directory"
 			pressed: Event() %{
-				console.log("Event:" + top) ;
-				//self.path_field.text = "Update" ;
+				console.log("Event:" + top.instanceName) ;
+				let url = FileManager.openPanel(
+					"Select Home Directory",
+					FileType.directory,
+					[]) ;
+				if(url != null) {
+				}
 			%}
 		}
 	}
