@@ -13,19 +13,24 @@ top: VBox {
 	    }
 	}
 	select: HBox {
+		home: URL ""
 		path_field: TextField {
-			text: String "<home directory>"
+			text: String Listner(url: top.select.home) %{
+				console.log("home:" + url.path) ;
+				return url.path ;
+			%}
+			isBezeled: Bool true
 		}
 		select_button: Button {
 			enable:	Bool	true
 			title:  String	"Select Home Directory"
 			pressed: Event() %{
-				console.log("Event:" + top.instanceName) ;
 				let url = FileManager.openPanel(
 					"Select Home Directory",
 					FileType.directory,
 					[]) ;
 				if(url != null) {
+					top.select.home = url ;
 				}
 			%}
 		}
