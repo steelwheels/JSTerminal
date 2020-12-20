@@ -17,6 +17,7 @@ top: VBox {
 		path_field: TextField {
 			text: String Listner(url: top.select.home) %{
 				if(!url.isNull){
+					top.done_button.isEnabled = true ;
 					return url.path ;
 				} else {
 					return "<none>" ;
@@ -25,8 +26,8 @@ top: VBox {
 			isBezeled: Bool true
 		}
 		select_button: Button {
-			enable:	Bool	true
-			title:  String	"Select Home Directory"
+			isEnabled:	Bool	true
+			title:  	String	"Select Home Directory"
 			pressed: Event() %{
 				let url = FileManager.openPanel(
 					"Select Home Directory",
@@ -38,21 +39,12 @@ top: VBox {
 			%}
 		}
 	}
-	continue: HBox {
-		cancel_button: Button {
-			enable:	Bool	true
-			title: String	"Cancel"
-			pressed: Event() %{
-				leaveView(1) ;
-			%}
-		}
-		done_button: Button {
-			enable:	Bool	true
-			title: String	"OK"
-			pressed: Event() %{
-				leaveView(0) ;
-			%}
-		}
+	done_button: Button {
+		isEnabled:	Bool	false
+		title: 		String	"OK"
+		pressed: Event() %{
+			leaveView(top.select.home) ;
+		%}
 	}
 }
 
