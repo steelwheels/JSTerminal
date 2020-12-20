@@ -43,7 +43,8 @@ top: VBox {
 		isEnabled:	Bool	false
 		title: 		String	"OK"
 		pressed: Event() %{
-			leaveView(top.select.home) ;
+			Preference.user.homeDirectory = top.select.home ;
+			leaveView(0) ;
 		%}
 	}
 }
