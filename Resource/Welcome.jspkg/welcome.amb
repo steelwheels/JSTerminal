@@ -16,8 +16,11 @@ top: VBox {
 		home: URL ""
 		path_field: TextField {
 			text: String Listner(url: top.select.home) %{
-				console.log("home:" + url.path) ;
-				return url.path ;
+				if(!url.isNull){
+					return url.path ;
+				} else {
+					return "<none>" ;
+				}
 			%}
 			isBezeled: Bool true
 		}
