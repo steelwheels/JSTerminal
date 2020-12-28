@@ -1,7 +1,7 @@
 top: VBox {
 	message: HBox {
 		logo: Image {
-			name: String "logo"
+			name: String "icon"
 	    }
 	    text_a: TextField {
 			text: String

@@ -4,7 +4,7 @@
 		welcome: "welcome.amb"
 	}
 	images: {
-		logo: "amber-logo.png"
+		icon: "terminal-icon.png"
 	}
 }
 
