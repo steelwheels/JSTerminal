@@ -25,10 +25,15 @@ class Document: KCDocument
 	}
 
 	override func makeWindowControllers() {
-		// Returns the Storyboard that contains your Document window.
+		/* Returns the Storyboard that contains your Document window. */
 		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
 		let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
 		self.addWindowController(windowController)
+
+		/* Set window title */
+		if let win = windowController.window {
+			win.title = "JSTerminal"
+		}
 
 		/* Set script*/
 		if let url = mSourceURL {
