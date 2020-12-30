@@ -17,16 +17,24 @@ public class MultiViewController: KMMultiComponentViewController
 	public var sourceURL: URL? = nil
 
 	open override func loadResource() -> KEResource {
-		if let path = Bundle.main.path(forResource: "JSTerminal", ofType: "jspkg") {
+		let path: String?
+		let homedir = CNPreference.shared.userPreference.homeDirectory
+		if homedir.isNull {
+			path = Bundle.main.path(forResource: "Welcome", ofType: "jspkg")
+		} else {
+			path = Bundle.main.path(forResource: "JSTerminal", ofType: "jspkg")
+		}
+		/* Load resource */
+		if let path = path {
 			let resource = KEResource.init(baseURL: URL(fileURLWithPath: path))
 			let loader   = KEManifestLoader()
 			if let err = loader.load(into: resource) {
-				NSLog("Failed to load manifest: \(err.toString())")
+				CNLog(logLevel: .error, message: "Failed to load manifest: \(err.toString())")
 			}
 			return resource
 		} else {
-			NSLog("Can not find JSTerminal.jspkg")
-			return super.loadResource()
+			CNLog(logLevel: .error, message: "Failed to load package")
+			fatalError("Failed to load package")
 		}
 	}
 

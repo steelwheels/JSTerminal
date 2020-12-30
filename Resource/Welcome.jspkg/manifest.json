@@ -1,10 +1,10 @@
 {
-	application: "main.js"
-	subviews: {
-		welcome: "welcome.amb"
-	}
+	view: "welcome.amb"
 	images: {
 		icon: "terminal-icon.png"
+	}
+	subviews: {
+		terminal: "terminal.amb"
 	}
 }
 

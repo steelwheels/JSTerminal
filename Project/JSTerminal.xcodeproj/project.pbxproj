@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050C4898259CB115002D4972 /* Welcome.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050C4897259CB115002D4972 /* Welcome.jspkg */; };
 		058993FC253F17F700663275 /* JSTerminal.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 058993FB253F17F700663275 /* JSTerminal.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
 		0594390C2543963B00064E39 /* amber-0.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0594390B2543963B00064E39 /* amber-0.jspkg */; };
@@ -120,6 +121,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		050C4897259CB115002D4972 /* Welcome.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Welcome.jspkg; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 		0594390B2543963B00064E39 /* amber-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "amber-0.jspkg"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				05B7712E251879BF004FCD84 /* CoconutScript.sdef */,
 				05B7712C251879BF004FCD84 /* Credits.rtf */,
 				05B7712D251879BF004FCD84 /* JSTerminal.help */,
+				050C4897259CB115002D4972 /* Welcome.jspkg */,
 				05B7710025187916004FCD84 /* Sample */,
 			);
 			name = Resource;
@@ -361,6 +364,7 @@
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
 				05B7710E25187932004FCD84 /* hello_color.js in Resources */,
 				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
+				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
 				0594390C2543963B00064E39 /* amber-0.jspkg in Resources */,
 				05B7711625187932004FCD84 /* breakout.jspkg in Resources */,
 				05B7711C25187949004FCD84 /* alert.js in Resources */,
