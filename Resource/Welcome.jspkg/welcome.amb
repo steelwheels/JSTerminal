@@ -5,11 +5,13 @@ top: VBox {
 	    }
 	    text_a: TextField {
 			text: String
-				"Welcome to JSTerminal.\n"
+				"Welcome to JSTerminal.\n\n"
 				"Before using this software, "
-				"please select the home directory.\n"
-				"This application can access the files "
-				"only the directory for sequre reasons."
+				"please select the home directory "
+				"of this application.\n\n"
+				"I recommend you to create unique directory\n"
+				"such as ~/Development."
+			fontSize: FontSize large
 	    }
 	}
 	select: HBox {

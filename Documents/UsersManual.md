@@ -40,7 +40,19 @@ Double click the icon of JSTerminal or execute following command at the `Termina
 ````
 open -a /Applications/JSTerminal.app
 ````
-You will see the following window:
+
+### Setup
+At the first boot, the following window will be appeared.
+This window is used to select _home directory_ of this application.
+The *JSTerminal* is [sandboxed application](https://developer.apple.com/documentation/security/app_sandbox).
+You must select the directory where the application can access it.
+
+1. Push "Select Home Directory" button and select home directory
+2. Press "OK" button to finialize the selection
+
+![Setup window](./Images/setup-window.png)
+
+After pressing the "OK" button, you will see the following window:
 ![Boot window](./Images/boot-window.png)
 
 The word `jsh>` is called prompt. It encourage the input from the user.
@@ -51,10 +63,8 @@ iChats
 jsh>
 ````
 
-### Set home directory
-The *JSTerminal* is sandbox application to protect user from hacking.
-This application allows to access __under home directory only__ and the directory that you choosen at least only once.
-You can define home directory at the [Preference Window](#Preference).
+### Set home directory (again)
+You can re-define home directory at the [Preference Window](#Preference).
 
 The changing home directory means that you allow this application accesses your files. If you don't like it, do not change the home directory (See [Privacy Policy](https://github.com/steelwheels/JSTerminal/blob/master/Documents/PrivacyPolicy.txt)).
 
@@ -62,27 +72,6 @@ The default home directory is your top home directory.
 You can change the `Home directory` section by clicking `select` button:
 ![Select home directory](./Images/preference-homedir.png)
 
-The setting will be activated for the next new window.
-Please select `New` menu item from the `File` menu.
-
-### Setup
-To install some scripts into the home directory, execute the [setup command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/setup-man.md). This command initialize the file system under home directory.
-````
-jsh> pwd
-/Users/tomoo/Development/Shell
-jsh> setup
-Make directory: /Users/tomoo/Development/Shell/Documents
-Make directory: /Users/tomoo/Development/Shell/Library
-Copy from /Applications/JSTerminal.app/Contents/Resources/Documents/Sample to /Users/tomoo/Development/Shell/Documents/Sample
-Setup file system ... done
-jsh> ls Documents
-Sample
-jsh> ls Documents/Sample
-colors.js
-hello.js
-keycode.js
-jsh>
-````
 
 ### Execute shell command
 The prompt `'>'` means *shell mode* .
