@@ -56,11 +56,11 @@ After pressing the "OK" button, you will see the following window:
 ![Boot window](./Images/boot-window.png)
 
 The word `jsh>` is called prompt. It encourage the input from the user.
-Type `ls Documents` on the window. You will see the contents of `documents` folder:
+Type `ls` on the window. You will see the contents of current directory:
 ````
-jsh> ls Documents
-iChats
-jsh>
+jsh> ls
+Game
+Sample
 ````
 
 ### Set home directory (again)
@@ -75,7 +75,7 @@ You can change the `Home directory` section by clicking `select` button:
 
 ### Execute shell command
 The prompt `'>'` means *shell mode* .
-The shell mode accepts shell commands such as `ls` command.
+The shell mode accepts shell commands such as `echo` command.
 ````
 jsh> echo "Hello, world"
 Hello, world
@@ -103,22 +103,22 @@ jsh>
 
 ### Execute sample script
 You can use [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md) to execute the script (Both JavaScript and Shell scripts are supported).
-You can also execute the script by [open menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md).
 
 This is famous demo program for `jsh`.
 ````
-jsh> run Documents/Sample/hello.js
+jsh> run Sample/hello.js
 Hello, world !!
 ````
 And this is sample program to test terminal color.
 ````
-run Documents/Sample/colors.js
+run Sample/colors.js
 ````
 And you will get following outputs:
 ![Screenshot of colors script](./Images/script-colors.png)
 
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
+You can find the sample JavaScript programs in [sample game scripts](Games.md).
 
 ### File package
 The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
@@ -242,6 +242,7 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
-* [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md): The specification of this language. See [sample scripts](AmberProgramming.md).  
+* [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md): The specification of this language. See [sample scripts](AmberProgramming.md).
+* Sample Scripts: [sample game script](Games.md)
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
 * [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.
