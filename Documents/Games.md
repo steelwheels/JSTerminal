@@ -1,5 +1,6 @@
 # Sample games
 This document contains the sample scripts for tiny games.
+Some basic programs at [Vintage Games](http://www.vintage-basic.net/games.html) are ported into JavaScript here.
 
 ## Tiny games
 The list of tiny games. In usually, such tiny games are written in [BASIC](https://en.wikipedia.org/wiki/Tiny_BASIC) and it is used to learn programming.

@@ -3,7 +3,6 @@
 function main(args)
 {
 	let target = Math.randomInt(0, 10) ;
-	//console.print("target value = " + target + "\n") ;
 
 	let docont = true ;
 	while(docont) {
