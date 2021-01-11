@@ -1,0 +1,42 @@
+top: VBox {
+	checks: HBox {
+		box0: CheckBox {
+			title: String "Check 0"
+			isEnabled: Bool true
+			status:  Bool false
+			pressed: Event(status : Bool) %{
+				console.log("Status: Check-0 -> " + status) ;
+			%}
+		}
+		box1: CheckBox {
+			title: String "Check 1"
+			isEnabled: Bool Listner(newstat: top.checks.box0.status) %{
+				console.log("set enabled: " + newstat) ;
+				return newstat ;
+			%}
+			status:  Bool false
+			pressed: Event(status : Bool) %{
+				console.log("Status: Check-1 -> " + status) ;
+			%}
+		}
+	}
+
+	quit_button: Button {
+        	title: String "Quit"
+		pressed: Event() %{
+			console.log("box0: " + top.checks.box0.description) ;
+			console.log("box1: " + top.checks.box1.description) ;
+			let check0 = top.checks.box0.status ;
+			let check1 = top.checks.box1.status ;
+			let result = {
+				check0: check0,
+				check1: check1
+			} ;
+			console.log(  "Result: Check-0 -> " + check0 + "\n" 
+			            + "        Check-1 -> " + check1
+			) ;
+			leaveView(result) ;
+        	%}
+    	}
+}
+

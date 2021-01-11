@@ -1,0 +1,7 @@
+{
+	application: "main.js"
+	subviews: {
+		controls: "controls.amb"
+	}
+}
+
