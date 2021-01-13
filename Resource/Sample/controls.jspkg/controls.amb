@@ -1,4 +1,11 @@
 top: VBox {
+	icon: Icon {
+		image: String "icon0"
+		title: String "Amber"
+		pressed: Event() %{
+			console.log("icon0 pressed") ;
+		%}
+	}
 	checks: HBox {
 		box0: CheckBox {
 			title: String "Check 0"

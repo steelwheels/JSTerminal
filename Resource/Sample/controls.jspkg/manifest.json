@@ -3,5 +3,8 @@
 	subviews: {
 		controls: "controls.amb"
 	}
+	images: {
+		icon0: "amber-icon-128x128.png"
+	}
 }
 
