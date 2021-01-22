@@ -1,0 +1,7 @@
+top: VBox {
+    table: Table {
+	width:  Int	2
+	height: Int	2
+    }
+}
+
