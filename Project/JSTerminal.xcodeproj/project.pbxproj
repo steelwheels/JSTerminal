@@ -10,6 +10,8 @@
 		050C4898259CB115002D4972 /* Welcome.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050C4897259CB115002D4972 /* Welcome.jspkg */; };
 		0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 058993FB253F17F700663275 /* JSTerminal.jspkg */; };
 		053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05BAB09625A0661800DD59D7 /* num_guess.js */; };
+		0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
+		0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
 		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +103,8 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */,
+				0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */,
 				05B7711E25187972004FCD84 /* alert.js in CopyFiles */,
 				05B7711F25187972004FCD84 /* breakout.jspkg in CopyFiles */,
 				05B7712025187972004FCD84 /* colorbar.js in CopyFiles */,
@@ -120,6 +124,8 @@
 
 /* Begin PBXFileReference section */
 		050C4897259CB115002D4972 /* Welcome.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Welcome.jspkg; sourceTree = "<group>"; };
+		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = controls.jspkg; path = ../Resource/Sample/controls.jspkg; sourceTree = "<group>"; };
+		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = table.jspkg; path = ../Resource/Sample/table.jspkg; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 		0594390B2543963B00064E39 /* amber-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "amber-0.jspkg"; sourceTree = "<group>"; };
@@ -244,6 +250,8 @@
 		05F7AE38251874670077F527 = {
 			isa = PBXGroup;
 			children = (
+				0586F79425BC009A00AE9FEE /* table.jspkg */,
+				0586F79225BC008500AE9FEE /* controls.jspkg */,
 				05F7AE572518748C0077F527 /* Source */,
 				05F7AE45251874820077F527 /* JSTerminal */,
 				05B770FF25187903004FCD84 /* Resource */,

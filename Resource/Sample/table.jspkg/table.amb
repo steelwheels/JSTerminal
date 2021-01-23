@@ -1,7 +1,7 @@
 top: VBox {
     table: Table {
-	width:  Int	2
-	height: Int	2
+	columnCount:	Int	2
+	rowCount:	Int	2
     }
 }
 
