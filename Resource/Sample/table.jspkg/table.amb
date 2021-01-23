@@ -1,7 +1,13 @@
 top: VBox {
     table: Table {
-	columnCount:	Int	2
-	rowCount:	Int	2
+	    columnCount:	Int	2
+	    rowCount:	    Int	2
+        cell: Label {
+            text: String ""
+        }
+        make: Event(col:Int, row:Int) %{
+            self.text = "cell(" + col + ", " + row + ")" ;
+        %}
     }
 }
 
