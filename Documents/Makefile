@@ -14,6 +14,7 @@ m4_cmd	= m4 --prefix-builtins \
 	$(m4_cmd) $< > $@
 
 all: $(doc_dir)/AppleScript.md
+	(cd Sample ; make)
 
 clean:
 	rm -f $(doc_dir)/AppleScript.md

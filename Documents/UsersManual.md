@@ -118,7 +118,7 @@ And you will get following outputs:
 
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
-You can find the sample JavaScript programs in [sample game scripts](Games.md).
+You can find the sample JavaScript programs in [sample game scripts](Sample/Games.md), [sample GUI scripts](Sample/GUIs.md).
 
 ### File package
 The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
@@ -243,6 +243,6 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
 * [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md): The specification of this language. See [sample scripts](AmberProgramming.md).
-* Sample Scripts: [sample game script](Games.md)
+* Sample Scripts: [sample game script](Sample/Games.md), [sample GUI script](Sample/GUIs.md)
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
 * [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.

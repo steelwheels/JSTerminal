@@ -1,3 +1,17 @@
+
+
+# Sample Scripts: GUI
+This document contains the sample Amber Script to implemenent GUI.
+
+## Table component
+### Package name
+`Sample/table.jspkg`
+
+### Screen shot
+![Table View](Images/table-screenshot.png)
+
+### Script
+````
 top: VBox {
     table: Table {
 	columnCount:	Int	3
@@ -28,4 +42,7 @@ top: VBox {
         %}
     }
 }
+
+
+````
 

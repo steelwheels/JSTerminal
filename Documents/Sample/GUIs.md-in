@@ -1,0 +1,15 @@
+# Sample Scripts: GUI
+This document contains the sample Amber Script to implemenent GUI.
+
+## Table component
+### Package name
+`Sample/table.jspkg`
+
+### Screen shot
+![Table View](Images/table-screenshot.png)
+
+### Script
+````
+m4_include(table.jspkg/table.amb)
+````
+
