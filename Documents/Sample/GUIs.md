@@ -8,7 +8,7 @@ This document contains the sample Amber Script to implemenent GUI.
 `Sample/table.jspkg`
 
 ### Screen shot
-![Table View](Images/table-screenshot.png)
+![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/table-screenshot.png)
 
 ### Script
 ````
