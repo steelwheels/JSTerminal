@@ -3,5 +3,14 @@
 	subviews: {
 		table: "table.amb"
 	}
+	images: {
+		logo:		"images/amber-icon-128x128.png"
+		bag:		"images/bag-128x128.png"
+		book:		"images/book-128x128.png"
+		calendar:	"images/calendar-128x128.png"
+		clock:		"images/clock-128x128.png"
+		telescope:	"images/telescope-128x128.png"
+		umbrella:	"images/unmbrella-128x128.png"
+	}
 }
 
