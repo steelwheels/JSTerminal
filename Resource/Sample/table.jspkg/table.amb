@@ -1,30 +1,38 @@
 top: VBox {
+	selection: Int 0
     table: Table {
-	columnCount:	Int	3
-	rowCount:	Int	2
-	cell: Icon {
-		image: String "calendar"
-		title: String "calendar"
-	}
-	make: Event(col: Int, row: Int) %{
-		let idx   = row * 2 + col ;
-		let image = "?" ;
-		switch(idx){
-			case 0: image = "bag" ;		break ;
-			case 1: image = "book" ; 	break ;
-			case 2: image = "calendar" ;	break ;
-			case 3: image = "clock" ;	break ;
-			case 4: image = "telescope" ;	break ;
-			case 4: image = "umblrella" ;	break ;
+		columnCount:	Int	3
+		rowCount:	Int	2
+		cell: Icon {
+			image: String "calendar"
+			title: String "calendar"
+
 		}
-		self.title = image ;
-		self.image = image ;
-	%}
+		make: Event(col: Int, row: Int) %{
+			let idx   = row * 2 + col ;
+			let image = "?" ;
+			switch(idx){
+				case 0: image = "bag" ;		break ;
+				case 1: image = "book" ; 	break ;
+				case 2: image = "calendar" ;	break ;
+				case 3: image = "clock" ;	break ;
+				case 4: image = "telescope" ;	break ;
+				case 5: image = "umblrella" ;	break ;
+			}
+			self.title = image ;
+			self.image = image ;
+			console.log("make: col=" + col + ", row=" + row) ;
+		%}
+		pressed: Event(col: Int, row: Int) %{
+			let idx = row * 2 + col ;
+			console.log("pressed: col=" + col + ", row=" + row + 
+				    ", index = " + idx) ;
+		%}
     }
     quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView(result) ;
+   		title: String "Quit"
+		pressed: Event() %{
+			leaveView(top.selection) ;
         %}
     }
 }
