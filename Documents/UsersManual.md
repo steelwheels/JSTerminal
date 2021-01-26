@@ -111,10 +111,18 @@ Hello, world !!
 ````
 And this is sample program to test terminal color.
 ````
-run Sample/colors.js
+jsh> run Sample/colors.js
 ````
 And you will get following outputs:
-![Screenshot of colors script](./Images/script-colors.png)
+![Screenshot of script-colors.png](./Images/script-colors.png)
+
+This is sample program using Amber Programming language.
+````
+jsh> run Sample/table.jspkg
+````
+
+And you will get following outputs:
+![Screenshot of table.jspkg](./Images/table-screenshot.png)
 
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
