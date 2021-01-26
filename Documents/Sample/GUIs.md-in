@@ -1,7 +1,22 @@
 # Sample Scripts: GUI
 This document contains the sample Amber Script to implemenent GUI.
 
+## VBox and Button component
+### Package name
+`Sample/buttons.jspkg`
+
+### Screen shot
+![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/buttons-screenshot.png)
+
+### Script
+````
+m4_include(buttons.jspkg/buttons.amb)
+````
+The [VBox/HBox component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Box.md) has multiple components in it. It is arranged vertically or horizontally.
+The [Button component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Button.md) is button to be pressed. The designet can implement the action when the button is pressed.
+
 ## Table component
+
 ### Package name
 `Sample/table.jspkg`
 
@@ -9,7 +24,15 @@ This document contains the sample Amber Script to implemenent GUI.
 ![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/table-screenshot.png)
 
 ### Script
+The cell is defined by `cell` property.
 ````
 m4_include(table.jspkg/table.amb)
 ````
+
+The [table component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Table.md)
+contains NxM child components (called as *cell*).
+N is number of columns and M is number of rows for each colmun.
+
+# Reference
+* [Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): The list of all components
 

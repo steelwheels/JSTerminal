@@ -21,12 +21,10 @@ top: VBox {
 			}
 			self.title = image ;
 			self.image = image ;
-			console.log("make: col=" + col + ", row=" + row) ;
 		%}
 		pressed: Event(col: Int, row: Int) %{
 			let idx = row * 2 + col ;
-			console.log("pressed: col=" + col + ", row=" + row + 
-				    ", index = " + idx) ;
+			top.selection = idx ;
 		%}
     }
     quit_button: Button {
