@@ -89,6 +89,49 @@ The [table component](https://github.com/steelwheels/KiwiCompnents/blob/master/D
 contains NxM child components (called as *cell*).
 N is number of columns and M is number of rows for each colmun.
 
+## 2D graphics component
+
+### Package name
+`Sample/graphics.jspkg`
+
+### Screen shot
+![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/graphics-2d-screenshot-1.png)
+
+### Script
+````
+top: VBox {
+    graphics: Graphics2D {
+        width:      Int         640
+        height:     Int         480
+        size_x:     Float       6.28
+        size_y:     Float       6.28
+        origin_x:   Float       -3.14
+        origin_y:   Float       -3.14
+        draw: Event(context: Int) %{
+            let frame = context.logicalFrame ;
+            let minx  = frame.x ;
+            let maxx  = frame.x + frame.width ;
+            let step  = frame.width / 100 ;
+            console.log("minx: " + minx + ", maxx: " + maxx) ;
+            /* Move to first position */
+            context.moveTo(minx, Math.sin(minx)) ;
+            /* Draw sin curves */
+            for(let x=minx ; x<=maxx ; x+=step) {
+                context.lineTo(x, Math.sin(x)) ;
+            }
+        %}
+    }
+    quit_button: Button {
+   		title: String "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+        %}
+    }
+}
+
+
+````
+
 # Reference
 * [Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): The list of all components
 

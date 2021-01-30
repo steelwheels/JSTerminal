@@ -33,6 +33,19 @@ The [table component](https://github.com/steelwheels/KiwiCompnents/blob/master/D
 contains NxM child components (called as *cell*).
 N is number of columns and M is number of rows for each colmun.
 
+## 2D graphics component
+
+### Package name
+`Sample/graphics.jspkg`
+
+### Screen shot
+![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/graphics-2d-screenshot-1.png)
+
+### Script
+````
+m4_include(graphics.jspkg/graphics.amb)
+````
+
 # Reference
 * [Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): The list of all components
 
