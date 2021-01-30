@@ -5,6 +5,8 @@ The *JSTerminal* is a terminal application.
 This application has following features:
 * _JavaScriptable_: You can write shell script by JavaScript.　The JavaScript shell (named *jsh*) is supported. It extend JavaScript to make shell scripting easier. See [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) for more details.
 * _GUI Designable_:  You can implement GUI by component based language named [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). You can call the script from JavaScript code to display the graphical user interface.
+* _Rapid and Interactive Application Development_: There are many built in functions. Especially, the GUI design by Amber Programming Language reduce the code for GUI implementation.
+* _Educational_: The interactive JavaScript programming environment helps you to learn JavaScript. The beginner can try 2D graphics programming with minimum effort.
 
 This product is open source software.
 If you have any question or suggestions please send e-mail to [Steel Wheels Project](mailto:steel.wheels.project@gmail.com) or write issue to the [Github repository](https://github.com/steelwheels/JSTerminal).
@@ -123,6 +125,14 @@ jsh> run Sample/table.jspkg
 
 And you will get following outputs:
 ![Screenshot of table.jspkg](./Images/table-screenshot.png)
+
+This is another sample program using Amber Programming language.
+````
+jsh> run Sample/graphics.jspkg
+````
+
+And you will get following outputs:
+![Screenshot of graphics.jspkg](./Images/graphics-2d-screenshot-1.png)
 
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
