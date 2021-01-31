@@ -1,0 +1,22 @@
+top: VBox {
+    graphics: Graphics2D {
+        width:      Int         640
+        height:     Int         480
+        size_x:     Float       100
+        size_y:     Float       100
+        origin_x:   Float         0
+        origin_y:   Float         0
+        draw: Event(context: Int) %{
+            let turtle  = new Turtle(context, 50.0, 0.0) ;
+            let pattern = makePattern(turtle) ;
+	        turtle.exec(pattern) ;
+        %}
+    }
+    quit_button: Button {
+   		title: String "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+        %}
+    }
+}
+

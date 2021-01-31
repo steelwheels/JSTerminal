@@ -10,6 +10,7 @@
 		050C4898259CB115002D4972 /* Welcome.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050C4897259CB115002D4972 /* Welcome.jspkg */; };
 		0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 058993FB253F17F700663275 /* JSTerminal.jspkg */; };
 		053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05BAB09625A0661800DD59D7 /* num_guess.js */; };
+		05839D1B25C6A60D00653302 /* turtle.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05839D1A25C6A60D00653302 /* turtle.jspkg */; };
 		0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
 		0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
@@ -103,6 +104,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05839D1B25C6A60D00653302 /* turtle.jspkg in CopyFiles */,
 				0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */,
 				0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */,
 				05B7711E25187972004FCD84 /* alert.js in CopyFiles */,
@@ -124,11 +126,11 @@
 
 /* Begin PBXFileReference section */
 		050C4897259CB115002D4972 /* Welcome.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Welcome.jspkg; sourceTree = "<group>"; };
-		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = controls.jspkg; path = ../Resource/Sample/controls.jspkg; sourceTree = "<group>"; };
-		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = table.jspkg; path = ../Resource/Sample/table.jspkg; sourceTree = "<group>"; };
+		05839D1A25C6A60D00653302 /* turtle.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = turtle.jspkg; sourceTree = "<group>"; };
+		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = controls.jspkg; sourceTree = "<group>"; };
+		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = table.jspkg; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
-		0594390B2543963B00064E39 /* amber-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "amber-0.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
 		05B770E22518788C004FCD84 /* CoconutData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutData.xcframework; path = ../../../Library/Frameworks/CoconutData.xcframework; sourceTree = "<group>"; };
@@ -223,7 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				05B7711B25187949004FCD84 /* alert.js */,
-				0594390B2543963B00064E39 /* amber-0.jspkg */,
+				0586F79425BC009A00AE9FEE /* table.jspkg */,
+				0586F79225BC008500AE9FEE /* controls.jspkg */,
 				05B7710925187931004FCD84 /* breakout.jspkg */,
 				05B7710725187931004FCD84 /* colorbar.js */,
 				05B7710525187931004FCD84 /* colors.js */,
@@ -235,6 +238,7 @@
 				05B7710325187931004FCD84 /* hello.jspkg */,
 				05B7710B25187931004FCD84 /* keycode.js */,
 				05B7710225187931004FCD84 /* loglevel.js */,
+				05839D1A25C6A60D00653302 /* turtle.jspkg */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -250,8 +254,6 @@
 		05F7AE38251874670077F527 = {
 			isa = PBXGroup;
 			children = (
-				0586F79425BC009A00AE9FEE /* table.jspkg */,
-				0586F79225BC008500AE9FEE /* controls.jspkg */,
 				05F7AE572518748C0077F527 /* Source */,
 				05F7AE45251874820077F527 /* JSTerminal */,
 				05B770FF25187903004FCD84 /* Resource */,

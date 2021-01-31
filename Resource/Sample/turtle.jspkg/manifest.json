@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		graphics: "graphics.amb"
+	}
+	libraries: [
+		"pattern.js"
+	]
+}
+
