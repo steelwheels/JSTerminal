@@ -132,6 +132,77 @@ top: VBox {
 
 ````
 
+## Turtle graphics based on the 2D graphics component
+
+### Package name
+`Sample/turtle.jspkg`
+
+### Screen shot
+![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/turtle-screenshot-1.png)
+
+### Script
+#### Amber script (turtle.jspkg/graphics.amb)
+````
+top: VBox {
+    graphics: Graphics2D {
+        width:      Int         640
+        height:     Int         480
+        size_x:     Float       100
+        size_y:     Float       100
+        origin_x:   Float         0
+        origin_y:   Float         0
+        draw: Event(context: Int) %{
+            let turtle  = new Turtle(context) ;
+            let pattern = makePattern(turtle) ;
+	        turtle.exec(pattern) ;
+        %}
+    }
+    quit_button: Button {
+   		title: String "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+        %}
+    }
+}
+
+
+````
+
+#### JavaScript (turtle.jspkg/pattern.js)
+````
+/* pattern.js */
+
+function makeOnePattern(pattern) { // (pattern) -> String
+    let patlen = pattern.length ;
+    let result = "" ;
+    for(let i=0 ; i<patlen ; i++){
+        let c = pattern.charAt(i) ;
+        if(c == "A"){
+            result = result + "B+A+B" ;
+        } else if(c == "B") {
+            result = result + "A-B-A" ;
+        } else {
+            result = result + c ;
+        }
+    }
+    return result ;
+} 
+
+function makePattern(turtle) {    // (turtle) -> String
+    turtle.setup(2, 5, Math.PI/2.0, 0.2) ;
+    turtle.movingAngle    = Math.PI * 60 / 180.0 ;
+    turtle.movingDistance = 1.5 ;
+
+    let pat = "A" ;
+    for(let i=0 ; i<6 ; i++){
+        pat = makeOnePattern(pat) ;
+    }
+    console.log(`result = ${pat}`)
+    return pat.replace(/A/g, 'F').replace(/B/g, 'F')  ;
+}
+
+````
+
 # Reference
 * [Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): The list of all components
 

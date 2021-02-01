@@ -46,6 +46,25 @@ N is number of columns and M is number of rows for each colmun.
 m4_include(graphics.jspkg/graphics.amb)
 ````
 
+## Turtle graphics based on the 2D graphics component
+
+### Package name
+`Sample/turtle.jspkg`
+
+### Screen shot
+![Table View](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Images/turtle-screenshot-1.png)
+
+### Script
+#### Amber script (turtle.jspkg/graphics.amb)
+````
+m4_include(turtle.jspkg/graphics.amb)
+````
+
+#### JavaScript (turtle.jspkg/pattern.js)
+````
+m4_include(turtle.jspkg/pattern.js)
+````
+
 # Reference
 * [Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): The list of all components
 
