@@ -6,7 +6,7 @@ function makeOnePattern(pattern) { // (pattern) -> String
     for(let i=0 ; i<patlen ; i++){
         let c = pattern.charAt(i) ;
         if(c == "F"){
-            result = result + "F[+F[F-F]-F]F[-F[F+F]+F]" ;
+            result = result + "F-F+F+F-F" ;
         } else {
             result = result + c ;
         }
@@ -15,10 +15,12 @@ function makeOnePattern(pattern) { // (pattern) -> String
 } 
 
 function makePattern(turtle) {    // (turtle) -> String
-    turtle.movingDistance = 5 ;
-    turtle.movingAngle    = Math.PI * 22.5 / 180.0 ; // 22.5 degree
+    turtle.setup(0, 0, Math.PI/2.0, 0.5) ;
+    turtle.movingAngle    = Math.PI / 2.0 ;
+    turtle.movingDistance = 3.0 ;
+
     let pat = "F" ;
-    for(let i=0 ; i<4 ; i++){
+    for(let i=0 ; i<3 ; i++){
         pat = makeOnePattern(pat) ;
     }
     console.log(`result = ${pat}`)

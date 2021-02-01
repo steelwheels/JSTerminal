@@ -3,11 +3,11 @@ top: VBox {
         width:      Int         640
         height:     Int         480
         size_x:     Float       100
-        size_y:     Float       100
+        size_y:     Float        50
         origin_x:   Float         0
         origin_y:   Float         0
         draw: Event(context: Int) %{
-            let turtle  = new Turtle(context, 50.0, 0.0) ;
+            let turtle  = new Turtle(context) ;
             let pattern = makePattern(turtle) ;
 	        turtle.exec(pattern) ;
         %}
