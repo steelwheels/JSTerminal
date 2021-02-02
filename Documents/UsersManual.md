@@ -126,13 +126,21 @@ jsh> run Sample/table.jspkg
 And you will get following outputs:
 ![Screenshot of table.jspkg](./Images/table-screenshot.png)
 
-This is another sample program using Amber Programming language.
+This is sample program of 2D graphics using Amber Programming language.
 ````
 jsh> run Sample/graphics.jspkg
 ````
 
 And you will get following outputs:
 ![Screenshot of graphics.jspkg](./Images/graphics-2d-screenshot-1.png)
+
+This is [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics).
+````
+jsh> run Sample/turtle.jspkg
+````
+
+And you will get following outputs:
+![Screenshot of turtle.jspkg](./Images/turtle-screenshot-1.png)
 
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).

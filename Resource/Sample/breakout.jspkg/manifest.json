@@ -1,7 +1,0 @@
-{
-	application: "main.js",
-	libraries: [
-		"field.js"
-	]
-}
-

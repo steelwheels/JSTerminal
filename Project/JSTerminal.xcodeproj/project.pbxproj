@@ -34,12 +34,9 @@
 		05B770FA2518788C004FCD84 /* KiwiComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E82518788C004FCD84 /* KiwiComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B770FC251878B0004FCD84 /* Preference.storyboard */; };
 		05B7711E25187972004FCD84 /* alert.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7711B25187949004FCD84 /* alert.js */; };
-		05B7711F25187972004FCD84 /* breakout.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710925187931004FCD84 /* breakout.jspkg */; };
 		05B7712025187972004FCD84 /* colorbar.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710725187931004FCD84 /* colorbar.js */; };
 		05B7712125187972004FCD84 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710525187931004FCD84 /* colors.js */; };
 		05B7712225187972004FCD84 /* curses.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710C25187931004FCD84 /* curses.js */; };
-		05B7712325187972004FCD84 /* curses2.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710425187931004FCD84 /* curses2.jspkg */; };
-		05B7712425187972004FCD84 /* getl.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710625187931004FCD84 /* getl.js */; };
 		05B7712525187972004FCD84 /* hello_color.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710125187931004FCD84 /* hello_color.js */; };
 		05B7712625187972004FCD84 /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710D25187931004FCD84 /* hello.js */; };
 		05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710325187931004FCD84 /* hello.jspkg */; };
@@ -50,6 +47,7 @@
 		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
 		05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; };
 		05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05ED0F3325C8FBA100D00BBC /* graphics.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05ED0F3225C8FBA100D00BBC /* graphics.jspkg */; };
 		05F7AE47251874820077F527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE46251874820077F527 /* AppDelegate.swift */; };
 		05F7AE4B251874820077F527 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE4A251874820077F527 /* Document.swift */; };
 		05F7AE4D251874830077F527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4C251874830077F527 /* Assets.xcassets */; };
@@ -104,16 +102,14 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05ED0F3325C8FBA100D00BBC /* graphics.jspkg in CopyFiles */,
 				05839D1B25C6A60D00653302 /* turtle.jspkg in CopyFiles */,
 				0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */,
 				0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */,
 				05B7711E25187972004FCD84 /* alert.js in CopyFiles */,
-				05B7711F25187972004FCD84 /* breakout.jspkg in CopyFiles */,
 				05B7712025187972004FCD84 /* colorbar.js in CopyFiles */,
 				05B7712125187972004FCD84 /* colors.js in CopyFiles */,
 				05B7712225187972004FCD84 /* curses.js in CopyFiles */,
-				05B7712325187972004FCD84 /* curses2.jspkg in CopyFiles */,
-				05B7712425187972004FCD84 /* getl.js in CopyFiles */,
 				05B7712525187972004FCD84 /* hello_color.js in CopyFiles */,
 				05B7712625187972004FCD84 /* hello.js in CopyFiles */,
 				05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */,
@@ -144,11 +140,8 @@
 		05B7710125187931004FCD84 /* hello_color.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello_color.js; sourceTree = "<group>"; };
 		05B7710225187931004FCD84 /* loglevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = loglevel.js; sourceTree = "<group>"; };
 		05B7710325187931004FCD84 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = hello.jspkg; sourceTree = "<group>"; };
-		05B7710425187931004FCD84 /* curses2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = curses2.jspkg; sourceTree = "<group>"; };
 		05B7710525187931004FCD84 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
-		05B7710625187931004FCD84 /* getl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = getl.js; sourceTree = "<group>"; };
 		05B7710725187931004FCD84 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
-		05B7710925187931004FCD84 /* breakout.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = breakout.jspkg; sourceTree = "<group>"; };
 		05B7710B25187931004FCD84 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		05B7710C25187931004FCD84 /* curses.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = curses.js; sourceTree = "<group>"; };
 		05B7710D25187931004FCD84 /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
@@ -158,6 +151,7 @@
 		05B7712E251879BF004FCD84 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05BAB09625A0661800DD59D7 /* num_guess.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = num_guess.js; sourceTree = "<group>"; };
 		05DB6EFB252F210000ADA7AD /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
+		05ED0F3225C8FBA100D00BBC /* graphics.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = graphics.jspkg; path = ../Resource/Sample/graphics.jspkg; sourceTree = "<group>"; };
 		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7AE46251874820077F527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05F7AE4A251874820077F527 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -227,12 +221,9 @@
 				05B7711B25187949004FCD84 /* alert.js */,
 				0586F79425BC009A00AE9FEE /* table.jspkg */,
 				0586F79225BC008500AE9FEE /* controls.jspkg */,
-				05B7710925187931004FCD84 /* breakout.jspkg */,
 				05B7710725187931004FCD84 /* colorbar.js */,
 				05B7710525187931004FCD84 /* colors.js */,
 				05B7710C25187931004FCD84 /* curses.js */,
-				05B7710425187931004FCD84 /* curses2.jspkg */,
-				05B7710625187931004FCD84 /* getl.js */,
 				05B7710125187931004FCD84 /* hello_color.js */,
 				05B7710D25187931004FCD84 /* hello.js */,
 				05B7710325187931004FCD84 /* hello.jspkg */,
@@ -254,6 +245,7 @@
 		05F7AE38251874670077F527 = {
 			isa = PBXGroup;
 			children = (
+				05ED0F3225C8FBA100D00BBC /* graphics.jspkg */,
 				05F7AE572518748C0077F527 /* Source */,
 				05F7AE45251874820077F527 /* JSTerminal */,
 				05B770FF25187903004FCD84 /* Resource */,
