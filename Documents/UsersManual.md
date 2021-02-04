@@ -265,10 +265,12 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |1.3	|2020/07/13 |Support `.jshrc` file to setup environment at the boot time. Fix bugs about terminal emulation. |
 |1.4	|2020/08/29 |Support AppleEvents to be controlled by AppleScript |
 |1.5.4	|2021/01/03 |Support [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md) for GUI design |
+|1.6   |2021/02/02 |Support [Table component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Table.md) and [2D Graphics component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Graphics2D.md). |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
 * [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md): The specification of this language. See [sample scripts](AmberProgramming.md).
-* Sample Scripts: [sample game script](Sample/Games.md), [sample GUI script](Sample/GUIs.md)
+* [Kiwi Components](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): List of all components
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The JSTerminal support this.
+* Sample Scripts: [sample game script](Sample/Games.md), [sample GUI script](Sample/GUIs.md)
 * [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.
