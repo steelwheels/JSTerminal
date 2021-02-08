@@ -1,0 +1,22 @@
+top: VBox {
+    bitmap: Bitmap {
+			width:			Int 640
+			height:			Int 480
+			rowCount: 		Int 50
+			columnCount:	Int 50
+			duration:		Float 2.0
+			draw: Event(context, count) %{
+				//console.log("[Bitmap] draw: " + count) ;
+				context.setColor(context.blue) ;
+				let pos = count % 100 ;
+				context.drawPoint(pos, pos) ;
+			%}
+	}
+    quit_button: Button {
+   		title: String "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+        %}
+    }
+}
+

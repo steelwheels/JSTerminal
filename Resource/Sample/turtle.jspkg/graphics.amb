@@ -6,7 +6,7 @@ top: VBox {
         size_y:     Float       100
         origin_x:   Float         0
         origin_y:   Float         0
-        draw: Event(context: Int) %{
+        draw: Event(context) %{
             let turtle  = new Turtle(context) ;
             let pattern = makePattern(turtle) ;
 	        turtle.exec(pattern) ;

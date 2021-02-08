@@ -8,7 +8,7 @@ top: VBox {
 			title: String "calendar"
 
 		}
-		make: Event(col: Int, row: Int) %{
+		make: Event(col, row) %{
 			let idx   = row * 2 + col ;
 			let image = "?" ;
 			switch(idx){
@@ -22,7 +22,7 @@ top: VBox {
 			self.title = image ;
 			self.image = image ;
 		%}
-		pressed: Event(col: Int, row: Int) %{
+		pressed: Event(col, row) %{
 			let idx = row * 2 + col ;
 			top.selection = idx ;
 		%}

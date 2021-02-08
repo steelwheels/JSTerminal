@@ -11,7 +11,7 @@ top: VBox {
 			title: String "Check 0"
 			isEnabled: Bool true
 			status:  Bool false
-			pressed: Event(status : Bool) %{
+			pressed: Event(status) %{
 				console.log("Status: Check-0 -> " + status) ;
 			%}
 		}
@@ -22,7 +22,7 @@ top: VBox {
 				return newstat ;
 			%}
 			status:  Bool false
-			pressed: Event(status : Bool) %{
+			pressed: Event(status) %{
 				console.log("Status: Check-1 -> " + status) ;
 			%}
 		}
