@@ -36,7 +36,6 @@
 		05B7711E25187972004FCD84 /* alert.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7711B25187949004FCD84 /* alert.js */; };
 		05B7712025187972004FCD84 /* colorbar.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710725187931004FCD84 /* colorbar.js */; };
 		05B7712125187972004FCD84 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710525187931004FCD84 /* colors.js */; };
-		05B7712225187972004FCD84 /* curses.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710C25187931004FCD84 /* curses.js */; };
 		05B7712525187972004FCD84 /* hello_color.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710125187931004FCD84 /* hello_color.js */; };
 		05B7712625187972004FCD84 /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710D25187931004FCD84 /* hello.js */; };
 		05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710325187931004FCD84 /* hello.jspkg */; };
@@ -111,7 +110,6 @@
 				05B7711E25187972004FCD84 /* alert.js in CopyFiles */,
 				05B7712025187972004FCD84 /* colorbar.js in CopyFiles */,
 				05B7712125187972004FCD84 /* colors.js in CopyFiles */,
-				05B7712225187972004FCD84 /* curses.js in CopyFiles */,
 				05B7712525187972004FCD84 /* hello_color.js in CopyFiles */,
 				05B7712625187972004FCD84 /* hello.js in CopyFiles */,
 				05B7712725187972004FCD84 /* hello.jspkg in CopyFiles */,
@@ -145,7 +143,6 @@
 		05B7710525187931004FCD84 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
 		05B7710725187931004FCD84 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
 		05B7710B25187931004FCD84 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
-		05B7710C25187931004FCD84 /* curses.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = curses.js; sourceTree = "<group>"; };
 		05B7710D25187931004FCD84 /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
 		05B7711B25187949004FCD84 /* alert.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = alert.js; sourceTree = "<group>"; };
 		05B7712C251879BF004FCD84 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -225,13 +222,11 @@
 				0586F79225BC008500AE9FEE /* controls.jspkg */,
 				05B7710725187931004FCD84 /* colorbar.js */,
 				05B7710525187931004FCD84 /* colors.js */,
-				05B7710C25187931004FCD84 /* curses.js */,
 				05ED0F3225C8FBA100D00BBC /* graphics.jspkg */,
 				05B7710125187931004FCD84 /* hello_color.js */,
 				05B7710D25187931004FCD84 /* hello.js */,
 				05B7710325187931004FCD84 /* hello.jspkg */,
 				05B7710B25187931004FCD84 /* keycode.js */,
-				05D542EB25CFCC1E007CD73C /* life-game.jspkg */,
 				05B7710225187931004FCD84 /* loglevel.js */,
 				0586F79425BC009A00AE9FEE /* table.jspkg */,
 				05839D1A25C6A60D00653302 /* turtle.jspkg */,
@@ -242,6 +237,7 @@
 		05BAB09525A0655100DD59D7 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				05D542EB25CFCC1E007CD73C /* life-game.jspkg */,
 				05BAB09625A0661800DD59D7 /* num_guess.js */,
 			);
 			path = Game;
