@@ -12,11 +12,21 @@ top: VBox {
 	        turtle.exec(pattern) ;
         %}
     }
-    quit_button: Button {
-   		title: String "Quit"
-		pressed: Event() %{
-			leaveView(1) ;
-        %}
+    buttons: HBox {
+        start_button: Button {
+            title: String "Start"
+            pressed: Event() %{
+                console.log("start: " + top.graphics.start) ;
+                top.graphics.start(1.0, 1.0) ;
+            %}
+        }
+        quit_button: Button {
+   		    title: String "Quit"
+		    pressed: Event() %{
+                top.graphics.stop() ;
+			    leaveView(1) ;
+            %}
+        }
     }
 }
 

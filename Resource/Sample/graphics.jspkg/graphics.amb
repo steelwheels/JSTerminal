@@ -21,11 +21,34 @@ top: VBox {
             }
         %}
     }
-    quit_button: Button {
-   		title: String "Quit"
-		pressed: Event() %{
+    buttons: HBox {
+        start_button: Button {
+            title: String "Start"
+            pressed: Event() %{
+                let grp = top.graphics ;
+		switch(grp.state()){
+		  case AnimationState.idle:
+			grp.start(1.0, 10.0) ;
+			self.title = "Stop" ;
+			top.buttons.quit_button.isEnabled = false ;
+		  break ;
+		  case AnimationState.run:
+		  case AnimationState.pause:
+			grp.stop() ;
+			self.title = "Start" ;
+			top.buttons.quit_button.isEnabled = true ;
+		  break ;
+		}
+            %}
+        }
+        quit_button: Button {
+   		    title: String "Quit"
+		    isEnabled: Bool false
+		    pressed: Event() %{
 			leaveView(1) ;
-        %}
+            %}
+        }
     }
+    
 }
 
