@@ -23,29 +23,55 @@ top: VBox {
     }
     buttons: HBox {
         start_button: Button {
-            title: String "Start"
+            title: String Listner(state: top.graphics.state) %{
+                let result = "Unknown" ;
+                switch(state) {
+                    case AnimationState.idle:
+                        result = "Start" ;
+                    break ;
+                    case AnimationState.run:
+                        result = "Stop" ;
+                    break ;
+                    case AnimationState.pause:
+                        result = "Wait" ;
+                    break ;
+                }
+                return result ;
+            %}
             pressed: Event() %{
                 let grp = top.graphics ;
-		switch(grp.state()){
-		  case AnimationState.idle:
-			grp.start(1.0, 10.0) ;
-			self.title = "Stop" ;
-			top.buttons.quit_button.isEnabled = false ;
-		  break ;
-		  case AnimationState.run:
-		  case AnimationState.pause:
-			grp.stop() ;
-			self.title = "Start" ;
-			top.buttons.quit_button.isEnabled = true ;
-		  break ;
-		}
+                switch(grp.state) {
+                    case AnimationState.idle:
+                        grp.start(1.0, 10.0) ;
+                    break ;
+                    case AnimationState.run:
+                        grp.stop() ;
+                    break ;
+                    case AnimationState.pause:
+                        console.log("No effect") ;
+                    break ;
+                }
             %}
         }
         quit_button: Button {
    		    title: String "Quit"
-		    isEnabled: Bool false
+		    isEnabled: Bool Listner(state: top.graphics.state) %{
+                let result = false ;
+                switch(state) {
+                    case AnimationState.idle:
+                        result = true ;
+                    break ;
+                    case AnimationState.run:
+                        result = false ;
+                    break ;
+                    case AnimationState.pause:
+                        result = false ;
+                    break ;
+                }
+                return result ;
+            %}
 		    pressed: Event() %{
-			leaveView(1) ;
+			    leaveView(1) ;
             %}
         }
     }
