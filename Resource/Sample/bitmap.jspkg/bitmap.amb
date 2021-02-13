@@ -1,0 +1,85 @@
+top: VBox {
+    bitmap: Bitmap {
+        width:          Int     640
+        height:         Int     480
+        rowCount:       Int     50
+        columnCount:    Int     50
+
+        draw: Event(context, count) %{
+            let base = context.baseBitmap ;
+            let off  = 3.14 / 100.0 * count ;
+
+            for(x=0 ; x<6.28 ; x+=0.1) {
+                let ys = Math.sin(off + x) ;
+                let yc = Math.cos(off + x) ;
+                let yt = Math.tan(off + x) ;
+        
+                let xr  = Math.round(x  * (50/6.28) ) ;
+                let ysr = Math.round((ys * 25.0) + 25.0) ;
+                let ycr = Math.round((yc * 25.0) + 25.0) ;
+                let ytr = Math.round((yt * 25.0) + 25.0) ;
+
+                base.set(xr, ysr, context.blue) ;
+                base.set(xr, ycr, context.green) ;
+                base.set(xr, ytr, context.red) ;
+            }
+            context.draw(base) ;
+        %}
+    }
+    buttons: HBox {
+        start_button: Button {
+            title: String Listner(state: top.bitmap.state) %{
+                let result = "Unknown" ;
+                switch(state) {
+                    case AnimationState.idle:
+                        result = "Start" ;
+                    break ;
+                    case AnimationState.run:
+                        result = "Stop" ;
+                    break ;
+                    case AnimationState.pause:
+                        result = "Wait" ;
+                    break ;
+                }
+                return result ;
+            %}
+            pressed: Event() %{
+                let grp = top.bitmap ;
+                switch(grp.state) {
+                    case AnimationState.idle:
+                        grp.start(1.0, 10.0) ;
+                    break ;
+                    case AnimationState.run:
+                        grp.stop() ;
+                    break ;
+                    case AnimationState.pause:
+                        console.log("No effect") ;
+                    break ;
+                }
+            %}
+        }
+        quit_button: Button {
+   		    title: String "Quit"
+		    isEnabled: Bool Listner(state: top.bitmap.state) %{
+                let result = false ;
+                switch(state) {
+                    case AnimationState.idle:
+                        result = true ;
+                    break ;
+                    case AnimationState.run:
+                        result = false ;
+                    break ;
+                    case AnimationState.pause:
+                        result = false ;
+                    break ;
+                }
+                return result ;
+            %}
+		    pressed: Event() %{
+			    leaveView(1) ;
+            %}
+        }
+    }
+    
+}
+
