@@ -1,0 +1,43 @@
+// Setup view for life-game
+top: VBox {
+	lifes: 		String	["None"]
+	life_index:	Int		0
+    bitmap: Bitmap {
+			width:			Int 640
+			height:			Int 480
+			rowCount: 		Int 50
+			columnCount:	Int 50
+			duration:		Float 2.0
+			draw: Event(context, count) %{
+				//console.log("[Bitmap] draw: " + count) ;
+				context.setColor(context.blue) ;
+				let pos = count % 100 ;
+				context.drawPoint(pos, pos) ;
+			%}
+	}
+	buttons: HBox {
+		life_selector: PopupMenu {
+			items: String Listner(lifes: top.lifes) %{
+				return lifes ;
+			%}
+			selected: Event(index) %{
+				console.log("selected = " + index) ;
+				top.life_index = index ;
+			%}
+		}
+		ctrl_button: Button {
+			title: String "Start"
+			pressed: Event() %{
+				console.log("pressed") ;
+        	%}
+		}
+		quit_button: Button {
+   			title: String "Quit"
+			pressed: Event() %{
+				leaveView(1) ;
+        	%}
+    	}
+	}
+    
+}
+
