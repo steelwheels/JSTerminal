@@ -40,7 +40,7 @@ top: VBox {
 	}
     init: Init %{
 		let bitmaps = readData("bitmaps") ;
-		console.log("bitmaps.data = " + bitmaps) ;
+		console.log("bitmaps.data = " + Object.keys(bitmaps)) ;
 	%}
 }
 
