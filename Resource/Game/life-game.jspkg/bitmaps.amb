@@ -1,0 +1,8 @@
+// bitmap definitions
+
+bitmaps: Dictionary {
+	glider: MonoBitmap {
+		data: Int [[0,1], [0, 1]]
+	}
+}
+

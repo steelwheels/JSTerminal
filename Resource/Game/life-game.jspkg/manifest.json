@@ -3,5 +3,8 @@
 	subviews: {
 		setup: "setup.amb"
 	}
+	data: {
+		bitmaps: "bitmaps.amb"
+	}
 }
 
