@@ -9,10 +9,8 @@ top: VBox {
 			columnCount:	Int 50
 			duration:		Float 2.0
 			draw: Event(context, count) %{
-				//console.log("[Bitmap] draw: " + count) ;
-				context.setColor(context.blue) ;
 				let pos = count % 100 ;
-				context.drawPoint(pos, pos) ;
+				context.set(pos, pos, context.blue) ;
 			%}
 	}
 	buttons: HBox {
@@ -50,8 +48,13 @@ top: VBox {
 			}
 		}
 		//console.log("names= " + names) ;
+
 		/* Update life names */
 		top.lifes = names ; 
+
+		/* Start drawing */
+		let bitmap = top.bitmap ;
+		bitmap.start(0.1, 1.0) ;
 	%}
 }
 
