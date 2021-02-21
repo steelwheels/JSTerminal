@@ -40,7 +40,18 @@ top: VBox {
 	}
     init: Init %{
 		let bitmaps = readData("bitmaps") ;
-		console.log("bitmaps.data = " + Object.keys(bitmaps)) ;
+
+		/* Collect bitmap names */
+		let names   = [] ;
+		for(const key of Object.keys(bitmaps)) {
+			let elm = bitmaps[key] ;
+			if(isBitmapData(elm)) {
+				names.push(key) ;
+			}
+		}
+		//console.log("names= " + names) ;
+		/* Update life names */
+		top.lifes = names ; 
 	%}
 }
 

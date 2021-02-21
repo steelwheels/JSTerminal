@@ -1,8 +1,17 @@
 // bitmap definitions
-
-bitmaps: Dictionary {
-	glider: MonoBitmap {
-		data: Int [[0,1], [0, 1]]
+//  reference: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+bitmaps: Object {
+	blinker: BitmapData {
+		data: Int [[0, 0, 0, 0, 0],
+				   [0, 0, 0, 0, 0],
+				   [0, 1, 1, 1, 0],
+				   [0, 0, 0, 0, 0],
+				   [0, 0, 0, 0, 0]]
+	}
+	glider: BitmapData {
+		data: Int [[1, 1, 1],
+				　　[1, 0, 0],
+			       [0, 1, 0]]
 	}
 }
 
