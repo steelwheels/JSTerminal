@@ -8,7 +8,7 @@ top: VBox {
         draw: Event(context, count) %{
             let off  = 3.14 / 100.0 * count ;
 
-	    context.clear() ;
+	    context.clean() ;
             for(x=0 ; x<6.28 ; x+=0.1) {
                 let ys = Math.sin(off + x) ;
                 let yc = Math.cos(off + x) ;

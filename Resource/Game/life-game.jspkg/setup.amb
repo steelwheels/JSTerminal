@@ -1,7 +1,9 @@
 // Setup view for life-game
 top: VBox {
-	lifes: 		String	["None"]
-	life_index:	Int		0
+	lifes: 			String	["None"]
+	life_index:		Int		0
+	bitmaps:		Int		0
+
     bitmap: Bitmap {
 			width:			Int 640
 			height:			Int 480
@@ -9,8 +11,20 @@ top: VBox {
 			columnCount:	Int 50
 			duration:		Float 2.0
 			draw: Event(context, count) %{
-				let pos = count % 100 ;
-				context.set(pos, pos, context.blue) ;
+				if(count == 0) {
+					let bitmapname = top.lifes[top.life_index] ;
+					let bitmapval = top.bitmaps[bitmapname].data ;
+					console.log("name=" + bitmapname + ", data=" + bitmapval) ;
+					context.set(0, 0, bitmapval) ;
+				} else {
+					//context.set(pos, pos, context.blue) ;
+					self.update(context) ;
+				}
+			%}
+
+			update: Int Func(context) %{
+				console.log("update context") ;
+				return 0 ;
 			%}
 	}
 	buttons: HBox {
@@ -26,7 +40,8 @@ top: VBox {
 		ctrl_button: Button {
 			title: String "Start"
 			pressed: Event() %{
-				console.log("pressed") ;
+				console.log("startted") ;
+				top.bitmap.start(0.1, 0.1) ;
         	%}
 		}
 		quit_button: Button {
@@ -43,18 +58,19 @@ top: VBox {
 		let names   = [] ;
 		for(const key of Object.keys(bitmaps)) {
 			let elm = bitmaps[key] ;
-			if(isBitmapData(elm)) {
+			if(isBitmapValue(elm)) {
 				names.push(key) ;
 			}
 		}
 		//console.log("names= " + names) ;
 
-		/* Update life names */
-		top.lifes = names ; 
+		/* Initilize global variables */
+		top.lifes		= names ;
+		top.life_index	= top.buttons.life_selector.index ;
+		top.bitmaps		= bitmaps ;
 
-		/* Start drawing */
-		let bitmap = top.bitmap ;
-		bitmap.start(0.1, 1.0) ;
+		/* Draw initial bitmap */
+		top.bitmap.start(0.1, 0.1) ;
 	%}
 }
 
