@@ -7,24 +7,71 @@ top: VBox {
     bitmap: Bitmap {
 			width:			Int 640
 			height:			Int 480
-			rowCount: 		Int 50
-			columnCount:	Int 50
+			rowCount: 		Int 100
+			columnCount:	Int 100
 			duration:		Float 2.0
 			draw: Event(context, count) %{
 				if(count == 0) {
 					let bitmapname = top.lifes[top.life_index] ;
-					let bitmapval = top.bitmaps[bitmapname].data ;
-					console.log("name=" + bitmapname + ", data=" + bitmapval) ;
-					context.set(0, 0, bitmapval) ;
+					let bitmap     = Bitmap(top.bitmaps[bitmapname]) ;
+					if(bitmap != null) {
+						let xoff = (self.columnCount    - bitmap.width ) / 2 ;
+						let yoff = (self.rowCount       - bitmap.height) / 2 ; 
+						context.set(xoff, yoff, bitmap) ;
+					}
 				} else {
-					//context.set(pos, pos, context.blue) ;
-					self.update(context) ;
+					self.update(self, context) ;
 				}
 			%}
 
-			update: Int Func(context) %{
-				console.log("update context") ;
+			update: Int Func(self, context) %{
+				let curbm  = context.data ;
+				let width  = curbm.width ;
+				let height = curbm.height ;
+				let newbm  = Bitmap(Array2D(width, height, context.clear)) ;
+
+				for(let y=0 ; y<height ; y++) {
+					for(let x=0 ; x<width ; x++) {
+						let curcell  = self.isAlive(self, curbm.get(x, y)) ;
+						let nextcell = curcell ;
+						let count    = self.countCells(self, context, x, y) ;
+						if(!curcell && count == 3) {
+							nextcell = true ;
+						} else if(curcell && count <= 1) {
+							nextcell = false ;
+						} else if(curcell && count >= 4) {
+							nextcell = false ;
+						}
+						//console.log("cursel=" + curcell + ", x=" + x + ", y=" + y + ", count=" + count + ", state=" + nextcell) ;
+						newbm.set(x, y, nextcell ? context.black : context.clear) ;
+					}
+				}
+
+				context.set(0, 0, newbm) ;
 				return 0 ;
+			%}
+
+			countCells: Int Func(self, context, x, y) %{
+				let colors = [
+					context.get(x-1, y-1), context.get(x  , y-1), context.get(x+1, y-1),
+					context.get(x-1, y  ),                        context.get(x+1, y  ),
+					context.get(x-1, y+1), context.get(x  , y+1), context.get(x+1, y+1),
+				] ;
+				let count = 0 ;
+				for(const col of colors) {
+					if(self.isAlive(self, col)){
+						count += 1 ;
+					}
+				}
+				return count ;
+			%}
+
+			isAlive: Bool Func(self, color) %{
+				if(color != null) {
+					return color.alpha != 0.0 ;
+				} else {
+					return false ;
+				}
 			%}
 	}
 	buttons: HBox {
@@ -33,16 +80,40 @@ top: VBox {
 				return lifes ;
 			%}
 			selected: Event(index) %{
-				console.log("selected = " + index) ;
+				//console.log("selected = " + index) ;
 				top.life_index = index ;
 			%}
 		}
 		ctrl_button: Button {
-			title: String "Start"
-			pressed: Event() %{
-				console.log("startted") ;
-				top.bitmap.start(0.1, 0.1) ;
-        	%}
+			title: String Listner(state: top.bitmap.state) %{
+                let result = "Unknown" ;
+                switch(state) {
+                    case AnimationState.idle:
+                        result = "Start" ;
+                    break ;
+                    case AnimationState.run:
+                        result = "Stop" ;
+                    break ;
+                    case AnimationState.pause:
+                        result = "Wait" ;
+                    break ;
+                }
+                return result ;
+            %}
+            pressed: Event() %{
+                let grp = top.bitmap ;
+                switch(grp.state) {
+                    case AnimationState.idle:
+                        grp.start(1.0, 10.0) ;
+                    break ;
+                    case AnimationState.run:
+                        grp.stop() ;
+                    break ;
+                    case AnimationState.pause:
+                        console.log("No effect") ;
+                    break ;
+                }
+            %}
 		}
 		quit_button: Button {
    			title: String "Quit"
@@ -58,7 +129,7 @@ top: VBox {
 		let names   = [] ;
 		for(const key of Object.keys(bitmaps)) {
 			let elm = bitmaps[key] ;
-			if(isBitmapValue(elm)) {
+			if(isBitmap(elm)) {
 				names.push(key) ;
 			}
 		}
@@ -70,7 +141,7 @@ top: VBox {
 		top.bitmaps		= bitmaps ;
 
 		/* Draw initial bitmap */
-		top.bitmap.start(0.1, 0.1) ;
+		//top.bitmap.start(0.2, 1.0) ;
 	%}
 }
 

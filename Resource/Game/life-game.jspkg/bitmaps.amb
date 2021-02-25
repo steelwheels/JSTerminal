@@ -1,6 +1,11 @@
 // bitmap definitions
 //  reference: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 bitmaps: Object {
+	glider: BitmapValue {
+		data: Int [[1, 1, 1],
+				　	[1, 0, 0],
+			       [0, 1, 0]]
+	}
 	blinker: BitmapValue {
 		data: Int [[0, 0, 0, 0, 0],
 				   [0, 0, 0, 0, 0],
@@ -8,10 +13,18 @@ bitmaps: Object {
 				   [0, 0, 0, 0, 0],
 				   [0, 0, 0, 0, 0]]
 	}
-	glider: BitmapValue {
-		data: Int [[1, 1, 1],
-				　　[1, 0, 0],
-			       [0, 1, 0]]
+	boat: BitmapValue {
+		data: Int [[0, 0, 0, 0, 0],
+				   [0, 1, 1, 0, 0],
+				   [0, 1, 0, 1, 0],
+				   [0, 0, 1, 0, 0],
+				   [0, 0, 0, 0, 0]]
+	}
+	beehive: BitmapValue {
+		data: Int [[0, 0, 0, 0, 0, 0],
+				   [0, 0, 1, 1, 0, 0],
+				   [0, 1, 0, 0, 1, 0],
+				   [0, 0, 1, 1, 0, 0],
+				   [0, 0, 0, 0, 0, 0]]
 	}
 }
-

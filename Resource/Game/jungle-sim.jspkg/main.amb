@@ -1,0 +1,59 @@
+// Setup view for life-game
+top: VBox {
+    bitmap: Bitmap {
+			width:			Int 640
+			height:			Int 480
+			rowCount: 		Int 100
+			columnCount:	Int 100
+			duration:		Float 2.0
+			draw: Event(context, count) %{
+				top.world.draw(context) ;
+			%}
+	}
+	buttons: HBox {
+		start_button: Button {
+   			title: String Listner(state: top.bitmap.state) %{
+                let result = "Unknown" ;
+                switch(state) {
+                    case AnimationState.idle:
+                        result = "Start" ;
+                    break ;
+                    case AnimationState.run:
+                        result = "Stop" ;
+                    break ;
+                    case AnimationState.pause:
+                        result = "Wait" ;
+                    break ;
+                }
+                return result ;
+            %}
+            pressed: Event() %{
+                let grp = top.bitmap ;
+                switch(grp.state) {
+                    case AnimationState.idle:
+						let config = new JConfig() ;
+						top.world.setup(config) ;
+                        grp.start(1.0, 20.0) ;
+                    break ;
+                    case AnimationState.run:
+                        grp.stop() ;
+                    break ;
+                    case AnimationState.pause:
+                        console.log("No effect") ;
+                    break ;
+                }
+            %}
+    	}
+		quit_button: Button {
+   			title: String "Quit"
+			pressed: Event() %{
+				top.bitmap.stop() ;
+				leaveView(1) ;
+        	%}
+    	}
+	}
+    init: Init %{
+		top.world = new JWorld(self.bitmap.rowCount, self.bitmap.columnCount) ;
+	%}
+}
+

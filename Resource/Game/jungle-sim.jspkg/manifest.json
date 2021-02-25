@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		main: "main.amb"
+	}
+	libraries: [
+		"jungle-lib.js"
+	]
+}
+
