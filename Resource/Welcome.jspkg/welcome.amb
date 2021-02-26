@@ -34,10 +34,13 @@ top: VBox {
 				let url = FileManager.openPanel(
 					"Select Home Directory",
 					FileType.directory,
-					[]) ;
-				if(url != null) {
-					top.select.home = url ;
-				}
+					[],
+					function(url) {
+						if(url != null) {
+							top.select.home = url ;
+						}
+					}
+				) ;
 			%}
 		}
 	}
