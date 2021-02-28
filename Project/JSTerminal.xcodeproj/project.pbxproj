@@ -35,7 +35,6 @@
 		05B770FA2518788C004FCD84 /* KiwiComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E82518788C004FCD84 /* KiwiComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B770FC251878B0004FCD84 /* Preference.storyboard */; };
 		05B7711E25187972004FCD84 /* alert.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7711B25187949004FCD84 /* alert.js */; };
-		05B7712025187972004FCD84 /* colorbar.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710725187931004FCD84 /* colorbar.js */; };
 		05B7712125187972004FCD84 /* colors.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710525187931004FCD84 /* colors.js */; };
 		05B7712525187972004FCD84 /* hello_color.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710125187931004FCD84 /* hello_color.js */; };
 		05B7712625187972004FCD84 /* hello.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B7710D25187931004FCD84 /* hello.js */; };
@@ -110,7 +109,6 @@
 				0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */,
 				0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */,
 				05B7711E25187972004FCD84 /* alert.js in CopyFiles */,
-				05B7712025187972004FCD84 /* colorbar.js in CopyFiles */,
 				05B7712125187972004FCD84 /* colors.js in CopyFiles */,
 				05B7712525187972004FCD84 /* hello_color.js in CopyFiles */,
 				05B7712625187972004FCD84 /* hello.js in CopyFiles */,
@@ -143,7 +141,6 @@
 		05B7710225187931004FCD84 /* loglevel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = loglevel.js; sourceTree = "<group>"; };
 		05B7710325187931004FCD84 /* hello.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = hello.jspkg; sourceTree = "<group>"; };
 		05B7710525187931004FCD84 /* colors.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colors.js; sourceTree = "<group>"; };
-		05B7710725187931004FCD84 /* colorbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = colorbar.js; sourceTree = "<group>"; };
 		05B7710B25187931004FCD84 /* keycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = keycode.js; sourceTree = "<group>"; };
 		05B7710D25187931004FCD84 /* hello.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello.js; sourceTree = "<group>"; };
 		05B7711B25187949004FCD84 /* alert.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = alert.js; sourceTree = "<group>"; };
@@ -222,7 +219,6 @@
 			children = (
 				05B7711B25187949004FCD84 /* alert.js */,
 				0586F79225BC008500AE9FEE /* controls.jspkg */,
-				05B7710725187931004FCD84 /* colorbar.js */,
 				05B7710525187931004FCD84 /* colors.js */,
 				05ED0F3225C8FBA100D00BBC /* graphics.jspkg */,
 				05B7710125187931004FCD84 /* hello_color.js */,

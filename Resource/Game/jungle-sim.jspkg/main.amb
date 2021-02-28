@@ -1,11 +1,10 @@
 // Setup view for life-game
 top: VBox {
     bitmap: Bitmap {
-			width:			Int 640
-			height:			Int 480
-			rowCount: 		Int 100
+			width:		Int 640
+			height:		Int 480
+			rowCount: 	Int 100
 			columnCount:	Int 100
-			duration:		Float 2.0
 			draw: Event(context, count) %{
 				top.world.draw(context) ;
 			%}

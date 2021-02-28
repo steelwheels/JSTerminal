@@ -9,7 +9,6 @@ top: VBox {
 			height:			Int 480
 			rowCount: 		Int 100
 			columnCount:	Int 100
-			duration:		Float 2.0
 			draw: Event(context, count) %{
 				if(count == 0) {
 					let bitmapname = top.lifes[top.life_index] ;
@@ -104,7 +103,7 @@ top: VBox {
                 let grp = top.bitmap ;
                 switch(grp.state) {
                     case AnimationState.idle:
-                        grp.start(1.0, 10.0) ;
+                        grp.start(0.1, 100.0) ;
                     break ;
                     case AnimationState.run:
                         grp.stop() ;
@@ -139,9 +138,6 @@ top: VBox {
 		top.lifes		= names ;
 		top.life_index	= top.buttons.life_selector.index ;
 		top.bitmaps		= bitmaps ;
-
-		/* Draw initial bitmap */
-		//top.bitmap.start(0.2, 1.0) ;
 	%}
 }
 
