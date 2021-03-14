@@ -8,7 +8,6 @@ function main(args)
 	while(docont) {
 		console.print("Input number between 0 to 10 > ") ;
 		let line = Readline.input() ;
-/*
 		let no   = parseInt(line) ;
 		if(isNaN(no)) {
 			console.print("Is not number\n") ;
@@ -22,8 +21,6 @@ function main(args)
 				console.print("More big\n") ;
 			}
 		}
-*/
-		docont = false ;
 	}
 	return 0 ;
 }
