@@ -6,12 +6,10 @@ function main(args)
 	console.print("input any characters ('q' to quit)> ") ;
 	while(docont){
 		let c = stdin.getc() ;
-		if(c != null){
-			console.print(c) ;
-			if(c == "q"){
-				console.print("\n") ;
-				docont = false ;
-			}
+		console.print(c) ;
+		if(c == "q"){
+			console.print("\n") ;
+			docont = false ;
 		}
 	}
 	return 0 ;

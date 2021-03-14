@@ -31,7 +31,7 @@ top: VBox {
 			isEnabled:	Bool	true
 			title:  	String	"Select Home Directory"
 			pressed: Event() %{
-				let url = FileManager.openPanel(
+				let url = openPanel(
 					"Select Home Directory",
 					FileType.directory,
 					[]
