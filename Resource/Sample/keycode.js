@@ -1,19 +1,12 @@
 
 function main(args)
 {
-	let c     = "?" ;
-	let prevc = "-" ;
-	console.log("Press `q` to quit\n") ;
-	while(c != "q"){
-		c = stdin.getc() ;
-		if(c != null && c != prevc){
-			let len = c.length ;
-			for(let i=0 ; i<len ; i++){
-				let code = c.charCodeAt(i) ;
-				printCode(code) ;
-			}
-			prevc = c ;
-		}
+	let docont = true ;
+	while(docont){
+		let c = stdin.getc() ;
+		let code = c.charCodeAt(0) ;
+		printCode(code) ;
+		docont = (c != "q") ;
 	}
 	return 0 ;
 }
