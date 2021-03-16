@@ -3,14 +3,17 @@
  */
 
 const JLifeKind = {
-    Grass:      0
+    Grass:      0,
+    Zebra:      1
 }
 
 class JConfig {
     constructor() {
-        this.mProbGrass      = 0.3 ;
+        this.mProbGrass     = 0.30 ;
+        this.mProbZebra     = 0.05 ;
     }
     get probGrass() { return this.mProbGrass ; }
+    get probZebra() { return this.mProbZebra ; }
 }
 
 class JLife {
@@ -64,6 +67,12 @@ class JGrass extends JLife {
     }
 }
 
+class JZebra extends JLife {
+    constructor() {
+        super(JLifeKind.Zebra, 10) ;
+    }
+}
+
 class JWorld {
     constructor(width, height) {
         this.width  = width ;
@@ -80,6 +89,11 @@ class JWorld {
                 } else {
                     this.ground[y][x] = null ;
                 }
+                if(Math.random() <= config.probZebra) {
+                    this.field[y][x] = new JZebra() ;
+                } else {
+                    this.field[y][x] = null ;
+                }
             }
         }
     }
@@ -94,9 +108,13 @@ class JWorld {
                 } else {
                     context.set(x, y, context.clear) ;
                 }
-                //let f = this.field[y][x] ;
+                let f = this.field[y][x] ;
+                if(f != null) {
+                    context.set(x, y, context.blue) ;
+                }
             }
         }
+    
         /* Update ground objects */
         let newground = Array2D(this.width, this.height, null) ;
         for(let y=0 ; y<this.height ; y++) {
@@ -110,7 +128,21 @@ class JWorld {
             }
         }
 
+        /* Update field objects */
+        let newfield = Array2D(this.width, this.height, null) ;
+        for(let y=0 ; y<this.height ; y++) {
+            for(let x=0 ; x<this.width ; x++) {
+                let cell     = this.field[y][x] ;
+                if(cell != null){
+                       let neigbors    = this.collectNeigbors(x, y, this.field) ;
+                       let newneigbors = cell.update(x, y, neigbors) ;
+                       this.setNeigbors(x, y, newfield, newneigbors) ;
+                } 
+            }
+        }
+
         this.ground = newground ;
+        this.field  = newfield ;
     }
 
     collectNeigbors(x, y, field){
