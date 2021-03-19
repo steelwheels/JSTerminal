@@ -5,8 +5,7 @@
 function main(args)
 {
 	console.log("Hello, world !!") ;
-	let vstat = enterView("buttons", function(retval){
-		console.log("Result = " + retval) ;
-	}) ;
+	let retval = enterView("buttons") ;
+	console.log("Result = " + retval) ;
 }
 

@@ -5,8 +5,7 @@
 function main(args)
 {
 	console.log("Hello, world !!") ;
-	enterView("welcome", function(retval){
-		console.log("Result = " + retval) ;
-	}) ;
+	let result = enterView("welcome") ;
+	console.log("Result = " + result) ;
 }
 

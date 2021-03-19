@@ -5,8 +5,7 @@
 function main(args)
 {
 	console.log("Life Game !!") ;
-	let vstat = enterView("setup", function(retval){
-		console.log("Result = " + retval) ;
-	}) ;
+	let retval = enterView("setup") ;
+	console.log("Result = " + retval) ;
 }
 
