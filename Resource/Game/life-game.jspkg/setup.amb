@@ -4,74 +4,78 @@ top: VBox {
 	life_index:		Int		0
 	bitmaps:		Int		0
 
-    bitmap: Bitmap {
-			width:			Int 640
-			height:			Int 480
-			rowCount: 		Int 100
-			columnCount:	Int 100
-			draw: Event(context, count) %{
-				if(count == 0) {
-					let bitmapname = top.lifes[top.life_index] ;
-					let bitmap     = Bitmap(top.bitmaps[bitmapname]) ;
-					if(bitmap != null) {
-						let xoff = (self.columnCount    - bitmap.width ) / 2 ;
-						let yoff = (self.rowCount       - bitmap.height) / 2 ; 
-						context.set(xoff, yoff, bitmap) ;
+    	bitmap: Bitmap {
+		width:			Int 640
+		height:			Int 480
+		rowCount: 		Int 50
+		columnCount:		Int 50
+
+		draw: Event(context, count) %{
+			if(count == 0) {
+				let bitmapname = top.lifes[top.life_index] ;
+				let bitmap     = Bitmap(top.bitmaps[bitmapname]) ;
+				if(bitmap != null) {
+					let xoff = (self.columnCount    - bitmap.width ) / 2 ;
+					let yoff = (self.rowCount       - bitmap.height) / 2 ; 
+					context.set(xoff, yoff, bitmap) ;
+				}
+			} else {
+				self.update(self, context) ;
+			}
+		%}
+
+		update: Int Func(self, context) %{
+			let curbm  = context.data ;
+			let width  = curbm.width ;
+			let height = curbm.height ;
+
+			/* Allocate next bitmap */
+			let newbm = Array2D(width, height, context.clear) ;
+
+			/* Set next bitmap */
+			for(let y=0 ; y<height ; y++) {
+				for(let x=0 ; x<width ; x++) {
+					let curcell  = self.isAlive(self, curbm.get(x, y)) ;
+					let nextcell = curcell ;
+					let count    = self.countCells(self, context, x, y) ;
+					if(!curcell && count == 3) {
+						nextcell = true ;
+					} else if(curcell && count <= 1) {
+						nextcell = false ;
+					} else if(curcell && count >= 4) {
+						nextcell = false ;
 					}
-				} else {
-					self.update(self, context) ;
+					//console.log("cursel=" + curcell + ", x=" + x + ", y=" + y + ", count=" + count + ", state=" + nextcell) ;
+					newbm[y][x] = nextcell ? context.black : context.clear ;
 				}
-			%}
+			}
 
-			update: Int Func(self, context) %{
-				let curbm  = context.data ;
-				let width  = curbm.width ;
-				let height = curbm.height ;
-				let newbm  = Bitmap(Array2D(width, height, context.clear)) ;
+			context.set(0, 0, Bitmap(newbm)) ;
+			return 0 ;
+		%}
 
-				for(let y=0 ; y<height ; y++) {
-					for(let x=0 ; x<width ; x++) {
-						let curcell  = self.isAlive(self, curbm.get(x, y)) ;
-						let nextcell = curcell ;
-						let count    = self.countCells(self, context, x, y) ;
-						if(!curcell && count == 3) {
-							nextcell = true ;
-						} else if(curcell && count <= 1) {
-							nextcell = false ;
-						} else if(curcell && count >= 4) {
-							nextcell = false ;
-						}
-						//console.log("cursel=" + curcell + ", x=" + x + ", y=" + y + ", count=" + count + ", state=" + nextcell) ;
-						newbm.set(x, y, nextcell ? context.black : context.clear) ;
-					}
+		countCells: Int Func(self, context, x, y) %{
+			let colors = [
+				context.get(x-1, y-1), context.get(x  , y-1), context.get(x+1, y-1),
+				context.get(x-1, y  ),                        context.get(x+1, y  ),
+				context.get(x-1, y+1), context.get(x  , y+1), context.get(x+1, y+1),
+			] ;
+			let count = 0 ;
+			for(const col of colors) {
+				if(self.isAlive(self, col)){
+					count += 1 ;
 				}
+			}
+			return count ;
+		%}
 
-				context.set(0, 0, newbm) ;
-				return 0 ;
-			%}
-
-			countCells: Int Func(self, context, x, y) %{
-				let colors = [
-					context.get(x-1, y-1), context.get(x  , y-1), context.get(x+1, y-1),
-					context.get(x-1, y  ),                        context.get(x+1, y  ),
-					context.get(x-1, y+1), context.get(x  , y+1), context.get(x+1, y+1),
-				] ;
-				let count = 0 ;
-				for(const col of colors) {
-					if(self.isAlive(self, col)){
-						count += 1 ;
-					}
-				}
-				return count ;
-			%}
-
-			isAlive: Bool Func(self, color) %{
-				if(color != null) {
-					return color.alpha != 0.0 ;
-				} else {
-					return false ;
-				}
-			%}
+		isAlive: Bool Func(self, color) %{
+			if(color != null) {
+				return color.alpha != 0.0 ;
+			} else {
+				return false ;
+			}
+		%}
 	}
 	buttons: HBox {
 		life_selector: PopupMenu {
@@ -85,43 +89,43 @@ top: VBox {
 		}
 		ctrl_button: Button {
 			title: String Listner(state: top.bitmap.state) %{
-                let result = "Unknown" ;
-                switch(state) {
-                    case AnimationState.idle:
-                        result = "Start" ;
-                    break ;
-                    case AnimationState.run:
-                        result = "Stop" ;
-                    break ;
-                    case AnimationState.pause:
-                        result = "Wait" ;
-                    break ;
-                }
-                return result ;
-            %}
-            pressed: Event() %{
-                let grp = top.bitmap ;
-                switch(grp.state) {
-                    case AnimationState.idle:
-                        grp.start(0.1, 100.0) ;
-                    break ;
-                    case AnimationState.run:
-                        grp.stop() ;
-                    break ;
-                    case AnimationState.pause:
-                        console.log("No effect") ;
-                    break ;
-                }
-            %}
+               			let result = "Unknown" ;
+                		switch(state) {
+                		  case AnimationState.idle:
+                        		result = "Start" ;
+                    		  break ;
+                    		  case AnimationState.run:
+                        		result = "Stop" ;
+                    		  break ;
+                    		  case AnimationState.pause:
+                        		result = "Wait" ;
+                    		  break ;
+                		}
+                		return result ;
+            		%}
+            		pressed: Event() %{
+                		let grp = top.bitmap ;
+                		switch(grp.state) {
+                		  case AnimationState.idle:
+                        		grp.start(0.1, 100.0) ;
+                    		  break ;
+                    		  case AnimationState.run:
+                			grp.stop() ;
+                    		  break ;
+                		  case AnimationState.pause:
+                			console.log("No effect") ;
+                    		  break ;
+                		}
+            		%}
 		}
 		quit_button: Button {
    			title: String "Quit"
 			pressed: Event() %{
 				leaveView(1) ;
-        	%}
-    	}
+        		%}
+    		}
 	}
-    init: Init %{
+	init: Init %{
 		let bitmaps = readData("bitmaps") ;
 
 		/* Collect bitmap names */
@@ -135,9 +139,9 @@ top: VBox {
 		//console.log("names= " + names) ;
 
 		/* Initilize global variables */
-		top.lifes		= names ;
+		top.lifes	= names ;
 		top.life_index	= top.buttons.life_selector.index ;
-		top.bitmaps		= bitmaps ;
+		top.bitmaps	= bitmaps ;
 	%}
 }
 
