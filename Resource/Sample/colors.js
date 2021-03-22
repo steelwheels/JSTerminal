@@ -1,8 +1,10 @@
 
 function main(args)
 {
-	for(var fg=Color.min ; fg<=Color.max ; fg++){
-		for(var bg=Color.min ; bg<=Color.max ; bg++){
+	const mincol = EscapeCode.minColor ;
+	const maxcol = EscapeCode.maxColor ;
+	for(var fg=mincol ; fg<=maxcol ; fg++){
+		for(var bg=mincol ; bg<=maxcol ; bg++){
 			let fgstr  = EscapeCode.color(1, fg) ;
 			let bgstr  = EscapeCode.color(0, bg) ;
 			let fgname = colorName(fg) ;
