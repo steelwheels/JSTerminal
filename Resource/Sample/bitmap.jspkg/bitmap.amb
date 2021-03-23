@@ -19,9 +19,9 @@ top: VBox {
                 let ycr = Math.round((yc * 25.0) + 25.0) ;
                 let ytr = Math.round((yt * 25.0) + 25.0) ;
 
-                context.set(xr, ysr, context.green) ;
-                context.set(xr, ycr, context.blue) ;
-                context.set(xr, ytr, context.red) ;
+                context.set(xr, ysr, Color.green) ;
+                context.set(xr, ycr, Color.blue) ;
+                context.set(xr, ytr, Color.red) ;
             }
         %}
     }

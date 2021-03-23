@@ -104,13 +104,13 @@ class JWorld {
             for(let x=0 ; x<this.width ; x++) {
                 let g = this.ground[y][x] ;
                 if(g != null) {
-                    context.set(x, y, context.green) ;
+                    context.set(x, y, Color.green) ;
                 } else {
-                    context.set(x, y, context.clear) ;
+                    context.set(x, y, Color.clear) ;
                 }
                 let f = this.field[y][x] ;
                 if(f != null) {
-                    context.set(x, y, context.blue) ;
+                    context.set(x, y, Color.blue) ;
                 }
             }
         }
