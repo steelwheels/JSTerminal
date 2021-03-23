@@ -1,8 +1,8 @@
 
 function main(args)
 {
-	const mincol = EscapeCode.minColor ;
-	const maxcol = EscapeCode.maxColor ;
+	const mincol = Curses.minColor ;
+	const maxcol = Curses.maxColor ;
 	for(var fg=mincol ; fg<=maxcol ; fg++){
 		for(var bg=mincol ; bg<=maxcol ; bg++){
 			let fgstr  = EscapeCode.color(1, fg) ;

@@ -178,7 +178,7 @@ console.log("jsh: version: " + Preference.system.version) ;
 Preference.shell.prompt = function() {
         let orgcol = Preference.terminal.foregroundColor ;
         let orgesc = EscapeCode.color(1, orgcol) ;
-        let newcol = Color.blue ;
+        let newcol = Curses.blue ;
         let newesc = EscapeCode.color(1, newcol) ;
         return newesc + "jsh" + orgesc ;
 } ;
