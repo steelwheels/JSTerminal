@@ -15,6 +15,8 @@
 		0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
 		0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
+		05B2DE49260EA48900E51D2F /* unit-test.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
+		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
 		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B770EB2518788C004FCD84 /* KiwiLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */; };
@@ -76,6 +78,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05B2DE4A260EA49E00E51D2F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Test;
+			dstSubfolderSpec = 7;
+			files = (
+				05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05B770FB2518788C004FCD84 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,6 +137,7 @@
 		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = table.jspkg; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
+		05B2DE48260EA48900E51D2F /* unit-test.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "unit-test.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
 		05B770E22518788C004FCD84 /* CoconutData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutData.xcframework; path = ../../../Library/Frameworks/CoconutData.xcframework; sourceTree = "<group>"; };
@@ -179,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0521300B260EA41900B70692 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				05B2DE48260EA48900E51D2F /* unit-test.jspkg */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		05B770DF2518788C004FCD84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +227,7 @@
 				050C4897259CB115002D4972 /* Welcome.jspkg */,
 				05BAB09525A0655100DD59D7 /* Game */,
 				05B7710025187916004FCD84 /* Sample */,
+				0521300B260EA41900B70692 /* Test */,
 			);
 			name = Resource;
 			path = ../Resource;
@@ -311,6 +333,7 @@
 				05B770FB2518788C004FCD84 /* Embed Frameworks */,
 				05B7711D25187959004FCD84 /* CopyFiles */,
 				053CD9E225A06DEF00B5F690 /* CopyFiles */,
+				05B2DE4A260EA49E00E51D2F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -368,6 +391,7 @@
 				05B7712F251879BF004FCD84 /* Credits.rtf in Resources */,
 				05F7AE50251874830077F527 /* Main.storyboard in Resources */,
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
+				05B2DE49260EA48900E51D2F /* unit-test.jspkg in Resources */,
 				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
 				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
 			);

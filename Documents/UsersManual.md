@@ -106,11 +106,27 @@ jsh>
 ### Execute sample script
 You can use [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md) to execute the script (Both JavaScript and Shell scripts are supported).
 
-This is famous demo program for `jsh`.
+This is famous demo program for JavaScript.
 ````
+jsh> cat Sample/hello.js
+function main(args)
+{
+	console.log("Hello, world !!") ;
+}
+
 jsh> run Sample/hello.js
 Hello, world !!
 ````
+
+This is `jsh` version.
+````
+jsh> cat Sample/hello.jsh
+> echo "hello" | tr [a-z] [A-Z]
+
+jsh> run Sample/hello.jsh
+HELLO
+````
+
 And this is sample program to test terminal color.
 ````
 jsh> run Sample/colors.js
@@ -145,6 +161,17 @@ And you will get following outputs:
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
 You can find the sample JavaScript programs in [sample game scripts](Sample/Games.md), [sample GUI scripts](Sample/GUIs.md).
+
+### File extensions
+The file extension (such as `.js`, `.jsh`) is refered to determine the contents of the file (or package).
+This is the table of extensions that this application supports as a script file.
+
+|Extension  |Contents                       |
+|:--        |:--                            |
+|.js        |JavaScript Program             |
+|.jsh       |JavaScript Shell               |
+|.jspkg     |JavaScript package (See next section)  |
+|.amb       |[AmberScript](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md) |
 
 ### File package
 The bundle of the files are used for scripting. It is called _JavaScript Package_ . You can implement JavaScript program by multiple script files.
@@ -182,33 +209,6 @@ Preference.shell.prompt = function() {
         let newesc = EscapeCode.color(1, newcol) ;
         return newesc + "jsh" + orgesc ;
 } ;
-````
-
-### Control by AppleScript
-This application supports [Cocoa Scripting](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html#//apple_ref/doc/uid/TP40001982-BCICHGIE). This is sample script to control this application. For more precise, see [Cocoa Scripting Support](https://github.com/steelwheels/Coconut/blob/master/CoconutScript/Document/cocoa-scripting-support.md).
-````
-tell application "JSTerminal"
-  set foreground color to green
-  set background color to black
-end tell
-````
-There are more sample scripts in [sample AppleScript scripts](AppleScript.md).
-
-### Control the other specific applications
-This application supports sending AppleEvents to control specific applications: [TextEdit](AppleEvent/TextEdit.md).
-This is sample code to control TextEdit application.
-You can launch, activate and make new document TextEdit.app.
-````
-function main(args)
-{
-    let textedit = launch("/System/Applications/TextEdit.app") ;
-    if(textedit.activate()){
-    	if(textedit.makeNewDocument()) {
-			console.print("New document on TextEdit.app\n") ;
-    	}
-    }
-    return 0 ;
-}
 ````
 
 ## Programming
