@@ -15,6 +15,8 @@
 		0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
 		0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
+		05900E60260EF610008C3490 /* unit-test.jsh in Resources */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
+		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
 		05B2DE49260EA48900E51D2F /* unit-test.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
@@ -85,6 +87,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */,
+				05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +140,7 @@
 		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = table.jspkg; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
+		05900E5F260EF610008C3490 /* unit-test.jsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unit-test.jsh"; sourceTree = "<group>"; };
 		05B2DE48260EA48900E51D2F /* unit-test.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "unit-test.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		0521300B260EA41900B70692 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				05900E5F260EF610008C3490 /* unit-test.jsh */,
 				05B2DE48260EA48900E51D2F /* unit-test.jspkg */,
 			);
 			path = Test;
@@ -386,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */,
+				05900E60260EF610008C3490 /* unit-test.jsh in Resources */,
 				05B77130251879BF004FCD84 /* JSTerminal.help in Resources */,
 				05F7AE4D251874830077F527 /* Assets.xcassets in Resources */,
 				05B7712F251879BF004FCD84 /* Credits.rtf in Resources */,
