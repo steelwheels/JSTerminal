@@ -75,6 +75,22 @@ You can change the `Home directory` section by clicking `select` button:
 ![Select home directory](./Images/preference-homedir.png)
 
 
+### Install built-in resource files
+The [install command](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/install-man.md) is used to install built-in resource files. They will be placed under home directory.
+
+You don't have to install these files. But it helps you to learn how to programming on this environment.
+
+````
+jsh> install
+Make directory: /Users/tomoo/Development/Game
+....
+Copy from /Applications/JSTerminal.app/Contents/Resources/Test/unit-test.jspkg to /Users/tomoo/Development/Test/unit-test.jspkg
+jsh> ls
+Game
+Sample
+Test
+````
+
 ### Execute shell command
 The prompt `'>'` means *shell mode* .
 The shell mode accepts shell commands such as `echo` command.
