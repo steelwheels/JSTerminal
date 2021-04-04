@@ -75,7 +75,35 @@ function main(args)
 		$
 		----- Bye
 	 */
-	ecode +=   EscapeCode.cursorNextLine(99)	// Move to last
+	ecode +=   EscapeCode.cursorForward(10)		// Move to last
+		 + EscapeCode.cursorDown(2)
+		 + EscapeCode.eraceFromCursorToRight()
+		 + EscapeCode.backspace()
+		 + EscapeCode.eraceFromCursorToLeft() ;
+
+	/*
+		/1234567890123456789
+		abc+fghijklmnopqrst
+		1
+		abcdefghijklmnopqrst
+		*1234567890123456789
+		$
+		----- Bye
+	 */
+	ecode +=   "Must be delete"
+		 + EscapeCode.eraceEntireLine() ;
+
+	/*
+		/1234567890123456789
+		abc+fghijklmnopqrst
+		abcdefghijklmnopqrst
+		*1234567890123456789
+		$
+		----- Bye
+	*/
+	ecode +=   EscapeCode.scrollDown(4) ;
+
+	ecode +=   EscapeCode.cursorNextLine(99) ;
 
 	console.print(ecode) ;
 
