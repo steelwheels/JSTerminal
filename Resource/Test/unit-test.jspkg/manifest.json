@@ -1,8 +1,8 @@
 {
 	application: "main.js"
 	libraries: [
-		"test_color.js"
+		"test_color.js",
+		"test_graphics.js"
 	]
 }
-
 
