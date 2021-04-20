@@ -12,6 +12,9 @@ function main(args)
 	console.log("===== Test: Graphics") ;
 	result &= test_graphics() ;
 
+	console.log("===== Test: String") ;
+	result &= test_string() ;
+
 	return result ? 0 : 1 ;
 }
 
