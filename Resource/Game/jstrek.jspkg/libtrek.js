@@ -247,5 +247,6 @@ const Command = {
         fireTorpedo:            5,
         useShield:              6,
         checkDamage:            7,
-        callComputer:           8
+        callComputer:           8,
+        exitGame:               9
 } ;

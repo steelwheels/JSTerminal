@@ -10,6 +10,7 @@ function main(args)
 	introduction() ;
 	initField() ;
 	drawField() ;
+	inputCommand() ;
 	return 0 ;
 }
 
@@ -81,4 +82,32 @@ function drawField() {
 		console.log(line) ;
 	}
 }
+
+function inputCommand() {
+	let mval = Readline.menu([
+		"Navigate",		// 0
+		"Sense short range",	// 1
+		"Sence long range",	// 2
+		"Fire Phaser",		// 3
+		"Fire Torpedo",		// 4
+		"Use Shield",		// 5
+		"Check Damage",		// 6
+		"Call Computer",	// 7
+		"Quit this game"	// 8
+	]) ;
+	let command = Command.undefined ;
+	switch(mval){
+	case 0: command = Command.navigate ;		break ;
+	case 1: command = Command.senseShortRange ;	break ;
+	case 2: command = Command.senceLongRange ;	break ;
+	case 3: command = Command.firePhaser ;		break ;
+	case 4: command = Command.fireTorpedo ;		break ;
+	case 5: command = Command.useShield ;		break ;
+	case 6: command = Command.checkDamage ;		break ;
+	case 7: command = Command.callComputer ;	break ;
+	case 8: command = Command.exitGame ;		break ;
+	}
+	return command ;
+}
+
 
