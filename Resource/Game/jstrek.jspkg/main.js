@@ -1,113 +1,165 @@
-/**
- * main.js
+/*
+ * @file: main.js
+ * @description: Main function for jstrek  
  */
 
-let starDate		= new StarDate(0.0, 0.0, 0.0) ;
-let spaceObjects	= new SpaceObjects() ;
+const GameResult = {
+	doContinue:		0,
+	youWon:			1,
+	youLost:		2
+} ;
 
 function main(args)
 {
-	introduction() ;
-	initField() ;
-	drawField() ;
-	inputCommand() ;
-	return 0 ;
-}
+	let objects = new TKObjects() ;
+	let space   = new TKSpace(10, 10) ;
+	allocateObjects(objects, space) ;
 
-function introduction(){
-	console.print("Welcome to JSTrek.\n\n") ;
-}
-
-function initField() {
-	/* Initialize time */
-	const start = (Math.randomInt(0, 20) + 20) * 100;
-	const days  = 25 + Math.randomInt(0, 10) ;
-	const end   = start + days ;
-	starDate = new StarDate(start, start, end) ;
-
-	/* Initialize bases */
-	const bsnum = Math.randomInt(4, 5) ;
-	for(let i=0 ; i<bsnum ; i++){
-		const base = new SpaceBase() ;
-		base.quadrantPosition = randomQuadrantPosition() ;
-		base.sectorPosition   = randomSectorPosition() ;
-		spaceObjects.addBase(base) ;
-	}
-
-	/* Initialize Human's ship */
-	const humship = new SpaceShip() ;
-	humship.quadrantPosition = randomQuadrantPosition() ;
-	humship.sectorPosition   = randomSectorPosition() ;
-	humship.energy  	 = 3000 ;
-	humship.photone		 = 10 ;
-	spaceObjects.setHumanShip(humship) ;
-
-	/* Initialize Enermy's ships */
-	const enmnum = Math.randomInt(3, 8) ;
-	for(let i=0 ; i<enmnum ; i++){
-		const enmship = new SpaceShip() ;
-		enmship.quadrantPosition = randomQuadrantPosition() ;
-		enmship.sectorPosition   = randomSectorPosition() ;
-		enmship.energy  	 = 2000 ;
-		enmship.photone		 = 6 ;
-		spaceObjects.addEnemyShip(enmship) ;
-	}
-
-	/* Initial message */
-	console.print("Your orders are as follows:\n") ;
-	console.print(`Destroy the ${enmnum} enermy warships which have invaded\n`) ;
-	console.print("the galaxy before they can attack Federation Headquarters\n") ;
-	console.print(`on stardate ${starDate.start}. This gives you ${days} days. There are\n`) ;
-	console.print(`${bsnum} starbase(s) in the galaxy for resupplying your ship.\n`) ;
-}
-
-function drawField() {
-	let humanship = spaceObjects.humanShip ;
-	let humanquad = humanship.quadrantPosition ;
-
-	/* Encode sector */
-	let secmap = new SectorMap(humanquad) ;
-	secmap.update(spaceObjects) ;
-	let maplines = secmap.toStrings() ;
-
-	/* Encode spaceship */
-	let desclines0 = starDate.toStrings() ;
-	let desclines1 = desclines0.concat(humanship.toStrings()) ;
-	let desclines2 = desclines1.concat(spaceObjects.toStrings()) ;
-
-	/* Print */
-	console.log("\n") ;
-	let summlines = pasteStrings(maplines, desclines2, " ") ;
-	for(let line of summlines){
-		console.log(line) ;
+	let docont = true ;
+	while(docont) {
+		printScreen(space, objects) ;
+		if(setAction(objects)){
+			doAction(space, objects) ;
+		} else {
+			docont = false ;
+		}
 	}
 }
 
-function inputCommand() {
-	let mval = Readline.menu([
-		"Navigate",		// 0
-		"Sense short range",	// 1
-		"Sence long range",	// 2
-		"Fire Phaser",		// 3
-		"Fire Torpedo",		// 4
-		"Use Shield",		// 5
-		"Check Damage",		// 6
-		"Call Computer",	// 7
-		"Quit this game"	// 8
-	]) ;
-	let command = Command.undefined ;
-	switch(mval){
-	case 0: command = Command.navigate ;		break ;
-	case 1: command = Command.senseShortRange ;	break ;
-	case 2: command = Command.senceLongRange ;	break ;
-	case 3: command = Command.firePhaser ;		break ;
-	case 4: command = Command.fireTorpedo ;		break ;
-	case 5: command = Command.useShield ;		break ;
-	case 6: command = Command.checkDamage ;		break ;
-	case 7: command = Command.callComputer ;	break ;
-	case 8: command = Command.exitGame ;		break ;
+// allocateObjects(objects: TKObjects, space: TKSpace)
+function allocateObjects(objects, space){
+	const BASE_NUM		= 4 ;
+	const ALIEN_NUM		= 2 ;
+	const HUMAN_NUM		= 1 ;
+
+	/* Allocate base */
+	for(let i=0 ; i<BASE_NUM ; i++){
+		let pt      = allocateObject(space) ;
+		let newbase = new TKBase(pt) ;
+		space.setObject(newbase) ;
+		objects.addBase(newbase) ;
 	}
-	return command ;
+	/* Allocate alien ships */
+	for(let i=0 ; i<ALIEN_NUM ; i++){
+		let pt      = allocateObject(space) ;
+		let newship = new TKShip(ObjectType.AlienShip, pt) ;
+		space.setObject(newship) ;
+		objects.addAlienShip(newship) ;
+	}
+	/* Allocate human ships */
+	do {
+		let pt = allocateObject(space) ;
+		let newship = new TKShip(ObjectType.HumanShip, pt) ;
+		space.setObject(newship) ;
+		objects.setHumanShip(newship) ;
+	} while(false) ;
 }
 
+function allocateObject(space){
+	while(true){
+		let x = Math.randomInt(0, space.width-1) ;
+		let y = Math.randomInt(0, space.height-1) ;
+		if(space.object(x, y) == null){
+			return Point(x, y) ;
+		}
+	}
+	return null ;
+}
+// printScreen(space: TKSpace. objects: TKObjects)
+function printScreen(space, objects) {
+	let mapstr  = space.toStrings() ;
+	let statstr = objects.humanShip.status ; 
+	let dumpstr = pasteStrings(mapstr, statstr, " ") ;
+	console.print(dumpstr.join("\n")) ;
+	console.print("\n") ;
+}
 
+// setAction(objects: TKObjects) -> Bool
+function setAction(objects){
+	let docont  = true ;
+	let doinput = true ;
+	while(doinput){
+		let mid = Readline.menu([
+			"Set direction and speed",
+			"Quit this game"
+		]) ;
+		switch(mid){
+			case 0:
+				if(setDirection(objects)){
+					doinput = false ;
+				}
+			break ;
+			case 1:
+				doinput  = false ;
+				docont   = false ;
+			break ;
+		}
+	}
+	return docont ;
+}
+
+// setDirection(objects: TKObjects) -> Bool
+function setDirection(objects){
+	console.print("Input direction [0-7]> ") ;
+	let dir = Readline.inputInteger() ;
+	if(!(0<=dir && dir<=7)){
+		console.error(`Unexpected direction: ${dir}\n`) ;
+		return false ;
+	}
+
+	console.print("Input speed [0-2]> ") ;
+	let speed = Readline.inputInteger() ;
+	if(!(0<=speed && speed<=2)){
+		console.error(`Unexpected speed: ${speed}\n`) ;
+		return false ;
+	}
+
+	let ship = objects.humanShip ;
+	ship.direction = dir ;
+	ship.speed     = speed ;
+
+	return true ;
+}
+
+// doAction(space: TKSpace, objects: TKObjects) -> GameResult
+function doAction(space, objects){
+	/* Move ships */
+	let allships = objects.alienShips ;
+	allships.push(objects.humanShip) ;
+	for(let ship of allships){
+		let nextpos  = space.nextPosition(ship) ;
+		//console.print(`next position: ${nextpos.x}, ${nextpos.y}\n`) ;
+		if(nextpos == null){
+			continue ;
+		}
+		/* Check conflict */
+		let otherobj = space.object(nextpos.x, nextpos.y) ;
+		if(otherobj != null){
+			switch(otherobj.type){
+			  case ObjectType.humanShip:
+				return GameResult.youLost ;
+			  break ;
+			  case ObjectType.alienShips:
+				removeObject(space, objects, otherobj) ;
+			  break ;
+			  case ObjectType.humanBase:
+				if(ship.type == ObjectType.humanShip){
+					ship.fillEnergy() ;
+				} else {
+					removeObject(space, objects, otherobj) ;
+				}
+			  break ;
+			}
+		}
+		/* Update position */
+		space.removeObject(ship) ;
+		ship.position = nextpos ;
+		space.setObject(ship) ;
+	}
+	return GameResult.doContinue ;
+}
+
+function removeObject(space, objects, target){
+	space.removeObject(target) ;
+	objects.removeAlianShip(target) ;
+}
