@@ -3,7 +3,8 @@
 	libraries: [
 		"test_color.js",
 		"test_graphics.js",
-		"test_string.js"
+		"test_string.js",
+		"test_table.js"
 	]
 }
 

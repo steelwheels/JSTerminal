@@ -22,30 +22,14 @@ const Direction = {
 function directionToString(dir) {
         let result = "?" ;
         switch(dir){
-          case Direction.UpperLeft:
-                result = "UpperLeft" ;
-          break ;
-          case Direction.Upper:
-                result = "Upper" ;
-          break ;
-          case Direction.UpperRight:
-                result = "UpperRight" ;
-          break ;
-          case Direction.Right:
-                result = "Right" ;
-          break ;
-          case Direction.LowerRight:
-                result = "LowerRight" ;
-          break ;
-          case Direction.Lower:
-                result = "Lower" ;
-          break ;
-          case Direction.LowerLeft:
-                result = "LowerLeft" ;
-          break ;
-          case Direction.Left:
-                result = "Left" ;
-          break ;
+          case Direction.UpperLeft:     result = "UpperLeft" ;          break ;
+          case Direction.Upper:         result = "Upper" ;              break ;
+          case Direction.UpperRight:    result = "UpperRight" ;         break ;
+          case Direction.Right:         result = "Right" ;              break ;
+          case Direction.LowerRight:    result = "LowerRight" ;         break ;
+          case Direction.Lower:         result = "Lower" ;              break ;
+          case Direction.LowerLeft:     result = "LowerLeft" ;          break ;
+          case Direction.Left:          result = "Left" ;               break ;
         }
         return result ;
 }
@@ -79,8 +63,13 @@ class TKShip extends TKObject {
         // constuctor(type: ObjectType, pos: Point)
         constructor(type, pos) {
                 super(type, pos) ;
+                this.mRadar = null ;
         }
 
+        // var radar: TKRadar
+        set radar(newdata) { this.mRadar = newdata ;}
+        get radar()        { return this.mRadar ;}
+        
         fillEnergy(){
         }
 
@@ -91,7 +80,7 @@ class TKShip extends TKObject {
                 let speed = this.speed ; 
                 return  [`Position:  (${pos.x},${pos.y})`, 
                          `Direction: ${dir}`,
-                         `Speed:     ${speed}`]
+                         `Speed:     ${speed}`] ;
         }
 }
 
@@ -127,7 +116,7 @@ class TKSpace {
         constructor(width, height, objs){
                 this.mWidth   = width ;
                 this.mHeight  = height ;
-                this.mTable   = Array2D(width, height, null) ;
+                this.mTable   = new Table(width, height) ;
         }
 
         get width()  { return this.mWidth ;  }
@@ -135,30 +124,19 @@ class TKSpace {
         
         // object(x:Int, y:Int) -> TKObject?
         object(x, y){
-                if(0<=x && x<this.mWidth && 0<=y && y<this.mHeight){
-                        return this.mTable[y][x] ;
-                } else {
-                        return null ;
-                }
+                return this.mTable.element(x, y) ;
         }
 
         // setObject(x:Int, y:Int, obj: TKObject)
         setObject(obj){
                 let x = obj.position.x ;
                 let y = obj.position.y ;
-                if(0<=x && x<this.mWidth && 0<=y && y<this.mHeight){
-                        this.mTable[y][x] = obj ;
-                }  
+                this.mTable.setElement(x, y, obj) ;
         }
 
-        removeObject(obj){
-                for(let y=0 ; y<this.mHeight ; y++){
-                        for(let x=0 ; x<this.mWidth ; x++){
-                                if(this.mTable[y][x] == obj){
-                                        this.mTable[y][x] = null ;
-                                }
-                        }
-                }
+        // removeObject(x: Int, y: Int)
+        removeObject(x, y){
+                this.mTable.setElement(x, y, null) ;
         }
 
         // nextPosition(object: TKObject) -> Point?
@@ -166,34 +144,31 @@ class TKSpace {
                 let x     = obj.position.x ;
                 let y     = obj.position.y ;
                 let dir   = obj.direction ;
-                let speed = obj.speed ;
-                if(speed != 0){
-                        switch(dir){
-                          case Direction.UpperLeft:
-                                x -= speed ; y -= speed ;
-                          break ;                   
-                          case Direction.Upper:
-                                             y -= speed ;
-                          break ;
-                          case Direction.UpperRight:
-                                x += speed ; y -= speed ;
-                          break ;                               
-                          case Direction.Right:
-                                x += speed ;
-                          break ;
-                          case Direction.LowerRight:
-                                x += speed ; y += speed ;
-                          break ;
-                          case Direction.Lower:
-                                             y += speed ;
-                          break ;
-                          case Direction.LowerLeft:
-                                x -= speed ; y += speed ;
-                          break ;
-                          case Direction.Left:
-                                x -= speed ;
-                          break ;
-                        }
+                switch(dir){
+                  case Direction.UpperLeft:
+                        x -= 1 ; y -= 1 ;
+                  break ;                   
+                  case Direction.Upper:
+                                 y -= 1 ;
+                  break ;
+                  case Direction.UpperRight:
+                        x += 1 ; y -= 1 ;
+                  break ;
+                  case Direction.Right:
+                        x += 1 ;
+                  break ;
+                  case Direction.LowerRight:
+                        x += 1 ; y += 1 ;
+                  break ;
+                  case Direction.Lower:
+                                 y += 1 ;
+                  break ;
+                  case Direction.LowerLeft:
+                        x -= 1 ; y += 1 ;
+                  break ;
+                  case Direction.Left:
+                        x -= 1 ;
+                  break ;
                 }
                 x = Math.clamp(x, 0, this.width  - 1) ;
                 y = Math.clamp(y, 0, this.height - 1) ;
@@ -203,6 +178,10 @@ class TKSpace {
                 } else {
                         return null ;
                 }
+        }
+
+        mapTable(mfunc){
+                return this.mTable.map(mfunc) ;
         }
 
         // toString() -> String
@@ -231,5 +210,50 @@ class TKSpace {
                         result.push(line) ;
                 }
                 return result ;
+        }
+}
+
+class TKRadar {
+        // constructor(width: Int, height: Int)
+        constructor(width, height){
+                this.mWidth  = width ;
+                this.mHeight = height ;
+                this.mTable  = new Table(width, height) ;
+        }
+
+        // sence(space: TKSpace, accurary: Double)
+        sense(space, acc){
+                let newtable = space.mapTable(function(obj){
+                        if(Math.random() <= acc){
+                                return obj != null ? obj.type : null ;
+                        } else {
+                                let rnd = Math.randomInt(ObjectType.HumanShip, ObjectType.HumanBase+1) ;
+                                return (rnd == ObjectType.HumanBase+1) ? null : rnd ;
+                        }
+                }) ;
+                this.mTable = newtable ;
+        }
+
+         // toString() -> String
+         toStrings(){
+                return this.mTable.toStrings(function(obj){
+                        let symbol = "?" ;
+                        if(obj != null){
+                                switch(obj){
+                                  case ObjectType.HumanBase:
+                                        symbol = "B" ;
+                                  break ;
+                                  case ObjectType.AlienShip:
+                                        symbol = "K" ;
+                                  break ;
+                                  case ObjectType.HumanShip:
+                                        symbol = "E" ;
+                                  break ;
+                                }
+                        } else {
+                                symbol = "." ;
+                        }
+                        return symbol ;
+                }) ;
         }
 }

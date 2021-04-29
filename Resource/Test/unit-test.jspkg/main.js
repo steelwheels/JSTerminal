@@ -15,6 +15,10 @@ function main(args)
 	console.log("===== Test: String") ;
 	result &= test_string() ;
 
+	console.log("===== Test: Table") ;
+	result &= test_table() ;
+
+
 	return result ? 0 : 1 ;
 }
 

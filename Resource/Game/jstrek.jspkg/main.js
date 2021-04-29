@@ -17,11 +17,23 @@ function main(args)
 
 	let docont = true ;
 	while(docont) {
+		/* Sense */
+		updateRadarInfo(space, objects) ;
+
 		printScreen(space, objects) ;
-		if(setAction(objects)){
-			doAction(space, objects) ;
-		} else {
-			docont = false ;
+		if(!setHumanAction(objects)){
+			break ;
+		}
+		setAlianAction(objects) ;
+		switch(doAction(space, objects)){
+		  case GameResult.doContinue: 
+		  break ;
+		  case GameResult.youWon:
+			  docont = false ;
+		  break ;
+		  case GameResult.youLost:
+			  docont = false ;
+		  break ;
 		}
 	}
 }
@@ -30,7 +42,6 @@ function main(args)
 function allocateObjects(objects, space){
 	const BASE_NUM		= 4 ;
 	const ALIEN_NUM		= 2 ;
-	const HUMAN_NUM		= 1 ;
 
 	/* Allocate base */
 	for(let i=0 ; i<BASE_NUM ; i++){
@@ -65,19 +76,33 @@ function allocateObject(space){
 	}
 	return null ;
 }
+
+// updateRadarInfo(space: TKSpace, objects: TKObjects)
+function updateRadarInfo(space, objects){
+	/* Move ships */
+	let allships = objects.alienShips ;
+	allships.push(objects.humanShip) ;
+	for(let ship of allships){
+		let radar = new TKRadar(space.width, space.height) ;
+		radar.sense(space, 0.95) ;
+		ship.radar = radar ;
+	}
+}
+
 // printScreen(space: TKSpace. objects: TKObjects)
 function printScreen(space, objects) {
-	let mapstr  = space.toStrings() ;
+	let ship    = objects.humanShip ;
+	let mapstr  = ship.radar.toStrings() ;
 	let statstr = objects.humanShip.status ; 
 	let dumpstr = pasteStrings(mapstr, statstr, " ") ;
 	console.print(dumpstr.join("\n")) ;
 	console.print("\n") ;
 }
 
-// setAction(objects: TKObjects) -> Bool
-function setAction(objects){
-	let docont  = true ;
+// setHumanAction(objects: TKObjects)
+function setHumanAction(objects){
 	let doinput = true ;
+	let docont  = true ;
 	while(doinput){
 		let mid = Readline.menu([
 			"Set direction and speed",
@@ -96,6 +121,9 @@ function setAction(objects){
 		}
 	}
 	return docont ;
+}
+
+function setAlianAction(objects){
 }
 
 // setDirection(objects: TKObjects) -> Bool
@@ -127,39 +155,41 @@ function doAction(space, objects){
 	let allships = objects.alienShips ;
 	allships.push(objects.humanShip) ;
 	for(let ship of allships){
-		let nextpos  = space.nextPosition(ship) ;
-		//console.print(`next position: ${nextpos.x}, ${nextpos.y}\n`) ;
-		if(nextpos == null){
-			continue ;
-		}
-		/* Check conflict */
-		let otherobj = space.object(nextpos.x, nextpos.y) ;
-		if(otherobj != null){
-			switch(otherobj.type){
-			  case ObjectType.humanShip:
-				return GameResult.youLost ;
-			  break ;
-			  case ObjectType.alienShips:
-				removeObject(space, objects, otherobj) ;
-			  break ;
-			  case ObjectType.humanBase:
-				if(ship.type == ObjectType.humanShip){
-					ship.fillEnergy() ;
-				} else {
-					removeObject(space, objects, otherobj) ;
+		let speed = ship.speed ;
+		for(let s=0 ; s<speed ; s++){
+			let nextpos  = space.nextPosition(ship) ;
+			//console.print(`next position: ${nextpos.x}, ${nextpos.y}\n`) ;
+			if(nextpos != null){
+				/* Check conflict */
+				let nextx = nextpos.x ;
+				let nexty = nextpos.y ;
+				let otherobj = space.object(nextpos.x, nextpos.y) ;
+				if(otherobj != null){
+					switch(otherobj.type){
+					  case ObjectType.humanShip:
+						return GameResult.youLost ;
+					  break ;
+					  case ObjectType.alienShips:
+						space.removeObject(nextx, nexty) ;
+						objects.removeAlianShip(otherobj) ;
+					  break ;
+					  case ObjectType.humanBase:
+						if(ship.type == ObjectType.humanShip){
+							ship.fillEnergy() ;
+						} else {
+							space.removeObject(nextx, nexty) ;
+							objects.removeAlianShip(otherobj) ;
+						}
+					  break ;
+					}
 				}
-			  break ;
+				/* Update position */
+				space.removeObject(ship.position.x, ship.position.y) ;
+				ship.position = nextpos ;
+				space.setObject(ship) ;
 			}
-		}
-		/* Update position */
-		space.removeObject(ship) ;
-		ship.position = nextpos ;
-		space.setObject(ship) ;
+		}	
 	}
 	return GameResult.doContinue ;
 }
 
-function removeObject(space, objects, target){
-	space.removeObject(target) ;
-	objects.removeAlianShip(target) ;
-}
