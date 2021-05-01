@@ -1,0 +1,39 @@
+#
+# Makefile
+#
+
+srcs	= alert.ts \
+	  colors.ts \
+	  escape-code.ts \
+	  file.ts \
+	  hello.ts \
+	  hello_color.ts \
+	  keycode.ts \
+	  openPanel.ts \
+	  scroll0.ts \
+	  stdin.ts
+
+dsts	= $(srcs:.ts=.js)
+decls	= $(srcs:.ts=.d.ts)
+
+srcdecl	= ./types/KiwiLibrary.d.ts
+
+tsc	= npx tsc
+tsc_opt	= -t ES2017 --lib "es2017" --declaration --declarationDir types \
+	  --typeRoots types \
+	  --alwaysStrict --pretty
+
+
+%.js: %.ts
+	$(tsc) $(tsc_opt) $<
+
+all: $(srcdecl) $(dsts)
+
+$(srcdecl): ~/Development/Library/KiwiLibrary.d.ts
+	cp $< $@
+
+clean:
+	rm -f $(dsts)
+
+dummy:
+

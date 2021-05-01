@@ -8,18 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		050C4898259CB115002D4972 /* Welcome.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050C4897259CB115002D4972 /* Welcome.jspkg */; };
-		050D9799261C02AA004FABF8 /* openPanel.js in Resources */ = {isa = PBXBuildFile; fileRef = 050D9791261C02AA004FABF8 /* openPanel.js */; };
-		050D979A261C02AA004FABF8 /* scroll0.js in Resources */ = {isa = PBXBuildFile; fileRef = 050D9792261C02AA004FABF8 /* scroll0.js */; };
-		050D979B261C02AA004FABF8 /* escape-code.js in Resources */ = {isa = PBXBuildFile; fileRef = 050D9793261C02AA004FABF8 /* escape-code.js */; };
-		050D979C261C02AA004FABF8 /* curses.js in Resources */ = {isa = PBXBuildFile; fileRef = 050D9794261C02AA004FABF8 /* curses.js */; };
-		050D979D261C02AA004FABF8 /* file.js in Resources */ = {isa = PBXBuildFile; fileRef = 050D9795261C02AA004FABF8 /* file.js */; };
-		050D979E261C02AA004FABF8 /* stdin.js in Resources */ = {isa = PBXBuildFile; fileRef = 050D9796261C02AA004FABF8 /* stdin.js */; };
-		050D979F261C02AA004FABF8 /* buttons.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050D9797261C02AA004FABF8 /* buttons.jspkg */; };
-		050D97A0261C02AA004FABF8 /* bitmap.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050D9798261C02AA004FABF8 /* bitmap.jspkg */; };
-		05137F14260FFCB500288A2C /* unit-test.log.OK in Resources */ = {isa = PBXBuildFile; fileRef = 05137F13260FFCB500288A2C /* unit-test.log.OK */; };
 		05137F15260FFCBE00288A2C /* unit-test.log.OK in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05137F13260FFCB500288A2C /* unit-test.log.OK */; };
 		0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 058993FB253F17F700663275 /* JSTerminal.jspkg */; };
-		052A54332621A5330034369F /* curses-frame.js in Resources */ = {isa = PBXBuildFile; fileRef = 052A54322621A5330034369F /* curses-frame.js */; };
 		052A54342621A5480034369F /* curses-frame.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 052A54322621A5330034369F /* curses-frame.js */; };
 		053999C02621562D008B561C /* bitmap.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 050D9798261C02AA004FABF8 /* bitmap.jspkg */; };
 		053999C12621562D008B561C /* buttons.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 050D9797261C02AA004FABF8 /* buttons.jspkg */; };
@@ -35,9 +25,9 @@
 		0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
 		0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
-		05900E60260EF610008C3490 /* unit-test.jsh in Resources */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
+		058EF649263C136A005115A8 /* KiwiLibrary.d.ts in Resources */ = {isa = PBXBuildFile; fileRef = 058EF648263C136A005115A8 /* KiwiLibrary.d.ts */; };
+		058EF64B263C13BA005115A8 /* KiwiLibrary.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 058EF648263C136A005115A8 /* KiwiLibrary.d.ts */; };
 		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
-		05B2DE49260EA48900E51D2F /* unit-test.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
 		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,6 +87,16 @@
 			files = (
 				053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */,
 				0561379025E13FE200271346 /* life-game.jspkg in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058EF64A263C13A8005115A8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Library;
+			dstSubfolderSpec = 7;
+			files = (
+				058EF64B263C13BA005115A8 /* KiwiLibrary.d.ts in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +180,7 @@
 		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = table.jspkg; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
+		058EF648263C136A005115A8 /* KiwiLibrary.d.ts */ = {isa = PBXFileReference; explicitFileType = sourcecode.javascript; fileEncoding = 4; name = KiwiLibrary.d.ts; path = "../../../../Library/Frameworks/KiwiLibrary.xcframework/macos-arm64_x86_64/KiwiLibrary.framework/Versions/A/Resources/KiwiLibrary.d.ts"; sourceTree = "<group>"; };
 		05900E5F260EF610008C3490 /* unit-test.jsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unit-test.jsh"; sourceTree = "<group>"; };
 		05B2DE48260EA48900E51D2F /* unit-test.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "unit-test.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
@@ -246,6 +247,14 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		058EF647263C12E8005115A8 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				058EF648263C136A005115A8 /* KiwiLibrary.d.ts */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		05B770DF2518788C004FCD84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +280,7 @@
 				05B7712C251879BF004FCD84 /* Credits.rtf */,
 				05B7712D251879BF004FCD84 /* JSTerminal.help */,
 				050C4897259CB115002D4972 /* Welcome.jspkg */,
+				058EF647263C12E8005115A8 /* Library */,
 				05BAB09525A0655100DD59D7 /* Game */,
 				05B7710025187916004FCD84 /* Sample */,
 				0521300B260EA41900B70692 /* Test */,
@@ -389,6 +399,7 @@
 				05B7711D25187959004FCD84 /* CopyFiles */,
 				053CD9E225A06DEF00B5F690 /* CopyFiles */,
 				05B2DE4A260EA49E00E51D2F /* CopyFiles */,
+				058EF64A263C13A8005115A8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -440,26 +451,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				050D979B261C02AA004FABF8 /* escape-code.js in Resources */,
-				050D979F261C02AA004FABF8 /* buttons.jspkg in Resources */,
 				0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */,
-				050D97A0261C02AA004FABF8 /* bitmap.jspkg in Resources */,
-				050D979D261C02AA004FABF8 /* file.js in Resources */,
-				05900E60260EF610008C3490 /* unit-test.jsh in Resources */,
 				05B77130251879BF004FCD84 /* JSTerminal.help in Resources */,
-				050D979A261C02AA004FABF8 /* scroll0.js in Resources */,
-				05137F14260FFCB500288A2C /* unit-test.log.OK in Resources */,
 				05F7AE4D251874830077F527 /* Assets.xcassets in Resources */,
-				050D9799261C02AA004FABF8 /* openPanel.js in Resources */,
-				052A54332621A5330034369F /* curses-frame.js in Resources */,
 				05B7712F251879BF004FCD84 /* Credits.rtf in Resources */,
-				050D979C261C02AA004FABF8 /* curses.js in Resources */,
 				05F7AE50251874830077F527 /* Main.storyboard in Resources */,
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
-				05B2DE49260EA48900E51D2F /* unit-test.jspkg in Resources */,
 				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
-				050D979E261C02AA004FABF8 /* stdin.js in Resources */,
 				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
+				058EF649263C136A005115A8 /* KiwiLibrary.d.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,39 +8,12 @@ const ObjectType = {
         HumanBase:      2
 } ;
 
-const Direction = {
-        UpperLeft:      0,
-        Upper:          1,
-        UpperRight:     2,
-        Right:          3,
-        LowerRight:     4,
-        Lower:          5,
-        LowerLeft:      6,
-        Left:           7
-} ;
-
-function directionToString(dir) {
-        let result = "?" ;
-        switch(dir){
-          case Direction.UpperLeft:     result = "UpperLeft" ;          break ;
-          case Direction.Upper:         result = "Upper" ;              break ;
-          case Direction.UpperRight:    result = "UpperRight" ;         break ;
-          case Direction.Right:         result = "Right" ;              break ;
-          case Direction.LowerRight:    result = "LowerRight" ;         break ;
-          case Direction.Lower:         result = "Lower" ;              break ;
-          case Direction.LowerLeft:     result = "LowerLeft" ;          break ;
-          case Direction.Left:          result = "Left" ;               break ;
-        }
-        return result ;
-}
-
 class TKObject {
         // constructor(type: ObjectType, pos: Point)
         constructor(type, pos){
                 this.mType      = type ;
                 this.mPosition  = pos ;
-                this.mDirection = Direction.UpperLeft ;
-                this.mSpeed     = 0 ;
+                this.mSpeed     = Point(0, 0) ; // Delta for X and Y
         }
 
         // var type: ObjectType
@@ -49,10 +22,6 @@ class TKObject {
         // var position: Point
         set position(pos) { this.mPosition = pos ;}
         get position() { return this.mPosition ; }
-
-        // var direction: Direction
-        set direction(dir) { this.mDirection = dir ; }
-        get direction() { return this.mDirection ; }
 
         // var speed
         set speed(spd) { this.mSpeed = spd ; }
@@ -76,11 +45,9 @@ class TKShip extends TKObject {
         // var status: Array<String>
         get status() {
                 let pos   = this.position ;
-                let dir   = directionToString(this.mDirection) ;
                 let speed = this.speed ; 
                 return  [`Position:  (${pos.x},${pos.y})`, 
-                         `Direction: ${dir}`,
-                         `Speed:     ${speed}`] ;
+                         `Speed:     (${speed.x}, ${speed.y})`] ;
         }
 }
 
@@ -101,27 +68,84 @@ class TKObjects {
         get bases()      { return this.mBases ;       }
         get alienShips() { return this.mAlienShips ;  }
         get humanShip()  { return this.mHumanShip ;  }
+        get allShips() {
+                let allships = [] ;
+                allships = allships.concat(this.mAlienShips) ;
+                allships.push(this.mHumanShip) ;
+                return allships ;
+        }
 
         addBase(base)      { this.mBases.push(base) ;      }
         addAlienShip(ship) { this.mAlienShips.push(ship) ; }
         setHumanShip(ship) { this.mHumanShip = ship ; }
 
-        removeAlianShip(ship){
-                this.mAlienShips = removeFromArray1D(this.mAlienShips, ship) ;
+        removeAlienShip(ship){
+                console.log(`rAS: (b) ${this.mAlienShips.length}`) ;
+                this.mAlienShips = this.mAlienShips.filter(elm => elm != ship) ;
+                console.log(`rAS: (e) ${this.mAlienShips.length}`) ;
+        }
+        removeHumanShip(){
+                this.mHumanShip = null ;
+        }
+
+        // var status: Array<String>
+        get status() {
+                let basenum  = this.mBases.length ;
+                let aliennum = this.mAlienShips.length ; 
+                return  [`Base num:        ${basenum}`, 
+                         `Alien ship num:  ${aliennum}`] ;
         }
 }
 
 class TKSpace {
         // constructor(width: Int, height: Int)
-        constructor(width, height, objs){
-                this.mWidth   = width ;
-                this.mHeight  = height ;
-                this.mTable   = new Table(width, height) ;
+        constructor(width, height){
+                this.mWidth             = width ;
+                this.mHeight            = height ;
+                this.mTable             = new Table(width, height) ;
+
+                this.mCacheDirty        = true ;
+                this.mHumanShip         = nil ;
+                this.mHumanBases        = [] ;
+                this.mAlienShips        = [] ;
         }
 
         get width()  { return this.mWidth ;  }
         get height() { return this.mHeight ; }
         
+        get allShips() {
+                if(this.mCacheDirty){ updateCache() ; }
+                let ships = [] ;
+                ships = ships.concat(this.mAlienShips) ;
+                if(this.mHumanShip){
+                        ships.push(this.mHumanShip) ;
+                }
+                return ships ;
+        }
+
+        get humanShip() {
+                if(this.mCacheDirty){ updateCache() ; }
+                return this.mHumanShip ;
+        }
+
+        get humanBases(){
+                if(this.mCacheDirty){ updateCache() ; }
+                return this.mHumanBases ;
+        }
+
+        get alienShips() {
+                if(this.mCacheDirty){ updateCache() ; }
+                return this.mAlienShips ;  
+        }
+
+         // var status: Array<String>
+         get status() {
+                 let basenum  = this.humanBases.length ;
+                 let aliennum = this.alienShips.length ;
+                return  [`Base num:        ${basenum}`, 
+                         `Alien ship num:  ${aliennum}`] ;
+         }
+
         // object(x:Int, y:Int) -> TKObject?
         object(x, y){
                 return this.mTable.element(x, y) ;
@@ -141,40 +165,10 @@ class TKSpace {
 
         // nextPosition(object: TKObject) -> Point?
         nextPosition(obj){
-                let x     = obj.position.x ;
-                let y     = obj.position.y ;
-                let dir   = obj.direction ;
-                switch(dir){
-                  case Direction.UpperLeft:
-                        x -= 1 ; y -= 1 ;
-                  break ;                   
-                  case Direction.Upper:
-                                 y -= 1 ;
-                  break ;
-                  case Direction.UpperRight:
-                        x += 1 ; y -= 1 ;
-                  break ;
-                  case Direction.Right:
-                        x += 1 ;
-                  break ;
-                  case Direction.LowerRight:
-                        x += 1 ; y += 1 ;
-                  break ;
-                  case Direction.Lower:
-                                 y += 1 ;
-                  break ;
-                  case Direction.LowerLeft:
-                        x -= 1 ; y += 1 ;
-                  break ;
-                  case Direction.Left:
-                        x -= 1 ;
-                  break ;
-                }
-                x = Math.clamp(x, 0, this.width  - 1) ;
-                y = Math.clamp(y, 0, this.height - 1) ;
-                let nextpt = Point(x, y) ;
-                if(nextpt.x != obj.position.x || nextpt.y != obj.position.y){
-                        return nextpt ;
+                let newpos  = addPoint(obj.position, obj.speed) ;
+                let nextpos = clampPoint(newpos, 0, 0, this.mWidth, this.mHeight) ; 
+                if(nextpos.x != obj.position.x || nextpos.y != obj.position.y){
+                        return nextpos ;
                 } else {
                         return null ;
                 }
@@ -227,8 +221,8 @@ class TKRadar {
                         if(Math.random() <= acc){
                                 return obj != null ? obj.type : null ;
                         } else {
-                                let rnd = Math.randomInt(ObjectType.HumanShip, ObjectType.HumanBase+1) ;
-                                return (rnd == ObjectType.HumanBase+1) ? null : rnd ;
+                                let rnd = Math.randomInt(ObjectType.HumanShip, ObjectType.HumanBase) ;
+                                return (rnd == ObjectType.HumanShip) ? null : rnd ;
                         }
                 }) ;
                 this.mTable = newtable ;

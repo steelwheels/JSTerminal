@@ -1,9 +1,9 @@
+"use strict";
 /*
- * hello.js
+ * hello.ts
  */
-
-function main(args)
-{
-	console.log("Hello, world !!") ;
+/// <reference path="types/KiwiLibrary.d.ts"/>
+function main(args) {
+    console.log("Hello, world !!");
+    return 0;
 }
-

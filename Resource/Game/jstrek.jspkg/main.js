@@ -11,22 +11,24 @@ const GameResult = {
 
 function main(args)
 {
-	let objects = new TKObjects() ;
 	let space   = new TKSpace(10, 10) ;
-	allocateObjects(objects, space) ;
+	allocateObjects(space) ;
 
 	let docont = true ;
 	while(docont) {
 		/* Sense */
-		updateRadarInfo(space, objects) ;
+		updateRadarInfo(space) ;
 
-		printScreen(space, objects) ;
-		if(!setHumanAction(objects)){
+		printScreen(space) ;
+		if(!setHumanAction(space)){
 			break ;
 		}
-		setAlianAction(objects) ;
-		switch(doAction(space, objects)){
-		  case GameResult.doContinue: 
+		setAlienAction(objects) ;
+		doAction(space, objects) ;
+
+		switch(checkResult(space, objects)){
+		  case GameResult.doContinue:
+			  docont = true ;
 		  break ;
 		  case GameResult.youWon:
 			  docont = false ;
@@ -38,8 +40,8 @@ function main(args)
 	}
 }
 
-// allocateObjects(objects: TKObjects, space: TKSpace)
-function allocateObjects(objects, space){
+// allocateObjects(space: TKSpace)
+function allocateObjects(space){
 	const BASE_NUM		= 4 ;
 	const ALIEN_NUM		= 2 ;
 
@@ -48,21 +50,18 @@ function allocateObjects(objects, space){
 		let pt      = allocateObject(space) ;
 		let newbase = new TKBase(pt) ;
 		space.setObject(newbase) ;
-		objects.addBase(newbase) ;
 	}
 	/* Allocate alien ships */
 	for(let i=0 ; i<ALIEN_NUM ; i++){
 		let pt      = allocateObject(space) ;
 		let newship = new TKShip(ObjectType.AlienShip, pt) ;
 		space.setObject(newship) ;
-		objects.addAlienShip(newship) ;
 	}
 	/* Allocate human ships */
 	do {
 		let pt = allocateObject(space) ;
 		let newship = new TKShip(ObjectType.HumanShip, pt) ;
 		space.setObject(newship) ;
-		objects.setHumanShip(newship) ;
 	} while(false) ;
 }
 
@@ -77,30 +76,29 @@ function allocateObject(space){
 	return null ;
 }
 
-// updateRadarInfo(space: TKSpace, objects: TKObjects)
-function updateRadarInfo(space, objects){
+// updateRadarInfo(space: TKSpace)
+function updateRadarInfo(space){
 	/* Move ships */
-	let allships = objects.alienShips ;
-	allships.push(objects.humanShip) ;
-	for(let ship of allships){
+	for(let ship of space.allShips){
 		let radar = new TKRadar(space.width, space.height) ;
-		radar.sense(space, 0.95) ;
+		radar.sense(space, 0.999) ;
 		ship.radar = radar ;
 	}
 }
 
-// printScreen(space: TKSpace. objects: TKObjects)
-function printScreen(space, objects) {
-	let ship    = objects.humanShip ;
-	let mapstr  = ship.radar.toStrings() ;
-	let statstr = objects.humanShip.status ; 
-	let dumpstr = pasteStrings(mapstr, statstr, " ") ;
+// printScreen(space: TKSpace)
+function printScreen(space) {
+	let ship     = space.humanShip ;
+	let mapstr   = ship.radar.toStrings() ;
+	let statstrs = space.status ;
+	statstrs     = statstrs.concat(ship.status) ;
+	let dumpstr  = pasteStrings(mapstr, statstrs , " ") ;
 	console.print(dumpstr.join("\n")) ;
 	console.print("\n") ;
 }
 
-// setHumanAction(objects: TKObjects)
-function setHumanAction(objects){
+// setHumanAction(space: TKSpace)
+function setHumanAction(space){
 	let doinput = true ;
 	let docont  = true ;
 	while(doinput){
@@ -123,73 +121,117 @@ function setHumanAction(objects){
 	return docont ;
 }
 
-function setAlianAction(objects){
+function setAlienAction(objects){
 }
 
 // setDirection(objects: TKObjects) -> Bool
 function setDirection(objects){
-	console.print("Input direction [0-7]> ") ;
-	let dir = Readline.inputInteger() ;
-	if(!(0<=dir && dir<=7)){
-		console.error(`Unexpected direction: ${dir}\n`) ;
+	console.print("Input speed for X direction [-2 - +2]> ") ;
+	let xspeed = Readline.inputInteger() ;
+	if(!(-2<=xspeed && xspeed<=2)){
 		return false ;
 	}
 
-	console.print("Input speed [0-2]> ") ;
-	let speed = Readline.inputInteger() ;
-	if(!(0<=speed && speed<=2)){
-		console.error(`Unexpected speed: ${speed}\n`) ;
+	console.print("Input speed for Y direction [-2 + +2]> ") ;
+	let yspeed = Readline.inputInteger() ;
+	if(!(-2<=yspeed && yspeed<=2)){
 		return false ;
 	}
 
-	let ship = objects.humanShip ;
-	ship.direction = dir ;
-	ship.speed     = speed ;
-
+	let ship   = objects.humanShip ;
+	ship.speed = Point(xspeed, yspeed) ;
 	return true ;
 }
 
-// doAction(space: TKSpace, objects: TKObjects) -> GameResult
+// doAction(space: TKSpace, objects: TKObjects)
 function doAction(space, objects){
 	/* Move ships */
-	let allships = objects.alienShips ;
-	allships.push(objects.humanShip) ;
-	for(let ship of allships){
-		let speed = ship.speed ;
-		for(let s=0 ; s<speed ; s++){
-			let nextpos  = space.nextPosition(ship) ;
-			//console.print(`next position: ${nextpos.x}, ${nextpos.y}\n`) ;
-			if(nextpos != null){
-				/* Check conflict */
-				let nextx = nextpos.x ;
-				let nexty = nextpos.y ;
-				let otherobj = space.object(nextpos.x, nextpos.y) ;
-				if(otherobj != null){
-					switch(otherobj.type){
-					  case ObjectType.humanShip:
-						return GameResult.youLost ;
-					  break ;
-					  case ObjectType.alienShips:
-						space.removeObject(nextx, nexty) ;
-						objects.removeAlianShip(otherobj) ;
-					  break ;
-					  case ObjectType.humanBase:
-						if(ship.type == ObjectType.humanShip){
-							ship.fillEnergy() ;
-						} else {
-							space.removeObject(nextx, nexty) ;
-							objects.removeAlianShip(otherobj) ;
-						}
-					  break ;
-					}
+	for(let ship of objects.allShips){
+		let dx = ship.speed.x ;
+		let dy = ship.speed.y ;
+		while(dx != 0 || dy != 0){
+			if(dx > 0){
+				if(dy > 0){
+					doShipAction(space, objects, ship, Point( 1,  1)) ;
+					dx -=  1 ; dy -=  1 ;
+				} else if(dy == 0){
+					doShipAction(space, objects, ship, Point( 1,  0)) ;
+					dx -=  1 ; dy -=  0 ;
+				} else { // dy < 0
+					doShipAction(space, objects, ship, Point( 1, -1)) ;
+					dx -=  1 ; dy -= -1 ;
 				}
-				/* Update position */
-				space.removeObject(ship.position.x, ship.position.y) ;
-				ship.position = nextpos ;
-				space.setObject(ship) ;
+			} else if(dx == 0){
+				if(dy > 0){
+					doShipAction(space, objects, ship, Point( 0,  1)) ;
+					dx -=  0 ; dy -=  1 ;
+				} else { // dy < 0
+					doShipAction(space, objects, ship, Point( 0, -1)) ;
+					dx -=  0 ; dy -= -1 ;
+				}
+			} else { // dx < 0
+				if(dy > 0){
+					doShipAction(space, objects, ship, Point(-1,  1)) ;
+					dx -= -1 ; dy -=  1 ;
+				} else if(dy == 0){
+					doShipAction(space, objects, ship, Point(-1,  0)) ;
+					dx -= -1 ; dy -=  0 ;
+				} else { // dy < 0
+					doShipAction(space, objects, ship, Point(-1, -1)) ;
+					dx -= -1 ; dy -= -1 ;
+				}
 			}
-		}	
+		}		
 	}
-	return GameResult.doContinue ;
 }
 
+function doShipAction(space, objects, ship, delta){
+	let curpos  = ship.position ;
+	let nextpos = addPoint(curpos, delta) ;
+	if(!(0<=nextpos.x && nextpos.x<space.width && 0<=nextpos.y && nextpos.y<space.width)){
+		return ;
+	}
+
+	console.log(`dSA (0) ${nextpos.x}, ${nextpos.y}`) ;
+	let otherobj = space.object(nextpos.x, nextpos.y) ;
+	if(otherobj != null){
+		switch(otherobj.type){
+		  case ObjectType.humanShip:
+			console.log("dSA (1)") ;
+			space.removeObject(nextpos.x, nextpos.y) ;
+			objects.removeHumanShip(otherobj) ;
+		  break ;
+		  case ObjectType.alienShip:
+			console.log("dSA (2)") ;
+			space.removeObject(nextpos.x, nextpos.y) ;
+			objects.removeAlienShip(otherobj) ;
+		  break ;
+		  case ObjectType.humanBase:
+			console.log("dSA (3)") ;
+			if(ship.type == ObjectType.humanShip){
+				ship.fillEnergy() ;
+			} else {
+				space.removeObject(nextpos.x, nextpos.y) ;
+				objects.removeAlienShip(otherobj) ;
+			}
+		  break ;
+		}
+	}
+	console.log("dSA (4)") ;
+
+	/* Update position */
+	space.removeObject(curpos.x, curpos.y) ;
+	ship.position = nextpos ;
+	space.setObject(ship) ;	
+}
+
+// checkResult(space: TKSpace, objects: TKObjects) -> GameResult
+function checkResult(space, objects){
+	if(objects.humanShip == null){
+		return GameResult.youLost ;
+	} else if(objects.alienShips.length == 0){
+		return GameResult.youWin ;
+	}
+
+	return GameResult.doContinue ;
+}
