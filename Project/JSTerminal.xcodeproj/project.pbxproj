@@ -25,8 +25,6 @@
 		0586F79325BC008500AE9FEE /* controls.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
 		0586F79525BC009A00AE9FEE /* table.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
-		058EF649263C136A005115A8 /* KiwiLibrary.d.ts in Resources */ = {isa = PBXBuildFile; fileRef = 058EF648263C136A005115A8 /* KiwiLibrary.d.ts */; };
-		058EF64B263C13BA005115A8 /* KiwiLibrary.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 058EF648263C136A005115A8 /* KiwiLibrary.d.ts */; };
 		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
@@ -87,16 +85,6 @@
 			files = (
 				053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */,
 				0561379025E13FE200271346 /* life-game.jspkg in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		058EF64A263C13A8005115A8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = Library;
-			dstSubfolderSpec = 7;
-			files = (
-				058EF64B263C13BA005115A8 /* KiwiLibrary.d.ts in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +387,6 @@
 				05B7711D25187959004FCD84 /* CopyFiles */,
 				053CD9E225A06DEF00B5F690 /* CopyFiles */,
 				05B2DE4A260EA49E00E51D2F /* CopyFiles */,
-				058EF64A263C13A8005115A8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -459,7 +446,6 @@
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
 				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
 				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
-				058EF649263C136A005115A8 /* KiwiLibrary.d.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,9 +30,7 @@ tsc_opt	= -t ES2017 --lib "es2017" --declaration --declarationDir types \
 all: $(srcdecl) $(dsts)
 
 $(srcdecl): dummy
-	if [ -f ~/Development/Library/KiwiLibrary.d.ts ] ; then \
-		cp  ~/Development/Library/KiwiLibrary.d.ts $@ ; \
-	fi
+	cp ../Library/types/*.d.ts ./types
 
 clean:
 	rm -f $(dsts)

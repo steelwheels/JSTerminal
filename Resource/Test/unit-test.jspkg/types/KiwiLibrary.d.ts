@@ -188,7 +188,6 @@ declare function isUndefined(value: any): boolean ;
 declare function isURL(value: any): boolean ;
 declare function isEOF(value: any): boolean ;
 
-declare function alert(messsage: string): number ;
 declare function asciiCodeName(code: number): string | null ;
 
 declare function sleep(sec: number): boolean ;
