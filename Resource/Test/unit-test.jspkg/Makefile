@@ -2,16 +2,11 @@
 # Makefile
 #
 
-srcs	= alert.ts \
-	  colors.ts \
-	  escape-code.ts \
-	  file.ts \
-	  hello.ts \
-	  hello_color.ts \
-	  keycode.ts \
-	  openPanel.ts \
-	  scroll0.ts \
-	  stdin.ts
+srcs	= test_color.ts \
+	  test_graphics.ts \
+	  test_string.ts \
+	  test_table.ts \
+	  main.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)

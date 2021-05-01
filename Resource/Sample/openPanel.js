@@ -4,7 +4,14 @@
  */
 /// <reference path="types/KiwiLibrary.d.ts"/>
 function main() {
+    let result = -1;
     let url = openPanel("Select JS file", FileType.file, ["js"]);
-    console.log("Selected URL = " + url.path);
-    return 0;
+    if (url != null) {
+        console.log("Selected URL = " + url.path);
+        result = 0;
+    }
+    else {
+        console.log("Selected URL = NULL");
+    }
+    return result;
 }
