@@ -4,7 +4,14 @@
  */
 /// <reference path="types/KiwiLibrary.d.ts"/>
 /// <reference path="types/KiwiComponent.d.ts"/>
+/// <reference path="types/KiwiShell.d.ts"/>
 /// <reference path="types/model.d.ts"/>
+var UserAction;
+(function (UserAction) {
+    UserAction[UserAction["setDirection"] = 0] = "setDirection";
+    UserAction[UserAction["quitGame"] = 1] = "quitGame";
+})(UserAction || (UserAction = {}));
+;
 class TKController {
     constructor() {
     }
@@ -44,6 +51,9 @@ class TKController {
             }
         }
     }
+    /*
+     * Update status
+     */
     update(space) {
         let humanship = space.humanShip;
         if (humanship != null) {
@@ -80,6 +90,26 @@ class TKController {
                 result = ObjectType.alienShip;
                 break;
             default: result = null;
+        }
+        return result;
+    }
+    /*
+     * User action
+     */
+    selectAction() {
+        console.log("==== Select action");
+        let idx = Readline.menu([
+            "Set direction",
+            "Quit" // 1
+        ]);
+        let result = UserAction.quitGame;
+        switch (idx) {
+            case 0:
+                result = UserAction.setDirection;
+                break;
+            case 1:
+                result = UserAction.quitGame;
+                break;
         }
         return result;
     }

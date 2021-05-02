@@ -268,6 +268,23 @@ declare function maxLengthOfStrings(strs: string[]): number;
 declare function adjustLengthOfStrings(strs: string[]): string[];
 declare function pasteStrings(src0: string[], src1: string[], space: string): string[];
 /// <reference path="Builtin.d.ts" />
+declare class CFrame {
+    mFrame: _Rect;
+    mCursorX: number;
+    mCursorY: number;
+    mForegroundColor: number;
+    mBackgroundColor: number;
+    constructor(frame: _Rect);
+    get frame(): _Rect;
+    get foregroundColor(): number;
+    set foregroundColor(newcol: number);
+    get backgroundColor(): number;
+    set backgroundColor(newcol: number);
+    fill(pat: string): void;
+    moveTo(x: number, y: number): boolean;
+    put(str: string): void;
+}
+/// <reference path="Builtin.d.ts" />
 declare type TurtleStatus = {
     x: number;
     y: number;

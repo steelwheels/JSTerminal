@@ -12,7 +12,17 @@ function main(args) {
     let control = new TKController();
     let viewer = new TKViewer();
     let space = control.initSpace();
-    control.update(space);
-    viewer.update(space);
+    let docont = true;
+    while (docont) {
+        control.update(space);
+        viewer.update(space);
+        switch (control.selectAction()) {
+            case UserAction.setDirection:
+                break;
+            case UserAction.quitGame:
+                docont = false;
+                break;
+        }
+    }
     return 0;
 }

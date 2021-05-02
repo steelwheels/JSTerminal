@@ -4,6 +4,7 @@
 
 /// <reference path="types/KiwiLibrary.d.ts"/>
 /// <reference path="types/KiwiComponent.d.ts"/>
+/// <reference path="types/KiwiShell.d.ts"/>
 /// <reference path="types/model.d.ts"/>
 
 enum UserAction {
@@ -98,4 +99,17 @@ class TKController
         /*
          * User action
          */
+        selectAction(): UserAction {
+                console.log("==== Select action") ;
+                let idx = Readline.menu([
+                        "Set direction",        // 0
+                        "Quit"                  // 1
+                ]) ;
+                let result: UserAction = UserAction.quitGame ;
+                switch(idx){
+                case 0: result = UserAction.setDirection ;      break ;
+                case 1: result = UserAction.quitGame ;          break ;
+                }
+                return result ;
+        }
 } 

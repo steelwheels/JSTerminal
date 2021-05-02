@@ -28,7 +28,8 @@ all: types $(dsts)
 clean:
 	rm -f $(dsts)
 
-types: ./types/KiwiLibrary.d.ts ./types/KiwiComponent.d.ts
+types: ./types/KiwiLibrary.d.ts ./types/KiwiComponent.d.ts \
+       ./types/KiwiShell.d.ts
 
 ./types/KiwiLibrary.d.ts: $(types_dir)/KiwiLibrary.d.ts
 	cp $< $@
@@ -36,7 +37,8 @@ types: ./types/KiwiLibrary.d.ts ./types/KiwiComponent.d.ts
 ./types/KiwiComponent.d.ts: $(types_dir)/KiwiComponent.d.ts
 	cp $< $@
 
-dummy:
+./types/KiwiShell.d.ts: $(types_dir)/KiwiShell.d.ts
+	cp $< $@
 
-	  colors.ts \
+dummy:
 
