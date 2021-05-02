@@ -1,7 +1,9 @@
 {
 	application: "main.js"
 	libraries: [
-		"libtrek.js"
+		"model.js",
+		"view.js",
+		"control.js"
 	]
 }
 

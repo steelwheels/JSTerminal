@@ -10,6 +10,7 @@ srcs	= alert.ts \
 	  hello_color.ts \
 	  keycode.ts \
 	  openPanel.ts \
+	  readline.ts \
 	  scroll0.ts \
 	  stdin.ts
 

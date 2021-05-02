@@ -2,55 +2,6 @@
  * libtrek.js: Class definitions for JSTrek
  */
 
-const ObjectType = {
-        HumanShip:      0,
-        AlienShip:      1,
-        HumanBase:      2
-} ;
-
-class TKObject {
-        // constructor(type: ObjectType, pos: Point)
-        constructor(type, pos){
-                this.mType      = type ;
-                this.mPosition  = pos ;
-                this.mSpeed     = Point(0, 0) ; // Delta for X and Y
-        }
-
-        // var type: ObjectType
-        get type() { return this.mType ; }
-
-        // var position: Point
-        set position(pos) { this.mPosition = pos ;}
-        get position() { return this.mPosition ; }
-
-        // var speed
-        set speed(spd) { this.mSpeed = spd ; }
-        get speed()    { return this.mSpeed ; }
-}
-
-class TKShip extends TKObject {
-        // constuctor(type: ObjectType, pos: Point)
-        constructor(type, pos) {
-                super(type, pos) ;
-                this.mRadar = null ;
-        }
-
-        // var radar: TKRadar
-        set radar(newdata) { this.mRadar = newdata ;}
-        get radar()        { return this.mRadar ;}
-        
-        fillEnergy(){
-        }
-
-        // var status: Array<String>
-        get status() {
-                let pos   = this.position ;
-                let speed = this.speed ; 
-                return  [`Position:  (${pos.x},${pos.y})`, 
-                         `Speed:     (${speed.x}, ${speed.y})`] ;
-        }
-}
-
 class TKBase extends TKObject {
         // constuctor(pos: Point)
         constructor(pos) {
