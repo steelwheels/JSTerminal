@@ -12,6 +12,14 @@ var ObjectType;
 })(ObjectType || (ObjectType = {}));
 ;
 const ObjectTypeNum = 3;
+var GameStatus;
+(function (GameStatus) {
+    GameStatus[GameStatus["inProgress"] = 0] = "inProgress";
+    GameStatus[GameStatus["terminated"] = 1] = "terminated";
+    GameStatus[GameStatus["humanWin"] = 2] = "humanWin";
+    GameStatus[GameStatus["alienWin"] = 3] = "alienWin";
+})(GameStatus || (GameStatus = {}));
+;
 class TKRadar {
     constructor(width, height) {
         this.mTable = new Table(width, height);
@@ -108,6 +116,19 @@ class TKSpace {
     get alienShips() {
         this.update();
         return this.mAlienShips;
+    }
+    gameStatus() {
+        let result;
+        if (this.mHumanShip == null) {
+            result = GameStatus.alienWin;
+        }
+        else if (this.mAlienShips.length == 0) {
+            result = GameStatus.humanWin;
+        }
+        else {
+            result = GameStatus.inProgress;
+        }
+        return result;
     }
     element(x, y) {
         return this.mTable.element(x, y);

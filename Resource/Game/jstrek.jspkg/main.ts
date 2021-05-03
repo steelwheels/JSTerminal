@@ -16,16 +16,28 @@ function main(args: string[])
         let viewer  = new TKViewer() ;
         let space   = control.initSpace() ;
        
-        let docont: boolean = true ;
-        while(docont){
+        let status: GameStatus = GameStatus.inProgress ;
+        while(status == GameStatus.inProgress){
                 control.update(space) ;
                 viewer.update(space) ;
-                switch(control.selectAction()){
-                        case UserAction.setDirection:
-                        break ;
-                        case UserAction.quitGame:
-                                docont = false ;
-                        break ;
+
+                status = space.gameStatus() ;
+                if(status == GameStatus.inProgress) {
+                        /* Decide user action */
+                        let doquit = false ;
+                        switch(control.selectAction()){
+                          case UserAction.setDirection: {
+                                let humanship = space.humanShip! ;
+                                humanship.speed = control.selectSpeed() ;
+                          } break ;
+                          case UserAction.quitGame:
+                                doquit = true ;        
+                          break ;
+                        }
+                        /* Decide next status */
+                        if(doquit){
+                                status = GameStatus.terminated ;
+                        }
                 }
         }
 

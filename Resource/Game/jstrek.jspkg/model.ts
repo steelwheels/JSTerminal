@@ -13,6 +13,13 @@ enum ObjectType {
 
 const ObjectTypeNum: number = 3 ;
 
+enum GameStatus {
+        inProgress,
+        terminated,
+        humanWin,
+        alienWin
+} ;
+
 class TKRadar
 {
 	mTable:		Table ;
@@ -139,6 +146,18 @@ class TKSpace
         get alienShips(): TKShip[] {
                 this.update() ;
                 return this.mAlienShips ;
+        }
+
+        gameStatus(): GameStatus {
+                let result: GameStatus ;
+                if(this.mHumanShip == null){
+                        result = GameStatus.alienWin ;
+                } else if(this.mAlienShips.length == 0){
+                        result = GameStatus.humanWin ;
+                } else {
+                        result = GameStatus.inProgress ;
+                }
+                return result ;
         }
 
 	element(x: number, y:number): TKObject | null {

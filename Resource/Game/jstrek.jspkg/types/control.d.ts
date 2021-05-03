@@ -14,8 +14,11 @@ declare class TKController {
     initSpace(): TKSpace;
     randomPoint(space: TKSpace): _Point;
     update(space: TKSpace): void;
+    nextPosition(ship: TKShip, space: TKSpace): _Point | null;
+    updatePosition(next: _Point, ship: TKShip, space: TKSpace): void;
     updateRadar(radar: TKRadar, space: TKSpace): void;
     objectToType(obj: TKObject | null): ObjectType | null;
     randomObjectType(): ObjectType | null;
     selectAction(): UserAction;
+    selectSpeed(): _Point;
 }

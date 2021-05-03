@@ -9,6 +9,12 @@ declare enum ObjectType {
     alienShip = 2
 }
 declare const ObjectTypeNum: number;
+declare enum GameStatus {
+    inProgress = 0,
+    terminated = 1,
+    humanWin = 2,
+    alienWin = 3
+}
 declare class TKRadar {
     mTable: Table;
     constructor(width: number, height: number);
@@ -52,6 +58,7 @@ declare class TKSpace {
     get humanShip(): TKShip | null;
     get humanBases(): TKBase[];
     get alienShips(): TKShip[];
+    gameStatus(): GameStatus;
     element(x: number, y: number): TKObject | null;
     setElement(pos: _Point, obj: TKObject | null): void;
     forEach(childFunc: (value: TKObject | null, index: _Point) => void): void;
