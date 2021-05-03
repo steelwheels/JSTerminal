@@ -63,15 +63,22 @@ class TKController
         update(space: TKSpace): void {
                 let humanship = space.humanShip ;
                 if(humanship != null){
-                        /* Update position */
-                        let nextpt = this.nextPosition(humanship, space) ;
-                        if(nextpt != null){
-                                this.updatePosition(nextpt!, humanship, space) ;
-                        }
-                        /* Update ladar */
-                        let radar = humanship.radar ;
-                        this.updateRadar(radar, space) ;
+                        this.updateShip(humanship, space) ;
                 }
+                for(let alienship of space.alienShips){
+                        this.updateShip(alienship, space) ;
+                }
+        }
+
+        updateShip(ship: TKShip, space: TKSpace): void {
+                 /* Update position */
+                 let nextpt = this.nextPosition(ship, space) ;
+                 if(nextpt != null){
+                         this.updatePosition(nextpt!, ship, space) ;
+                 }
+                 /* Update ladar */
+                 let radar = ship.radar ;
+                 this.updateRadar(radar, space) ;
         }
 
         nextPosition(ship: TKShip, space: TKSpace): _Point | null {
@@ -166,5 +173,28 @@ class TKController
                         }
                 }
                 return result ;
+        }
+
+        /*
+         * alien action
+         */
+        alienAction(ship: TKShip, space: TKSpace) {
+                /* Update speed */
+                let speed = ship.speed ;
+                if(speed.x == 0 && speed.y == 0){
+                        ship.speed = this.randomSpeed() ;
+                        return ;
+                }
+                let nextpos = this.nextPosition(ship, space) ;
+                if(nextpos == null){
+                        ship.speed = this.randomSpeed() ;
+                        return ;
+                }
+        }
+
+        randomSpeed(): _Point {
+                let x = Math.randomInt(0, 1) ;
+                let y = Math.randomInt(0, 1) ;
+                return Point(x, y) ;
         }
 } 

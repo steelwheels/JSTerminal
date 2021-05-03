@@ -26,10 +26,23 @@ class TKViewer
         }
 
         statusStrings(space: TKSpace): string[] {
+                let ship   = space.humanShip ;
+                let posstr:   string ;
+                let speedstr: string ;
+                if(ship != null){
+                        let pos   = ship.position ;
+                        let speed = ship.speed ;
+                        posstr    = `Ship position:  (${pos.x}, ${pos.y})` ;
+                        speedstr  = `Ship speed:     (${speed.x}, ${speed.y})` ;
+                } else {
+                        posstr    = "Ship pos:       (---. ---)" ;
+                        speedstr  = "Ship speed:     (---. ---)" ;
+                }
                 let bases  = space.humanBases ;
                 let aliens = space.alienShips ; 
-                return [`Base num:  ${bases.length}`,
-                        `Alien num: ${aliens.length}`] ;
+                return [`Base num:       ${bases.length}`,
+                        `Alien num:      ${aliens.length}`,
+                        posstr, speedstr] ;
         }
 
         dumpStrings(lines: string[]){

@@ -37,6 +37,11 @@ function main(args) {
                 status = GameStatus.terminated;
             }
         }
+        if (status == GameStatus.inProgress) {
+            for (let alien of space.alienShips) {
+                control.alienAction(alien, space);
+            }
+        }
     }
     return 0;
 }
