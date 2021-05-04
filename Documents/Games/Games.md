@@ -1,4 +1,4 @@
-# Re-implementation of retro computer games
+# Retro computer games
 
 ## `moo`
 ### Description
@@ -24,13 +24,43 @@ jsh>
 ### The original implementation
 Not found
 
-### The JavaScript implementation
+### The TypeScript implementation
+[moo.ts](https://github.com/steelwheels/JSTerminal/blob/master/Resource/Game/moo.ts)
 
 ### Related links
 * [Bulls and cows](https://en.wikipedia.org/wiki/Bulls_and_Cows): Wikipedia
 * [数当てゲームMOOの最小質問戦略と最強戦略](https://www.tanaka.ecc.u-tokyo.ac.jp/ktanaka/moo/moo.html) (Japanese):
 
-## Reference
+## `hangman`
+### Description
+The word to guess is represented by a row of dashes, representing each letter of the word. For more details, see [wikipedia about the game](https://en.wikipedia.org/wiki/Hangman_(game)).
+
+### Screenshot
+````
+word: o - - o b e r 
+character> c
+ +----+
+ o    |
+\|/   |
+ |    |
+/     |
+      |
++-----+
+word: o c - o b e r 
+character> t
+Conguraturations !
+````
+
+### Manual
+* [Education Web Games](http://hangman.educationwebgames.com/rules.html): Online game. The 1st page is manual page.
+
+### The original implementation
+Not found
+
+### The TypeScript implementation
+[hangman.ts](https://github.com/steelwheels/JSTerminal/blob/master/Resource/Game/hangman.ts)
+
+# Reference
 * [User's manual](UsersManual.md): The main documentation about JSTerminal application.
 * [Vintage Games](http://www.vintage-basic.net/games.html):
 * [BSD games](https://dyama.org/2010/11/bsdgames-パッケージについて/) (Japanese): 

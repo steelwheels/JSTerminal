@@ -2,7 +2,8 @@
 # Makefile
 #
 
-srcs	= moo.ts
+srcs	= moo.ts \
+	  hangman.ts
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)
 
