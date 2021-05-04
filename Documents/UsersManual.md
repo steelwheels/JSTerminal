@@ -176,7 +176,7 @@ And you will get following outputs:
 
 When the run command is executed without script path, the dialog is used to select the file.
 For more details, see [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md).
-You can find the sample JavaScript programs in [sample game scripts](Sample/Games.md), [sample GUI scripts](Sample/GUIs.md).
+You can find the sample JavaScript programs in [sample game scripts](Games/Games.md), [sample GUI scripts](Sample/GUIs.md).
 
 ### File extensions
 The file extension (such as `.js`, `.jsh`) is refered to determine the contents of the file (or package).
@@ -289,5 +289,5 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 * [Kiwi Components](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): List of all components
 * [Kiwi Standard Library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The standard library for JavaScript programming.
 * [Kiwi Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md): The classes/functions to operate GUI component.
-* Sample Scripts: [sample game script](Sample/Games.md), [sample GUI script](Sample/GUIs.md)
+* Sample Scripts: [sample game script](Games/Games.md), [sample GUI script](Sample/GUIs.md)
 * [Steel Wheels Project](http://steelwheels.github.io): Developer's web site.
