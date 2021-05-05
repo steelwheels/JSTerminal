@@ -82,13 +82,13 @@ You don't have to install these files. But it helps you to learn how to programm
 
 ````
 jsh> install
-Make directory: /Users/tomoo/Development/Game
-....
-Copy from /Applications/JSTerminal.app/Contents/Resources/Test/unit-test.jspkg to /Users/tomoo/Development/Test/unit-test.jspkg
-jsh> ls
-Game
-Sample
-Test
+Remove directory: /Users/tomoo/Development/Library
+Copy directory: file:///Applications/JSTerminal.app/Contents/Resources/Library/ --> file:///Users/tomoo/Development/Library/
+Remove directory: /Users/tomoo/Development/Game
+Copy directory: file:///Applications/JSTerminal.app/Contents/Resources/Game/ --> file:///Users/tomoo/Development/Game/
+Remove directory: /Users/tomoo/Development/Sample
+Copy directory: file:///Applications/JSTerminal.app/Contents/Resources/Sample/ --> file:///Users/tomoo/Development/Sample/
+jsh> 
 ````
 
 ### Execute shell command
