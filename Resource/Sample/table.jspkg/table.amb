@@ -1,6 +1,6 @@
 top: VBox {
 	selection: Int 0
-    table: Table {
+    table: ComponentTable {
 		columnCount:	Int	3
 		rowCount:	Int	2
 		cell: Icon {
