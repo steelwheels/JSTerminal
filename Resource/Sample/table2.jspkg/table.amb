@@ -1,0 +1,26 @@
+top: VBox {
+    table: DataTable {
+	init: Init %{
+                let table  = self.table ;
+		table.setValue(0, 0, "0/0") ;
+		table.setValue(0, 1, "0/1") ;
+		table.setValue(0, 2, "0/2") ;
+		table.setValue(1, 0, "1/0") ;
+		table.setValue(1, 1, "1/1") ;
+		table.setValue(1, 2, "1/2") ;
+		table.setValue(2, 0, "2/0") ;
+		table.setValue(2, 1, "2/1") ;
+		table.setValue(2, 2, "2/2") ;
+                console.log("rowCount = " + table.rowCount) ;
+                console.log("colCount = " + table.columnCount) ;
+                self.reload() ;
+        %}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+

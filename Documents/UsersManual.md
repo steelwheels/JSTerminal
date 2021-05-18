@@ -282,6 +282,8 @@ See [Bug & Restrictions](https://github.com/steelwheels/JSTerminal/blob/master/D
 |1.4	|2020/08/29 |Support AppleEvents to be controlled by AppleScript |
 |1.5.4	|2021/01/03 |Support [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md) for GUI design |
 |1.6   |2021/02/02 |Support [Table component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Table.md) and [2D Graphics component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/Graphics2D.md). |
+|1.7.1 |2021/03/20  |
+|1.8   |2021/05/??  |Update Tavble view compont support. |
 
 ## Related document
 * [README.md](https://github.com/steelwheels/JSTerminal): Top level document of this application.
