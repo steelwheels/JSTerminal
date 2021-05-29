@@ -1,0 +1,34 @@
+top: VBox {
+    sheet: DataTable {
+	init: Init %{
+                let table  = self.table ;
+                console.log("rowCount = " + table.rowCount) ;
+                console.log("colCount = " + table.columnCount) ;
+        %}
+    }
+    buttons: HBox {
+        load: Button {
+                title: String "Load"
+                pressed: Event() %{
+                        let file = openPanel("Select JSON file", FileType.file, ["json"]) ;
+                        if(file != null){
+                                top.sheet.table.load(file) ;
+                                console.log("New rowCount = " +  top.sheet.table.rowCount) ;
+                                console.log("New colCount = " + top.sheet.table.columnCount) ;
+                                top.sheet.reload() ;
+                        }
+                %}
+        }
+        save: Button {
+                title: String "Save"
+        }
+        quit: Button {
+                title: String "Quit"
+                pressed: Event() %{
+                     leaveView(1) ;
+                %}
+         }
+    }
+    
+}
+
