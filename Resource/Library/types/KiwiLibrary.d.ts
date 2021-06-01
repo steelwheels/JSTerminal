@@ -194,6 +194,7 @@ declare function sleep(sec: number): boolean ;
 
 declare function _openPanel(title: string, type: number,
 					exts: string[], cbfunc: any): void ;
+declare function _savePanel(title: string, cbfunc: any): void ;
 declare function _run(path: _URL | string, input: _File, output: _File,
 					error: _File): object | null ;
 
@@ -263,6 +264,7 @@ declare class CancelException extends Error {
 }
 declare function _cancel(): void;
 declare function openPanel(title: string, type: number, exts: string[]): _URL | null;
+declare function savePanel(title: string): _URL | null;
 declare function run(path: _URL | string | null, input: _File, output: _File, error: _File): object | null;
 /// <reference path="Builtin.d.ts" />
 declare function maxLengthOfStrings(strs: string[]): number;

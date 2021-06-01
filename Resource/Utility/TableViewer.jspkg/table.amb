@@ -21,6 +21,9 @@ top: VBox {
         }
         save: Button {
                 title: String "Save"
+                pressed: Event() %{
+                        let file = savePanel("Select file to save") ;
+                %}
         }
         quit: Button {
                 title: String "Quit"

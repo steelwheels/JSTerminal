@@ -107,7 +107,7 @@
 		0535A7022657C6FE003BDC74 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Utilities;
+			dstPath = Utility;
 			dstSubfolderSpec = 7;
 			files = (
 				0535A7052657C73E003BDC74 /* TableViewer.jspkg in CopyFiles */,
@@ -329,12 +329,11 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		0535A7012657C6C7003BDC74 /* Utilities */ = {
+		0535A7012657C6C7003BDC74 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				0535A7032657C72D003BDC74 /* TableViewer.jspkg */,
 			);
-			name = Utilities;
 			path = Utility;
 			sourceTree = "<group>";
 		};
@@ -375,7 +374,7 @@
 				05BAB09525A0655100DD59D7 /* Game */,
 				05B7710025187916004FCD84 /* Sample */,
 				0521300B260EA41900B70692 /* Test */,
-				0535A7012657C6C7003BDC74 /* Utilities */,
+				0535A7012657C6C7003BDC74 /* Utility */,
 			);
 			name = Resource;
 			path = ../Resource;
