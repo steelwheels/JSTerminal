@@ -12,10 +12,13 @@ top: VBox {
                 pressed: Event() %{
                         let file = openPanel("Select JSON file", FileType.file, ["json"]) ;
                         if(file != null){
-                                top.sheet.table.load(file) ;
-                                console.log("New rowCount = " +  top.sheet.table.rowCount) ;
-                                console.log("New colCount = " + top.sheet.table.columnCount) ;
-                                top.sheet.reload() ;
+                                if(top.sheet.table.load(file)){
+					console.log("New rowCount = " +  top.sheet.table.rowCount) ;
+					console.log("New colCount = " + top.sheet.table.columnCount) ;
+					top.sheet.reload() ;
+				} else {
+					console.log("Failed to load") ;
+				}
                         }
                 %}
         }
