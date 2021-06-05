@@ -26,6 +26,11 @@ top: VBox {
                 title: String "Save"
                 pressed: Event() %{
                         let file = savePanel("Select file to save") ;
+			if(top.sheet.table.save(file)){
+				console.log("Save ,,, done\n") ;
+			} else {
+				console.log("Save ,,, failed\n") ;
+			}
                 %}
         }
         quit: Button {
