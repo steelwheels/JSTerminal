@@ -1,4 +1,3 @@
-"use strict";
 /*
  * hello_color.ts
  */
