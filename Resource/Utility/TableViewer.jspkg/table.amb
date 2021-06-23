@@ -1,5 +1,6 @@
 top: VBox {
     sheet: DataTable {
+	editable: Bool true
 	init: Init %{
                 let table  = self.table ;
                 console.log("rowCount = " + table.rowCount) ;

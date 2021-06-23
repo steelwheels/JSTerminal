@@ -1,5 +1,6 @@
 top: VBox {
     table: DataTable {
+	hasHeader: Bool true
 	init: Init %{
                 let table  = self.table ;
 		table.setValue(0, 0, "0/0") ;
