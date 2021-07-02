@@ -160,12 +160,25 @@ interface _URL {
 	loadText():		string | null ;
 }
 
+interface _ContactRecord {
+	givenName:		string ;
+	middleName:		string ;
+	familyName:		string ;
+}
+
+interface _ContactDatabase {
+	recordCount:		number ;
+	record(index: number): _ContactRecord ;
+	load(callback: (granted: boolean) => void): void ;
+}
+
 declare var console:	_Console ;
 declare var Color:      _ColorManager ;
 declare var Curses:     _Curses ;
 declare var EscapeCode: _EscapeCode ;
 declare var ExitCode:	_ExitCode ;
 declare var FileType:	_FileType ;
+declare var _Contacts:	_ContactDatabase ;
 
 declare function Dictionary(): _Dictionary ;
 declare function Pipe(): _Pipe ;
@@ -194,6 +207,7 @@ declare function sleep(sec: number): boolean ;
 
 declare function _openPanel(title: string, type: number,
 					exts: string[], cbfunc: any): void ;
+declare function _savePanel(title: string, cbfunc: any): void ;
 declare function _run(path: _URL | string, input: _File, output: _File,
 					error: _File): object | null ;
 
@@ -246,6 +260,7 @@ declare function checkVariables(place: string, ...vars: any[]): boolean;
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Math.d.ts" />
 declare function addPoint(p0: _Point, p1: _Point): _Point;
+declare function isSamePoints(p0: _Point, p1: _Point): boolean;
 declare function clampPoint(src: _Point, x: number, y: number, width: number, height: number): _Point;
 /// <reference path="Builtin.d.ts" />
 declare function _waitUntilExitOne(process: _Process): number;
@@ -262,11 +277,29 @@ declare class CancelException extends Error {
 }
 declare function _cancel(): void;
 declare function openPanel(title: string, type: number, exts: string[]): _URL | null;
+declare function savePanel(title: string): _URL | null;
 declare function run(path: _URL | string | null, input: _File, output: _File, error: _File): object | null;
 /// <reference path="Builtin.d.ts" />
 declare function maxLengthOfStrings(strs: string[]): number;
 declare function adjustLengthOfStrings(strs: string[]): string[];
 declare function pasteStrings(src0: string[], src1: string[], space: string): string[];
+/// <reference path="Builtin.d.ts" />
+declare class CFrame {
+    mFrame: _Rect;
+    mCursorX: number;
+    mCursorY: number;
+    mForegroundColor: number;
+    mBackgroundColor: number;
+    constructor(frame: _Rect);
+    get frame(): _Rect;
+    get foregroundColor(): number;
+    set foregroundColor(newcol: number);
+    get backgroundColor(): number;
+    set backgroundColor(newcol: number);
+    fill(pat: string): void;
+    moveTo(x: number, y: number): boolean;
+    put(str: string): void;
+}
 /// <reference path="Builtin.d.ts" />
 declare type TurtleStatus = {
     x: number;
@@ -299,4 +332,12 @@ declare class Turtle {
     push(): void;
     pop(): void;
     exec(commands: string): void;
+}
+/// <reference path="Builtin.d.ts" />
+/// <reference path="Process.d.ts" />
+declare class Contacts {
+    mIsLoaded: boolean;
+    constructor();
+    get recordCount(): number;
+    load(): boolean;
 }

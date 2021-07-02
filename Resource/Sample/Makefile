@@ -4,6 +4,7 @@
 
 srcs	= alert.ts \
 	  colors.ts \
+	  contact.ts \
 	  escape-code.ts \
 	  file.ts \
 	  hello.ts \

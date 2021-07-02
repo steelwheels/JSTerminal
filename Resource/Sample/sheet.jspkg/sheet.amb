@@ -2,7 +2,7 @@ top: VBox {
     table: DataTable {
 	hasHeader: Bool true
 	init: Init %{
-                let table  = self.table ;
+                let table  = WorkSheet() ;
 		table.setValue(0, 0, "0/0") ;
 		table.setValue(0, 1, "0/1") ;
 		table.setValue(0, 2, "0/2") ;
@@ -14,7 +14,7 @@ top: VBox {
 		table.setValue(2, 2, "2/2") ;
                 console.log("rowCount = " + table.rowCount) ;
                 console.log("colCount = " + table.columnCount) ;
-                self.reload() ;
+                self.reload(table) ;
         %}
     }
     quit_button: Button {

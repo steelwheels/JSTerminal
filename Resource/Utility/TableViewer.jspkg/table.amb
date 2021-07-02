@@ -2,9 +2,8 @@ top: VBox {
     sheet: DataTable {
 	editable: Bool true
 	init: Init %{
-                let table  = self.table ;
-                console.log("rowCount = " + table.rowCount) ;
-                console.log("colCount = " + table.columnCount) ;
+                console.log("rowCount = " + self.rowCount) ;
+                console.log("colCount = " + self.columnCount) ;
         %}
     }
     buttons: HBox {
@@ -13,10 +12,13 @@ top: VBox {
                 pressed: Event() %{
                         let file = openPanel("Select JSON file", FileType.file, ["json"]) ;
                         if(file != null){
-                                if(top.sheet.table.load(file)){
-					console.log("New rowCount = " +  top.sheet.table.rowCount) ;
-					console.log("New colCount = " + top.sheet.table.columnCount) ;
-					top.sheet.reload() ;
+				let sheet = WorkSheet() ;
+				if(sheet.load(file)){
+					console.log("New rowCount = "
+					  + top.sheet.rowCount) ;
+					console.log("New colCount = "
+					  + top.sheet.columnCount) ;
+					top.sheet.reload(sheet) ;
 				} else {
 					console.log("Failed to load") ;
 				}

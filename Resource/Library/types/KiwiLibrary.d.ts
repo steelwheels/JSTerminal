@@ -160,12 +160,25 @@ interface _URL {
 	loadText():		string | null ;
 }
 
+interface _ContactRecord {
+	givenName:		string ;
+	middleName:		string ;
+	familyName:		string ;
+}
+
+interface _ContactDatabase {
+	recordCount:		number ;
+	record(index: number): _ContactRecord ;
+	load(callback: (granted: boolean) => void): void ;
+}
+
 declare var console:	_Console ;
 declare var Color:      _ColorManager ;
 declare var Curses:     _Curses ;
 declare var EscapeCode: _EscapeCode ;
 declare var ExitCode:	_ExitCode ;
 declare var FileType:	_FileType ;
+declare var _Contacts:	_ContactDatabase ;
 
 declare function Dictionary(): _Dictionary ;
 declare function Pipe(): _Pipe ;
@@ -319,4 +332,12 @@ declare class Turtle {
     push(): void;
     pop(): void;
     exec(commands: string): void;
+}
+/// <reference path="Builtin.d.ts" />
+/// <reference path="Process.d.ts" />
+declare class Contacts {
+    mIsLoaded: boolean;
+    constructor();
+    get recordCount(): number;
+    load(): boolean;
 }
