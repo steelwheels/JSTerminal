@@ -1,36 +1,26 @@
 top: VBox {
-	selection: Int 0
-    table: ComponentTable {
-		columnCount:	Int	3
-		rowCount:	Int	2
-		cell: Icon {
-			image: String "calendar"
-			title: String "calendar"
-
-		}
-		make: Event(col, row) %{
-			let idx   = row * 2 + col ;
-			let image = "?" ;
-			switch(idx){
-				case 0: image = "bag" ;		break ;
-				case 1: image = "book" ; 	break ;
-				case 2: image = "calendar" ;	break ;
-				case 3: image = "clock" ;	break ;
-				case 4: image = "telescope" ;	break ;
-				case 5: image = "umblrella" ;	break ;
-			}
-			self.title = image ;
-			self.image = image ;
-		%}
-		pressed: Event(col, row) %{
-			let idx = row * 2 + col ;
-			top.selection = idx ;
-		%}
+    table: Table {
+	hasHeader: Bool true
+	init: Init %{
+                let table  = ValueTable() ;
+		table.setValue(0, 0, "0/0") ;
+		table.setValue(0, 1, "0/1") ;
+		table.setValue(0, 2, "0/2") ;
+		table.setValue(1, 0, "1/0") ;
+		table.setValue(1, 1, "1/1") ;
+		table.setValue(1, 2, "1/2") ;
+		table.setValue(2, 0, "2/0") ;
+		table.setValue(2, 1, "2/1") ;
+		table.setValue(2, 2, "2/2") ;
+                console.log("rowCount = " + table.rowCount) ;
+                console.log("colCount = " + table.columnCount) ;
+                self.reload(table) ;
+        %}
     }
     quit_button: Button {
-   		title: String "Quit"
-		pressed: Event() %{
-			leaveView(top.selection) ;
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
         %}
     }
 }

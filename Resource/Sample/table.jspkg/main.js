@@ -5,7 +5,7 @@
 function main(args)
 {
 	console.log("Hello, world !!") ;
-	let retval = enterView("table") ;
+	let retval = enterView("sheet") ;
 	console.log("Result = " + retval) ;
 }
 
