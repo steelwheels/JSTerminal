@@ -173,6 +173,17 @@ interface _ContactDatabase {
 	forEach(callback: (record: _ContactRecord) => void): void ;
 }
 
+interface __ContactTable {
+	columnCount:		number ;
+	rowCount:		number ;
+
+	title(index: number): String ;
+	setTitle(index: number, title: string): void ;
+	value(cidx: number, ridx: number): string ;
+	setValue(cidx: number, ridx: number, value: string): void ;
+	load(callback: (granted: boolean) => void): void ;
+}
+
 declare var console:		_Console ;
 declare var Color:      	_ColorManager ;
 declare var Curses:     	_Curses ;
@@ -180,6 +191,7 @@ declare var EscapeCode: 	_EscapeCode ;
 declare var ExitCode:		_ExitCode ;
 declare var FileType:		_FileType ;
 declare var ContactDatabase:	_ContactDatabase ;
+declare var _ContactTable:	__ContactTable
 
 declare function Dictionary(): _Dictionary ;
 declare function Pipe(): _Pipe ;
@@ -343,3 +355,4 @@ declare class Contacts {
     load(): boolean;
     forEach(callback: (record: _ContactRecord) => void): void;
 }
+declare function ContactTable(): __ContactTable | null;

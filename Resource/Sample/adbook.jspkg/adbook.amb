@@ -1,0 +1,18 @@
+top: VBox {
+    table: Table {
+	hasHeader: Bool true
+	init: Init %{
+                let table  = ContactTable() ;
+                console.log("rowCount = " + table.rowCount) ;
+                console.log("colCount = " + table.columnCount) ;
+                self.reload(table) ;
+        %}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+
