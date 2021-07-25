@@ -5,14 +5,26 @@ top: VBox {
                 let table  = ContactTable() ;
                 console.log("rowCount = " + table.rowCount) ;
                 console.log("colCount = " + table.columnCount) ;
+                console.log("isDirty  = " + self.isDirty) ;
                 self.reload(table) ;
         %}
     }
-    quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView(1) ;
-        %}
+    buttons: HBox {
+	    save_button: Button {
+		title: String "Save"
+		isEnabled: Bool Listner(dirty: top.table.isDirty) %{
+			return dirty ;
+		%}
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+	    }
+	    quit_button: Button {
+		title: String "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+	    }
     }
 }
 
