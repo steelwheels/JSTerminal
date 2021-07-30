@@ -16,7 +16,7 @@ top: VBox {
 			return dirty ;
 		%}
 		pressed: Event() %{
-			leaveView(1) ;
+			top.table.save() ;
 		%}
 	    }
 	    quit_button: Button {
