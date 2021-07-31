@@ -160,17 +160,29 @@ interface _URL {
 	loadText():		string | null ;
 }
 
-interface _ContactRecord {
+interface ContactRecordIF {
 	givenName:		string ;
 	middleName:		string ;
 	familyName:		string ;
 }
 
-interface _ContactDatabase {
+interface ContactDatabaseIF {
 	recordCount:		number ;
-	record(index: number): _ContactRecord ;
+	record(index: number): ContactRecordIF ;
+        append(record: ContactRecordIF): void ;
 	load(callback: (granted: boolean) => void): void ;
-	forEach(callback: (record: _ContactRecord) => void): void ;
+	forEach(callback: (record: ContactRecordIF) => void): void ;
+}
+
+interface __ContactTable {
+	columnCount:		number ;
+	rowCount:		number ;
+
+	title(index: number): String ;
+	setTitle(index: number, title: string): void ;
+	value(cidx: number, ridx: number): string ;
+	setValue(cidx: number, ridx: number, value: string): void ;
+	load(callback: (granted: boolean) => void): void ;
 }
 
 declare var console:		_Console ;
@@ -179,7 +191,8 @@ declare var Curses:     	_Curses ;
 declare var EscapeCode: 	_EscapeCode ;
 declare var ExitCode:		_ExitCode ;
 declare var FileType:		_FileType ;
-declare var ContactDatabase:	_ContactDatabase ;
+declare var Contacts:	        ContactDatabaseIF ;
+declare var _ContactTable:	__ContactTable
 
 declare function Dictionary(): _Dictionary ;
 declare function Pipe(): _Pipe ;
@@ -336,10 +349,5 @@ declare class Turtle {
 }
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Process.d.ts" />
-declare class Contacts {
-    mIsLoaded: boolean;
-    constructor();
-    get recordCount(): number;
-    load(): boolean;
-    forEach(callback: (record: _ContactRecord) => void): void;
-}
+declare function setupContacts(): boolean;
+declare function ContactTable(): __ContactTable | null;
