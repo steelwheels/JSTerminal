@@ -2,12 +2,14 @@ top: VBox {
     table: Table {
 	hasHeader: Bool true
 	init: Init %{
-                let table = ContactTable ;
-		if(setupContactTable()){
-			console.log("rowCount = " + table.rowCount) ;
-			console.log("colCount = " + table.columnCount) ;
-			console.log("isDirty  = " + self.isDirty) ;
-			self.reload(table) ;
+		if(requestContactAccess()){
+			console.log("Contact access authorized") ;
+			if(Contacts.load(null)){
+				console.log("loaded.") ;
+				self.reload(Contacts) ;
+			} else {
+				console.log("Failed to load.") ;
+			}
 		} else {
 			console.log("Failed to use Contacts") ;
 		}

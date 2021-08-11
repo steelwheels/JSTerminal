@@ -164,9 +164,9 @@ interface ContactRecordIF {
 	fieldCount:		number ;
 
 	fieldName(idx: number): string | null ;
-	value(name): string | number | null ;
-	setValue(val, name): boolean ;
-	save() ;
+	value(name: string): any ;
+	setValue(val: any, name: string): boolean ;
+	save(): 		boolean ;
 	dumpToValue():		{[name: string]: any ;}[] ;
 
 	givenName:		string ;
@@ -352,4 +352,4 @@ declare class Turtle {
 }
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Process.d.ts" />
-declare function setupContacts(): boolean;
+declare function requestContactAccess(): boolean;
