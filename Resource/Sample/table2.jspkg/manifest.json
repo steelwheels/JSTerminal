@@ -1,7 +1,7 @@
 {
 	application: "main.js"
 	subviews: {
-		sheet: "adbook.amb"
+		sheet: "table2.amb"
 	}
 }
 

@@ -2,18 +2,31 @@ top: VBox {
     table: Table {
 	hasHeader: Bool true
 	init: Init %{
-                let table  = ValueTable() ;
-		table.setValue(0, 0, "0/0") ;
-		table.setValue(0, 1, "0/1") ;
-		table.setValue(0, 2, "0/2") ;
-		table.setValue(1, 0, "1/0") ;
-		table.setValue(1, 1, "1/1") ;
-		table.setValue(1, 2, "1/2") ;
-		table.setValue(2, 0, "2/0") ;
-		table.setValue(2, 1, "2/1") ;
-		table.setValue(2, 2, "2/2") ;
+                let table = ValueTable() ;
+		console.log("ValueTable() => " + table) ;
+
+		let rec0  = table.newRecord() ;
+		rec0.setValue( 0, "c0") ;
+		rec0.setValue( 1, "c1") ;
+		rec0.setValue( 2, "c2") ;
+		table.append(rec0) ;
+
+		let rec1  = table.newRecord() ;
+		rec1.setValue(10, "c0") ;
+		rec1.setValue(11, "c1") ;
+		rec1.setValue(12, "c2") ;
+		table.append(rec1) ;
+
+		let rec2  = table.newRecord() ;
+		rec2.setValue(20, "c0") ;
+		rec2.setValue(21, "c1") ;
+		rec2.setValue(22, "c2") ;
+		table.append(rec2) ;
+
                 console.log("rowCount = " + table.rowCount) ;
                 console.log("colCount = " + table.columnCount) ;
+                console.log("value    = " + table.dumpToValue()) ;
+
                 self.reload(table) ;
         %}
     }

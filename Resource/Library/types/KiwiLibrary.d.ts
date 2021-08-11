@@ -161,6 +161,14 @@ interface _URL {
 }
 
 interface ContactRecordIF {
+	fieldCount:		number ;
+
+	fieldName(idx: number): string | null ;
+	value(name): string | number | null ;
+	setValue(val, name): boolean ;
+	save() ;
+	dumpToValue():		{[name: string]: any ;}[] ;
+
 	givenName:		string ;
 	middleName:		string ;
 	familyName:		string ;
@@ -168,21 +176,17 @@ interface ContactRecordIF {
 
 interface ContactDatabaseIF {
 	recordCount:		number ;
+
+	authorize(callback: (granted: boolean) => void): void
+	load(url: _URL | null): bool ;
+
+	newRecord(): ContactRecordIf ;
 	record(index: number): ContactRecordIF | null ;
         append(record: ContactRecordIF): void ;
-	load(callback: (granted: boolean) => void): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
-}
 
-interface ContactTableIF {
-	columnCount:		number ;
-	rowCount:		number ;
-
-	title(index: number): String ;
-	setTitle(index: number, title: string): void ;
-	value(cidx: number, ridx: number): string ;
-	setValue(cidx: number, ridx: number, value: string): void ;
-	load(callback: (granted: boolean) => void): void ;
+	save() ;
+	dumpToValue():		{[name: string]: any ;}[] ;
 }
 
 declare var console:		_Console ;
@@ -192,7 +196,6 @@ declare var EscapeCode: 	_EscapeCode ;
 declare var ExitCode:		_ExitCode ;
 declare var FileType:		_FileType ;
 declare var Contacts:	        ContactDatabaseIF ;
-declare var ContactTable:	ContactTableIF
 
 declare function Dictionary(): _Dictionary ;
 declare function Pipe(): _Pipe ;
@@ -350,4 +353,3 @@ declare class Turtle {
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Process.d.ts" />
 declare function setupContacts(): boolean;
-declare function setupContactTable(): boolean;
