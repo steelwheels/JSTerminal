@@ -1,0 +1,17 @@
+top: VBox {
+        index: Int 0
+        db: AddressBook {
+        }
+        names: HBox {
+                first_name: String Listener(index: top.index) %{
+                        return top.db.value(index, "FirstName") ;
+                %}
+        }
+        quit: Button {
+   	        title: String "Quit"
+	        pressed: Event() %{
+		        leaveView(1) ;
+                %}
+        }
+}
+

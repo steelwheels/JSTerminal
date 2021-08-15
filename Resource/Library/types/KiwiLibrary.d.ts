@@ -185,7 +185,7 @@ interface ContactDatabaseIF {
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
 
-	save() ;
+	save():			boolean ;
 	dumpToValue():		{[name: string]: any ;}[] ;
 }
 
