@@ -2,10 +2,67 @@ top: VBox {
         index: Int 0
         db: AddressBook {
         }
+        indices: HBox {
+		label: Label { text: String "Index: " }
+		index: TextField {
+			text: String Listner(index: top.index) %{
+				return "" + index ;
+			%}
+		}
+	}
         names: HBox {
-                first_name: String Listener(index: top.index) %{
-                        return top.db.value(index, "FirstName") ;
-                %}
+		label: Label {
+			text: String "Name:"
+		}
+		family_name: TextField {
+			text: String Listner(index: top.index) %{
+				return top.db.value(index, "family_name") ;
+			%}
+		}
+		given_name: TextField {
+			text: String Listner(index: top.index) %{
+				return top.db.value(index, "given_name") ;
+			%}
+		}
+	}
+        addresses: HBox {
+		label: Label {
+			text: String "Address:"
+		}
+		postal_address: Table {
+			postal_addr: String Listner(index: top.index) %{
+				let adr = top.db.value(index, "postal_address");
+				self.loadDictionary(adr) ;
+			%}
+		}
+	}
+        email: HBox {
+		label: Label {
+			text: String "E-Mail:"
+		}
+		email_address: TextField {
+			text: String Listner(index: top.index) %{
+				return top.db.value(index, "email_address") ;
+			%}
+		}
+	}
+        buttons: HBox {
+                prev_button: Button {
+                        title: String "<-"
+			pressed: Event() %{
+				if(top.index > 0){
+					top.index -= 1 ;
+				}
+			%}
+                }
+                next_button: Button {
+                        title: String "->"
+			pressed: Event() %{
+				if(top.index < top.db.count - 1){
+					top.index += 1 ;
+				}
+			%}
+                }
         }
         quit: Button {
    	        title: String "Quit"
