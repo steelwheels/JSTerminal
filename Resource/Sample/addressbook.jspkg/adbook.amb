@@ -26,13 +26,11 @@ top: VBox {
 		}
 	}
         addresses: HBox {
-		label: Label {
-			text: String "Address:"
-		}
-		postal_address: Table {
+		postal_address: ValueField {
 			postal_addr: String Listner(index: top.index) %{
 				let adr = top.db.value(index, "postal_address");
-				self.loadDictionary(adr) ;
+				console.log("update: " + adr) ;
+				self.value = adr ;
 			%}
 		}
 	}

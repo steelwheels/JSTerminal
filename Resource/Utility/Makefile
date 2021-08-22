@@ -2,17 +2,7 @@
 # Makefile
 #
 
-srcs	= alert.ts \
-	  colors.ts \
-	  escape-code.ts \
-	  file.ts \
-	  hello.ts \
-	  hello_color.ts \
-	  keycode.ts \
-	  openPanel.ts \
-	  readline.ts \
-	  scroll0.ts \
-	  stdin.ts
+srcs	= adb.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)

@@ -162,31 +162,25 @@ interface _URL {
 
 interface ContactRecordIF {
 	fieldCount:		number ;
+	fieldName:		string[] ;
 
-	fieldName(idx: number): string | null ;
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
 	save(): 		boolean ;
-	dumpToValue():		{[name: string]: any ;}[] ;
-
-	givenName:		string ;
-	middleName:		string ;
-	familyName:		string ;
 }
 
 interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
-	load(url: _URL | null): bool ;
+	load(url: _URL | null): boolean ;
 
-	newRecord(): ContactRecordIf ;
+	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
 
 	save():			boolean ;
-	dumpToValue():		{[name: string]: any ;}[] ;
 }
 
 declare var console:		_Console ;
