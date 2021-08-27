@@ -162,16 +162,11 @@ interface _URL {
 
 interface ContactRecordIF {
 	fieldCount:		number ;
+	fieldNames:		string[] ;
 
-	fieldName(idx: number): string | null ;
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
 	save(): 		boolean ;
-	dumpToValue():		{[name: string]: any ;}[] ;
-
-	givenName:		string ;
-	middleName:		string ;
-	familyName:		string ;
 }
 
 interface ContactDatabaseIF {
@@ -186,7 +181,6 @@ interface ContactDatabaseIF {
 	forEach(callback: (record: ContactRecordIF) => void): void ;
 
 	save():			boolean ;
-	dumpToValue():		{[name: string]: any ;}[] ;
 }
 
 declare var console:		_Console ;

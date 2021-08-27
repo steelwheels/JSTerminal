@@ -162,7 +162,7 @@ interface _URL {
 
 interface ContactRecordIF {
 	fieldCount:		number ;
-	fieldName:		string[] ;
+	fieldNames:		string[] ;
 
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
