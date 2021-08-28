@@ -49,7 +49,7 @@ public class MultiViewController: KMMultiComponentViewController
 		/* Add subview */
 		if let res = self.resource {
 			let cbfunc: KMMultiComponentViewController.ViewSwitchCallback = {
-				(_ val: CNNativeValue) -> Void in
+				(_ val: CNValue) -> Void in
 				let valstr: String
 				if let str = val.toString() {
 					valstr = str
