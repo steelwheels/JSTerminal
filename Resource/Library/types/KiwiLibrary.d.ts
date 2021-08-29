@@ -98,7 +98,7 @@ interface _ExitCode {
 	exception:		number ;
 }
 
-interface _File {
+interface FileIF {
 	getc(): string ;
 	getl(): string ;
 	put(str: string): void ;
@@ -112,8 +112,8 @@ interface _FileType {
 }
 
 interface _Pipe {
-        reading:        _File ;
-        writing:        _File ;
+        reading:        FileIF ;
+        writing:        FileIF ;
 }
 
 interface _Point {
@@ -219,8 +219,7 @@ declare function sleep(sec: number): boolean ;
 declare function _openPanel(title: string, type: number,
 					exts: string[], cbfunc: any): void ;
 declare function _savePanel(title: string, cbfunc: any): void ;
-declare function _run(path: _URL | string, input: _File, output: _File,
-					error: _File): object | null ;
+declare function _run(path: _URL | string, input: FileIF, output: FileIF, error: FileIF): object | null ;
 
 /// <reference path="Builtin.d.ts" />
 declare function Array1D(length: number, value: any): any[];
@@ -246,18 +245,28 @@ declare class Table {
 }
 /// <reference path="Builtin.d.ts" />
 declare class File {
-    mCore: _File;
-    constructor(core: _File);
+    mCore: FileIF;
+    constructor(core: FileIF);
     getc(): string;
     getl(): string;
     put(str: string): void;
 }
-declare var _stdin: _File;
-declare var _stdout: _File;
-declare var _stderr: _File;
+declare var _stdin: FileIF;
+declare var _stdout: FileIF;
+declare var _stderr: FileIF;
 declare const stdin: File;
 declare const stdout: File;
 declare const stderr: File;
+interface JSONFileIF {
+    read(file: FileIF): object | null;
+    write(file: FileIF, src: object): boolean;
+}
+declare var _JSONFile: JSONFileIF;
+declare class JSONFile {
+    constructor();
+    read(file: File): object | null;
+    write(file: File, src: object): boolean;
+}
 interface Math {
     randomInt(min: number, max: number): number;
     clamp(src: number, min: number, max: number): number;
@@ -289,7 +298,7 @@ declare class CancelException extends Error {
 declare function _cancel(): void;
 declare function openPanel(title: string, type: number, exts: string[]): _URL | null;
 declare function savePanel(title: string): _URL | null;
-declare function run(path: _URL | string | null, input: _File, output: _File, error: _File): object | null;
+declare function run(path: _URL | string | null, input: FileIF, output: FileIF, error: FileIF): object | null;
 /// <reference path="Builtin.d.ts" />
 declare function maxLengthOfStrings(strs: string[]): number;
 declare function adjustLengthOfStrings(strs: string[]): string[];

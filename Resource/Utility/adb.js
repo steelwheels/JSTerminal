@@ -87,15 +87,8 @@ function dumpRecord(index) {
             if (val != null) {
                 console.print(name + ": ");
                 if (isObject(val)) {
-                    console.print("{");
-                    let keys = Object.keys(val);
-                    keys.forEach(key => {
-                        let v = val[key];
-                        console.print("key = " + key
-                            + ", val = " + v
-                            + "\n");
-                    });
-                    console.print("} \n");
+                    let file = new JSONFile();
+                    file.write(stdout, val);
                 }
                 else {
                     console.print(val + "\n");
