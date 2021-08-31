@@ -11,13 +11,13 @@ interface ColorIF {
         toString():             string ;
 }
 
-interface _Console {
+interface ConsoleIF {
 	log(message: string): void ;
 	print(message: string): void ;
 	error(message: string): void ;
 }
 
-interface _ColorManager {
+interface ColorManagerIF {
         black:          ColorIF ;
         red:            ColorIF ;
         green:          ColorIF ;
@@ -28,7 +28,7 @@ interface _ColorManager {
         white:          ColorIF ;
 }
 
-interface _Curses {
+interface CursesIF {
         minColor:	number ;
         maxColor:       number ;
         black:          number ;
@@ -56,7 +56,7 @@ interface _Curses {
 	fill(x: number, y: number, width: number, height: number, c: string): void ;
 }
 
-interface _Dictionary {
+interface DictionaryIF {
 	set(name: string, value: any): void ;
 	get(name: string): any | null ;
 }
@@ -192,15 +192,15 @@ interface ContactDatabaseIF {
 	save():			boolean ;
 }
 
-declare var console:		_Console ;
-declare var Color:      	_ColorManager ;
-declare var Curses:     	_Curses ;
+declare var console:		ConsoleIF ;
+declare var Color:      	ColorManagerIF ;
+declare var Curses:     	CursesIF ;
 declare var EscapeCode: 	_EscapeCode ;
 declare var ExitCode:		_ExitCode ;
 declare var FileType:		_FileType ;
 declare var Contacts:	        ContactDatabaseIF ;
 
-declare function Dictionary(): _Dictionary ;
+declare function Dictionary(): DictionaryIF ;
 declare function Pipe(): _Pipe ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
@@ -221,15 +221,16 @@ declare function isUndefined(value: any): boolean ;
 declare function isURL(value: any): boolean ;
 declare function isEOF(value: any): boolean ;
 
-declare function tpArray(value: any): any[] | null ;
+declare function toArray(value: any): any[] | null ;
+declare function toBitmap(value: any): BitmapIF | null ;
 declare function toBoolean(value: any): boolean | null ;
 declare function toDate(value: any): object | null ;
 declare function toNumber(value: any): number | null ;
-declare function toString(value: any): string | null ;
 declare function toObject(value: any): object | null ;
 declare function toPoint(value: any): PointIF | null ;
 declare function toRect(value: any): RectIF | null ;
 declare function toSize(value: any): SizeIF | null ;
+declare function toString(value: any): string | null ;
 declare function toURL(value: any): URLIF | null ;
 
 declare function asciiCodeName(code: number): string | null ;
@@ -308,7 +309,7 @@ declare function clampPoint(src: PointIF, x: number, y: number, width: number, h
 declare function _waitUntilExitOne(process: _Process): number;
 declare function _waitUntilExitAll(processes: _Process[]): number;
 declare class Semaphore {
-    mValue: _Dictionary;
+    mValue: DictionaryIF;
     constructor(initval: number);
     signal(): void;
     wait(): void;

@@ -26,9 +26,6 @@ function main(args) {
             case "?":
                 usage();
                 break;
-            case "f":
-                dumpFieldNames();
-                break;
             case "r":
                 dumpRecord(index);
                 break;
@@ -46,7 +43,6 @@ function main(args) {
     return 0;
 }
 function usage() {
-    console.log("'f': Dump field names");
     console.log("'r': Dump current record");
     console.log("'+': Increment record index");
     console.log("'-': Decrement record index");
@@ -69,15 +65,6 @@ function decIndex(idx) {
         return idx; // Not updated
     }
 }
-function dumpFieldNames() {
-    if (Contacts.recordCount > 0) {
-        let record = Contacts.record(0);
-        if (record != null) {
-            let names = record.fieldNames;
-            names.forEach(name => console.log(name));
-        }
-    }
-}
 function dumpRecord(index) {
     let record = Contacts.record(index);
     if (record != null) {
@@ -85,13 +72,20 @@ function dumpRecord(index) {
         fnames.forEach(name => {
             let val = record.value(name);
             if (val != null) {
-                console.print(name + ": ");
                 if (isObject(val)) {
-                    let file = new JSONFile();
-                    file.write(stdout, val);
+                    if (!isEmptyObject(val)) {
+                        console.print(name + ": ");
+                        let file = new JSONFile();
+                        file.write(stdout, val);
+                    }
+                }
+                else if (isString(val)) {
+                    if (!isEmptyString(val)) {
+                        console.print(name + ": " + val + "\n");
+                    }
                 }
                 else {
-                    console.print(val + "\n");
+                    console.print(name + ": " + val + "\n");
                 }
             }
         });
