@@ -61,7 +61,7 @@ interface DictionaryIF {
 	get(name: string): any | null ;
 }
 
-interface _EscapeCode {
+interface EscapeCodeIF {
         backspace():                    string ;
 	delete():                       string ;
 
@@ -90,7 +90,7 @@ interface _EscapeCode {
 	reset(): string
 }
 
-interface _ExitCode {
+interface ExitCodeIF {
 	noError:		number ;
 	internalError:		number ;
 	commaneLineError:	number ;
@@ -105,13 +105,13 @@ interface FileIF {
 	close(): void ;
 }
 
-interface _FileType {
+interface FileTypeIF {
 	notExist:	number ;
 	file:		number ;
 	directory:	number ;
 }
 
-interface _Pipe {
+interface PipeIF {
         reading:        FileIF ;
         writing:        FileIF ;
 }
@@ -154,7 +154,7 @@ interface BitmapIF
 	set(x: number, y: number, color: ColorIF): void
 }
 
-interface _Process {
+interface ProcessIF {
 	isRunning:	boolean ;
 	didFinished:	boolean ;
 	exitCode:	number ;
@@ -172,9 +172,12 @@ interface URLIF {
 interface ContactRecordIF {
 	fieldCount:		number ;
 	fieldNames:		string[] ;
+	filledFieldNames:	string[] ;
 
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
+
+	isDirty:		boolean ;
 	save(): 		boolean ;
 }
 
@@ -189,19 +192,20 @@ interface ContactDatabaseIF {
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
 
+	isDirty:		boolean ;
 	save():			boolean ;
 }
 
 declare var console:		ConsoleIF ;
 declare var Color:      	ColorManagerIF ;
 declare var Curses:     	CursesIF ;
-declare var EscapeCode: 	_EscapeCode ;
-declare var ExitCode:		_ExitCode ;
-declare var FileType:		_FileType ;
+declare var EscapeCode: 	EscapeCodeIF ;
+declare var ExitCode:		ExitCodeIF ;
+declare var FileType:		FileTypeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
 
 declare function Dictionary(): DictionaryIF ;
-declare function Pipe(): _Pipe ;
+declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
 declare function Size(width: number, height: number): SizeIF ;
@@ -306,8 +310,8 @@ declare function addPoint(p0: PointIF, p1: PointIF): PointIF;
 declare function isSamePoints(p0: PointIF, p1: PointIF): boolean;
 declare function clampPoint(src: PointIF, x: number, y: number, width: number, height: number): PointIF;
 /// <reference path="Builtin.d.ts" />
-declare function _waitUntilExitOne(process: _Process): number;
-declare function _waitUntilExitAll(processes: _Process[]): number;
+declare function _waitUntilExitOne(process: ProcessIF): number;
+declare function _waitUntilExitAll(processes: ProcessIF[]): number;
 declare class Semaphore {
     mValue: DictionaryIF;
     constructor(initval: number);

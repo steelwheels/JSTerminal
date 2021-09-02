@@ -11,6 +11,7 @@ srcs	= alert.ts \
 	  keycode.ts \
 	  openPanel.ts \
 	  readline.ts \
+	  readline-menu.ts \
 	  scroll0.ts \
 	  stdin.ts
 

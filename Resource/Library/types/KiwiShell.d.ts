@@ -2,12 +2,12 @@
  * Builtin.d.ts
  */
 
-interface _ReadlineCore {
+interface ReadlineCoreIF {
 	input():	string | null ;
 	history():	string[] ;
 }
 
-declare var _readlineCore:	_ReadlineCore ;
+declare var _readlineCore:	ReadlineCoreIF ;
 
 /// <reference path="KiwiLibrary.d.ts" />
 /// <reference path="Builtin.d.ts" />

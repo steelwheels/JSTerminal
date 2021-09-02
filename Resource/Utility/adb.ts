@@ -35,6 +35,9 @@ function main(args : string[])
 		  case "r":
 			dumpRecord(index) ;
 		  break ;
+		  case "e":
+			editRecord(index) ;
+		  break ;
 		  case "+":
 			index = incIndex(index) ;
 		  break ;
@@ -52,6 +55,7 @@ function main(args : string[])
 function usage()
 {
 	console.log("'r': Dump current record") ;
+	console.log("'e': Edit current record") ;
 	console.log("'+': Increment record index") ;
 	console.log("'-': Decrement record index") ;
 	console.log("'q': Quit this utility") ;
@@ -102,5 +106,23 @@ function dumpRecord(index: number)
 	} else {
 		console.print("[Error] No record at " + index + "\n") ;
 	}
+}
+
+function editRecord(index: number): void
+{
+	let fname = selectField(index) ;
+}
+
+function selectField(index: number): string | null
+{
+	let record = Contacts.record(index) ;
+	if(record != null){
+		let fnames = record.fieldNames ;
+		let menuid = Readline.menu(fnames) ;
+		if(menuid >= 0){
+			console.log("Menuid : " + menuid) ;
+		}
+	}
+	return null ;
 }
 
