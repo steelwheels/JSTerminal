@@ -8,8 +8,14 @@ function main(args) {
     console.print("input line> ");
     let line = Readline.inputLine();
     console.log("line -> " + line);
-    console.print("===== menu =====");
-    let idx = Readline.menu(["a", "b", "c"]);
-    console.log("menu -> " + idx);
+    console.print("===== menu =====\n");
+    let items = Readline.stringsToMenuItems(["a", "b", "c"], false);
+    if (items != null) {
+        let idx = Readline.menu(items);
+        console.log("menu -> " + idx);
+    }
+    else {
+        console.log("menu -> Error");
+    }
     return 0;
 }

@@ -8,7 +8,14 @@
 function main(args: string[]): number
 {
 	console.log("Readline: menu") ;
-	let result = Readline.menu(["item A", "item B", "item C"]) ;
+
+	let items: MenuItem[] = [
+		{key: "A", label: "Item A"},
+		{key: "B", label: "Item B"},
+		{key: "C", label: "Item C"}
+	] ;
+
+	let result = Readline.menu(items) ;
 	console.log("result = " + result + "\n") ;
 	return 0 ;
 }

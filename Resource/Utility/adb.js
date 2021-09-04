@@ -76,21 +76,7 @@ function dumpRecord(index) {
         fnames.forEach(name => {
             let val = record.value(name);
             if (val != null) {
-                if (isObject(val)) {
-                    if (!isEmptyObject(val)) {
-                        console.print(name + ": ");
-                        let file = new JSONFile();
-                        file.write(stdout, val);
-                    }
-                }
-                else if (isString(val)) {
-                    if (!isEmptyString(val)) {
-                        console.print(name + ": " + val + "\n");
-                    }
-                }
-                else {
-                    console.print(name + ": " + val + "\n");
-                }
+                dumpValue(name, val);
             }
         });
     }
@@ -98,8 +84,38 @@ function dumpRecord(index) {
         console.print("[Error] No record at " + index + "\n");
     }
 }
+function dumpValue(name, val) {
+    if (isObject(val)) {
+        if (!isEmptyObject(val)) {
+            console.print(name + ": ");
+            let file = new JSONFile();
+            file.write(stdout, val);
+        }
+    }
+    else if (isString(val)) {
+        if (!isEmptyString(val)) {
+            console.print(name + ": " + val + "\n");
+        }
+    }
+    else {
+        console.print(name + ": " + val + "\n");
+    }
+}
 function editRecord(index) {
+    let record = Contacts.record(index);
+    if (record == null) {
+        return;
+    }
     let fname = selectField(index);
+    if (fname == null) {
+        return;
+    }
+    let val = record.value(fname);
+    if (val == null) {
+        return;
+    }
+    console.print("[current] ");
+    dumpValue(fname, val);
 }
 function selectField(index) {
     let record = Contacts.record(index);
@@ -107,7 +123,7 @@ function selectField(index) {
         let fnames = record.fieldNames;
         let menuid = Readline.menu(fnames);
         if (menuid >= 0) {
-            console.log("Menuid : " + menuid);
+            return fnames[menuid];
         }
     }
     return null;

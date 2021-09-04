@@ -88,19 +88,7 @@ function dumpRecord(index: number)
 		fnames.forEach(name => {
 			let val = record!.value(name) ;
 			if(val != null){
-				if(isObject(val)){
-                                        if(!isEmptyObject(val)){
-                                                console.print(name + ": ") ;
-					        let file = new JSONFile() ;
-					        file.write(stdout, val) ;
-                                        }
-                                } else if(isString(val)){
-                                        if(!isEmptyString(val)){
-                                                console.print(name + ": " + val + "\n") ;
-                                        }
-				} else {
-                                        console.print(name + ": " + val + "\n") ;
-				}
+				dumpValue(name, val) ;
 			}
 		}) ;
 	} else {
@@ -108,9 +96,43 @@ function dumpRecord(index: number)
 	}
 }
 
+function dumpValue(name: string, val: any)
+{
+	if(isObject(val)){
+		if(!isEmptyObject(val)){
+			console.print(name + ": ") ;
+			let file = new JSONFile() ;
+			file.write(stdout, val) ;
+		}
+	} else if(isString(val)){
+		if(!isEmptyString(val)){
+			console.print(name + ": " + val + "\n") ;
+		}
+	} else {
+		console.print(name + ": " + val + "\n") ;
+	}
+}
+
 function editRecord(index: number): void
 {
+	let record = Contacts.record(index) ;
+	if(record == null){
+		return ;
+	}
+
 	let fname = selectField(index) ;
+	if(fname == null){
+		return ;
+	}
+
+	let val = record.value(fname) ;
+	if(val == null){
+		return ;
+	}
+
+	console.print("[current value] \"") ;
+	dumpValue(fname, val) ;
+	console.print("\"\n") ;
 }
 
 function selectField(index: number): string | null
@@ -120,7 +142,7 @@ function selectField(index: number): string | null
 		let fnames = record.fieldNames ;
 		let menuid = Readline.menu(fnames) ;
 		if(menuid >= 0){
-			console.log("Menuid : " + menuid) ;
+			return fnames[menuid] ;
 		}
 	}
 	return null ;
