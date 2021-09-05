@@ -32,6 +32,9 @@ declare class ValueEditor {
     }): {
         [name: string]: string;
     } | null;
+    editArray(val: string[]): string[] | null;
     editString(val: string): string | null;
-    checkToReplace(): boolean;
+    inputString(msg: string): string | null;
+    inputNumber(msg: string): number | null;
+    check(message: string): boolean;
 }

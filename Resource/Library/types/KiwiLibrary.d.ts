@@ -2,6 +2,25 @@
  * Builtin.d.ts
  */
 
+interface ValueTypeIF {
+	nullType:		number ;
+	boolType:		number ;
+	numberType:		number ;
+	stringType:		number ;
+	dateType:		number ;
+	rangeType:		number ;
+	pointType:		number ;
+	sizeType:		number ;
+	rectType:		number ;
+	enumType:		number ;
+	dictionaryType:		number ;
+	arrayType:		number ;
+	URLType:		number ;
+	colorType:		number ;
+	imageType:		number ;
+	objectType:		number ;
+}
+
 interface ColorIF {
 	red:			number ;
 	green:			number ;
@@ -196,6 +215,10 @@ interface ContactDatabaseIF {
 	save():			boolean ;
 }
 
+/* Enum */
+declare var ValueType:		ValueTypeIF ;
+
+/* Singleton object*/
 declare var console:		ConsoleIF ;
 declare var Color:      	ColorManagerIF ;
 declare var Curses:     	CursesIF ;
@@ -203,6 +226,8 @@ declare var EscapeCode: 	EscapeCodeIF ;
 declare var ExitCode:		ExitCodeIF ;
 declare var FileType:		FileTypeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
+
+declare function valueType(val: any): number ; // the result defined as enum ValueType
 
 declare function Dictionary(): DictionaryIF ;
 declare function Pipe(): PipeIF ;
@@ -216,6 +241,7 @@ declare function isBoolean(value: any): boolean ;
 declare function isDate(value: any): boolean ;
 declare function isNull(value: any): boolean ;
 declare function isNumber(value: any): boolean ;
+declare function isDictionary(value: any): boolean ;
 declare function isObject(value: any): boolean ;
 declare function isPoint(value: any): boolean ;
 declare function isRect(value: any): boolean ;
@@ -230,6 +256,7 @@ declare function toBitmap(value: any): BitmapIF | null ;
 declare function toBoolean(value: any): boolean | null ;
 declare function toDate(value: any): object | null ;
 declare function toNumber(value: any): number | null ;
+declare function toDictionary(value: any): {[name:string]: any} | null ;
 declare function toObject(value: any): object | null ;
 declare function toPoint(value: any): PointIF | null ;
 declare function toRect(value: any): RectIF | null ;

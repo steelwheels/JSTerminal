@@ -114,17 +114,36 @@ function editRecord(index) {
     if (val == null) {
         return;
     }
-    console.print("[current] ");
+    console.print("[current value] \"");
     dumpValue(fname, val);
+    console.print("\"\n");
+    let editor = new ValueEditor();
+    let newval = editor.edit(val);
+    console.print("[new value] \"");
+    dumpValue(fname, newval);
+    console.print("\"\n");
 }
 function selectField(index) {
     let record = Contacts.record(index);
     if (record != null) {
         let fnames = record.fieldNames;
-        let menuid = Readline.menu(fnames);
-        if (menuid >= 0) {
-            return fnames[menuid];
+        let items = [];
+        for (let i = 0; i < fnames.length; i++) {
+            let item = {
+                key: `${i}`,
+                label: fnames[i]
+            };
+            items.push(item);
         }
+        /* Add quit menu */
+        let quitid = items.length;
+        let qitem = {
+            key: "q",
+            label: "Quit this menu"
+        };
+        items.push(qitem);
+        let menuid = Readline.menu(items);
+        return menuid != quitid ? fnames[menuid] : null;
     }
     return null;
 }

@@ -14,7 +14,8 @@ srcs	= alert.ts \
 	  readline-menu.ts \
 	  scroll0.ts \
 	  stdin.ts \
-	  value-edit.ts
+	  value-edit-1.ts \
+	  value-edit-2.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)
