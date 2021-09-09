@@ -137,9 +137,15 @@ function editRecord(index: number): void
 	let editor = new ValueEditor() ;
 	let newval = editor.edit(val) ;
 
-	console.print("[new value] \"") ;
-	dumpValue(fname, newval) ;
-	console.print("\"\n") ;
+        if(newval != null){
+                if(record.save()){
+                        console.print("[new value] \"") ;
+	                dumpValue(fname, newval) ;
+	                console.print("\"\n") ;
+                } else {
+                        console.print("[Error] Failed to save\n")
+                }
+        }
 }
 
 function selectField(index: number): string | null

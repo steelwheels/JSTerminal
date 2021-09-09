@@ -119,9 +119,16 @@ function editRecord(index) {
     console.print("\"\n");
     let editor = new ValueEditor();
     let newval = editor.edit(val);
-    console.print("[new value] \"");
-    dumpValue(fname, newval);
-    console.print("\"\n");
+    if (newval != null) {
+        if (record.save()) {
+            console.print("[new value] \"");
+            dumpValue(fname, newval);
+            console.print("\"\n");
+        }
+        else {
+            console.print("[Error] Failed to save\n");
+        }
+    }
 }
 function selectField(index) {
     let record = Contacts.record(index);

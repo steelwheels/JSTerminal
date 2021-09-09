@@ -152,6 +152,48 @@ interface SizeIF {
 	height:		number ;
 }
 
+interface TextIF
+{
+        core(): any ;
+	toStrings(idx: number): string[] ;
+}
+
+interface TextLineIF extends TextIF
+{
+        set(str: string): void ;
+	append(str: string): void ;
+	prepend(str: string): void ;
+}
+
+interface TextSectionIF extends TextIF
+{
+	count: number ;
+	
+	add(text: TextIF): void ;
+	insert(text: TextIF): void ;
+	append(str: string): void ;
+	prepend(str: string): void ;
+}
+
+interface TextRecordIF extends TextIF
+{
+        count: number ;
+	columns: number ;
+        append(str: string): void ;
+	prepend(str: string): void ;
+}
+
+interface TextTableIF extends TextIF
+{
+        count: number ;
+        records: TextRecordIF[] ;
+
+        add(rec: TextRecordIF): void ;
+        inert(rec: TextRecordIF): void ;
+	append(str: string): void ;
+        prepend(str: string): void ;
+}
+
 /* KLGraphicsContext in swift */
 interface GraphicsContextIF {
 	logicalFrame:	RectIF ;
@@ -267,6 +309,11 @@ declare function toURL(value: any): URLIF | null ;
 declare function asciiCodeName(code: number): string | null ;
 
 declare function sleep(sec: number): boolean ;
+
+declare function TextLine(str: string): TextLineIF ;
+declare function TextSection(): TextSectionIF ;
+declare function TextRecord(): TextRecordIF ;
+declare function TextTable(): TextTableIF ;
 
 declare function _openPanel(title: string, type: number,
 					exts: string[], cbfunc: any): void ;
