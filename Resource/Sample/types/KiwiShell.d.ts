@@ -20,6 +20,7 @@ declare class ReadlineObject {
     inputLine(): string;
     inputInteger(): number;
     menu(items: MenuItem[]): number;
+    printMenu(items: MenuItem[]): void;
     stringsToMenuItems(labels: string[], doescape: boolean): MenuItem[];
 }
 declare const Readline: ReadlineObject;

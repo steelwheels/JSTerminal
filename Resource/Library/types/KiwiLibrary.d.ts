@@ -167,7 +167,7 @@ interface TextLineIF extends TextIF
 
 interface TextSectionIF extends TextIF
 {
-	count: number ;
+	contentCount: number ;
 	
 	add(text: TextIF): void ;
 	insert(text: TextIF): void ;
@@ -177,7 +177,7 @@ interface TextSectionIF extends TextIF
 
 interface TextRecordIF extends TextIF
 {
-        count: number ;
+        columnCount: number ;
 	columns: number ;
         append(str: string): void ;
 	prepend(str: string): void ;
@@ -305,6 +305,7 @@ declare function toRect(value: any): RectIF | null ;
 declare function toSize(value: any): SizeIF | null ;
 declare function toString(value: any): string | null ;
 declare function toURL(value: any): URLIF | null ;
+declare function toText(value: any): TextIF ;
 
 declare function asciiCodeName(code: number): string | null ;
 
