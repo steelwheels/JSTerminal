@@ -84,28 +84,30 @@ interface EscapeCodeIF {
         backspace():                    string ;
 	delete():                       string ;
 
-	cursorUp(delta: number): string
-	cursorDown(delta: number): string
-	cursorForward(delta: number): string
-	cursorBackward(delta: number): string
-	cursorNextLine(delta: number): string
-	cursorPreviousLine(delta: number): string
-	cursorMoveTo(y: number, x: number): string
+	cursorUp(delta: number): string ;
+	cursorDown(delta: number): string ;
+	cursorForward(delta: number): string ;
+	cursorBackward(delta: number): string ;
+	cursorNextLine(delta: number): string ;
+	cursorPreviousLine(delta: number): string ;
+	cursorMoveTo(y: number, x: number): string ;
 
-	saveCursorPosition(): string
-	restoreCursorPosition(): string
+	saveCursorPosition(): string ;
+	restoreCursorPosition(): string ;
 
-	eraceFromCursorToEnd(): string
-	eraceFromCursorToBegin(): string
-	eraceEntireBuffer(): string
-	eraceFromCursorToRight(): string
-	eraceFromCursorToLeft(): string
-	eraceEntireLine(): string
+	eraceFromCursorToEnd(): string ;
+	eraceFromCursorToBegin(): string ;
+	eraceEntireBuffer(): string ;
+	eraceFromCursorToRight(): string ;
+	eraceFromCursorToLeft(): string ;
+	eraceEntireLine(): string ;
 
-	scrollUp(lines: number): string
-	scrollDown(lines: number): string
+	scrollUp(lines: number): string ;
+	scrollDown(lines: number): string ;
 
-	color(type: number, color: number): string
+	color(type: number, color: number): string ;
+	bold(flag: boolean): string ;
+
 	reset(): string
 }
 

@@ -84,28 +84,30 @@ interface EscapeCodeIF {
         backspace():                    string ;
 	delete():                       string ;
 
-	cursorUp(delta: number): string
-	cursorDown(delta: number): string
-	cursorForward(delta: number): string
-	cursorBackward(delta: number): string
-	cursorNextLine(delta: number): string
-	cursorPreviousLine(delta: number): string
-	cursorMoveTo(y: number, x: number): string
+	cursorUp(delta: number): string ;
+	cursorDown(delta: number): string ;
+	cursorForward(delta: number): string ;
+	cursorBackward(delta: number): string ;
+	cursorNextLine(delta: number): string ;
+	cursorPreviousLine(delta: number): string ;
+	cursorMoveTo(y: number, x: number): string ;
 
-	saveCursorPosition(): string
-	restoreCursorPosition(): string
+	saveCursorPosition(): string ;
+	restoreCursorPosition(): string ;
 
-	eraceFromCursorToEnd(): string
-	eraceFromCursorToBegin(): string
-	eraceEntireBuffer(): string
-	eraceFromCursorToRight(): string
-	eraceFromCursorToLeft(): string
-	eraceEntireLine(): string
+	eraceFromCursorToEnd(): string ;
+	eraceFromCursorToBegin(): string ;
+	eraceEntireBuffer(): string ;
+	eraceFromCursorToRight(): string ;
+	eraceFromCursorToLeft(): string ;
+	eraceEntireLine(): string ;
 
-	scrollUp(lines: number): string
-	scrollDown(lines: number): string
+	scrollUp(lines: number): string ;
+	scrollDown(lines: number): string ;
 
-	color(type: number, color: number): string
+	color(type: number, color: number): string ;
+	bool(flag: boolean): string ;
+
 	reset(): string
 }
 
@@ -150,6 +152,48 @@ interface RectIF {
 interface SizeIF {
 	width:		number ;
 	height:		number ;
+}
+
+interface TextIF
+{
+        core(): any ;
+	toStrings(idx: number): string[] ;
+}
+
+interface TextLineIF extends TextIF
+{
+        set(str: string): void ;
+	append(str: string): void ;
+	prepend(str: string): void ;
+}
+
+interface TextSectionIF extends TextIF
+{
+	contentCount: number ;
+	
+	add(text: TextIF): void ;
+	insert(text: TextIF): void ;
+	append(str: string): void ;
+	prepend(str: string): void ;
+}
+
+interface TextRecordIF extends TextIF
+{
+        columnCount: number ;
+	columns: number ;
+        append(str: string): void ;
+	prepend(str: string): void ;
+}
+
+interface TextTableIF extends TextIF
+{
+        count: number ;
+        records: TextRecordIF[] ;
+
+        add(rec: TextRecordIF): void ;
+        inert(rec: TextRecordIF): void ;
+	append(str: string): void ;
+        prepend(str: string): void ;
 }
 
 /* KLGraphicsContext in swift */
@@ -263,10 +307,16 @@ declare function toRect(value: any): RectIF | null ;
 declare function toSize(value: any): SizeIF | null ;
 declare function toString(value: any): string | null ;
 declare function toURL(value: any): URLIF | null ;
+declare function toText(value: any): TextIF ;
 
 declare function asciiCodeName(code: number): string | null ;
 
 declare function sleep(sec: number): boolean ;
+
+declare function TextLine(str: string): TextLineIF ;
+declare function TextSection(): TextSectionIF ;
+declare function TextRecord(): TextRecordIF ;
+declare function TextTable(): TextTableIF ;
 
 declare function _openPanel(title: string, type: number,
 					exts: string[], cbfunc: any): void ;
