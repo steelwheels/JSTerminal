@@ -1,0 +1,15 @@
+top: VBox {
+    dict: DictionaryView {
+	init: Init %{
+		let value = {a:10, b:20, c:3.14} ;
+		self.load(value) ;
+	%}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+

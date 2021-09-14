@@ -32,7 +32,7 @@ function main(args : string[])
 		  case "?":
 			usage() ;
 		  break ;
-		  case "r":
+		  case "d":
 			dumpRecord(index) ;
 		  break ;
 		  case "e":
@@ -54,7 +54,7 @@ function main(args : string[])
 
 function usage()
 {
-	console.log("'r': Dump current record") ;
+	console.log("'d': Dump current record") ;
 	console.log("'e': Edit current record") ;
 	console.log("'+': Increment record index") ;
 	console.log("'-': Decrement record index") ;
@@ -84,13 +84,23 @@ function dumpRecord(index: number)
 {
 	let record = Contacts.record(index) ;
 	if(record != null){
-		let fnames = record.fieldNames ;
-		fnames.forEach(name => {
-			let val = record!.value(name) ;
+                let table  = TextTable() ;
+                let fnames = record.fieldNames ;
+                fnames.forEach(fname => {
+                        let val = record!.value(fname) ;
 			if(val != null){
-				dumpValue(name, val) ;
+                                let txt = toText(val) ;
+                                let trec = TextRecord() ;
+                                trec.append(fname) ;
+                                trec.append(":") ;
+                                trec.append(txt.toStrings(0).join("\n")) ;
+                                table.add(trec) ;
 			}
-		}) ;
+                }) ;
+                let lines = table.toStrings(0) ;
+                for(let line of lines){
+                        console.print(line + "\n") ;
+                }
 	} else {
 		console.print("[Error] No record at " + index + "\n") ;
 	}

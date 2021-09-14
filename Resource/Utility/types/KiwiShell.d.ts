@@ -41,6 +41,5 @@ declare class ValueEditor {
     inputBool(msg: string): boolean | null;
     inputNumber(msg: string): number | null;
     inputString(msg: string): string | null;
-    normalizeString(str: string): string;
     check(message: string): boolean;
 }

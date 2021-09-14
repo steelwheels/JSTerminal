@@ -106,7 +106,7 @@ interface EscapeCodeIF {
 	scrollDown(lines: number): string ;
 
 	color(type: number, color: number): string ;
-	bool(flag: boolean): string ;
+	bold(flag: boolean): string ;
 
 	reset(): string
 }
