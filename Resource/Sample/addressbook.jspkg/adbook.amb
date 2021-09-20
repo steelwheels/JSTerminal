@@ -25,22 +25,25 @@ top: VBox {
 			%}
 		}
 	}
-        addresses: HBox {
-		postal_address: ValueField {
-			postal_addr: String Listner(index: top.index) %{
-				let adr = top.db.value(index, "postal_address");
-				console.log("update: " + adr) ;
-				self.value = adr ;
-			%}
-		}
-	}
         email: HBox {
 		label: Label {
 			text: String "E-Mail:"
 		}
-		email_address: TextField {
-			text: String Listner(index: top.index) %{
-				return top.db.value(index, "email_address") ;
+		email_addresses: Table {
+			init: Init %{
+				let record = top.db.record(top.index) ;
+				if(record != null){
+					let addrs = record.emailAddresses ;
+					self.load(addrs) ;
+				}
+			%}
+			value: String Listner(index: top.index) %{
+				console.log("recordCount = " + top.db.count) ;
+				let record = top.db.record(top.index) ;
+				if(record != null){
+					let addrs = record.emailAddresses ;
+					self.load(addrs) ;
+				}
 			%}
 		}
 	}

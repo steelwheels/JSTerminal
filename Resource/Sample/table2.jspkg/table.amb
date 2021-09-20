@@ -1,0 +1,21 @@
+top: VBox {
+    table: Table {
+	hasHeader: Bool true
+	init: Init %{
+		let dict = {
+			"prop_a": "value_a",
+			"prop_b": 10.0,
+			"prop_c": true
+		} ;
+
+                self.load(dict) ;
+        %}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+

@@ -23,9 +23,9 @@ top: VBox {
 		rec2.setValue(22, "c2") ;
 		table.append(rec2) ;
 
-                console.log("rowCount = " + table.rowCount) ;
-                console.log("colCount = " + table.columnCount) ;
-                console.log("value    = " + table.dumpToValue()) ;
+                console.log("recordCount = " + table.recordCount) ;
+                //console.log("colCount = " + table.columnCount) ;
+                //console.log("value    = " + table.dumpToValue()) ;
 
                 self.load(table) ;
         %}

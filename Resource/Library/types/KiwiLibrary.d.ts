@@ -237,6 +237,11 @@ interface ContactRecordIF {
 	fieldNames:		string[] ;
 	filledFieldNames:	string[] ;
 
+	givenName:		string | null ;
+	middleName:		string | null ;
+	familyName:		string | null ;
+	emailAddresses:		{[name:string]: string} | null ;
+
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
 
