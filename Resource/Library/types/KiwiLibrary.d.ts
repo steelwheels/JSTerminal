@@ -157,7 +157,7 @@ interface SizeIF {
 interface TextIF
 {
         core(): any ;
-	toStrings(idx: number): string[] ;
+	toString(): string ;
 }
 
 interface TextLineIF extends TextIF

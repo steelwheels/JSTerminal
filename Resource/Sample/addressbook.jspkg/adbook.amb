@@ -31,18 +31,15 @@ top: VBox {
 		}
 		email_addresses: Table {
 			init: Init %{
-				let record = top.db.record(top.index) ;
-				if(record != null){
-					let addrs = record.emailAddresses ;
-					self.load(addrs) ;
-				}
 			%}
 			value: String Listner(index: top.index) %{
-				console.log("recordCount = " + top.db.count) ;
 				let record = top.db.record(top.index) ;
 				if(record != null){
 					let addrs = record.emailAddresses ;
+					console.log("Addrs: " + toText(addrs).toString()) ;
 					self.load(addrs) ;
+				} else {
+					console.log("No record") ;
 				}
 			%}
 		}
