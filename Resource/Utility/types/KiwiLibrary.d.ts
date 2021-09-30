@@ -157,7 +157,7 @@ interface SizeIF {
 interface TextIF
 {
         core(): any ;
-	toStrings(idx: number): string[] ;
+	toString(): string ;
 }
 
 interface TextLineIF extends TextIF
@@ -237,6 +237,11 @@ interface ContactRecordIF {
 	fieldNames:		string[] ;
 	filledFieldNames:	string[] ;
 
+	givenName:		string | null ;
+	middleName:		string | null ;
+	familyName:		string | null ;
+	emailAddresses:		{[name:string]: string} | null ;
+
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
 
@@ -248,7 +253,7 @@ interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
-	load(url: URLIF | null): boolean ;
+	store(url: URLIF | null): boolean ;
 
 	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;

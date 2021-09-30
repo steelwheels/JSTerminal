@@ -22,7 +22,7 @@ function main(args) {
     sect0.add(line1);
     sect0.add(table0);
     console.log("Result:");
-    let result = sect0.toStrings(0);
+    let result = sect0.toString();
     for (let res of result) {
         console.log(res);
     }

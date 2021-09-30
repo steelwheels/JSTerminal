@@ -84,28 +84,30 @@ interface EscapeCodeIF {
         backspace():                    string ;
 	delete():                       string ;
 
-	cursorUp(delta: number): string
-	cursorDown(delta: number): string
-	cursorForward(delta: number): string
-	cursorBackward(delta: number): string
-	cursorNextLine(delta: number): string
-	cursorPreviousLine(delta: number): string
-	cursorMoveTo(y: number, x: number): string
+	cursorUp(delta: number): string ;
+	cursorDown(delta: number): string ;
+	cursorForward(delta: number): string ;
+	cursorBackward(delta: number): string ;
+	cursorNextLine(delta: number): string ;
+	cursorPreviousLine(delta: number): string ;
+	cursorMoveTo(y: number, x: number): string ;
 
-	saveCursorPosition(): string
-	restoreCursorPosition(): string
+	saveCursorPosition(): string ;
+	restoreCursorPosition(): string ;
 
-	eraceFromCursorToEnd(): string
-	eraceFromCursorToBegin(): string
-	eraceEntireBuffer(): string
-	eraceFromCursorToRight(): string
-	eraceFromCursorToLeft(): string
-	eraceEntireLine(): string
+	eraceFromCursorToEnd(): string ;
+	eraceFromCursorToBegin(): string ;
+	eraceEntireBuffer(): string ;
+	eraceFromCursorToRight(): string ;
+	eraceFromCursorToLeft(): string ;
+	eraceEntireLine(): string ;
 
-	scrollUp(lines: number): string
-	scrollDown(lines: number): string
+	scrollUp(lines: number): string ;
+	scrollDown(lines: number): string ;
 
-	color(type: number, color: number): string
+	color(type: number, color: number): string ;
+	bold(flag: boolean): string ;
+
 	reset(): string
 }
 
@@ -155,7 +157,7 @@ interface SizeIF {
 interface TextIF
 {
         core(): any ;
-	toStrings(idx: number): string[] ;
+	toString(): string ;
 }
 
 interface TextLineIF extends TextIF
@@ -235,6 +237,11 @@ interface ContactRecordIF {
 	fieldNames:		string[] ;
 	filledFieldNames:	string[] ;
 
+	givenName:		string | null ;
+	middleName:		string | null ;
+	familyName:		string | null ;
+	emailAddresses:		{[name:string]: string} | null ;
+
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
 
@@ -246,7 +253,7 @@ interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
-	load(url: URLIF | null): boolean ;
+	store(url: URLIF | null): boolean ;
 
 	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
@@ -305,6 +312,7 @@ declare function toRect(value: any): RectIF | null ;
 declare function toSize(value: any): SizeIF | null ;
 declare function toString(value: any): string | null ;
 declare function toURL(value: any): URLIF | null ;
+declare function toText(value: any): TextIF ;
 
 declare function asciiCodeName(code: number): string | null ;
 

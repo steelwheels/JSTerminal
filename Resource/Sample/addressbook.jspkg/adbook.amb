@@ -2,18 +2,17 @@ top: VBox {
         index: Int 0
         db: AddressBook {
         }
-        indices: HBox {
-		label: Label { text: String "Index: " }
+	indices: LabeledBox {
+		title: String "Index"
+		axis:  Axis horizontal
 		index: TextField {
 			text: String Listner(index: top.index) %{
 				return "" + index ;
 			%}
 		}
 	}
-        names: HBox {
-		label: Label {
-			text: String "Name:"
-		}
+        names: LabeledBox {
+		title: String "Name"
 		family_name: TextField {
 			text: String Listner(index: top.index) %{
 				return top.db.value(index, "family_name") ;
@@ -25,19 +24,51 @@ top: VBox {
 			%}
 		}
 	}
-        email: HBox {
-		label: Label {
-			text: String "E-Mail:"
-		}
-		email_addresses: Table {
+        phone: LaneledBox {
+		title: String "Phone numbers:"
+		numbers: ValueView {
 			init: Init %{
 			%}
-			value: String Listner(index: top.index) %{
+			_value: String Listner(index: top.index) %{
+				let record = top.db.record(top.index) ;
+				if(record != null){
+					let nums = record.phoneNumbers ;
+					console.log("Phone: " + toText(nums).toString()) ;
+					self.value = nums ;
+				} else {
+					console.log("No record") ;
+				}
+			%}
+		}
+	}
+        email: LabeledBox {
+		title: String "E-Mail"
+		addresses: ValueView {
+			init: Init %{
+			%}
+			_value: String Listner(index: top.index) %{
 				let record = top.db.record(top.index) ;
 				if(record != null){
 					let addrs = record.emailAddresses ;
 					console.log("Addrs: " + toText(addrs).toString()) ;
-					self.load(addrs) ;
+					self.value = addrs ;
+				} else {
+					console.log("No record") ;
+				}
+			%}
+		}
+	}
+        sns: LabeledBox {
+		title: String "Instant messages"
+		addresses: ValueView {
+			init: Init %{
+			%}
+			_value: String Listner(index: top.index) %{
+				let record = top.db.record(top.index) ;
+				if(record != null){
+					let addrs = record.instantMessageAddresses ;
+					console.log("Addrs: " + toText(addrs).toString()) ;
+					self.value = addrs ;
 				} else {
 					console.log("No record") ;
 				}

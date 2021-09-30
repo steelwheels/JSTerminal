@@ -12,8 +12,8 @@ function main(args : string[])
 		return -1 ;
 	}
 
-	if(!Contacts.load(null)){
-		console.print("[Error] Failed to load database\n") ;
+	if(!Contacts.store(null)){
+		console.print("[Error] Failed to store database\n") ;
 		return -1 ;
 	}
 
@@ -93,14 +93,12 @@ function dumpRecord(index: number)
                                 let trec = TextRecord() ;
                                 trec.append(fname) ;
                                 trec.append(":") ;
-                                trec.append(txt.toStrings(0).join("\n")) ;
+                                trec.append(txt.toString()) ;
                                 table.add(trec) ;
 			}
                 }) ;
-                let lines = table.toStrings(0) ;
-                for(let line of lines){
-                        console.print(line + "\n") ;
-                }
+                let lines = table.toString() ;
+		console.print(lines + "\n") ;
 	} else {
 		console.print("[Error] No record at " + index + "\n") ;
 	}
