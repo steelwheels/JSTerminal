@@ -27,7 +27,7 @@ top: VBox {
                 //console.log("colCount = " + table.columnCount) ;
                 //console.log("value    = " + table.dumpToValue()) ;
 
-                self.load(table) ;
+                self.store(table) ;
         %}
     }
     quit_button: Button {

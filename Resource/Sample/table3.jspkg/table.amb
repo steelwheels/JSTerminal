@@ -10,39 +10,6 @@ top: VBox {
 			%}
 		}
 	}
-        names: LabeledBox {
-		title: String "Name"
-		name_box: HBox {
-			family_name: TextField {
-				text: String Listner(index: top.index) %{
-					return top.db.value(index, "family_name") ;
-				%}
-			}
-			given_name: TextField {
-				text: String Listner(index: top.index) %{
-					return top.db.value(index, "given_name") ;
-				%}
-			}
-		}
-
-	}
-        phone: LabeledBox {
-		title: String "Phone numbers"
-		numbers: ValueView {
-			init: Init %{
-			%}
-			_value: String Listner(index: top.index) %{
-				let record = top.db.record(top.index) ;
-				if(record != null){
-					let nums = record.phoneNumbers ;
-					console.log("Phone: " + toText(nums).toString()) ;
-					self.value = nums ;
-				} else {
-					console.log("No record") ;
-				}
-			%}
-		}
-	}
         email: LabeledBox {
 		title: String "E-Mail"
 		addresses: ValueView {
@@ -52,23 +19,6 @@ top: VBox {
 				let record = top.db.record(top.index) ;
 				if(record != null){
 					let addrs = record.emailAddresses ;
-					console.log("Addrs: " + toText(addrs).toString()) ;
-					self.value = addrs ;
-				} else {
-					console.log("No record") ;
-				}
-			%}
-		}
-	}
-        sns: LabeledBox {
-		title: String "Instant messages"
-		addresses: ValueView {
-			init: Init %{
-			%}
-			_value: String Listner(index: top.index) %{
-				let record = top.db.record(top.index) ;
-				if(record != null){
-					let addrs = record.instantMessageAddresses ;
 					console.log("Addrs: " + toText(addrs).toString()) ;
 					self.value = addrs ;
 				} else {
