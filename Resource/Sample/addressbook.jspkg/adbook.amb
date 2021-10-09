@@ -15,12 +15,16 @@ top: VBox {
 		name_box: HBox {
 			family_name: TextField {
 				text: String Listner(index: top.index) %{
-					return top.db.value(index, "family_name") ;
+                                        let val = top.db.value(index, "family_name") ;
+					console.log("family_name: " + toText(val).toString()) ;
+					return  val ;
 				%}
 			}
 			given_name: TextField {
 				text: String Listner(index: top.index) %{
-					return top.db.value(index, "given_name") ;
+                                        let val = top.db.value(index, "given_name") ;
+                                        console.log("given_name: " + toText(val).toString()) ;
+					return  val ;
 				%}
 			}
 		}
@@ -43,8 +47,25 @@ top: VBox {
 			%}
 		}
 	}
+        postalAddr: LabeledBox {
+                title: String "Postal addresses"
+                addresses: ValueView {
+                        init: Init %{
+                        %}
+                        _value: String Listner(index: top.index) %{
+                                let record = top.db.record(top.index) ;
+                               if(record != null){
+                                        let addrs = record.postalAddresses ;
+                                        console.log("postal_address: " + toText(addrs).toString()) ;
+                                        self.value = addrs ;
+                                 } else {
+                                        console.log("No record") ;
+                                }
+                         %}
+                }
+        }
         email: LabeledBox {
-		title: String "E-Mail"
+		title: String "e-Mail"
 		addresses: ValueView {
 			init: Init %{
 			%}
@@ -52,7 +73,7 @@ top: VBox {
 				let record = top.db.record(top.index) ;
 				if(record != null){
 					let addrs = record.emailAddresses ;
-					console.log("Addrs: " + toText(addrs).toString()) ;
+					console.log("emailAddresses: " + toText(addrs).toString()) ;
 					self.value = addrs ;
 				} else {
 					console.log("No record") ;
@@ -69,7 +90,7 @@ top: VBox {
 				let record = top.db.record(top.index) ;
 				if(record != null){
 					let addrs = record.instantMessageAddresses ;
-					console.log("Addrs: " + toText(addrs).toString()) ;
+					console.log("instanceMessageAddresses: " + toText(addrs).toString()) ;
 					self.value = addrs ;
 				} else {
 					console.log("No record") ;

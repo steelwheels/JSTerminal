@@ -11,14 +11,14 @@ top: VBox {
 		}
 	}
         email: LabeledBox {
-		title: String "E-Mail"
+		title: String "Postal addresses"
 		addresses: ValueView {
 			init: Init %{
 			%}
 			_value: String Listner(index: top.index) %{
 				let record = top.db.record(top.index) ;
 				if(record != null){
-					let addrs = record.emailAddresses ;
+					let addrs = record.postalAddresses ;
 					console.log("Addrs: " + toText(addrs).toString()) ;
 					self.value = addrs ;
 				} else {

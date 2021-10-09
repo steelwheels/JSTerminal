@@ -1,0 +1,24 @@
+top: VBox {
+    table: ValueView {
+	hasHeader: Bool true
+	init: Init %{
+		let dict = {
+			Home: {
+				"prop_a": "value_a",
+				"prop_b": 10.0
+			},
+			Work: {
+				"prop_c": true
+			}
+		} ;
+		self.value = dict ;
+        %}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+
