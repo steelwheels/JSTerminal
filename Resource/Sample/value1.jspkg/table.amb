@@ -1,6 +1,5 @@
 top: VBox {
     table: ValueView {
-	hasHeader: Bool true
 	init: Init %{
 		let dict = {
 			Home: {
