@@ -196,6 +196,10 @@ interface TextTableIF extends TextIF
         prepend(str: string): void ;
 }
 
+interface ImageIF {
+	size: SizeIF ;
+}
+
 /* KLGraphicsContext in swift */
 interface GraphicsContextIF {
 	logicalFrame:	RectIF ;
@@ -210,11 +214,11 @@ interface GraphicsContextIF {
 
 interface BitmapIF
 {
-	width:		number
-	height:		number
+	width:		number ;
+	height:		number ;
 
-	get(x: number, y: number): ColorIF
-	set(x: number, y: number, color: ColorIF): void
+	get(x: number, y: number): ColorIF ;
+	set(x: number, y: number, color: ColorIF): void ;
 }
 
 interface ProcessIF {
@@ -230,6 +234,16 @@ interface URLIF {
 	path:			string ;
 	appendingPathComponent(comp: string): URLIF | null ;
 	loadText():		string | null ;
+}
+
+interface SymbolsIF {
+	characterA:		ImageIF ;
+	chevronBackward:	ImageIF ;
+	chevronForward:		ImageIF ;
+	handRaised:		ImageIF ;
+	paintbrush:		ImageIF ;
+	pencil:			ImageIF ;
+	questionmark:		ImageIF ;
 }
 
 interface ContactRecordIF {
@@ -284,6 +298,7 @@ declare var EscapeCode: 	EscapeCodeIF ;
 declare var ExitCode:		ExitCodeIF ;
 declare var FileType:		FileTypeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
+declare var Symbols:		SymbolsIF ;
 
 declare function valueType(val: any): number ; // the result defined as enum ValueType
 

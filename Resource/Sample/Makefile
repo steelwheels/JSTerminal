@@ -14,6 +14,7 @@ srcs	= alert.ts \
 	  readline-menu.ts \
 	  scroll0.ts \
 	  stdin.ts \
+	  symbol.ts \
 	  text.ts \
 	  value-edit-1.ts \
 	  value-edit-2.ts
