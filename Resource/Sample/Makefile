@@ -3,6 +3,7 @@
 #
 
 srcs	= alert.ts \
+	  collection0.ts \
 	  colors.ts \
 	  escape-code.ts \
 	  file.ts \

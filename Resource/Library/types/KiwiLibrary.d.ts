@@ -237,13 +237,13 @@ interface URLIF {
 }
 
 interface SymbolsIF {
-	characterA:		ImageIF ;
-	chevronBackward:	ImageIF ;
-	chevronForward:		ImageIF ;
-	handRaised:		ImageIF ;
-	paintbrush:		ImageIF ;
-	pencil:			ImageIF ;
-	questionmark:		ImageIF ;
+	characterA:		URLIF ;
+	chevronBackward:	URLIF ;
+	chevronForward:		URLIF ;
+	handRaised:		URLIF ;
+	paintbrush:		URLIF ;
+	pencil:			URLIF ;
+	questionmark:		URLIF ;
 }
 
 interface ContactRecordIF {
@@ -287,6 +287,19 @@ interface ContactDatabaseIF {
 	save():			boolean ;
 }
 
+interface CollectionIF {
+	sectionCount:			number ;
+	itemCount(section: number):	number ;
+
+	header(section: number): string | null ;
+	footer(section: number): string | null ;
+
+	value(section: number, item: number): URLIF | null ;
+	add(header: string, footer: string, item: URLIF[]): void ;
+
+	toStrings(): string[] ;
+}
+
 /* Enum */
 declare var ValueType:		ValueTypeIF ;
 
@@ -307,6 +320,8 @@ declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
 declare function Size(width: number, height: number): SizeIF ;
+declare function Collection(): CollectionIF ;
+declare function URL(path: string): URLIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

@@ -6,8 +6,8 @@
 
 function main(args: string[]): number
 {
-	let size = Symbols.characterA.size ;
-	console.log("characterA : (" + size.width + ", " + size.height + ")") ;
+	let path = Symbols.characterA.path ;
+	console.log("characterA : " + path) ;
 	return 0 ;
 }
 
