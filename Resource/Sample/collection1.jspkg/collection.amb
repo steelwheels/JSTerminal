@@ -1,0 +1,20 @@
+top: VBox {
+        collection: CollectionView {
+		init: Init %{
+			let col0 = Collection();
+			let paths = [
+				Symbols.chevronBackward,
+				Symbols.chevronForward
+			];
+			col0.add("Header", "Footer", paths);
+			self.store(col0) ;
+		%}
+        }
+        quit: Button {
+   	        title: String "Quit"
+	        pressed: Event() %{
+		        leaveView(1) ;
+                %}
+        }
+}
+

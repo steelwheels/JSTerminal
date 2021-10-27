@@ -67,6 +67,8 @@
 		0557F047271474DC00C4C6A8 /* contact1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F0362714749F00C4C6A8 /* contact1.jspkg */; };
 		0557F048271474DC00C4C6A8 /* addressbook.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F0342714749500C4C6A8 /* addressbook.jspkg */; };
 		0561379025E13FE200271346 /* life-game.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D542EB25CFCC1E007CD73C /* life-game.jspkg */; };
+		05809C2A27299DEE000A8456 /* collection1.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05809C2927299DEE000A8456 /* collection1.jspkg */; };
+		05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05809C2927299DEE000A8456 /* collection1.jspkg */; };
 		05839D1B25C6A60D00653302 /* turtle.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05839D1A25C6A60D00653302 /* turtle.jspkg */; };
 		0586F79325BC008500AE9FEE /* controls.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
 		0586F79525BC009A00AE9FEE /* table.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
@@ -205,6 +207,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */,
 				052DF9D627254E1400392E19 /* collection0.js in Copy Files */,
 				052DF9D727254E1400392E19 /* collection0.ts in Copy Files */,
 				05150DFF2724098C001C66AE /* text.js in Copy Files */,
@@ -315,6 +318,7 @@
 		0557F03A271474AC00C4C6A8 /* value-edit-1.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "value-edit-1.ts"; sourceTree = "<group>"; };
 		0557F03B271474AC00C4C6A8 /* value-edit-2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "value-edit-2.js"; sourceTree = "<group>"; };
 		0557F03C271474AC00C4C6A8 /* value-edit-2.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "value-edit-2.ts"; sourceTree = "<group>"; };
+		05809C2927299DEE000A8456 /* collection1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = collection1.jspkg; sourceTree = "<group>"; };
 		05839D1A25C6A60D00653302 /* turtle.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = turtle.jspkg; sourceTree = "<group>"; };
 		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = controls.jspkg; sourceTree = "<group>"; };
 		0586F79425BC009A00AE9FEE /* table.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = table.jspkg; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 			children = (
 				052DF9D227254DF200392E19 /* collection0.js */,
 				052DF9D327254DF200392E19 /* collection0.ts */,
+				05809C2927299DEE000A8456 /* collection1.jspkg */,
 				05150DFC27240973001C66AE /* text.js */,
 				05150DFB27240973001C66AE /* text.ts */,
 				05150DF727240961001C66AE /* symbol.js */,
@@ -666,6 +671,7 @@
 				05150DFA27240961001C66AE /* symbol.ts in Resources */,
 				05B7712F251879BF004FCD84 /* Credits.rtf in Resources */,
 				05F7AE50251874830077F527 /* Main.storyboard in Resources */,
+				05809C2A27299DEE000A8456 /* collection1.jspkg in Resources */,
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
 				05150DF927240961001C66AE /* symbol.js in Resources */,
 				0557F03E271474AC00C4C6A8 /* value-edit-1.js in Resources */,
