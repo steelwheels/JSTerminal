@@ -9,6 +9,9 @@ top: VBox {
 			col0.add("Header", "Footer", paths);
 			self.store(col0) ;
 		%}
+		selected: Event(section, item) %{
+			console.log("selected: " + section + ", " + item) ;
+		%}
         }
         quit: Button {
    	        title: String "Quit"
