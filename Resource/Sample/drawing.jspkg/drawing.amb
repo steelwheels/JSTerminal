@@ -1,0 +1,13 @@
+top: VBox {
+	drawing: DrawingView {
+		width:  Float 400.0
+		height: Float 400.0
+	}
+        quit: Button {
+   	        title: String "Quit"
+	        pressed: Event() %{
+		        leaveView(1) ;
+                %}
+        }
+}
+
