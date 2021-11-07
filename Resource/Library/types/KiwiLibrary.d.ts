@@ -241,9 +241,16 @@ interface SymbolsIF {
 	chevronBackward:	URLIF ;
 	chevronForward:		URLIF ;
 	handRaised:		URLIF ;
+	line1P:			URLIF ;
+	line2P:			URLIF ;
+	line4P:			URLIF ;
+	line8P:			URLIF ;
+	line16P:		URLIF ;
 	paintbrush:		URLIF ;
 	pencil:			URLIF ;
 	questionmark:		URLIF ;
+	rectangle:		URLIF ;
+	rectangleFilled:	URLIF ;
 }
 
 interface ContactRecordIF {
