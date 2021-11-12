@@ -241,9 +241,18 @@ interface SymbolsIF {
 	chevronBackward:	URLIF ;
 	chevronForward:		URLIF ;
 	handRaised:		URLIF ;
+	line1P:			URLIF ;
+	line2P:			URLIF ;
+	line4P:			URLIF ;
+	line8P:			URLIF ;
+	line16P:		URLIF ;
 	paintbrush:		URLIF ;
-	pencil:			URLIF ;
+
+	pencil(filled: boolean): URLIF ;
+
 	questionmark:		URLIF ;
+
+	rectangle(filled: boolean, rounded: boolean): URLIF ;
 }
 
 interface ContactRecordIF {
@@ -321,6 +330,7 @@ declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
+declare function URL(path: string): URLIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

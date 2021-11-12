@@ -247,10 +247,12 @@ interface SymbolsIF {
 	line8P:			URLIF ;
 	line16P:		URLIF ;
 	paintbrush:		URLIF ;
-	pencil:			URLIF ;
+
+	pencil(filled: boolean): URLIF ;
+
 	questionmark:		URLIF ;
-	rectangle:		URLIF ;
-	rectangleFilled:	URLIF ;
+
+	rectangle(filled: boolean, rounded: boolean): URLIF ;
 }
 
 interface ContactRecordIF {
