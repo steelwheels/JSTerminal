@@ -247,11 +247,10 @@ interface SymbolsIF {
 	line8P:			URLIF ;
 	line16P:		URLIF ;
 	paintbrush:		URLIF ;
-
-	pencil(filled: boolean): URLIF ;
-
 	questionmark:		URLIF ;
 
+	oval(filled: boolean):   URLIF ;
+	pencil(filled: boolean): URLIF ;
 	rectangle(filled: boolean, rounded: boolean): URLIF ;
 }
 
