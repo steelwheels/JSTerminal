@@ -3,11 +3,33 @@ top: VBox {
 		width:  Float 400.0
 		height: Float 400.0
 	}
-        quit: Button {
-   	        title: String "Quit"
-	        pressed: Event() %{
-		        leaveView(1) ;
-                %}
-        }
+	buttons: HBox {
+		load: Button {
+			title: String "Load"
+			pressed: Event() %{
+				let url = openPanel("Load vector graphics",
+						    FileType.File,
+						    ["json"]) ;
+				if(url != null){
+					top.drawing.load(url) ;
+				}
+			%}
+		}
+		store: Button {
+			title: String "Store"
+			pressed: Event() %{
+				let url = savePanel("Save vector graphics") ;
+				if(url != null){
+					top.drawing.store(url) ;
+				}
+			%}
+		}
+		quit: Button {
+			title: String "Quit"
+			pressed: Event() %{
+				leaveView(1) ;
+			%}
+		}
+	}
 }
 
