@@ -209,7 +209,8 @@ interface GraphicsContextIF {
 	setPenSize(size: number): void ;
 	moveTo(x: number, y: number): void ;
 	lineTo(x: number, y: number): void ;
-	circle(x: number, y: number, rad: number): void ;
+	rect(x: number, y: number, width: number, height: number, dofill: boolean): void ;
+	circle(x: number, y: number, rad: number, dofill: boolean): void ;
 }
 
 interface BitmapIF

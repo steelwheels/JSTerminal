@@ -196,6 +196,10 @@ interface TextTableIF extends TextIF
         prepend(str: string): void ;
 }
 
+interface ImageIF {
+	size: SizeIF ;
+}
+
 /* KLGraphicsContext in swift */
 interface GraphicsContextIF {
 	logicalFrame:	RectIF ;
@@ -205,16 +209,17 @@ interface GraphicsContextIF {
 	setPenSize(size: number): void ;
 	moveTo(x: number, y: number): void ;
 	lineTo(x: number, y: number): void ;
-	circle(x: number, y: number, rad: number): void ;
+	rect(x: number, y: number, width: number, height: number, dofill: boolean): void ;
+	circle(x: number, y: number, rad: number, dofill: boolean): void ;
 }
 
 interface BitmapIF
 {
-	width:		number
-	height:		number
+	width:		number ;
+	height:		number ;
 
-	get(x: number, y: number): ColorIF
-	set(x: number, y: number, color: ColorIF): void
+	get(x: number, y: number): ColorIF ;
+	set(x: number, y: number, color: ColorIF): void ;
 }
 
 interface ProcessIF {
@@ -230,6 +235,24 @@ interface URLIF {
 	path:			string ;
 	appendingPathComponent(comp: string): URLIF | null ;
 	loadText():		string | null ;
+}
+
+interface SymbolsIF {
+	characterA:		URLIF ;
+	chevronBackward:	URLIF ;
+	chevronForward:		URLIF ;
+	handRaised:		URLIF ;
+	line1P:			URLIF ;
+	line2P:			URLIF ;
+	line4P:			URLIF ;
+	line8P:			URLIF ;
+	line16P:		URLIF ;
+	paintbrush:		URLIF ;
+	questionmark:		URLIF ;
+
+	oval(filled: boolean):   URLIF ;
+	pencil(filled: boolean): URLIF ;
+	rectangle(filled: boolean, rounded: boolean): URLIF ;
 }
 
 interface ContactRecordIF {
@@ -273,6 +296,19 @@ interface ContactDatabaseIF {
 	save():			boolean ;
 }
 
+interface CollectionIF {
+	sectionCount:			number ;
+	itemCount(section: number):	number ;
+
+	header(section: number): string | null ;
+	footer(section: number): string | null ;
+
+	value(section: number, item: number): URLIF | null ;
+	add(header: string, footer: string, item: URLIF[]): void ;
+
+	toStrings(): string[] ;
+}
+
 /* Enum */
 declare var ValueType:		ValueTypeIF ;
 
@@ -284,6 +320,7 @@ declare var EscapeCode: 	EscapeCodeIF ;
 declare var ExitCode:		ExitCodeIF ;
 declare var FileType:		FileTypeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
+declare var Symbols:		SymbolsIF ;
 
 declare function valueType(val: any): number ; // the result defined as enum ValueType
 
@@ -292,6 +329,8 @@ declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
 declare function Size(width: number, height: number): SizeIF ;
+declare function Collection(): CollectionIF ;
+declare function URL(path: string): URLIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

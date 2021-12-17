@@ -189,6 +189,14 @@ And you will get following outputs:
 
 The [ValueView component](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Components/ValueView.md) is the data structure viwer such as dictionary, array, etc...
 
+This is sample program which using the vector graphics drawer.
+````
+jsh> run Sample/drawing.jspkg
+````
+
+And you will get following outputs:
+![Screenshot of drawing.jspkg](./Images/drawing-1.png)
+
 ### File extensions
 The file extension (such as `.js`, `.jsh`) is refered to determine the contents of the file (or package).
 This is the table of extensions that this application supports as a script file.

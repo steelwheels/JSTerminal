@@ -2,6 +2,8 @@
 /**
  * @file moo.ts
  */
+/// <reference path="types/KiwiLibrary.d.ts"/>
+/// <reference path="types/KiwiShell.d.ts"/>
 class Letters {
     constructor(num) {
         this.length = num;
