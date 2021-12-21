@@ -1,126 +1,43 @@
-top: VBox {
-        index: Int 0
+top: Card {
         db: AddressBook {
+		index: Int Listner(idx: top.index) %{
+			return idx ;
+		%}
         }
-	indices: LabeledBox {
-		title: String "Index"
-		index: TextField {
-			text: String Listner(index: top.index) %{
-				return "" + index ;
-			%}
-		}
-	}
-        names: LabeledBox {
+	nameField: LabeledBox {
 		title: String "Name"
-		name_box: HBox {
-			family_name: TextField {
-				text: String Listner(index: top.index) %{
-                                        let val = top.db.value(index, "family_name") ;
-					console.log("family_name: " + toText(val).toString()) ;
-					return  val ;
+		buttons: HBox {
+			familyName: TextField {
+				text: String Listner(record: top.db.record) %{
+					return record.familyName ;
 				%}
 			}
-			given_name: TextField {
-				text: String Listner(index: top.index) %{
-                                        let val = top.db.value(index, "given_name") ;
-                                        console.log("given_name: " + toText(val).toString()) ;
-					return  val ;
+			givenName: TextField {
+				text: String Listner(record: top.db.record) %{
+					return record.givenName ;
 				%}
 			}
 		}
-
 	}
-        phone: LabeledBox {
-		title: String "Phone numbers"
-		numbers: ValueView {
-			init: Init %{
-			%}
-			_value: String Listner(index: top.index) %{
-				let record = top.db.record(top.index) ;
-				if(record != null){
-					let nums = record.phoneNumbers ;
-					console.log("Phone: " + toText(nums).toString()) ;
-					self.value = nums ;
-				} else {
-					console.log("No record") ;
-				}
-			%}
-		}
-	}
-        postalAddr: LabeledBox {
-                title: String "Postal addresses"
-                addresses: ValueView {
-                        init: Init %{
-                        %}
-                        _value: String Listner(index: top.index) %{
-                                let record = top.db.record(top.index) ;
-                               if(record != null){
-                                        let addrs = record.postalAddresses ;
-                                        console.log("postal_address: " + toText(addrs).toString()) ;
-                                        self.value = addrs ;
-                                 } else {
-                                        console.log("No record") ;
-                                }
-                         %}
-                }
-        }
-        email: LabeledBox {
-		title: String "e-Mail"
-		addresses: ValueView {
-			init: Init %{
-			%}
-			_value: String Listner(index: top.index) %{
-				let record = top.db.record(top.index) ;
-				if(record != null){
-					let addrs = record.emailAddresses ;
-					console.log("emailAddresses: " + toText(addrs).toString()) ;
-					self.value = addrs ;
-				} else {
-					console.log("No record") ;
-				}
-			%}
-		}
-	}
-        sns: LabeledBox {
-		title: String "Instant messages"
-		addresses: ValueView {
-			init: Init %{
-			%}
-			_value: String Listner(index: top.index) %{
-				let record = top.db.record(top.index) ;
-				if(record != null){
-					let addrs = record.instantMessageAddresses ;
-					console.log("instanceMessageAddresses: " + toText(addrs).toString()) ;
-					self.value = addrs ;
-				} else {
-					console.log("No record") ;
-				}
-			%}
-		}
-	}
-        buttons: HBox {
-                prev_button: Button {
-                        title: String "<-"
+	buttons: HBox {
+		left: Button {
+			title: String "Left"
 			pressed: Event() %{
-				if(top.index > 0){
-					top.index -= 1 ;
-				}
+				top.index -= 1 ;
 			%}
-                }
-                next_button: Button {
-                        title: String "->"
+		}
+		right: Button {
+			title: String "Right"
 			pressed: Event() %{
-				if(top.index < top.db.count - 1){
-					top.index += 1 ;
-				}
+				top.index += 1 ;
 			%}
-                }
-        }
-        quit: Button {
-   	        title: String "Quit"
-	        pressed: Event() %{
-		        leaveView(1) ;
-                %}
-        }
+		}
+		quit: Button {
+			title: String "Quit"
+			pressed: Event() %{
+				leaveView(1) ;
+			%}
+		}
+	}
 }
 
