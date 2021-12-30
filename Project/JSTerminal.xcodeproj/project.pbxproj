@@ -55,7 +55,6 @@
 		053999C72621562D008B561C /* stdin.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 050D9796261C02AA004FABF8 /* stdin.js */; };
 		053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05BAB09625A0661800DD59D7 /* num_guess.js */; };
 		0557F0352714749500C4C6A8 /* addressbook.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0557F0342714749500C4C6A8 /* addressbook.jspkg */; };
-		0557F0372714749F00C4C6A8 /* contact1.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0557F0362714749F00C4C6A8 /* contact1.jspkg */; };
 		0557F03D271474AC00C4C6A8 /* value1.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0557F038271474AC00C4C6A8 /* value1.jspkg */; };
 		0557F03E271474AC00C4C6A8 /* value-edit-1.js in Resources */ = {isa = PBXBuildFile; fileRef = 0557F039271474AC00C4C6A8 /* value-edit-1.js */; };
 		0557F03F271474AC00C4C6A8 /* value-edit-1.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0557F03A271474AC00C4C6A8 /* value-edit-1.ts */; };
@@ -66,7 +65,6 @@
 		0557F044271474DC00C4C6A8 /* value-edit-2.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F03B271474AC00C4C6A8 /* value-edit-2.js */; };
 		0557F045271474DC00C4C6A8 /* value-edit-2.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F03C271474AC00C4C6A8 /* value-edit-2.ts */; };
 		0557F046271474DC00C4C6A8 /* value1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F038271474AC00C4C6A8 /* value1.jspkg */; };
-		0557F047271474DC00C4C6A8 /* contact1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F0362714749F00C4C6A8 /* contact1.jspkg */; };
 		0557F048271474DC00C4C6A8 /* addressbook.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F0342714749500C4C6A8 /* addressbook.jspkg */; };
 		0561379025E13FE200271346 /* life-game.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D542EB25CFCC1E007CD73C /* life-game.jspkg */; };
 		05809C2A27299DEE000A8456 /* collection1.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05809C2927299DEE000A8456 /* collection1.jspkg */; };
@@ -221,7 +219,6 @@
 				0557F044271474DC00C4C6A8 /* value-edit-2.js in Copy Files */,
 				0557F045271474DC00C4C6A8 /* value-edit-2.ts in Copy Files */,
 				0557F046271474DC00C4C6A8 /* value1.jspkg in Copy Files */,
-				0557F047271474DC00C4C6A8 /* contact1.jspkg in Copy Files */,
 				0557F048271474DC00C4C6A8 /* addressbook.jspkg in Copy Files */,
 				0519ECA626417C2300471F35 /* alert.ts in Copy Files */,
 				0519ECA726417C2300471F35 /* colors.ts in Copy Files */,
@@ -692,7 +689,6 @@
 				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
 				051A55272771EA8C0093CE80 /* card0.jspkg in Resources */,
 				05150DFE27240973001C66AE /* text.js in Resources */,
-				0557F0372714749F00C4C6A8 /* contact1.jspkg in Resources */,
 				0589F1C227132AB000D40424 /* adb.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

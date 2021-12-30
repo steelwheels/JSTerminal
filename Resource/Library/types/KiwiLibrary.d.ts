@@ -276,9 +276,6 @@ interface ContactRecordIF {
 
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
-
-	isDirty:		boolean ;
-	save(): 		boolean ;
 }
 
 interface ContactDatabaseIF {
@@ -291,9 +288,6 @@ interface ContactDatabaseIF {
 	record(index: number): ContactRecordIF | null ;
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
-
-	isDirty:		boolean ;
-	save():			boolean ;
 }
 
 interface CollectionIF {
