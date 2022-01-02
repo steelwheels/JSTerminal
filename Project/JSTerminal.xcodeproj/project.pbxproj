@@ -74,12 +74,10 @@
 		0586F79525BC009A00AE9FEE /* table.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0586F79425BC009A00AE9FEE /* table.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
 		0589F1C027132AB000D40424 /* types in Resources */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
-		0589F1C127132AB000D40424 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 0589F1BD27132AB000D40424 /* Makefile */; };
 		0589F1C227132AB000D40424 /* adb.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
 		0589F1C327132AB000D40424 /* adb.js in Resources */ = {isa = PBXBuildFile; fileRef = 0589F1BF27132AB000D40424 /* adb.js */; };
 		0589F1C427132ACA00D40424 /* adb.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BF27132AB000D40424 /* adb.js */; };
 		0589F1C527132ACA00D40424 /* adb.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
-		0589F1C627132ACA00D40424 /* Makefile in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BD27132AB000D40424 /* Makefile */; };
 		0589F1C727132ACA00D40424 /* types in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
 		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
@@ -164,7 +162,6 @@
 			files = (
 				0589F1C427132ACA00D40424 /* adb.js in CopyFiles */,
 				0589F1C527132ACA00D40424 /* adb.ts in CopyFiles */,
-				0589F1C627132ACA00D40424 /* Makefile in CopyFiles */,
 				0589F1C727132ACA00D40424 /* types in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,7 +697,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0589F1C127132AB000D40424 /* Makefile in Sources */,
 				058993FE253F1B1600663275 /* MultiViewController.swift in Sources */,
 				05F7AE47251874820077F527 /* AppDelegate.swift in Sources */,
 				05F7AE4B251874820077F527 /* Document.swift in Sources */,

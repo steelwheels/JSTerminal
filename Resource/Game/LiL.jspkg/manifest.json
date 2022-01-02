@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		opening: "opening/opening.amb"
+	}
+	images: {
+		title: "opening/images/title.png"
+	}
+}
+

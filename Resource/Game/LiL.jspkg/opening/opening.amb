@@ -1,0 +1,9 @@
+top: VBox {
+    start_button: Button {
+        title:  String "Start Game"
+        pressed: Event() %{
+		console.log("pressed: OK") ;
+        %}
+    }
+}
+
