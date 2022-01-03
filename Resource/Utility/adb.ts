@@ -12,8 +12,8 @@ function main(args : string[])
 		return -1 ;
 	}
 
-	if(!Contacts.store(null)){
-		console.print("[Error] Failed to store database\n") ;
+	if(!Contacts.load(null)){
+		console.print("[Error] Failed to load database\n") ;
 		return -1 ;
 	}
 

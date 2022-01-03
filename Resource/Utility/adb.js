@@ -9,8 +9,8 @@ function main(args) {
         console.print("[Error] Can not access contact database\n");
         return -1;
     }
-    if (!Contacts.store(null)) {
-        console.print("[Error] Failed to store database\n");
+    if (!Contacts.load(null)) {
+        console.print("[Error] Failed to load database\n");
         return -1;
     }
     console.print("adb - addressbook database manager\n");

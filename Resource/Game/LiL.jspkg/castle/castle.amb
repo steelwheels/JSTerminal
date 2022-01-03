@@ -1,0 +1,9 @@
+top: VBox {
+    ok_button: Button {
+        title:  String "OK"
+        pressed: Event() %{
+		console.log("pressed: OK") ;
+        %}
+    }
+}
+

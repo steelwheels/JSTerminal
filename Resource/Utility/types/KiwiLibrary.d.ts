@@ -276,24 +276,18 @@ interface ContactRecordIF {
 
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
-
-	isDirty:		boolean ;
-	save(): 		boolean ;
 }
 
 interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
-	store(url: URLIF | null): boolean ;
+	load(url: URLIF | null): boolean ;
 
 	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
-
-	isDirty:		boolean ;
-	save():			boolean ;
 }
 
 interface CollectionIF {

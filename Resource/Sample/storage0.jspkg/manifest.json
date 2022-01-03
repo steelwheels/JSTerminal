@@ -1,0 +1,7 @@
+{
+	application: "main.js"
+	storages: {
+		storage0: "data/storage0.json"
+	}
+}
+

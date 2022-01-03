@@ -237,6 +237,11 @@ interface URLIF {
 	loadText():		string | null ;
 }
 
+interface ValueStorageIF {
+	value(path: [string]): any ;
+	set(value: any, path: [string]): boolean ;
+}
+
 interface SymbolsIF {
 	characterA:		URLIF ;
 	chevronBackward:	URLIF ;
@@ -325,6 +330,7 @@ declare function Rect(x: number, y: number, width: number, height: number): Rect
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
+declare function ValueStorage(path: string): ValueStorageIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

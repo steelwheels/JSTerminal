@@ -2,6 +2,7 @@
 	application: "main.js"
 	subviews: {
 		opening: "opening/opening.amb"
+		castle:  "castle/castle.amb"
 	}
 	images: {
 		title: "opening/images/title.png"
