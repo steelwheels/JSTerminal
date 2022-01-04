@@ -26,7 +26,7 @@ public class MultiViewController: KMMultiComponentViewController
 		}
 		/* Load resource */
 		if let path = path {
-			let resource = KEResource.init(directoryURL: URL(fileURLWithPath: path))
+			let resource = KEResource.init(packageDirectory: URL(fileURLWithPath: path))
 			let loader   = KEManifestLoader()
 			if let err = loader.load(into: resource) {
 				CNLog(logLevel: .error, message: "Failed to load manifest: \(err.toString())")
