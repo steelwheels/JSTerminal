@@ -1,0 +1,27 @@
+top: VBox {
+    table: Table {
+	hasHeader: Bool true
+	init: Init %{
+                let storage = ValueStorage("storage") ;
+	        if(storage == null){
+		        console.log("Failed to allocate storage") ;
+	        }
+	        let table = ValueTable(["data"], storage) ;
+	        if(table == null){
+		        console.log("Failed to allocate table") ;
+	        }
+                self.store(table) ;        
+        %}
+	pressed: Event(row, col) %{
+		console.log("row    = " + row + "/" + self.rowCount) ;
+		console.log("column = " + col + "/" + self.columnCount) ;
+	%}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+
