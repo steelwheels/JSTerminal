@@ -240,6 +240,22 @@ interface URLIF {
 interface ValueStorageIF {
 	value(path: [string]): any ;
 	set(value: any, path: [string]): boolean ;
+	store(): void ;
+}
+
+interface ValueRecordIF {
+	fieldNames:		[string] ;
+	filledFieldNames:	[string] ;
+
+	value(name: string):			any ;
+	setValue(value: any, name: string):	boolean
+}
+
+interface ValueTableIF {
+	recordCount:		number ;
+	newRecord():		ValueRecordIF ;
+	record(row: number):	ValueRecordIF | null ;
+	append(record: ValueRecordIF): void ;
 }
 
 interface SymbolsIF {
@@ -331,6 +347,7 @@ declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
+declare function ValueTable(path: [string], storage: ValueStorageIF): ValueTableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

@@ -2,6 +2,8 @@ top: VBox {
     table: Table {
 	hasHeader: Bool true
 	init: Init %{
+		let storage = ValueStorage("storage") ;
+
                 let table = ValueTable() ;
 		console.log("ValueTable() => " + table) ;
 
@@ -23,12 +25,12 @@ top: VBox {
 		rec2.setValue(22, "c2") ;
 		table.append(rec2) ;
 
-                console.log("recordCount = " + table.recordCount) ;
-                //console.log("colCount = " + table.columnCount) ;
-                //console.log("value    = " + table.dumpToValue()) ;
-
                 self.store(table) ;
         %}
+	pressed: Event(row, col) %{
+		console.log("row    = " + row + "/" + self.rowCount) ;
+		console.log("column = " + col + "/" + self.columnCount) ;
+	%}
     }
     quit_button: Button {
    	title: String "Quit"

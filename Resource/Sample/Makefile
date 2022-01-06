@@ -17,6 +17,7 @@ srcs	= alert.ts \
 	  stdin.ts \
 	  symbol.ts \
 	  text.ts \
+	  value-table-1.jspkg/main.ts \
 	  value-edit-1.ts \
 	  value-edit-2.ts
 
