@@ -4,7 +4,7 @@
  */
 /// <reference path="types/KiwiLibrary.d.ts"/>
 function main(args) {
-    console.log("**** Storage0");
+    console.log("# value-table");
     let storage = ValueStorage("storage");
     if (storage == null) {
         console.log("Failed to allocate storage");
@@ -17,6 +17,8 @@ function main(args) {
     }
     let count = table.recordCount;
     console.log("recode-count = " + count);
+    let fnames = table.allFieldNames;
+    console.log("all-field-names = " + fnames);
     for (let i = 0; i < count; i++) {
         let record = table.record(i);
         if (record != null) {
@@ -37,5 +39,9 @@ function main(args) {
             console.log("[Error] No record at " + i);
         }
     }
+    console.log("# set active fields");
+    let fields = ['c0', 'c1'];
+    table.activeFieldNames = fields;
+    console.log("active-field-names = " + table.activeFieldNames);
     return 0;
 }
