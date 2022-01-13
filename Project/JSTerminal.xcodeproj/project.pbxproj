@@ -607,6 +607,7 @@
 				05F7AE40251874820077F527 /* Frameworks */,
 				05F7AE41251874820077F527 /* Resources */,
 				05B770FB2518788C004FCD84 /* Embed Frameworks */,
+				059C1A18278BBCAE00B09F4E /* Run Script */,
 				05B7711D25187959004FCD84 /* Copy Files */,
 				053CD9E225A06DEF00B5F690 /* CopyFiles */,
 				05B2DE4A260EA49E00E51D2F /* CopyFiles */,
@@ -693,6 +694,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		059C1A18278BBCAE00B09F4E /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "(cd ../Resource/Sample ; make)\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05F7AE3F251874820077F527 /* Sources */ = {
