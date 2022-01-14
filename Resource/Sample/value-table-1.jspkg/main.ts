@@ -14,7 +14,7 @@ function main(args : [string])
 		return -1 ;
 	}
 
-	let table = ValueTable(["data"], storage) ;
+	let table = ValueTable("data", storage) ;
 	if(table == null){
 		console.log("Failed to allocate table") ;
 		return -1 ;

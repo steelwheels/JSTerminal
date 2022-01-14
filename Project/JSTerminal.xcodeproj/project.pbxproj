@@ -60,14 +60,6 @@
 		054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 051A55282771EA950093CE80 /* drawing.jspkg */; };
 		0557F0352714749500C4C6A8 /* addressbook.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0557F0342714749500C4C6A8 /* addressbook.jspkg */; };
 		0557F03D271474AC00C4C6A8 /* value1.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0557F038271474AC00C4C6A8 /* value1.jspkg */; };
-		0557F03E271474AC00C4C6A8 /* value-edit-1.js in Resources */ = {isa = PBXBuildFile; fileRef = 0557F039271474AC00C4C6A8 /* value-edit-1.js */; };
-		0557F03F271474AC00C4C6A8 /* value-edit-1.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0557F03A271474AC00C4C6A8 /* value-edit-1.ts */; };
-		0557F040271474AC00C4C6A8 /* value-edit-2.js in Resources */ = {isa = PBXBuildFile; fileRef = 0557F03B271474AC00C4C6A8 /* value-edit-2.js */; };
-		0557F041271474AC00C4C6A8 /* value-edit-2.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0557F03C271474AC00C4C6A8 /* value-edit-2.ts */; };
-		0557F042271474DC00C4C6A8 /* value-edit-1.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F039271474AC00C4C6A8 /* value-edit-1.js */; };
-		0557F043271474DC00C4C6A8 /* value-edit-1.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F03A271474AC00C4C6A8 /* value-edit-1.ts */; };
-		0557F044271474DC00C4C6A8 /* value-edit-2.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F03B271474AC00C4C6A8 /* value-edit-2.js */; };
-		0557F045271474DC00C4C6A8 /* value-edit-2.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F03C271474AC00C4C6A8 /* value-edit-2.ts */; };
 		0557F046271474DC00C4C6A8 /* value1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F038271474AC00C4C6A8 /* value1.jspkg */; };
 		0557F048271474DC00C4C6A8 /* addressbook.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F0342714749500C4C6A8 /* addressbook.jspkg */; };
 		0561379025E13FE200271346 /* life-game.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D542EB25CFCC1E007CD73C /* life-game.jspkg */; };
@@ -216,10 +208,6 @@
 				05150E002724098C001C66AE /* text.ts in Copy Files */,
 				05150E012724098C001C66AE /* symbol.js in Copy Files */,
 				05150E022724098C001C66AE /* symbol.ts in Copy Files */,
-				0557F042271474DC00C4C6A8 /* value-edit-1.js in Copy Files */,
-				0557F043271474DC00C4C6A8 /* value-edit-1.ts in Copy Files */,
-				0557F044271474DC00C4C6A8 /* value-edit-2.js in Copy Files */,
-				0557F045271474DC00C4C6A8 /* value-edit-2.ts in Copy Files */,
 				0557F046271474DC00C4C6A8 /* value1.jspkg in Copy Files */,
 				0557F048271474DC00C4C6A8 /* addressbook.jspkg in Copy Files */,
 				0519ECA626417C2300471F35 /* alert.ts in Copy Files */,
@@ -317,10 +305,6 @@
 		054D3B102782B6DC00206B8E /* storage0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = storage0.jspkg; sourceTree = "<group>"; };
 		0557F0342714749500C4C6A8 /* addressbook.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = addressbook.jspkg; sourceTree = "<group>"; };
 		0557F038271474AC00C4C6A8 /* value1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = value1.jspkg; sourceTree = "<group>"; };
-		0557F039271474AC00C4C6A8 /* value-edit-1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "value-edit-1.js"; sourceTree = "<group>"; };
-		0557F03A271474AC00C4C6A8 /* value-edit-1.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "value-edit-1.ts"; sourceTree = "<group>"; };
-		0557F03B271474AC00C4C6A8 /* value-edit-2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "value-edit-2.js"; sourceTree = "<group>"; };
-		0557F03C271474AC00C4C6A8 /* value-edit-2.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "value-edit-2.ts"; sourceTree = "<group>"; };
 		05809C2927299DEE000A8456 /* collection1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = collection1.jspkg; sourceTree = "<group>"; };
 		05839D1A25C6A60D00653302 /* turtle.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = turtle.jspkg; sourceTree = "<group>"; };
 		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = controls.jspkg; sourceTree = "<group>"; };
@@ -468,10 +452,6 @@
 				05150DFB27240973001C66AE /* text.ts */,
 				05150DF727240961001C66AE /* symbol.js */,
 				05150DF827240961001C66AE /* symbol.ts */,
-				0557F039271474AC00C4C6A8 /* value-edit-1.js */,
-				0557F03A271474AC00C4C6A8 /* value-edit-1.ts */,
-				0557F03B271474AC00C4C6A8 /* value-edit-2.js */,
-				0557F03C271474AC00C4C6A8 /* value-edit-2.ts */,
 				0557F038271474AC00C4C6A8 /* value1.jspkg */,
 				0557F0342714749500C4C6A8 /* addressbook.jspkg */,
 				0519EC8D26417B9600471F35 /* alert.ts */,
@@ -667,10 +647,8 @@
 				0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */,
 				05B77130251879BF004FCD84 /* JSTerminal.help in Resources */,
 				0589F1C027132AB000D40424 /* types in Resources */,
-				0557F041271474AC00C4C6A8 /* value-edit-2.ts in Resources */,
 				05F7AE4D251874830077F527 /* Assets.xcassets in Resources */,
 				052DF9D427254DF200392E19 /* collection0.js in Resources */,
-				0557F03F271474AC00C4C6A8 /* value-edit-1.ts in Resources */,
 				0589F1C327132AB000D40424 /* adb.js in Resources */,
 				05150DFA27240961001C66AE /* symbol.ts in Resources */,
 				05B7712F251879BF004FCD84 /* Credits.rtf in Resources */,
@@ -678,9 +656,7 @@
 				05809C2A27299DEE000A8456 /* collection1.jspkg in Resources */,
 				05B770FE251878B0004FCD84 /* Preference.storyboard in Resources */,
 				05150DF927240961001C66AE /* symbol.js in Resources */,
-				0557F03E271474AC00C4C6A8 /* value-edit-1.js in Resources */,
 				052DF9D527254DF200392E19 /* collection0.ts in Resources */,
-				0557F040271474AC00C4C6A8 /* value-edit-2.js in Resources */,
 				0557F03D271474AC00C4C6A8 /* value1.jspkg in Resources */,
 				0557F0352714749500C4C6A8 /* addressbook.jspkg in Resources */,
 				05150DFD27240973001C66AE /* text.ts in Resources */,
