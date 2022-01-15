@@ -43,5 +43,6 @@ function main(args) {
     let fields = ['c0', 'c1'];
     table.activeFieldNames = fields;
     console.log("active-field-names = " + table.activeFieldNames);
+    console.log("all-field-names    = " + table.allFieldNames);
     return 0;
 }

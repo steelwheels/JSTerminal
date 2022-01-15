@@ -255,7 +255,6 @@ interface ValueTableIF {
 	recordCount:		number ;
 
 	readonly allFieldNames:	string[] ;
-	activeFieldNames:	string[] ;
 
 	newRecord():		ValueRecordIF ;
 	record(row: number):	ValueRecordIF | null ;

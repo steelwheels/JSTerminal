@@ -1,6 +1,7 @@
 top: VBox {
     table: Table {
 	hasHeader: Bool true
+	fieldNames: String ["c0", "c1", "c2"]
 	init: Init %{
                 let storage = ValueStorage("storage") ;
 	        if(storage == null){
@@ -10,6 +11,7 @@ top: VBox {
 	        if(table == null){
 		        console.log("Failed to allocate table") ;
 	        }
+		// Set table into this view
                 self.store(table) ;        
         %}
 	pressed: Event(row, col) %{
