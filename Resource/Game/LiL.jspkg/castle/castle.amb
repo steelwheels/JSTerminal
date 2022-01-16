@@ -1,4 +1,19 @@
 top: VBox {
+    party: Table {
+	hasHeader: Bool true
+	fieldNames: String ["name", "level", "hitPoint", "armorClass", "status"]
+	init: Init %{
+		let storage = ValueStorage("root") ;
+		if(storage == null){
+			console.log("Failed to allocate storage") ;
+		}
+		let table = ValueTable("characters", storage) ;
+		if(table == null){
+			console.log("Failed to allocate table") ;
+		}
+		self.store(table) ;
+	%}
+    }
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{

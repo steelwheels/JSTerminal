@@ -1,6 +1,17 @@
 [
 	{
-		name: "A"
+		name: 		"A",
+		level:		10,
+		hitPoint:	10,
+		armorClass:	10,
+		status:		 0
+	},
+	{
+		name: 		"B",
+		level:		20,
+		hitPoint:	20,
+		armorClass:	20,
+		status:		 1
 	}
 ]
 

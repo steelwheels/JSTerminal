@@ -8,13 +8,13 @@ function main(args : [string])
 {
 	console.log("# value-table") ;
 
-	let storage = ValueStorage("storage") ;
+	let storage = ValueStorage("root") ;
 	if(storage == null){
 		console.log("Failed to allocate storage") ;
 		return -1 ;
 	}
 
-	let table = ValueTable("data", storage) ;
+	let table = ValueTable("characters", storage) ;
 	if(table == null){
 		console.log("Failed to allocate table") ;
 		return -1 ;
@@ -22,9 +22,6 @@ function main(args : [string])
 
 	let count = table.recordCount ;
 	console.log("recode-count = " + count) ;
-
-	let fnames = table.allFieldNames ;
-	console.log("all-field-names = " + fnames) ;
 
 	for(let i=0 ; i<count ; i++){
 		let record = table.record(i) ;

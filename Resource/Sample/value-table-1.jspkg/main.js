@@ -39,10 +39,5 @@ function main(args) {
             console.log("[Error] No record at " + i);
         }
     }
-    console.log("# set active fields");
-    let fields = ['c0', 'c1'];
-    table.activeFieldNames = fields;
-    console.log("active-field-names = " + table.activeFieldNames);
-    console.log("all-field-names    = " + table.allFieldNames);
     return 0;
 }

@@ -237,6 +237,30 @@ interface URLIF {
 	loadText():		string | null ;
 }
 
+interface ValueStorageIF {
+	value(path: string): any ;
+	set(value: any, path: string): boolean ;
+	store(): boolean ;
+}
+
+interface ValueRecordIF {
+	fieldNames:		string[] ;
+	filledFieldNames:	string[] ;
+
+	value(name: string):			any ;
+	setValue(value: any, name: string):	boolean
+}
+
+interface ValueTableIF {
+	recordCount:		number ;
+
+	readonly allFieldNames:	string[] ;
+
+	newRecord():		ValueRecordIF ;
+	record(row: number):	ValueRecordIF | null ;
+	append(record: ValueRecordIF): void ;
+}
+
 interface SymbolsIF {
 	characterA:		URLIF ;
 	chevronBackward:	URLIF ;
@@ -276,24 +300,18 @@ interface ContactRecordIF {
 
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
-
-	isDirty:		boolean ;
-	save(): 		boolean ;
 }
 
 interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
-	store(url: URLIF | null): boolean ;
+	load(url: URLIF | null): boolean ;
 
 	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
-
-	isDirty:		boolean ;
-	save():			boolean ;
 }
 
 interface CollectionIF {
@@ -331,6 +349,8 @@ declare function Rect(x: number, y: number, width: number, height: number): Rect
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
+declare function ValueStorage(path: string): ValueStorageIF | null ;
+declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

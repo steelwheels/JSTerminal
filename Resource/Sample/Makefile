@@ -18,7 +18,8 @@ srcs	= alert.ts \
 	  symbol.ts \
 	  text.ts \
 	  value-storage-1.jspkg/main.ts \
-	  value-table-1.jspkg/main.ts
+	  value-table-1.jspkg/main.ts \
+	  value-table-2.jspkg/main.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)

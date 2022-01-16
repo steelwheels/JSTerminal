@@ -1,10 +1,7 @@
 {
 	application: "main.js"
-	subviews: {
-		sheet: "table.amb"
-	}
 	storages: {
-		storage: "storage.json"
+		root: "data/root.json"
 	}
 }
 
