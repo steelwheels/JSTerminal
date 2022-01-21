@@ -1,11 +1,20 @@
 {
 	application: "main.js"
 	subviews: {
-		opening: "opening/opening.amb"
-		castle:  "castle/castle.amb"
+		opening: "opening/opening.amb",
+		town:    "town/town.amb",
+		tavern:  "town/tavern.amb",
+		inn:     "town/inn.amb",
+		temple:	 "town/temple.amb",
+		trade:	 "town/trade.amb"
 	}
+	libraries: [
+		"character/character.js"
+	]
 	images: {
-		title: "opening/images/title.png"
+		title		: "opening/images/title.png"
+		inn_title	: "town/images/inn.png"
+		tavern_title	: "town/images/tavern.png"
 	}
 	storages: {
 		root:  "data/root.json"

@@ -1,0 +1,54 @@
+top: VBox {
+    party: Table {
+	hasHeader: Bool true
+	fieldNames: String ["name", "level", "hitPoint", "armorClass", "status"]
+	init: Init %{
+		let storage = ValueStorage("root") ;
+		if(storage == null){
+			console.log("Failed to allocate storage") ;
+		}
+		let table = ValueTable("characters", storage) ;
+		if(table == null){
+			console.log("Failed to allocate table") ;
+		}
+		self.store(table) ;
+	%}
+    }
+    tavern_button: Button {
+        title:  String "Tavern"
+        pressed: Event() %{
+		enterView("tavern") ;
+        %}
+    }
+    inn_button: Button {
+        title:  String "Adventure's Inn"
+        pressed: Event() %{
+		enterView("inn") ;
+        %}
+    }
+    temple_button: Button {
+        title:  String "Temple of cast"
+        pressed: Event() %{
+		enterView("temple") ;
+        %}
+    }
+    trade_button: Button {
+        title:  String "Trading post"
+        pressed: Event() %{
+		enterView("trade") ;
+        %}
+    }
+    edge_button: Button {
+        title:  String "Edge of town"
+        pressed: Event() %{
+		console.log("pressed: Edge") ;
+        %}
+    }
+    ret_button: Button {
+        title:  String "Return to opening"
+        pressed: Event() %{
+		leaveView(0) ;
+        %}
+    }
+}
+

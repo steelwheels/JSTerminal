@@ -1,0 +1,12 @@
+top: VBox {
+    title: Image {
+	name: String "tavern_title"
+    }
+    ret_button: Button {
+        title:  String "Return to town"
+        pressed: Event() %{
+		leaveView(0) ;
+        %}
+    }
+} 
+

@@ -2,12 +2,19 @@ top: VBox {
     title: Image {
 	name: String "title"
     }
-    start_button: Button {
-        title:  String "Start Game"
-        pressed: Event() %{
-		console.log("pressed: OK") ;
-		enterView("castle") ;
-        %}
+    bottons: HBox {
+        start_button: Button {
+                title:  String "Goto town"
+                pressed: Event() %{
+                        enterView("town") ;
+                %}
+        }
+        quit_button: Button {
+                title: String "Quit"
+                pressed: Event() %{
+                     leaveView(1) ;
+                %}
+        }
     }
 }
 

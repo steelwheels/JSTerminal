@@ -2,23 +2,34 @@
 # Makefile
 #
 
-srcs	= main.ts
+srcs	= main.ts \
+	  character/character.ts
+
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)
 
 tsc	= npx tsc
-tsc_opt	= -t ES2017 --lib "es2017" --declaration --declarationDir types \
-	  --typeRoots types \
-	  --alwaysStrict --strict --strictNullChecks --pretty
-
+tsc_opt	= -target ES2017 \
+	  --lib "es2017" \
+	  --declaration \
+	  --alwaysStrict \
+	  --strict \
+	  --strictNullChecks \
+	  --pretty \
+	  --baseUrl "." \
+	  --rootDir "." \
+	  --declarationDir ./types
 
 %.js: %.ts
 	$(tsc) $(tsc_opt) $<
 
-all: $(dsts)
+all: copylib $(dsts)
 
 clean:
 	rm -f $(dsts)
+
+copylib: dummy
+	cp ../../Library/types/*.d.ts ./types
 
 dummy:
 
