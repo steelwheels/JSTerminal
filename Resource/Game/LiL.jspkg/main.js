@@ -7,6 +7,6 @@
 /// <reference path="types/KiwiComponent.d.ts" />
 function main(args) {
     console.log("the labyrinth in the lake");
-    let retval = enterView("opening");
+    let retval = enterView("main");
     console.log("Result = " + retval);
 }

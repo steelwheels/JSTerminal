@@ -1,6 +1,6 @@
 top: VBox {
     title: Image {
-	name: String "title"
+	name: String "main_title"
     }
     bottons: HBox {
         start_button: Button {

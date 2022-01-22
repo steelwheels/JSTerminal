@@ -6,7 +6,9 @@
 /// <reference path="../types/KiwiShell.d.ts" />
 /// <reference path="../types/KiwiComponent.d.ts" />
 
-class Character {
+module character {
+
+export class Attributes {
 	record: ValueRecordIF ;
 
 	constructor(rec: ValueRecordIF){
@@ -14,4 +16,6 @@ class Character {
 	}
 
 } ;
+
+} ; // end of module
 

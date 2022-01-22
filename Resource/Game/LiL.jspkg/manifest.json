@@ -1,7 +1,7 @@
 {
 	application: "main.js"
 	subviews: {
-		opening: "opening/opening.amb",
+		main:    "main.amb",
 		town:    "town/town.amb",
 		tavern:  "town/tavern.amb",
 		inn:     "town/inn.amb",
@@ -12,7 +12,7 @@
 		"character/character.js"
 	]
 	images: {
-		title		: "opening/images/title.png"
+		main_title	: "town/images/main.png"
 		inn_title	: "town/images/inn.png"
 		tavern_title	: "town/images/tavern.png"
 	}
