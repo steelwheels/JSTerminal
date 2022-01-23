@@ -1,7 +1,11 @@
 top: VBox {
     table: Table {
 	hasHeader: Bool true
-	fieldNames: String ["c0", "c1", "c2"]
+	fieldNames: Array [
+		{field:"c0", title:"column 0"},
+		{field:"c1", title:"column 1"},
+		{field:"c2", title:"column 2"}
+	]
 	init: Init %{
                 let storage = ValueStorage("storage") ;
 	        if(storage == null){
