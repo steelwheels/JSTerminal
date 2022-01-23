@@ -36,13 +36,19 @@ tsc_opt	= -t ES2017 --lib "es2017" --declaration --declarationDir types \
 %.js: %.ts
 	$(tsc) $(tsc_opt) $<
 
-all: $(srcdecl) $(dsts)
+all: $(srcdecl) resources $(dsts)
 
 $(srcdecl): dummy
 	cp ../Library/types/*.d.ts ./types
 
 clean:
 	rm -f $(dsts)
+
+resources: ./icon.jspkg/terminal-icon.png
+
+./icon.jspkg/terminal-icon.png: ../Welcome.jspkg/terminal-icon.png
+	cp $< $@
+
 
 dummy:
 

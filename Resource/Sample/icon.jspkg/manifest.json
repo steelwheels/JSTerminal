@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		icon: "icon.amb"
+	}
+	images: {
+		terminal: "terminal-icon.png"
+	}
+}
+

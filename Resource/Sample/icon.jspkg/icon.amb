@@ -1,0 +1,17 @@
+top: VBox {
+    icon: Icon {
+	image:	String "terminal"
+	title:	String "Terminal Icon"
+	selected: Event() %{
+		console.log("clicked") ;
+	%}
+    }
+    ok_button: Button {
+        title:  String "OK"
+        pressed: Event() %{
+		console.log("pressed: OK") ;
+	    	leaveView(1) ;
+        %}
+    }
+}
+
