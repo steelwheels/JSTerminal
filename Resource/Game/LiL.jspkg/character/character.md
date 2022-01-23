@@ -30,21 +30,6 @@ character: {
 
 ### Members
 
-#### `type`
-The data type is defined by `CharacterType`.
-````
-enum Type {
-  // Player and monster
-  fighter,
-  mage,
-  priest,
-  thief,
-  ninjya,
-  // Monster
-  giant,
-  mithical,
-}
-````
 
 #### `feature`
 The data type is defined by `Feature`.

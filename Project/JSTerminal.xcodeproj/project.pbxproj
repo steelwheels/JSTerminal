@@ -75,6 +75,12 @@
 		0589F1C527132ACA00D40424 /* adb.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
 		0589F1C727132ACA00D40424 /* types in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
 		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
+		059C0AA5279D420500E7B594 /* value-storage-1.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
+		059C0AA7279D421500E7B594 /* value-table-3.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 059C0AA6279D421500E7B594 /* value-table-3.jspkg */; };
+		059C0AA8279D422D00E7B594 /* value-table-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA6279D421500E7B594 /* value-table-3.jspkg */; };
+		059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
+		059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */; };
+		059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059C0AAB279D424900E7B594 /* LiL.jspkg */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
 		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -135,6 +141,7 @@
 			dstPath = Game;
 			dstSubfolderSpec = 7;
 			files = (
+				059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */,
 				0519ECB426417C5000471F35 /* hangman.js in CopyFiles */,
 				0519ECB526417C5000471F35 /* hangman.ts in CopyFiles */,
 				0519ECB626417C5000471F35 /* jstrek.jspkg in CopyFiles */,
@@ -197,6 +204,9 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				059C0AA8279D422D00E7B594 /* value-table-3.jspkg in Copy Files */,
+				059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */,
+				059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */,
 				0537528C27869BA100EB3A2D /* value-table-1.jspkg in Copy Files */,
 				0537528D27869BA100EB3A2D /* value-table-2.jspkg in Copy Files */,
 				054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */,
@@ -315,6 +325,10 @@
 		0589F1BE27132AB000D40424 /* adb.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = adb.ts; sourceTree = "<group>"; };
 		0589F1BF27132AB000D40424 /* adb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = adb.js; sourceTree = "<group>"; };
 		05900E5F260EF610008C3490 /* unit-test.jsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unit-test.jsh"; sourceTree = "<group>"; };
+		059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "popup-menu.jspkg"; sourceTree = "<group>"; };
+		059C0AA4279D420500E7B594 /* value-storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-1.jspkg"; sourceTree = "<group>"; };
+		059C0AA6279D421500E7B594 /* value-table-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-3.jspkg"; sourceTree = "<group>"; };
+		059C0AAB279D424900E7B594 /* LiL.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LiL.jspkg; sourceTree = "<group>"; };
 		05B2DE48260EA48900E51D2F /* unit-test.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "unit-test.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
@@ -440,6 +454,9 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				059C0AA6279D421500E7B594 /* value-table-3.jspkg */,
+				059C0AA4279D420500E7B594 /* value-storage-1.jspkg */,
+				059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */,
 				0537528A27869B8E00EB3A2D /* value-table-1.jspkg */,
 				0537528B27869B8E00EB3A2D /* value-table-2.jspkg */,
 				054D3B102782B6DC00206B8E /* storage0.jspkg */,
@@ -492,6 +509,7 @@
 		05BAB09525A0655100DD59D7 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				059C0AAB279D424900E7B594 /* LiL.jspkg */,
 				0519EC7D26417B7B00471F35 /* hangman.js */,
 				0519EC7F26417B7B00471F35 /* hangman.ts */,
 				0519EC7E26417B7B00471F35 /* jstrek.jspkg */,
@@ -661,6 +679,8 @@
 				0557F0352714749500C4C6A8 /* addressbook.jspkg in Resources */,
 				05150DFD27240973001C66AE /* text.ts in Resources */,
 				05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */,
+				059C0AA5279D420500E7B594 /* value-storage-1.jspkg in Resources */,
+				059C0AA7279D421500E7B594 /* value-table-3.jspkg in Resources */,
 				051A55292771EA950093CE80 /* drawing.jspkg in Resources */,
 				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
 				051A55272771EA8C0093CE80 /* card0.jspkg in Resources */,

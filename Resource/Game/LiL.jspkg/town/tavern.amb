@@ -2,6 +2,27 @@ top: VBox {
     title: Image {
 	name: String "tavern_title"
     }
+    party: Table {
+	hasHeader: Bool true
+	fieldNames: Array [
+                {field:"name",          title:"Name"},
+                {field:"level",         title:"Level"},
+                {field:"hitPoint",      title:"HP"},
+                {field:"armorClass",    title:"AC"},
+                {field:"status",        title:"Status"}
+        ]
+	init: Init %{
+		let storage = ValueStorage("root") ;
+		if(storage == null){
+			console.log("Failed to allocate storage") ;
+		}
+		let table = ValueTable("characters", storage) ;
+		if(table == null){
+			console.log("Failed to allocate table") ;
+		}
+		self.store(table) ;
+	%}
+    }
     ret_button: Button {
         title:  String "Return to town"
         pressed: Event() %{

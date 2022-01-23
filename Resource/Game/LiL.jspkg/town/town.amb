@@ -1,7 +1,16 @@
 top: VBox {
+    title: Label {
+	text: String "The current party"
+    }
     party: Table {
 	hasHeader: Bool true
-	fieldNames: String ["name", "level", "hitPoint", "armorClass", "status"]
+	fieldNames: Array [
+                {field:"name",          title:"Name"},
+                {field:"level",         title:"Level"},
+                {field:"hitPoint",      title:"HP"},
+                {field:"armorClass",    title:"AC"},
+                {field:"status",        title:"Status"}
+        ]
 	init: Init %{
 		let storage = ValueStorage("root") ;
 		if(storage == null){
@@ -15,25 +24,25 @@ top: VBox {
 	%}
     }
     tavern_button: Button {
-        title:  String "Tavern"
+        title:  String "Tavern: Shigemary-ya"
         pressed: Event() %{
 		enterView("tavern") ;
         %}
     }
     inn_button: Button {
-        title:  String "Adventure's Inn"
+        title:  String "Inn: Adventure's Inn"
         pressed: Event() %{
 		enterView("inn") ;
         %}
     }
     temple_button: Button {
-        title:  String "Temple of cast"
+        title:  String "Temple: Ohseki-ji"
         pressed: Event() %{
 		enterView("temple") ;
         %}
     }
     trade_button: Button {
-        title:  String "Trading post"
+        title:  String "Shop: Nakohji-Shoten"
         pressed: Event() %{
 		enterView("trade") ;
         %}
