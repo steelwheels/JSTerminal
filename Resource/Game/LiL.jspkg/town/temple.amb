@@ -1,4 +1,7 @@
 top: VBox {
+    title: Image {
+        name: String "temple_title"
+    }
     ret_button: Button {
         title:  String "Return to town"
         pressed: Event() %{

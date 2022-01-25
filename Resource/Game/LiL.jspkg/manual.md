@@ -4,10 +4,10 @@
 The posting station nearest the labyrinth. It called "shukuba machi".
 There are some places for adventurer.
 
-## Tavern: Shigemaru-ya
+## Tavern: Marushige
 The major tavern in the town.
 
-## Inn: Fukuta
+## Inn: Fukuta-Ya
 The adventurer's inn.
 
 ## Temple: Ohseki-ji

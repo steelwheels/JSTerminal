@@ -1,5 +1,8 @@
 top: VBox {
-    title: Label {
+    title: Image {
+        name: String "town_title"
+    }
+    party_title: Label {
 	text: String "The current party"
     }
     party: Table {
@@ -41,10 +44,10 @@ top: VBox {
 		enterView("temple") ;
         %}
     }
-    trade_button: Button {
+    shop_button: Button {
         title:  String "Shop"
         pressed: Event() %{
-		enterView("trade") ;
+		enterView("shop") ;
         %}
     }
     edge_button: Button {

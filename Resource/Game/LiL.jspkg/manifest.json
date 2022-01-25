@@ -6,7 +6,7 @@
 		tavern:  "town/tavern.amb",
 		inn:     "town/inn.amb",
 		temple:	 "town/temple.amb",
-		trade:	 "town/trade.amb"
+		shop:	 "town/shop.amb"
 	}
 	libraries: [
 		"character/character.js"
@@ -14,7 +14,10 @@
 	images: {
 		main_title	: "images/main.png"
 		inn_title	: "town/images/inn.png"
+		shop_title	: "town/images/shop.png"
 		tavern_title	: "town/images/tavern.png"
+		temple_title	: "town/images/temple.png"
+		town_title	: "town/images/town.png"
 	}
 	storages: {
 		main:  		"main.json"
