@@ -12,11 +12,11 @@ top: VBox {
                 {field:"status",        title:"Status"}
         ]
 	init: Init %{
-		let storage = ValueStorage("root") ;
+		let storage = ValueStorage("main") ;
 		if(storage == null){
 			console.log("Failed to allocate storage") ;
 		}
-		let table = ValueTable("characters", storage) ;
+		let table = ValueTable("character.party", storage) ;
 		if(table == null){
 			console.log("Failed to allocate table") ;
 		}

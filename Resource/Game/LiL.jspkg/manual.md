@@ -15,6 +15,9 @@ The adventurer's inn.
 ## Shop: Nakohji-shoten
 
 # Reference
+## Project
 * [Steel Wheels Project](http://steelwheels.github.io): The main page of the developer's project
 * [JSTerminal](https://github.com/steelwheels/JSTerminal): This game works on this application
 
+## Other games
+* [The Official Wizardry Online Wiki Community](https://wizardryonline.fandom.com/wiki/Wizardry_Online_Wiki): Online Wiki Community

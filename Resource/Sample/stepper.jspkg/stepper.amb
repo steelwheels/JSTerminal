@@ -1,8 +1,10 @@
 top: VBox {
     stepper0: Stepper {
-	maxValue: Float		10.0
-	minValue: Float		 0.0
-	currentValue: Float	 1.0
+	maxValue:      Float	10.0
+	minValue:      Float	 0.0
+	deltaValue:    Float	 0.1
+	currentValue:  Float	 1.0
+        decimalPlaces: Int       2
         changed: Event(newval) %{
 		console.log("changed: " + newval) ;
         %}

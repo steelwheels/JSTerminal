@@ -1,0 +1,7 @@
+{
+	character: {
+		class: 		"reference",
+		relativePath:	"character/character.json"
+	}
+}
+

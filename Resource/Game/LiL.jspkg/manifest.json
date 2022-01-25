@@ -17,7 +17,7 @@
 		tavern_title	: "town/images/tavern.png"
 	}
 	storages: {
-		root:  "data/root.json"
+		main:  		"main.json"
 	}
 }
 

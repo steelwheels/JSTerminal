@@ -1,0 +1,76 @@
+{
+	init_status: {
+		human: {
+			hitPoint:	60,
+			magicPoint:	20,
+			strength:	 8,
+			vitality:	 7,
+        		dexterity:	 7,
+        		agility:	 6,
+        		intelligence:	 8,
+        		piety:		 5,
+        		luck:		 8
+		},
+		elf: {
+			hitPoint:	50,
+			magicPoint:	30,
+			strength:	 6,
+			vitality:	 5,
+        		dexterity:	 8,
+        		agility:	 8,
+        		intelligence:	10,
+        		piety:		 8,
+        		luck:		 4
+		},
+		dwarf: {
+			hitPoint:	80,
+			magicPoint:	15,
+			strength:	 9,
+			vitality:	 8,
+        		dexterity:	 8,
+        		agility:	 4,
+        		intelligence:	 5,
+        		piety:		 9,
+        		luck:		 5 
+		},
+		gnome: {
+			hitPoint:	70,
+			magicPoint:	25,
+			strength:	 7,
+			vitality:	 7,
+        		dexterity:	 4,
+        		agility:	 7,
+        		intelligence:	 6,
+        		piety:		10,
+        		luck:		 6 
+		},
+		porkul: {
+			hitPoint:	50,
+			magicPoint:	20,
+			strength:	 5,
+			vitality:	 6,
+        		dexterity:	 9,
+        		agility:	12,
+        		intelligence:	 7,
+        		piety:		 7,
+        		luck:		15
+		}
+	},
+	party: [
+		{
+			name:		"player-a",
+			level:		1,
+			hitPoint:	10,
+			armorClass:	10,
+			status:		"OK"
+		},
+		{
+			name:		"player-b",
+			level:		2,
+			hitPoint:	20,
+			armorClass:	20,
+			status:		"Bad"
+		}
+	]
+}
+

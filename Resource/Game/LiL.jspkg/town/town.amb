@@ -12,11 +12,11 @@ top: VBox {
                 {field:"status",        title:"Status"}
         ]
 	init: Init %{
-		let storage = ValueStorage("root") ;
+		let storage = ValueStorage("main") ;
 		if(storage == null){
 			console.log("Failed to allocate storage") ;
 		}
-		let table = ValueTable("characters", storage) ;
+		let table = ValueTable("character.party", storage) ;
 		if(table == null){
 			console.log("Failed to allocate table") ;
 		}
@@ -24,25 +24,25 @@ top: VBox {
 	%}
     }
     tavern_button: Button {
-        title:  String "Tavern: Shigemary-ya"
+        title:  String "Tavern"
         pressed: Event() %{
 		enterView("tavern") ;
         %}
     }
     inn_button: Button {
-        title:  String "Inn: Adventure's Inn"
+        title:  String "Inn"
         pressed: Event() %{
 		enterView("inn") ;
         %}
     }
     temple_button: Button {
-        title:  String "Temple: Ohseki-ji"
+        title:  String "Temple"
         pressed: Event() %{
 		enterView("temple") ;
         %}
     }
     trade_button: Button {
-        title:  String "Shop: Nakohji-Shoten"
+        title:  String "Shop"
         pressed: Event() %{
 		enterView("trade") ;
         %}
@@ -54,7 +54,7 @@ top: VBox {
         %}
     }
     ret_button: Button {
-        title:  String "Return to opening"
+        title:  String "Opening"
         pressed: Event() %{
 		leaveView(0) ;
         %}
