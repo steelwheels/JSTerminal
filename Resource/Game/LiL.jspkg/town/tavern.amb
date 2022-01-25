@@ -3,7 +3,8 @@ top: VBox {
 	name: String "tavern_title"
     }
     party: Table {
-	hasHeader: Bool true
+	hasHeader:    Bool true
+	isSelectable: Bool true
 	fieldNames: Array [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
@@ -21,6 +22,9 @@ top: VBox {
 			console.log("Failed to allocate table") ;
 		}
 		self.store(table) ;
+	%}
+	pressed: Event(col, row) %{
+		console.log("col=" + col + ", row=" + row) ;
 	%}
     }
     ret_button: Button {
