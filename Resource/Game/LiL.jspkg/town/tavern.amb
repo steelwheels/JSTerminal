@@ -27,6 +27,23 @@ top: VBox {
 		console.log("col=" + col + ", row=" + row) ;
 	%}
     }
+    mod_button: HBox {
+	add_button: Button {
+		title:  String "Add member"
+		pressed: Event() %{
+			console.log("Add member") ;
+		%}
+	}
+	del_button: Button {
+		title:  String "Delete member"
+		isEnabled: Bool Listner(selected: top.party.didSelected) %{
+			return selected ;
+		%}
+		pressed: Event() %{
+			console.log("Delete member") ;
+		%}
+	}
+    }
     ret_button: Button {
         title:  String "Return to town"
         pressed: Event() %{

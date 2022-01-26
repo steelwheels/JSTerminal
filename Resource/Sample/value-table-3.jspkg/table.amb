@@ -1,6 +1,7 @@
 top: VBox {
     table: Table {
 	hasHeader: Bool true
+	isSelectable: Bool true
 	fieldNames: Array [
 		{field:"c0", title:"column 0"},
 		{field:"c1", title:"column 1"},
@@ -21,6 +22,12 @@ top: VBox {
 	pressed: Event(row, col) %{
 		console.log("row    = " + row + "/" + self.rowCount) ;
 		console.log("column = " + col + "/" + self.columnCount) ;
+	%}
+    }
+    selected_button: Button {
+	title: String "Selected"
+	isEnabled: Bool Listner(selected: top.table.didSelected) %{
+		return selected ;
 	%}
     }
     quit_button: Button {
