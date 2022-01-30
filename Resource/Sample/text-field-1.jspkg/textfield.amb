@@ -1,0 +1,25 @@
+top: VBox {
+    label_str: Label {
+	text:     String   "Text Field"
+	fontSize: FontSize large
+    }
+    label_int: Label {
+	number:    Int  1234
+	isBezeled: Bool true
+	isEnabled: Bool false
+    }
+    edit_str: TextField {
+	text:       String "Editable Field"
+	isEnabled:  Bool   true
+	edited: Event(str) %{
+		console.log("edited result = " + str) ;
+	%}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView(1) ;
+        %}
+    }
+}
+
