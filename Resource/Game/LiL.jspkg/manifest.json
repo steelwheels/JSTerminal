@@ -7,6 +7,7 @@
 		inn:     "town/inn.amb",
 		temple:	 "town/temple.amb",
 		shop:	 "town/shop.amb"
+		gym:	 "town/gym.amb"
 	}
 	libraries: [
 		"character/character.js"
@@ -18,6 +19,7 @@
 		tavern_title	: "town/images/tavern.png"
 		temple_title	: "town/images/temple.png"
 		town_title	: "town/images/town.png"
+		gym_title	: "town/images/gym.png"
 	}
 	storages: {
 		main:  		"main.json"

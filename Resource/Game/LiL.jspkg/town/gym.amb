@@ -1,0 +1,21 @@
+top: VBox {
+    bonus: Int 10
+    title: Image {
+	name: String "gym_title"
+    }
+    bonus_box: HBox {
+	    bonus_title: Label {
+		value: String "Bonus"
+	    }
+	    bonus_value: Label {
+		value: String "10"
+	    }
+    }
+    ret_button: Button {
+        title:  String "Return to tavern"
+        pressed: Event() %{
+		leaveView(0) ;
+        %}
+    }
+} 
+

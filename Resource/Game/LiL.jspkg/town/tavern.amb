@@ -31,7 +31,7 @@ top: VBox {
 	add_button: Button {
 		title:  String "Add member"
 		pressed: Event() %{
-			console.log("Add member") ;
+			enterView("gym") ;
 		%}
 	}
 	del_button: Button {
