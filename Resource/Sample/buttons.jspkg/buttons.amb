@@ -1,13 +1,23 @@
 top: VBox {
     ok_button: Button {
-        title:  String "OK"
+        title:     String "OK"
+	isEnabled: Bool  true
         pressed: Event() %{
 		console.log("pressed: OK") ;
 	    	leaveView(1) ;
         %}
     }
+    arrows_button: Button {
+        title:     String "->"
+	isEnabled: Bool  true
+        pressed: Event() %{
+		console.log("pressed: right arrow") ;
+	    	leaveView(1) ;
+        %}
+    }
     cancel_button: Button {
         title:  String "Cancel"
+	isEnabled: Bool  true
         pressed: Event() %{
 		console.log("pressed: Cancel") ;
 		leaveView(0) ;
