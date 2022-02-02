@@ -2,10 +2,10 @@ top: VBox {
     graphics: Graphics2D {
         width:      Int         640
         height:     Int         480
-        size_x:     Float       6.28
-        size_y:     Float       6.28
-        origin_x:   Float       -3.14
-        origin_y:   Float       -3.14
+        xSize:      Float       6.28
+        ySize:      Float       6.28
+        xOrigin:    Float       -3.14
+        yOrigin:    Float       -3.14
         draw: Event(context, count) %{
             let frame  = context.logicalFrame ;
             let offset = Math.PI * (count / 10.0) ;

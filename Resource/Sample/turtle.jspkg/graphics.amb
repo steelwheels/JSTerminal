@@ -2,10 +2,10 @@ top: VBox {
     graphics: Graphics2D {
         width:      Int         640
         height:     Int         480
-        size_x:     Float       100
-        size_y:     Float       100
-        origin_x:   Float         0
-        origin_y:   Float         0
+        xSize:      Float       100
+        ySize:      Float       100
+        xOrigin:    Float         0
+        yOrigin:    Float         0
         draw: Event(context) %{
             let turtle  = new Turtle(context) ;
             let pattern = makePattern(turtle) ;
