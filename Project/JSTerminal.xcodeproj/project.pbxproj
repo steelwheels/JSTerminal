@@ -84,6 +84,7 @@
 		059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
 		059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */; };
 		059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059C0AAB279D424900E7B594 /* LiL.jspkg */; };
+		05AFE57D27AC03AC00AB371C /* image.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05AFE57C27AC038E00AB371C /* image.jspkg */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
 		05B770EA2518788C004FCD84 /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -207,6 +208,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05AFE57D27AC03AC00AB371C /* image.jspkg in Copy Files */,
 				0538B15327A9584800079087 /* text-field-1.jspkg in Copy Files */,
 				0538B15427A9584800079087 /* checkbox.jspkg in Copy Files */,
 				056D27C7279D4AD100D3C8F6 /* icon.jspkg in Copy Files */,
@@ -338,6 +340,7 @@
 		059C0AA4279D420500E7B594 /* value-storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-1.jspkg"; sourceTree = "<group>"; };
 		059C0AA6279D421500E7B594 /* value-table-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-3.jspkg"; sourceTree = "<group>"; };
 		059C0AAB279D424900E7B594 /* LiL.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LiL.jspkg; sourceTree = "<group>"; };
+		05AFE57C27AC038E00AB371C /* image.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = image.jspkg; sourceTree = "<group>"; };
 		05B2DE48260EA48900E51D2F /* unit-test.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "unit-test.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B770E12518788C004FCD84 /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
@@ -463,6 +466,7 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				05AFE57C27AC038E00AB371C /* image.jspkg */,
 				0538B15227A9583100079087 /* text-field-1.jspkg */,
 				0538B15127A9581F00079087 /* checkbox.jspkg */,
 				056D27C6279D4AC100D3C8F6 /* icon.jspkg */,

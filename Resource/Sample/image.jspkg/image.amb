@@ -1,11 +1,7 @@
 top: VBox {
-    icon: Icon {
-	image:	String "terminal"
-	title:	String "Terminal Icon"
-	scalr:  Float  1.0
-	selected: Event() %{
-		console.log("clicked") ;
-	%}
+    icon: Image {
+	name:	String "amber"
+	scale:  Float  0.5
     }
     ok_button: Button {
         title:  String "OK"

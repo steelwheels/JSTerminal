@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		image: "image.amb"
+	}
+	images: {
+		amber: "amber-icon-512x512.png"
+	}
+}
+
