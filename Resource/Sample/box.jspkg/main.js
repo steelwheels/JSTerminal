@@ -5,7 +5,7 @@
 function main(args)
 {
 	console.log("Hello, world !!") ;
-	let retval = enterView("labelbox") ;
+	let retval = enterView("box") ;
 	console.log("Result = " + retval) ;
 }
 

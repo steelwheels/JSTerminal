@@ -126,6 +126,7 @@
 		05F7AE4D251874830077F527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4C251874830077F527 /* Assets.xcassets */; };
 		05F7AE50251874830077F527 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4E251874830077F527 /* Main.storyboard */; };
 		05F7AE5A251877820077F527 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE59251877820077F527 /* PreferenceViewController.swift */; };
+		05FC747527AC21C40099157E /* box.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05FC747427AC21B10099157E /* box.jspkg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +209,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05FC747527AC21C40099157E /* box.jspkg in Copy Files */,
 				05AFE57D27AC03AC00AB371C /* image.jspkg in Copy Files */,
 				0538B15327A9584800079087 /* text-field-1.jspkg in Copy Files */,
 				0538B15427A9584800079087 /* checkbox.jspkg in Copy Files */,
@@ -376,6 +378,7 @@
 		05F7AE51251874830077F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F7AE52251874830077F527 /* JSTerminal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTerminal.entitlements; sourceTree = "<group>"; };
 		05F7AE59251877820077F527 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		05FC747427AC21B10099157E /* box.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = box.jspkg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +469,7 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				05FC747427AC21B10099157E /* box.jspkg */,
 				05AFE57C27AC038E00AB371C /* image.jspkg */,
 				0538B15227A9583100079087 /* text-field-1.jspkg */,
 				0538B15127A9581F00079087 /* checkbox.jspkg */,
