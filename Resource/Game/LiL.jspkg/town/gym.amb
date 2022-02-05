@@ -4,19 +4,15 @@ top: VBox {
 		name: String "gym_title"
 	}
 	bonus_box: HBox {
-		bonus_title: Label {
-			text: String "Bonus"
-	    	}
-	    	bonus_value: Label {
+		title: Label { text: String "Bonus" }
+		value: Label {
 			number: Int Listner(bonus: top.bonus) %{
 				return bonus ;
 			%}
 	    	}
 	}
 	hp_box: HBox {
-		title: Label {
-			text: String "HitPoint"
-	    	}
+		title: Label { text: String "HitPoint" }
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int  10
@@ -33,9 +29,126 @@ top: VBox {
 		}
 	}
 	mp_box: HBox {
-		title: Label {
-			text: String "MagicPoint"
-	    	}
+		title: Label { text: String "MagicPoint" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	str_box: HBox {
+		title: Label { text: String "Strength" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	vit_box: HBox {
+		title: Label { text: String "Vitality" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	dex_box: HBox {
+		title: Label { text: String "Dexterity" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	agl_box: HBox {
+		title: Label { text: String "Agility" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	intl_box: HBox {
+		title: Label { text: String "Intelligence" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	piet_box: HBox {
+		title: Label { text: String "Piety" }
+		stepper: Stepper {
+			maxValue:	Int 100
+			minValue:	Int  10
+			currentValue:	Int  20
+			deltaValue:	Int   1
+			decimalPlaces:	Int   0
+			isIncrementable: Bool Listner(bonus: top.bonus) %{
+				return bonus > 0 ;
+			%}
+			changed: Event(newval) %{
+				let diff = newval - self.currentValue ;
+				top.bonus -= diff ;
+			%}
+		}
+	}
+	lck_box: HBox {
+		title: Label { text: String "Luck" }
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int  10
