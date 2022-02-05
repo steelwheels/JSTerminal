@@ -3,7 +3,7 @@ top: VBox {
 		logo: Image {
 			name: String "icon"
 	    }
-	    text_a: TextField {
+	    text_a: Label {
 			text: String
 				"Welcome to JSTerminal.\n\n"
 				"Before using this software, "

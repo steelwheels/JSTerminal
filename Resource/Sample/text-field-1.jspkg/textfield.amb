@@ -4,9 +4,10 @@ top: VBox {
 	fontSize: FontSize large
     }
     label_int: Label {
-	number:    Int  1234
-	isBezeled: Bool true
-	isEnabled: Bool false
+	number:        Float 1234.567
+	isBezeled:     Bool  true
+	isEnabled:     Bool  false
+        decimalPlaces: Int   2
     }
     edit_str: TextField {
 	text:       String "Editable Field"
