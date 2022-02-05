@@ -47,7 +47,7 @@
 		052DF9D727254E1400392E19 /* collection0.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 052DF9D327254DF200392E19 /* collection0.ts */; };
 		0537528C27869BA100EB3A2D /* value-table-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0537528A27869B8E00EB3A2D /* value-table-1.jspkg */; };
 		0537528D27869BA100EB3A2D /* value-table-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0537528B27869B8E00EB3A2D /* value-table-2.jspkg */; };
-		0538B15327A9584800079087 /* text-field-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0538B15227A9583100079087 /* text-field-1.jspkg */; };
+		0538B15327A9584800079087 /* text-field.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0538B15227A9583100079087 /* text-field.jspkg */; };
 		0538B15427A9584800079087 /* checkbox.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0538B15127A9581F00079087 /* checkbox.jspkg */; };
 		053999C02621562D008B561C /* bitmap.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 050D9798261C02AA004FABF8 /* bitmap.jspkg */; };
 		053999C12621562D008B561C /* buttons.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 050D9797261C02AA004FABF8 /* buttons.jspkg */; };
@@ -211,7 +211,7 @@
 			files = (
 				05FC747527AC21C40099157E /* box.jspkg in Copy Files */,
 				05AFE57D27AC03AC00AB371C /* image.jspkg in Copy Files */,
-				0538B15327A9584800079087 /* text-field-1.jspkg in Copy Files */,
+				0538B15327A9584800079087 /* text-field.jspkg in Copy Files */,
 				0538B15427A9584800079087 /* checkbox.jspkg in Copy Files */,
 				056D27C7279D4AD100D3C8F6 /* icon.jspkg in Copy Files */,
 				059C0AA8279D422D00E7B594 /* value-table-3.jspkg in Copy Files */,
@@ -323,7 +323,7 @@
 		0537528A27869B8E00EB3A2D /* value-table-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-1.jspkg"; sourceTree = "<group>"; };
 		0537528B27869B8E00EB3A2D /* value-table-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-2.jspkg"; sourceTree = "<group>"; };
 		0538B15127A9581F00079087 /* checkbox.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = checkbox.jspkg; sourceTree = "<group>"; };
-		0538B15227A9583100079087 /* text-field-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "text-field-1.jspkg"; sourceTree = "<group>"; };
+		0538B15227A9583100079087 /* text-field.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "text-field.jspkg"; sourceTree = "<group>"; };
 		054D3B102782B6DC00206B8E /* storage0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = storage0.jspkg; sourceTree = "<group>"; };
 		0557F0342714749500C4C6A8 /* addressbook.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = addressbook.jspkg; sourceTree = "<group>"; };
 		0557F038271474AC00C4C6A8 /* value1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = value1.jspkg; sourceTree = "<group>"; };
@@ -471,7 +471,7 @@
 			children = (
 				05FC747427AC21B10099157E /* box.jspkg */,
 				05AFE57C27AC038E00AB371C /* image.jspkg */,
-				0538B15227A9583100079087 /* text-field-1.jspkg */,
+				0538B15227A9583100079087 /* text-field.jspkg */,
 				0538B15127A9581F00079087 /* checkbox.jspkg */,
 				056D27C6279D4AC100D3C8F6 /* icon.jspkg */,
 				059C0AA6279D421500E7B594 /* value-table-3.jspkg */,
