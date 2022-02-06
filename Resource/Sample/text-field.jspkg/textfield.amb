@@ -5,13 +5,13 @@ top: VBox {
     }
     label_int: Label {
 	number:        Float 1234.567
-	isBezeled:     Bool  true
 	isEnabled:     Bool  false
         decimalPlaces: Int   2
     }
     edit_str: TextField {
 	text:       String "Editable Field"
 	isEnabled:  Bool   true
+	isEditable: Bool   true
 	edited: Event(str) %{
 		console.log("edited result = " + str) ;
 	%}

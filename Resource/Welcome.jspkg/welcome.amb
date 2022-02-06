@@ -25,7 +25,6 @@ top: VBox {
 					return "<none>" ;
 				}
 			%}
-			isBezeled: Bool true
 		}
 		select_button: Button {
 			isEnabled:	Bool	true

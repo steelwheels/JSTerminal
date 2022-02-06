@@ -37,10 +37,9 @@ top: VBox {
 }
 ````
 
-In the following section, this document describes:
+## Contents
 * [Licence](#License): The license information
-* Download: You can download this software from App Store.
-[This page](https://apps.apple.com/jp/app/jsterminal/id1511276015?mt=12) links to the page to download this application. Please search by keyword "JSTerminal" on the App Store application.
+* Download: You can download this software from [App Store](https://apps.apple.com/jp/app/jsterminal/id1511276015?mt=12). 
 * [Setup](./Setup.md): After installation, the setup opetation is required.
 * [Shell](./Shell.md): The `jsh` shell is supported for interactive operation.
 * [Sample scripts](#Sample): This application has some sample applications.
