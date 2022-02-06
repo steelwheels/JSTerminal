@@ -18,7 +18,9 @@ This is a sample screen short of this application.
 ![Main window](./Images/main-screenshot.png)
 
 This is a sample GUI which is implemented on this application.
-![GUI example](./Images/hello-world.png)
+
+![GUI example](./Images/hello-world.png).
+
 The soure code is:
 ````
 top: VBox {
