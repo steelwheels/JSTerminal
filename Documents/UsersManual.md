@@ -4,7 +4,7 @@
 ![Slogan](./Images/slogan-24pt.png)
 
 ## Introduction
-The *JSTerminal* is designed for *rapid application development*. This is one of the low code development tools.
+The *JSTerminal* is designed for *rapid application development*. 
 
 This application has following features:
 * _JavaScriptable_: You can write the application by JavaScript or TypeScript.　The `jsh` shell program also support it for writting shell script. For more details, see [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) 
@@ -40,6 +40,7 @@ top: VBox {
 ## Contents
 * [Licence](#License): The license information
 * Download: You can download this software from [App Store](https://apps.apple.com/jp/app/jsterminal/id1511276015?mt=12). 
+* Target: The target machine
 * [Setup](./Setup.md): After installation, the setup opetation is required.
 * [Shell](./Shell.md): The `jsh` shell is supported for interactive operation.
 * [Sample scripts](#Sample): This application has some sample applications.
@@ -53,6 +54,11 @@ top: VBox {
 ## License
 Copyright (C) 2020-2022 [Steel Wheels Project](https://github.com/steelwheels).
 This software is distributed under [GNU GENERAL PUBLIC LICENSE Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) and the document is distributed under [GNU Free Documentation License](https://www.gnu.org/licenses/fdl-1.3.en.html).
+
+## Target
+* Target machine: macOS (The iPadOS will be supported in the future)
+* Development environment: Xcode 11 or later
+* Language for development: Swift and JavaScript
 
 ## Sample
 You can use [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md) to execute the script (Both JavaScript and Shell scripts are supported).
@@ -89,7 +95,6 @@ Following sample scriptes are distributed with the application.
 
 ## Programming
 You can implement GUI by [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md).
-To learn about the language, see the [programming examples](https://github.com/steelwheels/Amber/blob/master/Document/amber-example.md).
 See [Component Library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md) to know about supported GUI components.
 
 Here is the sample script written by Amber Programming Language.
