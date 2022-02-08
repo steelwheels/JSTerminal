@@ -1,0 +1,8 @@
+{
+	application: "main.js"
+	subviews: {
+		main: "main.amb"
+		sub:  "sub.amb"
+	}
+}
+

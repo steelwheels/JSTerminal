@@ -84,6 +84,10 @@
 		059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
 		059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */; };
 		059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059C0AAB279D424900E7B594 /* LiL.jspkg */; };
+		05A7303127B2AB98005D5345 /* enter-view.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 05A7303027B2AB98005D5345 /* enter-view.jspkg */; };
+		05A7303327B2ABF1005D5345 /* hello-world.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05A7303227B2ABDB005D5345 /* hello-world.jspkg */; };
+		05A7303427B2ABF1005D5345 /* enter-view.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05A7303027B2AB98005D5345 /* enter-view.jspkg */; };
+		05A7303527B2ABF1005D5345 /* stepper.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05A7302F27B2AB89005D5345 /* stepper.jspkg */; };
 		05AFE57D27AC03AC00AB371C /* image.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05AFE57C27AC038E00AB371C /* image.jspkg */; };
 		05B2DE4B260EA4AE00E51D2F /* unit-test.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05B2DE48260EA48900E51D2F /* unit-test.jspkg */; };
 		05B770E92518788C004FCD84 /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B770E02518788C004FCD84 /* CoconutShell.xcframework */; };
@@ -209,6 +213,9 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05A7303327B2ABF1005D5345 /* hello-world.jspkg in Copy Files */,
+				05A7303427B2ABF1005D5345 /* enter-view.jspkg in Copy Files */,
+				05A7303527B2ABF1005D5345 /* stepper.jspkg in Copy Files */,
 				05FC747527AC21C40099157E /* box.jspkg in Copy Files */,
 				05AFE57D27AC03AC00AB371C /* image.jspkg in Copy Files */,
 				0538B15327A9584800079087 /* text-field.jspkg in Copy Files */,
@@ -342,6 +349,9 @@
 		059C0AA4279D420500E7B594 /* value-storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-1.jspkg"; sourceTree = "<group>"; };
 		059C0AA6279D421500E7B594 /* value-table-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-3.jspkg"; sourceTree = "<group>"; };
 		059C0AAB279D424900E7B594 /* LiL.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LiL.jspkg; sourceTree = "<group>"; };
+		05A7302F27B2AB89005D5345 /* stepper.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = stepper.jspkg; sourceTree = "<group>"; };
+		05A7303027B2AB98005D5345 /* enter-view.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enter-view.jspkg"; sourceTree = "<group>"; };
+		05A7303227B2ABDB005D5345 /* hello-world.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "hello-world.jspkg"; sourceTree = "<group>"; };
 		05AFE57C27AC038E00AB371C /* image.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = image.jspkg; sourceTree = "<group>"; };
 		05B2DE48260EA48900E51D2F /* unit-test.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "unit-test.jspkg"; sourceTree = "<group>"; };
 		05B770E02518788C004FCD84 /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
@@ -469,6 +479,9 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				05A7303227B2ABDB005D5345 /* hello-world.jspkg */,
+				05A7303027B2AB98005D5345 /* enter-view.jspkg */,
+				05A7302F27B2AB89005D5345 /* stepper.jspkg */,
 				05FC747427AC21B10099157E /* box.jspkg */,
 				05AFE57C27AC038E00AB371C /* image.jspkg */,
 				0538B15227A9583100079087 /* text-field.jspkg */,
@@ -704,6 +717,7 @@
 				051A55292771EA950093CE80 /* drawing.jspkg in Resources */,
 				050C4898259CB115002D4972 /* Welcome.jspkg in Resources */,
 				051A55272771EA8C0093CE80 /* card0.jspkg in Resources */,
+				05A7303127B2AB98005D5345 /* enter-view.jspkg in Resources */,
 				05150DFE27240973001C66AE /* text.js in Resources */,
 				0589F1C227132AB000D40424 /* adb.ts in Resources */,
 			);

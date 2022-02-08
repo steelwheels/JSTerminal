@@ -1,0 +1,16 @@
+top: VBox {
+    enter_button: Button {
+   	title: String "SubView"
+	pressed: Event() %{
+		let ret = enterView("sub") ;
+		console.log("from-sub : " + ret) ;
+        %}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView("Good bye main view") ;
+        %}
+    }
+}
+
