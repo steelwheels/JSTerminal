@@ -1,5 +1,7 @@
 top: VBox {
 	bonus:		Int 10
+        race:           Int  0
+
 	title: Image {
 		name: String "gym_title"
 	}
@@ -11,11 +13,23 @@ top: VBox {
 			%}
 	    	}
 	}
+        race_box: HBox {
+                title: Label { text: String "Race" }
+                race_menu: PopupMenu {
+                        items: Array ["human", "elf", "dwarf", "gnome", "porkul"]
+                        selected: Event(index) %{
+                                if(top.race != index){
+                                        top.race = index ;
+                                        top.init_status(index) ;
+                                }
+                        %}
+                }
+        }
 	hp_box: HBox {
 		title: Label { text: String "HitPoint" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -32,7 +46,7 @@ top: VBox {
 		title: Label { text: String "MagicPoint" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -49,7 +63,7 @@ top: VBox {
 		title: Label { text: String "Strength" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -66,7 +80,7 @@ top: VBox {
 		title: Label { text: String "Vitality" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -83,7 +97,7 @@ top: VBox {
 		title: Label { text: String "Dexterity" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -100,7 +114,7 @@ top: VBox {
 		title: Label { text: String "Agility" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -113,11 +127,11 @@ top: VBox {
 			%}
 		}
 	}
-	intl_box: HBox {
+	itl_box: HBox {
 		title: Label { text: String "Intelligence" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -130,11 +144,11 @@ top: VBox {
 			%}
 		}
 	}
-	piet_box: HBox {
+	pie_box: HBox {
 		title: Label { text: String "Piety" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -151,7 +165,7 @@ top: VBox {
 		title: Label { text: String "Luck" }
 		stepper: Stepper {
 			maxValue:	Int 100
-			minValue:	Int  10
+			minValue:	Int   0
 			currentValue:	Int  20
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
@@ -170,5 +184,24 @@ top: VBox {
 			leaveView(0) ;
         	%}
 	}
-} 
+
+        init_status: Int Func(race) %{
+		/* Initialize status */
+		let status = Character.initStatus(race) ;
+		if(status != null){
+			top.hp_box.stepper.currentValue  = status.hitPoint ;
+			top.mp_box.stepper.currentValue  = status.magicPoint ;
+			top.str_box.stepper.currentValue = status.strength ;
+			top.vit_box.stepper.currentValue = status.vitality ;
+			top.dex_box.stepper.currentValue = status.dexterity ;
+			top.agl_box.stepper.currentValue = status.agility ;
+			top.itl_box.stepper.currentValue = status.intelligence ;
+			top.pie_box.stepper.currentValue = status.piety ;
+			top.lck_box.stepper.currentValue = status.luck ;
+		} else {
+			console.log("[Error] No status") ;
+		}
+                return 0 ;
+        %}
+}
 

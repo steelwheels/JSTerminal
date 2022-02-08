@@ -1,6 +1,7 @@
 {
-	init_status: {
-		human: {
+	initStatus: [
+		{
+			race:		"human",
 			hitPoint:	60,
 			magicPoint:	20,
 			strength:	 8,
@@ -11,7 +12,8 @@
         		piety:		 5,
         		luck:		 8
 		},
-		elf: {
+		{
+			race:		"elf",
 			hitPoint:	50,
 			magicPoint:	30,
 			strength:	 6,
@@ -22,7 +24,8 @@
         		piety:		 8,
         		luck:		 4
 		},
-		dwarf: {
+		{
+			race:		"dwarf",
 			hitPoint:	80,
 			magicPoint:	15,
 			strength:	 9,
@@ -33,7 +36,8 @@
         		piety:		 9,
         		luck:		 5 
 		},
-		gnome: {
+		{
+			race:		"gnome"
 			hitPoint:	70,
 			magicPoint:	25,
 			strength:	 7,
@@ -44,7 +48,8 @@
         		piety:		10,
         		luck:		 6 
 		},
-		porkul: {
+		{
+			race:		"hobbit",
 			hitPoint:	50,
 			magicPoint:	20,
 			strength:	 5,
@@ -55,7 +60,7 @@
         		piety:		 7,
         		luck:		15
 		}
-	},
+	],
 	party: [
 		{
 			name:		"player-a",

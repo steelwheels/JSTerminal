@@ -9,24 +9,12 @@
 module Character {
 
 export enum Race {
-	human,
+	human		= 0,
         elf,
         dwarf,
         gnome,
-        porkul
+        hobbit
 } ;
-
-function anyToRace(val: any): Race | null {
-	if(!isNumber(val)){
-		return null ;
-	}
-	let result: Race | null ;
-	switch(val){
-	  case Race.human:	result = Race.human ; break ;
-	  default:		result = null ; break ;
-	}
-	return result ;
-}
 
 export enum Job {
 	fighter,
@@ -35,22 +23,7 @@ export enum Job {
 	thief
 } ;
 
-function anyToJob(val: any): Job | null {
-	if(!isNumber(val)){
-		return null ;
-	}
-	let result: Job | null ;
-	switch(val){
-	  case Job.fighter:	result = Job.fighter ; break ;
-	  case Job.mage:	result = Job.mage ; break ;
-	  case Job.priest:	result = Job.priest ; break ;
-	  case Job.thief:	result = Job.thief ; break ;
-	  default:		result = null ; break ;
-	}
-	return result ;
-}
-
-export enum StatusParameter {
+export enum StatusType {
         level,
         hitPoint,
         magicPoint,
@@ -63,185 +36,88 @@ export enum StatusParameter {
         luck
 } ;
 
-function maxValueOfStatus(param: StatusParameter): number {
-        let result: number ;
-        switch(param){
-                case StatusParameter.level:             result = 100 ;      break ;
-                case StatusParameter.hitPoint:          result = 100 ;      break ;
-                case StatusParameter.magicPoint:        result = 100 ;      break ;
-                case StatusParameter.strength:          result = 100 ;      break ;
-                case StatusParameter.vitality:          result = 100 ;      break ;
-                case StatusParameter.dexterity:         result = 100 ;      break ;
-                case StatusParameter.agility:           result = 100 ;      break ;
-                case StatusParameter.intelligence:      result = 100 ;      break ;
-                case StatusParameter.piety:             result = 100 ;      break ;
-                case StatusParameter.luck:              result = 100 ;      break ;
+export function statusTypeToString(type: StatusType): string {
+        let result = "?" ;
+        switch(type){
+        case StatusType.level:          result = "level" ;              break ;
+        case StatusType.hitPoint:       result = "hitPoint" ;           break ;
+        case StatusType.magicPoint:     result = "magicPoint" ;         break ;
+        case StatusType.strength:       result = "strength" ;           break ;
+        case StatusType.vitality:       result = "vitality" ;           break ;
+        case StatusType.dexterity:      result = "dexterity" ;          break ;
+        case StatusType.agility:        result = "agility" ;            break ;
+        case StatusType.intelligence:   result = "intelligence" ;       break ;
+        case StatusType.piety:          result = "piety" ;              break ;
+        case StatusType.luck:           result = "luck" ;               break ;
         }
         return result ;
 }
 
-function minValueOfStatus(param: StatusParameter): number {
-        let result: number ;
-        switch(param){
-                case StatusParameter.level:             result =   0 ;      break ;
-                case StatusParameter.hitPoint:          result =   0 ;      break ;
-                case StatusParameter.magicPoint:        result =   0 ;      break ;
-                case StatusParameter.strength:          result =   0 ;      break ;
-                case StatusParameter.vitality:          result =   0 ;      break ;
-                case StatusParameter.dexterity:         result =   0 ;      break ;
-                case StatusParameter.agility:           result =   0 ;      break ;
-                case StatusParameter.intelligence:      result =   0 ;      break ;
-                case StatusParameter.piety:             result =   0 ;      break ;
-                case StatusParameter.luck:              result =   0 ;      break ;
-        }
-        return result ;
-}
+export class Status
+{
+	private mRecord: ValueRecordIF ;
 
-function anyToClippedStatus(val: any, status: StatusParameter): number | null {
-	if(isNumber(val)){
-		let num = val as number
-                let min = minValueOfStatus(status) ;
-                let max = maxValueOfStatus(status) ;
-		if(min<=num && num<=max){
-			return num ;
-		} else {
-			return min
-		}
-	} else {
-		return null ;
-	}
-}
-
-export class Status {
-	record: ValueRecordIF ;
-
-	constructor(rec: ValueRecordIF){
-		this.record = rec ;
+	constructor(record: ValueRecordIF){
+		this.mRecord = record ;
 	}
 
-	get name(): string | null {
-		let nm = this.record.value("name") ;
-		return isString(nm) ? nm : null ;
-	}
+        public  get race():         string | null { return toString(this.mRecord.value("race")) ; }
+	public	get level():        number | null { return this.value(StatusType.level) ;         }
+	public	get hitPoint():	    number | null { return this.value(StatusType.hitPoint) ;      }
+	public	get magicPoint():   number | null { return this.value(StatusType.magicPoint) ;    }
+	public	get strength():     number | null { return this.value(StatusType.strength) ;      }
+	public	get vitality():     number | null { return this.value(StatusType.vitality) ;      }
+	public	get dexterity():    number | null { return this.value(StatusType.dexterity) ;     }
+	public	get agility():      number | null { return this.value(StatusType.agility) ;       }
+	public	get intelligence(): number | null { return this.value(StatusType.intelligence) ;  }
+	public	get piety():        number | null { return this.value(StatusType.piety) ;         }
+	public	get luck():         number | null { return this.value(StatusType.luck) ;          }
 
-	set name(nm: string | null) {
-		this.record.setValue(nm, "name") ;
-	}
-
-	get uncertainName(): string | null {
-		let nm = this.record.value("uncertainName") ;
-		return isString(nm) ? nm : null ;
-	}
-	set uncertainName(nm: string | null) {
-		this.record.setValue(nm, "uncertainName") ;
-	}
-
-	get race(): Race | null {
-		let rc = this.record.value("race") ;
-		return anyToRace(rc) ;
-	}
-	set race(rc: Race | null) {
-		this.record.setValue(rc, "race") ;
-	}
-
-	get job(): Job | null {
-		let rc = this.record.value("job") ;
-		return anyToJob(rc) ;
-	}
-	set job(rc: Job | null) {
-		this.record.setValue(rc, "job") ;
-	}
-
-	get level(): number | null {
-		let lv = this.record.value("level") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set level(rc: number | null) {
-		let val = anyToClippedStatus(rc, StatusParameter.level) ;
-		this.record.setValue(val, "level") ;
-	}
-
-        get hitPoint(): number | null {
-		let lv = this.record.value("hitPoint") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set hitPoint(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.hitPoint) ;
-		this.record.setValue(val, "hitPoint") ;
-	}
-
-        get magicPoint(): number | null {
-		let lv = this.record.value("magicPoint") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set magicPoint(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.magicPoint) ;
-		this.record.setValue(val, "magicPoint") ;
-	}
-
-        get strength(): number | null {
-		let lv = this.record.value("strength") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set strength(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.strength) ;
-		this.record.setValue(val, "strength") ;
-	}
-
-        get vitality(): number | null {
-		let lv = this.record.value("vitality") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set vitality(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.vitality) ;
-		this.record.setValue(val, "vitality") ;
-	}
-
-        get dexterity(): number | null {
-		let lv = this.record.value("dexterity") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set dexterity(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.dexterity) ;
-		this.record.setValue(val, "dexterity") ;
-	}
-
-        get agility(): number | null {
-		let lv = this.record.value("agility") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set agility(rc: number | null) {
-		let val = anyToClippedStatus(rc, StatusParameter.agility) ;
-		this.record.setValue(val, "agility") ;
-	}
-
-        get intelligence(): number | null {
-		let lv = this.record.value("intelligence") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set intelligence(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.intelligence) ;
-		this.record.setValue(val, "intelligence") ;
-	}
-
-        get piety(): number | null {
-		let lv = this.record.value("piet") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set piety(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.piety) ;
-		this.record.setValue(val, "piet") ;
-	}
-
-        get luck(): number | null {
-		let lv = this.record.value("luck") ;
-		return isNumber(lv) ? lv : null ;
-	}
-	set luck(rc: number | null) {
-                let val = anyToClippedStatus(rc, StatusParameter.luck) ;
-		this.record.setValue(val, "luck") ;
+	private value(type: StatusType): number | null {
+		let name = statusTypeToString(type) ;
+		return toNumber(this.mRecord.value(name)) ;
 	}
 } ;
+
+export function raceToString(race: Race): string {
+	let result = "?" ;
+	switch(race){
+	  case Race.human:	result = "human" ;	break ;
+          case Race.elf:	result = "elf" ;	break ;
+          case Race.dwarf:	result = "dwarf" ;	break ;
+          case Race.gnome:	result = "gnome" ;	break ;
+          case Race.hobbit:	result = "hobbit" ;	break ;
+	}
+	return result ;
+}
+
+export function initStatus(race: Race): Status | null {
+	let storage = ValueStorage("main") ;
+	if(storage == null){
+		console.log("[Error] Failed to load storage") ;
+		return null ;
+	}
+	let table = ValueTable("character.initStatus", storage!) ;
+	if(table == null){
+		console.log("[Error] Failed to load initStatus") ;
+		return null ;
+	}
+
+        let racename = raceToString(race) ;
+        let cnt      = table.recordCount ;
+        for(let i=0 ; i<cnt ; i++){
+                let rec = table.record(i) ;
+                if(rec != null){
+                        let stat = new Character.Status(rec) ;
+                        if(stat.race == racename){
+                                return stat ;
+                        }
+                }
+        }
+
+	console.log("[Error] record is not found") ;
+        return null ;
+}
 
 } ; // end of module
 

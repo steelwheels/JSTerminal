@@ -13,24 +13,9 @@ var Character;
         Race[Race["elf"] = 1] = "elf";
         Race[Race["dwarf"] = 2] = "dwarf";
         Race[Race["gnome"] = 3] = "gnome";
-        Race[Race["porkul"] = 4] = "porkul";
+        Race[Race["hobbit"] = 4] = "hobbit";
     })(Race = Character.Race || (Character.Race = {}));
     ;
-    function anyToRace(val) {
-        if (!isNumber(val)) {
-            return null;
-        }
-        let result;
-        switch (val) {
-            case Race.human:
-                result = Race.human;
-                break;
-            default:
-                result = null;
-                break;
-        }
-        return result;
-    }
     let Job;
     (function (Job) {
         Job[Job["fighter"] = 0] = "fighter";
@@ -39,246 +24,126 @@ var Character;
         Job[Job["thief"] = 3] = "thief";
     })(Job = Character.Job || (Character.Job = {}));
     ;
-    function anyToJob(val) {
-        if (!isNumber(val)) {
-            return null;
-        }
-        let result;
-        switch (val) {
-            case Job.fighter:
-                result = Job.fighter;
-                break;
-            case Job.mage:
-                result = Job.mage;
-                break;
-            case Job.priest:
-                result = Job.priest;
-                break;
-            case Job.thief:
-                result = Job.thief;
-                break;
-            default:
-                result = null;
-                break;
-        }
-        return result;
-    }
-    let StatusParameter;
-    (function (StatusParameter) {
-        StatusParameter[StatusParameter["level"] = 0] = "level";
-        StatusParameter[StatusParameter["hitPoint"] = 1] = "hitPoint";
-        StatusParameter[StatusParameter["magicPoint"] = 2] = "magicPoint";
-        StatusParameter[StatusParameter["strength"] = 3] = "strength";
-        StatusParameter[StatusParameter["vitality"] = 4] = "vitality";
-        StatusParameter[StatusParameter["dexterity"] = 5] = "dexterity";
-        StatusParameter[StatusParameter["agility"] = 6] = "agility";
-        StatusParameter[StatusParameter["intelligence"] = 7] = "intelligence";
-        StatusParameter[StatusParameter["piety"] = 8] = "piety";
-        StatusParameter[StatusParameter["luck"] = 9] = "luck";
-    })(StatusParameter = Character.StatusParameter || (Character.StatusParameter = {}));
+    let StatusType;
+    (function (StatusType) {
+        StatusType[StatusType["level"] = 0] = "level";
+        StatusType[StatusType["hitPoint"] = 1] = "hitPoint";
+        StatusType[StatusType["magicPoint"] = 2] = "magicPoint";
+        StatusType[StatusType["strength"] = 3] = "strength";
+        StatusType[StatusType["vitality"] = 4] = "vitality";
+        StatusType[StatusType["dexterity"] = 5] = "dexterity";
+        StatusType[StatusType["agility"] = 6] = "agility";
+        StatusType[StatusType["intelligence"] = 7] = "intelligence";
+        StatusType[StatusType["piety"] = 8] = "piety";
+        StatusType[StatusType["luck"] = 9] = "luck";
+    })(StatusType = Character.StatusType || (Character.StatusType = {}));
     ;
-    function maxValueOfStatus(param) {
-        let result;
-        switch (param) {
-            case StatusParameter.level:
-                result = 100;
+    function statusTypeToString(type) {
+        let result = "?";
+        switch (type) {
+            case StatusType.level:
+                result = "level";
                 break;
-            case StatusParameter.hitPoint:
-                result = 100;
+            case StatusType.hitPoint:
+                result = "hitPoint";
                 break;
-            case StatusParameter.magicPoint:
-                result = 100;
+            case StatusType.magicPoint:
+                result = "magicPoint";
                 break;
-            case StatusParameter.strength:
-                result = 100;
+            case StatusType.strength:
+                result = "strength";
                 break;
-            case StatusParameter.vitality:
-                result = 100;
+            case StatusType.vitality:
+                result = "vitality";
                 break;
-            case StatusParameter.dexterity:
-                result = 100;
+            case StatusType.dexterity:
+                result = "dexterity";
                 break;
-            case StatusParameter.agility:
-                result = 100;
+            case StatusType.agility:
+                result = "agility";
                 break;
-            case StatusParameter.intelligence:
-                result = 100;
+            case StatusType.intelligence:
+                result = "intelligence";
                 break;
-            case StatusParameter.piety:
-                result = 100;
+            case StatusType.piety:
+                result = "piety";
                 break;
-            case StatusParameter.luck:
-                result = 100;
-                break;
-        }
-        return result;
-    }
-    function minValueOfStatus(param) {
-        let result;
-        switch (param) {
-            case StatusParameter.level:
-                result = 0;
-                break;
-            case StatusParameter.hitPoint:
-                result = 0;
-                break;
-            case StatusParameter.magicPoint:
-                result = 0;
-                break;
-            case StatusParameter.strength:
-                result = 0;
-                break;
-            case StatusParameter.vitality:
-                result = 0;
-                break;
-            case StatusParameter.dexterity:
-                result = 0;
-                break;
-            case StatusParameter.agility:
-                result = 0;
-                break;
-            case StatusParameter.intelligence:
-                result = 0;
-                break;
-            case StatusParameter.piety:
-                result = 0;
-                break;
-            case StatusParameter.luck:
-                result = 0;
+            case StatusType.luck:
+                result = "luck";
                 break;
         }
         return result;
     }
-    function anyToClippedStatus(val, status) {
-        if (isNumber(val)) {
-            let num = val;
-            let min = minValueOfStatus(status);
-            let max = maxValueOfStatus(status);
-            if (min <= num && num <= max) {
-                return num;
-            }
-            else {
-                return min;
-            }
-        }
-        else {
-            return null;
-        }
-    }
+    Character.statusTypeToString = statusTypeToString;
     class Status {
-        constructor(rec) {
-            this.record = rec;
+        constructor(record) {
+            this.mRecord = record;
         }
-        get name() {
-            let nm = this.record.value("name");
-            return isString(nm) ? nm : null;
-        }
-        set name(nm) {
-            this.record.setValue(nm, "name");
-        }
-        get uncertainName() {
-            let nm = this.record.value("uncertainName");
-            return isString(nm) ? nm : null;
-        }
-        set uncertainName(nm) {
-            this.record.setValue(nm, "uncertainName");
-        }
-        get race() {
-            let rc = this.record.value("race");
-            return anyToRace(rc);
-        }
-        set race(rc) {
-            this.record.setValue(rc, "race");
-        }
-        get job() {
-            let rc = this.record.value("job");
-            return anyToJob(rc);
-        }
-        set job(rc) {
-            this.record.setValue(rc, "job");
-        }
-        get level() {
-            let lv = this.record.value("level");
-            return isNumber(lv) ? lv : null;
-        }
-        set level(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.level);
-            this.record.setValue(val, "level");
-        }
-        get hitPoint() {
-            let lv = this.record.value("hitPoint");
-            return isNumber(lv) ? lv : null;
-        }
-        set hitPoint(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.hitPoint);
-            this.record.setValue(val, "hitPoint");
-        }
-        get magicPoint() {
-            let lv = this.record.value("magicPoint");
-            return isNumber(lv) ? lv : null;
-        }
-        set magicPoint(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.magicPoint);
-            this.record.setValue(val, "magicPoint");
-        }
-        get strength() {
-            let lv = this.record.value("strength");
-            return isNumber(lv) ? lv : null;
-        }
-        set strength(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.strength);
-            this.record.setValue(val, "strength");
-        }
-        get vitality() {
-            let lv = this.record.value("vitality");
-            return isNumber(lv) ? lv : null;
-        }
-        set vitality(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.vitality);
-            this.record.setValue(val, "vitality");
-        }
-        get dexterity() {
-            let lv = this.record.value("dexterity");
-            return isNumber(lv) ? lv : null;
-        }
-        set dexterity(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.dexterity);
-            this.record.setValue(val, "dexterity");
-        }
-        get agility() {
-            let lv = this.record.value("agility");
-            return isNumber(lv) ? lv : null;
-        }
-        set agility(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.agility);
-            this.record.setValue(val, "agility");
-        }
-        get intelligence() {
-            let lv = this.record.value("intelligence");
-            return isNumber(lv) ? lv : null;
-        }
-        set intelligence(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.intelligence);
-            this.record.setValue(val, "intelligence");
-        }
-        get piety() {
-            let lv = this.record.value("piet");
-            return isNumber(lv) ? lv : null;
-        }
-        set piety(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.piety);
-            this.record.setValue(val, "piet");
-        }
-        get luck() {
-            let lv = this.record.value("luck");
-            return isNumber(lv) ? lv : null;
-        }
-        set luck(rc) {
-            let val = anyToClippedStatus(rc, StatusParameter.luck);
-            this.record.setValue(val, "luck");
+        get race() { return toString(this.mRecord.value("race")); }
+        get level() { return this.value(StatusType.level); }
+        get hitPoint() { return this.value(StatusType.hitPoint); }
+        get magicPoint() { return this.value(StatusType.magicPoint); }
+        get strength() { return this.value(StatusType.strength); }
+        get vitality() { return this.value(StatusType.vitality); }
+        get dexterity() { return this.value(StatusType.dexterity); }
+        get agility() { return this.value(StatusType.agility); }
+        get intelligence() { return this.value(StatusType.intelligence); }
+        get piety() { return this.value(StatusType.piety); }
+        get luck() { return this.value(StatusType.luck); }
+        value(type) {
+            let name = statusTypeToString(type);
+            return toNumber(this.mRecord.value(name));
         }
     }
     Character.Status = Status;
     ;
+    function raceToString(race) {
+        let result = "?";
+        switch (race) {
+            case Race.human:
+                result = "human";
+                break;
+            case Race.elf:
+                result = "elf";
+                break;
+            case Race.dwarf:
+                result = "dwarf";
+                break;
+            case Race.gnome:
+                result = "gnome";
+                break;
+            case Race.hobbit:
+                result = "hobbit";
+                break;
+        }
+        return result;
+    }
+    Character.raceToString = raceToString;
+    function initStatus(race) {
+        let storage = ValueStorage("main");
+        if (storage == null) {
+            console.log("[Error] Failed to load storage");
+            return null;
+        }
+        let table = ValueTable("character.initStatus", storage);
+        if (table == null) {
+            console.log("[Error] Failed to load initStatus");
+            return null;
+        }
+        let racename = raceToString(race);
+        let cnt = table.recordCount;
+        for (let i = 0; i < cnt; i++) {
+            let rec = table.record(i);
+            if (rec != null) {
+                let stat = new Character.Status(rec);
+                if (stat.race == racename) {
+                    return stat;
+                }
+            }
+        }
+        console.log("[Error] record is not found");
+        return null;
+    }
+    Character.initStatus = initStatus;
 })(Character || (Character = {}));
 ; // end of module

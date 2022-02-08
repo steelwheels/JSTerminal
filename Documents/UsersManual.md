@@ -8,7 +8,7 @@ The *JSTerminal* is designed for *rapid application development*.
 
 This application has following features:
 * _JavaScriptable_: You can write the application by JavaScript or TypeScript.　The `jsh` shell program also support it for writting shell script. For more details, see [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md) 
-* _GUI Designable_:  You can implement GUI application by the [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). The syntax is simular to JavaScript, but it is used to declare structure of the components such as GUI components.
+* _GUI Designable_:  You can implement GUI application by the [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). The language has simular syntax to JavaScript, but it is used to declare structure of the components such as GUI. These components are layouted by [autolayout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html). It means the designer does not have to arrange the layouts for multi size screens.
 * _Database Access_: The built in library helps you to implement the application which requires database access. For more details, see [database access](./Database.md).
 
 This product is open source software.
