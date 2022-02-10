@@ -1,7 +1,7 @@
 top: VBox {
-	bonus:		Int 10
-        race:           Int  0
-
+	bonus:		Int	10
+        race:           Int 	0
+	status:		Object	{ }
 	title: Image {
 		name: String "gym_title"
 	}
@@ -16,7 +16,11 @@ top: VBox {
         race_box: HBox {
                 title: Label { text: String "Race" }
                 race_menu: PopupMenu {
-                        items: Array ["human", "elf", "dwarf", "gnome", "porkul"]
+                        items: Array [	"human",
+					"elf",
+					"dwarf",
+					"gnome",
+					"hobbit"] ;
                         selected: Event(index) %{
                                 if(top.race != index){
                                         top.race = index ;
@@ -178,11 +182,19 @@ top: VBox {
 			%}
 		}
 	}
-	ret_button: Button {
-        	title:  String "Return to tavern"
-        	pressed: Event() %{
-			leaveView(0) ;
-        	%}
+	buttons: HBox {
+		add_button: Button {
+			title:  String "Add this member"
+			pressed: Event() %{
+				leaveView(top.status) ;
+			%}
+		}
+		cancel_button: Button {
+			title:  String "Cancel"
+			pressed: Event() %{
+				leaveView(null) ;
+			%}
+		}
 	}
 
         init_status: Int Func(race) %{
@@ -198,6 +210,7 @@ top: VBox {
 			top.itl_box.stepper.currentValue = status.intelligence ;
 			top.pie_box.stepper.currentValue = status.piety ;
 			top.lck_box.stepper.currentValue = status.luck ;
+			top.status = status ;
 		} else {
 			console.log("[Error] No status") ;
 		}

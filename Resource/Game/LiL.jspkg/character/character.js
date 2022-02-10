@@ -131,14 +131,11 @@ var Character;
             return null;
         }
         let racename = raceToString(race);
-        let cnt = table.recordCount;
-        for (let i = 0; i < cnt; i++) {
-            let rec = table.record(i);
-            if (rec != null) {
-                let stat = new Character.Status(rec);
-                if (stat.race == racename) {
-                    return stat;
-                }
+        let recs = table.search(racename, "race");
+        if (recs != null) {
+            if (recs.length >= 1) {
+                let stat = new Character.Status(recs[0]);
+                return stat;
             }
         }
         console.log("[Error] record is not found");

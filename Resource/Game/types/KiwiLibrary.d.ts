@@ -256,9 +256,10 @@ interface ValueTableIF {
 
 	readonly allFieldNames:	string[] ;
 
-	newRecord():		ValueRecordIF ;
-	record(row: number):	ValueRecordIF | null ;
-	append(record: ValueRecordIF): void ;
+	newRecord():				ValueRecordIF ;
+	record(row: number):			ValueRecordIF | null ;
+	search(value: any, name: string):	ValueRecordIF[] | null ;
+	append(record: ValueRecordIF): 		void ;
 }
 
 interface SymbolsIF {
@@ -310,6 +311,7 @@ interface ContactDatabaseIF {
 
 	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
+	search(value: any, name: string):	ContactRecordIF[] | null ;
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
 }
