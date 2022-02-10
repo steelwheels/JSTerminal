@@ -32,7 +32,6 @@
 		0519ECB326417C2300471F35 /* types in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8C26417B9600471F35 /* types */; };
 		0519ECB426417C5000471F35 /* hangman.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC7D26417B7B00471F35 /* hangman.js */; };
 		0519ECB526417C5000471F35 /* hangman.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC7F26417B7B00471F35 /* hangman.ts */; };
-		0519ECB626417C5000471F35 /* jstrek.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC7E26417B7B00471F35 /* jstrek.jspkg */; };
 		0519ECB726417C5000471F35 /* jungle-sim.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC7A26417B7B00471F35 /* jungle-sim.jspkg */; };
 		0519ECB926417C5000471F35 /* moo.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC8126417B7C00471F35 /* moo.js */; };
 		0519ECBA26417C5000471F35 /* moo.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC8026417B7C00471F35 /* moo.ts */; };
@@ -153,7 +152,6 @@
 				059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */,
 				0519ECB426417C5000471F35 /* hangman.js in CopyFiles */,
 				0519ECB526417C5000471F35 /* hangman.ts in CopyFiles */,
-				0519ECB626417C5000471F35 /* jstrek.jspkg in CopyFiles */,
 				0519ECB726417C5000471F35 /* jungle-sim.jspkg in CopyFiles */,
 				0519ECB926417C5000471F35 /* moo.js in CopyFiles */,
 				0519ECBA26417C5000471F35 /* moo.ts in CopyFiles */,
@@ -305,7 +303,6 @@
 		0519EC7A26417B7B00471F35 /* jungle-sim.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "jungle-sim.jspkg"; sourceTree = "<group>"; };
 		0519EC7B26417B7B00471F35 /* types */ = {isa = PBXFileReference; lastKnownFileType = folder; path = types; sourceTree = "<group>"; };
 		0519EC7D26417B7B00471F35 /* hangman.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hangman.js; sourceTree = "<group>"; };
-		0519EC7E26417B7B00471F35 /* jstrek.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = jstrek.jspkg; sourceTree = "<group>"; };
 		0519EC7F26417B7B00471F35 /* hangman.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.ts; sourceTree = "<group>"; };
 		0519EC8026417B7C00471F35 /* moo.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moo.ts; sourceTree = "<group>"; };
 		0519EC8126417B7C00471F35 /* moo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moo.js; sourceTree = "<group>"; };
@@ -545,7 +542,6 @@
 				059C0AAB279D424900E7B594 /* LiL.jspkg */,
 				0519EC7D26417B7B00471F35 /* hangman.js */,
 				0519EC7F26417B7B00471F35 /* hangman.ts */,
-				0519EC7E26417B7B00471F35 /* jstrek.jspkg */,
 				0519EC7A26417B7B00471F35 /* jungle-sim.jspkg */,
 				0519EC8126417B7C00471F35 /* moo.js */,
 				0519EC8026417B7C00471F35 /* moo.ts */,

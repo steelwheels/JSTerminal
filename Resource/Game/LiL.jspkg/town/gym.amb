@@ -2,6 +2,7 @@ top: VBox {
 	bonus:		Int	10
         race:           Int 	0
 	status:		Object	{ }
+
 	title: Image {
 		name: String "gym_title"
 	}
@@ -20,7 +21,7 @@ top: VBox {
 					"elf",
 					"dwarf",
 					"gnome",
-					"hobbit"] ;
+					"hobbit"]
                         selected: Event(index) %{
                                 if(top.race != index){
                                         top.race = index ;
@@ -34,13 +35,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.hitPoint = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -51,13 +53,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.magicPoint = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -68,13 +71,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.strength = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -85,13 +89,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.vitality = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -102,13 +107,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.dextrity = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -119,13 +125,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.agility = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -136,13 +143,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.intelligence = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -153,13 +161,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.piety = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -170,13 +179,14 @@ top: VBox {
 		stepper: Stepper {
 			maxValue:	Int 100
 			minValue:	Int   0
-			currentValue:	Int  20
+			currentValue:	Int   0
 			deltaValue:	Int   1
 			decimalPlaces:	Int   0
 			isIncrementable: Bool Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
+				top.status.luck = newval ;
 				let diff = newval - self.currentValue ;
 				top.bonus -= diff ;
 			%}
@@ -197,9 +207,18 @@ top: VBox {
 		}
 	}
 
+	init: Init %{
+		let race   = Character.Race.human ;
+		let status = Character.loadInitStatus(race) ;
+		if(status != null){
+			top.status = status ;
+			top.init_status(race) ;
+		}
+	%}
+
         init_status: Int Func(race) %{
 		/* Initialize status */
-		let status = Character.initStatus(race) ;
+		let status = Character.loadInitStatus(race) ;
 		if(status != null){
 			top.hp_box.stepper.currentValue  = status.hitPoint ;
 			top.mp_box.stepper.currentValue  = status.magicPoint ;
@@ -210,7 +229,6 @@ top: VBox {
 			top.itl_box.stepper.currentValue = status.intelligence ;
 			top.pie_box.stepper.currentValue = status.piety ;
 			top.lck_box.stepper.currentValue = status.luck ;
-			top.status = status ;
 		} else {
 			console.log("[Error] No status") ;
 		}

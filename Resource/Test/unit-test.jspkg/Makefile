@@ -5,7 +5,6 @@
 srcs	= test_color.ts \
 	  test_graphics.ts \
 	  test_string.ts \
-	  test_table.ts \
 	  main.ts
 
 dsts	= $(srcs:.ts=.js)

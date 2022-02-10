@@ -9,6 +9,7 @@ declare module Character {
         gnome = 3,
         hobbit = 4
     }
+    function raceToString(race: Race): string;
     enum Job {
         fighter = 0,
         mage = 1,
@@ -29,21 +30,17 @@ declare module Character {
     }
     function statusTypeToString(type: StatusType): string;
     class Status {
-        private mRecord;
-        constructor(record: ValueRecordIF);
-        get race(): string | null;
-        get level(): number | null;
-        get hitPoint(): number | null;
-        get magicPoint(): number | null;
-        get strength(): number | null;
-        get vitality(): number | null;
-        get dexterity(): number | null;
-        get agility(): number | null;
-        get intelligence(): number | null;
-        get piety(): number | null;
-        get luck(): number | null;
-        private value;
+        level: number;
+        hitPoint: number;
+        magicPoint: number;
+        strength: number;
+        vitality: number;
+        dexterity: number;
+        agility: number;
+        intelligence: number;
+        piety: number;
+        luck: number;
+        constructor();
     }
-    function raceToString(race: Race): string;
-    function initStatus(race: Race): Status | null;
+    function loadInitStatus(race: Race): Status | null;
 }

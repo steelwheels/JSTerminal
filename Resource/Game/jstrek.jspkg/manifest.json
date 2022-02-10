@@ -1,9 +1,0 @@
-{
-	application: "main.js"
-	libraries: [
-		"model.js",
-		"view.js",
-		"control.js"
-	]
-}
-

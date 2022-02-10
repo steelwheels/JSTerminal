@@ -15,7 +15,5 @@ function main(args) {
     result && (result = test_graphics());
     console.log("===== Test: String");
     result && (result = test_string());
-    console.log("===== Test: Table");
-    result && (result = test_table());
     return result ? 0 : 1;
 }
