@@ -6,6 +6,24 @@ top: VBox {
 	title: Image {
 		name: String "gym_title"
 	}
+	msg_box: TextField {
+		isEditable: Bool false
+		text: String Listner(name:  top.name_box.field.text, 
+				     bonus: top.bonus) %{
+			let message = "" ;
+			if(name == "" && bonus == 0){
+				message += "Press button to add new member" ;
+			} else {
+				if(name == ""){
+					message += "First, give the new member's name.";
+				}
+				if(bonus > 0){
+					message += "Give bonus to each status. ";
+				}
+			}
+			return message ;
+		%}
+	}
 	bonus_box: HBox {
 		title: Label { text: String "Bonus" }
 		value: Label {
@@ -13,6 +31,12 @@ top: VBox {
 				return bonus ;
 			%}
 	    	}
+	}
+        name_box: HBox {
+                title: Label { text: String "Character name" }
+		field: TextField {
+			isEditable:	Bool true
+		}
 	}
         race_box: HBox {
                 title: Label { text: String "Race" }
@@ -23,9 +47,27 @@ top: VBox {
 					"gnome",
 					"hobbit"]
                         selected: Event(index) %{
-                                if(top.race != index){
-                                        top.race = index ;
-                                        top.init_status(index) ;
+				let race = Character.RaceType.human ;
+				switch(index){
+				  case 0:
+					race = Character.RaceType.human ;
+				  break ;
+				  case 1:
+					race = Character.RaceType.elf ;
+				  break ;
+				  case 2:
+					race = Character.RaceType.dwarf ;
+				  break ;
+				  case 3:
+					race = Character.RaceType.gnome ;
+				  break ;
+				  case 4:
+					race = Character.RaceType.hobbit ;
+				  break ;
+				}
+                                if(top.race != race){
+                                        top.race = race ;
+                                        top.init_status(race) ;
                                 }
                         %}
                 }
@@ -208,7 +250,7 @@ top: VBox {
 	}
 
 	init: Init %{
-		let race   = Character.Race.human ;
+		let race   = Character.RaceType.human ;
 		let status = Character.loadInitStatus(race) ;
 		if(status != null){
 			top.status = status ;

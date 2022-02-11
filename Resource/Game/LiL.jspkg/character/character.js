@@ -7,32 +7,39 @@
 /// <reference path="../types/KiwiComponent.d.ts" />
 var Character;
 (function (Character) {
-    let Race;
-    (function (Race) {
-        Race[Race["human"] = 0] = "human";
-        Race[Race["elf"] = 1] = "elf";
-        Race[Race["dwarf"] = 2] = "dwarf";
-        Race[Race["gnome"] = 3] = "gnome";
-        Race[Race["hobbit"] = 4] = "hobbit";
-    })(Race = Character.Race || (Character.Race = {}));
+    let RaceType;
+    (function (RaceType) {
+        RaceType[RaceType["human"] = 0] = "human";
+        RaceType[RaceType["elf"] = 1] = "elf";
+        RaceType[RaceType["dwarf"] = 2] = "dwarf";
+        RaceType[RaceType["gnome"] = 3] = "gnome";
+        RaceType[RaceType["hobbit"] = 4] = "hobbit";
+    })(RaceType = Character.RaceType || (Character.RaceType = {}));
     ;
+    Character.RaceName = {
+        human: "human",
+        elf: "elf",
+        dwarf: "dwarf",
+        gnome: "gnome",
+        hobitt: "hobbit"
+    };
     function raceToString(race) {
         let result = "?";
         switch (race) {
-            case Race.human:
-                result = "human";
+            case RaceType.human:
+                result = Character.RaceName.human;
                 break;
-            case Race.elf:
-                result = "elf";
+            case RaceType.elf:
+                result = Character.RaceName.elf;
                 break;
-            case Race.dwarf:
-                result = "dwarf";
+            case RaceType.dwarf:
+                result = Character.RaceName.dwarf;
                 break;
-            case Race.gnome:
-                result = "gnome";
+            case RaceType.gnome:
+                result = Character.RaceName.gnome;
                 break;
-            case Race.hobbit:
-                result = "hobbit";
+            case RaceType.hobbit:
+                result = Character.RaceName.hobitt;
                 break;
         }
         return result;
@@ -60,38 +67,62 @@ var Character;
         StatusType[StatusType["luck"] = 9] = "luck";
     })(StatusType = Character.StatusType || (Character.StatusType = {}));
     ;
+    Character.StatusName = {
+        level: "level",
+        hitPoint: "hitPoint",
+        magicPoint: "magicPoint",
+        strength: "strength",
+        vitality: "vitality",
+        dexterity: "dexterity",
+        agility: "agility",
+        intelligence: "intelligence",
+        piety: "piety",
+        luck: "luck"
+    };
+    Character.allStatusNames = [
+        Character.StatusName.level,
+        Character.StatusName.hitPoint,
+        Character.StatusName.magicPoint,
+        Character.StatusName.strength,
+        Character.StatusName.vitality,
+        Character.StatusName.dexterity,
+        Character.StatusName.agility,
+        Character.StatusName.intelligence,
+        Character.StatusName.piety,
+        Character.StatusName.luck
+    ];
     function statusTypeToString(type) {
         let result = "?";
         switch (type) {
             case StatusType.level:
-                result = "level";
+                result = Character.StatusName.level;
                 break;
             case StatusType.hitPoint:
-                result = "hitPoint";
+                result = Character.StatusName.hitPoint;
                 break;
             case StatusType.magicPoint:
-                result = "magicPoint";
+                result = Character.StatusName.magicPoint;
                 break;
             case StatusType.strength:
-                result = "strength";
+                result = Character.StatusName.strength;
                 break;
             case StatusType.vitality:
-                result = "vitality";
+                result = Character.StatusName.vitality;
                 break;
             case StatusType.dexterity:
-                result = "dexterity";
+                result = Character.StatusName.dexterity;
                 break;
             case StatusType.agility:
-                result = "agility";
+                result = Character.StatusName.agility;
                 break;
             case StatusType.intelligence:
-                result = "intelligence";
+                result = Character.StatusName.intelligence;
                 break;
             case StatusType.piety:
-                result = "piety";
+                result = Character.StatusName.piety;
                 break;
             case StatusType.luck:
-                result = "luck";
+                result = Character.StatusName.luck;
                 break;
         }
         return result;
@@ -99,17 +130,44 @@ var Character;
     Character.statusTypeToString = statusTypeToString;
     class Status {
         constructor() {
-            this.level = 0;
-            this.hitPoint = 0;
-            this.magicPoint = 0;
-            this.strength = 0;
-            this.vitality = 0;
-            this.dexterity = 0;
-            this.agility = 0;
-            this.intelligence = 0;
-            this.piety = 0;
-            this.luck = 0;
+            this.mTable = {};
+            for (let name of Character.allStatusNames) {
+                this.mTable[name] = 0;
+            }
         }
+        value(key) {
+            let val = this.mTable[key];
+            if (val != null) {
+                return val;
+            }
+            else {
+                console.error("[Error] No member");
+                return 0;
+            }
+        }
+        setValue(value, key) {
+            this.mTable[key] = value;
+        }
+        set level(value) { this.setValue(value, Character.StatusName.level); }
+        get level() { return this.value(Character.StatusName.level); }
+        set hitPoint(value) { this.setValue(value, Character.StatusName.hitPoint); }
+        get hitPoint() { return this.value(Character.StatusName.hitPoint); }
+        set magicPoint(value) { this.setValue(value, Character.StatusName.magicPoint); }
+        get magicPoint() { return this.value(Character.StatusName.magicPoint); }
+        set strength(value) { this.setValue(value, Character.StatusName.strength); }
+        get strength() { return this.value(Character.StatusName.strength); }
+        set vitality(value) { this.setValue(value, Character.StatusName.vitality); }
+        get vitality() { return this.value(Character.StatusName.vitality); }
+        set dexterity(value) { this.setValue(value, Character.StatusName.dexterity); }
+        get dexterity() { return this.value(Character.StatusName.dexterity); }
+        set agility(value) { this.setValue(value, Character.StatusName.agility); }
+        get agility() { return this.value(Character.StatusName.agility); }
+        set intelligence(value) { this.setValue(value, Character.StatusName.intelligence); }
+        get intelligence() { return this.value(Character.StatusName.intelligence); }
+        set piety(value) { this.setValue(value, Character.StatusName.piety); }
+        get piety() { return this.value(Character.StatusName.piety); }
+        set luck(value) { this.setValue(value, Character.StatusName.luck); }
+        get luck() { return this.value(Character.StatusName.luck); }
     }
     Character.Status = Status;
     ;
@@ -124,33 +182,32 @@ var Character;
     function loadInitStatus(race) {
         let table = valueTableInStorage("main", "character.initStatus");
         if (table == null) {
-            console.log("[Error] No table");
+            console.error("[Error] No table\n");
             return null;
         }
         let racename = raceToString(race);
         let recs = table.search(racename, "race");
         if (recs != null) {
             if (recs.length < 1) {
-                console.log("[Error] No records");
+                console.error("[Error] No records\n");
                 return null;
             }
         }
         else {
-            console.log("[Error] No records");
+            console.error("[Error] No records\n");
             return null;
         }
         let status = new Status();
         let record = recs[0];
-        status.level = anyToNumber(record.value("level"));
-        status.hitPoint = anyToNumber(record.value("hitPoint"));
-        status.magicPoint = anyToNumber(record.value("magicPoint"));
-        status.strength = anyToNumber(record.value("strength"));
-        status.vitality = anyToNumber(record.value("vitality"));
-        status.dexterity = anyToNumber(record.value("dexterity"));
-        status.agility = anyToNumber(record.value("agility"));
-        status.intelligence = anyToNumber(record.value("intelligence"));
-        status.piety = anyToNumber(record.value("piety"));
-        status.luck = anyToNumber(record.value("luck"));
+        for (let name of Character.allStatusNames) {
+            let val = record.value(name);
+            if (isNumber(val)) {
+                status.setValue(val, name);
+            }
+            else {
+                console.error("[Error] Invalid status value: " + val + " for name:" + name + "\n");
+            }
+        }
         return status;
     }
     Character.loadInitStatus = loadInitStatus;
