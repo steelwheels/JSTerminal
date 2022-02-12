@@ -2,6 +2,7 @@ top: VBox {
 	bonus:		Int	10
 	name:		String	""
         race:           Int 	0
+        job:            Int     0
 	status:		Object	{ }
 
 	title: Image {
@@ -24,14 +25,6 @@ top: VBox {
 			return message ;
 		%}
 	}
-	bonus_box: HBox {
-		title: Label { text: String "Bonus" }
-		value: Label {
-			number: Int Listner(bonus: top.bonus) %{
-				return bonus ;
-			%}
-	    	}
-	}
         name_box: HBox {
                 title: Label { text: String "Character name" }
 		field: TextField {
@@ -43,7 +36,7 @@ top: VBox {
 	}
         race_box: HBox {
                 title: Label { text: String "Race" }
-                race_radio: RadioButtons {
+                radio: RadioButtons {
                         labels: Array [	"human",
 					"elf",
 					"dwarf",
@@ -52,7 +45,7 @@ top: VBox {
                         isEnabled: Array Listner(race: top.race) %{
                                 return [true, true, true, true, true] ;
                         %}
-                        columnCount: Int 3
+                        columnCount: Int 4
                         selected: Event(index) %{
 				let race = Character.RaceType.human ;
 				switch(index){
@@ -69,6 +62,56 @@ top: VBox {
                         %}
                 }
         }
+        job_box: HBox {
+                title: Label { text: String "Job" }
+                radio: RadioButtons {
+                        labels: Array [	"fighter",
+					"mage",
+					"priest",
+					"thief",
+                                        "samurai",
+                                        "bishop",
+                                        "ninjya",
+					"lord"]
+                        isEnabled: Array Listner(status: top.status) %{
+                                let f = Character.hasEnoughStatusForJob(Character.JobType.fighter, status) ;
+                                let m = Character.hasEnoughStatusForJob(Character.JobType.mage,    status) ;
+                                let p = Character.hasEnoughStatusForJob(Character.JobType.priest,  status) ;
+                                let t = Character.hasEnoughStatusForJob(Character.JobType.thief,   status) ;
+                                let s = Character.hasEnoughStatusForJob(Character.JobType.samurai, status) ;
+                                let b = Character.hasEnoughStatusForJob(Character.JobType.bishop,  status) ;
+                                let n = Character.hasEnoughStatusForJob(Character.JobType.ninjya,  status) ;
+                                let l = Character.hasEnoughStatusForJob(Character.JobType.lord,    status) ;
+                                console.log("f=" + f + ", strlength=" + status.strength) ;
+                                return [f, m, p, t, s, b, n, l] ;
+                        %}
+                        columnCount: Int 4
+                        selected: Event(index) %{
+				let job = Character.JobType.fighter ;
+				switch(index){
+				  case 0: job = Character.JobType.fighter ;     break ;
+				  case 1: job = Character.JobType.mage ;        break ;
+				  case 2: job = Character.JobType.priest ;      break ;
+				  case 3: job = Character.JobType.thief ;       break ;
+				  case 4: job = Character.JobType.samurai ;     break ;
+                                  case 5: job = Character.JobType.bishop ;      break ;
+                                  case 6: job = Character.JobType.ninjya ;      break ;
+                                  case 7: job = Character.JobType.lord ;        break ;
+				}
+                                if(top.job != job){
+                                        top.job = job ;
+                                }
+                        %}
+                }
+        }
+	bonus_box: HBox {
+		title: Label { text: String "Bonus" }
+		value: Label {
+			number: Int Listner(bonus: top.bonus) %{
+				return bonus ;
+			%}
+		}
+	}
 	hp_box: HBox {
 		title: Label { text: String "HitPoint" }
 		stepper: Stepper {
@@ -81,9 +124,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.hitPoint = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.hitPoint = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -99,9 +143,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.magicPoint = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.magicPoint = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -117,9 +162,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.strength = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.strength = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -135,9 +181,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.vitality = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.vitality = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -153,9 +200,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.dextrity = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.dextrity = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -171,9 +219,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.agility = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.agility = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -189,9 +238,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.intelligence = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.intelligence = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -207,9 +257,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.piety = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.piety = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}
@@ -225,9 +276,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				top.status.luck = newval ;
-				let diff = newval - self.currentValue ;
-				top.bonus -= diff ;
+				let newstat = top.status.clone() ;
+				newstat.luck = newval ;
+				top.bonus  -= newval - self.currentValue ;
+				top.status =  newstat ;
 			%}
 		}
 	}

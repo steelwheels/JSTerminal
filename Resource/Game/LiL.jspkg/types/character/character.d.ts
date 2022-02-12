@@ -17,12 +17,27 @@ declare module Character {
         hobitt: string;
     };
     function raceToString(race: RaceType): string;
-    enum Job {
+    enum JobType {
         fighter = 0,
         mage = 1,
         priest = 2,
-        thief = 3
+        thief = 3,
+        samurai = 4,
+        bishop = 5,
+        ninjya = 6,
+        lord = 7
     }
+    const JobName: {
+        fighter: string;
+        mage: string;
+        priest: string;
+        thief: string;
+        samurai: string;
+        bishop: string;
+        ninjya: string;
+        lord: string;
+    };
+    function jobToString(job: JobType): string;
     enum StatusType {
         level = 0,
         hitPoint = 1,
@@ -74,6 +89,8 @@ declare module Character {
         get piety(): number;
         set luck(value: number);
         get luck(): number;
+        clone(): Status;
     }
     function loadInitStatus(race: RaceType): Status | null;
+    function hasEnoughStatusForJob(job: JobType, status: Status): boolean;
 }

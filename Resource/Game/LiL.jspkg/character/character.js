@@ -45,14 +45,59 @@ var Character;
         return result;
     }
     Character.raceToString = raceToString;
-    let Job;
-    (function (Job) {
-        Job[Job["fighter"] = 0] = "fighter";
-        Job[Job["mage"] = 1] = "mage";
-        Job[Job["priest"] = 2] = "priest";
-        Job[Job["thief"] = 3] = "thief";
-    })(Job = Character.Job || (Character.Job = {}));
+    let JobType;
+    (function (JobType) {
+        JobType[JobType["fighter"] = 0] = "fighter";
+        JobType[JobType["mage"] = 1] = "mage";
+        JobType[JobType["priest"] = 2] = "priest";
+        JobType[JobType["thief"] = 3] = "thief";
+        JobType[JobType["samurai"] = 4] = "samurai";
+        JobType[JobType["bishop"] = 5] = "bishop";
+        JobType[JobType["ninjya"] = 6] = "ninjya";
+        JobType[JobType["lord"] = 7] = "lord";
+    })(JobType = Character.JobType || (Character.JobType = {}));
     ;
+    Character.JobName = {
+        fighter: "fighter",
+        mage: "mage",
+        priest: "priest",
+        thief: "thief",
+        samurai: "samurai",
+        bishop: "bishop",
+        ninjya: "ninjya",
+        lord: "lord"
+    };
+    function jobToString(job) {
+        let result = "?";
+        switch (job) {
+            case JobType.fighter:
+                result = Character.JobName.fighter;
+                break;
+            case JobType.mage:
+                result = Character.JobName.mage;
+                break;
+            case JobType.priest:
+                result = Character.JobName.priest;
+                break;
+            case JobType.thief:
+                result = Character.JobName.thief;
+                break;
+            case JobType.samurai:
+                result = Character.JobName.samurai;
+                break;
+            case JobType.bishop:
+                result = Character.JobName.bishop;
+                break;
+            case JobType.ninjya:
+                result = Character.JobName.ninjya;
+                break;
+            case JobType.lord:
+                result = Character.JobName.lord;
+                break;
+        }
+        return result;
+    }
+    Character.jobToString = jobToString;
     let StatusType;
     (function (StatusType) {
         StatusType[StatusType["level"] = 0] = "level";
@@ -168,6 +213,20 @@ var Character;
         get piety() { return this.value(Character.StatusName.piety); }
         set luck(value) { this.setValue(value, Character.StatusName.luck); }
         get luck() { return this.value(Character.StatusName.luck); }
+        clone() {
+            let newstat = new Status();
+            newstat.level = this.level;
+            newstat.hitPoint = this.hitPoint;
+            newstat.magicPoint = this.magicPoint;
+            newstat.strength = this.strength;
+            newstat.vitality = this.vitality;
+            newstat.dexterity = this.dexterity;
+            newstat.agility = this.agility;
+            newstat.intelligence = this.intelligence;
+            newstat.piety = this.piety;
+            newstat.luck = this.luck;
+            return newstat;
+        }
     }
     Character.Status = Status;
     ;
@@ -211,5 +270,44 @@ var Character;
         return status;
     }
     Character.loadInitStatus = loadInitStatus;
+    function hasEnoughStatusForJob(job, status) {
+        let result = false;
+        console.log("JT " + job);
+        switch (job) {
+            case JobType.fighter:
+                console.log("JT(F)");
+                result = (status.strength >= 11);
+                break;
+            case JobType.mage:
+                result = (status.intelligence >= 11);
+                break;
+            case JobType.priest:
+                result = (status.piety >= 11);
+                break;
+            case JobType.thief:
+                result = (status.agility >= 11);
+                break;
+            case JobType.samurai:
+                result = (status.strength >= 15) && (status.intelligence >= 11)
+                    && (status.piety >= 10) && (status.vitality >= 14)
+                    && (status.agility >= 10);
+                break;
+            case JobType.bishop:
+                result = (status.intelligence >= 12) && (status.piety >= 12);
+                break;
+            case JobType.ninjya:
+                result = (status.strength >= 17) && (status.intelligence >= 17)
+                    && (status.piety >= 17) && (status.vitality >= 17)
+                    && (status.agility >= 17) && (status.luck >= 17);
+                break;
+            case JobType.lord:
+                result = (status.strength >= 15) && (status.intelligence >= 12)
+                    && (status.piety >= 12) && (status.vitality >= 15)
+                    && (status.agility >= 15) && (status.luck >= 15);
+                break;
+        }
+        return result;
+    }
+    Character.hasEnoughStatusForJob = hasEnoughStatusForJob;
 })(Character || (Character = {}));
 ; // end of module
