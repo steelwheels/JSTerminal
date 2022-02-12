@@ -117,6 +117,7 @@
 		05B7712F251879BF004FCD84 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712C251879BF004FCD84 /* Credits.rtf */; };
 		05B77130251879BF004FCD84 /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712D251879BF004FCD84 /* JSTerminal.help */; };
 		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
+		05D02A6827B722B900ABE0EA /* radio-button.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05D02A6727B7229400ABE0EA /* radio-button.jspkg */; };
 		05D542EC25CFCC1E007CD73C /* life-game.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05D542EB25CFCC1E007CD73C /* life-game.jspkg */; };
 		05D9A8AA263EACB8006D0FA2 /* KiwiLibrary.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */; };
 		05D9A8AB263EACB8006D0FA2 /* KiwiShell.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */; };
@@ -211,6 +212,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05D02A6827B722B900ABE0EA /* radio-button.jspkg in Copy Files */,
 				05A7303327B2ABF1005D5345 /* hello-world.jspkg in Copy Files */,
 				05A7303427B2ABF1005D5345 /* enter-view.jspkg in Copy Files */,
 				05A7303527B2ABF1005D5345 /* stepper.jspkg in Copy Files */,
@@ -371,6 +373,7 @@
 		05B7712D251879BF004FCD84 /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		05B7712E251879BF004FCD84 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05BAB09625A0661800DD59D7 /* num_guess.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = num_guess.js; sourceTree = "<group>"; };
+		05D02A6727B7229400ABE0EA /* radio-button.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "radio-button.jspkg"; sourceTree = "<group>"; };
 		05D542EB25CFCC1E007CD73C /* life-game.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "life-game.jspkg"; sourceTree = "<group>"; };
 		05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiLibrary.d.ts; sourceTree = "<group>"; };
 		05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiShell.d.ts; sourceTree = "<group>"; };
@@ -476,6 +479,7 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				05D02A6727B7229400ABE0EA /* radio-button.jspkg */,
 				05A7303227B2ABDB005D5345 /* hello-world.jspkg */,
 				05A7303027B2AB98005D5345 /* enter-view.jspkg */,
 				05A7302F27B2AB89005D5345 /* stepper.jspkg */,

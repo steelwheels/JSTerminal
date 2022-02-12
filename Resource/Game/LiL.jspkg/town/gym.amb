@@ -1,5 +1,6 @@
 top: VBox {
 	bonus:		Int	10
+	name:		String	""
         race:           Int 	0
 	status:		Object	{ }
 
@@ -8,8 +9,7 @@ top: VBox {
 	}
 	msg_box: TextField {
 		isEditable: Bool false
-		text: String Listner(name:  top.name_box.field.text, 
-				     bonus: top.bonus) %{
+		text: String Listner(name:  top.name, bonus: top.bonus) %{
 			let message = "" ;
 			if(name == "" && bonus == 0){
 				message += "Press button to add new member" ;
@@ -36,34 +36,31 @@ top: VBox {
                 title: Label { text: String "Character name" }
 		field: TextField {
 			isEditable:	Bool true
+			edited: Event(text) %{
+				top.name = text ;
+			%}
 		}
 	}
         race_box: HBox {
                 title: Label { text: String "Race" }
-                race_menu: PopupMenu {
-                        items: Array [	"human",
+                race_radio: RadioButtons {
+                        labels: Array [	"human",
 					"elf",
 					"dwarf",
 					"gnome",
 					"hobbit"]
+                        isEnabled: Array Listner(race: top.race) %{
+                                return [true, true, true, true, true] ;
+                        %}
+                        columnCount: Int 3
                         selected: Event(index) %{
 				let race = Character.RaceType.human ;
 				switch(index){
-				  case 0:
-					race = Character.RaceType.human ;
-				  break ;
-				  case 1:
-					race = Character.RaceType.elf ;
-				  break ;
-				  case 2:
-					race = Character.RaceType.dwarf ;
-				  break ;
-				  case 3:
-					race = Character.RaceType.gnome ;
-				  break ;
-				  case 4:
-					race = Character.RaceType.hobbit ;
-				  break ;
+				  case 0: race = Character.RaceType.human ;     break ;
+				  case 1: race = Character.RaceType.elf ;       break ;
+				  case 2: race = Character.RaceType.dwarf ;     break ;
+				  case 3: race = Character.RaceType.gnome ;     break ;
+				  case 4: race = Character.RaceType.hobbit ;    break ;
 				}
                                 if(top.race != race){
                                         top.race = race ;
