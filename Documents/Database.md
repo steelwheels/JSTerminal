@@ -20,7 +20,7 @@ This is a sample script to access contact information:
           let addrs = record.postalAddresses ;
           self.value = addrs ;
         } else {
-          console.log("No record") ;
+          console.error("No record\n") ;
         }
       %}
   }

@@ -8,14 +8,14 @@ Hello, world
 ````
 You can execute the JavaScript by prepending `%` at the head of the statement.
 ````
-jsh> % console.log("Hello, world") ;
+jsh> % console.print("Hello, world\n") ;
 Hello, world
 ````
 You can switch the *shell mode* into *JavaScript mode* by entering `%` key. The JavaScript mode accepts JavaScript code dynamically.
 ````
 jsh> %
 jsh% let a = 10 ;
-jsh% console.log("a = " + a) ;
+jsh% console.print("a = " + a + "\n") ;
 a = 10
 jsh%
 ````
@@ -35,7 +35,7 @@ This is famous demo program for JavaScript.
 jsh> cat Sample/hello.js
 function main(args)
 {
-	console.log("Hello, world !!") ;
+	console.print("Hello, world !!\n") ;
 }
 
 jsh> run Sample/hello.js
@@ -79,7 +79,7 @@ This is a samle context of `.jshrc` file. You can get the version of shell and c
 
 ````
 /* Print version */
-console.log("jsh: version: " + Preference.system.version) ;
+console.print("jsh: version: " + Preference.system.version + "\n") ;
 
 /* Set prompt */
 Preference.shell.prompt = function() {

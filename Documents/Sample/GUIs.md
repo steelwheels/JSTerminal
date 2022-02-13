@@ -16,14 +16,14 @@ top: VBox {
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{
-		console.log("pressed: OK") ;
+		console.print("pressed: OK\n") ;
 	    	leaveView(1) ;
         %}
     }
     cancel_button: Button {
         title:  String "Cancel"
         pressed: Event() %{
-		console.log("pressed: Cancel") ;
+		console.print("pressed: Cancel\n") ;
 		leaveView(0) ;
         %}
     }

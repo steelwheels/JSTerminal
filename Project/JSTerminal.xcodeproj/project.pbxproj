@@ -57,6 +57,8 @@
 		053999C62621562D008B561C /* scroll0.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 050D9792261C02AA004FABF8 /* scroll0.js */; };
 		053999C72621562D008B561C /* stdin.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 050D9796261C02AA004FABF8 /* stdin.js */; };
 		053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05BAB09625A0661800DD59D7 /* num_guess.js */; };
+		053ED8EB27B9463400C13A57 /* console-1.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 053ED8E927B9461800C13A57 /* console-1.js */; };
+		053ED8EC27B9463400C13A57 /* console-1.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 053ED8EA27B9461800C13A57 /* console-1.ts */; };
 		054D3B112782B6FA00206B8E /* storage0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 054D3B102782B6DC00206B8E /* storage0.jspkg */; };
 		054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 051A55282771EA950093CE80 /* drawing.jspkg */; };
 		0557F0352714749500C4C6A8 /* addressbook.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 0557F0342714749500C4C6A8 /* addressbook.jspkg */; };
@@ -212,6 +214,8 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				053ED8EB27B9463400C13A57 /* console-1.js in Copy Files */,
+				053ED8EC27B9463400C13A57 /* console-1.ts in Copy Files */,
 				05D02A6827B722B900ABE0EA /* radio-button.jspkg in Copy Files */,
 				05A7303327B2ABF1005D5345 /* hello-world.jspkg in Copy Files */,
 				05A7303427B2ABF1005D5345 /* enter-view.jspkg in Copy Files */,
@@ -330,6 +334,8 @@
 		0537528B27869B8E00EB3A2D /* value-table-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-2.jspkg"; sourceTree = "<group>"; };
 		0538B15127A9581F00079087 /* checkbox.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = checkbox.jspkg; sourceTree = "<group>"; };
 		0538B15227A9583100079087 /* text-field.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "text-field.jspkg"; sourceTree = "<group>"; };
+		053ED8E927B9461800C13A57 /* console-1.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "console-1.js"; sourceTree = "<group>"; };
+		053ED8EA27B9461800C13A57 /* console-1.ts */ = {isa = PBXFileReference; lastKnownFileType = text; path = "console-1.ts"; sourceTree = "<group>"; };
 		054D3B102782B6DC00206B8E /* storage0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = storage0.jspkg; sourceTree = "<group>"; };
 		0557F0342714749500C4C6A8 /* addressbook.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = addressbook.jspkg; sourceTree = "<group>"; };
 		0557F038271474AC00C4C6A8 /* value1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = value1.jspkg; sourceTree = "<group>"; };
@@ -479,6 +485,8 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				053ED8E927B9461800C13A57 /* console-1.js */,
+				053ED8EA27B9461800C13A57 /* console-1.ts */,
 				05D02A6727B7229400ABE0EA /* radio-button.jspkg */,
 				05A7303227B2ABDB005D5345 /* hello-world.jspkg */,
 				05A7303027B2AB98005D5345 /* enter-view.jspkg */,

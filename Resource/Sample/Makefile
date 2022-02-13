@@ -5,6 +5,7 @@
 srcs	= alert.ts \
 	  collection0.ts \
 	  colors.ts \
+	  console-1.ts \
 	  curses-frame.ts \
 	  escape-code.ts \
 	  file.ts \

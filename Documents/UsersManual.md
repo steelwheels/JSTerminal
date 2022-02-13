@@ -30,7 +30,7 @@ top: VBox {
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{
-		console.log("pressed: OK") ;
+		console.print("pressed: OK\n") ;
 	    	leaveView(1) ;
         %}
     }
@@ -68,7 +68,7 @@ This is famous demo program for JavaScript.
 jsh> cat Sample/hello.js
 function main(args)
 {
-	console.log("Hello, world !!") ;
+	console.print("Hello, world !!\n") ;
 }
 
 jsh> run Sample/hello.js
@@ -103,14 +103,14 @@ top: VBox {
     ok_button: Button {
         title:  String "OK"
         pressed: Event() %{
-        	onsole.log("pressed: OK") ;
+            console.print("pressed: OK\n") ;
             leaveView(1) ;
         %}
     }
     cancel_button: Button {
         title:  String "Cancel"
         pressed: Event() %{
-            console.log("pressed: Cancel") ;
+            console.print("pressed: Cancel\n") ;
             leaveView(0) ;
         %}
     }
