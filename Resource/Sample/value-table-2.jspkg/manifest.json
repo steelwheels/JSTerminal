@@ -1,7 +1,8 @@
 {
 	application: "main.js"
 	storages: {
-		root: "data/root.json"
+		root:		"root.json"
+		storage:	"storage.json"
 	}
 }
 

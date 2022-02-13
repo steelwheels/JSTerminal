@@ -19,7 +19,7 @@ function main(args: string[]): number
 		if(isEOF(c)){
 			docont = false ;
 		} else {
-			console.log("char = " + c) ;
+			console.print("char = " + c + "\n") ;
 		}
 	}
 	return 0 ;

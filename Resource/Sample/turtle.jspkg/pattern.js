@@ -26,6 +26,6 @@ function makePattern(turtle) {
     for (let i = 0; i < 6; i++) {
         pat = makeOnePattern(pat);
     }
-    //console.log(`result = ${pat}`)
+    //console.print(`result = ${pat}\n`)
     return pat.replace(/A/g, 'F').replace(/B/g, 'F');
 }

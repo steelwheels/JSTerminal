@@ -16,7 +16,7 @@ function main(args) {
             docont = false;
         }
         else {
-            console.log("char = " + c);
+            console.print("char = " + c + "\n");
         }
     }
     return 0;

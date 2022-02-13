@@ -7,7 +7,7 @@
 
 function main(args: string[]): number
 {
-	console.log("Readline: menu") ;
+	console.print("Readline: menu\n") ;
 
 	let items: MenuItem[] = [
 		{key: "A", label: "Item A"},
@@ -16,7 +16,7 @@ function main(args: string[]): number
 	] ;
 
 	let result = Readline.menu(items) ;
-	console.log("result = " + result + "\n") ;
+	console.print("result = " + result + "\n") ;
 	return 0 ;
 }
 

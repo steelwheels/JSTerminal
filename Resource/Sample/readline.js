@@ -7,15 +7,15 @@
 function main(args) {
     console.print("input line> ");
     let line = Readline.inputLine();
-    console.log("line -> " + line);
+    console.print("line -> " + line + "\n");
     console.print("===== menu =====\n");
     let items = Readline.stringsToMenuItems(["a", "b", "c"], false);
     if (items != null) {
         let idx = Readline.menu(items);
-        console.log("menu -> " + idx);
+        console.print("menu -> " + idx + "\n");
     }
     else {
-        console.log("menu -> Error");
+        console.print("menu -> Error\n");
     }
     return 0;
 }

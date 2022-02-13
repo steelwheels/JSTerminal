@@ -54,11 +54,11 @@ function main(args : string[])
 
 function usage()
 {
-	console.log("'d': Dump current record") ;
-	console.log("'e': Edit current record") ;
-	console.log("'+': Increment record index") ;
-	console.log("'-': Decrement record index") ;
-	console.log("'q': Quit this utility") ;
+	console.print("'d': Dump current record\n") ;
+	console.print("'e': Edit current record\n") ;
+	console.print("'+': Increment record index\n") ;
+	console.print("'-': Decrement record index\n") ;
+	console.print("'q': Quit this utility\n") ;
 }
 
 function incIndex(idx: number): number
@@ -145,12 +145,8 @@ function editRecord(index: number): void
 	let newval = editor.edit(val) ;
 
         if(newval != null){
-                if(record.save()){
-                        console.print("[new value] ") ;
-	                dumpValue(fname, newval) ;
-                } else {
-                        console.print("[Error] Failed to save\n")
-                }
+		console.print("[new value] ") ;
+		dumpValue(fname, newval) ;
         }
 }
 

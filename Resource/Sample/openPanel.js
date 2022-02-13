@@ -7,11 +7,11 @@ function main() {
     let result = -1;
     let url = openPanel("Select JS file", FileType.file, ["js"]);
     if (url != null) {
-        console.log("Selected URL = " + url.path);
+        console.print("Selected URL = " + url.path + "\n");
         result = 0;
     }
     else {
-        console.log("Selected URL = NULL");
+        console.print("Selected URL = NULL\n");
     }
     return result;
 }

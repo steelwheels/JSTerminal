@@ -256,9 +256,10 @@ interface ValueTableIF {
 
 	readonly allFieldNames:	string[] ;
 
-	newRecord():		ValueRecordIF ;
-	record(row: number):	ValueRecordIF | null ;
-	append(record: ValueRecordIF): void ;
+	newRecord():				ValueRecordIF ;
+	record(row: number):			ValueRecordIF | null ;
+	search(value: any, name: string):	ValueRecordIF[] | null ;
+	append(record: ValueRecordIF): 		void ;
 }
 
 interface SymbolsIF {
@@ -310,6 +311,7 @@ interface ContactDatabaseIF {
 
 	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
+	search(value: any, name: string):	ContactRecordIF[] | null ;
         append(record: ContactRecordIF): void ;
 	forEach(callback: (record: ContactRecordIF) => void): void ;
 }
@@ -399,27 +401,7 @@ declare function _run(path: URLIF | string, input: FileIF, output: FileIF, error
 declare function isEmptyString(str: string): boolean;
 declare function isEmptyObject(obj: object): boolean;
 /// <reference path="Builtin.d.ts" />
-declare function Array1D(length: number, value: any): any[];
-declare function Array2D(width: number, height: number, value: any): any[][];
-declare class Table {
-    mWidth: number;
-    mHeight: number;
-    mTable: any[][];
-    get width(): number;
-    get height(): number;
-    constructor(width: number, height: number);
-    isValid(x: number, y: number): boolean;
-    element(x: number, y: number): any | null | undefined;
-    setElement(x: number, y: number, value: any | null): void;
-    fill(value: any | null): void;
-    forEach(childFunc: (value: any, index: PointIF) => void): void;
-    forEachColumn(x: number, childFunc: (value: any, y: number) => void): void;
-    forEachRow(y: number, childFunc: (value: any, x: number) => void): void;
-    find(findFunc: (value: any, index: PointIF) => boolean): void;
-    findIndex(findFunc: (value: any, index: PointIF) => boolean): PointIF;
-    map(mapFunc: (value: any, index: PointIF) => any): Table;
-    toStrings(elm2str: (value: any, index: PointIF) => any): string[];
-}
+declare function valueTableInStorage(storage: string, path: string): ValueTableIF | null;
 /// <reference path="Builtin.d.ts" />
 declare class File {
     mCore: FileIF;

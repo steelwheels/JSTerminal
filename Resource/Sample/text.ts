@@ -28,11 +28,12 @@ function main(args: string[])
 	sect0.add(line1) ;
         sect0.add(table0) ;
 
-	console.log("Result:") ;
+	console.print("Result:\n") ;
 	let result = sect0.toString() ;
 	for(let res of result){
-		console.log(res) ;
+		console.print(res) ;
 	}
+	console.print("\n") ;
 
 	return 0 ;
 }

@@ -29,7 +29,7 @@ class AppDelegate: CNApplicationDelegate
 	@IBAction public func openLogWindow(_ sender: Any) {
 		if let _ = sender as? NSMenuItem {
 			/* Update log level to output log */
-			let _ = KCLogManager.shared
+			let _ = KCLogWindowManager.shared
 			let syspref = CNPreference.shared.systemPreference
 			syspref.logLevel = .debug
 		}

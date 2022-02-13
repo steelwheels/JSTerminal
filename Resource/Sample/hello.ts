@@ -6,7 +6,7 @@
 
 function main(args: string[]): number
 {
-	console.log("Hello, world !!") ;
+	console.print("Hello, world !!\n") ;
 	return 0 ;
 }
 

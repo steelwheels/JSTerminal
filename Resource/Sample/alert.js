@@ -5,8 +5,8 @@
 /// <reference path="types/KiwiLibrary.d.ts"/>
 /// <reference path="types/KiwiComponent.d.ts"/>
 function main(args) {
-    console.log("Hello");
+    console.print("Hello\n");
     let result = alert("Hello, world");
-    console.log("result = " + result);
+    console.print("result = " + result + "\n");
     return 0;
 }

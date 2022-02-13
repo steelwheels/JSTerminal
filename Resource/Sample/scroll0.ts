@@ -7,7 +7,7 @@
 function main(args : string[]): number
 {
 	for(let i=0 ; i<40 ; i++){
-		console.log("i = " + i) ;
+		console.print("i = " + i + "\n") ;
 	}
 	let ecode =   EscapeCode.cursorUp(30)
 	            + EscapeCode.scrollUp(4) ;

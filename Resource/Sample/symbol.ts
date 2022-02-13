@@ -7,7 +7,7 @@
 function main(args: string[]): number
 {
 	let path = Symbols.characterA.path ;
-	console.log("characterA : " + path) ;
+	console.print("characterA : " + path + "\n") ;
 	return 0 ;
 }
 

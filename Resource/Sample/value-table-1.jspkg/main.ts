@@ -6,42 +6,42 @@
 
 function main(args : [string])
 {
-	console.log("# value-table") ;
+	console.print("# value-table\n") ;
 
 	let storage = ValueStorage("storage") ;
 	if(storage == null){
-		console.log("Failed to allocate storage") ;
+		console.print("Failed to allocate storage\n") ;
 		return -1 ;
 	}
 
 	let table = ValueTable("data", storage) ;
 	if(table == null){
-		console.log("Failed to allocate table") ;
+		console.print("Failed to allocate table\n") ;
 		return -1 ;
 	}
 
 	let count = table.recordCount ;
-	console.log("recode-count = " + count) ;
+	console.print("recode-count = " + count + "\n") ;
 
 	let fnames = table.allFieldNames ;
-	console.log("all-field-names = " + fnames) ;
+	console.print("all-field-names = " + fnames + "\n") ;
 
 	for(let i=0 ; i<count ; i++){
 		let record = table.record(i) ;
 		if(record != null){
-			console.log("Record[" + i + "]") ;
+			console.print("Record[" + i + "]\n") ;
 			let fnames = record.fieldNames ;
-			console.log(" field-names : " + fnames) ;
+			console.print(" field-names : " + fnames + "\n") ;
                         for(let fname of fnames){
                                 let val = record.value(fname) ;
                                 if(val != null){
-                                        console.log(fname + ": " + val) ;
+                                        console.print(fname + ": "+ val +"\n");
                                 } else {
-                                        console.log(fname + ": <none>") ;
+                                        console.print(fname + ": <none>\n") ;
                                 }
                         }
 		} else {
-			console.log("[Error] No record at " + i) ;
+			console.print("[Error] No record at " + i + "\n") ;
 		}
 	}
 

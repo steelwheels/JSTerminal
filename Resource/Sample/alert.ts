@@ -7,9 +7,9 @@
 
 function main(args : string[]): number
 {
-	console.log("Hello") ;
+	console.print("Hello\n") ;
 	let result = alert("Hello, world") ;
-	console.log("result = " + result) ;
+	console.print("result = " + result + "\n") ;
 	return 0 ;
 }
 

@@ -6,10 +6,10 @@
 
 function test_color(): boolean
 {
-	console.log("**** test: color") ;
+	console.print("**** test: color\n") ;
 
 	let black = Color.black ;
-	console.log("black = " + black) ;
+	console.print("black = " + black + "\n") ;
 
 	return true ;
 }

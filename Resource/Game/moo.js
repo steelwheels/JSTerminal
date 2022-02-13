@@ -67,6 +67,7 @@ class Letters {
 }
 function main(args) {
     const LETTER_NUM = 4;
+    console.print("Input 4 digital characters\n");
     /* Allocate expected */
     let expval = new Letters(LETTER_NUM);
     expval.randomize();
@@ -76,9 +77,9 @@ function main(args) {
         let inval = input(LETTER_NUM);
         //console.print("inval: "); inval.print(); console.print("\n");
         let compres = expval.compare(inval);
-        console.log(`bull=${compres.bull}, cow=${compres.cow}`);
+        console.print(`bull=${compres.bull}, cow=${compres.cow}\n`);
         if (compres.bull == LETTER_NUM) {
-            console.log("Congratulations !!");
+            console.print("Congratulations !!\n");
             docont = false;
         }
     }
@@ -90,7 +91,7 @@ function input(length) {
         console.print("guess? > ");
         let line = Readline.inputLine();
         if (line.length != length) {
-            console.error("Error: Invalid length\n");
+            console.error("Error: Invalid length:" + line + "\n");
             continue;
         }
         for (let i = 0; i < length; i++) {

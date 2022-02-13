@@ -57,10 +57,10 @@ function main(args: string[]): number
 	while(!target.didMatched()){
                 let imgs = hangmanStrings(countToLevel(repcount, limit)) ;
                 for(let line of imgs){
-                        console.log(line) ;
+                        console.print(line + "\n") ;
                 }
 
-                console.log("word: " + target.toString()) ;
+                console.print("word: " + target.toString() + "\n") ;
                 console.print("character> ") ;
                 let c = Readline.inputLine() ;
                 if(c.length == 1){
@@ -75,9 +75,9 @@ function main(args: string[]): number
 	}
 
         if(target.didMatched()){
-                console.log("Conguraturations !") ;
+                console.print("Conguraturations !\n") ;
         } else {
-                console.log("Sorry, the answer is " + answer) ;
+                console.print("Sorry, the answer is " + answer + "\n") ;
         }
 
 	return 0 ;

@@ -6,14 +6,14 @@
 
 function main(args: string[]): number
 {
-	setColor(Curses.black) ; 	console.log('Hello World') 
-	setColor(Curses.red) ;   	console.log('Hello World') 
-	setColor(Curses.green) ; 	console.log('Hello World') 
-	setColor(Curses.yellow) ;	console.log('Hello World') 
-	setColor(Curses.blue) ;		console.log('Hello World') 
-	setColor(Curses.magenta) ;	console.log('Hello World') 
-	setColor(Curses.cyan) ;		console.log('Hello World') 
-	setColor(Curses.white) ;	console.log('Hello World') 
+	setColor(Curses.black) ; 	console.print('Hello World\n') 
+	setColor(Curses.red) ;   	console.print('Hello World\n') 
+	setColor(Curses.green) ; 	console.print('Hello World\n') 
+	setColor(Curses.yellow) ;	console.print('Hello World\n') 
+	setColor(Curses.blue) ;		console.print('Hello World\n') 
+	setColor(Curses.magenta) ;	console.print('Hello World\n') 
+	setColor(Curses.cyan) ;		console.print('Hello World\n') 
+	setColor(Curses.white) ;	console.print('Hello World\n') 
 	return 0 ;
 }
 
