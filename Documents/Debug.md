@@ -1,9 +1,27 @@
 # Debug
 
-## Log Window
-![Log Window](./Images/log-window.png)
-The log window is used to output debug log of this application.
-The window is shown the the [Log level](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Enum/LogLevel.md) is higher than `nolog`. You can change the log level at [preference window](https://github.com/steelwheels/JSTerminal/blob/master/Documents/Preference.md) or [Preference variable](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Preference.md).
+## Log message
+### `console.log` method
+You can use the log output. It is printed by `console.log(..)`  and put into the individual log window.
+
+The `console` object is used to output the log. These are method of it:
+
+|Method         |Output to      |File           |
+|:--            |:--            |:--            |
+|`print`        |terminal       |stdout         |
+|`error`        |terminal       |stderr         |
+|`log`          |log window     |*none*         |
+
+### Example
+This is a sample script to see the output messages.
+````
+console.print("Hello to print\n") ;
+console.error("Hello to error\n") ;
+console.log("Hello to log\n") ;
+````
+
+![console.print](./Images/console-print.png)
+![console.log](./Images/console-log.png)
 
 # References
 * [User's manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): The main document for the user. This document is refered by it.
