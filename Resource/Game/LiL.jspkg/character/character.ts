@@ -74,12 +74,10 @@ export function jobToString(job: JobType): string {
 }
 
 export enum StatusType {
-        level,
         hitPoint,
         magicPoint,
         strength,
         vitality,
-        dexterity,
         agility,
         intelligence,
         piety,
@@ -87,12 +85,10 @@ export enum StatusType {
 } ;
 
 export const StatusName = {
-	level:		"level",
         hitPoint:       "hitPoint",
         magicPoint:     "magicPoint",
         strength:       "strength",
         vitality:       "vitality",
-        dexterity:      "dexterity",
         agility:        "agility",
         intelligence:   "intelligence",
         piety:          "piety",
@@ -100,12 +96,10 @@ export const StatusName = {
 } ;
 
 export const allStatusNames: string[] = [
-        StatusName.level,
         StatusName.hitPoint,
         StatusName.magicPoint,
         StatusName.strength,
         StatusName.vitality,
-        StatusName.dexterity,
         StatusName.agility,
         StatusName.intelligence,
         StatusName.piety,
@@ -115,12 +109,10 @@ export const allStatusNames: string[] = [
 export function statusTypeToString(type: StatusType): string {
         let result: string = "?" ;
         switch(type){
-        case StatusType.level:          result = StatusName.level ;              break ;
         case StatusType.hitPoint:       result = StatusName.hitPoint ;           break ;
         case StatusType.magicPoint:     result = StatusName.magicPoint ;         break ;
         case StatusType.strength:       result = StatusName.strength ;           break ;
         case StatusType.vitality:       result = StatusName.vitality ;           break ;
-        case StatusType.dexterity:      result = StatusName.dexterity ;          break ;
         case StatusType.agility:        result = StatusName.agility ;            break ;
         case StatusType.intelligence:   result = StatusName.intelligence ;       break ;
         case StatusType.piety:          result = StatusName.piety ;              break ;
@@ -140,7 +132,7 @@ export class Status
                 }
 	}
 
-        value(key: string): number {
+        public value(key: string): number {
                 let val = this.mTable[key] ;
                 if(val != null){
                         return val! ;
@@ -150,12 +142,9 @@ export class Status
                 }
         }
 
-        setValue(value: number, key: string): void {
+        public setValue(value: number, key: string): void {
                 this.mTable[key] = value ;
         }
-
-        set level(value: number) { this.setValue(value, StatusName.level) ; }
-        get level() { return this.value(StatusName.level) ; }
 
         set hitPoint(value: number) { this.setValue(value, StatusName.hitPoint) ; }
         get hitPoint() { return this.value(StatusName.hitPoint) ; }
@@ -168,9 +157,6 @@ export class Status
 
         set vitality(value: number) { this.setValue(value, StatusName.vitality) ; }
         get vitality() { return this.value(StatusName.vitality) ; }
-
-        set dexterity(value: number) { this.setValue(value, StatusName.dexterity) ; }
-        get dexterity() { return this.value(StatusName.dexterity) ; }
 
         set agility(value: number) { this.setValue(value, StatusName.agility) ; }
         get agility() { return this.value(StatusName.agility) ; }
@@ -186,12 +172,10 @@ export class Status
 
         clone(): Status {
                 let newstat = new Status() ;
-                newstat.level           = this.level ;
                 newstat.hitPoint        = this.hitPoint ;
                 newstat.magicPoint      = this.magicPoint ;
                 newstat.strength        = this.strength ;
                 newstat.vitality        = this.vitality ;
-                newstat.dexterity       = this.dexterity ;
                 newstat.agility         = this.agility ;
                 newstat.intelligence    = this.intelligence ;
                 newstat.piety           = this.piety ;
@@ -209,14 +193,22 @@ function anyToNumber(value: any | null): number {
 }
 
 export function loadInitStatus(race: RaceType): Status | null {
-	let table = valueTableInStorage("main", "character.initStatus") ;
+        let racevalue = raceToString(race) ;
+	return loadAnyStatus("initStatus", "race", racevalue) ;
+}
+
+export function loadJobRequirement(job: JobType): Status | null {
+        let jobvalue = jobToString(job) ;
+	return loadAnyStatus("jobRequirement", "job", jobvalue) ;
+}
+
+function loadAnyStatus(tablename: string, typename: string, typevalue: string): Status | null {
+	let table = valueTableInStorage("main", "character." + tablename) ;
 	if(table == null){
-		console.error("[Error] No table\n") ;
+		console.error("[Error] No table:" + tablename + "\n") ;
 		return null ;
 	}
-
-        let racename = raceToString(race) ;
-	let recs     = table!.search(racename, "race") ;
+        let recs  = table!.search(typevalue, typename) ;
 	if(recs != null){
                 if(recs!.length < 1){
                         console.error("[Error] No records\n")
@@ -226,10 +218,8 @@ export function loadInitStatus(race: RaceType): Status | null {
                 console.error("[Error] No records\n") ;
                 return null ;
         }
-        
-	let status = new Status() ;
+        let status = new Status() ;
 	let record = recs![0] ;
-
         for(let name of allStatusNames) {
                 let val = record.value(name) ;
                 if(isNumber(val)){
@@ -242,41 +232,18 @@ export function loadInitStatus(race: RaceType): Status | null {
         return status ;
 }
 
-export function hasEnoughStatusForJob(job: JobType, status: Status): boolean {
-        let result = false ;
-        console.log("JT " + job) ;
-        switch(job){
-        case JobType.fighter:
-                console.log("JT(F)") ;
-                result = (status.strength >= 11) ;
-        break ;
-        case JobType.mage:
-                result = (status.intelligence >= 11) ;
-        break ;
-        case JobType.priest:
-                result = (status.piety >= 11) ;
-        break ;
-        case JobType.thief:
-                result = (status.agility >= 11) ;
-        break ;
-        case JobType.samurai:
-                result =   (status.strength >= 15) && (status.intelligence >= 11)
-                        && (status.piety    >= 10) && (status.vitality     >= 14)
-                        && (status.agility  >= 10) ;
-        break ;
-        case JobType.bishop:
-                result =   (status.intelligence >= 12) && (status.piety >= 12) ;
-        break ;
-        case JobType.ninjya:
-                result =   (status.strength >= 17) && (status.intelligence >= 17)
-                        && (status.piety    >= 17) && (status.vitality     >= 17)
-                        && (status.agility  >= 17) && (status.luck         >= 17) ;
-        break ;
-        case JobType.lord:
-                result =   (status.strength >= 15) && (status.intelligence >= 12)
-                        && (status.piety    >= 12) && (status.vitality     >= 15)
-                        && (status.agility  >= 15) && (status.luck         >= 15) ;
-        break ;
+export function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean {
+        let reqstatus = loadJobRequirement(job) ;
+        if(reqstatus == null) {
+                console.error("[Error] No job requirement") ;
+                return false ;
+        }
+        let result = true ;
+        for(let name of allStatusNames){
+                if(srcstatus.value(name) < reqstatus.value(name)){
+                        result = false ;
+                        break ;
+                }
         }
         return result ;
 }

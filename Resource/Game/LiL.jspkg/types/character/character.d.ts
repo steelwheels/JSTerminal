@@ -39,24 +39,20 @@ declare module Character {
     };
     function jobToString(job: JobType): string;
     enum StatusType {
-        level = 0,
-        hitPoint = 1,
-        magicPoint = 2,
-        strength = 3,
-        vitality = 4,
-        dexterity = 5,
-        agility = 6,
-        intelligence = 7,
-        piety = 8,
-        luck = 9
+        hitPoint = 0,
+        magicPoint = 1,
+        strength = 2,
+        vitality = 3,
+        agility = 4,
+        intelligence = 5,
+        piety = 6,
+        luck = 7
     }
     const StatusName: {
-        level: string;
         hitPoint: string;
         magicPoint: string;
         strength: string;
         vitality: string;
-        dexterity: string;
         agility: string;
         intelligence: string;
         piety: string;
@@ -69,8 +65,6 @@ declare module Character {
         constructor();
         value(key: string): number;
         setValue(value: number, key: string): void;
-        set level(value: number);
-        get level(): number;
         set hitPoint(value: number);
         get hitPoint(): number;
         set magicPoint(value: number);
@@ -79,8 +73,6 @@ declare module Character {
         get strength(): number;
         set vitality(value: number);
         get vitality(): number;
-        set dexterity(value: number);
-        get dexterity(): number;
         set agility(value: number);
         get agility(): number;
         set intelligence(value: number);
@@ -92,5 +84,6 @@ declare module Character {
         clone(): Status;
     }
     function loadInitStatus(race: RaceType): Status | null;
-    function hasEnoughStatusForJob(job: JobType, status: Status): boolean;
+    function loadJobRequirement(job: JobType): Status | null;
+    function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean;
 }

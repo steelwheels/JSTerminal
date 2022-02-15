@@ -100,37 +100,31 @@ var Character;
     Character.jobToString = jobToString;
     let StatusType;
     (function (StatusType) {
-        StatusType[StatusType["level"] = 0] = "level";
-        StatusType[StatusType["hitPoint"] = 1] = "hitPoint";
-        StatusType[StatusType["magicPoint"] = 2] = "magicPoint";
-        StatusType[StatusType["strength"] = 3] = "strength";
-        StatusType[StatusType["vitality"] = 4] = "vitality";
-        StatusType[StatusType["dexterity"] = 5] = "dexterity";
-        StatusType[StatusType["agility"] = 6] = "agility";
-        StatusType[StatusType["intelligence"] = 7] = "intelligence";
-        StatusType[StatusType["piety"] = 8] = "piety";
-        StatusType[StatusType["luck"] = 9] = "luck";
+        StatusType[StatusType["hitPoint"] = 0] = "hitPoint";
+        StatusType[StatusType["magicPoint"] = 1] = "magicPoint";
+        StatusType[StatusType["strength"] = 2] = "strength";
+        StatusType[StatusType["vitality"] = 3] = "vitality";
+        StatusType[StatusType["agility"] = 4] = "agility";
+        StatusType[StatusType["intelligence"] = 5] = "intelligence";
+        StatusType[StatusType["piety"] = 6] = "piety";
+        StatusType[StatusType["luck"] = 7] = "luck";
     })(StatusType = Character.StatusType || (Character.StatusType = {}));
     ;
     Character.StatusName = {
-        level: "level",
         hitPoint: "hitPoint",
         magicPoint: "magicPoint",
         strength: "strength",
         vitality: "vitality",
-        dexterity: "dexterity",
         agility: "agility",
         intelligence: "intelligence",
         piety: "piety",
         luck: "luck"
     };
     Character.allStatusNames = [
-        Character.StatusName.level,
         Character.StatusName.hitPoint,
         Character.StatusName.magicPoint,
         Character.StatusName.strength,
         Character.StatusName.vitality,
-        Character.StatusName.dexterity,
         Character.StatusName.agility,
         Character.StatusName.intelligence,
         Character.StatusName.piety,
@@ -139,9 +133,6 @@ var Character;
     function statusTypeToString(type) {
         let result = "?";
         switch (type) {
-            case StatusType.level:
-                result = Character.StatusName.level;
-                break;
             case StatusType.hitPoint:
                 result = Character.StatusName.hitPoint;
                 break;
@@ -153,9 +144,6 @@ var Character;
                 break;
             case StatusType.vitality:
                 result = Character.StatusName.vitality;
-                break;
-            case StatusType.dexterity:
-                result = Character.StatusName.dexterity;
                 break;
             case StatusType.agility:
                 result = Character.StatusName.agility;
@@ -193,8 +181,6 @@ var Character;
         setValue(value, key) {
             this.mTable[key] = value;
         }
-        set level(value) { this.setValue(value, Character.StatusName.level); }
-        get level() { return this.value(Character.StatusName.level); }
         set hitPoint(value) { this.setValue(value, Character.StatusName.hitPoint); }
         get hitPoint() { return this.value(Character.StatusName.hitPoint); }
         set magicPoint(value) { this.setValue(value, Character.StatusName.magicPoint); }
@@ -203,8 +189,6 @@ var Character;
         get strength() { return this.value(Character.StatusName.strength); }
         set vitality(value) { this.setValue(value, Character.StatusName.vitality); }
         get vitality() { return this.value(Character.StatusName.vitality); }
-        set dexterity(value) { this.setValue(value, Character.StatusName.dexterity); }
-        get dexterity() { return this.value(Character.StatusName.dexterity); }
         set agility(value) { this.setValue(value, Character.StatusName.agility); }
         get agility() { return this.value(Character.StatusName.agility); }
         set intelligence(value) { this.setValue(value, Character.StatusName.intelligence); }
@@ -215,12 +199,10 @@ var Character;
         get luck() { return this.value(Character.StatusName.luck); }
         clone() {
             let newstat = new Status();
-            newstat.level = this.level;
             newstat.hitPoint = this.hitPoint;
             newstat.magicPoint = this.magicPoint;
             newstat.strength = this.strength;
             newstat.vitality = this.vitality;
-            newstat.dexterity = this.dexterity;
             newstat.agility = this.agility;
             newstat.intelligence = this.intelligence;
             newstat.piety = this.piety;
@@ -239,13 +221,22 @@ var Character;
         }
     }
     function loadInitStatus(race) {
-        let table = valueTableInStorage("main", "character.initStatus");
+        let racevalue = raceToString(race);
+        return loadAnyStatus("initStatus", "race", racevalue);
+    }
+    Character.loadInitStatus = loadInitStatus;
+    function loadJobRequirement(job) {
+        let jobvalue = jobToString(job);
+        return loadAnyStatus("jobRequirement", "job", jobvalue);
+    }
+    Character.loadJobRequirement = loadJobRequirement;
+    function loadAnyStatus(tablename, typename, typevalue) {
+        let table = valueTableInStorage("main", "character." + tablename);
         if (table == null) {
-            console.error("[Error] No table\n");
+            console.error("[Error] No table:" + tablename + "\n");
             return null;
         }
-        let racename = raceToString(race);
-        let recs = table.search(racename, "race");
+        let recs = table.search(typevalue, typename);
         if (recs != null) {
             if (recs.length < 1) {
                 console.error("[Error] No records\n");
@@ -269,42 +260,18 @@ var Character;
         }
         return status;
     }
-    Character.loadInitStatus = loadInitStatus;
-    function hasEnoughStatusForJob(job, status) {
-        let result = false;
-        console.log("JT " + job);
-        switch (job) {
-            case JobType.fighter:
-                console.log("JT(F)");
-                result = (status.strength >= 11);
+    function hasEnoughStatusForJob(job, srcstatus) {
+        let reqstatus = loadJobRequirement(job);
+        if (reqstatus == null) {
+            console.error("[Error] No job requirement");
+            return false;
+        }
+        let result = true;
+        for (let name of Character.allStatusNames) {
+            if (srcstatus.value(name) < reqstatus.value(name)) {
+                result = false;
                 break;
-            case JobType.mage:
-                result = (status.intelligence >= 11);
-                break;
-            case JobType.priest:
-                result = (status.piety >= 11);
-                break;
-            case JobType.thief:
-                result = (status.agility >= 11);
-                break;
-            case JobType.samurai:
-                result = (status.strength >= 15) && (status.intelligence >= 11)
-                    && (status.piety >= 10) && (status.vitality >= 14)
-                    && (status.agility >= 10);
-                break;
-            case JobType.bishop:
-                result = (status.intelligence >= 12) && (status.piety >= 12);
-                break;
-            case JobType.ninjya:
-                result = (status.strength >= 17) && (status.intelligence >= 17)
-                    && (status.piety >= 17) && (status.vitality >= 17)
-                    && (status.agility >= 17) && (status.luck >= 17);
-                break;
-            case JobType.lord:
-                result = (status.strength >= 15) && (status.intelligence >= 12)
-                    && (status.piety >= 12) && (status.vitality >= 15)
-                    && (status.agility >= 15) && (status.luck >= 15);
-                break;
+            }
         }
         return result;
     }

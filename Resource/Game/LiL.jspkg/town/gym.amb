@@ -82,7 +82,6 @@ top: VBox {
                                 let b = Character.hasEnoughStatusForJob(Character.JobType.bishop,  status) ;
                                 let n = Character.hasEnoughStatusForJob(Character.JobType.ninjya,  status) ;
                                 let l = Character.hasEnoughStatusForJob(Character.JobType.lord,    status) ;
-                                console.log("f=" + f + ", strlength=" + status.strength) ;
                                 return [f, m, p, t, s, b, n, l] ;
                         %}
                         columnCount: Int 4
@@ -183,25 +182,6 @@ top: VBox {
 			changed: Event(newval) %{
 				let newstat = top.status.clone() ;
 				newstat.vitality = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
-			%}
-		}
-	}
-	dex_box: HBox {
-		title: Label { text: String "Dexterity" }
-		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
-				return bonus > 0 ;
-			%}
-			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.dextrity = newval ;
 				top.bonus  -= newval - self.currentValue ;
 				top.status =  newstat ;
 			%}
@@ -315,7 +295,6 @@ top: VBox {
 			top.mp_box.stepper.currentValue  = status.magicPoint ;
 			top.str_box.stepper.currentValue = status.strength ;
 			top.vit_box.stepper.currentValue = status.vitality ;
-			top.dex_box.stepper.currentValue = status.dexterity ;
 			top.agl_box.stepper.currentValue = status.agility ;
 			top.itl_box.stepper.currentValue = status.intelligence ;
 			top.pie_box.stepper.currentValue = status.piety ;

@@ -2,12 +2,10 @@
 	initStatus: [
 		{
 			race:		"human",
-			level:		 1,
 			hitPoint:	60,
 			magicPoint:	20,
 			strength:	 8,
 			vitality:	 7,
-        		dexterity:	 7,
         		agility:	 6,
         		intelligence:	 8,
         		piety:		 5,
@@ -15,13 +13,10 @@
 		},
 		{
 			race:		"elf",
-			level:		 1,
-			hitPoint:	60,
 			hitPoint:	50,
 			magicPoint:	30,
 			strength:	 6,
 			vitality:	 5,
-        		dexterity:	 8,
         		agility:	 8,
         		intelligence:	10,
         		piety:		 8,
@@ -29,42 +24,126 @@
 		},
 		{
 			race:		"dwarf",
-			level:		 1,
 			hitPoint:	80,
 			magicPoint:	15,
 			strength:	 9,
 			vitality:	 8,
-        		dexterity:	 8,
         		agility:	 4,
         		intelligence:	 5,
         		piety:		 9,
-        		luck:		 5 
+        		luck:		 5
 		},
 		{
 			race:		"gnome"
-			level:		 1,
 			hitPoint:	70,
 			magicPoint:	25,
 			strength:	 7,
 			vitality:	 7,
-        		dexterity:	 4,
         		agility:	 7,
         		intelligence:	 6,
         		piety:		10,
-        		luck:		 6 
+        		luck:		 6
 		},
 		{
 			race:		"hobbit",
-			level:		 1,
 			hitPoint:	50,
 			magicPoint:	20,
 			strength:	 5,
 			vitality:	 6,
-        		dexterity:	 9,
         		agility:	12,
         		intelligence:	 7,
         		piety:		 7,
         		luck:		15
+		}
+	],
+	jobRequirement: [
+		{
+			job:		"fighter"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	11,
+			vitality:	 0,
+			agility:	 0,
+			intelligence:	 0,
+			piety:		 0,
+			luck:		 0
+		},
+		{
+			job:		"mage"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	 0,
+			vitality:	 0,
+			agility:	 0,
+			intelligence:	11,
+			piety:		 0,
+			luck:		 0
+		},
+		{
+			job:		"priest"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	 0,
+			vitality:	 0,
+			agility:	 0,
+			intelligence:    0,
+			piety:		11,
+			luck:		 0
+		},
+		{
+			job:		"thief"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	 0,
+			vitality:	 0,
+			agility:	11,
+			intelligence:    0,
+			piety:		 0,
+			luck:		 0
+		},
+		{
+			job:		"bishop"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	 0,
+			vitality:	 0,
+			agility:	 0,
+			intelligence:   12,
+			piety:		12,
+			luck:		 0
+		},
+		{
+			job:		"samurai"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	15,
+			vitality:	14,
+			agility:	10,
+			intelligence:   11,
+			piety:		10,
+			luck:		 0
+		},
+		{
+			job:		"lord"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	15,
+			vitality:	15,
+			agility:	14,
+			intelligence:   12,
+			piety:		12,
+			luck:		15
+		},
+		{
+			job:		"ninjya"
+			hitPoint:	 0,
+			magicPoint:	 0,
+			strength:	17,
+			vitality:	17,
+			agility:	17,
+			intelligence:   17,
+			piety:		17,
+			luck:		17
 		}
 	],
 	party: [
