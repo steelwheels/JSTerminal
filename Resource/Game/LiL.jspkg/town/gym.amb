@@ -3,14 +3,14 @@ top: VBox {
 	name:		String	""
         race:           Int 	0
         job:            Int     0
-	status:		Object	{ }
+	status:		Init    %{ return Character.loadInitStatus(Character.RaceType.human) ; %}
 
 	title: Image {
 		name: String "gym_title"
 	}
 	msg_box: TextField {
 		isEditable: Bool false
-		text: String Listner(name:  top.name, bonus: top.bonus) %{
+		text: String Listner(name: top.name, bonus: top.bonus) %{
 			let message = "" ;
 			if(name == "" && bonus == 0){
 				message += "Press button to add new member" ;
