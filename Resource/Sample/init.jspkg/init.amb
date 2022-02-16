@@ -1,0 +1,25 @@
+top: VBox {
+	object: Object {
+		a: Init %{ return 1 + 2 ; %}
+		b: Init %{ return 5 + self.c ; %}
+		c: Int 6
+	}
+	label: Label {
+		text: String "Init value"
+	}
+	ok_button: Button {
+        	title:  String "OK"
+        	pressed: Event() %{
+			console.log("pressed: OK") ;
+	    		leaveView(1) ;
+        	%}
+	}
+	init: Init %{
+		let a = top.object.a ;
+		let b = top.object.b ;
+		let c = a + b ;
+		top.label.text = "a + b = " + c ;
+	%}
+
+}
+

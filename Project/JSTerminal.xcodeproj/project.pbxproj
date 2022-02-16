@@ -132,6 +132,7 @@
 		05F7AE4D251874830077F527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4C251874830077F527 /* Assets.xcassets */; };
 		05F7AE50251874830077F527 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F7AE4E251874830077F527 /* Main.storyboard */; };
 		05F7AE5A251877820077F527 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE59251877820077F527 /* PreferenceViewController.swift */; };
+		05FA549427BD156300DE03DE /* init.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05FA549327BD154900DE03DE /* init.jspkg */; };
 		05FC747527AC21C40099157E /* box.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05FC747427AC21B10099157E /* box.jspkg */; };
 /* End PBXBuildFile section */
 
@@ -214,6 +215,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05FA549427BD156300DE03DE /* init.jspkg in Copy Files */,
 				053ED8EB27B9463400C13A57 /* console-1.js in Copy Files */,
 				053ED8EC27B9463400C13A57 /* console-1.ts in Copy Files */,
 				05D02A6827B722B900ABE0EA /* radio-button.jspkg in Copy Files */,
@@ -394,6 +396,7 @@
 		05F7AE51251874830077F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F7AE52251874830077F527 /* JSTerminal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTerminal.entitlements; sourceTree = "<group>"; };
 		05F7AE59251877820077F527 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		05FA549327BD154900DE03DE /* init.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = init.jspkg; sourceTree = "<group>"; };
 		05FC747427AC21B10099157E /* box.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = box.jspkg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -485,6 +488,7 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				05FA549327BD154900DE03DE /* init.jspkg */,
 				053ED8E927B9461800C13A57 /* console-1.js */,
 				053ED8EA27B9461800C13A57 /* console-1.ts */,
 				05D02A6727B7229400ABE0EA /* radio-button.jspkg */,
