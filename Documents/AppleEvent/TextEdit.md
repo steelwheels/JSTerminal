@@ -1,5 +1,5 @@
 # Control TextEdit.app
-This document describes about how to control the `TextEdit` application by the JavaScript on the [JSTerminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md).
+This document describes about how to control the `TextEdit` application by the JavaScript on the [JSTerminal](https://github.com/steelwheels/JSTerminal#readme).
 
 The sample JavaScript file [TextEdit.js](https://github.com/steelwheels/JSTerminal/blob/master/Resource/Sample/TextEdit.js) uses below methods.
 
@@ -44,5 +44,5 @@ let result = textedit.setContentOfFrontWindow("hello") ;
 Replace the content of the document in the front window by the given string. When the replacement is finished without any errors, the return value will be `true`.
 
 ## Related links
-* [JSTerminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): This is a documentation for JSTerminal
+* [JSTerminal](https://github.com/steelwheels/JSTerminal#readme): This is a documentation for JSTerminal
 * [Steel Wheels Project](https://steelwheels.github.io): Developper's web site

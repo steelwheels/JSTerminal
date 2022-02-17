@@ -18,5 +18,5 @@ Following functions are not supported command line application such as *jsh* in 
 
 # Related link
 * [JSTerminal](https://github.com/steelwheels/JSTerminal): Main web page for JSTerminal.
-* [User's Manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): User's manual for JSTerminal.
+* [User's Manual](https://github.com/steelwheels/JSTerminal#readme): User's manual for JSTerminal.
 * [Steel Wheels Project](https://steelwheels.github.io): Developer's web site.

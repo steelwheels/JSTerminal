@@ -1,5 +1,5 @@
 # Preference Window
-This document describes about the preference window of [JSTerminal application](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md).
+This document describes about the preference window of [JSTerminal application](https://github.com/steelwheels/JSTerminal#readme).
 You can change the terminal attributes by preference window.
 ![Preference window](./Images/preference-screenshot.png)
 
@@ -13,4 +13,4 @@ Define the kind of the font and it's size for the terminal.
 Define the foreground and background color of the terminal.
 
 ## Related links
-* [JSTerminal User's Manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): User's Manual
+* [JSTerminal User's Manual](https://github.com/steelwheels/JSTerminal#readme): User's Manual

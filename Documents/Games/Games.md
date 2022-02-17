@@ -61,7 +61,7 @@ Not found
 [hangman.ts](https://github.com/steelwheels/JSTerminal/blob/master/Resource/Game/hangman.ts)
 
 # Reference
-* [User's manual](UsersManual.md): The main documentation about JSTerminal application.
+* [User's manual](https://github.com/steelwheels/JSTerminal#readme): JSTerminal application.
 * [Vintage Games](http://www.vintage-basic.net/games.html):
 * [BSD games](https://dyama.org/2010/11/bsdgames-パッケージについて/) (Japanese): 
 * [THE EARLIEST UNIX CODE: AN ANNIVERSARY SOURCE CODE RELEASE](https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/):

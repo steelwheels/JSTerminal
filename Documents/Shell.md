@@ -92,4 +92,4 @@ Preference.shell.prompt = function() {
 ````
 
 # References
-* [User's manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): The main document for the user. This document is refered by it.
+* [User's manual](https://github.com/steelwheels/JSTerminal#readme): The main document for the user. This document is refered by it.

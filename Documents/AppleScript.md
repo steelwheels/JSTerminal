@@ -1,7 +1,7 @@
 
 
 # AppleScript support
-This document contains sample AppleScript files to control [JSTerminal](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md) application.
+This document contains sample AppleScript files to control [JSTerminal](https://github.com/steelwheels/JSTerminal#readme) application.
 
 ## Launch the application
 ### Activate the window
@@ -64,5 +64,5 @@ end tell
 ````
 
 # References
-* [User's manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): User's manual of JSTerminal.
+* [User's manual](https://github.com/steelwheels/JSTerminal#readme): User's manual of JSTerminal.
 

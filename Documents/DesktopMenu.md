@@ -20,4 +20,4 @@ This section describes about functions of desktop menu items.
 
 
 ## Related links
-* [JSTerminal User's Manual](https://github.com/steelwheels/JSTerminal/blob/master/Documents/UsersManual.md): User's Manual
+* [JSTerminal User's Manual](https://github.com/steelwheels/JSTerminal#readme): User's Manual
