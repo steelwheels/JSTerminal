@@ -38,6 +38,27 @@ declare module Character {
         lord: string;
     };
     function jobToString(job: JobType): string;
+    enum AlignmentType {
+        good = 0,
+        neutral = 1,
+        evil = 2
+    }
+    const AlignmentName: {
+        good: string;
+        neutral: string;
+        evil: string;
+    };
+    const allAlignmentNames: string[];
+    function alignmentToString(align: AlignmentType): string;
+    class AlignmentRestriction {
+        private mTable;
+        constructor();
+        private recordForJob;
+        private valueForJob;
+        canBeGood(job: JobType): boolean;
+        canBeNeutral(job: JobType): boolean;
+        canBeEvil(job: JobType): boolean;
+    }
     enum StatusType {
         hitPoint = 0,
         magicPoint = 1,

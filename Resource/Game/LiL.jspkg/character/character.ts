@@ -73,6 +73,96 @@ export function jobToString(job: JobType): string {
 	return result ;
 }
 
+export enum AlignmentType {
+        good,
+        neutral,
+        evil
+} ;
+
+export const AlignmentName = {
+	good:		"good",
+	neutral:	"neutral",
+	evil:		"evil"
+} ;
+
+export const allAlignmentNames: string[] = [
+        AlignmentName.good,
+        AlignmentName.neutral,
+        AlignmentName.evil
+] ;
+
+export function alignmentToString(align: AlignmentType): string {
+        let result: string = "" ;
+        switch(align){
+          case AlignmentType.good:
+		result = AlignmentName.good ;
+	  break ;
+          case AlignmentType.neutral:
+		result = AlignmentName.neutral ;
+	  break ;
+          case AlignmentType.evil:
+		result = AlignmentName.evil ;
+	  break ;
+        }
+        return result ;
+}
+
+export class AlignmentRestriction
+{
+        private mTable: ValueTableIF | null ;
+
+        constructor(){
+                let table = valueTableInStorage("main", "character.alignmentRestriction") ;
+	        if(table != null){
+                        this.mTable = table ;
+                } else {
+		        console.error("[Error] No table for character.alignmentRestriction\n") ;
+                        this.mTable = null ;
+                }
+        }
+
+        private recordForJob(job: JobType): ValueRecordIF | null {
+                let table = this.mTable ;
+                if(table != null){
+                        let recs = table.search(jobToString(job), "job") ;
+                        if(recs != null){
+                                if(recs!.length > 0){
+                                        return recs![0] ;
+                                }
+                        }
+                }
+                return null ;
+        }
+
+        private valueForJob(alignment: string, job: JobType): boolean {
+                let rec = this.recordForJob(job) ;
+                if(rec != null){
+                        let val = toBoolean(rec!.value(alignment)) ;
+                        if(val != null){
+                                return val! ;
+                        } else {
+                                console.log("Invalid value for alignment of job") ;
+                                return false ;
+                        }
+                } else {
+                        console.log("No record for job") ;
+                        return false ;
+                }
+        }
+
+        public canBeGood(job: JobType): boolean {
+                return this.valueForJob(AlignmentName.good, job) ;
+        }
+
+        public canBeNeutral(job: JobType): boolean {
+                return this.valueForJob(AlignmentName.neutral, job) ;
+        }
+
+        public canBeEvil(job: JobType): boolean {
+                return this.valueForJob(AlignmentName.evil, job) ;
+        }
+}
+
 export enum StatusType {
         hitPoint,
         magicPoint,

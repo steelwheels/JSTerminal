@@ -146,6 +146,56 @@
 			luck:		17
 		}
 	],
+	alignmentRestriction: [
+		{
+			job:		"fighter",
+			good:		true,
+			neutral:	true,
+			evil:		true
+		},
+		{
+			job:		"mage",
+			good:		true,
+			neutral:	true,
+			evil:		true
+		},
+		{
+			job:		"priest",
+			good:		true,
+			neutral:	false,
+			evil:		true
+		},
+		{
+			job:		"thief",
+			good:		false,
+			neutral:	true,
+			evil:		true
+		},
+		{
+			job:		"samurai",
+			good:		true,
+			neutral:	true,
+			evil:		false
+		},
+		{
+			job:		"bishop",
+			good:		true,
+			neutral:	false,
+			evil:		true
+		},
+		{
+			job:		"ninjya",
+			good:		false,
+			neutral:	false,
+			evil:		true
+		},
+		{
+			job:		"lord",
+			good:		true,
+			neutral:	false,
+			evil:		false
+		}
+	],
 	party: [
 		{
 			name:		"player-a",

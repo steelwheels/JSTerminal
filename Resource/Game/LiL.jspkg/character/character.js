@@ -98,6 +98,90 @@ var Character;
         return result;
     }
     Character.jobToString = jobToString;
+    let AlignmentType;
+    (function (AlignmentType) {
+        AlignmentType[AlignmentType["good"] = 0] = "good";
+        AlignmentType[AlignmentType["neutral"] = 1] = "neutral";
+        AlignmentType[AlignmentType["evil"] = 2] = "evil";
+    })(AlignmentType = Character.AlignmentType || (Character.AlignmentType = {}));
+    ;
+    Character.AlignmentName = {
+        good: "good",
+        neutral: "neutral",
+        evil: "evil"
+    };
+    Character.allAlignmentNames = [
+        Character.AlignmentName.good,
+        Character.AlignmentName.neutral,
+        Character.AlignmentName.evil
+    ];
+    function alignmentToString(align) {
+        let result = "";
+        switch (align) {
+            case AlignmentType.good:
+                result = Character.AlignmentName.good;
+                break;
+            case AlignmentType.neutral:
+                result = Character.AlignmentName.neutral;
+                break;
+            case AlignmentType.evil:
+                result = Character.AlignmentName.evil;
+                break;
+        }
+        return result;
+    }
+    Character.alignmentToString = alignmentToString;
+    class AlignmentRestriction {
+        constructor() {
+            let table = valueTableInStorage("main", "character.alignmentRestriction");
+            if (table != null) {
+                this.mTable = table;
+            }
+            else {
+                console.error("[Error] No table for character.alignmentRestriction\n");
+                this.mTable = null;
+            }
+        }
+        recordForJob(job) {
+            let table = this.mTable;
+            if (table != null) {
+                let recs = table.search(jobToString(job), "job");
+                if (recs != null) {
+                    if (recs.length > 0) {
+                        return recs[0];
+                    }
+                }
+            }
+            return null;
+        }
+        valueForJob(alignment, job) {
+            let rec = this.recordForJob(job);
+            if (rec != null) {
+                let val = toBoolean(rec.value(alignment));
+                if (val != null) {
+                    return val;
+                }
+                else {
+                    console.log("Invalid value for alignment of job");
+                    return false;
+                }
+            }
+            else {
+                console.log("No record for job");
+                return false;
+            }
+        }
+        canBeGood(job) {
+            return this.valueForJob(Character.AlignmentName.good, job);
+        }
+        canBeNeutral(job) {
+            return this.valueForJob(Character.AlignmentName.neutral, job);
+        }
+        canBeEvil(job) {
+            return this.valueForJob(Character.AlignmentName.evil, job);
+        }
+    }
+    Character.AlignmentRestriction = AlignmentRestriction;
     let StatusType;
     (function (StatusType) {
         StatusType[StatusType["hitPoint"] = 0] = "hitPoint";

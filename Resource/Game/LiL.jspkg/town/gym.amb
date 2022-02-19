@@ -1,9 +1,9 @@
 top: VBox {
 	bonus:		Int	10
 	name:		String	""
-        race:           Int 	0
-        job:            Int     0
-	status:		Init    %{ return Character.loadInitStatus(Character.RaceType.human) ; %}
+        race:           Init    %{ return Character.RaceType.human ;                            %}
+        job:            Init    %{ return Character.JobType.fighter ;                           %}
+	status:		Init    %{ return Character.loadInitStatus(Character.RaceType.human) ;  %}
 
 	title: Image {
 		name: String "gym_title"
@@ -103,49 +103,28 @@ top: VBox {
                         %}
                 }
         }
+        align_box: HBox {
+                title: Label { text: String "Alignment" }
+                radio: RadioButtons {
+                        labels: Array ["good", "neutral", "evil"]
+                        columnCount: Int 4
+                        isEnabled: Array Listner(job: top.job) %{
+                                let aligninfo = new Character.AlignmentRestriction() ;
+                                let good    = aligninfo.canBeGood(job) ;
+                                let neutral = aligninfo.canBeNeutral(job) ;
+                                let evil    = aligninfo.canBeEvil(job) ;
+                                return [good, neutral, evil] ;
+                        %}
+                        selected: Event(index) %{
+                                console.log("align: " + index) ;
+                        %}
+                }
+        }
 	bonus_box: HBox {
 		title: Label { text: String "Bonus" }
 		value: Label {
 			number: Int Listner(bonus: top.bonus) %{
 				return bonus ;
-			%}
-		}
-	}
-	hp_box: HBox {
-		title: Label { text: String "HitPoint" }
-		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
-				return bonus > 0 ;
-			%}
-			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.hitPoint = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
-			%}
-		}
-	}
-	mp_box: HBox {
-		title: Label { text: String "MagicPoint" }
-		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
-				return bonus > 0 ;
-			%}
-			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.magicPoint = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
 			%}
 		}
 	}
@@ -291,8 +270,6 @@ top: VBox {
 		/* Initialize status */
 		let status = Character.loadInitStatus(race) ;
 		if(status != null){
-			top.hp_box.stepper.currentValue  = status.hitPoint ;
-			top.mp_box.stepper.currentValue  = status.magicPoint ;
 			top.str_box.stepper.currentValue = status.strength ;
 			top.vit_box.stepper.currentValue = status.vitality ;
 			top.agl_box.stepper.currentValue = status.agility ;
