@@ -46,6 +46,7 @@ top: VBox {
 * [Setup](./Documents/Setup.md): After installation, the setup opetation is required.
 * [Shell](./Documents/Shell.md): The `jsh` shell is supported for interactive operation.
 * [Sample scripts](#Sample): This application has some sample applications.
+* [How to start development](./Documents/HowToStart.md): The document helps you to start programming.
 * [Programming](#Programming): Overview of the development  of application program.
 * [Debugging](./Documents/Debug.md): How to debug by using terminal.
 * [Desktop menu](https://github.com/steelwheels/JSTerminal/blob/master/Documents/DesktopMenu.md): The specification of the desktop menu
