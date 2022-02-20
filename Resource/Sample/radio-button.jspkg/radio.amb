@@ -4,7 +4,11 @@ top: VBox {
 	isEnabled:   Array	[true, true, true, false]
 	columnCount: Int	3
         selected: Event(newidx) %{
-		console.log("new-index: " + newidx) ;
+                if(newidx != null){
+		        console.log("new-index: " + newidx) ;
+                } else {
+                        console.log("new-index: null")
+                }
         %}
     }
     quit_button: Button {
