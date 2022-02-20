@@ -1,11 +1,23 @@
 top: VBox {
+	v1: Init %{
+		console.log("step1: v1 = 1") ;
+		return 1 ;
+	%}
+	v2: Init %{
+		console.log("step2: v2 = 2") ;
+		return 2 ;
+	%}
 	object: Object {
-		a: Init %{ return 1 + 2 ; %}
-		b: Init %{ return 5 + self.c ; %}
-		c: Int 6
-	}
-	label: Label {
-		text: String "Init value"
+		v3: Init %{
+			let v3 = top.v1 + top.v2 ;
+			console.log("step3: v3 = v1 + v2 = 3 -> " + v3) ;
+			return v3 ;
+		%}
+		v4: Init %{
+			let v4 = top.object.v3 * 3 ;
+			console.log("step4: v4 = v3 * 3 = 9 ->" + v4) ;
+			return v4 ;
+		%}
 	}
 	ok_button: Button {
         	title:  String "OK"
@@ -15,10 +27,8 @@ top: VBox {
         	%}
 	}
 	init: Init %{
-		let a = top.object.a ;
-		let b = top.object.b ;
-		let c = a + b ;
-		top.label.text = "a + b = " + c ;
+		let sum = top.v1 + top.v2 + top.object.v3 + top.object.v4 ;
+		console.log("step5: 15 -> " + sum) ;
 	%}
 
 }

@@ -4,7 +4,7 @@
 
 srcs	= main.ts \
 	  character/character.ts \
-	  character/party.ts
+	  town/tavern.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)

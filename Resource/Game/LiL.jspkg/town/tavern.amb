@@ -1,8 +1,10 @@
 top: VBox {
+    party: Init %{ return new Tavern.CharacterTable() ; %}
+
     title: Image {
 	name: String "tavern_title"
     }
-    party: Table {
+    table: Table {
 	hasHeader:    Bool true
 	isSelectable: Bool true
 	fieldNames: Array [
@@ -13,14 +15,7 @@ top: VBox {
                 {field:"status",        title:"Status"}
         ]
 	init: Init %{
-		let storage = ValueStorage("main") ;
-		if(storage == null){
-			console.log("Failed to allocate storage") ;
-		}
-		let table = ValueTable("character.party", storage) ;
-		if(table == null){
-			console.log("Failed to allocate table") ;
-		}
+                let table = top.party.table ;
 		self.store(table) ;
 	%}
 	pressed: Event(col, row) %{
@@ -39,7 +34,7 @@ top: VBox {
 	}
 	del_button: Button {
 		title:  String "Delete member"
-		isEnabled: Bool Listner(selected: top.party.didSelected) %{
+		isEnabled: Bool Listner(selected: top.table.didSelected) %{
 			return selected ;
 		%}
 		pressed: Event() %{

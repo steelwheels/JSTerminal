@@ -196,21 +196,5 @@
 			evil:		false
 		}
 	],
-	party: [
-		{
-			name:		"player-a",
-			level:		1,
-			hitPoint:	10,
-			armorClass:	10,
-			status:		"OK"
-		},
-		{
-			name:		"player-b",
-			level:		2,
-			hitPoint:	20,
-			armorClass:	20,
-			status:		"Bad"
-		}
-	]
 }
 

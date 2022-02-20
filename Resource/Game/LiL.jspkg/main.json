@@ -3,5 +3,11 @@
 		class: 		"reference",
 		relativePath:	"character/character.json"
 	}
+	town: {
+		tavern: {
+			class: 		"reference",
+			relativePath:	"town/tavern.json"
+		}
+	}
 }
 

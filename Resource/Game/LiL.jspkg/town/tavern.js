@@ -1,14 +1,14 @@
 "use strict";
 /*
- * party.ts
+ * tavern.ts
  */
 /// <reference path="../types/KiwiLibrary.d.ts" />
 /// <reference path="../types/KiwiShell.d.ts" />
 /// <reference path="../types/KiwiComponent.d.ts" />
 /// <reference path="../types/character/character.d.ts" />
-var Party;
-(function (Party_1) {
-    class Party {
+var Tavern;
+(function (Tavern) {
+    class CharacterTable {
         constructor() {
             this.mTable = null;
         }
@@ -28,7 +28,7 @@ var Party;
                 console.error("Failed to allocate storage");
                 exit(ExitCode.exception);
             }
-            let table = ValueTable("character.party", storage);
+            let table = ValueTable("town.tavern.members", storage);
             if (table == null) {
                 console.error("Failed to allocate table");
                 exit(ExitCode.exception);
@@ -36,6 +36,5 @@ var Party;
             return table;
         }
     }
-    Party_1.Party = Party;
-})(Party || (Party = {}));
-; // end of module: Party
+    Tavern.CharacterTable = CharacterTable;
+})(Tavern || (Tavern = {})); // end of module

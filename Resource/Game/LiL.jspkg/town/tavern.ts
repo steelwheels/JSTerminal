@@ -1,5 +1,5 @@
 /*
- * party.ts
+ * tavern.ts
  */
 
 /// <reference path="../types/KiwiLibrary.d.ts" />
@@ -7,9 +7,10 @@
 /// <reference path="../types/KiwiComponent.d.ts" />
 /// <reference path="../types/character/character.d.ts" />
 
-module Party {
+module Tavern {
 
-export class Party {
+export class CharacterTable
+{
         private mTable: ValueTableIF | null ;
 
         constructor(){
@@ -32,14 +33,14 @@ export class Party {
 			console.error("Failed to allocate storage") ;
                         exit(ExitCode.exception) ;
 		}
-		let table = ValueTable("character.party", storage!) ;
+		let table = ValueTable("town.tavern.members", storage!) ;
 		if(table == null){
 			console.error("Failed to allocate table") ;
                         exit(ExitCode.exception) ;
 		}
                 return table! ;
         }
-}
+} 
 
+} // end of module
 
-} ; // end of module: Party

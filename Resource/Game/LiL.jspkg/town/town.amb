@@ -1,5 +1,5 @@
 top: VBox {
-    party: Init %{ return new Party.Party() ; %}
+    party: Init %{ return new Tavern.CharacterTable() ; %}
 
     title: Image {
         name: String "town_title"
@@ -21,7 +21,7 @@ top: VBox {
 		if(storage == null){
 			console.log("Failed to allocate storage") ;
 		}
-		let table = ValueTable("character.party", storage) ;
+		let table = ValueTable("town.tavern.members", storage) ;
 		if(table == null){
 			console.log("Failed to allocate table") ;
 		}

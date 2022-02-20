@@ -1,9 +1,9 @@
 /// <reference path="../KiwiLibrary.d.ts" />
 /// <reference path="../KiwiShell.d.ts" />
 /// <reference path="../KiwiComponent.d.ts" />
-/// <reference path="character.d.ts" />
-declare module Party {
-    class Party {
+/// <reference path="../character/character.d.ts" />
+declare module Tavern {
+    class CharacterTable {
         private mTable;
         constructor();
         get table(): ValueTableIF;
