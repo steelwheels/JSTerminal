@@ -386,6 +386,7 @@ declare function toText(value: any): TextIF ;
 
 declare function asciiCodeName(code: number): string | null ;
 
+declare function exit(code: number): void ;
 declare function sleep(sec: number): boolean ;
 
 declare function TextLine(str: string): TextLineIF ;

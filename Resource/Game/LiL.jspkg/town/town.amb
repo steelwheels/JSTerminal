@@ -1,11 +1,13 @@
 top: VBox {
+    party: Init %{ return new Party.Party() ; %}
+
     title: Image {
         name: String "town_title"
     }
     party_title: Label {
 	text: String "The current party"
     }
-    party: Table {
+    party_table: Table {
 	hasHeader: Bool true
 	fieldNames: Array [
                 {field:"name",          title:"Name"},

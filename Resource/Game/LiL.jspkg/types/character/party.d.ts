@@ -4,7 +4,9 @@
 /// <reference path="character.d.ts" />
 declare module Party {
     class Party {
-        private mMembers;
+        private mTable;
         constructor();
+        get table(): ValueTableIF;
+        load(): ValueTableIF;
     }
 }

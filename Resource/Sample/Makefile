@@ -8,6 +8,7 @@ srcs	= alert.ts \
 	  console-1.ts \
 	  curses-frame.ts \
 	  escape-code.ts \
+	  exit.ts \
 	  file.ts \
 	  hello.ts \
 	  hello_color.ts \
