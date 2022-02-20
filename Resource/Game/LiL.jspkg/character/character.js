@@ -6,7 +6,7 @@
 /// <reference path="../types/KiwiShell.d.ts" />
 /// <reference path="../types/KiwiComponent.d.ts" />
 var Character;
-(function (Character) {
+(function (Character_1) {
     let RaceType;
     (function (RaceType) {
         RaceType[RaceType["human"] = 0] = "human";
@@ -14,9 +14,9 @@ var Character;
         RaceType[RaceType["dwarf"] = 2] = "dwarf";
         RaceType[RaceType["gnome"] = 3] = "gnome";
         RaceType[RaceType["hobbit"] = 4] = "hobbit";
-    })(RaceType = Character.RaceType || (Character.RaceType = {}));
+    })(RaceType = Character_1.RaceType || (Character_1.RaceType = {}));
     ;
-    Character.RaceName = {
+    Character_1.RaceName = {
         human: "human",
         elf: "elf",
         dwarf: "dwarf",
@@ -27,24 +27,24 @@ var Character;
         let result = "?";
         switch (race) {
             case RaceType.human:
-                result = Character.RaceName.human;
+                result = Character_1.RaceName.human;
                 break;
             case RaceType.elf:
-                result = Character.RaceName.elf;
+                result = Character_1.RaceName.elf;
                 break;
             case RaceType.dwarf:
-                result = Character.RaceName.dwarf;
+                result = Character_1.RaceName.dwarf;
                 break;
             case RaceType.gnome:
-                result = Character.RaceName.gnome;
+                result = Character_1.RaceName.gnome;
                 break;
             case RaceType.hobbit:
-                result = Character.RaceName.hobitt;
+                result = Character_1.RaceName.hobitt;
                 break;
         }
         return result;
     }
-    Character.raceToString = raceToString;
+    Character_1.raceToString = raceToString;
     let JobType;
     (function (JobType) {
         JobType[JobType["fighter"] = 0] = "fighter";
@@ -55,9 +55,9 @@ var Character;
         JobType[JobType["bishop"] = 5] = "bishop";
         JobType[JobType["ninjya"] = 6] = "ninjya";
         JobType[JobType["lord"] = 7] = "lord";
-    })(JobType = Character.JobType || (Character.JobType = {}));
+    })(JobType = Character_1.JobType || (Character_1.JobType = {}));
     ;
-    Character.JobName = {
+    Character_1.JobName = {
         fighter: "fighter",
         mage: "mage",
         priest: "priest",
@@ -71,66 +71,66 @@ var Character;
         let result = "?";
         switch (job) {
             case JobType.fighter:
-                result = Character.JobName.fighter;
+                result = Character_1.JobName.fighter;
                 break;
             case JobType.mage:
-                result = Character.JobName.mage;
+                result = Character_1.JobName.mage;
                 break;
             case JobType.priest:
-                result = Character.JobName.priest;
+                result = Character_1.JobName.priest;
                 break;
             case JobType.thief:
-                result = Character.JobName.thief;
+                result = Character_1.JobName.thief;
                 break;
             case JobType.samurai:
-                result = Character.JobName.samurai;
+                result = Character_1.JobName.samurai;
                 break;
             case JobType.bishop:
-                result = Character.JobName.bishop;
+                result = Character_1.JobName.bishop;
                 break;
             case JobType.ninjya:
-                result = Character.JobName.ninjya;
+                result = Character_1.JobName.ninjya;
                 break;
             case JobType.lord:
-                result = Character.JobName.lord;
+                result = Character_1.JobName.lord;
                 break;
         }
         return result;
     }
-    Character.jobToString = jobToString;
+    Character_1.jobToString = jobToString;
     let AlignmentType;
     (function (AlignmentType) {
         AlignmentType[AlignmentType["good"] = 0] = "good";
         AlignmentType[AlignmentType["neutral"] = 1] = "neutral";
         AlignmentType[AlignmentType["evil"] = 2] = "evil";
-    })(AlignmentType = Character.AlignmentType || (Character.AlignmentType = {}));
+    })(AlignmentType = Character_1.AlignmentType || (Character_1.AlignmentType = {}));
     ;
-    Character.AlignmentName = {
+    Character_1.AlignmentName = {
         good: "good",
         neutral: "neutral",
         evil: "evil"
     };
-    Character.allAlignmentNames = [
-        Character.AlignmentName.good,
-        Character.AlignmentName.neutral,
-        Character.AlignmentName.evil
+    Character_1.allAlignmentNames = [
+        Character_1.AlignmentName.good,
+        Character_1.AlignmentName.neutral,
+        Character_1.AlignmentName.evil
     ];
     function alignmentToString(align) {
         let result = "";
         switch (align) {
             case AlignmentType.good:
-                result = Character.AlignmentName.good;
+                result = Character_1.AlignmentName.good;
                 break;
             case AlignmentType.neutral:
-                result = Character.AlignmentName.neutral;
+                result = Character_1.AlignmentName.neutral;
                 break;
             case AlignmentType.evil:
-                result = Character.AlignmentName.evil;
+                result = Character_1.AlignmentName.evil;
                 break;
         }
         return result;
     }
-    Character.alignmentToString = alignmentToString;
+    Character_1.alignmentToString = alignmentToString;
     class AlignmentRestriction {
         constructor() {
             let table = valueTableInStorage("main", "character.alignmentRestriction");
@@ -172,16 +172,16 @@ var Character;
             }
         }
         canBeGood(job) {
-            return this.valueForJob(Character.AlignmentName.good, job);
+            return this.valueForJob(Character_1.AlignmentName.good, job);
         }
         canBeNeutral(job) {
-            return this.valueForJob(Character.AlignmentName.neutral, job);
+            return this.valueForJob(Character_1.AlignmentName.neutral, job);
         }
         canBeEvil(job) {
-            return this.valueForJob(Character.AlignmentName.evil, job);
+            return this.valueForJob(Character_1.AlignmentName.evil, job);
         }
     }
-    Character.AlignmentRestriction = AlignmentRestriction;
+    Character_1.AlignmentRestriction = AlignmentRestriction;
     let StatusType;
     (function (StatusType) {
         StatusType[StatusType["hitPoint"] = 0] = "hitPoint";
@@ -192,9 +192,9 @@ var Character;
         StatusType[StatusType["intelligence"] = 5] = "intelligence";
         StatusType[StatusType["piety"] = 6] = "piety";
         StatusType[StatusType["luck"] = 7] = "luck";
-    })(StatusType = Character.StatusType || (Character.StatusType = {}));
+    })(StatusType = Character_1.StatusType || (Character_1.StatusType = {}));
     ;
-    Character.StatusName = {
+    Character_1.StatusName = {
         hitPoint: "hitPoint",
         magicPoint: "magicPoint",
         strength: "strength",
@@ -204,51 +204,51 @@ var Character;
         piety: "piety",
         luck: "luck"
     };
-    Character.allStatusNames = [
-        Character.StatusName.hitPoint,
-        Character.StatusName.magicPoint,
-        Character.StatusName.strength,
-        Character.StatusName.vitality,
-        Character.StatusName.agility,
-        Character.StatusName.intelligence,
-        Character.StatusName.piety,
-        Character.StatusName.luck
+    Character_1.allStatusNames = [
+        Character_1.StatusName.hitPoint,
+        Character_1.StatusName.magicPoint,
+        Character_1.StatusName.strength,
+        Character_1.StatusName.vitality,
+        Character_1.StatusName.agility,
+        Character_1.StatusName.intelligence,
+        Character_1.StatusName.piety,
+        Character_1.StatusName.luck
     ];
     function statusTypeToString(type) {
         let result = "?";
         switch (type) {
             case StatusType.hitPoint:
-                result = Character.StatusName.hitPoint;
+                result = Character_1.StatusName.hitPoint;
                 break;
             case StatusType.magicPoint:
-                result = Character.StatusName.magicPoint;
+                result = Character_1.StatusName.magicPoint;
                 break;
             case StatusType.strength:
-                result = Character.StatusName.strength;
+                result = Character_1.StatusName.strength;
                 break;
             case StatusType.vitality:
-                result = Character.StatusName.vitality;
+                result = Character_1.StatusName.vitality;
                 break;
             case StatusType.agility:
-                result = Character.StatusName.agility;
+                result = Character_1.StatusName.agility;
                 break;
             case StatusType.intelligence:
-                result = Character.StatusName.intelligence;
+                result = Character_1.StatusName.intelligence;
                 break;
             case StatusType.piety:
-                result = Character.StatusName.piety;
+                result = Character_1.StatusName.piety;
                 break;
             case StatusType.luck:
-                result = Character.StatusName.luck;
+                result = Character_1.StatusName.luck;
                 break;
         }
         return result;
     }
-    Character.statusTypeToString = statusTypeToString;
+    Character_1.statusTypeToString = statusTypeToString;
     class Status {
         constructor() {
             this.mTable = {};
-            for (let name of Character.allStatusNames) {
+            for (let name of Character_1.allStatusNames) {
                 this.mTable[name] = 0;
             }
         }
@@ -265,22 +265,22 @@ var Character;
         setValue(value, key) {
             this.mTable[key] = value;
         }
-        set hitPoint(value) { this.setValue(value, Character.StatusName.hitPoint); }
-        get hitPoint() { return this.value(Character.StatusName.hitPoint); }
-        set magicPoint(value) { this.setValue(value, Character.StatusName.magicPoint); }
-        get magicPoint() { return this.value(Character.StatusName.magicPoint); }
-        set strength(value) { this.setValue(value, Character.StatusName.strength); }
-        get strength() { return this.value(Character.StatusName.strength); }
-        set vitality(value) { this.setValue(value, Character.StatusName.vitality); }
-        get vitality() { return this.value(Character.StatusName.vitality); }
-        set agility(value) { this.setValue(value, Character.StatusName.agility); }
-        get agility() { return this.value(Character.StatusName.agility); }
-        set intelligence(value) { this.setValue(value, Character.StatusName.intelligence); }
-        get intelligence() { return this.value(Character.StatusName.intelligence); }
-        set piety(value) { this.setValue(value, Character.StatusName.piety); }
-        get piety() { return this.value(Character.StatusName.piety); }
-        set luck(value) { this.setValue(value, Character.StatusName.luck); }
-        get luck() { return this.value(Character.StatusName.luck); }
+        set hitPoint(value) { this.setValue(value, Character_1.StatusName.hitPoint); }
+        get hitPoint() { return this.value(Character_1.StatusName.hitPoint); }
+        set magicPoint(value) { this.setValue(value, Character_1.StatusName.magicPoint); }
+        get magicPoint() { return this.value(Character_1.StatusName.magicPoint); }
+        set strength(value) { this.setValue(value, Character_1.StatusName.strength); }
+        get strength() { return this.value(Character_1.StatusName.strength); }
+        set vitality(value) { this.setValue(value, Character_1.StatusName.vitality); }
+        get vitality() { return this.value(Character_1.StatusName.vitality); }
+        set agility(value) { this.setValue(value, Character_1.StatusName.agility); }
+        get agility() { return this.value(Character_1.StatusName.agility); }
+        set intelligence(value) { this.setValue(value, Character_1.StatusName.intelligence); }
+        get intelligence() { return this.value(Character_1.StatusName.intelligence); }
+        set piety(value) { this.setValue(value, Character_1.StatusName.piety); }
+        get piety() { return this.value(Character_1.StatusName.piety); }
+        set luck(value) { this.setValue(value, Character_1.StatusName.luck); }
+        get luck() { return this.value(Character_1.StatusName.luck); }
         clone() {
             let newstat = new Status();
             newstat.hitPoint = this.hitPoint;
@@ -294,7 +294,7 @@ var Character;
             return newstat;
         }
     }
-    Character.Status = Status;
+    Character_1.Status = Status;
     ;
     function anyToNumber(value) {
         if (isNumber(value)) {
@@ -308,12 +308,12 @@ var Character;
         let racevalue = raceToString(race);
         return loadAnyStatus("initStatus", "race", racevalue);
     }
-    Character.loadInitStatus = loadInitStatus;
+    Character_1.loadInitStatus = loadInitStatus;
     function loadJobRequirement(job) {
         let jobvalue = jobToString(job);
         return loadAnyStatus("jobRequirement", "job", jobvalue);
     }
-    Character.loadJobRequirement = loadJobRequirement;
+    Character_1.loadJobRequirement = loadJobRequirement;
     function loadAnyStatus(tablename, typename, typevalue) {
         let table = valueTableInStorage("main", "character." + tablename);
         if (table == null) {
@@ -333,7 +333,7 @@ var Character;
         }
         let status = new Status();
         let record = recs[0];
-        for (let name of Character.allStatusNames) {
+        for (let name of Character_1.allStatusNames) {
             let val = record.value(name);
             if (isNumber(val)) {
                 status.setValue(val, name);
@@ -351,7 +351,7 @@ var Character;
             return false;
         }
         let result = true;
-        for (let name of Character.allStatusNames) {
+        for (let name of Character_1.allStatusNames) {
             if (srcstatus.value(name) < reqstatus.value(name)) {
                 result = false;
                 break;
@@ -359,6 +359,19 @@ var Character;
         }
         return result;
     }
-    Character.hasEnoughStatusForJob = hasEnoughStatusForJob;
+    Character_1.hasEnoughStatusForJob = hasEnoughStatusForJob;
+    class Character {
+        constructor(name, race, job, status) {
+            this.mName = name;
+            this.mRace = race;
+            this.mJob = job;
+            this.mStatus = status;
+        }
+        get name() { return this.mName; }
+        get race() { return this.mRace; }
+        get job() { return this.mJob; }
+        get status() { return this.mStatus; }
+    }
+    Character_1.Character = Character;
 })(Character || (Character = {}));
 ; // end of module

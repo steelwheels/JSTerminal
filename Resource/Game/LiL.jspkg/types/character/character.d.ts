@@ -107,4 +107,15 @@ declare module Character {
     function loadInitStatus(race: RaceType): Status | null;
     function loadJobRequirement(job: JobType): Status | null;
     function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean;
+    class Character {
+        private mName;
+        private mRace;
+        private mJob;
+        private mStatus;
+        constructor(name: string, race: RaceType, job: JobType, status: Status);
+        get name(): string;
+        get race(): RaceType;
+        get job(): JobType;
+        get status(): Status;
+    }
 }

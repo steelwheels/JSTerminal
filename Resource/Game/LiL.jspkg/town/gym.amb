@@ -265,7 +265,8 @@ top: VBox {
                                 return (name.length > 0) && hasRace && hasJob ;
                         %}
 			pressed: Event() %{
-				leaveView(top.status) ;
+                                let newchar = new Character.Character(top.name, top.race, top.job, top.status) ;
+				leaveView(newchar) ;
 			%}
 		}
 		cancel_button: Button {

@@ -3,7 +3,8 @@
 #
 
 srcs	= main.ts \
-	  character/character.ts
+	  character/character.ts \
+	  character/party.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)
@@ -30,6 +31,8 @@ clean:
 
 copylib: dummy
 	cp ../../Library/types/*.d.ts ./types
+
+character/party.ts: character/character.ts
 
 dummy:
 

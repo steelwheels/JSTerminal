@@ -31,7 +31,10 @@ top: VBox {
 	add_button: Button {
 		title:  String "Add member"
 		pressed: Event() %{
-			enterView("gym") ;
+			let newchar = enterView("gym") ;
+                        if(newchar != null){
+                                console.log("Add new char: " + newchar) ;
+                        }
 		%}
 	}
 	del_button: Button {
