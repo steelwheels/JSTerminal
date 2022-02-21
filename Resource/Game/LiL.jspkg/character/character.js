@@ -363,13 +363,19 @@ var Character;
     class Character {
         constructor(name, race, job, status) {
             this.mName = name;
+            this.mAge = 0;
             this.mRace = race;
             this.mJob = job;
+            this.mHitPoint = 0;
+            this.mMagicPoint = 0;
             this.mStatus = status;
         }
         get name() { return this.mName; }
+        get age() { return this.mAge; }
         get race() { return this.mRace; }
         get job() { return this.mJob; }
+        get hitPoint() { return this.mHitPoint; }
+        get magicPoint() { return this.mMagicPoint; }
         get status() { return this.mStatus; }
     }
     Character_1.Character = Character;

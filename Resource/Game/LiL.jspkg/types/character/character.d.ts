@@ -109,13 +109,19 @@ declare module Character {
     function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean;
     class Character {
         private mName;
+        private mAge;
         private mRace;
         private mJob;
+        private mHitPoint;
+        private mMagicPoint;
         private mStatus;
         constructor(name: string, race: RaceType, job: JobType, status: Status);
         get name(): string;
+        get age(): number;
         get race(): RaceType;
         get job(): JobType;
+        get hitPoint(): number;
+        get magicPoint(): number;
         get status(): Status;
     }
 }

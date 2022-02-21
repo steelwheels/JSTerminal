@@ -340,21 +340,30 @@ export function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean 
 
 export class Character {
         private mName:          string ;
+        private mAge:           number ;
         private mRace:          RaceType ;
         private mJob:           JobType ;
+        private mHitPoint:      number ;
+        private mMagicPoint:    number ;
         private mStatus:        Status ;
 
         constructor(name: string, race: RaceType, job: JobType, status: Status){
-                this.mName      = name ;
-                this.mRace      = race ;
-                this.mJob       = job ;
-                this.mStatus    = status ;
+                this.mName              = name ;
+                this.mAge               = 0 ;
+                this.mRace              = race ;
+                this.mJob               = job ;
+                this.mHitPoint          = 0 ;
+                this.mMagicPoint        = 0 ;
+                this.mStatus            = status ;
         }
 
-        get name():   string   { return this.mName ; }
-        get race():   RaceType { return this.mRace ; }
-        get job():    JobType  { return this.mJob ;  }
-        get status(): Status   { return this.mStatus ; }
+        get name():             string   { return this.mName ; }
+        get age():              number   { return this.mAge ; }
+        get race():             RaceType { return this.mRace ; }
+        get job():              JobType  { return this.mJob ;  }
+        get hitPoint():         number   { return this.mHitPoint ; }
+        get magicPoint():       number   { return this.mMagicPoint ; } 
+        get status():           Status   { return this.mStatus ; }
 }
 
 } ; // end of module
