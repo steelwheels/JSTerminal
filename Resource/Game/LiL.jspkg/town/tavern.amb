@@ -1,5 +1,5 @@
 top: VBox {
-    party: Init %{ return new Tavern.CharacterTable() ; %}
+    charTable: Init %{ return new Tavern.CharacterTable() ; %}
 
     title: Image {
 	name: String "tavern_title"
@@ -15,7 +15,7 @@ top: VBox {
                 {field:"status",        title:"Status"}
         ]
 	init: Init %{
-                let table = top.party.table ;
+                let table = top.charTable.table ;
 		self.store(table) ;
 	%}
 	pressed: Event(col, row) %{
@@ -28,7 +28,9 @@ top: VBox {
 		pressed: Event() %{
 			let newchar = enterView("gym") ;
                         if(newchar != null){
-                                console.log("Add new char: " + newchar) ;
+                                let table  = top.charTable.table ;
+                                let newrec = table.newRecord() ;
+                                newchar.writeToRecord(newrec) ;
                         }
 		%}
 	}

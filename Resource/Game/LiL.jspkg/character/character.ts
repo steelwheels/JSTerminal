@@ -236,31 +236,31 @@ export class Status
                 this.mTable[key] = value ;
         }
 
-        set hitPoint(value: number) { this.setValue(value, StatusName.hitPoint) ; }
-        get hitPoint() { return this.value(StatusName.hitPoint) ; }
+        public set hitPoint(value: number) { this.setValue(value, StatusName.hitPoint) ; }
+        public get hitPoint() { return this.value(StatusName.hitPoint) ; }
 
-        set magicPoint(value: number) { this.setValue(value, StatusName.magicPoint) ; }
-        get magicPoint() { return this.value(StatusName.magicPoint) ; }
+        public set magicPoint(value: number) { this.setValue(value, StatusName.magicPoint) ; }
+        public get magicPoint() { return this.value(StatusName.magicPoint) ; }
 
-        set strength(value: number) { this.setValue(value, StatusName.strength) ; }
-        get strength() { return this.value(StatusName.strength) ; }
+        public set strength(value: number) { this.setValue(value, StatusName.strength) ; }
+        public get strength() { return this.value(StatusName.strength) ; }
 
-        set vitality(value: number) { this.setValue(value, StatusName.vitality) ; }
-        get vitality() { return this.value(StatusName.vitality) ; }
+        public set vitality(value: number) { this.setValue(value, StatusName.vitality) ; }
+        public get vitality() { return this.value(StatusName.vitality) ; }
 
-        set agility(value: number) { this.setValue(value, StatusName.agility) ; }
-        get agility() { return this.value(StatusName.agility) ; }
+        public set agility(value: number) { this.setValue(value, StatusName.agility) ; }
+        public get agility() { return this.value(StatusName.agility) ; }
 
-        set intelligence(value: number) { this.setValue(value, StatusName.intelligence) ; }
-        get intelligence() { return this.value(StatusName.intelligence) ; }
+        public set intelligence(value: number) { this.setValue(value, StatusName.intelligence) ; }
+        public get intelligence() { return this.value(StatusName.intelligence) ; }
 
-        set piety(value: number) { this.setValue(value, StatusName.piety) ; }
-        get piety() { return this.value(StatusName.piety) ; }
+        public set piety(value: number) { this.setValue(value, StatusName.piety) ; }
+        public get piety() { return this.value(StatusName.piety) ; }
 
-        set luck(value: number) { this.setValue(value, StatusName.luck) ; }
-        get luck() { return this.value(StatusName.luck) ; }
+        public set luck(value: number) { this.setValue(value, StatusName.luck) ; }
+        public get luck() { return this.value(StatusName.luck) ; }
 
-        clone(): Status {
+        public clone(): Status {
                 let newstat = new Status() ;
                 newstat.hitPoint        = this.hitPoint ;
                 newstat.magicPoint      = this.magicPoint ;
@@ -271,6 +271,28 @@ export class Status
                 newstat.piety           = this.piety ;
                 newstat.luck            = this.luck ;
                 return newstat ;
+        }
+
+        public  writeToRecord(record: ValueRecordIF): void {
+                record.setValue(this.hitPoint,          StatusName.hitPoint) ;
+                record.setValue(this.magicPoint,        StatusName.magicPoint) ;
+                record.setValue(this.strength,          StatusName.strength) ;
+                record.setValue(this.vitality,          StatusName.vitality) ;
+                record.setValue(this.agility,           StatusName.agility) ;
+                record.setValue(this.intelligence,      StatusName.intelligence) ;
+                record.setValue(this.piety,             StatusName.piety) ;
+                record.setValue(this.luck,              StatusName.luck) ;
+        }
+
+        public readFromRecord(record: ValueRecordIF): void {
+                this.hitPoint     = toNumber(record.value(StatusName.hitPoint  ))    || 0 ;
+                this.magicPoint   = toNumber(record.value(StatusName.magicPoint))    || 0 ;
+                this.strength     = toNumber(record.value(StatusName.strength))      || 0 ;
+                this.vitality     = toNumber(record.value(StatusName.vitality))      || 0 ;
+                this.agility      = toNumber(record.value(StatusName.agility))       || 0 ;
+                this.intelligence = toNumber(record.value(StatusName.intelligence,)) || 0 ;
+                this.piety        = toNumber(record.value(StatusName.piety))         || 0 ;
+                this.luck         = toNumber(record.value(StatusName.luck))          || 0 ;
         }
 } ;
 
@@ -339,12 +361,16 @@ export function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean 
 }
 
 export class Character {
+        private static nameItem         = "name" ;
+        private static ageItem          = "age" ;
+        private static raceItem         = "race" ;
+        private static jobItem          = "job" ;
+        private static statusItem       = "status" ;
+
         private mName:          string ;
         private mAge:           number ;
         private mRace:          RaceType ;
         private mJob:           JobType ;
-        private mHitPoint:      number ;
-        private mMagicPoint:    number ;
         private mStatus:        Status ;
 
         constructor(name: string, race: RaceType, job: JobType, status: Status){
@@ -352,18 +378,31 @@ export class Character {
                 this.mAge               = 0 ;
                 this.mRace              = race ;
                 this.mJob               = job ;
-                this.mHitPoint          = 0 ;
-                this.mMagicPoint        = 0 ;
                 this.mStatus            = status ;
         }
 
-        get name():             string   { return this.mName ; }
-        get age():              number   { return this.mAge ; }
-        get race():             RaceType { return this.mRace ; }
-        get job():              JobType  { return this.mJob ;  }
-        get hitPoint():         number   { return this.mHitPoint ; }
-        get magicPoint():       number   { return this.mMagicPoint ; } 
-        get status():           Status   { return this.mStatus ; }
+        public get name():             string   { return this.mName ; }
+        public get age():              number   { return this.mAge ; }
+        public get race():             RaceType { return this.mRace ; }
+        public get job():              JobType  { return this.mJob ;  }
+        public get status():           Status   { return this.mStatus ; }
+
+        public writeToRecord(record: ValueRecordIF): void {
+                record.setValue(this.name,  Character.nameItem) ;
+                record.setValue(this.age,   Character.ageItem) ;
+                record.setValue(this.race,  Character.raceItem) ;
+                record.setValue(this.job,   Character.jobItem) ;
+                this.mStatus.writeToRecord(record) ;
+        }
+
+        public readFromRecord(record: ValueRecordIF): void {
+                this.mName    = toString(record.value(Character.nameItem ))    || "" ;
+                this.mAge     = toNumber(record.value(Character.ageItem  ))    || 0 ;
+                this.mRace    = toNumber(record.value(Character.raceItem ))    || RaceType.human ;
+                this.mJob     = toNumber(record.value(Character.jobItem))      || JobType.fighter ;
+                this.mStatus.readFromRecord(record) ;
+        }
+
 }
 
 } ; // end of module

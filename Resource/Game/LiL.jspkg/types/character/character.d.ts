@@ -103,25 +103,30 @@ declare module Character {
         set luck(value: number);
         get luck(): number;
         clone(): Status;
+        writeToRecord(record: ValueRecordIF): void;
+        readFromRecord(record: ValueRecordIF): void;
     }
     function loadInitStatus(race: RaceType): Status | null;
     function loadJobRequirement(job: JobType): Status | null;
     function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean;
     class Character {
+        private static nameItem;
+        private static ageItem;
+        private static raceItem;
+        private static jobItem;
+        private static statusItem;
         private mName;
         private mAge;
         private mRace;
         private mJob;
-        private mHitPoint;
-        private mMagicPoint;
         private mStatus;
         constructor(name: string, race: RaceType, job: JobType, status: Status);
         get name(): string;
         get age(): number;
         get race(): RaceType;
         get job(): JobType;
-        get hitPoint(): number;
-        get magicPoint(): number;
         get status(): Status;
+        writeToRecord(record: ValueRecordIF): void;
+        readFromRecord(record: ValueRecordIF): void;
     }
 }

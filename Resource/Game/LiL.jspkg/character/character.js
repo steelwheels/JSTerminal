@@ -293,6 +293,26 @@ var Character;
             newstat.luck = this.luck;
             return newstat;
         }
+        writeToRecord(record) {
+            record.setValue(this.hitPoint, Character_1.StatusName.hitPoint);
+            record.setValue(this.magicPoint, Character_1.StatusName.magicPoint);
+            record.setValue(this.strength, Character_1.StatusName.strength);
+            record.setValue(this.vitality, Character_1.StatusName.vitality);
+            record.setValue(this.agility, Character_1.StatusName.agility);
+            record.setValue(this.intelligence, Character_1.StatusName.intelligence);
+            record.setValue(this.piety, Character_1.StatusName.piety);
+            record.setValue(this.luck, Character_1.StatusName.luck);
+        }
+        readFromRecord(record) {
+            this.hitPoint = toNumber(record.value(Character_1.StatusName.hitPoint)) || 0;
+            this.magicPoint = toNumber(record.value(Character_1.StatusName.magicPoint)) || 0;
+            this.strength = toNumber(record.value(Character_1.StatusName.strength)) || 0;
+            this.vitality = toNumber(record.value(Character_1.StatusName.vitality)) || 0;
+            this.agility = toNumber(record.value(Character_1.StatusName.agility)) || 0;
+            this.intelligence = toNumber(record.value(Character_1.StatusName.intelligence)) || 0;
+            this.piety = toNumber(record.value(Character_1.StatusName.piety)) || 0;
+            this.luck = toNumber(record.value(Character_1.StatusName.luck)) || 0;
+        }
     }
     Character_1.Status = Status;
     ;
@@ -366,18 +386,33 @@ var Character;
             this.mAge = 0;
             this.mRace = race;
             this.mJob = job;
-            this.mHitPoint = 0;
-            this.mMagicPoint = 0;
             this.mStatus = status;
         }
         get name() { return this.mName; }
         get age() { return this.mAge; }
         get race() { return this.mRace; }
         get job() { return this.mJob; }
-        get hitPoint() { return this.mHitPoint; }
-        get magicPoint() { return this.mMagicPoint; }
         get status() { return this.mStatus; }
+        writeToRecord(record) {
+            record.setValue(this.name, Character.nameItem);
+            record.setValue(this.age, Character.ageItem);
+            record.setValue(this.race, Character.raceItem);
+            record.setValue(this.job, Character.jobItem);
+            this.mStatus.writeToRecord(record);
+        }
+        readFromRecord(record) {
+            this.mName = toString(record.value(Character.nameItem)) || "";
+            this.mAge = toNumber(record.value(Character.ageItem)) || 0;
+            this.mRace = toNumber(record.value(Character.raceItem)) || RaceType.human;
+            this.mJob = toNumber(record.value(Character.jobItem)) || JobType.fighter;
+            this.mStatus.readFromRecord(record);
+        }
     }
+    Character.nameItem = "name";
+    Character.ageItem = "age";
+    Character.raceItem = "race";
+    Character.jobItem = "job";
+    Character.statusItem = "status";
     Character_1.Character = Character;
 })(Character || (Character = {}));
 ; // end of module
