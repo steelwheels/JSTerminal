@@ -1,26 +1,36 @@
 {
-	members: [
-		{
-			name:		"player-a",
-			level:		1,
-			hitPoint:	10,
-			armorClass:	10,
-			status:		"OK"
-		},
-		{
-			name:		"player-b",
-			level:		2,
-			hitPoint:	20,
-			armorClass:	20,
-			status:		"Bad"
-		},
-		{
-			name:		"player-c",
-			level:		3,
-			hitPoint:	30,
-			armorClass:	30,
-			status:		"Sleep"
-		}
-	]
+  members: {
+    className: "ValueTable",
+    columnNames: [
+      "name",
+      "level",
+      "hitPoint",
+      "armorClass",
+      "status"
+    ],
+    records: [
+	{
+		name:		"player-a",
+		level:		1,
+		hitPoint:	10,
+		armorClass:	10,
+		status:		"OK"
+	},
+	{
+		name:		"player-b",
+		level:		2,
+		hitPoint:	20,
+		armorClass:	20,
+		status:		"Bad"
+	},
+	{
+		name:		"player-c",
+		level:		3,
+		hitPoint:	30,
+		armorClass:	30,
+		status:		"Sleep"
+	}
+    ]
+  }
 }
 

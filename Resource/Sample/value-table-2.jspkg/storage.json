@@ -1,5 +1,7 @@
 {
-	data: [
+	className: "ValueTable",
+	columnNames: ["c0", "c1", "c2"],
+	records: [
 		{
 			c0:  0,
 			c1:  1,

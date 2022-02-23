@@ -10,7 +10,7 @@ function main(args) {
         console.print("Failed to allocate storage\n");
         return -1;
     }
-    let table = ValueTable("character.data", storage);
+    let table = ValueTable("character", storage);
     if (table == null) {
         console.print("Failed to allocate table\n");
         return -1;

@@ -12,7 +12,7 @@ top: VBox {
 	        if(storage == null){
 		        console.log("Failed to allocate storage") ;
 	        }
-	        let table = ValueTable("data", storage) ;
+	        let table = ValueTable("root", storage) ;
 	        if(table == null){
 		        console.log("Failed to allocate table") ;
 	        }
