@@ -7,6 +7,7 @@ srcs	= alert.ts \
 	  colors.ts \
 	  console-1.ts \
 	  curses-frame.ts \
+	  dictionary.ts \
 	  escape-code.ts \
 	  exit.ts \
 	  file.ts \
@@ -14,7 +15,6 @@ srcs	= alert.ts \
 	  hello_color.ts \
 	  keycode.ts \
 	  openPanel.ts \
-	  parameters.ts \
 	  readline.ts \
 	  readline-menu.ts \
 	  scroll0.ts \

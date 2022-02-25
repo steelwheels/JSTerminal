@@ -114,8 +114,8 @@
 		05D9A8AC263EACB8006D0FA2 /* KiwiComponent.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */; };
 		05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; };
 		05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05EBE9EF27C849CE00D940C8 /* parameters.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05EBE9ED27C849CE00D940C8 /* parameters.ts */; };
-		05EBE9F027C849CE00D940C8 /* parameters.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 05EBE9EE27C849CE00D940C8 /* parameters.js */; };
+		05EBE9EF27C849CE00D940C8 /* dictionary.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05EBE9ED27C849CE00D940C8 /* dictionary.ts */; };
+		05EBE9F027C849CE00D940C8 /* dictionary.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 05EBE9EE27C849CE00D940C8 /* dictionary.js */; };
 		05ED0F3325C8FBA100D00BBC /* graphics.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05ED0F3225C8FBA100D00BBC /* graphics.jspkg */; };
 		05F7AE47251874820077F527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE46251874820077F527 /* AppDelegate.swift */; };
 		05F7AE4B251874820077F527 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE4A251874820077F527 /* Document.swift */; };
@@ -211,12 +211,12 @@
 				0589F1C327132AB000D40424 /* adb.js in Copy Files */,
 				05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */,
 				05150E012724098C001C66AE /* symbol.js in Copy Files */,
-				05EBE9EF27C849CE00D940C8 /* parameters.ts in Copy Files */,
+				05EBE9EF27C849CE00D940C8 /* dictionary.ts in Copy Files */,
 				052DF9D727254E1400392E19 /* collection0.ts in Copy Files */,
 				0557F046271474DC00C4C6A8 /* value1.jspkg in Copy Files */,
 				0557F048271474DC00C4C6A8 /* addressbook.jspkg in Copy Files */,
 				05150E002724098C001C66AE /* text.ts in Copy Files */,
-				05EBE9F027C849CE00D940C8 /* parameters.js in Copy Files */,
+				05EBE9F027C849CE00D940C8 /* dictionary.js in Copy Files */,
 				059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */,
 				059C0AA8279D422D00E7B594 /* value-table-3.jspkg in Copy Files */,
 				054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */,
@@ -384,8 +384,8 @@
 		05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiShell.d.ts; sourceTree = "<group>"; };
 		05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiComponent.d.ts; sourceTree = "<group>"; };
 		05DB6EFB252F210000ADA7AD /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
-		05EBE9ED27C849CE00D940C8 /* parameters.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = parameters.ts; sourceTree = "<group>"; };
-		05EBE9EE27C849CE00D940C8 /* parameters.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = parameters.js; sourceTree = "<group>"; };
+		05EBE9ED27C849CE00D940C8 /* dictionary.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.ts; sourceTree = "<group>"; };
+		05EBE9EE27C849CE00D940C8 /* dictionary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dictionary.js; sourceTree = "<group>"; };
 		05ED0F3225C8FBA100D00BBC /* graphics.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = graphics.jspkg; sourceTree = "<group>"; };
 		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7AE46251874820077F527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -487,7 +487,6 @@
 		05B7710025187916004FCD84 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				055765F927C9081600BEF5FF /* enter-view-2.jspkg */,
 				0557F0342714749500C4C6A8 /* addressbook.jspkg */,
 				0519EC8D26417B9600471F35 /* alert.ts */,
 				05B7711B25187949004FCD84 /* alert.js */,
@@ -506,8 +505,11 @@
 				0586F79225BC008500AE9FEE /* controls.jspkg */,
 				050D9794261C02AA004FABF8 /* curses.js */,
 				052A54322621A5330034369F /* curses-frame.js */,
+				05EBE9EE27C849CE00D940C8 /* dictionary.js */,
+				05EBE9ED27C849CE00D940C8 /* dictionary.ts */,
 				051A55282771EA950093CE80 /* drawing.jspkg */,
 				05A7303027B2AB98005D5345 /* enter-view-1.jspkg */,
+				055765F927C9081600BEF5FF /* enter-view-2.jspkg */,
 				0519EC8F26417B9600471F35 /* escape-code.ts */,
 				050D9793261C02AA004FABF8 /* escape-code.js */,
 				0519EC9426417B9700471F35 /* file.ts */,
@@ -526,8 +528,6 @@
 				05B7710B25187931004FCD84 /* keycode.js */,
 				0519EC9226417B9600471F35 /* openPanel.ts */,
 				050D9791261C02AA004FABF8 /* openPanel.js */,
-				05EBE9EE27C849CE00D940C8 /* parameters.js */,
-				05EBE9ED27C849CE00D940C8 /* parameters.ts */,
 				059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */,
 				05D02A6727B7229400ABE0EA /* radio-button.jspkg */,
 				0519EC9026417B9600471F35 /* readline.js */,
