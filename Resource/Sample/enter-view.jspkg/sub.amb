@@ -2,7 +2,11 @@ top: VBox {
     quit_button: Button {
    	title: String "Quit"
 	pressed: Event() %{
-		leaveView("Good bye sub view") ;
+		leaveView({
+                  message: "Good bye sub view",
+                  a: 10,
+                  b: 20
+                }) ;
         %}
     }
 }

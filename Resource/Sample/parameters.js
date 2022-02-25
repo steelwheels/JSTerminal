@@ -6,7 +6,7 @@
 function main(argv) {
     console.print("Hello, dictionary.\n");
     let result = true;
-    let dict = Dictionary();
+    let dict = Parameters();
     if (dict == null) {
         result = false;
     }

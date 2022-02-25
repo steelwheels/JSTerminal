@@ -3,13 +3,13 @@ top: VBox {
    	title: String "SubView"
 	pressed: Event() %{
 		let ret = enterView("sub") ;
-		console.log("from-sub : " + ret) ;
+		console.log("message: " + ret.message + ", a  = " + ret.a + ", b = " + ret.b) ;
         %}
     }
     quit_button: Button {
    	title: String "Quit"
 	pressed: Event() %{
-		leaveView("Good bye main view") ;
+		leaveView(0) ;
         %}
     }
 }

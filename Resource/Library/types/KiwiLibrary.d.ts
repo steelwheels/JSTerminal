@@ -75,7 +75,9 @@ interface CursesIF {
 	fill(x: number, y: number, width: number, height: number, c: string): void ;
 }
 
-interface DictionaryIF {
+interface ParametersIF {
+	object:		{[name: string]: any} ;
+
 	setNumber(name: string, value: number): void ;
 	setString(name: string, value: string): void ;
 
@@ -347,7 +349,7 @@ declare var Symbols:		SymbolsIF ;
 
 declare function valueType(val: any): number ; // the result defined as enum ValueType
 
-declare function Dictionary(): DictionaryIF ;
+declare function Parameters(): ParametersIF ;
 declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
@@ -449,7 +451,7 @@ declare function clampPoint(src: PointIF, x: number, y: number, width: number, h
 declare function _waitUntilExitOne(process: ProcessIF): number;
 declare function _waitUntilExitAll(processes: ProcessIF[]): number;
 declare class Semaphore {
-    mValue: DictionaryIF;
+    mValue: ParametersIF;
     constructor(initval: number);
     signal(): void;
     wait(): void;

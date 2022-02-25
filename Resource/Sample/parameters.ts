@@ -10,7 +10,7 @@ function main(argv: string[])
 
 	let result = true ;
 
-	let dict  = Dictionary() ;
+	let dict  = Parameters() ;
 	if(dict == null){
 		result = false ;
 	}
