@@ -1,0 +1,21 @@
+top: VBox {
+    enter_button: Button {
+   	title: String "SubView"
+	pressed: Event() %{
+		let v     = enterView("sub") ;
+		let param = Parameters(v) ;
+		let a     = param.number("a") ;
+		let b     = param.number("b") ;
+		let c     = param.number("c") ;
+		let sum   = a + b + c ;
+		console.log("a + b + c =" + sum) ;
+        %}
+    }
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		leaveView({exit: 123}) ;
+        %}
+    }
+}
+

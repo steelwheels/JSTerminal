@@ -1,0 +1,13 @@
+top: VBox {
+    quit_button: Button {
+   	title: String "Quit"
+	pressed: Event() %{
+		let param = Parameters() ;
+		param.setNumber("a", 100) ;
+		param.setNumber("b",  10) ;
+		param.setNumber("c",   1) ;
+		leaveView(param.object) ;
+        %}
+    }
+}
+
