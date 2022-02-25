@@ -38,6 +38,25 @@ function main(argv) {
         console.error("[Error] unexpected null for rs0\n");
         result = false;
     }
+    /* Subdirectory */
+    let subdict = Dictionary();
+    if (subdict != null) {
+        subdict.setNumber("x", 1234);
+        subdict.setString("y", "child");
+    }
+    else {
+        result = false;
+    }
+    dict.setDictionary("d0", subdict);
+    let rd0 = dict.dictionary("d0");
+    if (rd0 != null) {
+        console.print("rd0: x -> 1234  -> " + rd0.number("x") + "\n");
+        console.print("rd0: y -> child -> " + rd0.string("y") + "\n");
+    }
+    else {
+        console.error("[Error] unexpected null for rd0\n");
+        result = false;
+    }
     if (result) {
         console.print("Summary: OK\n");
     }

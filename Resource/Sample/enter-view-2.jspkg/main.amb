@@ -3,7 +3,7 @@ top: VBox {
    	title: String "SubView"
 	pressed: Event() %{
 		let v     = enterView("sub") ;
-		let param = Parameters(v) ;
+		let param = Dictionary(v) ;
 		let a     = param.number("a") ;
 		let b     = param.number("b") ;
 		let c     = param.number("c") ;

@@ -2,7 +2,7 @@ top: VBox {
     quit_button: Button {
    	title: String "Quit"
 	pressed: Event() %{
-		let param = Parameters() ;
+		let param = Dictionary() ;
 		param.setNumber("a", 100) ;
 		param.setNumber("b",  10) ;
 		param.setNumber("c",   1) ;
