@@ -78,9 +78,9 @@ interface CursesIF {
 interface DictionaryIF {
 	object:		{[name: string]: any} ;
 
-	setNumber(name: string, value: number): void ;
-	setString(name: string, value: string): void ;
-	setDictionary(name: string, value: DictionaryIF): void ;
+	setNumber(value: number, name: string): void ;
+	setString(value: string, name: string): void ;
+	setDictionary(value: DictionaryIF, name: string): void ;
 
 	number(name: string): number | null ;
 	string(name: string): string | null ;

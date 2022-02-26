@@ -26,11 +26,11 @@ top: VBox {
 	add_button: Button {
 		title:  String "Add member"
 		pressed: Event() %{
-			let newchar = enterView("gym") ;
-                        if(newchar != null){
-                                let table  = top.charTable.table ;
-                                let newrec = table.newRecord() ;
-                                newchar.writeToRecord(newrec) ;
+			let obj = enterView("gym") ;
+                        if(isDictionary(obj)){
+                                let newchar = new Character.Character() ;
+                                newchar.readFromDictionary(Dictionary(obj));
+                                console.log("char name: " + newchar.name) ;
                         }
 		%}
 	}

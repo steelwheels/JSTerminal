@@ -213,17 +213,17 @@ export function statusTypeToString(type: StatusType): string {
 
 export class Status
 {
-        private mTable: {[index: string]: number} ;
+        private mTable: DictionaryIF ;
 
 	constructor(){
-                this.mTable = {} ;
+                this.mTable = Dictionary() ;
                 for(let name of allStatusNames){
-                        this.mTable[name] = 0 ;
+                        this.mTable.setNumber(0, name) ;
                 }
 	}
 
         public value(key: string): number {
-                let val = this.mTable[key] ;
+                let val = this.mTable.number(key) ;
                 if(val != null){
                         return val! ;
                 } else {
@@ -233,7 +233,7 @@ export class Status
         }
 
         public setValue(value: number, key: string): void {
-                this.mTable[key] = value ;
+                this.mTable.setNumber(value, key) ;
         }
 
         public set hitPoint(value: number) { this.setValue(value, StatusName.hitPoint) ; }
@@ -262,37 +262,27 @@ export class Status
 
         public clone(): Status {
                 let newstat = new Status() ;
-                newstat.hitPoint        = this.hitPoint ;
-                newstat.magicPoint      = this.magicPoint ;
-                newstat.strength        = this.strength ;
-                newstat.vitality        = this.vitality ;
-                newstat.agility         = this.agility ;
-                newstat.intelligence    = this.intelligence ;
-                newstat.piety           = this.piety ;
-                newstat.luck            = this.luck ;
+                for(let name of allStatusNames){
+                        let val = this.value(name) ;
+                        newstat.setValue(val, name) ;
+                }
                 return newstat ;
         }
 
-        public  writeToRecord(record: ValueRecordIF): void {
-                record.setValue(this.hitPoint,          StatusName.hitPoint) ;
-                record.setValue(this.magicPoint,        StatusName.magicPoint) ;
-                record.setValue(this.strength,          StatusName.strength) ;
-                record.setValue(this.vitality,          StatusName.vitality) ;
-                record.setValue(this.agility,           StatusName.agility) ;
-                record.setValue(this.intelligence,      StatusName.intelligence) ;
-                record.setValue(this.piety,             StatusName.piety) ;
-                record.setValue(this.luck,              StatusName.luck) ;
+        public  writeToDictionary(dst: DictionaryIF): void {
+                for(let name of allStatusNames){
+                        let val = this.value(name) ;
+                        dst.setNumber(val, name) ;
+                }
         }
 
-        public readFromRecord(record: ValueRecordIF): void {
-                this.hitPoint     = toNumber(record.value(StatusName.hitPoint  ))    || 0 ;
-                this.magicPoint   = toNumber(record.value(StatusName.magicPoint))    || 0 ;
-                this.strength     = toNumber(record.value(StatusName.strength))      || 0 ;
-                this.vitality     = toNumber(record.value(StatusName.vitality))      || 0 ;
-                this.agility      = toNumber(record.value(StatusName.agility))       || 0 ;
-                this.intelligence = toNumber(record.value(StatusName.intelligence,)) || 0 ;
-                this.piety        = toNumber(record.value(StatusName.piety))         || 0 ;
-                this.luck         = toNumber(record.value(StatusName.luck))          || 0 ;
+        public readFromDictionary(src: DictionaryIF): void {
+                for(let name of allStatusNames){
+                        let num = src.number(name) ;
+                        if(num != null){
+                                this.setValue(num!, name) ;
+                        }
+                }
         }
 } ;
 
@@ -373,13 +363,19 @@ export class Character {
         private mJob:           JobType ;
         private mStatus:        Status ;
 
-        constructor(name: string, race: RaceType, job: JobType, status: Status){
-                this.mName              = name ;
+        constructor(){
+                this.mName              = "?" ;
                 this.mAge               = 0 ;
-                this.mRace              = race ;
-                this.mJob               = job ;
-                this.mStatus            = status ;
+                this.mRace              = RaceType.human ;
+                this.mJob               = JobType.fighter ;
+                this.mStatus            = new Status() ;
         }
+
+        public set name(str: string)   { this.mName   = str ; }
+        public set age(num: number)    { this.mAge    = num ; }
+        public set race(val: RaceType) { this.mRace   = val ; }
+        public set job(val: JobType)   { this.mJob    = val ; }
+        public set status(val: Status) { this.mStatus = val ; }
 
         public get name():             string   { return this.mName ; }
         public get age():              number   { return this.mAge ; }
@@ -387,22 +383,21 @@ export class Character {
         public get job():              JobType  { return this.mJob ;  }
         public get status():           Status   { return this.mStatus ; }
 
-        public writeToRecord(record: ValueRecordIF): void {
-                record.setValue(this.name,  Character.nameItem) ;
-                record.setValue(this.age,   Character.ageItem) ;
-                record.setValue(this.race,  Character.raceItem) ;
-                record.setValue(this.job,   Character.jobItem) ;
-                this.mStatus.writeToRecord(record) ;
+        public writeToDictionary(dst: DictionaryIF): void {
+                dst.setString(this.name, Character.nameItem)  ;
+                dst.setNumber(this.age,  Character.ageItem) ;
+                dst.setNumber(this.race, Character.raceItem) ;
+                dst.setNumber(this.job,  Character.jobItem) ;
+                this.mStatus.writeToDictionary(dst) ;
         }
 
-        public readFromRecord(record: ValueRecordIF): void {
-                this.mName    = toString(record.value(Character.nameItem ))    || "" ;
-                this.mAge     = toNumber(record.value(Character.ageItem  ))    || 0 ;
-                this.mRace    = toNumber(record.value(Character.raceItem ))    || RaceType.human ;
-                this.mJob     = toNumber(record.value(Character.jobItem))      || JobType.fighter ;
-                this.mStatus.readFromRecord(record) ;
+        public readFromDictionary(src: DictionaryIF): void {
+                this.mName      = src.string(Character.nameItem) || "" ;
+                this.mAge       = src.number(Character.ageItem ) || 0 ;
+                this.mRace      = src.number(Character.raceItem) || 0 ; 
+                this.mJob       = src.number(Character.jobItem ) || JobType.fighter ;
+                this.mStatus.readFromDictionary(src) ;
         }
-
 }
 
 } ; // end of module

@@ -265,8 +265,16 @@ top: VBox {
                                 return (name.length > 0) && hasRace && hasJob ;
                         %}
 			pressed: Event() %{
-                                let newchar = new Character.Character(top.name, top.race, top.job, top.status) ;
-				leaveView(newchar) ;
+                                let newchar    = new Character.Character() ;
+                                newchar.name   = top.name ;
+                                newchar.age    = 0 ;
+                                newchar.race   = top.race ;
+                                newchar.job    = top.job ;
+                                newchar.status = top.status ;
+				/* Convert for data transfer */
+				let param = Dictionary() ;
+				newchar.writeToDictionary(param) ;
+				leaveView(param.object) ;
 			%}
 		}
 		cancel_button: Button {

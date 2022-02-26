@@ -3,9 +3,9 @@ top: VBox {
    	title: String "Quit"
 	pressed: Event() %{
 		let param = Dictionary() ;
-		param.setNumber("a", 100) ;
-		param.setNumber("b",  10) ;
-		param.setNumber("c",   1) ;
+		param.setNumber(100, "a") ;
+		param.setNumber( 10, "b") ;
+		param.setNumber(  1, "c") ;
 		leaveView(param.object) ;
         %}
     }

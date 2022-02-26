@@ -31,12 +31,7 @@ top: VBox {
     tavern_button: Button {
         title:  String "Tavern"
         pressed: Event() %{
-		let status = enterView("tavern") ;
-		if(status != null){
-			console.log("Returned status: yes") ;
-		} else {
-			console.log("Returned status: no") ;
-		}
+		enterView("tavern") ;
         %}
     }
     inn_button: Button {

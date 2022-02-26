@@ -10,8 +10,8 @@ function main(argv) {
     if (dict == null) {
         result = false;
     }
-    dict.setNumber("n0", 1234);
-    dict.setString("s0", "hello");
+    dict.setNumber(1234, "n0");
+    dict.setString("hello", "s0");
     let rn0 = dict.number("n0");
     if (rn0 != null) {
         if (rn0 == 1234) {
@@ -41,13 +41,13 @@ function main(argv) {
     /* Subdirectory */
     let subdict = Dictionary();
     if (subdict != null) {
-        subdict.setNumber("x", 1234);
-        subdict.setString("y", "child");
+        subdict.setNumber(1234, "x");
+        subdict.setString("child", "y");
     }
     else {
         result = false;
     }
-    dict.setDictionary("d0", subdict);
+    dict.setDictionary(subdict, "d0");
     let rd0 = dict.dictionary("d0");
     if (rd0 != null) {
         console.print("rd0: x -> 1234  -> " + rd0.number("x") + "\n");

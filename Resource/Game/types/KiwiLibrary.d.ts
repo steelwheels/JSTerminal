@@ -76,8 +76,15 @@ interface CursesIF {
 }
 
 interface DictionaryIF {
-	set(name: string, value: any): void ;
-	get(name: string): any | null ;
+	object:		{[name: string]: any} ;
+
+	setNumber(value: number, name: string): void ;
+	setString(value: string, name: string): void ;
+	setDictionary(value: DictionaryIF, name: string): void ;
+
+	number(name: string): number | null ;
+	string(name: string): string | null ;
+	dictionary(name: string): DictionaryIF | null ;
 }
 
 interface EscapeCodeIF {

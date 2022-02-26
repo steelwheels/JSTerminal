@@ -247,13 +247,13 @@ var Character;
     Character_1.statusTypeToString = statusTypeToString;
     class Status {
         constructor() {
-            this.mTable = {};
+            this.mTable = Dictionary();
             for (let name of Character_1.allStatusNames) {
-                this.mTable[name] = 0;
+                this.mTable.setNumber(0, name);
             }
         }
         value(key) {
-            let val = this.mTable[key];
+            let val = this.mTable.number(key);
             if (val != null) {
                 return val;
             }
@@ -263,7 +263,7 @@ var Character;
             }
         }
         setValue(value, key) {
-            this.mTable[key] = value;
+            this.mTable.setNumber(value, key);
         }
         set hitPoint(value) { this.setValue(value, Character_1.StatusName.hitPoint); }
         get hitPoint() { return this.value(Character_1.StatusName.hitPoint); }
@@ -283,35 +283,25 @@ var Character;
         get luck() { return this.value(Character_1.StatusName.luck); }
         clone() {
             let newstat = new Status();
-            newstat.hitPoint = this.hitPoint;
-            newstat.magicPoint = this.magicPoint;
-            newstat.strength = this.strength;
-            newstat.vitality = this.vitality;
-            newstat.agility = this.agility;
-            newstat.intelligence = this.intelligence;
-            newstat.piety = this.piety;
-            newstat.luck = this.luck;
+            for (let name of Character_1.allStatusNames) {
+                let val = this.value(name);
+                newstat.setValue(val, name);
+            }
             return newstat;
         }
-        writeToRecord(record) {
-            record.setValue(this.hitPoint, Character_1.StatusName.hitPoint);
-            record.setValue(this.magicPoint, Character_1.StatusName.magicPoint);
-            record.setValue(this.strength, Character_1.StatusName.strength);
-            record.setValue(this.vitality, Character_1.StatusName.vitality);
-            record.setValue(this.agility, Character_1.StatusName.agility);
-            record.setValue(this.intelligence, Character_1.StatusName.intelligence);
-            record.setValue(this.piety, Character_1.StatusName.piety);
-            record.setValue(this.luck, Character_1.StatusName.luck);
+        writeToDictionary(dst) {
+            for (let name of Character_1.allStatusNames) {
+                let val = this.value(name);
+                dst.setNumber(val, name);
+            }
         }
-        readFromRecord(record) {
-            this.hitPoint = toNumber(record.value(Character_1.StatusName.hitPoint)) || 0;
-            this.magicPoint = toNumber(record.value(Character_1.StatusName.magicPoint)) || 0;
-            this.strength = toNumber(record.value(Character_1.StatusName.strength)) || 0;
-            this.vitality = toNumber(record.value(Character_1.StatusName.vitality)) || 0;
-            this.agility = toNumber(record.value(Character_1.StatusName.agility)) || 0;
-            this.intelligence = toNumber(record.value(Character_1.StatusName.intelligence)) || 0;
-            this.piety = toNumber(record.value(Character_1.StatusName.piety)) || 0;
-            this.luck = toNumber(record.value(Character_1.StatusName.luck)) || 0;
+        readFromDictionary(src) {
+            for (let name of Character_1.allStatusNames) {
+                let num = src.number(name);
+                if (num != null) {
+                    this.setValue(num, name);
+                }
+            }
         }
     }
     Character_1.Status = Status;
@@ -381,31 +371,36 @@ var Character;
     }
     Character_1.hasEnoughStatusForJob = hasEnoughStatusForJob;
     class Character {
-        constructor(name, race, job, status) {
-            this.mName = name;
+        constructor() {
+            this.mName = "?";
             this.mAge = 0;
-            this.mRace = race;
-            this.mJob = job;
-            this.mStatus = status;
+            this.mRace = RaceType.human;
+            this.mJob = JobType.fighter;
+            this.mStatus = new Status();
         }
+        set name(str) { this.mName = str; }
+        set age(num) { this.mAge = num; }
+        set race(val) { this.mRace = val; }
+        set job(val) { this.mJob = val; }
+        set status(val) { this.mStatus = val; }
         get name() { return this.mName; }
         get age() { return this.mAge; }
         get race() { return this.mRace; }
         get job() { return this.mJob; }
         get status() { return this.mStatus; }
-        writeToRecord(record) {
-            record.setValue(this.name, Character.nameItem);
-            record.setValue(this.age, Character.ageItem);
-            record.setValue(this.race, Character.raceItem);
-            record.setValue(this.job, Character.jobItem);
-            this.mStatus.writeToRecord(record);
+        writeToDictionary(dst) {
+            dst.setString(this.name, Character.nameItem);
+            dst.setNumber(this.age, Character.ageItem);
+            dst.setNumber(this.race, Character.raceItem);
+            dst.setNumber(this.job, Character.jobItem);
+            this.mStatus.writeToDictionary(dst);
         }
-        readFromRecord(record) {
-            this.mName = toString(record.value(Character.nameItem)) || "";
-            this.mAge = toNumber(record.value(Character.ageItem)) || 0;
-            this.mRace = toNumber(record.value(Character.raceItem)) || RaceType.human;
-            this.mJob = toNumber(record.value(Character.jobItem)) || JobType.fighter;
-            this.mStatus.readFromRecord(record);
+        readFromDictionary(src) {
+            this.mName = src.string(Character.nameItem) || "";
+            this.mAge = src.number(Character.ageItem) || 0;
+            this.mRace = src.number(Character.raceItem) || 0;
+            this.mJob = src.number(Character.jobItem) || JobType.fighter;
+            this.mStatus.readFromDictionary(src);
         }
     }
     Character.nameItem = "name";
