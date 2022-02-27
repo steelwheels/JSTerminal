@@ -40,6 +40,20 @@ export class CharacterTable
 		}
                 return table! ;
         }
+
+        public add(newchar: Character.Character) {
+                let table  = this.mTable
+                if(table == null){
+                        return ;
+                }
+                let newrec = table.newRecord() ;
+                if(newrec){
+                        newchar.writeToRecord(newrec) ;
+                        table.append(newrec) ;
+                } else {
+                        console.error("Failed to allocate new record\n") ;
+                }
+        } 
 } 
 
 } // end of module

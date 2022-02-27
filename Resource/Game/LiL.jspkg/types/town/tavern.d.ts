@@ -8,5 +8,6 @@ declare module Tavern {
         constructor();
         get table(): ValueTableIF;
         load(): ValueTableIF;
+        add(newchar: Character.Character): void;
     }
 }

@@ -104,7 +104,9 @@ declare module Character {
         get luck(): number;
         clone(): Status;
         writeToDictionary(dst: DictionaryIF): void;
+        writeToRecord(dst: ValueRecordIF): void;
         readFromDictionary(src: DictionaryIF): void;
+        readFromRecord(src: ValueRecordIF): void;
     }
     function loadInitStatus(race: RaceType): Status | null;
     function loadJobRequirement(job: JobType): Status | null;
@@ -112,26 +114,32 @@ declare module Character {
     class Character {
         private static nameItem;
         private static ageItem;
+        private static levelItem;
         private static raceItem;
         private static jobItem;
         private static statusItem;
         private mName;
         private mAge;
+        private mLevel;
         private mRace;
         private mJob;
         private mStatus;
         constructor();
         set name(str: string);
         set age(num: number);
+        set level(num: number);
         set race(val: RaceType);
         set job(val: JobType);
         set status(val: Status);
         get name(): string;
         get age(): number;
+        get level(): number;
         get race(): RaceType;
         get job(): JobType;
         get status(): Status;
         writeToDictionary(dst: DictionaryIF): void;
+        writeToRecord(dst: ValueRecordIF): void;
         readFromDictionary(src: DictionaryIF): void;
+        readFromRecord(src: ValueRecordIF): void;
     }
 }

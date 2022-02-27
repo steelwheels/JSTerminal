@@ -13,6 +13,7 @@ function main(args : [string])
 		console.print("Failed to allocate storage\n") ;
 		return -1 ;
 	}
+	console.print("dump: " + storage.toString()) ;
 
 	let table = ValueTable("storage", storage) ;
 	if(table == null){
@@ -44,7 +45,6 @@ function main(args : [string])
 			console.print("[Error] No record at " + i + "\n") ;
 		}
 	}
-
 	return 0 ;
 }
 

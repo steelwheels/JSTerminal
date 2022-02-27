@@ -27,8 +27,9 @@ function main(args : [string])
 	console.print("obj0 = " + obj0 + "\n") ;
 
 	storage.set(obj0, "b") ;
+	console.print("b    = " + storage.value("b")    + "\n") ;
 	console.print("b.v0 = " + storage.value("b.v0") + "\n") ;
-	console.print("b    = " + storage.value("b") + "\n") ;
+	console.print("b.v1 = " + storage.value("b.v1") + "\n") ;
 
 	/* Save entire value */
 	if(storage.store()){

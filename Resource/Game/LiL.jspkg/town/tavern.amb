@@ -30,7 +30,7 @@ top: VBox {
                         if(isDictionary(obj)){
                                 let newchar = new Character.Character() ;
                                 newchar.readFromDictionary(Dictionary(obj));
-                                console.log("char name: " + newchar.name) ;
+                                top.charTable.add(newchar) ;
                         }
 		%}
 	}

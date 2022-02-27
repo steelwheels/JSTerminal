@@ -13,8 +13,7 @@ top: VBox {
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
                 {field:"hitPoint",      title:"HP"},
-                {field:"armorClass",    title:"AC"},
-                {field:"status",        title:"Status"}
+                {field:"magicPoint",    title:"MP"}
         ]
 	init: Init %{
 		let storage = ValueStorage("main") ;
