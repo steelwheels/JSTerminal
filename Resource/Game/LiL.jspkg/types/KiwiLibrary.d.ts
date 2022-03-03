@@ -248,6 +248,7 @@ interface ValueStorageIF {
 	value(path: string): any ;
 	set(value: any, path: string): boolean ;
 	store(): boolean ;
+	toString(): string ;
 }
 
 interface ValueRecordIF {
@@ -267,6 +268,8 @@ interface ValueTableIF {
 	record(row: number):			ValueRecordIF | null ;
 	search(value: any, name: string):	ValueRecordIF[] | null ;
 	append(record: ValueRecordIF): 		void ;
+
+	toString(): 		string
 }
 
 interface SymbolsIF {

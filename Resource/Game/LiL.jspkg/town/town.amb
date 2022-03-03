@@ -24,7 +24,7 @@ top: VBox {
 		if(table == null){
 			console.log("Failed to allocate table") ;
 		}
-		self.store(table) ;
+		self.dataTable = table ;
 	%}
     }
     tavern_button: Button {

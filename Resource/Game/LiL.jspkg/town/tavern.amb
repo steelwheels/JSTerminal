@@ -11,12 +11,10 @@ top: VBox {
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
                 {field:"hitPoint",      title:"HP"},
-                {field:"armorClass",    title:"AC"},
-                {field:"status",        title:"Status"}
+                {field:"magicPoint",	title:"MP"}
         ]
 	init: Init %{
-                let table = top.charTable.table ;
-		self.store(table) ;
+		self.dataTable = top.charTable.table ;
 	%}
 	pressed: Event(col, row) %{
 		console.log("col=" + col + ", row=" + row) ;
