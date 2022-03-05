@@ -8,7 +8,8 @@ top: VBox {
 	text: String "The current party"
     }
     party_table: Table {
-	hasHeader: Bool true
+	hasHeader:    Bool true
+	isSelectable: Bool true
 	fieldNames: Array [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
@@ -16,22 +17,32 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 	init: Init %{
-		let storage = ValueStorage("main") ;
-		if(storage == null){
-			console.log("Failed to allocate storage") ;
-		}
-		let table = ValueTable("town.tavern.members", storage) ;
-		if(table == null){
-			console.log("Failed to allocate table") ;
-		}
-		self.dataTable = table ;
+		self.dataTable = top.party.table ;
+	%}
+	pressed: Event(col, row) %{
+		console.log("col=" + col + ", row=" + row) ;
 	%}
     }
-    tavern_button: Button {
-        title:  String "Tavern"
-        pressed: Event() %{
-		enterView("tavern") ;
-        %}
+    change_member: HBox {
+	    add_button: Button {
+		title:  String "Add member"
+		pressed: Event() %{
+			let obj = enterView("gym") ;
+			if(isDictionary(obj)){
+				let newchar = new Character.Character() ;
+				newchar.readFromDictionary(Dictionary(obj));
+				top.party.add(newchar) ;
+			}
+		%}
+	    }
+	    del_button: Button {
+		title:  String "Delete member"
+		ieEnabled: Bool Listner(didsel: top.party_table.didSelected) %{
+			return didsel ;
+		%}
+		pressed: Event() %{
+		%}
+	    }
     }
     inn_button: Button {
         title:  String "Inn"

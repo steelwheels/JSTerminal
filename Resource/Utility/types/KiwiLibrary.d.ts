@@ -76,11 +76,15 @@ interface CursesIF {
 }
 
 interface DictionaryIF {
-	setNumber(name: string, value: number): void ;
-	setString(name: string, value: string): void ;
+	object:		{[name: string]: any} ;
+
+	setNumber(value: number, name: string): void ;
+	setString(value: string, name: string): void ;
+	setDictionary(value: DictionaryIF, name: string): void ;
 
 	number(name: string): number | null ;
 	string(name: string): string | null ;
+	dictionary(name: string): DictionaryIF | null ;
 }
 
 interface EscapeCodeIF {
@@ -244,6 +248,7 @@ interface ValueStorageIF {
 	value(path: string): any ;
 	set(value: any, path: string): boolean ;
 	store(): boolean ;
+	toString(): string ;
 }
 
 interface ValueRecordIF {
@@ -259,10 +264,11 @@ interface ValueTableIF {
 
 	readonly allFieldNames:	string[] ;
 
-	newRecord():				ValueRecordIF ;
 	record(row: number):			ValueRecordIF | null ;
 	search(value: any, name: string):	ValueRecordIF[] | null ;
 	append(record: ValueRecordIF): 		void ;
+
+	toString(): 		string
 }
 
 interface SymbolsIF {
@@ -312,7 +318,6 @@ interface ContactDatabaseIF {
 	authorize(callback: (granted: boolean) => void): void
 	load(url: URLIF | null): boolean ;
 
-	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
 	search(value: any, name: string):	ContactRecordIF[] | null ;
         append(record: ContactRecordIF): void ;
@@ -356,6 +361,9 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
 declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
+declare function ValueRecord(): ValueRecordIF ;
+
+declare function ContactRecord(): ContactRecordIF ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

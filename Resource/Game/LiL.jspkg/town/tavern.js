@@ -40,13 +40,13 @@ var Tavern;
             if (table == null) {
                 return;
             }
-            let newrec = table.newRecord();
+            let newrec = ValueRecord();
             if (newrec) {
                 newchar.writeToRecord(newrec);
                 table.append(newrec);
             }
             else {
-                console.error("Failed to allocate new record\n");
+                console.log("Failed to allocate new record");
             }
         }
     }

@@ -18,7 +18,11 @@ function main(args) {
     let count = table.recordCount;
     console.print("recode-count = " + count + "\n");
     console.print("table = " + table.toString());
-    let newrec = table.newRecord();
-    newrec.setValue(123, "a");
+    let newrec = ValueRecord();
+    newrec.setValue(100, "c0");
+    newrec.setValue(101, "c1");
+    newrec.setValue(102, "c2");
+    table.append(newrec);
+    console.print("result = " + table.toString());
     return 0;
 }

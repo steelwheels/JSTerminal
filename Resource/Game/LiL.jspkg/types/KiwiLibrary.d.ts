@@ -264,7 +264,6 @@ interface ValueTableIF {
 
 	readonly allFieldNames:	string[] ;
 
-	newRecord():				ValueRecordIF ;
 	record(row: number):			ValueRecordIF | null ;
 	search(value: any, name: string):	ValueRecordIF[] | null ;
 	append(record: ValueRecordIF): 		void ;
@@ -319,7 +318,6 @@ interface ContactDatabaseIF {
 	authorize(callback: (granted: boolean) => void): void
 	load(url: URLIF | null): boolean ;
 
-	newRecord(): ContactRecordIF ;
 	record(index: number): ContactRecordIF | null ;
 	search(value: any, name: string):	ContactRecordIF[] | null ;
         append(record: ContactRecordIF): void ;
@@ -363,6 +361,9 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
 declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
+declare function ValueRecord(): ValueRecordIF ;
+
+declare function ContactRecord(): ContactRecordIF ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

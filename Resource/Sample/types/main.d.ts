@@ -1,2 +1,3 @@
-/// <reference path="../value-table-1.jspkg/types/KiwiLibrary.d.ts" />
-declare function main(args: [string]): -1 | 0;
+/// <reference path="../value-table-4.jspkg/types/KiwiLibrary.d.ts" />
+/// <reference path="../value-table-4.jspkg/types/KiwiComponent.d.ts" />
+declare function main(args: [string]): number;

@@ -3,7 +3,6 @@
 	subviews: {
 		main:    "main.amb",
 		town:    "town/town.amb",
-		tavern:  "town/tavern.amb",
 		inn:     "town/inn.amb",
 		temple:	 "town/temple.amb",
 		shop:	 "town/shop.amb"
@@ -17,7 +16,6 @@
 		main_title	: "images/main.png"
 		inn_title	: "town/images/inn.png"
 		shop_title	: "town/images/shop.png"
-		tavern_title	: "town/images/tavern.png"
 		temple_title	: "town/images/temple.png"
 		town_title	: "town/images/town.png"
 		gym_title	: "town/images/gym.png"
