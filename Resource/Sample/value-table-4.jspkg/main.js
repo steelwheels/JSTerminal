@@ -7,6 +7,6 @@
 function main(args) {
     console.print("# value-table-4\n");
     let retval = enterView("table");
-    console.print("retval = " + retval);
+    console.print("retval = " + retval + "\n");
     return 0;
 }

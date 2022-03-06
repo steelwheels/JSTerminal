@@ -17,7 +17,8 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 	init: Init %{
-		self.dataTable = top.party.table ;
+		console.log("Init table data") ;
+		self.reload(top.party.table) ;
 	%}
 	pressed: Event(col, row) %{
 		console.log("col=" + col + ", row=" + row) ;
@@ -32,6 +33,7 @@ top: VBox {
 				let newchar = new Character.Character() ;
 				newchar.readFromDictionary(Dictionary(obj));
 				top.party.add(newchar) ;
+				top.party_table.reload(top.party.table) ;
 			}
 		%}
 	    }
