@@ -1,6 +1,6 @@
 {
   initStatus: {
-    className: "ValueTable",
+    class: "ValueTable",
     columnNames: [
       "race",
       "hitPoint",
@@ -71,7 +71,7 @@
     ]
   }
   jobRequirement: {
-    className: "ValueTable",
+    class: "ValueTable",
     columnNames: [
       "job",
       "hitPoint",
@@ -175,7 +175,7 @@
     ]
   }
   alignmentRestriction: {
-    className: "ValueTable",
+    class: "ValueTable",
     columnNames: [
       "job",
       "good",

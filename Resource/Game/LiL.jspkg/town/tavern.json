@@ -1,6 +1,6 @@
 {
   members: {
-    className: "ValueTable",
+    class: "ValueTable",
     columnNames: [
       "name",
       "age",
