@@ -42,17 +42,7 @@ export class CharacterTable
         }
 
         public add(newchar: Character.Character) {
-                let table  = this.mTable
-                if(table == null){
-                        return ;
-                }
-                let newrec = Record() ;
-                if(newrec){
-                        newchar.writeToRecord(newrec) ;
-                        table.append(newrec) ;
-                } else {
-                        console.log("Failed to allocate new record") ;
-                }
+		this.table.append(newchar.record) ;
         } 
 } 
 

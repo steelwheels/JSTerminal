@@ -236,6 +236,10 @@ export class Status
                 this.mTable.setNumber(value, key) ;
         }
 
+        public get dictionary(): DictionaryIF {
+                return this.mTable ;
+        }
+
         public set hitPoint(value: number) { this.setValue(value, StatusName.hitPoint) ; }
         public get hitPoint() { return this.value(StatusName.hitPoint) ; }
 
@@ -267,38 +271,6 @@ export class Status
                         newstat.setValue(val, name) ;
                 }
                 return newstat ;
-        }
-
-        public  writeToDictionary(dst: DictionaryIF): void {
-                for(let name of allStatusNames){
-                        let val = this.value(name) ;
-                        dst.setNumber(val, name) ;
-                }
-        }
-
-        public writeToRecord(dst: RecordIF): void {
-                for(let name of allStatusNames){
-                        let val = this.value(name) ;
-                        dst.setValue(val, name) ;
-                }
-        }
-
-        public readFromDictionary(src: DictionaryIF): void {
-                for(let name of allStatusNames){
-                        let num = src.number(name) ;
-                        if(num != null){
-                                this.setValue(num!, name) ;
-                        }
-                }
-        }
-
-        public readFromRecord(src: RecordIF): void {
-                for(let name of allStatusNames){
-                        let val = src.value(name) ;
-                        if(val != null){
-                                this.setValue(val!, name) ;
-                        }
-                }
         }
 } ;
 
@@ -366,7 +338,8 @@ export function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean 
         return result ;
 }
 
-export class Character {
+export class Character
+{
         private static nameItem         = "name" ;
         private static ageItem          = "age" ;
         private static levelItem        = "level" ;
@@ -374,70 +347,70 @@ export class Character {
         private static jobItem          = "job" ;
         private static statusItem       = "status" ;
 
-        private mName:          string ;
-        private mAge:           number ;
-        private mLevel:         number ;
-        private mRace:          RaceType ;
-        private mJob:           JobType ;
-        private mStatus:        Status ;
+        private mRecord:        RecordIF
 
-        constructor(){
-                this.mName              = "?" ;
-                this.mAge               = 0 ;
-                this.mLevel             = 1 ;
-                this.mRace              = RaceType.human ;
-                this.mJob               = JobType.fighter ;
-                this.mStatus            = new Status() ;
+        constructor(record: RecordIF | null){
+                if(record != null){
+                        this.mRecord = record ;
+                } else {
+                        this.mRecord = Record() ;
+                }
         }
 
-        public set name(str: string)   { this.mName   = str ; }
-        public set age(num: number)    { this.mAge    = num ; }
-        public set level(num: number)  { this.mLevel  = num ; }
-        public set race(val: RaceType) { this.mRace   = val ; }
-        public set job(val: JobType)   { this.mJob    = val ; }
-        public set status(val: Status) { this.mStatus = val ; }
-
-        public get name():             string   { return this.mName ;   }
-        public get age():              number   { return this.mAge ;    } 
-        public get level():            number   { return this.mLevel ;  } 
-        public get race():             RaceType { return this.mRace ;   }
-        public get job():              JobType  { return this.mJob ;    }
-        public get status():           Status   { return this.mStatus ; }
-
-        public writeToDictionary(dst: DictionaryIF): void {
-                dst.setString(this.name,  Character.nameItem)  ;
-                dst.setNumber(this.age,   Character.ageItem) ;
-                dst.setNumber(this.level, Character.levelItem) ;
-                dst.setNumber(this.race,  Character.raceItem) ;
-                dst.setNumber(this.job,   Character.jobItem) ;
-                this.mStatus.writeToDictionary(dst) ;
+        public get record(): RecordIF {
+                return this.mRecord ;
         }
 
-        public writeToRecord(dst: RecordIF): void {
-                dst.setValue(this.name,  Character.nameItem)  ;
-                dst.setValue(this.age,   Character.ageItem) ;
-                dst.setValue(this.level, Character.levelItem) ;
-                dst.setValue(this.race,  Character.raceItem) ;
-                dst.setValue(this.job,   Character.jobItem) ;
-                this.mStatus.writeToRecord(dst) ;
+        public set name(str: string) {
+                this.mRecord.setValue(str, Character.nameItem) ;
+        }
+        public get name(): string {
+                return this.mRecord.value(Character.nameItem) ?? "?" ;
         }
 
-        public readFromDictionary(src: DictionaryIF): void {
-                this.mName      = src.string(Character.nameItem)  || "" ;
-                this.mAge       = src.number(Character.ageItem )  || 0 ;
-                this.mLevel     = src.number(Character.levelItem) || 0 ;
-                this.mRace      = src.number(Character.raceItem)  || RaceType.human ;
-                this.mJob       = src.number(Character.jobItem )  || JobType.fighter ;
-                this.mStatus.readFromDictionary(src) ;
+        public set age(num: number) {
+                this.mRecord.setValue(num, Character.ageItem) ;
+        }
+        public get age(): number {
+                return this.mRecord.value(Character.ageItem) ?? "0" ;
         }
 
-        public readFromRecord(src: RecordIF): void {
-                this.mName      = toString(src.value(Character.nameItem )) || "" ;
-                this.mAge       = toNumber(src.value(Character.ageItem  )) || 0 ;
-                this.mLevel     = toNumber(src.value(Character.levelItem)) || 0 ;
-                this.mRace      = toNumber(src.value(Character.raceItem )) || RaceType.human ;
-                this.mJob       = toNumber(src.value(Character.jobItem  )) || JobType.fighter ;
-                this.mStatus.readFromRecord(src) ;
+        public set level(num: number) {
+                this.mRecord.setValue(num, Character.levelItem) ;
+        }
+        public get level(): number {
+                return this.mRecord.value(Character.levelItem) ?? "0" ;
+        }
+
+        public set race(typ: RaceType) {
+                this.mRecord.setValue(typ, Character.raceItem);
+        }
+        public get race(): RaceType {
+                return this.mRecord.value(Character.raceItem) ?? RaceType.human ;
+        }
+
+        public set job(typ: JobType) {
+                this.mRecord.setValue(typ, Character.jobItem);
+        }
+        public get job(): JobType {
+                return this.mRecord.value(Character.jobItem) ?? JobType.fighter ;
+        }
+
+        public set status(stat: Status) {
+                for(let name of allStatusNames){
+                        let val = stat.value(name) ;
+                        this.mRecord.setValue(val, name) ;
+                }
+        }
+        public get status(): Status {
+                let newstat = new Status() ;
+                for(let name of allStatusNames){
+                        let val = this.mRecord.value(name) ;
+                        if(val != null){
+                                newstat.setValue(val, name) ;
+                        }
+                }
+                return newstat ;
         }
 }
 

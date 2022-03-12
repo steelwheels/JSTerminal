@@ -291,41 +291,16 @@ interface SymbolsIF {
 	rectangle(filled: boolean, rounded: boolean): URLIF ;
 }
 
-interface ContactRecordIF {
-	fieldCount:		number ;
-	fieldNames:		string[] ;
-	filledFieldNames:	string[] ;
-
-	type: 			string ;
-
-	givenName:		string | null ;
-	middleName:		string | null ;
-	familyName:		string | null ;
-
-	jobTitle:		string | null ;
-	organizationName:	string | null ;
-	departmentName:		string | null ;
-
-	postalAddresses:	{[name:string]: string} | null ;
-	emailAddresses:		{[name:string]: string} | null ;
-	urlAddresses:		{[name:string]: string} | null ;
-
-	value(name: string): any ;
-	setValue(val: any, name: string): boolean ;
-
-	toString(): 		string
-}
-
 interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
 	load(url: URLIF | null): boolean ;
 
-	record(index: number): ContactRecordIF | null ;
-	search(value: any, name: string):	ContactRecordIF[] | null ;
-        append(record: ContactRecordIF): void ;
-	forEach(callback: (record: ContactRecordIF) => void): void ;
+	record(index: number): RecordIF | null ;
+	search(value: any, name: string):	RecordIF[] | null ;
+        append(record: RecordIF): void ;
+	forEach(callback: (record: RecordIF) => void): void ;
 }
 
 interface CollectionIF {
@@ -366,8 +341,6 @@ declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
 declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
 declare function Record(): RecordIF ;
-
-declare function ContactRecord(): ContactRecordIF ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

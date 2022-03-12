@@ -24,6 +24,7 @@ srcs	= alert.ts \
 	  symbol.ts \
 	  text.ts \
 	  value-storage-1.jspkg/main.ts \
+	  value-storage-2.jspkg/main.ts \
 	  value-table-1.jspkg/main.ts \
 	  value-table-2.jspkg/main.ts \
 	  value-table-3.jspkg/main.ts \

@@ -265,6 +265,9 @@ var Character;
         setValue(value, key) {
             this.mTable.setNumber(value, key);
         }
+        get dictionary() {
+            return this.mTable;
+        }
         set hitPoint(value) { this.setValue(value, Character_1.StatusName.hitPoint); }
         get hitPoint() { return this.value(Character_1.StatusName.hitPoint); }
         set magicPoint(value) { this.setValue(value, Character_1.StatusName.magicPoint); }
@@ -288,34 +291,6 @@ var Character;
                 newstat.setValue(val, name);
             }
             return newstat;
-        }
-        writeToDictionary(dst) {
-            for (let name of Character_1.allStatusNames) {
-                let val = this.value(name);
-                dst.setNumber(val, name);
-            }
-        }
-        writeToRecord(dst) {
-            for (let name of Character_1.allStatusNames) {
-                let val = this.value(name);
-                dst.setValue(val, name);
-            }
-        }
-        readFromDictionary(src) {
-            for (let name of Character_1.allStatusNames) {
-                let num = src.number(name);
-                if (num != null) {
-                    this.setValue(num, name);
-                }
-            }
-        }
-        readFromRecord(src) {
-            for (let name of Character_1.allStatusNames) {
-                let val = src.value(name);
-                if (val != null) {
-                    this.setValue(val, name);
-                }
-            }
         }
     }
     Character_1.Status = Status;
@@ -385,57 +360,67 @@ var Character;
     }
     Character_1.hasEnoughStatusForJob = hasEnoughStatusForJob;
     class Character {
-        constructor() {
-            this.mName = "?";
-            this.mAge = 0;
-            this.mLevel = 1;
-            this.mRace = RaceType.human;
-            this.mJob = JobType.fighter;
-            this.mStatus = new Status();
+        constructor(record) {
+            if (record != null) {
+                this.mRecord = record;
+            }
+            else {
+                this.mRecord = Record();
+            }
         }
-        set name(str) { this.mName = str; }
-        set age(num) { this.mAge = num; }
-        set level(num) { this.mLevel = num; }
-        set race(val) { this.mRace = val; }
-        set job(val) { this.mJob = val; }
-        set status(val) { this.mStatus = val; }
-        get name() { return this.mName; }
-        get age() { return this.mAge; }
-        get level() { return this.mLevel; }
-        get race() { return this.mRace; }
-        get job() { return this.mJob; }
-        get status() { return this.mStatus; }
-        writeToDictionary(dst) {
-            dst.setString(this.name, Character.nameItem);
-            dst.setNumber(this.age, Character.ageItem);
-            dst.setNumber(this.level, Character.levelItem);
-            dst.setNumber(this.race, Character.raceItem);
-            dst.setNumber(this.job, Character.jobItem);
-            this.mStatus.writeToDictionary(dst);
+        get record() {
+            return this.mRecord;
         }
-        writeToRecord(dst) {
-            dst.setValue(this.name, Character.nameItem);
-            dst.setValue(this.age, Character.ageItem);
-            dst.setValue(this.level, Character.levelItem);
-            dst.setValue(this.race, Character.raceItem);
-            dst.setValue(this.job, Character.jobItem);
-            this.mStatus.writeToRecord(dst);
+        set name(str) {
+            this.mRecord.setValue(str, Character.nameItem);
         }
-        readFromDictionary(src) {
-            this.mName = src.string(Character.nameItem) || "";
-            this.mAge = src.number(Character.ageItem) || 0;
-            this.mLevel = src.number(Character.levelItem) || 0;
-            this.mRace = src.number(Character.raceItem) || RaceType.human;
-            this.mJob = src.number(Character.jobItem) || JobType.fighter;
-            this.mStatus.readFromDictionary(src);
+        get name() {
+            var _a;
+            return (_a = this.mRecord.value(Character.nameItem)) !== null && _a !== void 0 ? _a : "?";
         }
-        readFromRecord(src) {
-            this.mName = toString(src.value(Character.nameItem)) || "";
-            this.mAge = toNumber(src.value(Character.ageItem)) || 0;
-            this.mLevel = toNumber(src.value(Character.levelItem)) || 0;
-            this.mRace = toNumber(src.value(Character.raceItem)) || RaceType.human;
-            this.mJob = toNumber(src.value(Character.jobItem)) || JobType.fighter;
-            this.mStatus.readFromRecord(src);
+        set age(num) {
+            this.mRecord.setValue(num, Character.ageItem);
+        }
+        get age() {
+            var _a;
+            return (_a = this.mRecord.value(Character.ageItem)) !== null && _a !== void 0 ? _a : "0";
+        }
+        set level(num) {
+            this.mRecord.setValue(num, Character.levelItem);
+        }
+        get level() {
+            var _a;
+            return (_a = this.mRecord.value(Character.levelItem)) !== null && _a !== void 0 ? _a : "0";
+        }
+        set race(typ) {
+            this.mRecord.setValue(typ, Character.raceItem);
+        }
+        get race() {
+            var _a;
+            return (_a = this.mRecord.value(Character.raceItem)) !== null && _a !== void 0 ? _a : RaceType.human;
+        }
+        set job(typ) {
+            this.mRecord.setValue(typ, Character.jobItem);
+        }
+        get job() {
+            var _a;
+            return (_a = this.mRecord.value(Character.jobItem)) !== null && _a !== void 0 ? _a : JobType.fighter;
+        }
+        set status(stat) {
+            for (let name of Character_1.allStatusNames) {
+                let val = stat.value(name);
+                this.mRecord.setValue(val, name);
+            }
+        }
+        get status() {
+            let newstat = new Status();
+            for (let name of Character_1.allStatusNames) {
+                let val = this.mRecord.value(name);
+                if (val != null) {
+                    newstat.setValue(val, name);
+                }
+            }
+            return newstat;
         }
     }
     Character.nameItem = "name";

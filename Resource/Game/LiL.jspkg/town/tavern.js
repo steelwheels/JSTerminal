@@ -36,18 +36,7 @@ var Tavern;
             return table;
         }
         add(newchar) {
-            let table = this.mTable;
-            if (table == null) {
-                return;
-            }
-            let newrec = Record();
-            if (newrec) {
-                newchar.writeToRecord(newrec);
-                table.append(newrec);
-            }
-            else {
-                console.log("Failed to allocate new record");
-            }
+            this.table.append(newchar.record);
         }
     }
     Tavern.CharacterTable = CharacterTable;

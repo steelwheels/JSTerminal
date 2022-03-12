@@ -27,10 +27,9 @@ top: VBox {
 	    add_button: Button {
 		title:  String "Add member"
 		pressed: Event() %{
-			let obj = enterView("gym") ;
-			if(isDictionary(obj)){
-				let newchar = new Character.Character() ;
-				newchar.readFromDictionary(Dictionary(obj));
+			let record = enterView("gym") ;
+			if(isRecord(record)){
+				let newchar = new Character.Character(record) ;
 				top.party.add(newchar) ;
 				top.partyTable.reload(top.party.table) ;
 			}
