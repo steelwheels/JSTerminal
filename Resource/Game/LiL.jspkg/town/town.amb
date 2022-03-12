@@ -1,5 +1,8 @@
 top: VBox {
-    party: Init %{ return new Tavern.CharacterTable() ; %}
+    party: Storage {
+        name: String "main"
+        path: String "town.tavern.members"
+    }
 
     title: Image {
         name: String "town_title"
@@ -29,8 +32,7 @@ top: VBox {
 		pressed: Event() %{
 			let record = enterView("gym") ;
 			if(isRecord(record)){
-				let newchar = new Character.Character(record) ;
-				top.party.add(newchar) ;
+				top.party.table.append(record) ;
 				top.partyTable.reload(top.party.table) ;
 			}
 		%}
