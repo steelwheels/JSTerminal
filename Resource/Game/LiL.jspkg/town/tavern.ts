@@ -46,7 +46,7 @@ export class CharacterTable
                 if(table == null){
                         return ;
                 }
-                let newrec = ValueRecord() ;
+                let newrec = Record() ;
                 if(newrec){
                         newchar.writeToRecord(newrec) ;
                         table.append(newrec) ;

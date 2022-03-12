@@ -121,7 +121,7 @@ export class AlignmentRestriction
                 }
         }
 
-        private recordForJob(job: JobType): ValueRecordIF | null {
+        private recordForJob(job: JobType): RecordIF | null {
                 let table = this.mTable ;
                 if(table != null){
                         let recs = table.search(jobToString(job), "job") ;
@@ -276,7 +276,7 @@ export class Status
                 }
         }
 
-        public writeToRecord(dst: ValueRecordIF): void {
+        public writeToRecord(dst: RecordIF): void {
                 for(let name of allStatusNames){
                         let val = this.value(name) ;
                         dst.setValue(val, name) ;
@@ -292,7 +292,7 @@ export class Status
                 }
         }
 
-        public readFromRecord(src: ValueRecordIF): void {
+        public readFromRecord(src: RecordIF): void {
                 for(let name of allStatusNames){
                         let val = src.value(name) ;
                         if(val != null){
@@ -413,7 +413,7 @@ export class Character {
                 this.mStatus.writeToDictionary(dst) ;
         }
 
-        public writeToRecord(dst: ValueRecordIF): void {
+        public writeToRecord(dst: RecordIF): void {
                 dst.setValue(this.name,  Character.nameItem)  ;
                 dst.setValue(this.age,   Character.ageItem) ;
                 dst.setValue(this.level, Character.levelItem) ;
@@ -431,7 +431,7 @@ export class Character {
                 this.mStatus.readFromDictionary(src) ;
         }
 
-        public readFromRecord(src: ValueRecordIF): void {
+        public readFromRecord(src: RecordIF): void {
                 this.mName      = toString(src.value(Character.nameItem )) || "" ;
                 this.mAge       = toNumber(src.value(Character.ageItem  )) || 0 ;
                 this.mLevel     = toNumber(src.value(Character.levelItem)) || 0 ;

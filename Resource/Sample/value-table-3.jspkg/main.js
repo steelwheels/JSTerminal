@@ -18,7 +18,7 @@ function main(args) {
     let count = table.recordCount;
     console.print("recode-count = " + count + "\n");
     console.print("table = " + table.toString());
-    let newrec = ValueRecord();
+    let newrec = Record();
     newrec.setValue(100, "c0");
     newrec.setValue(101, "c1");
     newrec.setValue(102, "c2");

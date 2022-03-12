@@ -251,12 +251,14 @@ interface ValueStorageIF {
 	toString(): string ;
 }
 
-interface ValueRecordIF {
+interface RecordIF {
 	fieldNames:		string[] ;
 	filledFieldNames:	string[] ;
 
 	value(name: string):			any ;
 	setValue(value: any, name: string):	boolean
+
+	toString(): 		string
 }
 
 interface ValueTableIF {
@@ -264,9 +266,9 @@ interface ValueTableIF {
 
 	readonly allFieldNames:	string[] ;
 
-	record(row: number):			ValueRecordIF | null ;
-	search(value: any, name: string):	ValueRecordIF[] | null ;
-	append(record: ValueRecordIF): 		void ;
+	record(row: number):			RecordIF | null ;
+	search(value: any, name: string):	RecordIF[] | null ;
+	append(record: RecordIF): 		void ;
 
 	toString(): 		string
 }
@@ -310,6 +312,8 @@ interface ContactRecordIF {
 
 	value(name: string): any ;
 	setValue(val: any, name: string): boolean ;
+
+	toString(): 		string
 }
 
 interface ContactDatabaseIF {
@@ -361,7 +365,7 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
 declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
-declare function ValueRecord(): ValueRecordIF ;
+declare function Record(): RecordIF ;
 
 declare function ContactRecord(): ContactRecordIF ;
 
@@ -372,6 +376,7 @@ declare function isDate(value: any): boolean ;
 declare function isNull(value: any): boolean ;
 declare function isNumber(value: any): boolean ;
 declare function isDictionary(value: any): boolean ;
+declare function isRecord(value: any): boolean ;
 declare function isObject(value: any): boolean ;
 declare function isPoint(value: any): boolean ;
 declare function isRect(value: any): boolean ;
@@ -387,6 +392,7 @@ declare function toBoolean(value: any): boolean | null ;
 declare function toDate(value: any): object | null ;
 declare function toNumber(value: any): number | null ;
 declare function toDictionary(value: any): {[name:string]: any} | null ;
+declare function toRecord(value: any): RecordIF | null ;
 declare function toObject(value: any): object | null ;
 declare function toPoint(value: any): PointIF | null ;
 declare function toRect(value: any): RectIF | null ;

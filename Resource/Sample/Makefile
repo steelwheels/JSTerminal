@@ -8,6 +8,7 @@ srcs	= alert.ts \
 	  console-1.ts \
 	  curses-frame.ts \
 	  dictionary.ts \
+	  enter-view-3.jspkg/main.ts \
 	  escape-code.ts \
 	  exit.ts \
 	  file.ts \
@@ -15,6 +16,7 @@ srcs	= alert.ts \
 	  hello_color.ts \
 	  keycode.ts \
 	  openPanel.ts \
+	  primitives-0.ts \
 	  readline.ts \
 	  readline-menu.ts \
 	  scroll0.ts \

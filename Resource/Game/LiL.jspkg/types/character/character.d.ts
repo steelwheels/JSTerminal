@@ -104,9 +104,9 @@ declare module Character {
         get luck(): number;
         clone(): Status;
         writeToDictionary(dst: DictionaryIF): void;
-        writeToRecord(dst: ValueRecordIF): void;
+        writeToRecord(dst: RecordIF): void;
         readFromDictionary(src: DictionaryIF): void;
-        readFromRecord(src: ValueRecordIF): void;
+        readFromRecord(src: RecordIF): void;
     }
     function loadInitStatus(race: RaceType): Status | null;
     function loadJobRequirement(job: JobType): Status | null;
@@ -138,8 +138,8 @@ declare module Character {
         get job(): JobType;
         get status(): Status;
         writeToDictionary(dst: DictionaryIF): void;
-        writeToRecord(dst: ValueRecordIF): void;
+        writeToRecord(dst: RecordIF): void;
         readFromDictionary(src: DictionaryIF): void;
-        readFromRecord(src: ValueRecordIF): void;
+        readFromRecord(src: RecordIF): void;
     }
 }
