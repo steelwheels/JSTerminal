@@ -27,6 +27,22 @@ function main(args : [string])
 	let fnames = table.allFieldNames ;
 	console.print("all-field-names = " + fnames + "\n") ;
 
+	printTable(table) ;
+
+	console.print("remove record [2]  -> ") ;
+	if(table.remove(2)){
+		console.print("OK\n") ;
+	} else {
+		console.print("Error\n") ;
+	}
+	printTable(table) ;
+
+	return 0 ;
+}
+
+function printTable(table: TableIF)
+{
+	let count = table.recordCount ;
 	for(let i=0 ; i<count ; i++){
 		let record = table.record(i) ;
 		if(record != null){
@@ -45,6 +61,5 @@ function main(args : [string])
 			console.print("[Error] No record at " + i + "\n") ;
 		}
 	}
-	return 0 ;
 }
 

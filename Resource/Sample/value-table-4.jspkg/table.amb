@@ -24,11 +24,14 @@ top: VBox {
 		console.log("column = " + col + "/" + self.columnCount) ;
 	%}
     }
-    selected_button: Button {
-	title: String "Selected"
+    rm_button: Button {
+	title: String "Remove"
 	isEnabled: Bool Listner(selected: top.table.didSelected) %{
 		return selected ;
 	%}
+	pressed: Event() %{
+		top.table.removeSelectedRows() ;
+        %}
     }
     quit_button: Button {
    	title: String "Quit"

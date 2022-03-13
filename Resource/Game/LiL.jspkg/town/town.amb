@@ -39,10 +39,11 @@ top: VBox {
 	    }
 	    del_button: Button {
 		title:  String "Delete member"
-		ieEnabled: Bool Listner(didsel: top.partyTable.didSelected) %{
+		isEnabled: Bool Listner(didsel: top.partyTable.didSelected) %{
 			return didsel ;
 		%}
 		pressed: Event() %{
+                        top.partyTable.removeSelectedRows() ;
 		%}
 	    }
     }

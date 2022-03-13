@@ -109,7 +109,7 @@ export function alignmentToString(align: AlignmentType): string {
 
 export class AlignmentRestriction
 {
-        private mTable: ValueTableIF | null ;
+        private mTable: TableIF | null ;
 
         constructor(){
                 let table = valueTableInStorage("main", "character.alignmentRestriction") ;
