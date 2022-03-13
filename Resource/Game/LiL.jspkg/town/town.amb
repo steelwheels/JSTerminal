@@ -10,7 +10,7 @@ top: VBox {
     party_title: Label {
 	text: String "The current party"
     }
-    partyTable: Table {
+    partyTable: TableView {
 	hasHeader:    Bool true
 	isSelectable: Bool true
 	fieldNames: Array [
