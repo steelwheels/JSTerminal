@@ -17,7 +17,8 @@ top: VBox {
 		        console.log("Failed to allocate table") ;
 	        }
 		// Set table into this view
-                self.reload(table) ;        
+                self.dataTable = table ;
+		self.reload() ;
         %}
 	pressed: Event(row, col) %{
 		console.log("row    = " + row + "/" + self.rowCount) ;

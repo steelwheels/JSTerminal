@@ -20,7 +20,8 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 	init: Init %{
-		self.reload(top.party.table) ;
+		self.dataTable = top.party.table ;
+		self.reload() ;
 	%}
 	pressed: Event(col, row) %{
 		console.log("col=" + col + ", row=" + row) ;
@@ -33,7 +34,7 @@ top: VBox {
 			let record = enterView("gym") ;
 			if(isRecord(record)){
 				top.party.table.append(record) ;
-				top.partyTable.reload(top.party.table) ;
+				top.partyTable.reload() ;
 			}
 		%}
 	    }

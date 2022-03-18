@@ -261,7 +261,7 @@ interface RecordIF {
 	toString(): 		string
 }
 
-interface ValueTableIF {
+interface TableIF {
 	recordCount:		number ;
 
 	readonly allFieldNames:	string[] ;
@@ -269,6 +269,7 @@ interface ValueTableIF {
 	record(row: number):			RecordIF | null ;
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
+	remove(index: number):			boolean ;
 
 	toString(): 		string
 }
@@ -339,7 +340,7 @@ declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
-declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
+declare function ValueTable(path: string, storage: ValueStorageIF): TableIF | null ;
 declare function Record(): RecordIF ;
 
 declare function isArray(value: any): boolean ;
@@ -392,7 +393,7 @@ declare function _run(path: URLIF | string, input: FileIF, output: FileIF, error
 declare function isEmptyString(str: string): boolean;
 declare function isEmptyObject(obj: object): boolean;
 /// <reference path="Builtin.d.ts" />
-declare function valueTableInStorage(storage: string, path: string): ValueTableIF | null;
+declare function valueTableInStorage(storage: string, path: string): TableIF | null;
 /// <reference path="Builtin.d.ts" />
 declare class File {
     mCore: FileIF;
