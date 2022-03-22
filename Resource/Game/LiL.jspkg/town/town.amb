@@ -75,6 +75,17 @@ top: VBox {
     ret_button: Button {
         title:  String "Opening"
         pressed: Event() %{
+		let table = top.party.table ;
+		if(table.isDirty){
+			console.print("Save table ... ") ;
+			if(table.save()){
+				console.print("done\n") ;
+			} else {
+				console.print("fail\n") ;
+			}
+		} else {
+			console.log("Table is not saved\n") ;
+		}
 		leaveView(0) ;
         %}
     }

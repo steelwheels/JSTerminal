@@ -265,11 +265,13 @@ interface TableIF {
 	recordCount:		number ;
 
 	readonly allFieldNames:	string[] ;
-
+	readonly isDirty: boolean ;
+	
 	record(row: number):			RecordIF | null ;
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
 	remove(index: number):			boolean ;
+	save():					boolean ;
 
 	toString(): 		string
 }

@@ -25,20 +25,32 @@ top: VBox {
 		console.log("column = " + col + "/" + self.columnCount) ;
 	%}
     }
-    rm_button: Button {
-	title: String "Remove"
-	isEnabled: Bool Listner(selected: top.table.didSelected) %{
-		return selected ;
-	%}
-	pressed: Event() %{
-		top.table.removeSelectedRows() ;
-        %}
-    }
-    quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView(1) ;
-        %}
+    buttons: HBox {
+	rm_button: Button {
+		title: String "Remove"
+		isEnabled: Bool Listner(selected: top.table.didSelected) %{
+			return selected ;
+		%}
+		pressed: Event() %{
+			top.table.removeSelectedRows() ;
+        	%}
+    	}
+	save_button: Button {
+   		title: String "Save"
+		pressed: Event() %{
+			if(top.table.dataTable.isDirty){
+				console.print("is dirty\n") ;
+			} else {
+				console.print("is not dirty\n") ;
+			}
+        	%}
+    	}
+	quit_button: Button {
+   		title: String "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+        	%}
+    	}
     }
 }
 

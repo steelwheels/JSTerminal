@@ -29,6 +29,13 @@ function main(args) {
         console.print("Error\n");
     }
     printTable(table);
+    console.print("save table -> ");
+    if (table.save()) {
+        console.print("OK\n");
+    }
+    else {
+        console.print("Error\n");
+    }
     return 0;
 }
 function printTable(table) {

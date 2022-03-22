@@ -37,6 +37,13 @@ function main(args : [string])
 	}
 	printTable(table) ;
 
+	console.print("save table -> ") ;
+	if(table.save()){
+		console.print("OK\n") ;
+	} else {
+		console.print("Error\n") ;
+	}
+
 	return 0 ;
 }
 

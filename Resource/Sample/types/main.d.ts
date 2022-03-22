@@ -1,3 +1,3 @@
-/// <reference path="../value-table-1.jspkg/types/KiwiLibrary.d.ts" />
-declare function main(args: [string]): -1 | 0;
-declare function printTable(table: TableIF): void;
+/// <reference path="../value-table-4.jspkg/types/KiwiLibrary.d.ts" />
+/// <reference path="../value-table-4.jspkg/types/KiwiComponent.d.ts" />
+declare function main(args: [string]): number;
