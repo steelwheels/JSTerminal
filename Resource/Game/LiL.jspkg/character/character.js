@@ -152,6 +152,7 @@ var Character;
                     }
                 }
             }
+            console.log("Invalid job: " + jobToString(job));
             return null;
         }
         valueForJob(alignment, job) {
@@ -162,7 +163,8 @@ var Character;
                     return val;
                 }
                 else {
-                    console.log("Invalid value for alignment of job");
+                    console.log("Invalid value for alignment: "
+                        + alignment);
                     return false;
                 }
             }

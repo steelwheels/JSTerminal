@@ -1,0 +1,53 @@
+{
+  weapons: {
+    class: "ValueTable",
+    columnNames: [
+      "name_r",
+      "name_u",
+      "armor_g",
+      "armor_n",
+      "armor_e",
+      "strength",
+      "attack",
+      "damage_a",
+      "damage_b",
+      "damage_c",
+      "price_b",
+      "price_c",
+      "price_i",
+    ],
+    records: [
+      {
+        name_r:		"long sword",
+        name_u		"sword",
+        armor_g:	0,
+	armor_n:	0,
+	armor_e:	0,
+        strength:	4,
+        attack:		0,
+        damage_a:	1,
+        damage_b:	6,
+        damage_c:	8,
+        price_b:	25,
+        price_c:	12,
+        price_i:	12
+      },
+      {
+        name_r:		"short sword",
+        name_u		"sword",
+        armor_g:	0,
+	armor_n:	0,
+	armor_e:	0,
+        strength:	3,
+        attack:		0,
+        damage_a:	1,
+        damage_b:	6,
+        damage_c:	6,
+        price_b:	15,
+        price_c:	7,
+        price_i:	7	
+      }
+    ]
+  }
+}
+

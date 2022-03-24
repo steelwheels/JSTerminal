@@ -131,6 +131,7 @@ export class AlignmentRestriction
                                 }
                         }
                 }
+		console.log("Invalid job: " + jobToString(job)) ;
                 return null ;
         }
 
@@ -141,7 +142,8 @@ export class AlignmentRestriction
                         if(val != null){
                                 return val! ;
                         } else {
-                                console.log("Invalid value for alignment of job") ;
+                                console.log("Invalid value for alignment: " 
+				 + alignment) ;
                                 return false ;
                         }
                 } else {

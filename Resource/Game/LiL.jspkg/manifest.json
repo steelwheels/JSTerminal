@@ -9,7 +9,8 @@
 		gym:	 "town/gym.amb"
 	}
 	libraries: [
-		"character/character.js"
+		"character/character.js",
+		"character/weapon.js"
 	]
 	images: {
 		main_title	: "images/main.png"

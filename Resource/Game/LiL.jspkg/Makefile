@@ -3,7 +3,8 @@
 #
 
 srcs	= main.ts \
-	  character/character.ts
+	  character/character.ts \
+	  character/weapon.ts
 
 dsts	= $(srcs:.ts=.js)
 decls	= $(srcs:.ts=.d.ts)

@@ -1,0 +1,7 @@
+{
+	weapon: {
+		class:		"reference",
+		relativePath:	"character/weapon.json"
+	}
+}
+

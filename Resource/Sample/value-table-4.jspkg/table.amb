@@ -38,10 +38,10 @@ top: VBox {
 	save_button: Button {
    		title: String "Save"
 		pressed: Event() %{
-			if(top.table.dataTable.isDirty){
-				console.print("is dirty\n") ;
+			if(top.table.dataTable.save()){
+				console.print("save ... done\n") ;
 			} else {
-				console.print("is not dirty\n") ;
+				console.print("save ... failed\n") ;
 			}
         	%}
     	}
