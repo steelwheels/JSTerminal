@@ -2,8 +2,9 @@ top: VBox {
     enter_button: Button {
    	title: String "SubView"
 	pressed: Event() %{
-		let ret = enterView("sub") ;
-		console.log("message: " + ret.message + ", a  = " + ret.a + ", b = " + ret.b) ;
+		let ret = enterView("sub", "hello from main.amb") ;
+		console.log("message: " + ret.message + ", a  = " 
+			     + ret.a + ", b = " + ret.b) ;
         %}
     }
     quit_button: Button {
@@ -12,5 +13,8 @@ top: VBox {
 		leaveView(0) ;
         %}
     }
+    init: Init (args) %{
+	console.log("main.init: " + args) ;
+    %}
 }
 

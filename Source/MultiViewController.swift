@@ -58,7 +58,7 @@ public class MultiViewController: KMMultiComponentViewController
 				}
 				NSLog("mainView: return_val=\(valstr)")
 			}
-			let _ = super.pushViewController(source: .mainView(res), callback: cbfunc)
+			let _ = super.pushViewController(source: .mainView(res), argument: .nullValue, callback: cbfunc)
 		}
 	}
 }

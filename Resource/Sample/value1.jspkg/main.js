@@ -1,11 +1,11 @@
+"use strict";
 /*
- * main.js
+ * main.ts
  */
-
-function main(args)
-{
-	console.log("Hello, world !!") ;
-	let retval = enterView("sheet") ;
-	console.log("Result = " + retval) ;
+/// <reference path="types/KiwiLibrary.d.ts"/>
+/// <reference path="types/KiwiComponent.d.ts"/>
+function main(args) {
+    console.log("Hello, world !!");
+    let retval = enterView("sheet", null);
+    console.log("Result = " + retval);
 }
-

@@ -1,14 +1,14 @@
+"use strict";
 /*
  * main.js
  */
-
-function main(args)
-{
-	console.log("enterView: controls") ;
-	let retval = enterView("controls") ;
-	console.log(  "Result = {\n"
-		    + "  check0: " + retval.check0 + "\n"
-		    + "  check1: " + retval.check1 + "\n"
-		    + "}") ;
+/// <reference path="types/KiwiLibrary.d.ts"/>
+/// <reference path="types/KiwiComponent.d.ts"/>
+function main(args) {
+    console.log("enterView: controls");
+    let retval = enterView("controls", null);
+    console.log("Result = {\n"
+        + "  check0: " + retval.check0 + "\n"
+        + "  check1: " + retval.check1 + "\n"
+        + "}");
 }
-

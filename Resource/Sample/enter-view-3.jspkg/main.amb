@@ -2,7 +2,7 @@ top: VBox {
     enter_button: Button {
    	title: String "SubView"
 	pressed: Event() %{
-		let obj    = enterView("sub") ;
+		let obj    = enterView("sub", null) ;
 		console.log("main: object = " + obj) ;
 		if(isRecord(obj)){
 			console.print("isRecord: OK\n") ;

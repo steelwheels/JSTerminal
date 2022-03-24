@@ -147,14 +147,14 @@ interface PipeIF {
 interface PointIF {
 	x : number ;
 	y : number ;
-} 
+}
 
 interface RectIF {
 	x:		number ;
 	y: 		number ;
 	width:		number ;
 	height:		number ;
-} 
+}
 
 interface SizeIF {
 	width:		number ;
@@ -177,7 +177,7 @@ interface TextLineIF extends TextIF
 interface TextSectionIF extends TextIF
 {
 	contentCount: number ;
-	
+
 	add(text: TextIF): void ;
 	insert(text: TextIF): void ;
 	append(str: string): void ;
@@ -270,6 +270,7 @@ interface TableIF {
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
 	remove(index: number):			boolean ;
+	save():					boolean ;
 
 	toString(): 		string
 }

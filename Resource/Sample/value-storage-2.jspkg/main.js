@@ -6,7 +6,7 @@
 /// <reference path="types/KiwiComponent.d.ts"/>
 function main(args) {
     console.print("# value-storage-2\n");
-    let retval = enterView("table");
+    let retval = enterView("table", null);
     console.print("retval = " + retval + "\n");
     return 0;
 }

@@ -31,7 +31,7 @@ top: VBox {
 	    add_button: Button {
 		title:  String "Add member"
 		pressed: Event() %{
-			let record = enterView("gym") ;
+			let record = enterView("gym", null) ;
 			if(isRecord(record)){
 				top.party.table.append(record) ;
 				top.partyTable.reload() ;
@@ -51,7 +51,7 @@ top: VBox {
     inn_button: Button {
         title:  String "Inn"
         pressed: Event() %{
-		enterView("inn") ;
+		enterView("inn", null) ;
         %}
     }
     temple_button: Button {
@@ -63,7 +63,7 @@ top: VBox {
     shop_button: Button {
         title:  String "Shop"
         pressed: Event() %{
-		enterView("shop") ;
+		enterView("shop", null) ;
         %}
     }
     edge_button: Button {

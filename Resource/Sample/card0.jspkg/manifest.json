@@ -1,7 +1,0 @@
-{
-	application: "main.js"
-	subviews: {
-		sheet: "main.amb"
-	}
-}
-

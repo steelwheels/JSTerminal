@@ -8,7 +8,7 @@
 function main(args: string[]): void
 {
 	console.log("Hello, world !!") ;
-	let retval = enterView("main") ;
+	let retval = enterView("main", null) ;
 	console.log("exit-code = " + retval.exit) ;
 }
 

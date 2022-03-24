@@ -8,7 +8,7 @@
 function main(args : [string])
 {
 	console.print("# value-table-4\n") ;
-	let retval = enterView("table") ;
+	let retval = enterView("table", null) ;
 	console.print("retval = " + retval + "\n") ;
 	return 0 ;
 }

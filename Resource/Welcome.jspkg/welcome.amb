@@ -46,9 +46,7 @@ top: VBox {
 		title: 		String	"OK"
 		pressed: Event() %{
 			Preference.user.homeDirectory = top.select.home ;
-			enterView("terminal", function(retval){
-				console.log("terminal ... done\n") ;
-			}) ;
+			enterView("terminal", null) ;
 		%}
 	}
 }
