@@ -25,7 +25,7 @@ function main(args) {
     console.print("b.v0 = " + storage.value("b.v0") + "\n");
     console.print("b.v1 = " + storage.value("b.v1") + "\n");
     /* Save entire value */
-    if (storage.store()) {
+    if (storage.save()) {
         console.print("store ... done\n");
     }
     else {

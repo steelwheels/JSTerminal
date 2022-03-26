@@ -247,13 +247,12 @@ interface URLIF {
 interface ValueStorageIF {
 	value(path: string): any ;
 	set(value: any, path: string): boolean ;
-	store(): boolean ;
+	save(): boolean ;
 	toString(): string ;
 }
 
 interface RecordIF {
 	fieldNames:		string[] ;
-	filledFieldNames:	string[] ;
 
 	value(name: string):			any ;
 	setValue(value: any, name: string):	boolean

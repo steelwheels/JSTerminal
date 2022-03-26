@@ -1,12 +1,13 @@
 {
 	application: "main.js"
 	subviews: {
-		main:    "main.amb",
-		town:    "town/town.amb",
-		inn:     "town/inn.amb",
-		temple:	 "town/temple.amb",
-		shop:	 "town/shop.amb"
-		gym:	 "town/gym.amb"
+		main:    	"main.amb",
+		town:    	"town/town.amb",
+		training:	"town/training.amb",
+		inn:     	"town/inn.amb",
+		temple:	 	"town/temple.amb",
+		shop:	 	"town/shop.amb"
+		gym:	 	"town/gym.amb"
 	}
 	libraries: [
 		"character/character.js",
@@ -14,10 +15,11 @@
 	]
 	images: {
 		main_title	: "images/main.png"
+		town_title	: "town/images/town.png"
+		training_title	: "town/images/training.png"
 		inn_title	: "town/images/inn.png"
 		shop_title	: "town/images/shop.png"
 		temple_title	: "town/images/temple.png"
-		town_title	: "town/images/town.png"
 		gym_title	: "town/images/gym.png"
 	}
 	storages: {

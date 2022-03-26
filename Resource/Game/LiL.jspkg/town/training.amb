@@ -1,0 +1,59 @@
+top: VBox {
+    members: Storage {
+        name: String "main"
+        path: String "town.tavern.members"
+    }
+
+    title: Image {
+        name: String "training_title"
+    }
+    memberTitle: Label {
+	text: String "All characters"
+    }
+    memberTable: TableView {
+	hasHeader:    Bool true
+	isSelectable: Bool true
+	fieldNames: Array [
+                {field:"name",          title:"Name"},
+                {field:"level",         title:"Level"},
+                {field:"hitPoint",      title:"HP"},
+                {field:"magicPoint",    title:"MP"}
+        ]
+	init: Init %{
+		self.dataTable = top.members.table ;
+		self.reload() ;
+	%}
+	pressed: Event(col, row) %{
+		console.log("col=" + col + ", row=" + row) ;
+	%}
+    }
+    change_member: HBox {
+	    add_button: Button {
+		title:  String "Add member"
+		pressed: Event() %{
+			let record = enterView("gym", null) ;
+			if(isRecord(record)){
+				top.members.table.append(record) ;
+				top.memberTable.reload() ;
+			}
+		%}
+	    }
+	    del_button: Button {
+		title:  String "Delete member"
+		isEnabled: Bool Listner(didsel: top.memberTable.didSelected) %{
+			return didsel ;
+		%}
+		pressed: Event() %{
+                        top.memberTable.removeSelectedRows() ;
+		%}
+	    }
+    }
+    quit_button: Button {
+        title:  String "Quit"
+        pressed: Event() %{
+		top.members.table.save() ;
+		leaveView(0) ;
+        %}
+    }
+}
+

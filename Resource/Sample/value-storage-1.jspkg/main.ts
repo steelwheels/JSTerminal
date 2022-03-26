@@ -32,7 +32,7 @@ function main(args : [string])
 	console.print("b.v1 = " + storage.value("b.v1") + "\n") ;
 
 	/* Save entire value */
-	if(storage.store()){
+	if(storage.save()){
 		console.print("store ... done\n") ;
 	} else {
 		console.print("store ... failed\n") ;

@@ -27,26 +27,12 @@ top: VBox {
 		console.log("col=" + col + ", row=" + row) ;
 	%}
     }
-    change_member: HBox {
-	    add_button: Button {
-		title:  String "Add member"
-		pressed: Event() %{
-			let record = enterView("gym", null) ;
-			if(isRecord(record)){
-				top.party.table.append(record) ;
-				top.partyTable.reload() ;
-			}
-		%}
-	    }
-	    del_button: Button {
-		title:  String "Delete member"
-		isEnabled: Bool Listner(didsel: top.partyTable.didSelected) %{
-			return didsel ;
-		%}
-		pressed: Event() %{
-                        top.partyTable.removeSelectedRows() ;
-		%}
-	    }
+    training_button: Button {
+        title:  String "Training"
+        pressed: Event() %{
+		enterView("training", null) ;
+		top.partyTable.reload() ;
+        %}
     }
     inn_button: Button {
         title:  String "Inn"
