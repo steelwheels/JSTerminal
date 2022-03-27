@@ -1,7 +1,7 @@
 top: VBox {
     members: Storage {
         name: String "main"
-        path: String "town.tavern.members"
+        path: String "town.members"
     }
 
     title: Image {

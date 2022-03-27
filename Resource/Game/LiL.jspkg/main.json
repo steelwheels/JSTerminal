@@ -8,9 +8,9 @@
 		relativePath:	"character/item.json"
 	}
 	town: {
-		tavern: {
+		members: {
 			class: 		"reference",
-			relativePath:	"town/tavern.json"
+			relativePath:	"town/members.json"
 		}
 	}
 }

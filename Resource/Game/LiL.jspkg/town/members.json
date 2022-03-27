@@ -1,5 +1,4 @@
 {
-  members: {
     class: "ValueTable",
     columnNames: [
       "name",
@@ -63,6 +62,5 @@
 		luck:		0
 	}
     ]
-  }
 }
 
