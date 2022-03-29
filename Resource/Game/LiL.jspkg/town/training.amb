@@ -3,12 +3,58 @@ top: VBox {
         name: String "main"
         path: String "town.members"
     }
+    party: Storage {
+        name: String "main"
+        path: String "town.party"
+    }
 
     title: Image {
         name: String "training_title"
     }
+
+    partyTitle: Label {
+	text: String "Party members"
+    }
+    partyTable: TableView {
+	hasHeader:    Bool true
+	isSelectable: Bool true
+	fieldNames: Array [
+                {field:"name",          title:"Name"},
+                {field:"level",         title:"Level"},
+                {field:"hitPoint",      title:"HP"},
+                {field:"magicPoint",    title:"MP"}
+        ]
+	init: Init %{
+		self.dataTable = top.party.table ;
+		self.reload() ;
+	%}
+	pressed: Event(col, row) %{
+		console.log("party: col=" + col + ", row=" + row) ;
+	%}
+    }
+    edit_party: HBox {
+	    join_button: Button {
+		title:  String "Join party"
+		isEnabled: Bool Listner(didsel: top.memberTable.didSelected) %{
+			return didsel ;
+		%}
+		pressed: Event() %{
+			console.print("Join party\n") ;
+		%}
+	    }
+	    leave_button: Button {
+		title:  String "Leave party"
+		isEnabled: Bool Listner(didsel: top.partyTable.didSelected) %{
+			return didsel ;
+		%}
+		pressed: Event() %{
+			console.print("Leave party\n") ;
+		%}
+	    }
+    }
+
     memberTitle: Label {
-	text: String "All characters"
+	text: String "All members"
     }
     memberTable: TableView {
 	hasHeader:    Bool true
@@ -24,7 +70,7 @@ top: VBox {
 		self.reload() ;
 	%}
 	pressed: Event(col, row) %{
-		console.log("col=" + col + ", row=" + row) ;
+		console.log("member: col=" + col + ", row=" + row) ;
 	%}
     }
     change_member: HBox {

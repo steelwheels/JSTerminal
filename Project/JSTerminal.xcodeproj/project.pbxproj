@@ -107,6 +107,7 @@
 		05B77130251879BF004FCD84 /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712D251879BF004FCD84 /* JSTerminal.help */; };
 		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
 		05D02A6827B722B900ABE0EA /* radio-button.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05D02A6727B7229400ABE0EA /* radio-button.jspkg */; };
+		05D7566E27F3374C0090EDE1 /* listner-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05D7566D27F3372B0090EDE1 /* listner-1.jspkg */; };
 		05D9A8AA263EACB8006D0FA2 /* KiwiLibrary.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */; };
 		05D9A8AB263EACB8006D0FA2 /* KiwiShell.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */; };
 		05D9A8AC263EACB8006D0FA2 /* KiwiComponent.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */; };
@@ -201,6 +202,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05D7566E27F3374C0090EDE1 /* listner-1.jspkg in Copy Files */,
 				05225BD127D8E82400326EB2 /* enter-view-3.jspkg in Copy Files */,
 				05225BD227D8E82400326EB2 /* primitives-0.js in Copy Files */,
 				05225BD327D8E82400326EB2 /* primitives-0.ts in Copy Files */,
@@ -375,6 +377,7 @@
 		05B7712E251879BF004FCD84 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05BAB09625A0661800DD59D7 /* num_guess.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = num_guess.js; sourceTree = "<group>"; };
 		05D02A6727B7229400ABE0EA /* radio-button.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "radio-button.jspkg"; sourceTree = "<group>"; };
+		05D7566D27F3372B0090EDE1 /* listner-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "listner-1.jspkg"; sourceTree = "<group>"; };
 		05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiLibrary.d.ts; sourceTree = "<group>"; };
 		05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiShell.d.ts; sourceTree = "<group>"; };
 		05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiComponent.d.ts; sourceTree = "<group>"; };
@@ -518,6 +521,7 @@
 				056D27C6279D4AC100D3C8F6 /* icon.jspkg */,
 				05AFE57C27AC038E00AB371C /* image.jspkg */,
 				05FA549327BD154900DE03DE /* init.jspkg */,
+				05D7566D27F3372B0090EDE1 /* listner-1.jspkg */,
 				0519EC9526417B9700471F35 /* keycode.ts */,
 				05B7710B25187931004FCD84 /* keycode.js */,
 				0519EC9226417B9600471F35 /* openPanel.ts */,
