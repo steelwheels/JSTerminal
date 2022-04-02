@@ -20,6 +20,10 @@ top: VBox {
                 self.dataTable = table ;
 		self.reload() ;
         %}
+	filter: Event(record) %{
+		console.log("filter: " + record.toString()) ;
+		return true ;
+	%}
 	pressed: Event(row, col) %{
 		console.log("row    = " + row + "/" + self.rowCount) ;
 		console.log("column = " + col + "/" + self.columnCount) ;
