@@ -373,6 +373,13 @@ var Character;
         get record() {
             return this.mRecord;
         }
+        set pid(str) {
+            this.mRecord.setValue(str, Character.pidItem);
+        }
+        get pid() {
+            var _a;
+            return (_a = this.mRecord.value(Character.pidItem)) !== null && _a !== void 0 ? _a : -1;
+        }
         set name(str) {
             this.mRecord.setValue(str, Character.nameItem);
         }
@@ -425,6 +432,7 @@ var Character;
             return newstat;
         }
     }
+    Character.pidItem = "pid";
     Character.nameItem = "name";
     Character.ageItem = "age";
     Character.levelItem = "level";

@@ -342,6 +342,7 @@ export function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean 
 
 export class Character
 {
+	private static pidItem		= "pid" ;
         private static nameItem         = "name" ;
         private static ageItem          = "age" ;
         private static levelItem        = "level" ;
@@ -361,6 +362,13 @@ export class Character
 
         public get record(): RecordIF {
                 return this.mRecord ;
+        }
+
+        public set pid(str: number) {
+                this.mRecord.setValue(str, Character.pidItem) ;
+        }
+        public get pid(): number {
+                return this.mRecord.value(Character.pidItem) ?? -1 ;
         }
 
         public set name(str: string) {

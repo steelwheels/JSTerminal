@@ -28,6 +28,11 @@ top: VBox {
 		self.dataTable = top.party.table ;
 		self.reload() ;
 	%}
+	filter: Event(record) %{
+		let char = new Character.Character(record) ;
+		console.log("filter: " + char.pid + record.toString()) ;
+		return true ;
+	%}
 	pressed: Event(col, row) %{
 		console.log("party: col=" + col + ", row=" + row) ;
 	%}

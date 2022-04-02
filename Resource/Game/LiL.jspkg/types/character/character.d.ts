@@ -109,6 +109,7 @@ declare module Character {
     function loadJobRequirement(job: JobType): Status | null;
     function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean;
     class Character {
+        private static pidItem;
         private static nameItem;
         private static ageItem;
         private static levelItem;
@@ -118,6 +119,8 @@ declare module Character {
         private mRecord;
         constructor(record: RecordIF | null);
         get record(): RecordIF;
+        set pid(str: number);
+        get pid(): number;
         set name(str: string);
         get name(): string;
         set age(num: number);
