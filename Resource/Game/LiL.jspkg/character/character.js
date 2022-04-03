@@ -110,11 +110,6 @@ var Character;
         neutral: "neutral",
         evil: "evil"
     };
-    Character_1.allAlignmentNames = [
-        Character_1.AlignmentName.good,
-        Character_1.AlignmentName.neutral,
-        Character_1.AlignmentName.evil
-    ];
     function alignmentToString(align) {
         let result = "";
         switch (align) {
@@ -138,7 +133,8 @@ var Character;
                 this.mTable = table;
             }
             else {
-                console.error("[Error] No table for character.alignmentRestriction\n");
+                console.error("[Error] No table for " +
+                    "character.alignmentRestriction\n");
                 this.mTable = null;
             }
         }
@@ -430,6 +426,9 @@ var Character;
                 }
             }
             return newstat;
+        }
+        isPartyMember() {
+            return this.pid > 0;
         }
     }
     Character.pidItem = "pid";

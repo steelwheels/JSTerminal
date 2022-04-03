@@ -85,12 +85,6 @@ export const AlignmentName = {
 	evil:		"evil"
 } ;
 
-export const allAlignmentNames: string[] = [
-        AlignmentName.good,
-        AlignmentName.neutral,
-        AlignmentName.evil
-] ;
-
 export function alignmentToString(align: AlignmentType): string {
         let result: string = "" ;
         switch(align){
@@ -112,11 +106,13 @@ export class AlignmentRestriction
         private mTable: TableIF | null ;
 
         constructor(){
-                let table = valueTableInStorage("main", "character.alignmentRestriction") ;
+                let table = valueTableInStorage("main", 
+				"character.alignmentRestriction") ;
 	        if(table != null){
                         this.mTable = table ;
                 } else {
-		        console.error("[Error] No table for character.alignmentRestriction\n") ;
+		        console.error("[Error] No table for " +
+				"character.alignmentRestriction\n") ;
                         this.mTable = null ;
                 }
         }
@@ -396,14 +392,14 @@ export class Character
                 this.mRecord.setValue(typ, Character.raceItem);
         }
         public get race(): RaceType {
-                return this.mRecord.value(Character.raceItem) ?? RaceType.human ;
+                return this.mRecord.value(Character.raceItem) ?? RaceType.human;
         }
 
         public set job(typ: JobType) {
                 this.mRecord.setValue(typ, Character.jobItem);
         }
         public get job(): JobType {
-                return this.mRecord.value(Character.jobItem) ?? JobType.fighter ;
+                return this.mRecord.value(Character.jobItem) ?? JobType.fighter;
         }
 
         public set status(stat: Status) {
@@ -422,6 +418,10 @@ export class Character
                 }
                 return newstat ;
         }
+
+	public isPartyMember(): boolean {
+		return this.pid > 0 ;
+	}
 }
 
 } ; // end of module

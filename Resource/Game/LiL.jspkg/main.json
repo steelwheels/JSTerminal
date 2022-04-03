@@ -11,10 +11,6 @@
 		members: {
 			class: 		"reference",
 			relativePath:	"town/members.json"
-		},
-		party: {
-			class: 		"reference",
-			relativePath:	"town/party.json"
 		}
 	}
 }

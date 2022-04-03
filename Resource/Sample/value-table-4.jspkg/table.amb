@@ -36,6 +36,11 @@ top: VBox {
 			return selected ;
 		%}
 		pressed: Event() %{
+			let rows = top.table.selectedRows() ;
+			console.log("selected rows: " + rows.length) ;
+			for(row of rows){
+				console.log("row: " + row) ;
+			}
 			top.table.removeSelectedRows() ;
         	%}
     	}

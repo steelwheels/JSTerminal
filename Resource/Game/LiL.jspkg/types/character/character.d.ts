@@ -48,7 +48,6 @@ declare module Character {
         neutral: string;
         evil: string;
     };
-    const allAlignmentNames: string[];
     function alignmentToString(align: AlignmentType): string;
     class AlignmentRestriction {
         private mTable;
@@ -133,5 +132,6 @@ declare module Character {
         get job(): JobType;
         set status(stat: Status);
         get status(): Status;
+        isPartyMember(): boolean;
     }
 }

@@ -1,5 +1,5 @@
 top: VBox {
-    party: Storage {
+    members: Storage {
         name: String "main"
         path: String "town.members"
     }
@@ -20,7 +20,7 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 	init: Init %{
-		self.dataTable = top.party.table ;
+		self.dataTable = top.members.table ;
 		self.reload() ;
 	%}
 	pressed: Event(col, row) %{
@@ -61,7 +61,7 @@ top: VBox {
     ret_button: Button {
         title:  String "Opening"
         pressed: Event() %{
-		let table = top.party.table ;
+		let table = top.members.table ;
 		console.print("Save table ... ") ;
 		if(table.save()){
 			console.print("done\n") ;

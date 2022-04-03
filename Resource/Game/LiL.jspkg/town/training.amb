@@ -3,10 +3,6 @@ top: VBox {
         name: String "main"
         path: String "town.members"
     }
-    party: Storage {
-        name: String "main"
-        path: String "town.party"
-    }
 
     title: Image {
         name: String "training_title"
@@ -16,8 +12,9 @@ top: VBox {
 	text: String "Party members"
     }
     partyTable: TableView {
-	hasHeader:    Bool true
-	isSelectable: Bool true
+	hasHeader:       Bool true
+	isSelectable:    Bool true
+	visibleRowCount: Int  6
 	fieldNames: Array [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
@@ -25,19 +22,15 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 	init: Init %{
-		self.dataTable = top.party.table ;
+		self.dataTable = top.members.table ;
 		self.reload() ;
 	%}
 	filter: Event(record) %{
 		let char = new Character.Character(record) ;
-		console.log("filter: " + char.pid + record.toString()) ;
-		return true ;
-	%}
-	pressed: Event(col, row) %{
-		console.log("party: col=" + col + ", row=" + row) ;
+		return char.isPartyMember() ;
 	%}
     }
-    edit_party: HBox {
+    editParty: HBox {
 	    join_button: Button {
 		title:  String "Join party"
 		isEnabled: Bool Listner(didsel: top.memberTable.didSelected) %{
@@ -74,8 +67,9 @@ top: VBox {
 		self.dataTable = top.members.table ;
 		self.reload() ;
 	%}
-	pressed: Event(col, row) %{
-		console.log("member: col=" + col + ", row=" + row) ;
+	filter: Event(record) %{
+		let char = new Character.Character(record) ;
+		return !char.isPartyMember() ;
 	%}
     }
     change_member: HBox {
