@@ -28,6 +28,7 @@ srcs	= alert.ts \
 	  init.jspkg/main.ts \
 	  image.jspkg/main.ts \
 	  listner-1.jspkg/main.ts \
+	  listner-2.jspkg/main.ts \
 	  keycode.ts \
 	  openPanel.ts \
 	  popup-menu.jspkg/main.ts \

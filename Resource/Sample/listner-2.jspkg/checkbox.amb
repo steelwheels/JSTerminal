@@ -1,0 +1,31 @@
+top: VBox {
+    checkbox0: CheckBox {
+        title:     String "Check 0"
+	isEnabled: Bool  true
+        pressed: Event() %{
+		console.log("check0 pressed: " + self.status) ;
+        %}
+    }
+
+    checkbox1: CheckBox {
+        title:     String "Check 1"
+	isEnabled: Bool  true
+        pressed: Event() %{
+		console.log("check1 pressed: " + self.status) ;
+        %}
+    }
+
+    ok_button: Button {
+	title:  String "OK"
+	isEnabled: Bool  Listner(status0: top.checkbox0.status,
+				 status1: top.checkbox1.status) %{
+		console.log("status0: " + status0 + ", status1: "  + status1) ;
+		return status0 && status1 ;
+	%}
+	pressed: Event() %{
+		console.log("pressed: OK") ;
+		leaveView(0) ;
+	%}
+    }
+}
+

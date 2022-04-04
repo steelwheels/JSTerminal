@@ -118,7 +118,7 @@ declare module Character {
         private mRecord;
         constructor(record: RecordIF | null);
         get record(): RecordIF;
-        set pid(str: number);
+        set pid(num: number);
         get pid(): number;
         set name(str: string);
         get name(): string;

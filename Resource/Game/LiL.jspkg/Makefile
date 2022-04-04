@@ -28,6 +28,7 @@ all: copylib $(dsts)
 
 clean:
 	rm -f $(dsts)
+	(cd $(HOME)//Library/Containers/github.com.steelwheels.JSTerminal/Data/Library/Application\ Support && rm -rf LiL.jspkg)
 
 copylib: dummy
 	cp ../../Library/types/*.d.ts ./types

@@ -43,7 +43,7 @@ top: VBox {
     temple_button: Button {
         title:  String "Temple"
         pressed: Event() %{
-		enterView("temple") ;
+		enterView("temple", null) ;
         %}
     }
     shop_button: Button {

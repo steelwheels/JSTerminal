@@ -360,8 +360,8 @@ export class Character
                 return this.mRecord ;
         }
 
-        public set pid(str: number) {
-                this.mRecord.setValue(str, Character.pidItem) ;
+        public set pid(num: number) {
+                this.mRecord.setValue(num, Character.pidItem) ;
         }
         public get pid(): number {
                 return this.mRecord.value(Character.pidItem) ?? -1 ;

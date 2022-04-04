@@ -1,0 +1,7 @@
+{
+	application: "main.js"
+	subviews: {
+		checkbox: "checkbox.amb"
+	}
+}
+

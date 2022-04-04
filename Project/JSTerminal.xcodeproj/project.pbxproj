@@ -57,6 +57,7 @@
 		054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 051A55282771EA950093CE80 /* drawing.jspkg */; };
 		055765FA27C9083000BEF5FF /* enter-view-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 055765F927C9081600BEF5FF /* enter-view-2.jspkg */; };
 		0557F046271474DC00C4C6A8 /* value1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0557F038271474AC00C4C6A8 /* value1.jspkg */; };
+		055FCB3127FB3B1A00D79202 /* listner-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 055FCB3027FB3AF300D79202 /* listner-2.jspkg */; };
 		056D27C7279D4AD100D3C8F6 /* icon.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 056D27C6279D4AC100D3C8F6 /* icon.jspkg */; };
 		05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05809C2927299DEE000A8456 /* collection1.jspkg */; };
 		05839D1B25C6A60D00653302 /* turtle.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05839D1A25C6A60D00653302 /* turtle.jspkg */; };
@@ -202,6 +203,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				055FCB3127FB3B1A00D79202 /* listner-2.jspkg in Copy Files */,
 				05D7566E27F3374C0090EDE1 /* listner-1.jspkg in Copy Files */,
 				05225BD127D8E82400326EB2 /* enter-view-3.jspkg in Copy Files */,
 				05225BD227D8E82400326EB2 /* primitives-0.js in Copy Files */,
@@ -336,6 +338,7 @@
 		054D3B102782B6DC00206B8E /* storage0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = storage0.jspkg; sourceTree = "<group>"; };
 		055765F927C9081600BEF5FF /* enter-view-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enter-view-2.jspkg"; sourceTree = "<group>"; };
 		0557F038271474AC00C4C6A8 /* value1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = value1.jspkg; sourceTree = "<group>"; };
+		055FCB3027FB3AF300D79202 /* listner-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "listner-2.jspkg"; sourceTree = "<group>"; };
 		056D27C6279D4AC100D3C8F6 /* icon.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = icon.jspkg; sourceTree = "<group>"; };
 		05809C2927299DEE000A8456 /* collection1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = collection1.jspkg; sourceTree = "<group>"; };
 		05839D1A25C6A60D00653302 /* turtle.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = turtle.jspkg; sourceTree = "<group>"; };
@@ -522,6 +525,7 @@
 				05AFE57C27AC038E00AB371C /* image.jspkg */,
 				05FA549327BD154900DE03DE /* init.jspkg */,
 				05D7566D27F3372B0090EDE1 /* listner-1.jspkg */,
+				055FCB3027FB3AF300D79202 /* listner-2.jspkg */,
 				0519EC9526417B9700471F35 /* keycode.ts */,
 				05B7710B25187931004FCD84 /* keycode.js */,
 				0519EC9226417B9600471F35 /* openPanel.ts */,

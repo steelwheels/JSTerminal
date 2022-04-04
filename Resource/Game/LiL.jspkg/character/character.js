@@ -369,8 +369,8 @@ var Character;
         get record() {
             return this.mRecord;
         }
-        set pid(str) {
-            this.mRecord.setValue(str, Character.pidItem);
+        set pid(num) {
+            this.mRecord.setValue(num, Character.pidItem);
         }
         get pid() {
             var _a;

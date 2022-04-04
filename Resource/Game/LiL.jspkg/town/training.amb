@@ -38,6 +38,13 @@ top: VBox {
 		%}
 		pressed: Event() %{
 			console.print("Join party\n") ;
+			let recs = top.memberTable.selectedRecords() ;
+			for(rec of recs){
+				let char = new Character.Character(rec) ;
+				char.pid = top.partyTable.rowCount ;
+				top.partyTable.reload() ;
+				top.memberTable.reload() ;
+			}
 		%}
 	    }
 	    leave_button: Button {
