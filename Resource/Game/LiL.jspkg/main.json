@@ -1,16 +1,16 @@
 {
 	character: {
-		class: 		"segment",
-		relativePath:	"character/character.json"
+		class: 	"segment",
+		file:	"character/character.json"
 	}
 	item: {
-		class: 		"segment",
-		relativePath:	"character/item.json"
+		class: 	"segment",
+		file:	"character/item.json"
 	}
 	town: {
 		members: {
-			class: 		"segment",
-			relativePath:	"town/members.json"
+			class:	"segment",
+			file:	"town/members.json"
 		}
 	}
 }

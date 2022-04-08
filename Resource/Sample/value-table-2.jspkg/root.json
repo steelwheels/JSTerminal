@@ -1,7 +1,7 @@
 {
 	character: {
-		class: 		"segment",
-		relativePath:	"storage.json"
+		class: 	"segment",
+		file:	"storage.json"
 	}
 }
 
