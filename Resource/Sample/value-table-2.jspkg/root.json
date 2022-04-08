@@ -1,6 +1,6 @@
 {
 	character: {
-		class: 		"reference",
+		class: 		"segment",
 		relativePath:	"storage.json"
 	}
 }

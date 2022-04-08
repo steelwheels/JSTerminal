@@ -1,15 +1,15 @@
 {
 	character: {
-		class: 		"reference",
+		class: 		"segment",
 		relativePath:	"character/character.json"
 	}
 	item: {
-		class: 		"reference",
+		class: 		"segment",
 		relativePath:	"character/item.json"
 	}
 	town: {
 		members: {
-			class: 		"reference",
+			class: 		"segment",
 			relativePath:	"town/members.json"
 		}
 	}

@@ -1,6 +1,6 @@
-{
+e
 	weapon: {
-		class:		"reference",
+		class:		"segment",
 		relativePath:	"character/weapon.json"
 	}
 }
