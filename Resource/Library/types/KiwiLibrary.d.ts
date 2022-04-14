@@ -246,7 +246,11 @@ interface URLIF {
 
 interface ValueStorageIF {
 	value(path: string): any ;
+	
 	set(value: any, path: string): boolean ;
+	append(value: any, path: string): boolean ;
+	delete(path: string): boolean
+
 	save(): boolean ;
 	toString(): string ;
 }
