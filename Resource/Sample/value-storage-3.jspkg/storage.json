@@ -32,6 +32,25 @@
 			class: "pointer",
 			path:  "dict.a0"
 		}
+		a3: {
+			class: "pointer",
+			path:  "@id0.records[0]"
+		}
+	}
+	table: {
+		id:	"id0",
+		records: [
+			{
+				c0: 12,
+				c1: 23,
+				c2: 34 
+			},
+			{
+				c0: 45,
+				c1: 56,
+				c2: 67 
+			}
+		]
 	}
 }
 

@@ -22,7 +22,7 @@ function main(args : [string])
 	let val3 = checkValue(storage, "data[2].c2") ;
 
 	if(val0 != val3){
-		console.print("unexpected result: " + val0 + ", " + val3 + "\n") ;
+		console.print("unexpected result (0): " + val0 + ", " + val3 + "\n") ;
 		result = -1 ;
 	} 
 
@@ -32,25 +32,46 @@ function main(args : [string])
 	let elm1 = checkValue(storage, "dict.a2.b0") ;
 
 	if(elm0 != elm1){
-		console.print("unexpected result: " + elm0 + ", " + elm1 + "\n") ;
+		console.print("unexpected result (1): " + elm0 + ", " + elm1 + "\n") ;
 		result = -1 ;
 	} 
 
+	/* Check pointer value */
 	setValue(storage, 20, "dict.a0.b0") ;
 	let elm2 = checkValue(storage, "dict.a2.b0") ;
 	if(elm2 != 20){
-		console.print("unexpected result: " + elm2 + "\n") ;
+		console.print("unexpected result (2): " + elm2 + "\n") ;
 		result = -1 ;
 	} 
 
+	/* Check labeled value */
+	dumpStorage(storage) ;
+	let elm3 = checkValue(storage, "table.id") ;
+	let elm4 = checkValue(storage, "@id0.records[0].c0") ;
+	let elm5 = checkValue(storage, "table.records[0].c0") ;
+	if(elm4 != elm5){
+		console.print("unexpected result (3): " +
+						elm4 + "<->" + elm5 + "\n") ;
+		result = -1 ;
+	}
+
+	/* Check labeled pointer */
+	let elm6 = checkValue(storage, "dict.a3.c2") ;
+	let elm7 = checkValue(storage, "table.records[0].c2") ;
+	if(elm6 != elm7){
+		console.print("unexpected result (4): " +
+						elm6 + "<->" + elm7 + "\n") ;
+		result = -1 ;
+	}
 
 	/* Save entire value */
+/*
 	if(storage.save()){
 		console.print("store ... done\n") ;
 	} else {
 		console.print("store ... failed\n") ;
 	}
-
+*/
 	if(result == 0){
 		console.print("summary ... OK\n") ;
 	} else {
@@ -90,3 +111,7 @@ function setValue(storage: ValueStorageIF, value: number, path: string): boolean
 	}
 }
 
+function dumpStorage(storage: ValueStorageIF)
+{
+	console.log("storage = " + storage.toString()) ;
+}
