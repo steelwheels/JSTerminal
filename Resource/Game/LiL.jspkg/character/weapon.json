@@ -1,6 +1,6 @@
 {
   weapons: {
-    class: "ValueTable",
+    class: "Table",
     columnNames: [
       "name_r",
       "name_u",

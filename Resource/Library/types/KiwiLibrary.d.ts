@@ -343,8 +343,8 @@ declare function Rect(x: number, y: number, width: number, height: number): Rect
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
-declare function ValueStorage(path: string): ValueStorageIF | null ;
-declare function ValueTable(path: string, storage: ValueStorageIF): TableIF | null ;
+declare function Storage(path: string): ValueStorageIF | null ;
+declare function Table(path: string, storage: ValueStorageIF): TableIF | null ;
 declare function Record(): RecordIF ;
 
 declare function isArray(value: any): boolean ;
@@ -397,7 +397,7 @@ declare function _run(path: URLIF | string, input: FileIF, output: FileIF, error
 declare function isEmptyString(str: string): boolean;
 declare function isEmptyObject(obj: object): boolean;
 /// <reference path="Builtin.d.ts" />
-declare function valueTableInStorage(storage: string, path: string): TableIF | null;
+declare function tableInStorage(storage: string, path: string): TableIF | null;
 /// <reference path="Builtin.d.ts" />
 declare class File {
     mCore: FileIF;

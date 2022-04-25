@@ -8,11 +8,11 @@ top: VBox {
 		{field:"c2", title:"column 2"}
 	]
 	init: Init %{
-                let storage = ValueStorage("storage") ;
+                let storage = Storage("storage") ;
 	        if(storage == null){
 		        console.log("Failed to allocate storage") ;
 	        }
-	        let table = ValueTable("root", storage) ;
+	        let table = Table("root", storage) ;
 	        if(table == null){
 		        console.log("Failed to allocate table") ;
 	        }

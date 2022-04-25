@@ -1,5 +1,5 @@
 {
-    class: "ValueTable",
+    class: "Table",
     columnNames: [
       "pid",
       "name",

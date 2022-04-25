@@ -128,7 +128,7 @@ var Character;
     Character_1.alignmentToString = alignmentToString;
     class AlignmentRestriction {
         constructor() {
-            let table = valueTableInStorage("main", "character.alignmentRestriction");
+            let table = tableInStorage("main", "character.alignmentRestriction");
             if (table != null) {
                 this.mTable = table;
             }
@@ -312,7 +312,7 @@ var Character;
     }
     Character_1.loadJobRequirement = loadJobRequirement;
     function loadAnyStatus(tablename, typename, typevalue) {
-        let table = valueTableInStorage("main", "character." + tablename);
+        let table = tableInStorage("main", "character." + tablename);
         if (table == null) {
             console.error("[Error] No table:" + tablename + "\n");
             return null;

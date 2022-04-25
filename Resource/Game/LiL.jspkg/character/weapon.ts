@@ -13,7 +13,7 @@ export class WeaponTable
         private mTable: TableIF | null ;
 
         constructor(){
-                let table = valueTableInStorage("main", "item.weapon.weapons") ;
+                let table = tableInStorage("main", "item.weapon.weapons") ;
 	        if(table != null){
                         this.mTable = table ;
                 } else {

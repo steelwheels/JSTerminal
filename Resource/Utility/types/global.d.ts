@@ -349,8 +349,8 @@ declare function Rect(x: number, y: number, width: number, height: number): Rect
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
-declare function ValueStorage(path: string): ValueStorageIF | null ;
-declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
+declare function Storage(path: string): ValueStorageIF | null ;
+declare function Table(path: string, storage: ValueStorageIF): ValueTableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

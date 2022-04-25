@@ -8,13 +8,13 @@ function main(args : [string])
 {
 	console.print("# value-table\n") ;
 
-	let storage = ValueStorage("storage") ;
+	let storage = Storage("storage") ;
 	if(storage == null){
 		console.print("Failed to allocate storage\n") ;
 		return -1 ;
 	}
 
-	let table = ValueTable("storage", storage) ;
+	let table = Table("storage", storage) ;
 	if(table == null){
 		console.print("Failed to allocate table\n") ;
 		return -1 ;

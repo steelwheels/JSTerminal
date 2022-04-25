@@ -106,7 +106,7 @@ export class AlignmentRestriction
         private mTable: TableIF | null ;
 
         constructor(){
-                let table = valueTableInStorage("main", 
+                let table = tableInStorage("main", 
 				"character.alignmentRestriction") ;
 	        if(table != null){
                         this.mTable = table ;
@@ -291,7 +291,7 @@ export function loadJobRequirement(job: JobType): Status | null {
 }
 
 function loadAnyStatus(tablename: string, typename: string, typevalue: string): Status | null {
-	let table = valueTableInStorage("main", "character." + tablename) ;
+	let table = tableInStorage("main", "character." + tablename) ;
 	if(table == null){
 		console.error("[Error] No table:" + tablename + "\n") ;
 		return null ;

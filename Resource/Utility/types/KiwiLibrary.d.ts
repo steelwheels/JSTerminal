@@ -364,7 +364,7 @@ declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function ValueStorage(path: string): ValueStorageIF | null ;
-declare function ValueTable(path: string, storage: ValueStorageIF): ValueTableIF | null ;
+declare function Table(path: string, storage: ValueStorageIF): ValueTableIF | null ;
 declare function Record(): RecordIF ;
 
 declare function ContactRecord(): ContactRecordIF ;

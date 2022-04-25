@@ -9,7 +9,7 @@ var Weapon;
 (function (Weapon) {
     class WeaponTable {
         constructor() {
-            let table = valueTableInStorage("main", "item.weapon.weapons");
+            let table = tableInStorage("main", "item.weapon.weapons");
             if (table != null) {
                 this.mTable = table;
             }

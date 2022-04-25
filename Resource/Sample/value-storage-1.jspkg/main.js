@@ -6,7 +6,7 @@
 function main(args) {
     console.print("# value-storage\n");
     let result = 0;
-    let storage = ValueStorage("storage");
+    let storage = Storage("storage");
     if (storage == null) {
         console.print("Failed to allocate storage\n");
         return -1;
