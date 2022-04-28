@@ -64,6 +64,8 @@
 		05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05809C2927299DEE000A8456 /* collection1.jspkg */; };
 		05839D1B25C6A60D00653302 /* turtle.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05839D1A25C6A60D00653302 /* turtle.jspkg */; };
 		0586F79325BC008500AE9FEE /* controls.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
+		05889767281B53D9001A6E67 /* value-table-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05889765281B5391001A6E67 /* value-table-3.jspkg */; };
+		05889768281B53D9001A6E67 /* value-table-5.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05889766281B539D001A6E67 /* value-table-5.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
 		0589F1C027132AB000D40424 /* types in Resources */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
 		0589F1C227132AB000D40424 /* adb.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
@@ -205,6 +207,8 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05889767281B53D9001A6E67 /* value-table-3.jspkg in Copy Files */,
+				05889768281B53D9001A6E67 /* value-table-5.jspkg in Copy Files */,
 				0518BFA7280307D200002DFC /* value-storage-2.jspkg in Copy Files */,
 				0518BFA8280307D200002DFC /* value-storage-3.jspkg in Copy Files */,
 				055FCB3127FB3B1A00D79202 /* listner-2.jspkg in Copy Files */,
@@ -349,6 +353,8 @@
 		05809C2927299DEE000A8456 /* collection1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = collection1.jspkg; sourceTree = "<group>"; };
 		05839D1A25C6A60D00653302 /* turtle.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = turtle.jspkg; sourceTree = "<group>"; };
 		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = controls.jspkg; sourceTree = "<group>"; };
+		05889765281B5391001A6E67 /* value-table-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-3.jspkg"; sourceTree = "<group>"; };
+		05889766281B539D001A6E67 /* value-table-5.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-5.jspkg"; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 		0589F1BC27132AB000D40424 /* types */ = {isa = PBXFileReference; lastKnownFileType = folder; path = types; sourceTree = "<group>"; };
@@ -559,7 +565,9 @@
 				0518BFA5280307AC00002DFC /* value-storage-3.jspkg */,
 				0537528A27869B8E00EB3A2D /* value-table-1.jspkg */,
 				0537528B27869B8E00EB3A2D /* value-table-2.jspkg */,
+				05889765281B5391001A6E67 /* value-table-3.jspkg */,
 				059C0AA6279D421500E7B594 /* value-table-4.jspkg */,
+				05889766281B539D001A6E67 /* value-table-5.jspkg */,
 				0557F038271474AC00C4C6A8 /* value1.jspkg */,
 				0519EC8C26417B9600471F35 /* types */,
 			);

@@ -50,6 +50,7 @@ srcs	= alert.ts \
 	  value-table-2.jspkg/main.ts \
 	  value-table-3.jspkg/main.ts \
 	  value-table-4.jspkg/main.ts \
+	  value-table-5.jspkg/main.ts \
 	  turtle.jspkg/main.ts \
 	  turtle.jspkg/pattern.ts
 

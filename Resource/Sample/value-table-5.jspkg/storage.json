@@ -1,0 +1,32 @@
+{
+	table0: {
+		class: "Table",
+		id: "t0",
+		columnNames: ["c0", "c1", "c2"],
+		records: [
+			{
+				c0:  0,
+				c1:  1,
+				c2:  2
+			},
+			{
+				c0: 10,
+				c1: 11,
+				c2: 12
+			},
+			{
+				c0: 20,
+				c1: 21,
+				c2: 22
+			}
+		]
+	}
+	table1: {
+		class: "Table",
+		id: "t1",
+		columnNames: ["c0", "c1", "c2"],
+		records: [
+		]
+	}
+}
+

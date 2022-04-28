@@ -270,6 +270,8 @@ interface TableIF {
 	readonly allFieldNames:	string[] ;
 
 	record(row: number):			RecordIF | null ;
+	pointer(value: number, key: string):	any | null ;
+
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
 	remove(index: number):			boolean ;

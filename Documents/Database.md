@@ -14,7 +14,7 @@ This is a sample script to access contact information:
       %}
       _value: String Listner(index: top.index) %{
         // The data base is read when the "index" value is updated
-        let record = top.db.record(top.index) ;
+        let record = top.db.recordAt(top.index) ;
         if(record != null){
           // Get postal address information from record
           let addrs = record.postalAddresses ;
