@@ -1,12 +1,32 @@
 top: VBox {
-    title: Image {
-        name: String "shop_title"
-    }
-    ret_button: Button {
-        title:  String "Return to town"
-        pressed: Event() %{
-		leaveView(0) ;
-        %}
-    }
+	weapons: Storage {
+		name:	String "main"
+		path:	String "item.weapon.weapons"
+	}
+
+	title: Image {
+		name: String "shop_title"
+	}
+
+	weaponTable: TableView {
+		hasHeader:		Bool true
+		isSelectable:		Bool true
+		visibleRowCount:	Int 10
+		fieldNames: Array [
+			{field: "name_r",  title: "Real name"},
+			{field: "armor_g", title: "Armor"}
+		]
+		init: Init %{
+			self.dataTable = top.weapons.table ;
+			self.reload() ;
+		%}
+	}
+
+	ret_button: Button {
+		title:  String "Return to town"
+		pressed: Event() %{
+			leaveView(0) ;
+		%}
+	}
 } 
 

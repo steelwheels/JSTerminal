@@ -23,14 +23,15 @@ top: VBox {
 		self.dataTable = top.members.table ;
 		self.reload() ;
 	%}
-	pressed: Event(col, row) %{
-		console.log("col=" + col + ", row=" + row) ;
+	filter: Event(record) %{
+		let char = new Character.Character(record) ;
+		return char.isPartyMember() ;
 	%}
     }
-    training_button: Button {
-        title:  String "Training"
+    tavern_button: Button {
+        title:  String "Tavern"
         pressed: Event() %{
-		enterView("training", null) ;
+		enterView("tavern", null) ;
 		top.partyTable.reload() ;
         %}
     }

@@ -5,7 +5,7 @@ top: VBox {
     }
 
     title: Image {
-        name: String "training_title"
+        name: String "tavern_title"
     }
 
     partyTitle: Label {

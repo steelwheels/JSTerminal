@@ -14,12 +14,12 @@
       "damage_c",
       "price_b",
       "price_c",
-      "price_i",
+      "price_i"
     ],
     records: [
       {
         name_r:		"long sword",
-        name_u		"sword",
+        name_u:		"sword",
         armor_g:	0,
 	armor_n:	0,
 	armor_e:	0,
@@ -34,7 +34,7 @@
       },
       {
         name_r:		"short sword",
-        name_u		"sword",
+        name_u:		"sword",
         armor_g:	0,
 	armor_n:	0,
 	armor_e:	0,
