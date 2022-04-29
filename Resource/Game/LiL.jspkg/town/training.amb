@@ -54,6 +54,13 @@ top: VBox {
 		%}
 		pressed: Event() %{
 			console.print("Leave party\n") ;
+			let recs = top.partyTable.selectedRecords() ;
+			for(rec of recs){
+				let char = new Character.Character(rec) ;
+				char.pid = 0 ; // No pid
+				top.partyTable.reload() ;
+				top.memberTable.reload() ;
+			}
 		%}
 	    }
     }

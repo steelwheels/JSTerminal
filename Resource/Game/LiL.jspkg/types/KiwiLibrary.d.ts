@@ -244,7 +244,7 @@ interface URLIF {
 	loadText():		string | null ;
 }
 
-interface ValueStorageIF {
+interface StorageIF {
 	value(path: string): any ;
 	
 	set(value: any, path: string): boolean ;
@@ -270,10 +270,12 @@ interface TableIF {
 	readonly allFieldNames:	string[] ;
 
 	record(row: number):			RecordIF | null ;
-	pointer(value: number, key: string):	any | null ;
+	pointer(value: any, key: string):	any | null ;
 
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
+	appendPointer(pointer: any):		void ;
+
 	remove(index: number):			boolean ;
 	save():					boolean ;
 
@@ -345,8 +347,8 @@ declare function Rect(x: number, y: number, width: number, height: number): Rect
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
-declare function Storage(path: string): ValueStorageIF | null ;
-declare function Table(path: string, storage: ValueStorageIF): TableIF | null ;
+declare function Storage(path: string): StorageIF | null ;
+declare function Table(path: string, storage: StorageIF): TableIF | null ;
 declare function Record(): RecordIF ;
 
 declare function isArray(value: any): boolean ;

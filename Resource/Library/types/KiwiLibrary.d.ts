@@ -244,7 +244,7 @@ interface URLIF {
 	loadText():		string | null ;
 }
 
-interface ValueStorageIF {
+interface StorageIF {
 	value(path: string): any ;
 	
 	set(value: any, path: string): boolean ;
@@ -347,8 +347,8 @@ declare function Rect(x: number, y: number, width: number, height: number): Rect
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
-declare function Storage(path: string): ValueStorageIF | null ;
-declare function Table(path: string, storage: ValueStorageIF): TableIF | null ;
+declare function Storage(path: string): StorageIF | null ;
+declare function Table(path: string, storage: StorageIF): TableIF | null ;
 declare function Record(): RecordIF ;
 
 declare function isArray(value: any): boolean ;

@@ -81,7 +81,7 @@ function main(args : [string])
 	return result ;
 }
 
-function checkValue(storage: ValueStorageIF, path: string): number | null
+function checkValue(storage: StorageIF, path: string): number | null
 {
 	console.print("path: " + path + " = ") ;
 	let val = storage.value(path) ;
@@ -94,7 +94,7 @@ function checkValue(storage: ValueStorageIF, path: string): number | null
 	}
 }
 
-function setValue(storage: ValueStorageIF, value: number, path: string): boolean
+function setValue(storage: StorageIF, value: number, path: string): boolean
 {
 	console.print("path: " + path + " <- " + value + "\n") ;
 	if(storage.set(value, path)){
@@ -111,7 +111,7 @@ function setValue(storage: ValueStorageIF, value: number, path: string): boolean
 	}
 }
 
-function dumpStorage(storage: ValueStorageIF)
+function dumpStorage(storage: StorageIF)
 {
 	console.log("storage = " + storage.toString()) ;
 }
