@@ -246,7 +246,7 @@ interface URLIF {
 
 interface StorageIF {
 	value(path: string): any ;
-	
+
 	set(value: any, path: string): boolean ;
 	append(value: any, path: string): boolean ;
 	delete(path: string): boolean
