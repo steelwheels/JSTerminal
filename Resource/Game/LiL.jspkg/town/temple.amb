@@ -8,5 +8,5 @@ top: VBox {
 		leaveView(0) ;
         %}
     }
-} 
+}
 

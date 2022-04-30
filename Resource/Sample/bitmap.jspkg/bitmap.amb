@@ -13,7 +13,7 @@ top: VBox {
                 let ys = Math.sin(off + x) ;
                 let yc = Math.cos(off + x) ;
                 let yt = Math.tan(off + x) ;
-        
+
                 let xr  = Math.round(x  * (50/6.28) ) ;
                 let ysr = Math.round((ys * 25.0) + 25.0) ;
                 let ycr = Math.round((yc * 25.0) + 25.0) ;
@@ -79,6 +79,6 @@ top: VBox {
             %}
         }
     }
-    
+
 }
 

@@ -104,7 +104,7 @@ function main(args: string[])
 			docont = false ;
 		}
 	}
-	
+
 	return 0 ;
 }
 

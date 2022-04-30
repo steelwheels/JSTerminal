@@ -1,5 +1,5 @@
 /*
- * openPanel.js 
+ * openPanel.ts
  */
 
 /// <reference path="types/KiwiLibrary.d.ts"/>

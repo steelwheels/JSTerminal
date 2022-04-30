@@ -39,7 +39,7 @@ top: VBox {
 				check0: check0,
 				check1: check1
 			} ;
-			console.log(  "Result: Check-0 -> " + check0 + "\n" 
+			console.log(  "Result: Check-0 -> " + check0 + "\n"
 			            + "        Check-1 -> " + check1
 			) ;
 			leaveView(result) ;

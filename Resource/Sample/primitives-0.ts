@@ -12,10 +12,10 @@ function main(argv: string[]): void
 		console.print("Summary: OK\n") ;
 	} else {
 		console.print("Summary: Error\n") ;
-	}	
+	}
 }
 
-function recordTest(): boolean 
+function recordTest(): boolean
 {
 	console.print("- Record test\n") ;
 	let result = true ;

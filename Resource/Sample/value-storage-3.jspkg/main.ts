@@ -24,7 +24,7 @@ function main(args : [string])
 	if(val0 != val3){
 		console.print("unexpected result (0): " + val0 + ", " + val3 + "\n") ;
 		result = -1 ;
-	} 
+	}
 
 	/* Check dictionary value */
 	let elm0 = checkValue(storage, "dict.a0.b0") ;
@@ -34,7 +34,7 @@ function main(args : [string])
 	if(elm0 != elm1){
 		console.print("unexpected result (1): " + elm0 + ", " + elm1 + "\n") ;
 		result = -1 ;
-	} 
+	}
 
 	/* Check pointer value */
 	setValue(storage, 20, "dict.a0.b0") ;
@@ -42,7 +42,7 @@ function main(args : [string])
 	if(elm2 != 20){
 		console.print("unexpected result (2): " + elm2 + "\n") ;
 		result = -1 ;
-	} 
+	}
 
 	/* Check labeled value */
 	dumpStorage(storage) ;

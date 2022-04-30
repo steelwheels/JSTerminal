@@ -57,7 +57,7 @@ export class Weapon
 			this.mRecord = Record() ;
 		}
 	}
-	
+
 	get realName(): string | null {
 		return this.mRecord.value("name_r") ;
 	}

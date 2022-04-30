@@ -3,7 +3,7 @@ top: VBox {
    	title: String "SubView"
 	pressed: Event() %{
 		let ret = enterView("sub", "hello from main.amb") ;
-		console.log("message: " + ret.message + ", a  = " 
+		console.log("message: " + ret.message + ", a  = "
 			     + ret.a + ", b = " + ret.b) ;
         %}
     }

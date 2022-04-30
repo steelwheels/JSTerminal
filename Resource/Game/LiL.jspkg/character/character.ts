@@ -106,7 +106,7 @@ export class AlignmentRestriction
         private mTable: TableIF | null ;
 
         constructor(){
-                let table = tableInStorage("main", 
+                let table = tableInStorage("main",
 				"character.alignmentRestriction") ;
 	        if(table != null){
                         this.mTable = table ;
@@ -138,7 +138,7 @@ export class AlignmentRestriction
                         if(val != null){
                                 return val! ;
                         } else {
-                                console.log("Invalid value for alignment: " 
+                                console.log("Invalid value for alignment: "
 				 + alignment) ;
                                 return false ;
                         }
@@ -313,7 +313,7 @@ function loadAnyStatus(tablename: string, typename: string, typevalue: string): 
                 if(isNumber(val)){
                         status.setValue(val!, name) ;
                 } else {
-                        console.error("[Error] Invalid status value: " + val + " for name:" + name + "\n") ;    
+                        console.error("[Error] Invalid status value: " + val + " for name:" + name + "\n") ;
                 }
         }
 

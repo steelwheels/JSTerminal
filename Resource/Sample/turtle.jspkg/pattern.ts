@@ -16,7 +16,7 @@ function makeOnePattern(pattern: string): string { // (pattern) -> String
         }
     }
     return result ;
-} 
+}
 
 function makePattern(turtle: Turtle): string {    // (turtle) -> String
     turtle.setup(2, 5, Math.PI/2.0, 0.2) ;

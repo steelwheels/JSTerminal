@@ -1,6 +1,6 @@
 top: VBox {
     radio0: RadioButtons {
-	labels:	     Array	["a", "b", "c", "d"] 
+	labels:	     Array	["a", "b", "c", "d"]
 	isEnabled:   Array	[true, true, true, false]
 	columnCount: Int	3
         selected: Event(newidx) %{

@@ -21,7 +21,7 @@ class Word
 			this.chars.push("-") ;
 		}
 	}
-	
+
 	didMatched(): boolean {
 		return this.count >= this.target.length ;
 	}
@@ -86,7 +86,7 @@ function main(args: string[]): number
 function selectTarget(): string
 {
 	let targets: string[] = [
-		"January", 
+		"January",
 		"February",
 		"March",
 		"April",
@@ -103,7 +103,7 @@ function selectTarget(): string
 	return targets[idx].toLowerCase() ;
 }
 
-function countToLevel(repcount: number, limit: number): number 
+function countToLevel(repcount: number, limit: number): number
 {
         let per = repcount / limit ;
         return Math.ceil(per * MAX_IMAGE_NUM) ;
