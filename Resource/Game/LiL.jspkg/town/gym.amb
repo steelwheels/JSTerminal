@@ -7,7 +7,7 @@ top: VBox {
         job:            Init    %{ return Character.JobType.fighter ;                           %}
 	status:		Init    %{ return Character.loadInitStatus(Character.RaceType.human) ;  %}
 
-	title: Image {
+	title: ImageView {
 		name: String "gym_title"
 	}
 	msg_box: TextField {

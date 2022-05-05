@@ -1,5 +1,5 @@
 top: VBox {
-    title: Image {
+    title: ImageView {
 	name: String "main_title"
     }
     bottons: HBox {

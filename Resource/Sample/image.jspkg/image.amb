@@ -1,5 +1,5 @@
 top: VBox {
-    icon: Image {
+    icon: ImageView {
 	name:	String "amber"
 	scale:  Float  0.5
     }

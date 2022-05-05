@@ -1,6 +1,6 @@
 top: VBox {
 	message: HBox {
-		logo: Image {
+		logo: ImageView {
 			name: String "icon"
 	    }
 	    text_a: Label {

@@ -4,7 +4,7 @@ top: VBox {
         path: String "town.members"
     }
 
-    title: Image {
+    title: ImageView {
         name: String "town_title"
     }
     party_title: Label {

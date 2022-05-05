@@ -4,7 +4,7 @@ top: VBox {
 		path:	String "item.weapon.weapons"
 	}
 
-	title: Image {
+	title: ImageView {
 		name: String "shop_title"
 	}
 

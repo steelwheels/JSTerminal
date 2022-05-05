@@ -9,8 +9,8 @@ top: VBox {
                 }) ;
         %}
     }
-    init: Init (args) %{
-	console.log("sub.init: " + args) ;
+    init: Init %{
+	console.log("sub.init") ;
     %}
 }
 

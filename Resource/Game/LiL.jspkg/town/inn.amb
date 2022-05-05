@@ -1,5 +1,5 @@
 top: VBox {
-    title: Image {
+    title: ImageView {
 	name: String "inn_title"
     }
     ret_button: Button {

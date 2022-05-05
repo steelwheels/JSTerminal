@@ -13,8 +13,8 @@ top: VBox {
 		leaveView(0) ;
         %}
     }
-    init: Init (args) %{
-	console.log("main.init: " + args) ;
+    init: Init %{
+	console.log("main.init") ;
     %}
 }
 
