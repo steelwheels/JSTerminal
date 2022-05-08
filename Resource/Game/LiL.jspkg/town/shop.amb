@@ -1,18 +1,18 @@
 top: VBox {
 	weapons: Storage {
-		name:	String "main"
-		path:	String "item.weapon.weapons"
+		name:	"main"
+		path:	"item.weapon.weapons"
 	}
 
 	title: ImageView {
-		name: String "shop_title"
+		name: "shop_title"
 	}
 
 	weaponTable: TableView {
-		hasHeader:		Bool true
-		isSelectable:		Bool true
-		visibleRowCount:	Int 10
-		fieldNames: Array [
+		hasHeader:			true
+		isSelectable:		true
+		visibleRowCount:	10
+		fieldNames: [
 			{field: "name_r",  title: "Real name"},
 			{field: "armor_g", title: "Armor"}
 		]
@@ -23,7 +23,7 @@ top: VBox {
 	}
 
 	ret_button: Button {
-		title:  String "Return to town"
+		title:  "Return to town"
 		pressed: Event() %{
 			leaveView(0) ;
 		%}

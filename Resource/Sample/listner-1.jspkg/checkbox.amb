@@ -1,31 +1,31 @@
 top: VBox {
-    checkbox: CheckBox {
-        title:     String "Do you understand ?"
-	isEnabled: Bool  true
-        pressed: Event() %{
-		console.log("pressed: " + self.status) ;
-        %}
+	checkbox: CheckBox {
+ 		title:     "Do you understand ?"
+		isEnabled: true
+		pressed: Event() %{
+			console.log("pressed: " + self.status) ;
+		%}
     }
     buttons: HBox {
-	    ok_button: Button {
-		title:  String "OK"
-		isEnabled: Bool  Listner(status: top.checkbox.status) %{
-			return status ;
-		%}
-		pressed: Event() %{
-			console.log("pressed: OK") ;
-			leaveView(0) ;
-		%}
+		ok_button: Button {
+			title:		"OK"
+			isEnabled:	Listner(status: top.checkbox.status) %{
+				return status ;
+			%}
+			pressed: Event() %{
+				console.log("pressed: OK") ;
+				leaveView(0) ;
+			%}
 	    }
 	    cancel_button: Button {
-		title:  String "Cancel"
-		isEnabled: Bool  Listner(status: top.checkbox.status) %{
-			return !status ;
-		%}
-		pressed: Event() %{
-			console.log("pressed: Cancel") ;
-			leaveView(0) ;
-		%}
+			title:  "Cancel"
+			isEnabled: Listner(status: top.checkbox.status) %{
+				return !status ;
+			%}
+			pressed: Event() %{
+				console.log("pressed: Cancel") ;
+				leaveView(0) ;
+			%}
 	    }
     }
 }

@@ -1,14 +1,14 @@
 top: VBox {
     icon: ImageView {
-	name:	String "amber"
-	scale:  Float  0.5
-    }
-    ok_button: Button {
-        title:  String "OK"
+		name:	"amber"
+		scale:  0.5
+	}
+	ok_button: Button {
+		title:   "OK"
         pressed: Event() %{
 		console.log("pressed: OK") ;
 	    	leaveView(1) ;
         %}
-    }
+	}
 }
 

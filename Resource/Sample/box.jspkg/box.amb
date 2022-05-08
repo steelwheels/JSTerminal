@@ -1,34 +1,34 @@
 top: VBox {
 	h_box: HBox {
 		button00: Button {
-			title:  String 		"Button00"
+			title:  "Button00"
 			pressed: Event() %{ console.log("pressed: 00") ; %}
 		}
 		button01: Button {
-			title:  String "Button01"
+			title:  "Button01"
 			pressed: Event() %{ console.log("pressed: 01") ; %}
 		}
 	}
 	v_box: VBox {
-		title:		String		"Button10"
-		distribution:	Distribution	fill
+		title:			"Button10"
+		distribution:	Distribution.fill
 		ok_button: Button {
-			title:  String "Button10"
+			title:  "Button10"
 			pressed: Event() %{ console.log("pressed: 10") ; %}
 		}
 		calcel_button: Button {
-			title:  String "Button11"
+			title:  "Button11"
 			pressed: Event() %{ console.log("pressed: 11") ; %}
 		}
 	}
 	l_box: LabeledBox {
-		title:		String		"Hello from Label"
+		title: "Hello from Label"
 		ok_button: Button {
-			title:  String "OK"
+			title: "OK"
 			pressed: Event() %{ leaveView(0) ; %}
 		}
 		calcel_button: Button {
-			title:  String "Cancel"
+			title: "Cancel"
 			pressed: Event() %{ leaveView(1) ; %}
 		}
 	}

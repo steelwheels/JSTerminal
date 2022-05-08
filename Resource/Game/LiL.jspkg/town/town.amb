@@ -1,19 +1,19 @@
 top: VBox {
     members: Storage {
-        name: String "main"
-        path: String "town.members"
+        name: "main"
+        path: "town.members"
     }
 
     title: ImageView {
-        name: String "town_title"
+        name: "town_title"
     }
     party_title: Label {
-	text: String "The current party"
+		text: "The current party"
     }
     partyTable: TableView {
-	hasHeader:    Bool true
-	isSelectable: Bool true
-	fieldNames: Array [
+	hasHeader:    true
+	isSelectable: true
+	fieldNames: [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
                 {field:"hitPoint",      title:"HP"},
@@ -29,38 +29,38 @@ top: VBox {
 	%}
     }
     tavern_button: Button {
-        title:  String "Tavern"
+        title:  "Tavern"
         pressed: Event() %{
 		enterView("tavern", null) ;
 		top.partyTable.reload() ;
         %}
     }
     inn_button: Button {
-        title:  String "Inn"
+        title:  "Inn"
         pressed: Event() %{
 		enterView("inn", null) ;
         %}
     }
     temple_button: Button {
-        title:  String "Temple"
+        title:  "Temple"
         pressed: Event() %{
 		enterView("temple", null) ;
         %}
     }
     shop_button: Button {
-        title:  String "Shop"
+        title:  "Shop"
         pressed: Event() %{
 		enterView("shop", null) ;
         %}
     }
     edge_button: Button {
-        title:  String "Edge of town"
+        title:  "Edge of town"
         pressed: Event() %{
 		console.log("pressed: Edge") ;
         %}
     }
     ret_button: Button {
-        title:  String "Opening"
+        title:  "Opening"
         pressed: Event() %{
 		let table = top.members.table ;
 		console.print("Save table ... ") ;

@@ -1,158 +1,169 @@
 top: VBox {
-	bonus:		Int	10
-	name:		String	""
-        hasRace:        Bool    true
-        race:           Init    %{ return Character.RaceType.human ;                            %}
-        hasJob:         Bool    false
-        job:            Init    %{ return Character.JobType.fighter ;                           %}
-	status:		Init    %{ return Character.loadInitStatus(Character.RaceType.human) ;  %}
-
+	bonus:		10
+	name:		""
+	hasRace:	true
+	race:		Init    %{ return Character.RaceType.human ;  %}
+	hasJob:		false
+	job:		Init    %{ return Character.JobType.fighter ; %}
+	status:		Init    %{
+		return Character.loadInitStatus(Character.RaceType.human) ;
+	%}
 	title: ImageView {
-		name: String "gym_title"
+		name: "gym_title"
 	}
 	msg_box: TextField {
-		isEditable: Bool false
-		text: String Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
+		isEditable: false
+		text: Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
 			let message = "" ;
-                        if(name.length == 0 || !hasRace || !hasJob){
-                                message += "Set following item(s): " ;
-                                if(name.length == 0){
-                                        message += "character-name " ;
-                                }
-                                if(!hasRace){
-                                        message += "race " ;
-                                }
-                                if(!hasJob){
-                                        message += "job " ;
-                                }
-                         } else {
-                                message += "Press 'Add this member' button to finish character making." ;
-                         }
+			if(name.length == 0 || !hasRace || !hasJob){
+				message += "Set following item(s): " ;
+				if(name.length == 0){
+					message += "character-name " ;
+				}
+				if(!hasRace){
+					message += "race " ;
+				}
+				if(!hasJob){
+					message += "job " ;
+				}
+			} else {
+				message += "Press 'Add this member' button to finish "
+						+  "character making." ;
+			}
 			return message ;
 		%}
 	}
-        name_box: HBox {
-                title: Label { text: String "Character name" }
+	name_box: HBox {
+		title: Label { text: "Character name" }
 		field: TextField {
-			isEditable:	Bool true
+			isEditable:	true
 			edited: Event(text) %{
 				top.name = text ;
 			%}
 		}
 	}
-        race_box: HBox {
-                title: Label { text: String "Race" }
-                radio: RadioButtons {
-                        labels: Array [	"human",
-					"elf",
-					"dwarf",
-					"gnome",
-					"hobbit"]
-                        isEnabled: Array Listner(race: top.race) %{
-                                return [true, true, true, true, true] ;
-                        %}
-                        columnCount: Int 4
-                        selected: Event(index) %{
-                                if(index != null){
-                                        let race = Character.RaceType.human ;
-				        switch(index){
-				          case 0: race = Character.RaceType.human ;     break ;
-				          case 1: race = Character.RaceType.elf ;       break ;
-				          case 2: race = Character.RaceType.dwarf ;     break ;
-				          case 3: race = Character.RaceType.gnome ;     break ;
-				          case 4: race = Character.RaceType.hobbit ;    break ;
-				        }
-                                        if(top.race != race){
-                                                top.race = race ;
-                                                top.init_status(race) ;
-                                        }
-                                        top.hasRace = true ;
-                                } else {
-                                        top.hasRace = false ;
-                                }
-                        %}
-                }
-        }
-        job_box: HBox {
-                title: Label { text: String "Job" }
-                radio: RadioButtons {
-                        labels: Array [	"fighter",
-					"mage",
-					"priest",
-					"thief",
-                                        "samurai",
-                                        "bishop",
-                                        "ninjya",
-					"lord"]
-                        isEnabled: Array Listner(status: top.status) %{
-                                let f = Character.hasEnoughStatusForJob(Character.JobType.fighter, status) ;
-                                let m = Character.hasEnoughStatusForJob(Character.JobType.mage,    status) ;
-                                let p = Character.hasEnoughStatusForJob(Character.JobType.priest,  status) ;
-                                let t = Character.hasEnoughStatusForJob(Character.JobType.thief,   status) ;
-                                let s = Character.hasEnoughStatusForJob(Character.JobType.samurai, status) ;
-                                let b = Character.hasEnoughStatusForJob(Character.JobType.bishop,  status) ;
-                                let n = Character.hasEnoughStatusForJob(Character.JobType.ninjya,  status) ;
-                                let l = Character.hasEnoughStatusForJob(Character.JobType.lord,    status) ;
-                                return [f, m, p, t, s, b, n, l] ;
-                        %}
-                        columnCount: Int 4
-                        selected: Event(index) %{
-                                if(index != null){
-                                        let job = Character.JobType.fighter ;
-                                        switch(index){
-                                                case 0: job = Character.JobType.fighter ;     break ;
-                                                case 1: job = Character.JobType.mage ;        break ;
-                                                case 2: job = Character.JobType.priest ;      break ;
-                                                case 3: job = Character.JobType.thief ;       break ;
-                                                case 4: job = Character.JobType.samurai ;     break ;
-                                                case 5: job = Character.JobType.bishop ;      break ;
-                                                case 6: job = Character.JobType.ninjya ;      break ;
-                                                case 7: job = Character.JobType.lord ;        break ;
-                                        }
-                                        if(top.job != job){
-                                                top.job = job ;
-                                        }
-                                        top.hasJob = true ;
-                                } else {
-                                        top.hasJob = false ;
-                                }
-                        %}
-                }
-        }
-        align_box: HBox {
-                title: Label { text: String "Alignment" }
-                radio: RadioButtons {
-                        labels: Array ["good", "neutral", "evil"]
-                        columnCount: Int 4
-                        isEnabled: Array Listner(job: top.job) %{
-                                let aligninfo = new Character.AlignmentRestriction() ;
-                                let good    = aligninfo.canBeGood(job) ;
-                                let neutral = aligninfo.canBeNeutral(job) ;
-                                let evil    = aligninfo.canBeEvil(job) ;
-                                return [good, neutral, evil] ;
-                        %}
-                        selected: Event(index) %{
-                                console.log("align: " + index) ;
-                        %}
-                }
-        }
+	race_box: HBox {
+		title: Label { text: "Race" }
+		radio: RadioButtons {
+			labels: ["human",
+					 "elf",
+					 "dwarf",
+					 "gnome",
+					 "hobbit"]
+			isEnabled: Listner(race: top.race) %{
+				return [true, true, true, true, true] ;
+			%}
+			columnCount: 4
+			selected: Event(index) %{
+				if(index != null){
+					let race = Character.RaceType.human ;
+					switch(index){
+						case 0: race = Character.RaceType.human ;     break ;
+						case 1: race = Character.RaceType.elf ;       break ;
+						case 2: race = Character.RaceType.dwarf ;     break ;
+						case 3: race = Character.RaceType.gnome ;     break ;
+						case 4: race = Character.RaceType.hobbit ;    break ;
+					}
+					if(top.race != race){
+						top.race = race ;
+						top.init_status(race) ;
+					}
+				   top.hasRace = true ;
+				} else {
+					top.hasRace = false ;
+				}
+			%}
+		}
+	}
+	job_box: HBox {
+		title: Label { text: "Job" }
+		radio: RadioButtons {
+			labels: ["fighter",
+					 "mage",
+					 "priest",
+					 "thief",
+					 "samurai",
+					 "bishop",
+					 "ninjya",
+					 "lord"]
+			isEnabled: Listner(status: top.status) %{
+				let f = Character.hasEnoughStatusForJob(
+									Character.JobType.fighter, status) ;
+				let m = Character.hasEnoughStatusForJob(
+									Character.JobType.mage,    status) ;
+				let p = Character.hasEnoughStatusForJob(
+									Character.JobType.priest,  status) ;
+				let t = Character.hasEnoughStatusForJob(
+									Character.JobType.thief,   status) ;
+				let s = Character.hasEnoughStatusForJob(
+									Character.JobType.samurai, status) ;
+				let b = Character.hasEnoughStatusForJob(
+									Character.JobType.bishop,  status) ;
+				let n = Character.hasEnoughStatusForJob(
+									Character.JobType.ninjya,  status) ;
+				let l = Character.hasEnoughStatusForJob(
+									Character.JobType.lord,    status) ;
+				return [f, m, p, t, s, b, n, l] ;
+			%}
+
+			columnCount: 4
+			selected: Event(index) %{
+				if(index != null){
+					let job = Character.JobType.fighter ;
+					switch(index){
+						case 0: job = Character.JobType.fighter ;     break ;
+						case 1: job = Character.JobType.mage ;        break ;
+						case 2: job = Character.JobType.priest ;      break ;
+						case 3: job = Character.JobType.thief ;       break ;
+						case 4: job = Character.JobType.samurai ;     break ;
+						case 5: job = Character.JobType.bishop ;      break ;
+						case 6: job = Character.JobType.ninjya ;      break ;
+						case 7: job = Character.JobType.lord ;        break ;
+					}
+					if(top.job != job){
+							top.job = job ;
+					}
+					top.hasJob = true ;
+				} else {
+					top.hasJob = false ;
+				}
+			%}
+		}
+	}
+	align_box: HBox {
+		title: Label { text: "Alignment" }
+		radio: RadioButtons {
+			labels: ["good", "neutral", "evil"]
+			columnCount: 4
+			isEnabled: Listner(job: top.job) %{
+				let aligninfo = new Character.AlignmentRestriction() ;
+                let good      = aligninfo.canBeGood(job) ;
+                let neutral   = aligninfo.canBeNeutral(job) ;
+                let evil      = aligninfo.canBeEvil(job) ;
+                return [good, neutral, evil] ;
+			%}
+			selected: Event(index) %{
+				console.log("align: " + index) ;
+			%}
+		}
+	}
 	bonus_box: HBox {
-		title: Label { text: String "Bonus" }
+		title: Label { text: "Bonus" }
 		value: Label {
-			number: Int Listner(bonus: top.bonus) %{
+			number: Listner(bonus: top.bonus) %{
 				return bonus ;
 			%}
 		}
 	}
 	str_box: HBox {
-		title: Label { text: String "Strength" }
+		title: Label { text: "Strength" }
 		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
+			maxValue:	100
+			minValue:	0
+			currentValue:	0
+			deltaValue:	1
+			decimalPlaces:	0
+			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
@@ -164,14 +175,14 @@ top: VBox {
 		}
 	}
 	vit_box: HBox {
-		title: Label { text: String "Vitality" }
+		title: Label { text: "Vitality" }
 		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
+			maxValue:		100
+			minValue:		0
+			currentValue:	0
+			deltaValue:		1
+			decimalPlaces:	0
+			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
@@ -183,14 +194,14 @@ top: VBox {
 		}
 	}
 	agl_box: HBox {
-		title: Label { text: String "Agility" }
+		title: Label { text: "Agility" }
 		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
+			maxValue:		100
+			minValue:		0
+			currentValue:	0
+			deltaValue:		1
+			decimalPlaces:	0
+			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
@@ -202,14 +213,14 @@ top: VBox {
 		}
 	}
 	itl_box: HBox {
-		title: Label { text: String "Intelligence" }
+		title: Label { text: "Intelligence" }
 		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
+			maxValue:		100
+			minValue:		0
+			currentValue:	0
+			deltaValue:		1
+			decimalPlaces:	0
+			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
@@ -221,14 +232,14 @@ top: VBox {
 		}
 	}
 	pie_box: HBox {
-		title: Label { text: String "Piety" }
+		title: Label { text: "Piety" }
 		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
+			maxValue:		100
+			minValue:		0
+			currentValue:	0
+			deltaValue:		1
+			decimalPlaces:	0
+			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
@@ -240,14 +251,14 @@ top: VBox {
 		}
 	}
 	lck_box: HBox {
-		title: Label { text: String "Luck" }
+		title: Label { text: "Luck" }
 		stepper: Stepper {
-			maxValue:	Int 100
-			minValue:	Int   0
-			currentValue:	Int   0
-			deltaValue:	Int   1
-			decimalPlaces:	Int   0
-			isIncrementable: Bool Listner(bonus: top.bonus) %{
+			maxValue:		100
+			minValue:		0
+			currentValue:	0
+			deltaValue:		1
+			decimalPlaces:	0
+			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
@@ -260,8 +271,8 @@ top: VBox {
 	}
 	buttons: HBox {
 		add_button: Button {
-			title:  String "Add this member"
-                        isEnabled: Bool Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
+			title:  "Add this member"
+                        isEnabled: Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
                                 return (name.length > 0) && hasRace && hasJob ;
                         %}
 			pressed: Event() %{
@@ -276,7 +287,7 @@ top: VBox {
 			%}
 		}
 		cancel_button: Button {
-			title:  String "Cancel"
+			title:  "Cancel"
 			pressed: Event() %{
 				leaveView(null) ;
 			%}
@@ -292,7 +303,7 @@ top: VBox {
 		}
 	%}
 
-        init_status: Int Func(race) %{
+        init_status: Func(race) %{
 		/* Initialize status */
 		let status = Character.loadInitStatus(race) ;
 		if(status != null){

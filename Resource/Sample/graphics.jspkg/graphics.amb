@@ -1,11 +1,11 @@
 top: VBox {
     graphics: Graphics2D {
-        width:      Int         640
-        height:     Int         480
-        xSize:      Float       6.28
-        ySize:      Float       6.28
-        xOrigin:    Float       -3.14
-        yOrigin:    Float       -3.14
+        width:      640
+        height:     480
+        xSize:      6.28
+        ySize:      6.28
+        xOrigin:    -3.14
+        yOrigin:    -3.14
         draw: Event(context, count) %{
             let frame  = context.logicalFrame ;
             let offset = Math.PI * (count / 10.0) ;
@@ -23,7 +23,7 @@ top: VBox {
     }
     buttons: HBox {
         start_button: Button {
-            title: String Listner(state: top.graphics.state) %{
+            title: Listner(state: top.graphics.state) %{
                 let result = "Unknown" ;
                 switch(state) {
                     case AnimationState.idle:
@@ -54,8 +54,8 @@ top: VBox {
             %}
         }
         quit_button: Button {
-   		    title: String "Quit"
-		    isEnabled: Bool Listner(state: top.graphics.state) %{
+   		    title: "Quit"
+		    isEnabled: Listner(state: top.graphics.state) %{
                 let result = false ;
                 switch(state) {
                     case AnimationState.idle:
@@ -75,6 +75,5 @@ top: VBox {
             %}
         }
     }
-
 }
 

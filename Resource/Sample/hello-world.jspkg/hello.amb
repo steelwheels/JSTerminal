@@ -1,9 +1,9 @@
 top: VBox {
     label: Label {
-	text: String "Hello, World !!"
+	text: "Hello, World !!"
     }
     ok_button: Button {
-        title:  String "OK"
+        title: "OK"
         pressed: Event() %{
 		console.log("pressed: OK") ;
 	    	leaveView(1) ;

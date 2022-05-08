@@ -1,38 +1,38 @@
 top: VBox {
         collection: CollectionView {
-		init: Init %{
-			let col0 = Collection();
-			let paths = [
-				Symbols.characterA,
-				Symbols.chevronBackward,
-				Symbols.chevronDown,
-				Symbols.chevronForward,
-				Symbols.chevronUp,
-				Symbols.handRaised,
-				Symbols.line1P,
-				Symbols.line2P,
-				Symbols.line4P,
-				Symbols.line8P,
-				Symbols.line16P,
-				Symbols.paintbrush,
-				Symbols.questionmark,
-				Symbols.oval(true),
-				Symbols.pencil(false),
-				Symbols.rectangle(true, true)
-			];
-			col0.add("Header", "Footer", paths);
-			self.store(col0) ;
-		%}
-		selected: Event(section, item) %{
-			console.log("selected: " + section + ", " + item) ;
-			console.log("itemCount: " + self.itemCount(section));
-		%}
+			init: Init %{
+				let col0 = Collection();
+				let paths = [
+					Symbols.characterA,
+					Symbols.chevronBackward,
+					Symbols.chevronDown,
+					Symbols.chevronForward,
+					Symbols.chevronUp,
+					Symbols.handRaised,
+					Symbols.line1P,
+					Symbols.line2P,
+					Symbols.line4P,
+					Symbols.line8P,
+					Symbols.line16P,
+					Symbols.paintbrush,
+					Symbols.questionmark,
+					Symbols.oval(true),
+					Symbols.pencil(false),
+					Symbols.rectangle(true, true)
+				];
+				col0.add("Header", "Footer", paths);
+				self.store(col0) ;
+			%}
+			selected: Event(section, item) %{
+				console.log("selected: " + section + ", " + item) ;
+				console.log("itemCount: " + self.itemCount(section));
+			%}
         }
         quit: Button {
-   	        title: String "Quit"
+   	        title: "Quit"
 	        pressed: Event() %{
 		        leaveView(1) ;
-                %}
+			%}
         }
 }
 

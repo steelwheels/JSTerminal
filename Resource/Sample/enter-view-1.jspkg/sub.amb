@@ -1,16 +1,16 @@
 top: VBox {
-    quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView({
-                  message: "Good bye sub view",
-                  a: 10,
-                  b: 20
-                }) ;
-        %}
-    }
-    init: Init %{
-	console.log("sub.init") ;
-    %}
+	quit_button: Button {
+		title: "Quit"
+		pressed: Event() %{
+			leaveView({
+				message: "Good bye sub view",
+				a: 10,
+				b: 20
+			}) ;
+		%}
+	}
+	init: Init %{
+		console.log("sub.init") ;
+	%}
 }
 

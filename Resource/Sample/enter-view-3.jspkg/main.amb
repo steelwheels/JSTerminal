@@ -1,32 +1,32 @@
 top: VBox {
-    enter_button: Button {
-   	title: String "SubView"
-	pressed: Event() %{
-		let obj    = enterView("sub", null) ;
-		console.log("main: object = " + obj) ;
-		if(isRecord(obj)){
-			console.print("isRecord: OK\n") ;
-		} else {
-			console.print("isRecord: Error\n") ;
-		}
-		let record = toRecord(obj) ;
-		console.log("main: record = " + record) ;
-		if(record != null){
-			let a    = record.value("a") ;
-			let b    = record.value("b") ;
-			let c    = record.value("c") ;
-			let sum  = a + b + c ;
-			console.print("a + b + c =" + sum + "\n") ;
-		} else {
-			console.print("no record\n") ;
-		}
-        %}
+	enter_button: Button {
+		title: "SubView"
+		pressed: Event() %{
+			let obj    = enterView("sub", null) ;
+			console.log("main: object = " + obj) ;
+			if(isRecord(obj)){
+				console.print("isRecord: OK\n") ;
+			} else {
+				console.print("isRecord: Error\n") ;
+			}
+			let record = toRecord(obj) ;
+			console.log("main: record = " + record) ;
+			if(record != null){
+				let a    = record.value("a") ;
+				let b    = record.value("b") ;
+				let c    = record.value("c") ;
+				let sum  = a + b + c ;
+				console.print("a + b + c =" + sum + "\n") ;
+			} else {
+				console.print("no record\n") ;
+			}
+		%}
     }
-    quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView({exit: 123}) ;
-        %}
-    }
+	quit_button: Button {
+		title: 		"Quit"
+		pressed: Event() %{
+			leaveView({exit: 123}) ;
+		%}
+	}
 }
 

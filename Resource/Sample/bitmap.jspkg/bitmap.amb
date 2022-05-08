@@ -1,14 +1,13 @@
 top: VBox {
     bitmap: Bitmap {
-        width:          Int     640
-        height:         Int     480
-        rowCount:       Int     50
-        columnCount:    Int     50
+        width:          640
+        height:         480
+        rowCount:       50
+        columnCount:    50
 
         draw: Event(context, count) %{
-            let off  = 3.14 / 100.0 * count ;
-
-	    context.clean() ;
+			let off  = 3.14 / 100.0 * count ;
+			context.clean() ;
             for(x=0 ; x<6.28 ; x+=0.1) {
                 let ys = Math.sin(off + x) ;
                 let yc = Math.cos(off + x) ;
@@ -27,7 +26,7 @@ top: VBox {
     }
     buttons: HBox {
         start_button: Button {
-            title: String Listner(state: top.bitmap.state) %{
+            title: Listner(state: top.bitmap.state) %{
                 let result = "Unknown" ;
                 switch(state) {
                     case AnimationState.idle:
@@ -58,8 +57,8 @@ top: VBox {
             %}
         }
         quit_button: Button {
-   		    title: String "Quit"
-		    isEnabled: Bool Listner(state: top.bitmap.state) %{
+   		    title: "Quit"
+		    isEnabled: Listner(state: top.bitmap.state) %{
                 let result = false ;
                 switch(state) {
                     case AnimationState.idle:
@@ -79,6 +78,5 @@ top: VBox {
             %}
         }
     }
-
 }
 

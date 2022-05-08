@@ -1,11 +1,11 @@
 top: VBox {
 	drawing: DrawingView {
-		width:  Float 400.0
-		height: Float 400.0
+		width:  400.0
+		height: 400.0
 	}
 	buttons: HBox {
 		load: Button {
-			title: String "Load"
+			title: "Load"
 			pressed: Event() %{
 				let url = openPanel("Load vector graphics",
 						    FileType.File,
@@ -16,7 +16,7 @@ top: VBox {
 			%}
 		}
 		store: Button {
-			title: String "Store"
+			title: "Store"
 			pressed: Event() %{
 				let url = savePanel("Save vector graphics") ;
 				if(url != null){
@@ -25,7 +25,7 @@ top: VBox {
 			%}
 		}
 		quit: Button {
-			title: String "Quit"
+			title: "Quit"
 			pressed: Event() %{
 				leaveView(1) ;
 			%}

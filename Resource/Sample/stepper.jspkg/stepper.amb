@@ -1,30 +1,30 @@
 top: VBox {
-    value: Int 0
-    stepper0: Stepper {
-	isEnabled:     		Bool	true
-	maxValue:      		Float	10.0
-	minValue:      		Float	 0.0
-	deltaValue:    		Float	 0.1
-	currentValue:  		Float	 1.0
-        decimalPlaces: 		Int      2
-	isIncrementable:	Bool	true
-	isDecrementable:	Bool	true
+	value: 0
+	stepper0: Stepper {
+		isEnabled:			true
+		maxValue:			10.0
+		minValue:    		0.0
+		deltaValue:	 		0.1
+		currentValue:  		1.0
+        decimalPlaces:		2
+		isIncrementable:	true
+		isDecrementable:	true
         changed: Event(newval) %{
-		console.log("changed: " + newval) ;
-		top.value = newval ;
-        %}
+			console.log("changed: " + newval) ;
+			top.value = newval ;
+		%}
     }
     value_label: Label {
-        decimalPlaces: Int 2
-	number: String Listner(val: top.value) %{
-		return val ;
-	%}
+		decimalPlaces:		2
+		number: Listner(val: top.value) %{
+			return val ;
+		%}
     }
     quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView(1) ;
-        %}
-    }
+		title: "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+	}
 }
 

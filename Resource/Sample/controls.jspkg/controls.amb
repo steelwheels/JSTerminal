@@ -1,27 +1,27 @@
 top: VBox {
 	icon: Icon {
-		image: String "icon0"
-		title: String "Amber"
+		image: "icon0"
+		title: "Amber"
 		pressed: Event() %{
 			console.log("icon0 pressed") ;
 		%}
 	}
 	checks: HBox {
 		box0: CheckBox {
-			title: String "Check 0"
-			isEnabled: Bool true
-			status:  Bool false
+			title: 		"Check 0"
+			isEnabled:	true
+			status:		false
 			pressed: Event(status) %{
 				console.log("Status: Check-0 -> " + status) ;
 			%}
 		}
 		box1: CheckBox {
-			title: String "Check 1"
-			isEnabled: Bool Listner(newstat: top.checks.box0.status) %{
+			title: "Check 1"
+			isEnabled: Listner(newstat: top.checks.box0.status) %{
 				console.log("set enabled: " + newstat) ;
 				return newstat ;
 			%}
-			status:  Bool false
+			status: false
 			pressed: Event(status) %{
 				console.log("Status: Check-1 -> " + status) ;
 			%}
@@ -29,7 +29,7 @@ top: VBox {
 	}
 
 	quit_button: Button {
-        	title: String "Quit"
+		title: "Quit"
 		pressed: Event() %{
 			console.log("box0: " + top.checks.box0.description) ;
 			console.log("box1: " + top.checks.box1.description) ;
@@ -43,7 +43,7 @@ top: VBox {
 			            + "        Check-1 -> " + check1
 			) ;
 			leaveView(result) ;
-        	%}
-    	}
+   		%}
+	}
 }
 

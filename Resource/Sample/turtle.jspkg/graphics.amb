@@ -1,11 +1,11 @@
 top: VBox {
     graphics: Graphics2D {
-        width:      Int         640
-        height:     Int         480
-        xSize:      Float       100
-        ySize:      Float       100
-        xOrigin:    Float         0
-        yOrigin:    Float         0
+        width:      640
+        height:     480
+        xSize:      100
+        ySize:      100
+        xOrigin:    0
+        yOrigin:    0
         draw: Event(context) %{
             let turtle  = new Turtle(context) ;
             let pattern = makePattern(turtle) ;
@@ -14,14 +14,14 @@ top: VBox {
     }
     buttons: HBox {
         start_button: Button {
-            title: String "Start"
+            title: "Start"
             pressed: Event() %{
                 console.log("start: " + top.graphics.start) ;
                 top.graphics.start(1.0, 1.0) ;
             %}
         }
         quit_button: Button {
-   		    title: String "Quit"
+   		    title: "Quit"
 		    pressed: Event() %{
                 top.graphics.stop() ;
 			    leaveView(1) ;

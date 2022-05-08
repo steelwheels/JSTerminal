@@ -1,21 +1,21 @@
 top: VBox {
     members: Storage {
-        name: String "main"
-        path: String "town.members"
+        name: "main"
+        path: "town.members"
     }
 
     title: ImageView {
-        name: String "tavern_title"
+        name: "tavern_title"
     }
 
     partyTitle: Label {
-	text: String "Party members"
+		text: "Party members"
     }
     partyTable: TableView {
-	hasHeader:       Bool true
-	isSelectable:    Bool true
-	visibleRowCount: Int  6
-	fieldNames: Array [
+	hasHeader:       true
+	isSelectable:    true
+	visibleRowCount: 6
+	fieldNames: [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
                 {field:"hitPoint",      title:"HP"},
@@ -32,8 +32,8 @@ top: VBox {
     }
     editParty: HBox {
 	    join_button: Button {
-		title:  String "Join party"
-		isEnabled: Bool Listner(didsel: top.memberTable.didSelected) %{
+		title:  "Join party"
+		isEnabled: Listner(didsel: top.memberTable.didSelected) %{
 			return didsel ;
 		%}
 		pressed: Event() %{
@@ -48,8 +48,8 @@ top: VBox {
 		%}
 	    }
 	    leave_button: Button {
-		title:  String "Leave party"
-		isEnabled: Bool Listner(didsel: top.partyTable.didSelected) %{
+		title:  "Leave party"
+		isEnabled: Listner(didsel: top.partyTable.didSelected) %{
 			return didsel ;
 		%}
 		pressed: Event() %{
@@ -66,12 +66,12 @@ top: VBox {
     }
 
     memberTitle: Label {
-	text: String "All members"
+	text: "All members"
     }
     memberTable: TableView {
-	hasHeader:    Bool true
-	isSelectable: Bool true
-	fieldNames: Array [
+	hasHeader:    true
+	isSelectable: true
+	fieldNames: [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
                 {field:"hitPoint",      title:"HP"},
@@ -88,7 +88,7 @@ top: VBox {
     }
     change_member: HBox {
 	    add_button: Button {
-		title:  String "Add member"
+		title:  "Add member"
 		pressed: Event() %{
 			let record = enterView("gym", null) ;
 			if(isRecord(record)){
@@ -98,8 +98,8 @@ top: VBox {
 		%}
 	    }
 	    del_button: Button {
-		title:  String "Delete member"
-		isEnabled: Bool Listner(didsel: top.memberTable.didSelected) %{
+		title:  "Delete member"
+		isEnabled: Listner(didsel: top.memberTable.didSelected) %{
 			return didsel ;
 		%}
 		pressed: Event() %{
@@ -108,7 +108,7 @@ top: VBox {
 	    }
     }
     quit_button: Button {
-        title:  String "Quit"
+        title:  "Quit"
         pressed: Event() %{
 		top.members.table.save() ;
 		leaveView(0) ;

@@ -1,16 +1,16 @@
 top: VBox {
-    title: ImageView {
-	name: String "main_title"
-    }
+	title: ImageView {
+		name: "main_title"
+	}
     bottons: HBox {
         start_button: Button {
-                title:  String "Goto town"
+                title:  "Goto town"
                 pressed: Event() %{
                         enterView("town", null) ;
                 %}
         }
         quit_button: Button {
-                title: String "Quit"
+                title: "Quit"
                 pressed: Event() %{
                      leaveView(1) ;
                 %}

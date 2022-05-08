@@ -1,13 +1,13 @@
 top: VBox {
-    quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		let record = Record() ;
-		record.setValue(123, "a") ;
-		record.setValue(345, "b") ;
-		record.setValue(456, "c") ;
-		console.log("sub: record = " + record.toString()) ;
-		leaveView(record) ;
+	quit_button: Button {
+		title: "Quit"
+		pressed: Event() %{
+			let record = Record() ;
+			record.setValue(123, "a") ;
+			record.setValue(345, "b") ;
+			record.setValue(456, "c") ;
+			console.log("sub: record = " + record.toString()) ;
+			leaveView(record) ;
         %}
     }
 }

@@ -1,17 +1,17 @@
 top: VBox {
-    checkbox: CheckBox {
-        title:     String "Do you understand ?"
-	isEnabled: Bool  true
+	checkbox: CheckBox {
+		title:     "Do you understand ?"
+		isEnabled: true
         pressed: Event() %{
-		console.log("pressed: " + self.status) ;
+			console.log("pressed: " + self.status) ;
         %}
     }
     ok_button: Button {
-        title:  String "OK"
-	isEnabled: Bool  true
+        title:		"OK"
+		isEnabled:	true
         pressed: Event() %{
-		console.log("pressed: OK") ;
-		leaveView(0) ;
+			console.log("pressed: OK") ;
+			leaveView(0) ;
         %}
     }
 }

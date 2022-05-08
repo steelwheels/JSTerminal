@@ -1,16 +1,16 @@
 top: VBox {
-    index: Int 0
+    index: 0
     menu: PopupMenu {
-	items: Array ["item-a", "item-b", "item-c"]
-	selected: Event(index) %{
-		console.log("selected = " + index) ;
-		top.index = index ;
-	%}
+		items: ["item-a", "item-b", "item-c"]
+		selected: Event(index) %{
+			console.log("selected = " + index) ;
+			top.index = index ;
+		%}
     }
     ok_button: Button {
-        title:  String "OK"
+		title:   "OK"
         pressed: Event() %{
-		console.log("pressed: OK -> " + top.index) ;
+			console.log("pressed: OK -> " + top.index) ;
 	    	leaveView(1) ;
         %}
     }

@@ -1,11 +1,11 @@
 top: VBox {
     title: ImageView {
-        name: String "temple_title"
+        name: "temple_title"
     }
     ret_button: Button {
-        title:  String "Return to town"
+        title:  "Return to town"
         pressed: Event() %{
-		leaveView(0) ;
+			leaveView(0) ;
         %}
     }
 }

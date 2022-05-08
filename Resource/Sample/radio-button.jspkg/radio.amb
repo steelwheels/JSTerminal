@@ -1,21 +1,21 @@
 top: VBox {
     radio0: RadioButtons {
-	labels:	     Array	["a", "b", "c", "d"]
-	isEnabled:   Array	[true, true, true, false]
-	columnCount: Int	3
+		labels:	     ["a", "b", "c", "d"]
+		isEnabled:   [true, true, true, false]
+		columnCount: 3
         selected: Event(newidx) %{
-                if(newidx != null){
+			if(newidx != null){
 		        console.log("new-index: " + newidx) ;
-                } else {
-                        console.log("new-index: null")
-                }
-        %}
-    }
+			} else {
+				console.log("new-index: null")
+			}
+		%}
+	}
     quit_button: Button {
-   	title: String "Quit"
-	pressed: Event() %{
-		leaveView(1) ;
-        %}
+		title: "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
     }
 }
 
