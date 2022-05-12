@@ -1,0 +1,22 @@
+top: VBox {
+	ok_button: Button {
+		title: "OK"
+		pressed: Event() %{
+			console.log("pressed: OK") ;
+			leaveView(1) ;
+		%}
+	}
+	nFunc: Func(a, b) %{
+			console.log("nfunc: a + b = ", a + b) ;
+		   %}
+	vFuncs: Object {
+		func_a: Func(a, b) %{
+			console.log("func_a: a + b = " + (a + b)) ;
+		%}
+	}
+	init: Init %{
+		console.print("Hello from main_func\n") ;
+		top.vFuncs.func_a(10, 11) ;
+	%}
+}
+

@@ -20,6 +20,7 @@ srcs	= alert.ts \
 	  escape-code.ts \
 	  exit.ts \
 	  file.ts \
+	  func-1.jspkg/main.ts \
 	  graphics.jspkg/main.ts \
 	  hello.ts \
 	  hello_color.ts \
@@ -42,7 +43,6 @@ srcs	= alert.ts \
 	  symbol.ts \
 	  text.ts \
 	  text-field.jspkg/main.ts \
-	  value1.jspkg/main.ts \
 	  value-storage-1.jspkg/main.ts \
 	  value-storage-2.jspkg/main.ts \
 	  value-storage-3.jspkg/main.ts \
@@ -51,6 +51,7 @@ srcs	= alert.ts \
 	  value-table-3.jspkg/main.ts \
 	  value-table-4.jspkg/main.ts \
 	  value-table-5.jspkg/main.ts \
+	  value-table-6.jspkg/main.ts \
 	  turtle.jspkg/main.ts \
 	  turtle.jspkg/pattern.ts
 
