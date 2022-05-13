@@ -27,8 +27,11 @@ top: VBox {
 		%}
 		virtualFields: Object {
 			c3: Func(rec) %{
-				console.log("virtualField(c3)") ;
-				return 123 ;
+				makeRecordProperties(rec) ;
+				let c0 = rec.c0 ;
+				let c1 = rec.c1 ;
+				console.log("{c0, c1} = {" + c0 + ", " + c1 + "}") ;
+				return c0 + c1 ;
 			%}
 		}
 		pressed: Event(row, col) %{
