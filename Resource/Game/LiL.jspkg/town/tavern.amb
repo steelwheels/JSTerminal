@@ -12,23 +12,23 @@ top: VBox {
 		text: "Party members"
     }
     partyTable: TableView {
-	hasHeader:       true
-	isSelectable:    true
-	visibleRowCount: 6
-	fieldNames: [
-                {field:"name",          title:"Name"},
-                {field:"level",         title:"Level"},
-                {field:"hitPoint",      title:"HP"},
-                {field:"magicPoint",    title:"MP"}
-        ]
-	init: Init %{
-		self.dataTable = top.members.table ;
-		self.reload() ;
-	%}
-	filter: Event(record) %{
-		let char = new Character.Character(record) ;
-		return char.isPartyMember() ;
-	%}
+		hasHeader:       true
+		isSelectable:    true
+		visibleRowCount: 6
+		fieldNames: [
+					{field:"name",          title:"Name"},
+					{field:"level",         title:"Level"},
+					{field:"hitPoint",      title:"HP"},
+					{field:"magicPoint",    title:"MP"}
+			]
+		init: Init %{
+			self.dataTable = top.members.table ;
+			self.reload() ;
+		%}
+		filter: Func(self, rec) %{
+			console.log("filter: " + rec.name + " -> " + rec.pid) ;
+			return rec.pid > 0 ;
+		%}
     }
     editParty: HBox {
 	    join_button: Button {
@@ -40,11 +40,12 @@ top: VBox {
 			console.print("Join party\n") ;
 			let recs = top.memberTable.selectedRecords() ;
 			for(rec of recs){
-				let char = new Character.Character(rec) ;
-				char.pid = top.partyTable.rowCount ;
-				top.partyTable.reload() ;
-				top.memberTable.reload() ;
+				/* Assign pid */
+				rec.pid = top.partyTable.rowCount ;
+				console.log("assign: " + rec.name + " -> " + rec.pid) ;
 			}
+			top.partyTable.reload() ;
+			top.memberTable.reload() ;
 		%}
 	    }
 	    leave_button: Button {

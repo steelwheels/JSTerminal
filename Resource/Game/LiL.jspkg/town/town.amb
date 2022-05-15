@@ -11,22 +11,22 @@ top: VBox {
 		text: "The current party"
     }
     partyTable: TableView {
-	hasHeader:    true
-	isSelectable: true
-	fieldNames: [
-                {field:"name",          title:"Name"},
-                {field:"level",         title:"Level"},
-                {field:"hitPoint",      title:"HP"},
-                {field:"magicPoint",    title:"MP"}
-        ]
-	init: Init %{
-		self.dataTable = top.members.table ;
-		self.reload() ;
-	%}
-	filter: Event(record) %{
-		let char = new Character.Character(record) ;
-		return char.isPartyMember() ;
-	%}
+		hasHeader:    true
+		isSelectable: true
+		fieldNames: [
+					{field:"name",          title:"Name"},
+					{field:"level",         title:"Level"},
+					{field:"hitPoint",      title:"HP"},
+					{field:"magicPoint",    title:"MP"}
+			]
+		init: Init %{
+			self.dataTable = top.members.table ;
+			self.reload() ;
+		%}
+		filter: Func(self, rec) %{
+			console.log("filter: " + rec.pid) ;
+			return (rec.pid > 0) ;
+		%}
     }
     tavern_button: Button {
         title:  "Tavern"
