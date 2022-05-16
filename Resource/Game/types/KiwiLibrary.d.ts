@@ -267,7 +267,7 @@ interface RecordIF {
 interface TableIF {
 	recordCount:		number ;
 
-	readonly allFieldNames:	string[] ;
+	readonly defaultFields:	{[name:string]: any} ;
 
 	record(row: number):			RecordIF | null ;
 	pointer(value: any, key: string):	any | null ;

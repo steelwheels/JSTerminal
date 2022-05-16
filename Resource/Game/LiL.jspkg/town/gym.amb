@@ -272,18 +272,20 @@ top: VBox {
 	buttons: HBox {
 		add_button: Button {
 			title:  "Add this member"
-                        isEnabled: Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
-                                return (name.length > 0) && hasRace && hasJob ;
-                        %}
+			isEnabled: Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
+				return (name.length > 0) && hasRace && hasJob ;
+			%}
 			pressed: Event() %{
-                                let newchar    = new Character.Character(null) ;
-                                newchar.name   = top.name ;
-                                newchar.age    = 0 ;
-                                newchar.race   = top.race ;
-                                newchar.job    = top.job ;
-                                newchar.status = top.status ;
+				let newrec = Record() ;
+				newrec.setValue(0,			"pid") ;
+				newrec.setValue(top.name,	"name") ;
+				newrec.setValue(1,			"name") ;
+				newrec.setValue(0,			"age") ;
+				newrec.setValue(top.race,	"race") ;
+				newrec.setValue(top.job,	"job") ;
+				newrec.setValue(top.status,	"status") ;
 				/* Write record for character */
-				leaveView(newchar.record) ;
+				leaveView(newrec) ;
 			%}
 		}
 		cancel_button: Button {

@@ -18,7 +18,8 @@ function main(args) {
     }
     let count = table.recordCount;
     console.print("recode-count = " + count + "\n");
-    let fnames = table.allFieldNames;
+    let fields = table.defaultFields;
+    let fnames = Object.keys(fields);
     console.print("all-field-names = " + fnames + "\n");
     printTable(table);
     console.print("remove record [2]  -> ");

@@ -24,39 +24,38 @@ top: VBox {
 			self.reload() ;
 		%}
 		filter: Func(self, rec) %{
-			console.log("filter: " + rec.pid) ;
 			return (rec.pid > 0) ;
 		%}
     }
     tavern_button: Button {
         title:  "Tavern"
         pressed: Event() %{
-		enterView("tavern", null) ;
-		top.partyTable.reload() ;
+			enterView("tavern", null) ;
+			top.partyTable.reload() ;
         %}
     }
     inn_button: Button {
         title:  "Inn"
         pressed: Event() %{
-		enterView("inn", null) ;
+			enterView("inn", null) ;
         %}
     }
     temple_button: Button {
         title:  "Temple"
         pressed: Event() %{
-		enterView("temple", null) ;
+			enterView("temple", null) ;
         %}
     }
     shop_button: Button {
         title:  "Shop"
         pressed: Event() %{
-		enterView("shop", null) ;
+			enterView("shop", null) ;
         %}
     }
     edge_button: Button {
         title:  "Edge of town"
         pressed: Event() %{
-		console.log("pressed: Edge") ;
+			console.log("pressed: Edge") ;
         %}
     }
     ret_button: Button {

@@ -1,20 +1,20 @@
 {
   weapons: {
     class: "Table",
-    columnNames: [
-      "name_r",
-      "name_u",
-      "armor_g",
-      "armor_n",
-      "armor_e",
-      "strength",
-      "attack",
-      "damage_a",
-      "damage_b",
-      "damage_c",
-      "price_b",
-      "price_c",
-      "price_i"
+	defaultFields: {
+      name_r:		"",
+      name_u:		"",
+      armor_g:		false,
+      armor_n:		false,
+      armor_e:		false,
+      strength:		0,
+      attack:		0,
+      damage_a:		0,
+      damage_b:		0,
+      damage_c:		0,
+      price_b:		0,
+      price_c:		0,
+      price_i:		0
     ],
     records: [
       {

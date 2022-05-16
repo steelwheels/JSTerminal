@@ -1,17 +1,17 @@
 {
   initStatus: {
     class: "Table",
-    columnNames: [
-      "race",
-      "hitPoint",
-      "magicPoint",
-      "strength",
-      "vitality",
-      "agility",
-      "intelligence",
-      "piety",
-      "luck"
-    ],
+	defaultFields: {
+      race:				"",
+      hitPoint:			0,
+      magicPoint:		0,
+      strength:			0,
+      vitality:			0,
+      agility:			0,
+      intelligence:		0,
+      piety:			0
+      luck:				0
+    },
     records: [
 	{
 		race:		"human",
@@ -72,17 +72,17 @@
   }
   jobRequirement: {
     class: "Table",
-    columnNames: [
-      "job",
-      "hitPoint",
-      "magicPoint",
-      "strength",
-      "vitality",
-      "agility",
-      "intelligence",
-      "piety",
-      "luck"
-    ],
+    defaultFields: {
+      job:			"",
+      hitPoint:		0,
+      magicPoint:	0,
+      strength:		0,
+      vitality:		0,
+      agility:		0,
+      intelligence:	0,
+      piety:		0,
+      luck:			0
+    },
     records: [
 	{
 		job:		"fighter"
@@ -176,12 +176,12 @@
   }
   alignmentRestriction: {
     class: "Table",
-    columnNames: [
-      "job",
-      "good",
-      "neutral",
-      "evil"
-    ],
+	defaultFields: {
+      job:			"",
+      good:			false,
+      neutral:		false,
+      evil:			false
+    },
     records: [
 	{
 		job:		"fighter",

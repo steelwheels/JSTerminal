@@ -1,7 +1,11 @@
 {
 	root: {
 		class: "Table",
-		columnNames: ["c0", "c1", "c2"],
+		defaultFields: {
+			c0:		0,
+			c1:		0,
+			c2:		0
+		},
 		records: [
 			{
 				c0:  0,

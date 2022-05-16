@@ -1,21 +1,21 @@
 {
     class: "Table",
-    columnNames: [
-      "pid",
-      "name",
-      "age",
-      "level",
-      "race",
-      "job",
-      "hitPoint",
-      "magicPoint",
-      "strength",
-      "vitality",
-      "agility",
-      "intelligence",
-      "piety",
-      "luck"
-    ],
+	defaultFields: {
+      pid:			0,
+      name:			"",
+      age:			0,
+      level:		1,
+      race:			0,
+      job:			0,
+      hitPoint:		0,
+      magicPoint:	0,
+      strength:		0,
+      vitality:		0,
+      agility:		0,
+      intelligence:	0,
+      piety:		0,
+      luck:			0
+    },
     records: [
 	{
 		pid:		0,

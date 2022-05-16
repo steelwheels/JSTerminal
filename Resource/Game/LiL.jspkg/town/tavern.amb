@@ -26,7 +26,6 @@ top: VBox {
 			self.reload() ;
 		%}
 		filter: Func(self, rec) %{
-			console.log("filter: " + rec.name + " -> " + rec.pid) ;
 			return rec.pid > 0 ;
 		%}
     }
@@ -37,12 +36,10 @@ top: VBox {
 			return didsel ;
 		%}
 		pressed: Event() %{
-			console.print("Join party\n") ;
 			let recs = top.memberTable.selectedRecords() ;
 			for(rec of recs){
 				/* Assign pid */
 				rec.pid = top.partyTable.rowCount ;
-				console.log("assign: " + rec.name + " -> " + rec.pid) ;
 			}
 			top.partyTable.reload() ;
 			top.memberTable.reload() ;
@@ -54,11 +51,10 @@ top: VBox {
 			return didsel ;
 		%}
 		pressed: Event() %{
-			console.print("Leave party\n") ;
 			let recs = top.partyTable.selectedRecords() ;
 			for(rec of recs){
-				let char = new Character.Character(rec) ;
-				char.pid = 0 ; // No pid
+				/* Release pid */
+				rec.pid = 0 ;
 				top.partyTable.reload() ;
 				top.memberTable.reload() ;
 			}
@@ -82,9 +78,8 @@ top: VBox {
 		self.dataTable = top.members.table ;
 		self.reload() ;
 	%}
-	filter: Event(record) %{
-		let char = new Character.Character(record) ;
-		return !char.isPartyMember() ;
+	filter: Event(rec) %{
+		return (rec.pid == 0) ;
 	%}
     }
     change_member: HBox {

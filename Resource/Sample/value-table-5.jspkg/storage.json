@@ -2,7 +2,11 @@
 	table0: {
 		class: "Table",
 		id: "t0",
-		columnNames: ["c0", "c1", "c2"],
+		defaultFields: {
+			c0:		0,
+			c1:		0,
+			c2:		0
+		},
 		records: [
 			{
 				c0:  0,
@@ -24,7 +28,11 @@
 	table1: {
 		class: "Table",
 		id: "t1",
-		columnNames: ["c0", "c1", "c2"],
+		defaultFields: {
+			c0:		0,
+			c1:		0,
+			c2:		0
+		},
 		records: [
 		]
 	}
