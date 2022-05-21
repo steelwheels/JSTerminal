@@ -277,10 +277,7 @@ top: VBox {
 			%}
 			pressed: Event() %{
 				let newrec = Record() ;
-				newrec.setValue(0,			"pid") ;
 				newrec.setValue(top.name,	"name") ;
-				newrec.setValue(1,			"name") ;
-				newrec.setValue(0,			"age") ;
 				newrec.setValue(top.race,	"race") ;
 				newrec.setValue(top.job,	"job") ;
 				newrec.setValue(top.status,	"status") ;

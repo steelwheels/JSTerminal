@@ -110,6 +110,7 @@
 		05B7712F251879BF004FCD84 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712C251879BF004FCD84 /* Credits.rtf */; };
 		05B77130251879BF004FCD84 /* JSTerminal.help in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712D251879BF004FCD84 /* JSTerminal.help */; };
 		05B77131251879BF004FCD84 /* CoconutScript.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 05B7712E251879BF004FCD84 /* CoconutScript.sdef */; };
+		05C92B432838FE9600CA2866 /* enum-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05C92B422838FE7700CA2866 /* enum-0.jspkg */; };
 		05D02A6827B722B900ABE0EA /* radio-button.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05D02A6727B7229400ABE0EA /* radio-button.jspkg */; };
 		05D7566E27F3374C0090EDE1 /* listner-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05D7566D27F3372B0090EDE1 /* listner-1.jspkg */; };
 		05D9A8AA263EACB8006D0FA2 /* KiwiLibrary.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */; };
@@ -206,6 +207,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05C92B432838FE9600CA2866 /* enum-0.jspkg in Copy Files */,
 				05889767281B53D9001A6E67 /* value-table-3.jspkg in Copy Files */,
 				05889768281B53D9001A6E67 /* value-table-5.jspkg in Copy Files */,
 				0518BFA7280307D200002DFC /* value-storage-2.jspkg in Copy Files */,
@@ -388,6 +390,7 @@
 		05B7712D251879BF004FCD84 /* JSTerminal.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSTerminal.help; sourceTree = "<group>"; };
 		05B7712E251879BF004FCD84 /* CoconutScript.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CoconutScript.sdef; sourceTree = "<group>"; };
 		05BAB09625A0661800DD59D7 /* num_guess.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = num_guess.js; sourceTree = "<group>"; };
+		05C92B422838FE7700CA2866 /* enum-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enum-0.jspkg"; sourceTree = "<group>"; };
 		05D02A6727B7229400ABE0EA /* radio-button.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "radio-button.jspkg"; sourceTree = "<group>"; };
 		05D7566D27F3372B0090EDE1 /* listner-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "listner-1.jspkg"; sourceTree = "<group>"; };
 		05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiLibrary.d.ts; sourceTree = "<group>"; };
@@ -516,6 +519,7 @@
 				05EBE9EE27C849CE00D940C8 /* dictionary.js */,
 				05EBE9ED27C849CE00D940C8 /* dictionary.ts */,
 				051A55282771EA950093CE80 /* drawing.jspkg */,
+				05C92B422838FE7700CA2866 /* enum-0.jspkg */,
 				05A7303027B2AB98005D5345 /* enter-view-1.jspkg */,
 				055765F927C9081600BEF5FF /* enter-view-2.jspkg */,
 				05225BCE27D8E7DD00326EB2 /* enter-view-3.jspkg */,

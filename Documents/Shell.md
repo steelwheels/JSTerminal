@@ -70,7 +70,7 @@ This is sample implementation of `manifest.json` file which presents the bundled
 	}
 }
 ````
-The format of `manifest.json` is defined in [extended JavaScript Object Notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/eJSON.md).
+The format of `manifest.json` is defined in [extended JavaScript Object Notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/eJSONFormat.md).
 
 ## `.jshrc` file
 If you put .jshrc JavScript file on your home directory, the file is parsed at the boot time (before outputting 1st prompt).

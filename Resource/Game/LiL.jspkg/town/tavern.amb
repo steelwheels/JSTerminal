@@ -37,9 +37,11 @@ top: VBox {
 		%}
 		pressed: Event() %{
 			let recs = top.memberTable.selectedRecords() ;
+			let inc  = 0 ;
 			for(rec of recs){
 				/* Assign pid */
-				rec.pid = top.partyTable.rowCount ;
+				rec.pid =  top.partyTable.rowCount + inc ;
+				inc     += 1 ;
 			}
 			top.partyTable.reload() ;
 			top.memberTable.reload() ;

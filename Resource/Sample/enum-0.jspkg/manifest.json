@@ -1,0 +1,7 @@
+{
+	application: "main.js",
+	definitions: [
+		"enum0.json"
+	]
+}
+
