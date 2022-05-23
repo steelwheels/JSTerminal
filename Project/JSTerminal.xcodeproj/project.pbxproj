@@ -77,6 +77,7 @@
 		059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
 		059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */; };
 		059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059C0AAB279D424900E7B594 /* LiL.jspkg */; };
+		059F8ACB283BD3D200B93569 /* enum-0.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 059F8ACA283BD3B600B93569 /* enum-0.js */; };
 		05A7303327B2ABF1005D5345 /* hello-world.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05A7303227B2ABDB005D5345 /* hello-world.jspkg */; };
 		05A7303427B2ABF1005D5345 /* enter-view-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05A7303027B2AB98005D5345 /* enter-view-1.jspkg */; };
 		05A7303527B2ABF1005D5345 /* stepper.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05A7302F27B2AB89005D5345 /* stepper.jspkg */; };
@@ -207,6 +208,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				059F8ACB283BD3D200B93569 /* enum-0.js in Copy Files */,
 				05C92B432838FE9600CA2866 /* enum-1.jspkg in Copy Files */,
 				05889767281B53D9001A6E67 /* value-table-3.jspkg in Copy Files */,
 				05889768281B53D9001A6E67 /* value-table-5.jspkg in Copy Files */,
@@ -365,6 +367,7 @@
 		059C0AA4279D420500E7B594 /* value-storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-1.jspkg"; sourceTree = "<group>"; };
 		059C0AA6279D421500E7B594 /* value-table-4.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-4.jspkg"; sourceTree = "<group>"; };
 		059C0AAB279D424900E7B594 /* LiL.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LiL.jspkg; sourceTree = "<group>"; };
+		059F8ACA283BD3B600B93569 /* enum-0.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "enum-0.js"; sourceTree = "<group>"; };
 		05A7302F27B2AB89005D5345 /* stepper.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = stepper.jspkg; sourceTree = "<group>"; };
 		05A7303027B2AB98005D5345 /* enter-view-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enter-view-1.jspkg"; sourceTree = "<group>"; };
 		05A7303227B2ABDB005D5345 /* hello-world.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "hello-world.jspkg"; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 				05EBE9EE27C849CE00D940C8 /* dictionary.js */,
 				05EBE9ED27C849CE00D940C8 /* dictionary.ts */,
 				051A55282771EA950093CE80 /* drawing.jspkg */,
+				059F8ACA283BD3B600B93569 /* enum-0.js */,
 				05C92B422838FE7700CA2866 /* enum-1.jspkg */,
 				05A7303027B2AB98005D5345 /* enter-view-1.jspkg */,
 				055765F927C9081600BEF5FF /* enter-view-2.jspkg */,
