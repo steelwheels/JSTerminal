@@ -1,0 +1,28 @@
+{
+	root: {
+		class: "Table",
+		defaultFields: {
+			axis:	Axis.horizontal,
+			align:	Alignment.leading,
+			dist:	Distribution.fill
+		},
+		records: [
+			{
+				axis:	.horizontal,
+				align:	.trailing,
+				dist: 	.fillProportinally
+			},
+			{
+				axis:	.vertical,
+				align:	Alignment.fill,		// .fill has conflict
+				dist:   Distribution.fill
+			},
+			{
+				axis:	Axis.vertical,
+				align:	Alignment.leading,
+				dist:	.fillEqually
+			}
+		]
+	}
+}
+
