@@ -23,6 +23,7 @@ function main(args : [string])
 
 	printTable(table) ;
 
+	console.print("bye\n") ;
 	return 0 ;
 }
 

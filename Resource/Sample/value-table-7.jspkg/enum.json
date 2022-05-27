@@ -1,0 +1,11 @@
+{
+	class: "enumTable",
+	definitions: {
+		etype0: {
+			ident0:		0,
+			ident1:		1,
+			ident2:		2
+		}
+	}
+}
+

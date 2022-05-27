@@ -17,6 +17,7 @@ function main(args) {
         return -1;
     }
     printTable(table);
+    console.print("bye\n");
     return 0;
 }
 function printTable(table) {

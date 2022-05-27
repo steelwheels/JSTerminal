@@ -3,5 +3,8 @@
 	storages: {
 		storage: "storage.json"
 	}
+	definitions: [
+		"enum.json"
+	]
 }
 
