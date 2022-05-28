@@ -1,14 +1,30 @@
 /*
- * main.ts
+ * main.js
  */
-"use strict";
 
-function main(args) {
-    console.print("# enum-0\n");
-    console.print(" enum_0.memb_0_0	= " + enum_0.memb_0_0 + "\n");
-    console.print(" enum_0.memb_0_1	= " + enum_0.memb_0_1 + "\n");
-    console.print(" enum_1.memb_0_0	= " + enum_1.memb_1_0 + "\n");
-    console.print(" enum_1.memb_0_1	= " + enum_1.memb_1_1 + "\n");
+"use strict" ;
+
+function main(args)
+{
+    console.print("# enum-1.jspkg\n");
+    console.print(" .sun	= " + Weekday.sun + "\n");
+    console.print(" .mon	= " + Weekday.mon + "\n");
+    console.print(" .tue	= " + Weekday.tue + "\n");
+
+	let storage = Storage("storage") ;
+	if(storage == null){
+			console.error("[Error] Failed to load\n") ;
+			return -1 ;
+	}
+
+	let table = Table("root", storage) ;
+	if(table == null){
+			console.error("[Error] Failed to generate table\n") ;
+			return -1 ;
+	}
+
+	console.print("table = " + table.toString() + "\n") ;
+
     return 0;
 }
 

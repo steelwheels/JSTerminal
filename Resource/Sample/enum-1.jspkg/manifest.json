@@ -1,7 +1,10 @@
 {
 	application: "main.js",
 	definitions: [
-		"enum0.json"
-	]
+		"enum.json"
+	],
+	storages: {
+		storage:	"storage.json"
+	}
 }
 

@@ -1,0 +1,11 @@
+{
+	class: "enumTable",
+	definitions: {
+		Weekday: {
+			sun:		0,
+			mon:		1,
+			tue:		2
+		}
+	}
+}
+

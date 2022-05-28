@@ -2,25 +2,25 @@
 	root: {
 		class: "Table",
 		defaultFields: {
-			c0:		0,
-			c1:		0,
-			c2:		0
+			week:	Weekday.sun,
+			size:	FontSize.small,
+			day:	1
 		},
 		records: [
 			{
-				c0:  0,
-				c1:  1,
-				c2:  2
+				week:	Weekday.sun,
+				size:	FontSize.regular,
+				day:	2
 			},
 			{
-				c0: 10,
-				c1: 11,
-				c2: 12
+				week:	Weekday.mon,
+				size:	FontSize.large,
+				day:	3
 			},
 			{
-				c0: 20,
-				c1: 21,
-				c2: 22
+				week:	Weekday.tue,
+				size:	FontSize.small,
+				day:	4
 			}
 		]
 	}

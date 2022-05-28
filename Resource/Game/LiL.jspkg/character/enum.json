@@ -1,0 +1,13 @@
+{
+	class:	"enumTable",
+	definitions: {
+		raceType: {
+			human:		0,
+			elf:		1,
+			dwarf:		2,
+			gnome:		3,
+			hobbit:		4
+		}
+	}
+}
+
