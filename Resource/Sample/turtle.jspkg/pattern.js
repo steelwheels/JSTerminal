@@ -1,6 +1,6 @@
 "use strict";
 /* pattern.ts */
-/// <reference path="types/KiwiLibrary.d.ts"/>
+/// <reference path="../types/KiwiLibrary.d.ts"/>
 function makeOnePattern(pattern) {
     let patlen = pattern.length;
     let result = "";

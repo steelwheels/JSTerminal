@@ -2,7 +2,7 @@
 /*
  * main.ts
  */
-/// <reference path="types/KiwiLibrary.d.ts"/>
+/// <reference path="../types/KiwiLibrary.d.ts"/>
 function main(args) {
     console.print("# value-storage\n");
     let result = 0;

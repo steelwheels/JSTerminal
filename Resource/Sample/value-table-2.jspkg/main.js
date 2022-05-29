@@ -2,7 +2,7 @@
 /*
  * main.ts
  */
-/// <reference path="types/KiwiLibrary.d.ts"/>
+/// <reference path="../types/KiwiLibrary.d.ts"/>
 function main(args) {
     console.print("# value-table\n");
     let storage = Storage("root");

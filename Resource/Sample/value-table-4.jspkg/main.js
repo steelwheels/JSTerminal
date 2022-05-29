@@ -2,8 +2,8 @@
 /*
  * main.ts
  */
-/// <reference path="types/KiwiLibrary.d.ts"/>
-/// <reference path="types/KiwiComponent.d.ts"/>
+/// <reference path="../types/KiwiLibrary.d.ts"/>
+/// <reference path="../types/KiwiComponent.d.ts"/>
 function main(args) {
     console.print("# value-table-4\n");
     let retval = enterView("table", null);
