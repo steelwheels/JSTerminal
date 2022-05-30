@@ -14,6 +14,7 @@ srcs	= alert.ts \
 		  hello.ts \
 		  hello_color.ts \
 		  keycode.ts \
+		  namespace.ts \
 		  openPanel.ts \
 		  primitives-0.ts \
 		  readline.ts \

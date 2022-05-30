@@ -2,25 +2,6 @@
  * Builtin.d.ts
  */
 
-interface ValueTypeIF {
-	nullType:		number ;
-	boolType:		number ;
-	numberType:		number ;
-	stringType:		number ;
-	dateType:		number ;
-	rangeType:		number ;
-	pointType:		number ;
-	sizeType:		number ;
-	rectType:		number ;
-	enumType:		number ;
-	dictionaryType:		number ;
-	arrayType:		number ;
-	URLType:		number ;
-	colorType:		number ;
-	imageType:		number ;
-	objectType:		number ;
-}
-
 interface ColorIF {
 	red:			number ;
 	green:			number ;
@@ -118,25 +99,11 @@ interface EscapeCodeIF {
 	reset(): string
 }
 
-interface ExitCodeIF {
-	noError:		number ;
-	internalError:		number ;
-	commaneLineError:	number ;
-	syntaxError:		number ;
-	exception:		number ;
-}
-
 interface FileIF {
 	getc(): string ;
 	getl(): string ;
 	put(str: string): void ;
 	close(): void ;
-}
-
-interface FileTypeIF {
-	notExist:	number ;
-	file:		number ;
-	directory:	number ;
 }
 
 interface PipeIF {
@@ -325,16 +292,11 @@ interface CollectionIF {
 	toStrings(): string[] ;
 }
 
-/* Enum */
-declare var ValueType:		ValueTypeIF ;
-
 /* Singleton object*/
 declare var console:		ConsoleIF ;
 declare var Color:      	ColorManagerIF ;
 declare var Curses:     	CursesIF ;
 declare var EscapeCode: 	EscapeCodeIF ;
-declare var ExitCode:		ExitCodeIF ;
-declare var FileType:		FileTypeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
 declare var Symbols:		SymbolsIF ;
 
@@ -398,11 +360,15 @@ declare function _openPanel(title: string, type: number,
 declare function _savePanel(title: string, cbfunc: any): void ;
 declare function _run(path: URLIF | string, input: FileIF, output: FileIF, error: FileIF): object | null ;
 
+/// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function isEmptyString(str: string): boolean;
 declare function isEmptyObject(obj: object): boolean;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function tableInStorage(storage: string, path: string): TableIF | null;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare class File {
     mCore: FileIF;
     constructor(core: FileIF);
@@ -426,6 +392,8 @@ declare class JSONFile {
     read(file: File): object | null;
     write(file: File, src: object): boolean;
 }
+/// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 interface Math {
     randomInt(min: number, max: number): number;
     clamp(src: number, min: number, max: number): number;
@@ -435,13 +403,16 @@ declare function int(value: number): number;
  * Debug.ts
  */
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function checkVariables(place: string, ...vars: any[]): boolean;
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Math.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function addPoint(p0: PointIF, p1: PointIF): PointIF;
 declare function isSamePoints(p0: PointIF, p1: PointIF): boolean;
 declare function clampPoint(src: PointIF, x: number, y: number, width: number, height: number): PointIF;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function _waitUntilExitOne(process: ProcessIF): number;
 declare function _waitUntilExitAll(processes: ProcessIF[]): number;
 declare class Semaphore {
@@ -459,11 +430,13 @@ declare function openPanel(title: string, type: number, exts: string[]): URLIF |
 declare function savePanel(title: string): URLIF | null;
 declare function run(path: URLIF | string | null, input: FileIF, output: FileIF, error: FileIF): object | null;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function maxLengthOfStrings(strs: string[]): number;
 declare function adjustLengthOfStrings(strs: string[]): string[];
 declare function pasteStrings(src0: string[], src1: string[], space: string): string[];
 declare function isEqualTrimmedStrings(str0: string, str1: string): boolean;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare class CFrame {
     mFrame: RectIF;
     mCursorX: number;
@@ -481,6 +454,7 @@ declare class CFrame {
     put(str: string): void;
 }
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare type TurtleStatus = {
     x: number;
     y: number;
@@ -515,4 +489,123 @@ declare class Turtle {
 }
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Process.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function requestContactAccess(): boolean;
+declare enum LogLevel {
+  warning = 2,
+  nolog = 0,
+  error = 1,
+  detail = 4,
+  debug = 3
+}
+declare namespace LogLevel {
+  function description(param: LogLevel): string ;
+}
+declare enum AnimationState {
+  run = 1,
+  pause = 2,
+  idle = 0
+}
+declare namespace AnimationState {
+  function description(param: AnimationState): string ;
+}
+declare enum ValueType {
+  arrayType = 11,
+  boolType = 1,
+  URLType = 12,
+  numberType = 2,
+  segmentType = 17,
+  imageType = 14,
+  sizeType = 7,
+  nullType = 0,
+  recordType = 15,
+  dateType = 4,
+  objectType = 16,
+  rectType = 8,
+  enumType = 9,
+  colorType = 13,
+  pointType = 6,
+  dictionaryType = 10,
+  rangeType = 5,
+  stringType = 3
+}
+declare namespace ValueType {
+  function description(param: ValueType): string ;
+}
+declare enum ExitCode {
+  commaneLineError = 2,
+  internalError = 1,
+  exception = 4,
+  noError = 0,
+  syntaxError = 3
+}
+declare namespace ExitCode {
+  function description(param: ExitCode): string ;
+}
+declare enum AccessType {
+  append = 2,
+  read = 0,
+  write = 1
+}
+declare namespace AccessType {
+  function description(param: AccessType): string ;
+}
+declare enum Axis {
+  horizontal = 0,
+  vertical = 1
+}
+declare namespace Axis {
+  function description(param: Axis): string ;
+}
+declare enum FileType {
+  directory = 2,
+  notExist = 0,
+  file = 1
+}
+declare namespace FileType {
+  function description(param: FileType): string ;
+}
+declare enum FontSize {
+  regular = 13,
+  large = 19,
+  small = 11
+}
+declare namespace FontSize {
+  function description(param: FontSize): string ;
+}
+declare enum TextAlign {
+  justfied = 3,
+  normal = 4,
+  right = 1,
+  left = 0,
+  center = 2
+}
+declare namespace TextAlign {
+  function description(param: TextAlign): string ;
+}
+declare enum Distribution {
+  equalSpacing = 3,
+  fillProportinally = 1,
+  fillEqually = 2,
+  fill = 0
+}
+declare namespace Distribution {
+  function description(param: Distribution): string ;
+}
+declare enum Authorize {
+  undetermined = 0,
+  authorized = 3,
+  denied = 2
+}
+declare namespace Authorize {
+  function description(param: Authorize): string ;
+}
+declare enum Alignment {
+  center = 3,
+  trailing = 1,
+  leading = 0,
+  fill = 2
+}
+declare namespace Alignment {
+  function description(param: Alignment): string ;
+}
