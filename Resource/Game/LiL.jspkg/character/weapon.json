@@ -15,7 +15,7 @@
       price_b:		0,
       price_c:		0,
       price_i:		0
-    ],
+    },
     records: [
       {
         name_r:		"long sword",

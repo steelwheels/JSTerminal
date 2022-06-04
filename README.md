@@ -1,7 +1,7 @@
 # JSTerminal: Rapid Application Development Environment
 
 ## Product goal 
-The `JSTerminal` is rapid application development environment. It focus on *reducing the amount of code required for implementation*. The generic function must be supported by the environment instead of you.
+The `JSTerminal` is rapid application development environment. It focus on *reducing the code*. The common function must be supported by the environment instead of the application developper.
 
 The slogan is:
 ![All you need is the code that you want to write](./Documents/Images/slogan-48pt.png)
@@ -12,7 +12,7 @@ The goal of this application is different from another low code / no code tool. 
 The *JSTerminal* is designed for *rapid application development*. 
 
 This application has following features:
-* _JavaScriptable_: You can write the application by JavaScript or TypeScript. The [standard library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md) can be used by it. The JSTerminal does not support TypeScript, but it define the declaration file for TypeScript (`*.d.ts`) for builtin classes, functions and types.
+* _JavaScriptable_: You can write the application by JavaScript or TypeScript. The [standard library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md) can be used. The JSTerminal does not support TypeScript, but it define the declaration file for TypeScript (`*.d.ts`) for builtin classes, functions and types.
 * _GUI Designable_:  You can implement GUI application by the [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md). The language has simular syntax to JavaScript, but it is used to declare structure of the components such as GUI. The [component library](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md) contains the list of components. The GUI component is layouted by [autolayout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html). It means the designer does not have to arrange the layouts for multi size screens.
 * _Database Access_: The built in library helps you to implement the application which requires database access. For more details, see [database access](./Documents/Database.md).
 * Debug: The `jsh` shell program also support it for writting shell script. For more details, see [jsh language manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) and [jsh system manual](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md). You can use [console](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Console.md) to dump the debug information. 

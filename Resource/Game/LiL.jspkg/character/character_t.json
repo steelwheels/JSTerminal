@@ -1,0 +1,16 @@
+{
+	class:	"enumTable",
+	definitions: {
+		job_t: {
+			fighter:	0,
+			mage:		1,
+			priest:		2,
+			thief:		3,
+			samurai:	4,
+			bishop:		5,
+			ninjya:		6,
+			lord:		7
+		}
+	}
+}
+

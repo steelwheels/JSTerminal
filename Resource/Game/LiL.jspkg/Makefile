@@ -24,7 +24,7 @@ tsc_opt	= -target ES2017 \
 %.js: %.ts
 	$(tsc) $(tsc_opt) $<
 
-all: copylib $(dsts)
+all: copylib mkdecl $(dsts)
 
 clean:
 	rm -f $(dsts)
@@ -32,6 +32,9 @@ clean:
 
 copylib: dummy
 	cp ../../Library/types/*.d.ts ./types
+
+mkdecl: dummy
+	~/tools/bin/jsdecl ../LiL.jspkg > types/LiL.d.ts
 
 character/party.ts: character/character.ts
 

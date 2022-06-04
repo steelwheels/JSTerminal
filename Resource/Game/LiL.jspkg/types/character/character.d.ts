@@ -1,85 +1,10 @@
 /// <reference path="../KiwiLibrary.d.ts" />
 /// <reference path="../KiwiShell.d.ts" />
 /// <reference path="../KiwiComponent.d.ts" />
+/// <reference path="../LiL.d.ts" />
 declare module Character {
-    enum RaceType {
-        human = 0,
-        elf = 1,
-        dwarf = 2,
-        gnome = 3,
-        hobbit = 4
-    }
-    const RaceName: {
-        human: string;
-        elf: string;
-        dwarf: string;
-        gnome: string;
-        hobitt: string;
-    };
-    function raceToString(race: RaceType): string;
-    enum JobType {
-        fighter = 0,
-        mage = 1,
-        priest = 2,
-        thief = 3,
-        samurai = 4,
-        bishop = 5,
-        ninjya = 6,
-        lord = 7
-    }
-    const JobName: {
-        fighter: string;
-        mage: string;
-        priest: string;
-        thief: string;
-        samurai: string;
-        bishop: string;
-        ninjya: string;
-        lord: string;
-    };
-    function jobToString(job: JobType): string;
-    enum AlignmentType {
-        good = 0,
-        neutral = 1,
-        evil = 2
-    }
-    const AlignmentName: {
-        good: string;
-        neutral: string;
-        evil: string;
-    };
-    function alignmentToString(align: AlignmentType): string;
-    class AlignmentRestriction {
-        private mTable;
-        constructor();
-        private recordForJob;
-        private valueForJob;
-        canBeGood(job: JobType): boolean;
-        canBeNeutral(job: JobType): boolean;
-        canBeEvil(job: JobType): boolean;
-    }
-    enum StatusType {
-        hitPoint = 0,
-        magicPoint = 1,
-        strength = 2,
-        vitality = 3,
-        agility = 4,
-        intelligence = 5,
-        piety = 6,
-        luck = 7
-    }
-    const StatusName: {
-        hitPoint: string;
-        magicPoint: string;
-        strength: string;
-        vitality: string;
-        agility: string;
-        intelligence: string;
-        piety: string;
-        luck: string;
-    };
+    function can_get_job(job: job_t, attr: attr_t): boolean;
     const allStatusNames: string[];
-    function statusTypeToString(type: StatusType): string;
     class Status {
         private mTable;
         constructor();
@@ -104,9 +29,9 @@ declare module Character {
         get luck(): number;
         clone(): Status;
     }
-    function loadInitStatus(race: RaceType): Status | null;
-    function loadJobRequirement(job: JobType): Status | null;
-    function hasEnoughStatusForJob(job: JobType, srcstatus: Status): boolean;
+    function loadInitStatus(race: race_t): Status | null;
+    function loadJobRequirement(job: job_t): Status | null;
+    function hasEnoughStatusForJob(job: job_t, srcstatus: Status): boolean;
     class Character {
         private static pidItem;
         private static nameItem;
@@ -126,10 +51,10 @@ declare module Character {
         get age(): number;
         set level(num: number);
         get level(): number;
-        set race(typ: RaceType);
-        get race(): RaceType;
-        set job(typ: JobType);
-        get job(): JobType;
+        set race(typ: race_t);
+        get race(): race_t;
+        set job(typ: job_t);
+        get job(): job_t;
         set status(stat: Status);
         get status(): Status;
         isPartyMember(): boolean;

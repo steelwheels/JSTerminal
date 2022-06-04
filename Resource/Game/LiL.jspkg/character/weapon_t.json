@@ -1,0 +1,28 @@
+{
+	class:	"enumTable",
+	definitions: {
+		race_t: {
+			human:			0,
+			elf:			1,
+			dwarf:			2,
+			gnome:			3,
+			hobbit:			4
+		},
+		attr_t: {
+        	good:			0,
+        	neutral:		1,
+        	evil:			2
+		},
+		status_t: {
+			hitPoint:		0,
+			magicPoint:		1,
+			strength:		2,
+			vitality:		3,
+			agility:		4,
+			intelligence:	5,
+			piety:			6,
+			luck:			7
+		}
+	}
+}
+

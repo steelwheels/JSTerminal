@@ -13,6 +13,10 @@
 		"character/character.js",
 		"character/weapon.js"
 	]
+	definitions: [
+		"character/weapon_t.json"
+		"character/character_t.json"
+	]
 	images: {
 		main_title	: "images/main.png"
 		town_title	: "town/images/town.png"
