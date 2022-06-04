@@ -41,24 +41,13 @@ export function can_get_job(job: job_t, attr: attr_t): boolean
 	return result ;
 }
 
-export const allStatusNames: string[] = [
-        status_t.description(status_t.hitPoint),
-        status_t.description(status_t.magicPoint),
-        status_t.description(status_t.strength),
-        status_t.description(status_t.vitality),
-        status_t.description(status_t.agility),
-        status_t.description(status_t.intelligence),
-        status_t.description(status_t.piety),
-        status_t.description(status_t.luck)
-] ;
-
 export class Status
 {
         private mTable: DictionaryIF ;
 
 	constructor(){
                 this.mTable = Dictionary() ;
-                for(let name of allStatusNames){
+                for(let name of status_t.keys){
                         this.mTable.setNumber(0, name) ;
                 }
 	}
@@ -107,7 +96,7 @@ export class Status
 
         public clone(): Status {
                 let newstat = new Status() ;
-                for(let name of allStatusNames){
+                for(let name of status_t.keys){
                         let val = this.value(name) ;
                         newstat.setValue(val, name) ;
                 }
@@ -151,7 +140,7 @@ function loadAnyStatus(tablename: string, typename: string, typevalue: string): 
         }
         let status = new Status() ;
 	let record = recs![0] ;
-        for(let name of allStatusNames) {
+        for(let name of status_t.keys) {
                 let val = record.value(name) ;
                 if(isNumber(val)){
                         status.setValue(val!, name) ;
@@ -170,7 +159,7 @@ export function hasEnoughStatusForJob(job: job_t, srcstatus: Status): boolean {
                 return false ;
         }
         let result = true ;
-        for(let name of allStatusNames){
+        for(let name of status_t.keys){
                 if(srcstatus.value(name) < reqstatus.value(name)){
                         result = false ;
                         break ;
@@ -246,14 +235,14 @@ export class Character
         }
 
         public set status(stat: Status) {
-                for(let name of allStatusNames){
+                for(let name of status_t.keys){
                         let val = stat.value(name) ;
                         this.mRecord.setValue(val, name) ;
                 }
         }
         public get status(): Status {
                 let newstat = new Status() ;
-                for(let name of allStatusNames){
+                for(let name of status_t.keys){
                         let val = this.mRecord.value(name) ;
                         if(val != null){
                                 newstat.setValue(val, name) ;

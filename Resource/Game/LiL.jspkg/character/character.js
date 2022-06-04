@@ -39,20 +39,10 @@ var Character;
         return result;
     }
     Character_1.can_get_job = can_get_job;
-    Character_1.allStatusNames = [
-        status_t.description(status_t.hitPoint),
-        status_t.description(status_t.magicPoint),
-        status_t.description(status_t.strength),
-        status_t.description(status_t.vitality),
-        status_t.description(status_t.agility),
-        status_t.description(status_t.intelligence),
-        status_t.description(status_t.piety),
-        status_t.description(status_t.luck)
-    ];
     class Status {
         constructor() {
             this.mTable = Dictionary();
-            for (let name of Character_1.allStatusNames) {
+            for (let name of status_t.keys) {
                 this.mTable.setNumber(0, name);
             }
         }
@@ -90,7 +80,7 @@ var Character;
         get luck() { return this.value(status_t.description(status_t.luck)); }
         clone() {
             let newstat = new Status();
-            for (let name of Character_1.allStatusNames) {
+            for (let name of status_t.keys) {
                 let val = this.value(name);
                 newstat.setValue(val, name);
             }
@@ -136,7 +126,7 @@ var Character;
         }
         let status = new Status();
         let record = recs[0];
-        for (let name of Character_1.allStatusNames) {
+        for (let name of status_t.keys) {
             let val = record.value(name);
             if (isNumber(val)) {
                 status.setValue(val, name);
@@ -154,7 +144,7 @@ var Character;
             return false;
         }
         let result = true;
-        for (let name of Character_1.allStatusNames) {
+        for (let name of status_t.keys) {
             if (srcstatus.value(name) < reqstatus.value(name)) {
                 result = false;
                 break;
@@ -218,14 +208,14 @@ var Character;
             return (_a = this.mRecord.value(Character.jobItem)) !== null && _a !== void 0 ? _a : job_t.fighter;
         }
         set status(stat) {
-            for (let name of Character_1.allStatusNames) {
+            for (let name of status_t.keys) {
                 let val = stat.value(name);
                 this.mRecord.setValue(val, name);
             }
         }
         get status() {
             let newstat = new Status();
-            for (let name of Character_1.allStatusNames) {
+            for (let name of status_t.keys) {
                 let val = this.mRecord.value(name);
                 if (val != null) {
                     newstat.setValue(val, name);

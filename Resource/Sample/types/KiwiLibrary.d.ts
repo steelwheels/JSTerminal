@@ -498,31 +498,35 @@ declare enum AccessType {
 }
 declare namespace AccessType {
   function description(param: AccessType): string ;
+  const keys: string[] ;
 }
 declare enum Alignment {
-  leading = 0,
-  trailing = 1,
   center = 3,
-  fill = 2
+  fill = 2,
+  leading = 0,
+  trailing = 1
 }
 declare namespace Alignment {
   function description(param: Alignment): string ;
+  const keys: string[] ;
 }
 declare enum AnimationState {
-  run = 1,
   idle = 0,
-  pause = 2
+  pause = 2,
+  run = 1
 }
 declare namespace AnimationState {
   function description(param: AnimationState): string ;
+  const keys: string[] ;
 }
 declare enum Authorize {
-  denied = 2,
   authorized = 3,
+  denied = 2,
   undetermined = 0
 }
 declare namespace Authorize {
   function description(param: Authorize): string ;
+  const keys: string[] ;
 }
 declare enum Axis {
   horizontal = 0,
@@ -530,82 +534,90 @@ declare enum Axis {
 }
 declare namespace Axis {
   function description(param: Axis): string ;
+  const keys: string[] ;
 }
 declare enum Distribution {
-  fillEqually = 2,
   equalSpacing = 3,
   fill = 0,
+  fillEqually = 2,
   fillProportinally = 1
 }
 declare namespace Distribution {
   function description(param: Distribution): string ;
+  const keys: string[] ;
 }
 declare enum ExitCode {
-  syntaxError = 3,
-  exception = 4,
   commaneLineError = 2,
+  exception = 4,
+  internalError = 1,
   noError = 0,
-  internalError = 1
+  syntaxError = 3
 }
 declare namespace ExitCode {
   function description(param: ExitCode): string ;
+  const keys: string[] ;
 }
 declare enum FileType {
-  notExist = 0,
+  directory = 2,
   file = 1,
-  directory = 2
+  notExist = 0
 }
 declare namespace FileType {
   function description(param: FileType): string ;
+  const keys: string[] ;
 }
 declare enum FontSize {
-  regular = 13,
   large = 19,
+  regular = 13,
   small = 11
 }
 declare namespace FontSize {
   function description(param: FontSize): string ;
+  const keys: string[] ;
 }
 declare enum LogLevel {
-  warning = 2,
+  debug = 3,
+  detail = 4,
   error = 1,
   nolog = 0,
-  debug = 3,
-  detail = 4
+  warning = 2
 }
 declare namespace LogLevel {
   function description(param: LogLevel): string ;
+  const keys: string[] ;
 }
 declare enum TextAlign {
-  right = 1,
-  normal = 4,
   center = 2,
+  justfied = 3,
   left = 0,
-  justfied = 3
+  normal = 4,
+  right = 1
 }
 declare namespace TextAlign {
   function description(param: TextAlign): string ;
+  const keys: string[] ;
 }
 declare enum ValueType {
-  stringType = 3,
+  URLType = 12,
   arrayType = 11,
   boolType = 1,
-  rangeType = 5,
-  segmentType = 17,
-  imageType = 14,
-  pointType = 6,
-  numberType = 2,
-  sizeType = 7,
-  objectType = 16,
-  enumType = 9,
-  nullType = 0,
-  rectType = 8,
+  colorType = 13,
   dateType = 4,
-  recordType = 15,
   dictionaryType = 10,
-  URLType = 12,
-  colorType = 13
+  enumType = 9,
+  imageType = 14,
+  nullType = 0,
+  numberType = 2,
+  objectType = 16,
+  pointType = 6,
+  rangeType = 5,
+  recordType = 15,
+  rectType = 8,
+  segmentType = 17,
+  sizeType = 7,
+  stringType = 3
 }
 declare namespace ValueType {
   function description(param: ValueType): string ;
+  const keys: string[] ;
 }

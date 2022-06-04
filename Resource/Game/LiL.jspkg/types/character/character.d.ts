@@ -4,7 +4,6 @@
 /// <reference path="../LiL.d.ts" />
 declare module Character {
     function can_get_job(job: job_t, attr: attr_t): boolean;
-    const allStatusNames: string[];
     class Status {
         private mTable;
         constructor();
