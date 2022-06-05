@@ -1,11 +1,35 @@
 top: VBox {
+	initStatus: Storage {
+		name:	"main"
+		path:	"data.status.initStatus"
+	}
+	members: Storage {
+		name:	"main"
+		path:	"data.members"
+	}
+
 	bonus:		10
 	name:		""
 	hasRace:	true
 	race:		Init    %{ return race_t.human ;  %}
 	hasJob:		false
 	job:		Init    %{ return job_t.fighter ; %}
-	status:		Init    %{ return load_init_status(ract_t.human) ; %}
+	status:		Init    %{
+		let table   = top.initStatus.table ;
+		let records = table.search(race_t.human, "race") ;
+		if(records != null){
+			if(records.count == 1){
+				return records[0] ;
+			} else {
+				console.error("Too many initial status\n") ;
+				return null ;
+			}
+		} else {
+			console.error("No initial status\n") ;
+			return null ;
+		}
+	%}
+
 	title: ImageView {
 		name: "gym_title"
 	}
@@ -273,7 +297,8 @@ top: VBox {
 				return (name.length > 0) && hasRace && hasJob ;
 			%}
 			pressed: Event() %{
-				let newrec = Record() ;
+				let table  = top.members.table ;
+				let newrec = table.newRecord() ;
 				newrec.setValue(top.name,	"name") ;
 				newrec.setValue(top.race,	"race") ;
 				newrec.setValue(top.job,	"job") ;

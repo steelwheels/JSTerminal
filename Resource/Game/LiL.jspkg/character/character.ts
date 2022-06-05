@@ -42,7 +42,7 @@ export function can_get_job(job: job_t, attr: attr_t): boolean
 }
 
 export function load_init_status(race: race_t): RecordIF | null {
-	let table = tableInStorage("main", "character.initStatus") ;
+	let table = tableInStorage("main", "data.status.initStatus") ;
 	if(table != null){
 		let recs = table.search(race, "race") ;
 		if(recs != null){
@@ -55,7 +55,7 @@ export function load_init_status(race: race_t): RecordIF | null {
 }
 
 export function has_status_for_job(job: job_t, srcstatus: RecordIF): boolean {
-	let table = tableInStorage("main", "character.jobRequirement") ;
+	let table = tableInStorage("main", "data.status.jobRequirement") ;
 	if(table != null){
 		let recs = table.search(job, "job") ;
 		if(recs != null){

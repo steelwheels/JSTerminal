@@ -1,17 +1,17 @@
 {
-	character: {
-		class: 	"segment",
-		file:	"character/character.json"
+	data: {
+		status: {
+			class:	"segment",
+			file:	"data/status.json"
+		}
+		members: {
+			class:	"segment",
+			file:	"data/members.json"
+		}
 	}
 	item: {
 		class: 	"segment",
 		file:	"character/item.json"
-	}
-	town: {
-		members: {
-			class:	"segment",
-			file:	"town/members.json"
-		}
 	}
 }
 

@@ -1,7 +1,7 @@
 top: VBox {
     members: Storage {
         name: "main"
-        path: "town.members"
+        path: "data.members"
     }
 
     title: ImageView {
