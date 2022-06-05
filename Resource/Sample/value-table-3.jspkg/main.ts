@@ -25,7 +25,7 @@ function main(args : [string])
 
 	console.print("table = " + table.toString()) ;
 
-	let newrec = Record() ;
+	let newrec = table.newRecord() ;
 	newrec.setValue(100, "c0") ;
 	newrec.setValue(101, "c1") ;
 	newrec.setValue(102, "c2") ;

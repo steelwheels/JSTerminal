@@ -7,7 +7,7 @@
 /// <reference path="../types/KiwiComponent.d.ts" />
 /// <reference path="../types/LiL.d.ts" />
 var Character;
-(function (Character_1) {
+(function (Character) {
     function can_get_job(job, attr) {
         let result;
         switch (job) {
@@ -38,202 +38,258 @@ var Character;
         }
         return result;
     }
-    Character_1.can_get_job = can_get_job;
-    class Status {
-        constructor() {
-            this.mTable = Dictionary();
-            for (let name of status_t.keys) {
-                this.mTable.setNumber(0, name);
-            }
-        }
-        value(key) {
-            let val = this.mTable.number(key);
-            if (val != null) {
-                return val;
-            }
-            else {
-                console.error("[Error] No member");
-                return 0;
-            }
-        }
-        setValue(value, key) {
-            this.mTable.setNumber(value, key);
-        }
-        get dictionary() {
-            return this.mTable;
-        }
-        set hitPoint(value) { this.setValue(value, status_t.description(status_t.hitPoint)); }
-        get hitPoint() { return this.value(status_t.description(status_t.hitPoint)); }
-        set magicPoint(value) { this.setValue(value, status_t.description(status_t.magicPoint)); }
-        get magicPoint() { return this.value(status_t.description(status_t.magicPoint)); }
-        set strength(value) { this.setValue(value, status_t.description(status_t.strength)); }
-        get strength() { return this.value(status_t.description(status_t.strength)); }
-        set vitality(value) { this.setValue(value, status_t.description(status_t.vitality)); }
-        get vitality() { return this.value(status_t.description(status_t.vitality)); }
-        set agility(value) { this.setValue(value, status_t.description(status_t.agility)); }
-        get agility() { return this.value(status_t.description(status_t.agility)); }
-        set intelligence(value) { this.setValue(value, status_t.description(status_t.intelligence)); }
-        get intelligence() { return this.value(status_t.description(status_t.intelligence)); }
-        set piety(value) { this.setValue(value, status_t.description(status_t.piety)); }
-        get piety() { return this.value(status_t.description(status_t.piety)); }
-        set luck(value) { this.setValue(value, status_t.description(status_t.luck)); }
-        get luck() { return this.value(status_t.description(status_t.luck)); }
-        clone() {
-            let newstat = new Status();
-            for (let name of status_t.keys) {
-                let val = this.value(name);
-                newstat.setValue(val, name);
-            }
-            return newstat;
-        }
-    }
-    Character_1.Status = Status;
-    ;
-    function anyToNumber(value) {
-        if (isNumber(value)) {
-            return value;
-        }
-        else {
-            return 0;
-        }
-    }
-    function loadInitStatus(race) {
-        let racevalue = race_t.description(race);
-        return loadAnyStatus("initStatus", "race", racevalue);
-    }
-    Character_1.loadInitStatus = loadInitStatus;
-    function loadJobRequirement(job) {
-        let jobvalue = job_t.description(job);
-        return loadAnyStatus("jobRequirement", "job", jobvalue);
-    }
-    Character_1.loadJobRequirement = loadJobRequirement;
-    function loadAnyStatus(tablename, typename, typevalue) {
-        let table = tableInStorage("main", "character." + tablename);
-        if (table == null) {
-            console.error("[Error] No table:" + tablename + "\n");
-            return null;
-        }
-        let recs = table.search(typevalue, typename);
-        if (recs != null) {
-            if (recs.length < 1) {
-                console.error("[Error] No records\n");
-                return null;
+    Character.can_get_job = can_get_job;
+    function load_init_status(race) {
+        let table = tableInStorage("main", "character.initStatus");
+        if (table != null) {
+            let recs = table.search(race, "race");
+            if (recs != null) {
+                return recs[0];
             }
         }
         else {
-            console.error("[Error] No records\n");
-            return null;
+            console.error("Failed to load init status\n");
         }
-        let status = new Status();
-        let record = recs[0];
-        for (let name of status_t.keys) {
-            let val = record.value(name);
-            if (isNumber(val)) {
-                status.setValue(val, name);
-            }
-            else {
-                console.error("[Error] Invalid status value: " + val + " for name:" + name + "\n");
-            }
-        }
-        return status;
+        return null;
     }
-    function hasEnoughStatusForJob(job, srcstatus) {
-        let reqstatus = loadJobRequirement(job);
-        if (reqstatus == null) {
-            console.error("[Error] No job requirement");
-            return false;
-        }
-        let result = true;
-        for (let name of status_t.keys) {
-            if (srcstatus.value(name) < reqstatus.value(name)) {
-                result = false;
-                break;
-            }
-        }
-        return result;
-    }
-    Character_1.hasEnoughStatusForJob = hasEnoughStatusForJob;
-    class Character {
-        constructor(record) {
-            if (record != null) {
-                this.mRecord = record;
-            }
-            else {
-                this.mRecord = Record();
-            }
-        }
-        get record() {
-            return this.mRecord;
-        }
-        set pid(num) {
-            this.mRecord.setValue(num, Character.pidItem);
-        }
-        get pid() {
-            var _a;
-            return (_a = this.mRecord.value(Character.pidItem)) !== null && _a !== void 0 ? _a : -1;
-        }
-        set name(str) {
-            this.mRecord.setValue(str, Character.nameItem);
-        }
-        get name() {
-            var _a;
-            return (_a = this.mRecord.value(Character.nameItem)) !== null && _a !== void 0 ? _a : "?";
-        }
-        set age(num) {
-            this.mRecord.setValue(num, Character.ageItem);
-        }
-        get age() {
-            var _a;
-            return (_a = this.mRecord.value(Character.ageItem)) !== null && _a !== void 0 ? _a : "0";
-        }
-        set level(num) {
-            this.mRecord.setValue(num, Character.levelItem);
-        }
-        get level() {
-            var _a;
-            return (_a = this.mRecord.value(Character.levelItem)) !== null && _a !== void 0 ? _a : "0";
-        }
-        set race(typ) {
-            this.mRecord.setValue(typ, Character.raceItem);
-        }
-        get race() {
-            var _a;
-            return (_a = this.mRecord.value(Character.raceItem)) !== null && _a !== void 0 ? _a : race_t.human;
-        }
-        set job(typ) {
-            this.mRecord.setValue(typ, Character.jobItem);
-        }
-        get job() {
-            var _a;
-            return (_a = this.mRecord.value(Character.jobItem)) !== null && _a !== void 0 ? _a : job_t.fighter;
-        }
-        set status(stat) {
-            for (let name of status_t.keys) {
-                let val = stat.value(name);
-                this.mRecord.setValue(val, name);
-            }
-        }
-        get status() {
-            let newstat = new Status();
-            for (let name of status_t.keys) {
-                let val = this.mRecord.value(name);
-                if (val != null) {
-                    newstat.setValue(val, name);
+    Character.load_init_status = load_init_status;
+    function has_status_for_job(job, srcstatus) {
+        let table = tableInStorage("main", "character.jobRequirement");
+        if (table != null) {
+            let recs = table.search(job, "job");
+            if (recs != null) {
+                let result = true;
+                let reqstatus = recs[0];
+                for (let key of status_t.keys) {
+                    if (srcstatus.value(key) < reqstatus.value(key)) {
+                        result = false;
+                        break;
+                    }
                 }
             }
-            return newstat;
         }
-        isPartyMember() {
-            return this.pid > 0;
+        else {
+            console.error("Failed to load job requirement\n");
+        }
+        return false;
+    }
+    Character.has_status_for_job = has_status_for_job;
+    /*
+    export class Status
+    {
+            private mTable: DictionaryIF ;
+    
+        constructor(){
+                    this.mTable = Dictionary() ;
+                    for(let name of status_t.keys){
+                            this.mTable.setNumber(0, name) ;
+                    }
+        }
+    
+            public value(key: string): number {
+                    let val = this.mTable.number(key) ;
+                    if(val != null){
+                            return val! ;
+                    } else {
+                            console.error("[Error] No member") ;
+                            return 0 ;
+                    }
+            }
+    
+            public setValue(value: number, key: string): void {
+                    this.mTable.setNumber(value, key) ;
+            }
+    
+            public get dictionary(): DictionaryIF {
+                    return this.mTable ;
+            }
+    
+            public set hitPoint(value: number) { this.setValue(value, status_t.description(status_t.hitPoint)) ; }
+            public get hitPoint() { return this.value(status_t.description(status_t.hitPoint)) ; }
+    
+            public set magicPoint(value: number) { this.setValue(value, status_t.description(status_t.magicPoint)) ; }
+            public get magicPoint() { return this.value(status_t.description(status_t.magicPoint)) ; }
+    
+            public set strength(value: number) { this.setValue(value, status_t.description(status_t.strength)) ; }
+            public get strength() { return this.value(status_t.description(status_t.strength)) ; }
+    
+            public set vitality(value: number) { this.setValue(value, status_t.description(status_t.vitality)) ; }
+            public get vitality() { return this.value(status_t.description(status_t.vitality)) ; }
+    
+            public set agility(value: number) { this.setValue(value, status_t.description(status_t.agility)) ; }
+            public get agility() { return this.value(status_t.description(status_t.agility)) ; }
+    
+            public set intelligence(value: number) { this.setValue(value, status_t.description(status_t.intelligence)) ; }
+            public get intelligence() { return this.value(status_t.description(status_t.intelligence)) ; }
+    
+            public set piety(value: number) { this.setValue(value, status_t.description(status_t.piety)) ; }
+            public get piety() { return this.value(status_t.description(status_t.piety)) ; }
+    
+            public set luck(value: number) { this.setValue(value, status_t.description(status_t.luck)) ; }
+            public get luck() { return this.value(status_t.description(status_t.luck)) ; }
+    
+            public clone(): Status {
+                    let newstat = new Status() ;
+                    for(let name of status_t.keys){
+                            let val = this.value(name) ;
+                            newstat.setValue(val, name) ;
+                    }
+                    return newstat ;
+            }
+    } ;
+    
+    function anyToNumber(value: any | null): number {
+        if(isNumber(value)){
+            return value! ;
+        } else {
+            return 0 ;
         }
     }
-    Character.pidItem = "pid";
-    Character.nameItem = "name";
-    Character.ageItem = "age";
-    Character.levelItem = "level";
-    Character.raceItem = "race";
-    Character.jobItem = "job";
-    Character.statusItem = "status";
-    Character_1.Character = Character;
+    
+    export function loadInitStatus(race: race_t): Status | null {
+        let racevalue = race_t.description(race) ;
+        return loadAnyStatus("initStatus", "race", racevalue) ;
+    }
+    
+    export function loadJobRequirement(job: job_t): Status | null {
+        let jobvalue = job_t.description(job) ;
+        return loadAnyStatus("jobRequirement", "job", jobvalue) ;
+    }
+    
+    function loadAnyStatus(tablename: string, typename: string, typevalue: string): Status | null {
+        let table = tableInStorage("main", "character." + tablename) ;
+        if(table == null){
+            console.error("[Error] No table:" + tablename + "\n") ;
+            return null ;
+        }
+            let recs  = table!.search(typevalue, typename) ;
+        if(recs != null){
+                    if(recs!.length < 1){
+                            console.error("[Error] No records\n")
+                            return null ;
+                    }
+            } else {
+                    console.error("[Error] No records\n") ;
+                    return null ;
+            }
+            let status = new Status() ;
+        let record = recs![0] ;
+            for(let name of status_t.keys) {
+                    let val = record.value(name) ;
+                    if(isNumber(val)){
+                            status.setValue(val!, name) ;
+                    } else {
+                            console.error("[Error] Invalid status value: " + val + " for name:" + name + "\n") ;
+                    }
+            }
+    
+            return status ;
+    }
+    
+    export function hasEnoughStatusForJob(job: job_t, srcstatus: Status): boolean {
+            let reqstatus = loadJobRequirement(job) ;
+            if(reqstatus == null) {
+                    console.error("[Error] No job requirement") ;
+                    return false ;
+            }
+            let result = true ;
+            for(let name of status_t.keys){
+                    if(srcstatus.value(name) < reqstatus.value(name)){
+                            result = false ;
+                            break ;
+                    }
+            }
+            return result ;
+    }
+    
+    export class Character
+    {
+        private static pidItem		= "pid" ;
+            private static nameItem         = "name" ;
+            private static ageItem          = "age" ;
+            private static levelItem        = "level" ;
+            private static raceItem         = "race" ;
+            private static jobItem          = "job" ;
+            private static statusItem       = "status" ;
+    
+            private mRecord:        RecordIF
+    
+            constructor(record: RecordIF | null){
+                    if(record != null){
+                            this.mRecord = record ;
+                    } else {
+                            this.mRecord = Record() ;
+                    }
+            }
+    
+            public get record(): RecordIF {
+                    return this.mRecord ;
+            }
+    
+            public set pid(num: number) {
+                    this.mRecord.setValue(num, Character.pidItem) ;
+            }
+            public get pid(): number {
+                    return this.mRecord.value(Character.pidItem) ?? -1 ;
+            }
+    
+            public set name(str: string) {
+                    this.mRecord.setValue(str, Character.nameItem) ;
+            }
+            public get name(): string {
+                    return this.mRecord.value(Character.nameItem) ?? "?" ;
+            }
+    
+            public set age(num: number) {
+                    this.mRecord.setValue(num, Character.ageItem) ;
+            }
+            public get age(): number {
+                    return this.mRecord.value(Character.ageItem) ?? "0" ;
+            }
+    
+            public set level(num: number) {
+                    this.mRecord.setValue(num, Character.levelItem) ;
+            }
+            public get level(): number {
+                    return this.mRecord.value(Character.levelItem) ?? "0" ;
+            }
+    
+            public set race(typ: race_t) {
+                    this.mRecord.setValue(typ, Character.raceItem);
+            }
+            public get race(): race_t {
+                    return this.mRecord.value(Character.raceItem) ?? race_t.human;
+            }
+    
+            public set job(typ: job_t) {
+                    this.mRecord.setValue(typ, Character.jobItem);
+            }
+            public get job(): job_t {
+                    return this.mRecord.value(Character.jobItem) ?? job_t.fighter;
+            }
+    
+            public set status(stat: Status) {
+                    for(let name of status_t.keys){
+                            let val = stat.value(name) ;
+                            this.mRecord.setValue(val, name) ;
+                    }
+            }
+            public get status(): Status {
+                    let newstat = new Status() ;
+                    for(let name of status_t.keys){
+                            let val = this.mRecord.value(name) ;
+                            if(val != null){
+                                    newstat.setValue(val, name) ;
+                            }
+                    }
+                    return newstat ;
+            }
+    
+        public isPartyMember(): boolean {
+            return this.pid > 0 ;
+        }
+    }
+    
+    */
 })(Character || (Character = {}));
 ; // end of module

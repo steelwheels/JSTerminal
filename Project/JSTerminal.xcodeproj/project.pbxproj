@@ -35,8 +35,6 @@
 		0519ECBB26417C5000471F35 /* types in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0519EC7B26417B7B00471F35 /* types */; };
 		0520428C25A0704D002B1815 /* JSTerminal.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 058993FB253F17F700663275 /* JSTerminal.jspkg */; };
 		05225BD127D8E82400326EB2 /* enter-view-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05225BCE27D8E7DD00326EB2 /* enter-view-3.jspkg */; };
-		05225BD227D8E82400326EB2 /* primitives-0.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 05225BCF27D8E7F700326EB2 /* primitives-0.js */; };
-		05225BD327D8E82400326EB2 /* primitives-0.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05225BD027D8E7F700326EB2 /* primitives-0.ts */; };
 		052A54342621A5480034369F /* curses-frame.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 052A54322621A5330034369F /* curses-frame.js */; };
 		052DF9D627254E1400392E19 /* collection0.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 052DF9D227254DF200392E19 /* collection0.js */; };
 		052DF9D727254E1400392E19 /* collection0.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 052DF9D327254DF200392E19 /* collection0.ts */; };
@@ -217,8 +215,6 @@
 				055FCB3127FB3B1A00D79202 /* listner-2.jspkg in Copy Files */,
 				05D7566E27F3374C0090EDE1 /* listner-1.jspkg in Copy Files */,
 				05225BD127D8E82400326EB2 /* enter-view-3.jspkg in Copy Files */,
-				05225BD227D8E82400326EB2 /* primitives-0.js in Copy Files */,
-				05225BD327D8E82400326EB2 /* primitives-0.ts in Copy Files */,
 				055765FA27C9083000BEF5FF /* enter-view-2.jspkg in Copy Files */,
 				05150E022724098C001C66AE /* symbol.ts in Copy Files */,
 				052DF9D627254E1400392E19 /* collection0.js in Copy Files */,
@@ -336,8 +332,6 @@
 		0519EC9726417B9700471F35 /* hello_color.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello_color.ts; sourceTree = "<group>"; };
 		051A55282771EA950093CE80 /* drawing.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = drawing.jspkg; sourceTree = "<group>"; };
 		05225BCE27D8E7DD00326EB2 /* enter-view-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enter-view-3.jspkg"; sourceTree = "<group>"; };
-		05225BCF27D8E7F700326EB2 /* primitives-0.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "primitives-0.js"; sourceTree = "<group>"; };
-		05225BD027D8E7F700326EB2 /* primitives-0.ts */ = {isa = PBXFileReference; lastKnownFileType = text; path = "primitives-0.ts"; sourceTree = "<group>"; };
 		052A54322621A5330034369F /* curses-frame.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "curses-frame.js"; sourceTree = "<group>"; };
 		052DF9D227254DF200392E19 /* collection0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = collection0.js; sourceTree = "<group>"; };
 		052DF9D327254DF200392E19 /* collection0.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = collection0.ts; sourceTree = "<group>"; };
@@ -548,8 +542,6 @@
 				0519EC9226417B9600471F35 /* openPanel.ts */,
 				050D9791261C02AA004FABF8 /* openPanel.js */,
 				059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */,
-				05225BCF27D8E7F700326EB2 /* primitives-0.js */,
-				05225BD027D8E7F700326EB2 /* primitives-0.ts */,
 				05D02A6727B7229400ABE0EA /* radio-button.jspkg */,
 				0519EC9026417B9600471F35 /* readline.js */,
 				0519EC8A26417B9600471F35 /* readline.ts */,

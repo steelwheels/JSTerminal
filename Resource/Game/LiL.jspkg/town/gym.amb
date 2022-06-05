@@ -5,9 +5,7 @@ top: VBox {
 	race:		Init    %{ return race_t.human ;  %}
 	hasJob:		false
 	job:		Init    %{ return job_t.fighter ; %}
-	status:		Init    %{
-		return Character.loadInitStatus(race_t.human) ;
-	%}
+	status:		Init    %{ return load_init_status(ract_t.human) ; %}
 	title: ImageView {
 		name: "gym_title"
 	}
@@ -68,7 +66,7 @@ top: VBox {
 						top.race = race ;
 						top.init_status(race) ;
 					}
-				   top.hasRace = true ;
+					top.hasRace = true ;
 				} else {
 					top.hasRace = false ;
 				}
@@ -87,21 +85,21 @@ top: VBox {
 					 "ninjya",
 					 "lord"]
 			isEnabled: Listner(status: top.status) %{
-				let f = Character.hasEnoughStatusForJob(
+				let f = Character.has_status_for_job(
 									job_t.fighter, status) ;
-				let m = Character.hasEnoughStatusForJob(
+				let m = Character.has_status_for_job(
 									job_t.mage,    status) ;
-				let p = Character.hasEnoughStatusForJob(
+				let p = Character.has_status_for_job(
 									job_t.priest,  status) ;
-				let t = Character.hasEnoughStatusForJob(
+				let t = Character.has_status_for_job(
 									job_t.thief,   status) ;
-				let s = Character.hasEnoughStatusForJob(
+				let s = Character.has_status_for_job(
 									job_t.samurai, status) ;
-				let b = Character.hasEnoughStatusForJob(
+				let b = Character.has_status_for_job(
 									job_t.bishop,  status) ;
-				let n = Character.hasEnoughStatusForJob(
+				let n = Character.has_status_for_job(
 									job_t.ninjya,  status) ;
-				let l = Character.hasEnoughStatusForJob(
+				let l = Character.has_status_for_job(
 									job_t.lord,    status) ;
 				return [f, m, p, t, s, b, n, l] ;
 			%}
@@ -294,16 +292,16 @@ top: VBox {
 
 	init: Init %{
 		let race   = race_t.human ;
-		let status = Character.loadInitStatus(race) ;
+		let status = Character.load_init_status(race) ;
 		if(status != null){
 			top.status = status ;
 			top.init_status(race) ;
 		}
 	%}
 
-        init_status: Func(race) %{
+	init_status: Func(race) %{
 		/* Initialize status */
-		let status = Character.loadInitStatus(race) ;
+		let status = Character.load_init_status(race) ;
 		if(status != null){
 			top.str_box.stepper.currentValue = status.strength ;
 			top.vit_box.stepper.currentValue = status.vitality ;
@@ -315,6 +313,6 @@ top: VBox {
 			console.log("[Error] No status") ;
 		}
                 return 0 ;
-        %}
+	%}
 }
 

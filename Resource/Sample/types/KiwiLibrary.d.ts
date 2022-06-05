@@ -236,6 +236,7 @@ interface TableIF {
 
 	readonly defaultFields:	{[name:string]: any} ;
 
+	newRecord():				RecordIF ;
 	record(row: number):			RecordIF | null ;
 	pointer(value: any, key: string):	any | null ;
 
@@ -311,7 +312,6 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function Storage(path: string): StorageIF | null ;
 declare function Table(path: string, storage: StorageIF): TableIF | null ;
-declare function Record(): RecordIF ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

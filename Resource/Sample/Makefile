@@ -16,7 +16,6 @@ srcs	= alert.ts \
 		  keycode.ts \
 		  namespace.ts \
 		  openPanel.ts \
-		  primitives-0.ts \
 		  readline.ts \
 		  readline-menu.ts \
 		  scroll0.ts \
@@ -50,14 +49,12 @@ $(srcdecl): dummy
 clean:
 	rm -f $(dsts)
 	(for dir in $(dirs) ; do \
-		cd $$dir && make clean ; \
-		cd .. ; \
+		pushd $$dir && make clean && popd ; \
 	 done )
 
 dirs: dummy
 	(for dir in $(dirs) ; do \
-		cd $$dir && make ; \
-		cd .. ; \
+		pushd $$dir && make && popd ; \
 	 done )
 
 resources: ./icon.jspkg/terminal-icon.png

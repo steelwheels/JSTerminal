@@ -236,6 +236,7 @@ interface TableIF {
 
 	readonly defaultFields:	{[name:string]: any} ;
 
+	newRecord():				RecordIF ;
 	record(row: number):			RecordIF | null ;
 	pointer(value: any, key: string):	any | null ;
 
@@ -311,7 +312,6 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 declare function Storage(path: string): StorageIF | null ;
 declare function Table(path: string, storage: StorageIF): TableIF | null ;
-declare function Record(): RecordIF ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;
@@ -491,57 +491,6 @@ declare class Turtle {
 /// <reference path="Process.d.ts" />
 /// <reference path="Enum.d.ts" />
 declare function requestContactAccess(): boolean;
-declare enum LogLevel {
-  warning = 2,
-  nolog = 0,
-  error = 1,
-  detail = 4,
-  debug = 3
-}
-declare namespace LogLevel {
-  function description(param: LogLevel): string ;
-}
-declare enum AnimationState {
-  run = 1,
-  pause = 2,
-  idle = 0
-}
-declare namespace AnimationState {
-  function description(param: AnimationState): string ;
-}
-declare enum ValueType {
-  arrayType = 11,
-  boolType = 1,
-  URLType = 12,
-  numberType = 2,
-  segmentType = 17,
-  imageType = 14,
-  sizeType = 7,
-  nullType = 0,
-  recordType = 15,
-  dateType = 4,
-  objectType = 16,
-  rectType = 8,
-  enumType = 9,
-  colorType = 13,
-  pointType = 6,
-  dictionaryType = 10,
-  rangeType = 5,
-  stringType = 3
-}
-declare namespace ValueType {
-  function description(param: ValueType): string ;
-}
-declare enum ExitCode {
-  commaneLineError = 2,
-  internalError = 1,
-  exception = 4,
-  noError = 0,
-  syntaxError = 3
-}
-declare namespace ExitCode {
-  function description(param: ExitCode): string ;
-}
 declare enum AccessType {
   append = 2,
   read = 0,
@@ -549,6 +498,35 @@ declare enum AccessType {
 }
 declare namespace AccessType {
   function description(param: AccessType): string ;
+  const keys: string[] ;
+}
+declare enum Alignment {
+  center = 3,
+  fill = 2,
+  leading = 0,
+  trailing = 1
+}
+declare namespace Alignment {
+  function description(param: Alignment): string ;
+  const keys: string[] ;
+}
+declare enum AnimationState {
+  idle = 0,
+  pause = 2,
+  run = 1
+}
+declare namespace AnimationState {
+  function description(param: AnimationState): string ;
+  const keys: string[] ;
+}
+declare enum Authorize {
+  authorized = 3,
+  denied = 2,
+  undetermined = 0
+}
+declare namespace Authorize {
+  function description(param: Authorize): string ;
+  const keys: string[] ;
 }
 declare enum Axis {
   horizontal = 0,
@@ -556,56 +534,90 @@ declare enum Axis {
 }
 declare namespace Axis {
   function description(param: Axis): string ;
+  const keys: string[] ;
+}
+declare enum Distribution {
+  equalSpacing = 3,
+  fill = 0,
+  fillEqually = 2,
+  fillProportinally = 1
+}
+declare namespace Distribution {
+  function description(param: Distribution): string ;
+  const keys: string[] ;
+}
+declare enum ExitCode {
+  commaneLineError = 2,
+  exception = 4,
+  internalError = 1,
+  noError = 0,
+  syntaxError = 3
+}
+declare namespace ExitCode {
+  function description(param: ExitCode): string ;
+  const keys: string[] ;
 }
 declare enum FileType {
   directory = 2,
-  notExist = 0,
-  file = 1
+  file = 1,
+  notExist = 0
 }
 declare namespace FileType {
   function description(param: FileType): string ;
+  const keys: string[] ;
 }
 declare enum FontSize {
-  regular = 13,
   large = 19,
+  regular = 13,
   small = 11
 }
 declare namespace FontSize {
   function description(param: FontSize): string ;
+  const keys: string[] ;
+}
+declare enum LogLevel {
+  debug = 3,
+  detail = 4,
+  error = 1,
+  nolog = 0,
+  warning = 2
+}
+declare namespace LogLevel {
+  function description(param: LogLevel): string ;
+  const keys: string[] ;
 }
 declare enum TextAlign {
+  center = 2,
   justfied = 3,
-  normal = 4,
-  right = 1,
   left = 0,
-  center = 2
+  normal = 4,
+  right = 1
 }
 declare namespace TextAlign {
   function description(param: TextAlign): string ;
+  const keys: string[] ;
 }
-declare enum Distribution {
-  equalSpacing = 3,
-  fillProportinally = 1,
-  fillEqually = 2,
-  fill = 0
+declare enum ValueType {
+  URLType = 12,
+  arrayType = 11,
+  boolType = 1,
+  colorType = 13,
+  dateType = 4,
+  dictionaryType = 10,
+  enumType = 9,
+  imageType = 14,
+  nullType = 0,
+  numberType = 2,
+  objectType = 16,
+  pointType = 6,
+  rangeType = 5,
+  recordType = 15,
+  rectType = 8,
+  segmentType = 17,
+  sizeType = 7,
+  stringType = 3
 }
-declare namespace Distribution {
-  function description(param: Distribution): string ;
-}
-declare enum Authorize {
-  undetermined = 0,
-  authorized = 3,
-  denied = 2
-}
-declare namespace Authorize {
-  function description(param: Authorize): string ;
-}
-declare enum Alignment {
-  center = 3,
-  trailing = 1,
-  leading = 0,
-  fill = 2
-}
-declare namespace Alignment {
-  function description(param: Alignment): string ;
+declare namespace ValueType {
+  function description(param: ValueType): string ;
+  const keys: string[] ;
 }
