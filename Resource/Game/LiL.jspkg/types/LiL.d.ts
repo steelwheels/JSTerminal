@@ -1,32 +1,32 @@
 declare enum attr_t {
+  evil = 2,
   neutral = 1,
-  good = 0,
-  evil = 2
+  good = 0
 }
 declare namespace attr_t {
   function description(param: attr_t): string ;
   const keys: string[] ;
 }
 declare enum job_t {
-  bishop = 5,
-  ninjya = 6,
-  lord = 7,
-  samurai = 4,
-  priest = 2,
+  mage = 1,
   fighter = 0,
+  lord = 7,
+  bishop = 5,
+  samurai = 4,
   thief = 3,
-  mage = 1
+  priest = 2,
+  ninjya = 6
 }
 declare namespace job_t {
   function description(param: job_t): string ;
   const keys: string[] ;
 }
 declare enum race_t {
-  gnome = 3,
-  hobbit = 4,
   human = 0,
   dwarf = 2,
-  elf = 1
+  elf = 1,
+  hobbit = 4,
+  gnome = 3
 }
 declare namespace race_t {
   function description(param: race_t): string ;
@@ -34,13 +34,13 @@ declare namespace race_t {
 }
 declare enum status_t {
   hitPoint = 0,
-  piety = 6,
-  luck = 7,
-  agility = 4,
   strength = 2,
-  vitality = 3,
+  piety = 6,
   intelligence = 5,
-  magicPoint = 1
+  magicPoint = 1,
+  vitality = 3,
+  luck = 7,
+  agility = 4
 }
 declare namespace status_t {
   function description(param: status_t): string ;

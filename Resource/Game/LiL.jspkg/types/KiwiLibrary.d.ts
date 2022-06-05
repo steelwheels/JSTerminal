@@ -365,6 +365,10 @@ declare function _run(path: URLIF | string, input: FileIF, output: FileIF, error
 declare function isEmptyString(str: string): boolean;
 declare function isEmptyObject(obj: object): boolean;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Process.d.ts" />
+/// <reference path="Enum.d.ts" />
+declare function first<T>(arr: T[] | null): T | null;
+/// <reference path="Builtin.d.ts" />
 /// <reference path="Enum.d.ts" />
 declare function tableInStorage(storage: string, path: string): TableIF | null;
 /// <reference path="Builtin.d.ts" />

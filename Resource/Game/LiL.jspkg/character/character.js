@@ -56,22 +56,28 @@ var Character;
     function has_status_for_job(job, srcstatus) {
         let table = tableInStorage("main", "data.status.jobRequirement");
         if (table != null) {
+            let result = false;
             let recs = table.search(job, "job");
-            if (recs != null) {
-                let result = true;
-                let reqstatus = recs[0];
+            let reqstatus = first(recs);
+            if (reqstatus != null) {
+                result = true;
                 for (let key of status_t.keys) {
                     if (srcstatus.value(key) < reqstatus.value(key)) {
                         result = false;
                         break;
                     }
                 }
+                return result;
+            }
+            else {
+                console.error("Failed to search job requirement\n");
+                return false;
             }
         }
         else {
             console.error("Failed to load job requirement\n");
+            return false;
         }
-        return false;
     }
     Character.has_status_for_job = has_status_for_job;
 })(Character || (Character = {}));

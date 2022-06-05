@@ -17,17 +17,7 @@ top: VBox {
 	status:		Init    %{
 		let table   = top.initStatus.table ;
 		let records = table.search(race_t.human, "race") ;
-		if(records != null){
-			if(records.count == 1){
-				return records[0] ;
-			} else {
-				console.error("Too many initial status\n") ;
-				return null ;
-			}
-		} else {
-			console.error("No initial status\n") ;
-			return null ;
-		}
+		return first(records) ;
 	%}
 
 	title: ImageView {
@@ -179,19 +169,19 @@ top: VBox {
 	str_box: HBox {
 		title: Label { text: "Strength" }
 		stepper: Stepper {
-			maxValue:	100
-			minValue:	0
+			maxValue:		100
+			minValue:		0
 			currentValue:	0
-			deltaValue:	1
+			deltaValue:		1
 			decimalPlaces:	0
 			isIncrementable: Listner(bonus: top.bonus) %{
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.strength = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
+				let newstat      =  top.status ;
+				newstat.strength =  newval ;
+				top.bonus        -= newval - self.currentValue ;
+				top.status       =  newstat ;
 			%}
 		}
 	}
@@ -207,10 +197,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.vitality = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
+				let newstat      =  top.status ;
+				newstat.vitality =  newval ;
+				top.bonus        -= newval - self.currentValue ;
+				top.status		 =  newstat ;
 			%}
 		}
 	}
@@ -226,10 +216,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.agility = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
+				let newstat     =  top.status ;
+				newstat.agility =  newval ;
+				top.bonus       -= newval - self.currentValue ;
+				top.status		=  newstat ;
 			%}
 		}
 	}
@@ -245,10 +235,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.intelligence = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
+				let newstat			 =  top.status ;
+				newstat.intelligence =  newval ;
+				top.bonus  			 -= newval - self.currentValue ;
+				top.status			 =  newstat ;
 			%}
 		}
 	}
@@ -264,10 +254,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.piety = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
+				let newstat		=  top.status ;
+				newstat.piety	=  newval ;
+				top.bonus		-= newval - self.currentValue ;
+				top.status		=  newstat ;
 			%}
 		}
 	}
@@ -283,10 +273,10 @@ top: VBox {
 				return bonus > 0 ;
 			%}
 			changed: Event(newval) %{
-				let newstat = top.status.clone() ;
-				newstat.luck = newval ;
-				top.bonus  -= newval - self.currentValue ;
-				top.status =  newstat ;
+				let newstat		=  top.status ;
+				newstat.luck	=  newval ;
+				top.bonus		-= newval - self.currentValue ;
+				top.status		=  newstat ;
 			%}
 		}
 	}
