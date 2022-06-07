@@ -57,25 +57,19 @@ top: VBox {
 	race_box: HBox {
 		title: Label { text: "Race" }
 		radio: RadioButtons {
-			labels: ["human",
-					 "elf",
-					 "dwarf",
-					 "gnome",
-					 "hobbit"]
+			labels: [
+			  {title: "human",	id: race_t.human	},
+			  {title: "elf",	id: race_t.elf		},
+			  {title: "dwarf",	id: race_t.dwarf	},
+			  {title: "gnome",	id: race_t.gnome	},
+			  {title: "hobbit",	id: race_t.hobbit	}
+			]
 			isEnabled: Listner(race: top.race) %{
 				return [true, true, true, true, true] ;
 			%}
 			columnCount: 4
-			selected: Event(index) %{
-				if(index != null){
-					let race = race_t.human ;
-					switch(index){
-						case 0: race = race_t.human ;     break ;
-						case 1: race = race_t.elf ;       break ;
-						case 2: race = race_t.dwarf ;     break ;
-						case 3: race = race_t.gnome ;     break ;
-						case 4: race = race_t.hobbit ;    break ;
-					}
+			selected: Event(race) %{
+				if(race != null){
 					if(top.race != race){
 						top.race = race ;
 						top.init_status(race) ;
@@ -90,14 +84,16 @@ top: VBox {
 	job_box: HBox {
 		title: Label { text: "Job" }
 		radio: RadioButtons {
-			labels: ["fighter",
-					 "mage",
-					 "priest",
-					 "thief",
-					 "samurai",
-					 "bishop",
-					 "ninjya",
-					 "lord"]
+			labels: [
+			  {title: "fighter",	id: job_t.fighter	},
+			  {title: "mage",		id: job_t.mage		},
+			  {title: "priest",		id: job_t.priest	},
+			  {title: "thief",		id: job_t.thief		},
+			  {title: "samurai",	id: job_t.samurai	},
+			  {title: "bishop",		id: job_t.bishop	},
+			  {title: "ninjya",		id: job_t.ninjya	},
+			  {title: "lord",		id: job_t.lord		}
+			]
 			isEnabled: Listner(status: top.status) %{
 				let f = Character.has_status_for_job(
 									job_t.fighter, status) ;
@@ -119,19 +115,8 @@ top: VBox {
 			%}
 
 			columnCount: 4
-			selected: Event(index) %{
-				if(index != null){
-					let job = job_t.fighter ;
-					switch(index){
-						case 0: job = job_t.fighter ;     break ;
-						case 1: job = job_t.mage ;        break ;
-						case 2: job = job_t.priest ;      break ;
-						case 3: job = job_t.thief ;       break ;
-						case 4: job = job_t.samurai ;     break ;
-						case 5: job = job_t.bishop ;      break ;
-						case 6: job = job_t.ninjya ;      break ;
-						case 7: job = job_t.lord ;        break ;
-					}
+			selected: Event(job) %{
+				if(job != null){
 					if(top.job != job){
 							top.job = job ;
 					}
@@ -145,7 +130,11 @@ top: VBox {
 	align_box: HBox {
 		title: Label { text: "Alignment" }
 		radio: RadioButtons {
-			labels: ["good", "neutral", "evil"]
+			labels: [
+				{title: "good", 	id: attr_t.good		},
+				{title: "neutral",	id: attr_t.neutral	},
+				{title: "evil",		id: attr_t.evil		}
+			]
 			columnCount: 4
 			isEnabled: Listner(job: top.job) %{
                 let good      = Character.can_get_job(job, attr_t.good) ;
@@ -153,8 +142,8 @@ top: VBox {
                 let evil      = Character.can_get_job(job, attr_t.evil) ;
                 return [good, neutral, evil] ;
 			%}
-			selected: Event(index) %{
-				console.log("align: " + index) ;
+			selected: Event(attr) %{
+				console.log("attr: " + attr) ;
 			%}
 		}
 	}
@@ -306,17 +295,15 @@ top: VBox {
 	}
 
 	init: Init %{
-		let race   = race_t.human ;
-		let status = Character.load_init_status(race) ;
-		if(status != null){
-			top.status = status ;
-			top.init_status(race) ;
-		}
+		top.init_status(race_t.human) ;
 	%}
 
 	init_status: Func(race) %{
+		let table   = top.initStatus.table ;
+		let records = table.search(race, "race") ;
+		let status  = first(records) ;
+
 		/* Initialize status */
-		let status = Character.load_init_status(race) ;
 		if(status != null){
 			top.str_box.stepper.currentValue = status.strength ;
 			top.vit_box.stepper.currentValue = status.vitality ;
@@ -324,10 +311,10 @@ top: VBox {
 			top.itl_box.stepper.currentValue = status.intelligence ;
 			top.pie_box.stepper.currentValue = status.piety ;
 			top.lck_box.stepper.currentValue = status.luck ;
+			top.status						 = status ;
 		} else {
 			console.log("[Error] No status") ;
 		}
-                return 0 ;
 	%}
 }
 

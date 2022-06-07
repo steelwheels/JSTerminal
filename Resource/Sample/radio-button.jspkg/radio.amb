@@ -1,13 +1,17 @@
 top: VBox {
     radio0: RadioButtons {
-		labels:	     ["a", "b", "c", "d"]
+		labels:	     [
+			{title: "a", id: 10},
+			{title: "b", id: 20},
+			{title: "c", id: 30}
+		]
 		isEnabled:   [true, true, true, false]
 		columnCount: 3
-        selected: Event(newidx) %{
-			if(newidx != null){
-		        console.log("new-index: " + newidx) ;
+        selected: Event(newid) %{
+			if(newid != null){
+		        console.log("new-id: " + newid) ;
 			} else {
-				console.log("new-index: null")
+				console.log("new-in: null")
 			}
 		%}
 	}
