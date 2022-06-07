@@ -10,9 +10,7 @@ top: VBox {
 
 	bonus:		10
 	name:		""
-	hasRace:	true
 	race:		Init    %{ return race_t.human ;  %}
-	hasJob:		false
 	job:		Init    %{ return job_t.fighter ; %}
 	status:		Init    %{
 		let table   = top.initStatus.table ;
@@ -25,17 +23,17 @@ top: VBox {
 	}
 	msg_box: TextField {
 		isEditable: false
-		text: Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
+		text: Listner(name: top.name, race: top.race, job: top.job) %{
 			let message = "" ;
-			if(name.length == 0 || !hasRace || !hasJob){
+			if(name.length == 0 || (race != null) || (job != null)){
 				message += "Set following item(s): " ;
 				if(name.length == 0){
 					message += "character-name " ;
 				}
-				if(!hasRace){
+				if(race == null){
 					message += "race " ;
 				}
-				if(!hasJob){
+				if(job == null){
 					message += "job " ;
 				}
 			} else {
@@ -74,9 +72,8 @@ top: VBox {
 						top.race = race ;
 						top.init_status(race) ;
 					}
-					top.hasRace = true ;
 				} else {
-					top.hasRace = false ;
+					top.race = null ;
 				}
 			%}
 		}
@@ -116,14 +113,7 @@ top: VBox {
 
 			columnCount: 4
 			selected: Event(job) %{
-				if(job != null){
-					if(top.job != job){
-							top.job = job ;
-					}
-					top.hasJob = true ;
-				} else {
-					top.hasJob = false ;
-				}
+				top.job = job ;
 			%}
 		}
 	}
@@ -137,10 +127,14 @@ top: VBox {
 			]
 			columnCount: 4
 			isEnabled: Listner(job: top.job) %{
-                let good      = Character.can_get_job(job, attr_t.good) ;
-                let neutral   = Character.can_get_job(job, attr_t.neutral) ;
-                let evil      = Character.can_get_job(job, attr_t.evil) ;
-                return [good, neutral, evil] ;
+				if(job != null){
+					let good      = Character.can_get_job(job, attr_t.good) ;
+					let neutral   = Character.can_get_job(job, attr_t.neutral) ;
+					let evil      = Character.can_get_job(job, attr_t.evil) ;
+					return [good, neutral, evil] ;
+				} else {
+					return [false, false, false] ;
+				}
 			%}
 			selected: Event(attr) %{
 				console.log("attr: " + attr) ;
@@ -272,8 +266,8 @@ top: VBox {
 	buttons: HBox {
 		add_button: Button {
 			title:  "Add this member"
-			isEnabled: Listner(name: top.name, hasRace: top.hasRace, hasJob: top.hasJob) %{
-				return (name.length > 0) && hasRace && hasJob ;
+			isEnabled: Listner(name: top.name, race: top.race, job: top.job) %{
+				return (name.length > 0) && (race != null) && (job != null) ;
 			%}
 			pressed: Event() %{
 				let table  = top.members.table ;

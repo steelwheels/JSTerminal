@@ -1,0 +1,24 @@
+{
+	class: "Table",
+	defaultFields: {
+		id:			weapon_t.short_sword,
+		long_name:	"sword",
+		short_name:	"",
+		price:		0
+	}
+	records: [
+	  {
+			id:				weapon_t.short_sword,
+			long_name:		"short sword",
+			short_name:		"sword",
+			price:			10
+	  },
+	  {
+			id:				weapon_t.long_sword,
+			long_name:		"long sword",
+			short_name:		"sword",
+			price:			20
+	  }
+	]
+}
+

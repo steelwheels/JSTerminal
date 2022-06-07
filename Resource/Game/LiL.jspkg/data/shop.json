@@ -1,0 +1,7 @@
+{
+	weapons: {
+		class:	"segment",
+		file:	"data/weapon.json"
+	}
+}
+

@@ -14,7 +14,7 @@
 		"character/weapon.js"
 	]
 	definitions: [
-		"character/weapon_t.json"
+		"character/weapon_t.json",
 		"character/character_t.json"
 	]
 	images: {

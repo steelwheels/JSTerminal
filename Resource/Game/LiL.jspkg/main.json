@@ -8,6 +8,10 @@
 			class:	"segment",
 			file:	"data/members.json"
 		}
+		shop: {
+			class:	"segment",
+			file:	"data/shop.json"
+		}
 	}
 	item: {
 		class: 	"segment",

@@ -1,7 +1,7 @@
 top: VBox {
 	weapons: Storage {
 		name:	"main"
-		path:	"item.weapon.weapons"
+		path:	"data.shop.weapons"
 	}
 
 	title: ImageView {
@@ -13,8 +13,8 @@ top: VBox {
 		isSelectable:		true
 		visibleRowCount:	10
 		fieldNames: [
-			{field: "name_r",  title: "Real name"},
-			{field: "armor_g", title: "Armor"}
+			{field: "short_name", title: "Short name"},
+			{field: "long_name",  title: "Long name"}
 		]
 		init: Init %{
 			self.dataTable = top.weapons.table ;

@@ -2,7 +2,8 @@
 	class:	"enumTable",
 	definitions: {
 		weapon_t: {
-        	sword:			0
+			short_sword:		0
+        	long_sword:			1
 		}
 	}
 }
