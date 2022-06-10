@@ -64,6 +64,22 @@ function main(args : [string])
 		result = -1 ;
 	}
 
+	/* check array pointer by k;v */
+	let elm8 = checkValue(storage, "data[2].c3") ;
+	if(elm8 != 12){
+		console.print("unexpected result (5): " +
+						elm8 + " != 12\n") ;
+		result = -1 ;
+	}
+
+	/* check array pointer by k;v */
+	let elm9 = checkStringValue(storage, "data[2].c4") ;
+	if(elm9 != "f"){
+		console.print("unexpected result (6): " +
+						elm9 + " != \"d\"\n") ;
+		result = -1 ;
+	}
+
 	/* Save entire value */
 /*
 	if(storage.save()){
@@ -82,6 +98,19 @@ function main(args : [string])
 }
 
 function checkValue(storage: StorageIF, path: string): number | null
+{
+	console.print("path: " + path + " = ") ;
+	let val = storage.value(path) ;
+	if(val != null){
+		console.print(val + "\n") ;
+		return val ;
+	} else {
+		console.print("null\n") ;
+		return null ;
+	}
+}
+
+function checkStringValue(storage: StorageIF, path: string): string | null
 {
 	console.print("path: " + path + " = ") ;
 	let val = storage.value(path) ;

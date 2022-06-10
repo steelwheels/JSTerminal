@@ -16,6 +16,14 @@
 			c2: {
 				class:	"pointer",
 				path:	"data[0].c0"
+			},
+			c3: {
+				class:	"pointer",
+				path:	"table.records[c0:12].c0"
+			},
+			c4: {
+				class:	"pointer",
+				path:	"table2.records[c0:d].c2"
 			}
 		}
 	]
@@ -49,6 +57,21 @@
 				c0: 45,
 				c1: 56,
 				c2: 67 
+			}
+		]
+	},
+	table2: {
+		id:	"id1",
+		records: [
+			{
+				c0: "a",
+				c1: "b",
+				c2: "c" 
+			},
+			{
+				c0: "d",
+				c1: "e",
+				c2: "f" 
 			}
 		]
 	}
