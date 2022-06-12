@@ -128,6 +128,11 @@ interface SizeIF {
 	height:		number ;
 }
 
+interface RangeIF {
+	location:	number ;
+	length:		number ;
+}
+
 interface TextIF
 {
         core(): any ;
@@ -226,9 +231,13 @@ interface RecordIF {
 	fieldNames:		string[] ;
 
 	value(name: string):			any ;
-	setValue(value: any, name: string):	boolean
+	setValue(value: any, name: string):	boolean ;
 
-	toString(): 		string
+	toString(): 		string ;
+}
+
+interface PointerValueIF {
+	path:			string ;
 }
 
 interface TableIF {
@@ -238,7 +247,7 @@ interface TableIF {
 
 	newRecord():				RecordIF ;
 	record(row: number):			RecordIF | null ;
-	pointer(value: any, key: string):	any | null ;
+	pointer(value: any, key: string):	PointerValueIF | null ;
 
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;

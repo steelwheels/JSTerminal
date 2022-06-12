@@ -1,0 +1,16 @@
+{
+    class: "Table",
+	id:	   "party"
+	defaultFields: {
+      character:	null
+    }
+    records: [
+	  {
+		character: {
+			class: "pointer",
+			path:	"@members.records[name:a]"
+		}
+	  }
+    ]
+}
+

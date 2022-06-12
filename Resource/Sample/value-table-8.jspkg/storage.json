@@ -1,0 +1,34 @@
+{
+	party: {
+		class:				"Table"
+		id:					"party"
+		nextRecordId:		0
+		defaultFields: {
+			character:		null
+		}
+		records: [
+		  {
+			character: {
+				class:	"pointer"
+				path:	"@members.records[0]"	
+			}
+		  }
+		]
+	}
+	members: {
+		class:				"Table"
+		id:					"members"
+		defaultFields: {
+			name:			"no-name"
+		}
+		records: [
+		  {
+				name:		"Mick Jagger"
+		  },
+		  {
+				name:		"Keith Richards"
+		  }
+		]
+	}
+}
+
