@@ -1,4 +1,8 @@
 top: VBox {
+    party: Storage {
+        name: "main"
+        path: "data.party"
+    }
     members: Storage {
         name: "main"
         path: "data.members"
@@ -20,11 +24,8 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.members.table ;
+			self.dataTable = top.party.table ;
 			self.reload() ;
-		%}
-		filter: Func(self, rec) %{
-			return (rec.pid > 0) ;
 		%}
     }
     tavern_button: Button {
@@ -61,14 +62,14 @@ top: VBox {
     ret_button: Button {
         title:  "Opening"
         pressed: Event() %{
-		let table = top.members.table ;
-		console.print("Save table ... ") ;
-		if(table.save()){
-			console.print("done\n") ;
-		} else {
-			console.print("fail\n") ;
-		}
-		leaveView(0) ;
+			let table = top.party.table ;
+			console.print("Save table ... ") ;
+			if(table.save()){
+				console.print("done\n") ;
+			} else {
+				console.print("fail\n") ;
+			}
+			leaveView(0) ;
         %}
     }
 }

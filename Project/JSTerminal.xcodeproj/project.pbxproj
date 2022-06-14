@@ -73,6 +73,8 @@
 		0589F1C427132ACA00D40424 /* adb.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BF27132AB000D40424 /* adb.js */; };
 		0589F1C527132ACA00D40424 /* adb.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
 		0589F1C727132ACA00D40424 /* types in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
+		058DC62B2858D435004B2060 /* value-storage-4.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 058DC6292858D3FA004B2060 /* value-storage-4.jspkg */; };
+		058DC62C2858D435004B2060 /* value-table-9.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 058DC62A2858D420004B2060 /* value-table-9.jspkg */; };
 		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
 		059C0AA8279D422D00E7B594 /* value-table-4.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA6279D421500E7B594 /* value-table-4.jspkg */; };
 		059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
@@ -209,6 +211,8 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				058DC62B2858D435004B2060 /* value-storage-4.jspkg in Copy Files */,
+				058DC62C2858D435004B2060 /* value-table-9.jspkg in Copy Files */,
 				05114A4028556491003DD8EB /* value-table-6.jspkg in Copy Files */,
 				05114A4128556491003DD8EB /* value-table-7.jspkg in Copy Files */,
 				05114A4228556491003DD8EB /* value-table-8.jspkg in Copy Files */,
@@ -365,6 +369,8 @@
 		0589F1BD27132AB000D40424 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0589F1BE27132AB000D40424 /* adb.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = adb.ts; sourceTree = "<group>"; };
 		0589F1BF27132AB000D40424 /* adb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = adb.js; sourceTree = "<group>"; };
+		058DC6292858D3FA004B2060 /* value-storage-4.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-4.jspkg"; sourceTree = "<group>"; };
+		058DC62A2858D420004B2060 /* value-table-9.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-9.jspkg"; sourceTree = "<group>"; };
 		05900E5F260EF610008C3490 /* unit-test.jsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unit-test.jsh"; sourceTree = "<group>"; };
 		059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "popup-menu.jspkg"; sourceTree = "<group>"; };
 		059C0AA4279D420500E7B594 /* value-storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-1.jspkg"; sourceTree = "<group>"; };
@@ -569,6 +575,7 @@
 				059C0AA4279D420500E7B594 /* value-storage-1.jspkg */,
 				0518BFA6280307AC00002DFC /* value-storage-2.jspkg */,
 				0518BFA5280307AC00002DFC /* value-storage-3.jspkg */,
+				058DC6292858D3FA004B2060 /* value-storage-4.jspkg */,
 				0537528A27869B8E00EB3A2D /* value-table-1.jspkg */,
 				0537528B27869B8E00EB3A2D /* value-table-2.jspkg */,
 				05889765281B5391001A6E67 /* value-table-3.jspkg */,
@@ -577,6 +584,7 @@
 				05114A3D2855646C003DD8EB /* value-table-6.jspkg */,
 				05114A3E2855646C003DD8EB /* value-table-7.jspkg */,
 				05114A3F2855646C003DD8EB /* value-table-8.jspkg */,
+				058DC62A2858D420004B2060 /* value-table-9.jspkg */,
 				0519EC8C26417B9600471F35 /* types */,
 			);
 			path = Sample;

@@ -1,0 +1,7 @@
+{
+	set0: {
+		class:	"Set"
+		values:	[1, 2, 3]
+	}
+}
+

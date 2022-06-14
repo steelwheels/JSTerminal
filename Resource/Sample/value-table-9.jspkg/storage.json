@@ -4,12 +4,16 @@
 		id:					"party"
 		nextRecordId:		0
 		defaultFields: {
-			name:	"no-name"
+			name:			"no-name"
 		}
 		records: [
 		  {
 			class:	"pointer"
-			path:	"@members.records[0]"	
+			path:	"@members.records[name:\"Mick Jagger\"]"
+		  }
+		  {
+			class:	"pointer"
+			path:	"@members.records[name:\"Keith Richards\"]"	
 		  }
 		]
 	}

@@ -1,4 +1,8 @@
 top: VBox {
+    party: Storage {
+        name: "main"
+        path: "data.party"
+    }
     members: Storage {
         name: "main"
         path: "data.members"
@@ -22,11 +26,8 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.members.table ;
+			self.dataTable = top.party.table ;
 			self.reload() ;
-		%}
-		filter: Func(self, rec) %{
-			return rec.pid > 0 ;
 		%}
     }
     editParty: HBox {
@@ -68,21 +69,18 @@ top: VBox {
 	text: "All members"
     }
     memberTable: TableView {
-	hasHeader:    true
-	isSelectable: true
-	fieldNames: [
+		hasHeader:    true
+		isSelectable: true
+		fieldNames: [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},
                 {field:"hitPoint",      title:"HP"},
                 {field:"magicPoint",    title:"MP"}
         ]
-	init: Init %{
-		self.dataTable = top.members.table ;
-		self.reload() ;
-	%}
-	filter: Event(rec) %{
-		return (rec.pid == 0) ;
-	%}
+		init: Init %{
+			self.dataTable = top.members.table ;
+			self.reload() ;
+		%}
     }
     change_member: HBox {
 	    add_button: Button {

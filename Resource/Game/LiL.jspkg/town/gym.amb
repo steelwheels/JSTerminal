@@ -1,7 +1,7 @@
 top: VBox {
-	initStatus: Storage {
+	init_status: Storage {
 		name:	"main"
-		path:	"data.status.initStatus"
+		path:	"data.status.init_status"
 	}
 	members: Storage {
 		name:	"main"
@@ -13,7 +13,7 @@ top: VBox {
 	race:		Init    %{ return race_t.human ;  %}
 	job:		Init    %{ return job_t.fighter ; %}
 	status:		Init    %{
-		let table   = top.initStatus.table ;
+		let table   = top.init_status.table ;
 		let records = table.search(race_t.human, "race") ;
 		return first(records) ;
 	%}
@@ -70,7 +70,7 @@ top: VBox {
 				if(race != null){
 					if(top.race != race){
 						top.race = race ;
-						top.init_status(race) ;
+						top.initialize_status(race) ;
 					}
 				} else {
 					top.race = null ;
@@ -289,11 +289,11 @@ top: VBox {
 	}
 
 	init: Init %{
-		top.init_status(race_t.human) ;
+		top.initialize_status(race_t.human) ;
 	%}
 
-	init_status: Func(race) %{
-		let table   = top.initStatus.table ;
+	initialize_status: Func(race) %{
+		let table   = top.init_status.table ;
 		let records = table.search(race, "race") ;
 		let status  = first(records) ;
 

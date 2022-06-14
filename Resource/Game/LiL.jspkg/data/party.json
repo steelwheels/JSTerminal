@@ -1,15 +1,16 @@
 {
-    class: "Table",
-	id:	   "party"
+    class: 				"Table"
+	id:	   				"party"
 	defaultFields: {
-      character:	null
+		name:			"no name"
+		level:			1
+		hitPoint:		1
+		magicPoint:		1
     }
     records: [
 	  {
-		character: {
-			class: "pointer",
-			path:	"@members.records[name:a]"
-		}
+		class: "pointer",
+		path:	"@members.records[name:\"player-a\"]"
 	  }
     ]
 }

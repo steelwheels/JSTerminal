@@ -1,0 +1,34 @@
+top: VBox {
+	party: Storage {
+		name:	"storage"
+		path:	"party"
+	}
+
+	table: TableView {
+		hasHeader:			true
+		isSelectable:		true
+		fieldNames: [
+			{title:"Name", field:"name"}
+		]
+		init: Init %{
+			self.dataTable = top.party.table ;
+			self.reload() ;
+        %}
+		filter: Event(record) %{
+			console.log("filter: " + record.toString()) ;
+			return true ;
+		%}
+		pressed: Event(row, col) %{
+			console.log("row    = " + row + "/" + self.rowCount) ;
+			console.log("column = " + col + "/" + self.columnCount) ;
+		%}
+    }
+
+	quit_button: Button {
+   		title: "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+    }
+}
+

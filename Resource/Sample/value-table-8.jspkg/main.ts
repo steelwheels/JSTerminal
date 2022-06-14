@@ -36,15 +36,13 @@ function main(args : [string])
 	let membptr = members.pointer("Bill Wyman", "name") ;
 	if(membptr != null){
 		console.print("pointer ... success: " + membptr.path + "\n") ;
+
+		/* Add new character to party */
+		party.appendPointer(membptr) ;
 	} else {
 		console.print("pointer ... faileda\n") ;
 		result = -1 ;
 	}
-
-	/* Add new character to party */
-	let newchar = party.newRecord() ;
-	newchar.setValue(membptr, "character") ;
-	party.append(newchar) ;
 
 	if(storage.save()){
 		console.print("save ... success\n") ;

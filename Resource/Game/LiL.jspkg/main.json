@@ -1,21 +1,19 @@
 {
 	data: {
-		status: {
+		party: {
 			class:	"segment",
-			file:	"data/status.json"
+			file:	"data/party.json"
 		}
 		members: {
 			class:	"segment",
 			file:	"data/members.json"
 		}
-		shop: {
-			class:	"segment",
-			file:	"data/shop.json"
+		status: {
+			init_status: {
+				class:	"segment",
+				file:	"data/init_status.json"
+			}
 		}
-	}
-	item: {
-		class: 	"segment",
-		file:	"character/item.json"
 	}
 }
 
