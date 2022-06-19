@@ -13,6 +13,10 @@
 				class:	"segment",
 				file:	"data/init_status.json"
 			}
+			job_requirement: {
+				class:	"segment",
+				file:	"data/job_requirement.json"
+			}
 		}
 	}
 }

@@ -1,11 +1,10 @@
 top: VBox {
-    party: Storage {
+    storage: Storage {
         name: "main"
-        path: "data.party"
-    }
-    members: Storage {
-        name: "main"
-        path: "data.members"
+		tables: {
+			party:   "data.party",
+			members: "data.members"
+		}
     }
 
     title: ImageView {
@@ -26,7 +25,7 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.party.table ;
+			self.dataTable = top.storage.party ;
 			self.reload() ;
 		%}
     }
@@ -78,7 +77,7 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 		init: Init %{
-			self.dataTable = top.members.table ;
+			self.dataTable = top.storage.members ;
 			self.reload() ;
 		%}
     }
@@ -88,7 +87,7 @@ top: VBox {
 		pressed: Event() %{
 			let record = enterView("gym", null) ;
 			if(isRecord(record)){
-				top.members.table.append(record) ;
+				top.storage.members.append(record) ;
 				top.memberTable.reload() ;
 			}
 		%}
@@ -106,7 +105,7 @@ top: VBox {
     quit_button: Button {
         title:  "Quit"
         pressed: Event() %{
-		top.members.table.save() ;
+		top.storage.members.save() ;
 		leaveView(0) ;
         %}
     }

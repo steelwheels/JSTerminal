@@ -1,0 +1,105 @@
+{
+    class: "Table"
+    defaultFields: {
+      job:				.fighter,
+      hitPoint:		0
+      magicPoint:	0
+      strength:		0
+      vitality:		0
+      agility:		0
+      intelligence:	0
+      piety:		0
+      luck:			0
+    }
+    records: [
+	{
+		job:			.fighter
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	11
+		vitality:	 0
+		agility:	 0
+		intelligence:	 0
+		piety:		 0
+		luck:		 0
+	}
+	{
+		job:		.mage
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	 0
+		vitality:	 0
+		agility:	 0
+		intelligence:	11
+		piety:		 0
+		luck:		 0
+	}
+	{
+		job:		.priest
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	 0
+		vitality:	 0
+		agility:	 0
+		intelligence:    0
+		piety:		11
+		luck:		 0
+	}
+	{
+		job:			.thief
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	 0
+		vitality:	 0
+		agility:	11
+		intelligence:    0
+		piety:		 0
+		luck:		 0
+	}
+	{
+		job:			.bishop
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	 0
+		vitality:	 0
+		agility:	 0
+		intelligence:   12
+		piety:		12
+		luck:		 0
+	}
+	{
+		job:			.samurai
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	15
+		vitality:	14
+		agility:	10
+		intelligence:   11
+		piety:		10
+		luck:		 0
+	}
+	{
+		job:			.lord
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	15
+		vitality:	15
+		agility:	14
+		intelligence:   12
+		piety:		12
+		luck:		15
+	}
+	{
+		job:			.ninjya
+		hitPoint:	 0
+		magicPoint:	 0
+		strength:	17
+		vitality:	17
+		agility:	17
+		intelligence:   17
+		piety:		17
+		luck:		17
+	}
+    ]
+}
+

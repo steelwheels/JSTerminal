@@ -1,7 +1,9 @@
 top: VBox {
-	party: Storage {
+	storage: Storage {
 		name:	"storage"
-		path:	"party"
+		tables: {
+			party:	"party"
+		}
 	}
 
 	table: TableView {
@@ -11,7 +13,7 @@ top: VBox {
 			{title:"Name", field:"name"}
 		]
 		init: Init %{
-			self.dataTable = top.party.table ;
+			self.dataTable = top.storage.party ;
 			self.reload() ;
         %}
 		filter: Event(record) %{

@@ -55,7 +55,7 @@ export function load_init_status(race: race_t): RecordIF | null {
 }
 
 export function has_status_for_job(job: job_t, srcstatus: RecordIF): boolean {
-	let table  = tableInStorage("main", "data.status.jobRequirement") ;
+	let table  = tableInStorage("main", "data.status.job_requirement") ;
 	if(table != null){
 		let result = false ;
 		let recs   = table.search(job, "job") ;

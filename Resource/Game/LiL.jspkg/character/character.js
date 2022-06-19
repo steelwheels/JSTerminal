@@ -54,7 +54,7 @@ var Character;
     }
     Character.load_init_status = load_init_status;
     function has_status_for_job(job, srcstatus) {
-        let table = tableInStorage("main", "data.status.jobRequirement");
+        let table = tableInStorage("main", "data.status.job_requirement");
         if (table != null) {
             let result = false;
             let recs = table.search(job, "job");

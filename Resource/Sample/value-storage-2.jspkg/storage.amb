@@ -1,13 +1,15 @@
 top: VBox {
     storage: Storage {
 		name: "storage"
-		path: "root"
+		tables: {
+			table0: "root"
+		}
     }
     quit_button: Button {
 		title: "Quit"
 		pressed: Event() %{
-			let str = top.storage.table.toString() ;
-			console.print("table = " + str + "\n") ;
+			let str = top.storage.table0.toString() ;
+			console.print("table0 = " + str + "\n") ;
 			leaveView(1) ;
         %}
     }

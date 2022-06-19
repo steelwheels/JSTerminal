@@ -1,11 +1,10 @@
 top: VBox {
-    party: Storage {
+    storage: Storage {
         name: "main"
-        path: "data.party"
-    }
-    members: Storage {
-        name: "main"
-        path: "data.members"
+		tables: {
+			party:   "data.party",
+			members: "data.members"
+		}
     }
 
     title: ImageView {
@@ -24,7 +23,7 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.party.table ;
+			self.dataTable = top.storage.party ;
 			self.reload() ;
 		%}
     }
@@ -62,7 +61,7 @@ top: VBox {
     ret_button: Button {
         title:  "Opening"
         pressed: Event() %{
-			let table = top.party.table ;
+			let table = top.storage.party ;
 			console.print("Save table ... ") ;
 			if(table.save()){
 				console.print("done\n") ;

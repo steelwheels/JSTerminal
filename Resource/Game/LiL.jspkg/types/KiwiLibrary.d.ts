@@ -128,6 +128,11 @@ interface SizeIF {
 	height:		number ;
 }
 
+interface RangeIF {
+	location:	number ;
+	length:		number ;
+}
+
 interface TextIF
 {
         core(): any ;
@@ -226,9 +231,13 @@ interface RecordIF {
 	fieldNames:		string[] ;
 
 	value(name: string):			any ;
-	setValue(value: any, name: string):	boolean
+	setValue(value: any, name: string):	boolean ;
 
-	toString(): 		string
+	toString(): 		string ;
+}
+
+interface PointerValueIF {
+	path:			string ;
 }
 
 interface TableIF {
@@ -238,11 +247,11 @@ interface TableIF {
 
 	newRecord():				RecordIF ;
 	record(row: number):			RecordIF | null ;
-	pointer(value: any, key: string):	any | null ;
+	pointer(value: any, key: string):	PointerValueIF | null ;
 
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
-	appendPointer(pointer: any):		void ;
+	appendPointer(pointer: PointerValueIF):	void ;
 
 	remove(index: number):			boolean ;
 	save():					boolean ;
@@ -602,22 +611,22 @@ declare namespace TextAlign {
   const keys: string[] ;
 }
 declare enum ValueType {
-  URLType = 12,
+  URLType = 13,
   arrayType = 11,
   boolType = 1,
-  colorType = 13,
+  colorType = 14,
   dateType = 4,
   dictionaryType = 10,
   enumType = 9,
-  imageType = 14,
+  imageType = 15,
   nullType = 0,
   numberType = 2,
-  objectType = 16,
+  objectType = 17,
   pointType = 6,
   rangeType = 5,
-  recordType = 15,
+  recordType = 16,
   rectType = 8,
-  segmentType = 17,
+  segmentType = 18,
   sizeType = 7,
   stringType = 3
 }

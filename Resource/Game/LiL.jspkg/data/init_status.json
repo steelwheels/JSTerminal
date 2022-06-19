@@ -1,5 +1,4 @@
 {
-  initStatus: {
     class: "Table"
 	defaultFields: {
       race:				.human
@@ -69,6 +68,5 @@
 		luck:			15
 	}
     ]
-  }
 }
 

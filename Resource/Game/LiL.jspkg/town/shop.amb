@@ -1,7 +1,9 @@
 top: VBox {
-	weapons: Storage {
+	storage: Storage {
 		name:	"main"
-		path:	"data.shop.weapons"
+		tables: {
+			weapons:	"data.shop.weapons"
+		}
 	}
 
 	title: ImageView {
@@ -17,7 +19,7 @@ top: VBox {
 			{field: "long_name",  title: "Long name"}
 		]
 		init: Init %{
-			self.dataTable = top.weapons.table ;
+			self.dataTable = top.storage.weapons ;
 			self.reload() ;
 		%}
 	}
