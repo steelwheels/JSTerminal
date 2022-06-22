@@ -47,7 +47,7 @@ function main(args : [string])
 	if(!table1.save()){
 		console.print("Failed to save table1\n") ;
 	}
-
+	console.print("Summary ... OK\n") ;
 	return 0 ;
 }
 
