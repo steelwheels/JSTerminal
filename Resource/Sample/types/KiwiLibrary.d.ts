@@ -56,16 +56,30 @@ interface CursesIF {
 	fill(x: number, y: number, width: number, height: number, c: string): void ;
 }
 
+interface ArrayIF {
+	count:	number ;
+	values:	[any] ;
+
+	value(index: number): any | null ;
+	set(value: any, index: number): void ;
+	append(value: any): void ;
+}
+
+interface SetIF {
+	count:	number ;
+	values:	[any] ;
+
+	value(index: number): any | null ;
+	insert(value: any): void ;
+}
+
 interface DictionaryIF {
-	object:		{[name: string]: any} ;
+	count:	number ;
+	keys:   [any] ;
+	values: [any] ;
 
-	setNumber(value: number, name: string): void ;
-	setString(value: string, name: string): void ;
-	setDictionary(value: DictionaryIF, name: string): void ;
-
-	number(name: string): number | null ;
-	string(name: string): string | null ;
-	dictionary(name: string): DictionaryIF | null ;
+	set(value: any, name: string): void ;
+	value(name: string): any | null ;
 }
 
 interface EscapeCodeIF {
@@ -312,7 +326,6 @@ declare var Symbols:		SymbolsIF ;
 
 declare function valueType(val: any): number ; // the result defined as enum ValueType
 
-declare function Dictionary(): DictionaryIF ;
 declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
@@ -379,9 +392,6 @@ declare function isEmptyObject(obj: object): boolean;
 declare function first<T>(arr: T[] | null): T | null;
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Enum.d.ts" />
-declare function tableInStorage(storage: string, path: string): TableIF | null;
-/// <reference path="Builtin.d.ts" />
-/// <reference path="Enum.d.ts" />
 declare class File {
     mCore: FileIF;
     constructor(core: FileIF);
@@ -429,7 +439,9 @@ declare function clampPoint(src: PointIF, x: number, y: number, width: number, h
 declare function _waitUntilExitOne(process: ProcessIF): number;
 declare function _waitUntilExitAll(processes: ProcessIF[]): number;
 declare class Semaphore {
-    mValue: DictionaryIF;
+    mValue: {
+        [key: string]: number;
+    };
     constructor(initval: number);
     signal(): void;
     wait(): void;

@@ -1,54 +1,54 @@
 declare enum attr_t {
-  good = 0,
+  neutral = 1,
   evil = 2,
-  neutral = 1
+  good = 0
 }
 declare namespace attr_t {
   function description(param: attr_t): string ;
   const keys: string[] ;
 }
 declare enum job_t {
-  mage = 1,
-  thief = 3,
-  lord = 7,
-  fighter = 0,
-  bishop = 5,
-  priest = 2,
+  samurai = 4,
   ninjya = 6,
-  samurai = 4
+  lord = 7,
+  priest = 2,
+  mage = 1,
+  bishop = 5,
+  thief = 3,
+  fighter = 0
 }
 declare namespace job_t {
   function description(param: job_t): string ;
   const keys: string[] ;
 }
 declare enum race_t {
-  gnome = 3,
   elf = 1,
-  dwarf = 2,
   human = 0,
-  hobbit = 4
+  hobbit = 4,
+  gnome = 3,
+  dwarf = 2
 }
 declare namespace race_t {
   function description(param: race_t): string ;
   const keys: string[] ;
 }
 declare enum status_t {
-  piety = 6,
   magicPoint = 1,
-  luck = 7,
-  strength = 2,
-  intelligence = 5,
   vitality = 3,
+  strength = 2,
   hitPoint = 0,
-  agility = 4
+  agility = 4,
+  piety = 6,
+  intelligence = 5,
+  luck = 7
 }
 declare namespace status_t {
   function description(param: status_t): string ;
   const keys: string[] ;
 }
 declare enum weapon_t {
-  long_sword = 1,
-  short_sword = 0
+  short_sword = 0,
+  long_sword = 1
 }
 declare namespace weapon_t {
   function description(param: weapon_t): string ;

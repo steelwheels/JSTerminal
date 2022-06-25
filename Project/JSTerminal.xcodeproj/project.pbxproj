@@ -122,8 +122,6 @@
 		05D9A8AC263EACB8006D0FA2 /* KiwiComponent.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */; };
 		05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; };
 		05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05EBE9EF27C849CE00D940C8 /* dictionary.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05EBE9ED27C849CE00D940C8 /* dictionary.ts */; };
-		05EBE9F027C849CE00D940C8 /* dictionary.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 05EBE9EE27C849CE00D940C8 /* dictionary.js */; };
 		05ED0F3325C8FBA100D00BBC /* graphics.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05ED0F3225C8FBA100D00BBC /* graphics.jspkg */; };
 		05F7AE47251874820077F527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE46251874820077F527 /* AppDelegate.swift */; };
 		05F7AE4B251874820077F527 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE4A251874820077F527 /* Document.swift */; };
@@ -231,10 +229,8 @@
 				0589F1C327132AB000D40424 /* adb.js in Copy Files */,
 				05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */,
 				05150E012724098C001C66AE /* symbol.js in Copy Files */,
-				05EBE9EF27C849CE00D940C8 /* dictionary.ts in Copy Files */,
 				052DF9D727254E1400392E19 /* collection0.ts in Copy Files */,
 				05150E002724098C001C66AE /* text.ts in Copy Files */,
-				05EBE9F027C849CE00D940C8 /* dictionary.js in Copy Files */,
 				059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */,
 				059C0AA8279D422D00E7B594 /* value-table-4.jspkg in Copy Files */,
 				054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */,
@@ -409,8 +405,6 @@
 		05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiShell.d.ts; sourceTree = "<group>"; };
 		05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiComponent.d.ts; sourceTree = "<group>"; };
 		05DB6EFB252F210000ADA7AD /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
-		05EBE9ED27C849CE00D940C8 /* dictionary.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.ts; sourceTree = "<group>"; };
-		05EBE9EE27C849CE00D940C8 /* dictionary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dictionary.js; sourceTree = "<group>"; };
 		05ED0F3225C8FBA100D00BBC /* graphics.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = graphics.jspkg; sourceTree = "<group>"; };
 		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7AE46251874820077F527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -528,8 +522,6 @@
 				0586F79225BC008500AE9FEE /* controls.jspkg */,
 				050D9794261C02AA004FABF8 /* curses.js */,
 				052A54322621A5330034369F /* curses-frame.js */,
-				05EBE9EE27C849CE00D940C8 /* dictionary.js */,
-				05EBE9ED27C849CE00D940C8 /* dictionary.ts */,
 				051A55282771EA950093CE80 /* drawing.jspkg */,
 				059F8ACA283BD3B600B93569 /* enum-0.js */,
 				05C92B422838FE7700CA2866 /* enum-1.jspkg */,

@@ -2,25 +2,6 @@
  * Builtin.d.ts
  */
 
-interface ValueTypeIF {
-	nullType:		number ;
-	boolType:		number ;
-	numberType:		number ;
-	stringType:		number ;
-	dateType:		number ;
-	rangeType:		number ;
-	pointType:		number ;
-	sizeType:		number ;
-	rectType:		number ;
-	enumType:		number ;
-	dictionaryType:		number ;
-	arrayType:		number ;
-	URLType:		number ;
-	colorType:		number ;
-	imageType:		number ;
-	objectType:		number ;
-}
-
 interface ColorIF {
 	red:			number ;
 	green:			number ;
@@ -75,16 +56,30 @@ interface CursesIF {
 	fill(x: number, y: number, width: number, height: number, c: string): void ;
 }
 
+interface ArrayIF {
+	count:	number ;
+	values:	[any] ;
+
+	value(index: number): any | null ;
+	set(value: any, index: number): void ;
+	append(value: any): void ;
+}
+
+interface SetIF {
+	count:	number ;
+	values:	[any] ;
+
+	value(index: number): any | null ;
+	insert(value: any): void ;
+}
+
 interface DictionaryIF {
-	object:		{[name: string]: any} ;
+	count:	number ;
+	keys:   [any] ;
+	values: [any] ;
 
-	setNumber(value: number, name: string): void ;
-	setString(value: string, name: string): void ;
-	setDictionary(value: DictionaryIF, name: string): void ;
-
-	number(name: string): number | null ;
-	string(name: string): string | null ;
-	dictionary(name: string): DictionaryIF | null ;
+	set(value: any, name: string): void ;
+	value(name: string): any | null ;
 }
 
 interface EscapeCodeIF {
@@ -118,25 +113,11 @@ interface EscapeCodeIF {
 	reset(): string
 }
 
-interface ExitCodeIF {
-	noError:		number ;
-	internalError:		number ;
-	commaneLineError:	number ;
-	syntaxError:		number ;
-	exception:		number ;
-}
-
 interface FileIF {
 	getc(): string ;
 	getl(): string ;
 	put(str: string): void ;
 	close(): void ;
-}
-
-interface FileTypeIF {
-	notExist:	number ;
-	file:		number ;
-	directory:	number ;
 }
 
 interface PipeIF {
@@ -147,18 +128,23 @@ interface PipeIF {
 interface PointIF {
 	x : number ;
 	y : number ;
-} 
+}
 
 interface RectIF {
 	x:		number ;
 	y: 		number ;
 	width:		number ;
 	height:		number ;
-} 
+}
 
 interface SizeIF {
 	width:		number ;
 	height:		number ;
+}
+
+interface RangeIF {
+	location:	number ;
+	length:		number ;
 }
 
 interface TextIF
@@ -177,7 +163,7 @@ interface TextLineIF extends TextIF
 interface TextSectionIF extends TextIF
 {
 	contentCount: number ;
-	
+
 	add(text: TextIF): void ;
 	insert(text: TextIF): void ;
 	append(str: string): void ;
@@ -244,31 +230,45 @@ interface URLIF {
 	loadText():		string | null ;
 }
 
-interface ValueStorageIF {
+interface StorageIF {
 	value(path: string): any ;
+
 	set(value: any, path: string): boolean ;
-	store(): boolean ;
+	append(value: any, path: string): boolean ;
+	delete(path: string): boolean
+
+	save(): boolean ;
 	toString(): string ;
 }
 
 interface RecordIF {
 	fieldNames:		string[] ;
-	filledFieldNames:	string[] ;
 
 	value(name: string):			any ;
-	setValue(value: any, name: string):	boolean
+	setValue(value: any, name: string):	boolean ;
 
-	toString(): 		string
+	toString(): 		string ;
 }
 
-interface ValueTableIF {
+interface PointerValueIF {
+	path:			string ;
+}
+
+interface TableIF {
 	recordCount:		number ;
 
-	readonly allFieldNames:	string[] ;
+	readonly defaultFields:	{[name:string]: any} ;
 
+	newRecord():				RecordIF ;
 	record(row: number):			RecordIF | null ;
+	pointer(value: any, key: string):	PointerValueIF | null ;
+
 	search(value: any, name: string):	RecordIF[] | null ;
 	append(record: RecordIF): 		void ;
+	appendPointer(pointer: PointerValueIF):	void ;
+
+	remove(index: number):			boolean ;
+	save():					boolean ;
 
 	toString(): 		string
 }
@@ -291,41 +291,16 @@ interface SymbolsIF {
 	rectangle(filled: boolean, rounded: boolean): URLIF ;
 }
 
-interface ContactRecordIF {
-	fieldCount:		number ;
-	fieldNames:		string[] ;
-	filledFieldNames:	string[] ;
-
-	type: 			string ;
-
-	givenName:		string | null ;
-	middleName:		string | null ;
-	familyName:		string | null ;
-
-	jobTitle:		string | null ;
-	organizationName:	string | null ;
-	departmentName:		string | null ;
-
-	postalAddresses:	{[name:string]: string} | null ;
-	emailAddresses:		{[name:string]: string} | null ;
-	urlAddresses:		{[name:string]: string} | null ;
-
-	value(name: string): any ;
-	setValue(val: any, name: string): boolean ;
-
-	toString(): 		string
-}
-
 interface ContactDatabaseIF {
 	recordCount:		number ;
 
 	authorize(callback: (granted: boolean) => void): void
 	load(url: URLIF | null): boolean ;
 
-	record(index: number): ContactRecordIF | null ;
-	search(value: any, name: string):	ContactRecordIF[] | null ;
-        append(record: ContactRecordIF): void ;
-	forEach(callback: (record: ContactRecordIF) => void): void ;
+	record(index: number): RecordIF | null ;
+	search(value: any, name: string):	RecordIF[] | null ;
+        append(record: RecordIF): void ;
+	forEach(callback: (record: RecordIF) => void): void ;
 }
 
 interface CollectionIF {
@@ -341,33 +316,24 @@ interface CollectionIF {
 	toStrings(): string[] ;
 }
 
-/* Enum */
-declare var ValueType:		ValueTypeIF ;
-
 /* Singleton object*/
 declare var console:		ConsoleIF ;
 declare var Color:      	ColorManagerIF ;
 declare var Curses:     	CursesIF ;
 declare var EscapeCode: 	EscapeCodeIF ;
-declare var ExitCode:		ExitCodeIF ;
-declare var FileType:		FileTypeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
 declare var Symbols:		SymbolsIF ;
 
 declare function valueType(val: any): number ; // the result defined as enum ValueType
 
-declare function Dictionary(): DictionaryIF ;
 declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
 declare function Size(width: number, height: number): SizeIF ;
 declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
-declare function ValueStorage(path: string): ValueStorageIF | null ;
-declare function Table(path: string, storage: ValueStorageIF): ValueTableIF | null ;
-declare function Record(): RecordIF ;
-
-declare function ContactRecord(): ContactRecordIF ;
+declare function Storage(path: string): StorageIF | null ;
+declare function Table(path: string, storage: StorageIF): TableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;
@@ -416,11 +382,16 @@ declare function _openPanel(title: string, type: number,
 declare function _savePanel(title: string, cbfunc: any): void ;
 declare function _run(path: URLIF | string, input: FileIF, output: FileIF, error: FileIF): object | null ;
 
+/// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function isEmptyString(str: string): boolean;
 declare function isEmptyObject(obj: object): boolean;
 /// <reference path="Builtin.d.ts" />
-declare function valueTableInStorage(storage: string, path: string): ValueTableIF | null;
+/// <reference path="Process.d.ts" />
+/// <reference path="Enum.d.ts" />
+declare function first<T>(arr: T[] | null): T | null;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare class File {
     mCore: FileIF;
     constructor(core: FileIF);
@@ -444,6 +415,8 @@ declare class JSONFile {
     read(file: File): object | null;
     write(file: File, src: object): boolean;
 }
+/// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 interface Math {
     randomInt(min: number, max: number): number;
     clamp(src: number, min: number, max: number): number;
@@ -453,17 +426,22 @@ declare function int(value: number): number;
  * Debug.ts
  */
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function checkVariables(place: string, ...vars: any[]): boolean;
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Math.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function addPoint(p0: PointIF, p1: PointIF): PointIF;
 declare function isSamePoints(p0: PointIF, p1: PointIF): boolean;
 declare function clampPoint(src: PointIF, x: number, y: number, width: number, height: number): PointIF;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function _waitUntilExitOne(process: ProcessIF): number;
 declare function _waitUntilExitAll(processes: ProcessIF[]): number;
 declare class Semaphore {
-    mValue: DictionaryIF;
+    mValue: {
+        [key: string]: number;
+    };
     constructor(initval: number);
     signal(): void;
     wait(): void;
@@ -477,11 +455,13 @@ declare function openPanel(title: string, type: number, exts: string[]): URLIF |
 declare function savePanel(title: string): URLIF | null;
 declare function run(path: URLIF | string | null, input: FileIF, output: FileIF, error: FileIF): object | null;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function maxLengthOfStrings(strs: string[]): number;
 declare function adjustLengthOfStrings(strs: string[]): string[];
 declare function pasteStrings(src0: string[], src1: string[], space: string): string[];
 declare function isEqualTrimmedStrings(str0: string, str1: string): boolean;
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare class CFrame {
     mFrame: RectIF;
     mCursorX: number;
@@ -499,6 +479,7 @@ declare class CFrame {
     put(str: string): void;
 }
 /// <reference path="Builtin.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare type TurtleStatus = {
     x: number;
     y: number;
@@ -533,4 +514,135 @@ declare class Turtle {
 }
 /// <reference path="Builtin.d.ts" />
 /// <reference path="Process.d.ts" />
+/// <reference path="Enum.d.ts" />
 declare function requestContactAccess(): boolean;
+declare enum AccessType {
+  append = 2,
+  read = 0,
+  write = 1
+}
+declare namespace AccessType {
+  function description(param: AccessType): string ;
+  const keys: string[] ;
+}
+declare enum Alignment {
+  center = 3,
+  fill = 2,
+  leading = 0,
+  trailing = 1
+}
+declare namespace Alignment {
+  function description(param: Alignment): string ;
+  const keys: string[] ;
+}
+declare enum AnimationState {
+  idle = 0,
+  pause = 2,
+  run = 1
+}
+declare namespace AnimationState {
+  function description(param: AnimationState): string ;
+  const keys: string[] ;
+}
+declare enum Authorize {
+  authorized = 3,
+  denied = 2,
+  undetermined = 0
+}
+declare namespace Authorize {
+  function description(param: Authorize): string ;
+  const keys: string[] ;
+}
+declare enum Axis {
+  horizontal = 0,
+  vertical = 1
+}
+declare namespace Axis {
+  function description(param: Axis): string ;
+  const keys: string[] ;
+}
+declare enum Distribution {
+  equalSpacing = 3,
+  fill = 0,
+  fillEqually = 2,
+  fillProportinally = 1
+}
+declare namespace Distribution {
+  function description(param: Distribution): string ;
+  const keys: string[] ;
+}
+declare enum ExitCode {
+  commaneLineError = 2,
+  exception = 4,
+  internalError = 1,
+  noError = 0,
+  syntaxError = 3
+}
+declare namespace ExitCode {
+  function description(param: ExitCode): string ;
+  const keys: string[] ;
+}
+declare enum FileType {
+  directory = 2,
+  file = 1,
+  notExist = 0
+}
+declare namespace FileType {
+  function description(param: FileType): string ;
+  const keys: string[] ;
+}
+declare enum FontSize {
+  large = 19,
+  regular = 13,
+  small = 11
+}
+declare namespace FontSize {
+  function description(param: FontSize): string ;
+  const keys: string[] ;
+}
+declare enum LogLevel {
+  debug = 3,
+  detail = 4,
+  error = 1,
+  nolog = 0,
+  warning = 2
+}
+declare namespace LogLevel {
+  function description(param: LogLevel): string ;
+  const keys: string[] ;
+}
+declare enum TextAlign {
+  center = 2,
+  justfied = 3,
+  left = 0,
+  normal = 4,
+  right = 1
+}
+declare namespace TextAlign {
+  function description(param: TextAlign): string ;
+  const keys: string[] ;
+}
+declare enum ValueType {
+  URLType = 13,
+  arrayType = 11,
+  boolType = 1,
+  colorType = 14,
+  dateType = 4,
+  dictionaryType = 10,
+  enumType = 9,
+  imageType = 15,
+  nullType = 0,
+  numberType = 2,
+  objectType = 17,
+  pointType = 6,
+  rangeType = 5,
+  recordType = 16,
+  rectType = 8,
+  segmentType = 18,
+  sizeType = 7,
+  stringType = 3
+}
+declare namespace ValueType {
+  function description(param: ValueType): string ;
+  const keys: string[] ;
+}
