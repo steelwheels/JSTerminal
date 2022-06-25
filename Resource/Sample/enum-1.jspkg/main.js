@@ -14,7 +14,7 @@ function main(args) {
         console.error("[Error] Failed to load\n");
         return -1;
     }
-    let table = Table("root", storage);
+    let table = TableInStorage("root", storage);
     if (table == null) {
         console.error("[Error] Failed to generate table\n");
         return -1;

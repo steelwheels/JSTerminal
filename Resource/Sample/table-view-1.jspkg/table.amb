@@ -1,0 +1,76 @@
+top: VBox {
+	table: TableView {
+		hasHeader:			true
+		isSelectable:		true
+		fieldNames: [
+			{field:"c0", title:"column 0"},
+			{field:"c1", title:"column 1"},
+			{field:"c2", title:"column 2"},
+			{field:"c3", title:"column 3"}
+		]
+		init: Init %{
+			let storage = Storage("storage") ;
+	        if(storage == null){
+		        console.log("Failed to allocate storage") ;
+	        }
+	        let table = TableInStorage("root", storage) ;
+	        if(table == null){
+		        console.log("Failed to allocate table") ;
+	        }
+			// Set table into this view
+			self.dataTable = table ;
+			self.reload() ;
+        %}
+		filter: Event(record) %{
+			console.log("filter: " + record.toString()) ;
+			return true ;
+		%}
+		virtualFields: Object {
+			c3: Func(rec) %{
+				let c0 = rec.c0 ;
+				let c1 = rec.c1 ;
+				console.log("{c0, c1} = {" + c0 + ", " + c1 + "}") ;
+				return c0 + c1 ;
+			%}
+		}
+		pressed: Event(row, col) %{
+			console.log("row    = " + row + "/" + self.rowCount) ;
+			console.log("column = " + col + "/" + self.columnCount) ;
+		%}
+    }
+    buttons: HBox {
+		rm_button: Button {
+			title: "Remove"
+			isEnabled: Listner(selected: top.table.didSelected) %{
+				return selected ;
+			%}
+			pressed: Event() %{
+				/*
+				let recs = top.table.selectedRecords() ;
+				console.log("selected recs: " + recs.length) ;
+				for(rec of recs){
+					console.log("rec: " + rec.toString()) ;
+				}
+				*/
+				top.table.removeSelectedRows() ;
+        	%}
+    	}
+	save_button: Button {
+		title: "Save"
+		pressed: Event() %{
+			if(top.table.dataTable.save()){
+				console.print("save ... done\n") ;
+			} else {
+				console.print("save ... failed\n") ;
+			}
+        %}
+    }
+	quit_button: Button {
+   		title: "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+        	%}
+    	}
+    }
+}
+

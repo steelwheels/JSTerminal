@@ -47,7 +47,7 @@ export function load_init_status(race: race_t): RecordIF | null {
 		console.error("Failed to load storage\n") ;
 		return null ;
 	}
-	let table = Table("data.status.initStatus", storage) ;
+	let table = TableInStorage("data.status.initStatus", storage) ;
 	if(table != null){
 		let recs = table.search(race, "race") ;
 		if(recs != null){
@@ -65,7 +65,7 @@ export function has_status_for_job(job: job_t, srcstatus: RecordIF): boolean {
 		console.error("Failed to load storage\n") ;
 		return false ;
 	}
-	let table = Table("data.status.job_requirement", storage) ;
+	let table = TableInStorage("data.status.job_requirement", storage) ;
 	if(table != null){
 		let result = false ;
 		let recs   = table.search(job, "job") ;

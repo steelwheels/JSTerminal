@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		050C4898259CB115002D4972 /* Welcome.jspkg in Resources */ = {isa = PBXBuildFile; fileRef = 050C4897259CB115002D4972 /* Welcome.jspkg */; };
-		05114A4028556491003DD8EB /* value-table-6.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05114A3D2855646C003DD8EB /* value-table-6.jspkg */; };
-		05114A4128556491003DD8EB /* value-table-7.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05114A3E2855646C003DD8EB /* value-table-7.jspkg */; };
-		05114A4228556491003DD8EB /* value-table-8.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05114A3F2855646C003DD8EB /* value-table-8.jspkg */; };
+		05114A4028556491003DD8EB /* table-view-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05114A3D2855646C003DD8EB /* table-view-1.jspkg */; };
+		05114A4128556491003DD8EB /* enum-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05114A3E2855646C003DD8EB /* enum-2.jspkg */; };
+		05114A4228556491003DD8EB /* storage-table-5.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05114A3F2855646C003DD8EB /* storage-table-5.jspkg */; };
 		05137F15260FFCBE00288A2C /* unit-test.log.OK in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05137F13260FFCB500288A2C /* unit-test.log.OK */; };
 		05150DFF2724098C001C66AE /* text.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 05150DFC27240973001C66AE /* text.js */; };
 		05150E002724098C001C66AE /* text.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05150DFB27240973001C66AE /* text.ts */; };
 		05150E012724098C001C66AE /* symbol.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 05150DF727240961001C66AE /* symbol.js */; };
 		05150E022724098C001C66AE /* symbol.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05150DF827240961001C66AE /* symbol.ts */; };
-		0518BFA7280307D200002DFC /* value-storage-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518BFA6280307AC00002DFC /* value-storage-2.jspkg */; };
-		0518BFA8280307D200002DFC /* value-storage-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518BFA5280307AC00002DFC /* value-storage-3.jspkg */; };
+		0518BFA7280307D200002DFC /* table-view-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518BFA6280307AC00002DFC /* table-view-3.jspkg */; };
+		0518BFA8280307D200002DFC /* storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518BFA5280307AC00002DFC /* storage-1.jspkg */; };
 		0519ECA626417C2300471F35 /* alert.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8D26417B9600471F35 /* alert.ts */; };
 		0519ECA726417C2300471F35 /* colors.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8B26417B9600471F35 /* colors.ts */; };
 		0519ECA826417C2300471F35 /* escape-code.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8F26417B9600471F35 /* escape-code.ts */; };
@@ -41,8 +41,8 @@
 		052A54342621A5480034369F /* curses-frame.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 052A54322621A5330034369F /* curses-frame.js */; };
 		052DF9D627254E1400392E19 /* collection0.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 052DF9D227254DF200392E19 /* collection0.js */; };
 		052DF9D727254E1400392E19 /* collection0.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 052DF9D327254DF200392E19 /* collection0.ts */; };
-		0537528C27869BA100EB3A2D /* value-table-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0537528A27869B8E00EB3A2D /* value-table-1.jspkg */; };
-		0537528D27869BA100EB3A2D /* value-table-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0537528B27869B8E00EB3A2D /* value-table-2.jspkg */; };
+		0537528C27869BA100EB3A2D /* storage-table-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0537528A27869B8E00EB3A2D /* storage-table-0.jspkg */; };
+		0537528D27869BA100EB3A2D /* storage-table-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0537528B27869B8E00EB3A2D /* storage-table-2.jspkg */; };
 		0538B15327A9584800079087 /* text-field.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0538B15227A9583100079087 /* text-field.jspkg */; };
 		0538B15427A9584800079087 /* checkbox.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0538B15127A9581F00079087 /* checkbox.jspkg */; };
 		053999C02621562D008B561C /* bitmap.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 050D9798261C02AA004FABF8 /* bitmap.jspkg */; };
@@ -56,7 +56,8 @@
 		053CD9E325A06E0400B5F690 /* num_guess.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05BAB09625A0661800DD59D7 /* num_guess.js */; };
 		053ED8EB27B9463400C13A57 /* console-1.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 053ED8E927B9461800C13A57 /* console-1.js */; };
 		053ED8EC27B9463400C13A57 /* console-1.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 053ED8EA27B9461800C13A57 /* console-1.ts */; };
-		054D3B112782B6FA00206B8E /* storage0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 054D3B102782B6DC00206B8E /* storage0.jspkg */; };
+		05451BA72867445A005BA957 /* storage-set-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05451BA628674438005BA957 /* storage-set-0.jspkg */; };
+		054D3B112782B6FA00206B8E /* storage-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 054D3B102782B6DC00206B8E /* storage-0.jspkg */; };
 		054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 051A55282771EA950093CE80 /* drawing.jspkg */; };
 		055765FA27C9083000BEF5FF /* enter-view-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 055765F927C9081600BEF5FF /* enter-view-2.jspkg */; };
 		055FCB3127FB3B1A00D79202 /* listner-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 055FCB3027FB3AF300D79202 /* listner-2.jspkg */; };
@@ -64,8 +65,8 @@
 		05809C2B27299E0F000A8456 /* collection1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05809C2927299DEE000A8456 /* collection1.jspkg */; };
 		05839D1B25C6A60D00653302 /* turtle.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05839D1A25C6A60D00653302 /* turtle.jspkg */; };
 		0586F79325BC008500AE9FEE /* controls.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0586F79225BC008500AE9FEE /* controls.jspkg */; };
-		05889767281B53D9001A6E67 /* value-table-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05889765281B5391001A6E67 /* value-table-3.jspkg */; };
-		05889768281B53D9001A6E67 /* value-table-5.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05889766281B539D001A6E67 /* value-table-5.jspkg */; };
+		05889767281B53D9001A6E67 /* storage-table-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05889765281B5391001A6E67 /* storage-table-3.jspkg */; };
+		05889768281B53D9001A6E67 /* storage-table-4.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05889766281B539D001A6E67 /* storage-table-4.jspkg */; };
 		058993FE253F1B1600663275 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058993FD253F1B1600663275 /* MultiViewController.swift */; };
 		0589F1C027132AB000D40424 /* types in Resources */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
 		0589F1C227132AB000D40424 /* adb.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
@@ -73,11 +74,11 @@
 		0589F1C427132ACA00D40424 /* adb.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BF27132AB000D40424 /* adb.js */; };
 		0589F1C527132ACA00D40424 /* adb.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BE27132AB000D40424 /* adb.ts */; };
 		0589F1C727132ACA00D40424 /* types in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0589F1BC27132AB000D40424 /* types */; };
-		058DC62B2858D435004B2060 /* value-storage-4.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 058DC6292858D3FA004B2060 /* value-storage-4.jspkg */; };
-		058DC62C2858D435004B2060 /* value-table-9.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 058DC62A2858D420004B2060 /* value-table-9.jspkg */; };
+		058DC62B2858D435004B2060 /* storage-table-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 058DC6292858D3FA004B2060 /* storage-table-1.jspkg */; };
+		058DC62C2858D435004B2060 /* table-view-2.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 058DC62A2858D420004B2060 /* table-view-2.jspkg */; };
 		05900E61260EF618008C3490 /* unit-test.jsh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05900E5F260EF610008C3490 /* unit-test.jsh */; };
-		059C0AA8279D422D00E7B594 /* value-table-4.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA6279D421500E7B594 /* value-table-4.jspkg */; };
-		059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* value-storage-1.jspkg */; };
+		059C0AA8279D422D00E7B594 /* table-view-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA6279D421500E7B594 /* table-view-0.jspkg */; };
+		059C0AA9279D422D00E7B594 /* storage-table-6.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA4279D420500E7B594 /* storage-table-6.jspkg */; };
 		059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */; };
 		059C0AAC279D425F00E7B594 /* LiL.jspkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059C0AAB279D424900E7B594 /* LiL.jspkg */; };
 		059F8ACB283BD3D200B93569 /* enum-0.js in Copy Files */ = {isa = PBXBuildFile; fileRef = 059F8ACA283BD3B600B93569 /* enum-0.js */; };
@@ -120,6 +121,8 @@
 		05D9A8AA263EACB8006D0FA2 /* KiwiLibrary.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */; };
 		05D9A8AB263EACB8006D0FA2 /* KiwiShell.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */; };
 		05D9A8AC263EACB8006D0FA2 /* KiwiComponent.d.ts in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */; };
+		05DB1B0F28674B38005FEB52 /* storage-array-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05DB1B0E28674B10005FEB52 /* storage-array-0.jspkg */; };
+		05DB1B1028674B38005FEB52 /* storage-dict-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05DB1B0D28674B10005FEB52 /* storage-dict-0.jspkg */; };
 		05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; };
 		05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05ED0F3325C8FBA100D00BBC /* graphics.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05ED0F3225C8FBA100D00BBC /* graphics.jspkg */; };
@@ -209,17 +212,20 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
-				058DC62B2858D435004B2060 /* value-storage-4.jspkg in Copy Files */,
-				058DC62C2858D435004B2060 /* value-table-9.jspkg in Copy Files */,
-				05114A4028556491003DD8EB /* value-table-6.jspkg in Copy Files */,
-				05114A4128556491003DD8EB /* value-table-7.jspkg in Copy Files */,
-				05114A4228556491003DD8EB /* value-table-8.jspkg in Copy Files */,
+				05DB1B0F28674B38005FEB52 /* storage-array-0.jspkg in Copy Files */,
+				05DB1B1028674B38005FEB52 /* storage-dict-0.jspkg in Copy Files */,
+				05451BA72867445A005BA957 /* storage-set-0.jspkg in Copy Files */,
+				058DC62B2858D435004B2060 /* storage-table-1.jspkg in Copy Files */,
+				058DC62C2858D435004B2060 /* table-view-2.jspkg in Copy Files */,
+				05114A4028556491003DD8EB /* table-view-1.jspkg in Copy Files */,
+				05114A4128556491003DD8EB /* enum-2.jspkg in Copy Files */,
+				05114A4228556491003DD8EB /* storage-table-5.jspkg in Copy Files */,
 				059F8ACB283BD3D200B93569 /* enum-0.js in Copy Files */,
 				05C92B432838FE9600CA2866 /* enum-1.jspkg in Copy Files */,
-				05889767281B53D9001A6E67 /* value-table-3.jspkg in Copy Files */,
-				05889768281B53D9001A6E67 /* value-table-5.jspkg in Copy Files */,
-				0518BFA7280307D200002DFC /* value-storage-2.jspkg in Copy Files */,
-				0518BFA8280307D200002DFC /* value-storage-3.jspkg in Copy Files */,
+				05889767281B53D9001A6E67 /* storage-table-3.jspkg in Copy Files */,
+				05889768281B53D9001A6E67 /* storage-table-4.jspkg in Copy Files */,
+				0518BFA7280307D200002DFC /* table-view-3.jspkg in Copy Files */,
+				0518BFA8280307D200002DFC /* storage-1.jspkg in Copy Files */,
 				055FCB3127FB3B1A00D79202 /* listner-2.jspkg in Copy Files */,
 				05D7566E27F3374C0090EDE1 /* listner-1.jspkg in Copy Files */,
 				05225BD127D8E82400326EB2 /* enter-view-3.jspkg in Copy Files */,
@@ -231,8 +237,8 @@
 				05150E012724098C001C66AE /* symbol.js in Copy Files */,
 				052DF9D727254E1400392E19 /* collection0.ts in Copy Files */,
 				05150E002724098C001C66AE /* text.ts in Copy Files */,
-				059C0AA9279D422D00E7B594 /* value-storage-1.jspkg in Copy Files */,
-				059C0AA8279D422D00E7B594 /* value-table-4.jspkg in Copy Files */,
+				059C0AA9279D422D00E7B594 /* storage-table-6.jspkg in Copy Files */,
+				059C0AA8279D422D00E7B594 /* table-view-0.jspkg in Copy Files */,
 				054D3B122782B70600206B8E /* drawing.jspkg in Copy Files */,
 				05FA549427BD156300DE03DE /* init.jspkg in Copy Files */,
 				0589F1C227132AB000D40424 /* adb.ts in Copy Files */,
@@ -249,9 +255,9 @@
 				0538B15427A9584800079087 /* checkbox.jspkg in Copy Files */,
 				056D27C7279D4AD100D3C8F6 /* icon.jspkg in Copy Files */,
 				059C0AAA279D422D00E7B594 /* popup-menu.jspkg in Copy Files */,
-				0537528C27869BA100EB3A2D /* value-table-1.jspkg in Copy Files */,
-				0537528D27869BA100EB3A2D /* value-table-2.jspkg in Copy Files */,
-				054D3B112782B6FA00206B8E /* storage0.jspkg in Copy Files */,
+				0537528C27869BA100EB3A2D /* storage-table-0.jspkg in Copy Files */,
+				0537528D27869BA100EB3A2D /* storage-table-2.jspkg in Copy Files */,
+				054D3B112782B6FA00206B8E /* storage-0.jspkg in Copy Files */,
 				0519ECA626417C2300471F35 /* alert.ts in Copy Files */,
 				0519ECA726417C2300471F35 /* colors.ts in Copy Files */,
 				0519ECA826417C2300471F35 /* escape-code.ts in Copy Files */,
@@ -311,16 +317,16 @@
 		050D9796261C02AA004FABF8 /* stdin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = stdin.js; sourceTree = "<group>"; };
 		050D9797261C02AA004FABF8 /* buttons.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = buttons.jspkg; sourceTree = "<group>"; };
 		050D9798261C02AA004FABF8 /* bitmap.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = bitmap.jspkg; sourceTree = "<group>"; };
-		05114A3D2855646C003DD8EB /* value-table-6.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-6.jspkg"; sourceTree = "<group>"; };
-		05114A3E2855646C003DD8EB /* value-table-7.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-7.jspkg"; sourceTree = "<group>"; };
-		05114A3F2855646C003DD8EB /* value-table-8.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-8.jspkg"; sourceTree = "<group>"; };
+		05114A3D2855646C003DD8EB /* table-view-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "table-view-1.jspkg"; sourceTree = "<group>"; };
+		05114A3E2855646C003DD8EB /* enum-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enum-2.jspkg"; sourceTree = "<group>"; };
+		05114A3F2855646C003DD8EB /* storage-table-5.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-5.jspkg"; sourceTree = "<group>"; };
 		05137F13260FFCB500288A2C /* unit-test.log.OK */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unit-test.log.OK"; sourceTree = "<group>"; };
 		05150DF727240961001C66AE /* symbol.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = symbol.js; sourceTree = "<group>"; };
 		05150DF827240961001C66AE /* symbol.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbol.ts; sourceTree = "<group>"; };
 		05150DFB27240973001C66AE /* text.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.ts; sourceTree = "<group>"; };
 		05150DFC27240973001C66AE /* text.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = text.js; sourceTree = "<group>"; };
-		0518BFA5280307AC00002DFC /* value-storage-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-3.jspkg"; sourceTree = "<group>"; };
-		0518BFA6280307AC00002DFC /* value-storage-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-2.jspkg"; sourceTree = "<group>"; };
+		0518BFA5280307AC00002DFC /* storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-1.jspkg"; sourceTree = "<group>"; };
+		0518BFA6280307AC00002DFC /* table-view-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "table-view-3.jspkg"; sourceTree = "<group>"; };
 		0519EC7B26417B7B00471F35 /* types */ = {isa = PBXFileReference; lastKnownFileType = folder; path = types; sourceTree = "<group>"; };
 		0519EC7D26417B7B00471F35 /* hangman.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hangman.js; sourceTree = "<group>"; };
 		0519EC7F26417B7B00471F35 /* hangman.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.ts; sourceTree = "<group>"; };
@@ -344,33 +350,34 @@
 		052A54322621A5330034369F /* curses-frame.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "curses-frame.js"; sourceTree = "<group>"; };
 		052DF9D227254DF200392E19 /* collection0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = collection0.js; sourceTree = "<group>"; };
 		052DF9D327254DF200392E19 /* collection0.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = collection0.ts; sourceTree = "<group>"; };
-		0537528A27869B8E00EB3A2D /* value-table-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-1.jspkg"; sourceTree = "<group>"; };
-		0537528B27869B8E00EB3A2D /* value-table-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-2.jspkg"; sourceTree = "<group>"; };
+		0537528A27869B8E00EB3A2D /* storage-table-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-0.jspkg"; sourceTree = "<group>"; };
+		0537528B27869B8E00EB3A2D /* storage-table-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-2.jspkg"; sourceTree = "<group>"; };
 		0538B15127A9581F00079087 /* checkbox.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = checkbox.jspkg; sourceTree = "<group>"; };
 		0538B15227A9583100079087 /* text-field.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "text-field.jspkg"; sourceTree = "<group>"; };
 		053ED8E927B9461800C13A57 /* console-1.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "console-1.js"; sourceTree = "<group>"; };
 		053ED8EA27B9461800C13A57 /* console-1.ts */ = {isa = PBXFileReference; lastKnownFileType = text; path = "console-1.ts"; sourceTree = "<group>"; };
-		054D3B102782B6DC00206B8E /* storage0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = storage0.jspkg; sourceTree = "<group>"; };
+		05451BA628674438005BA957 /* storage-set-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-set-0.jspkg"; sourceTree = "<group>"; };
+		054D3B102782B6DC00206B8E /* storage-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-0.jspkg"; sourceTree = "<group>"; };
 		055765F927C9081600BEF5FF /* enter-view-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "enter-view-2.jspkg"; sourceTree = "<group>"; };
 		055FCB3027FB3AF300D79202 /* listner-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "listner-2.jspkg"; sourceTree = "<group>"; };
 		056D27C6279D4AC100D3C8F6 /* icon.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = icon.jspkg; sourceTree = "<group>"; };
 		05809C2927299DEE000A8456 /* collection1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = collection1.jspkg; sourceTree = "<group>"; };
 		05839D1A25C6A60D00653302 /* turtle.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = turtle.jspkg; sourceTree = "<group>"; };
 		0586F79225BC008500AE9FEE /* controls.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = controls.jspkg; sourceTree = "<group>"; };
-		05889765281B5391001A6E67 /* value-table-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-3.jspkg"; sourceTree = "<group>"; };
-		05889766281B539D001A6E67 /* value-table-5.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-5.jspkg"; sourceTree = "<group>"; };
+		05889765281B5391001A6E67 /* storage-table-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-3.jspkg"; sourceTree = "<group>"; };
+		05889766281B539D001A6E67 /* storage-table-4.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-4.jspkg"; sourceTree = "<group>"; };
 		058993FB253F17F700663275 /* JSTerminal.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = JSTerminal.jspkg; sourceTree = "<group>"; };
 		058993FD253F1B1600663275 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
 		0589F1BC27132AB000D40424 /* types */ = {isa = PBXFileReference; lastKnownFileType = folder; path = types; sourceTree = "<group>"; };
 		0589F1BD27132AB000D40424 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0589F1BE27132AB000D40424 /* adb.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = adb.ts; sourceTree = "<group>"; };
 		0589F1BF27132AB000D40424 /* adb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = adb.js; sourceTree = "<group>"; };
-		058DC6292858D3FA004B2060 /* value-storage-4.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-4.jspkg"; sourceTree = "<group>"; };
-		058DC62A2858D420004B2060 /* value-table-9.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-9.jspkg"; sourceTree = "<group>"; };
+		058DC6292858D3FA004B2060 /* storage-table-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-1.jspkg"; sourceTree = "<group>"; };
+		058DC62A2858D420004B2060 /* table-view-2.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "table-view-2.jspkg"; sourceTree = "<group>"; };
 		05900E5F260EF610008C3490 /* unit-test.jsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "unit-test.jsh"; sourceTree = "<group>"; };
 		059C0AA3279D41FA00E7B594 /* popup-menu.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "popup-menu.jspkg"; sourceTree = "<group>"; };
-		059C0AA4279D420500E7B594 /* value-storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-storage-1.jspkg"; sourceTree = "<group>"; };
-		059C0AA6279D421500E7B594 /* value-table-4.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "value-table-4.jspkg"; sourceTree = "<group>"; };
+		059C0AA4279D420500E7B594 /* storage-table-6.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-table-6.jspkg"; sourceTree = "<group>"; };
+		059C0AA6279D421500E7B594 /* table-view-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "table-view-0.jspkg"; sourceTree = "<group>"; };
 		059C0AAB279D424900E7B594 /* LiL.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LiL.jspkg; sourceTree = "<group>"; };
 		059F8ACA283BD3B600B93569 /* enum-0.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "enum-0.js"; sourceTree = "<group>"; };
 		05A7302F27B2AB89005D5345 /* stepper.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = stepper.jspkg; sourceTree = "<group>"; };
@@ -404,6 +411,8 @@
 		05D9A8A7263EACB8006D0FA2 /* KiwiLibrary.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiLibrary.d.ts; sourceTree = "<group>"; };
 		05D9A8A8263EACB8006D0FA2 /* KiwiShell.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiShell.d.ts; sourceTree = "<group>"; };
 		05D9A8A9263EACB8006D0FA2 /* KiwiComponent.d.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KiwiComponent.d.ts; sourceTree = "<group>"; };
+		05DB1B0D28674B10005FEB52 /* storage-dict-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-dict-0.jspkg"; sourceTree = "<group>"; };
+		05DB1B0E28674B10005FEB52 /* storage-array-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-array-0.jspkg"; sourceTree = "<group>"; };
 		05DB6EFB252F210000ADA7AD /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
 		05ED0F3225C8FBA100D00BBC /* graphics.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = graphics.jspkg; sourceTree = "<group>"; };
 		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -525,6 +534,7 @@
 				051A55282771EA950093CE80 /* drawing.jspkg */,
 				059F8ACA283BD3B600B93569 /* enum-0.js */,
 				05C92B422838FE7700CA2866 /* enum-1.jspkg */,
+				05114A3E2855646C003DD8EB /* enum-2.jspkg */,
 				05A7303027B2AB98005D5345 /* enter-view-1.jspkg */,
 				055765F927C9081600BEF5FF /* enter-view-2.jspkg */,
 				05225BCE27D8E7DD00326EB2 /* enter-view-3.jspkg */,
@@ -557,26 +567,28 @@
 				0519EC9126417B9600471F35 /* stdin.ts */,
 				050D9796261C02AA004FABF8 /* stdin.js */,
 				05A7302F27B2AB89005D5345 /* stepper.jspkg */,
-				054D3B102782B6DC00206B8E /* storage0.jspkg */,
+				054D3B102782B6DC00206B8E /* storage-0.jspkg */,
+				0518BFA5280307AC00002DFC /* storage-1.jspkg */,
+				05DB1B0E28674B10005FEB52 /* storage-array-0.jspkg */,
+				05DB1B0D28674B10005FEB52 /* storage-dict-0.jspkg */,
+				05451BA628674438005BA957 /* storage-set-0.jspkg */,
+				0537528A27869B8E00EB3A2D /* storage-table-0.jspkg */,
+				058DC6292858D3FA004B2060 /* storage-table-1.jspkg */,
+				0537528B27869B8E00EB3A2D /* storage-table-2.jspkg */,
+				05889765281B5391001A6E67 /* storage-table-3.jspkg */,
+				05889766281B539D001A6E67 /* storage-table-4.jspkg */,
+				05114A3F2855646C003DD8EB /* storage-table-5.jspkg */,
+				059C0AA4279D420500E7B594 /* storage-table-6.jspkg */,
 				05150DF727240961001C66AE /* symbol.js */,
 				05150DF827240961001C66AE /* symbol.ts */,
+				059C0AA6279D421500E7B594 /* table-view-0.jspkg */,
+				05114A3D2855646C003DD8EB /* table-view-1.jspkg */,
+				058DC62A2858D420004B2060 /* table-view-2.jspkg */,
+				0518BFA6280307AC00002DFC /* table-view-3.jspkg */,
 				05150DFC27240973001C66AE /* text.js */,
 				05150DFB27240973001C66AE /* text.ts */,
 				0538B15227A9583100079087 /* text-field.jspkg */,
 				05839D1A25C6A60D00653302 /* turtle.jspkg */,
-				059C0AA4279D420500E7B594 /* value-storage-1.jspkg */,
-				0518BFA6280307AC00002DFC /* value-storage-2.jspkg */,
-				0518BFA5280307AC00002DFC /* value-storage-3.jspkg */,
-				058DC6292858D3FA004B2060 /* value-storage-4.jspkg */,
-				0537528A27869B8E00EB3A2D /* value-table-1.jspkg */,
-				0537528B27869B8E00EB3A2D /* value-table-2.jspkg */,
-				05889765281B5391001A6E67 /* value-table-3.jspkg */,
-				059C0AA6279D421500E7B594 /* value-table-4.jspkg */,
-				05889766281B539D001A6E67 /* value-table-5.jspkg */,
-				05114A3D2855646C003DD8EB /* value-table-6.jspkg */,
-				05114A3E2855646C003DD8EB /* value-table-7.jspkg */,
-				05114A3F2855646C003DD8EB /* value-table-8.jspkg */,
-				058DC62A2858D420004B2060 /* value-table-9.jspkg */,
 				0519EC8C26417B9600471F35 /* types */,
 			);
 			path = Sample;
