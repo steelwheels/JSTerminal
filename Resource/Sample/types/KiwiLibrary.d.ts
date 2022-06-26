@@ -61,6 +61,8 @@ interface ArrayIF {
 	values:	[any] ;
 
 	value(index: number): any | null ;
+	contains(value: any): boolean ;
+	
 	set(value: any, index: number): void ;
 	append(value: any): void ;
 }
@@ -70,6 +72,8 @@ interface SetIF {
 	values:	[any] ;
 
 	value(index: number): any | null ;
+	contains(value: any): boolean ;
+
 	insert(value: any): void ;
 }
 

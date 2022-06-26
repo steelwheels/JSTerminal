@@ -1,0 +1,40 @@
+{
+	party: {
+		class:				"Set"
+		values: [
+			2
+		]
+	}
+	members: {
+		class:				"Table"
+		id:					"members"
+		defaultFields: {
+			mid:			0
+			name:			"no-name"
+			hitPoint:		0
+		}
+		records: [
+		  {
+				mid:		1
+				name:		"Mick Jagger"
+				hitPoint:	1
+		  },
+		  {
+				mid:		2
+				name:		"Keith Richards"
+				hitPoint:	2
+		  },
+		  {
+				mid:		3
+				name:		"Bill Wyman"
+				hitPoint:	1
+		  },
+		  {
+				mid:		4
+				name:		"Charlie Watts"
+				hitPoint:	1
+		  }
+		]
+	}
+}
+

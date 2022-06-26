@@ -18,6 +18,7 @@
 		05150E022724098C001C66AE /* symbol.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 05150DF827240961001C66AE /* symbol.ts */; };
 		0518BFA7280307D200002DFC /* table-view-3.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518BFA6280307AC00002DFC /* table-view-3.jspkg */; };
 		0518BFA8280307D200002DFC /* storage-1.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518BFA5280307AC00002DFC /* storage-1.jspkg */; };
+		0518E1842868575100964AC2 /* table-view-4.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 0518E1832868572F00964AC2 /* table-view-4.jspkg */; };
 		0519ECA626417C2300471F35 /* alert.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8D26417B9600471F35 /* alert.ts */; };
 		0519ECA726417C2300471F35 /* colors.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8B26417B9600471F35 /* colors.ts */; };
 		0519ECA826417C2300471F35 /* escape-code.ts in Copy Files */ = {isa = PBXBuildFile; fileRef = 0519EC8F26417B9600471F35 /* escape-code.ts */; };
@@ -212,6 +213,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				0518E1842868575100964AC2 /* table-view-4.jspkg in Copy Files */,
 				05DB1B0F28674B38005FEB52 /* storage-array-0.jspkg in Copy Files */,
 				05DB1B1028674B38005FEB52 /* storage-dict-0.jspkg in Copy Files */,
 				05451BA72867445A005BA957 /* storage-set-0.jspkg in Copy Files */,
@@ -327,6 +329,7 @@
 		05150DFC27240973001C66AE /* text.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = text.js; sourceTree = "<group>"; };
 		0518BFA5280307AC00002DFC /* storage-1.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-1.jspkg"; sourceTree = "<group>"; };
 		0518BFA6280307AC00002DFC /* table-view-3.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "table-view-3.jspkg"; sourceTree = "<group>"; };
+		0518E1832868572F00964AC2 /* table-view-4.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "table-view-4.jspkg"; sourceTree = "<group>"; };
 		0519EC7B26417B7B00471F35 /* types */ = {isa = PBXFileReference; lastKnownFileType = folder; path = types; sourceTree = "<group>"; };
 		0519EC7D26417B7B00471F35 /* hangman.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hangman.js; sourceTree = "<group>"; };
 		0519EC7F26417B7B00471F35 /* hangman.ts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.ts; sourceTree = "<group>"; };
@@ -585,6 +588,7 @@
 				05114A3D2855646C003DD8EB /* table-view-1.jspkg */,
 				058DC62A2858D420004B2060 /* table-view-2.jspkg */,
 				0518BFA6280307AC00002DFC /* table-view-3.jspkg */,
+				0518E1832868572F00964AC2 /* table-view-4.jspkg */,
 				05150DFC27240973001C66AE /* text.js */,
 				05150DFB27240973001C66AE /* text.ts */,
 				0538B15227A9583100079087 /* text-field.jspkg */,

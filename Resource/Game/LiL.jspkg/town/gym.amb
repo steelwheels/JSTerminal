@@ -12,7 +12,7 @@ top: VBox {
 	race:		Init    %{ return race_t.human ;  %}
 	job:		Init    %{ return job_t.fighter ; %}
 	status:		Init    %{
-		let table   = top.storage.init_status ;
+		let table   = top.storage.table("init_status") ;
 		let records = table.search(race_t.human, "race") ;
 		return first(records) ;
 	%}
@@ -269,7 +269,7 @@ top: VBox {
 				return (name.length > 0) && (race != null) && (job != null) ;
 			%}
 			pressed: Event() %{
-				let table  = top.storage.members ;
+				let table  = top.storage.table("members") ;
 				let newrec = table.newRecord() ;
 				newrec.setValue(top.name,	"name") ;
 				newrec.setValue(top.race,	"race") ;
@@ -292,7 +292,7 @@ top: VBox {
 	%}
 
 	initialize_status: Func(race) %{
-		let table   = top.storage.init_status ;
+		let table   = top.storage.table("init_status") ;
 		let records = table.search(race, "race") ;
 		let status  = first(records) ;
 

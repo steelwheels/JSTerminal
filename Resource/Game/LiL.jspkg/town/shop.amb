@@ -19,7 +19,7 @@ top: VBox {
 			{field: "long_name",  title: "Long name"}
 		]
 		init: Init %{
-			self.dataTable = top.storage.weapons ;
+			self.dataTable = top.storage.table("weapons") ;
 			self.reload() ;
 		%}
 	}

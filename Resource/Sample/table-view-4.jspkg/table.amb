@@ -1,0 +1,67 @@
+top: VBox {
+	storage: Storage {
+		name:	"storage"
+		sets: {
+			party:		"party"
+		}
+		tables: {
+			members:	"members"
+		}
+	}
+
+	party_label: Label {
+		text: "Party"
+	}
+	party_table: TableView {
+		hasHeader:			true
+		isSelectable:		true
+		fieldNames: [
+			{title:"Name",		field:"name"},
+			{title:"Hit point",	field:"hitPoint"}
+		]
+		init: Init %{
+			self.dataTable = top.storage.table("members") ;
+			self.reload() ;
+        %}
+		filter: Event(record) %{
+			let party = top.storage.set("party") ;
+			return party.contains(record.mid) ;
+		%}
+		pressed: Event(row, col) %{
+			console.log("row    = " + row + "/" + self.rowCount) ;
+			console.log("column = " + col + "/" + self.columnCount) ;
+		%}
+    }
+
+	member_label: Label {
+		text: "Member"
+	}
+	member_table: TableView {
+		hasHeader:			true
+		isSelectable:		true
+		fieldNames: [
+			{title:"Name",		field:"name"},
+			{title:"Hit point",	field:"hitPoint"}
+		]
+		init: Init %{
+			self.dataTable = top.storage.table("members") ;
+			self.reload() ;
+        %}
+		filter: Event(record) %{
+			let party = top.storage.set("party") ;
+			return !party.contains(record.mid) ;
+		%}
+		pressed: Event(row, col) %{
+			console.log("row    = " + row + "/" + self.rowCount) ;
+			console.log("column = " + col + "/" + self.columnCount) ;
+		%}
+    }
+
+	quit_button: Button {
+   		title: "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+    }
+}
+

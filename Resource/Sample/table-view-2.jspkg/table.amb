@@ -13,7 +13,7 @@ top: VBox {
 			{title:"Name", field:"name"}
 		]
 		init: Init %{
-			self.dataTable = top.storage.party ;
+			self.dataTable = top.storage.table("party") ;
 			self.reload() ;
         %}
 		filter: Event(record) %{
