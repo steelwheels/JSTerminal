@@ -24,9 +24,9 @@ top: VBox {
 			console.log("filter: " + record.toString()) ;
 			return true ;
 		%}
-		pressed: Event(row, col) %{
-			console.log("row    = " + row + "/" + self.rowCount) ;
-			console.log("column = " + col + "/" + self.columnCount) ;
+		pressed: Event(record, field) %{
+			console.log("record = " + record + "\n") ;
+			console.log("field  = " + field  + "\n") ;
 		%}
     }
     buttons: HBox {

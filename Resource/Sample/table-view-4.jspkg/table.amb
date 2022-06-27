@@ -27,9 +27,12 @@ top: VBox {
 			let party = top.storage.set("party") ;
 			return party.contains(record.mid) ;
 		%}
-		pressed: Event(row, col) %{
-			console.log("row    = " + row + "/" + self.rowCount) ;
-			console.log("column = " + col + "/" + self.columnCount) ;
+		pressed: Event(record, field) %{
+			if(record.mid > 0){
+				record.mid = 0 ; // Remove from party
+				top.party_table.reload() ;
+				top.member_table.reload() ;
+			}
 		%}
     }
 
@@ -51,9 +54,14 @@ top: VBox {
 			let party = top.storage.set("party") ;
 			return !party.contains(record.mid) ;
 		%}
-		pressed: Event(row, col) %{
-			console.log("row    = " + row + "/" + self.rowCount) ;
-			console.log("column = " + col + "/" + self.columnCount) ;
+		pressed: Event(record, field) %{
+			let party = top.storage.set("party") ;
+			let count = party.count ;
+			if(count < 6){
+				record.mid = count + 1 ;
+				top.party_table.reload() ;
+				top.member_table.reload() ;
+			}
 		%}
     }
 
