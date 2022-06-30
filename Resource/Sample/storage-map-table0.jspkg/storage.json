@@ -1,0 +1,33 @@
+{
+	members: {
+		class:				"Table"
+		id:					"members"
+		defaultFields: {
+			pid:			0
+			name:			"no-name"
+		}
+		records: [
+		  {
+				pid:		2,
+				name:		"Mick Jagger"
+		  },
+		  {
+				pid:		1,
+				name:		"Keith Richards"
+		  },
+		  {
+				pid:		4,
+				name:		"Ron Wood"
+		  },
+		  {
+				pid:		3,
+				name:		"Charie Watts"
+		  },
+		  {
+				pid:		0,
+				name:		"Bill Wyman"
+		  }
+		]
+	}
+}
+
