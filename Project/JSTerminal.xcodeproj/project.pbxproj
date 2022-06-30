@@ -126,6 +126,7 @@
 		05DB1B1028674B38005FEB52 /* storage-dict-0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05DB1B0D28674B10005FEB52 /* storage-dict-0.jspkg */; };
 		05DB6EFC252F210000ADA7AD /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; };
 		05DB6EFD252F210000ADA7AD /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05DB6EFB252F210000ADA7AD /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05E43B78286DF5B40059CDF3 /* storage-map-table0.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05E43B77286DF58F0059CDF3 /* storage-map-table0.jspkg */; };
 		05ED0F3325C8FBA100D00BBC /* graphics.jspkg in Copy Files */ = {isa = PBXBuildFile; fileRef = 05ED0F3225C8FBA100D00BBC /* graphics.jspkg */; };
 		05F7AE47251874820077F527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE46251874820077F527 /* AppDelegate.swift */; };
 		05F7AE4B251874820077F527 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7AE4A251874820077F527 /* Document.swift */; };
@@ -213,6 +214,7 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
+				05E43B78286DF5B40059CDF3 /* storage-map-table0.jspkg in Copy Files */,
 				0518E1842868575100964AC2 /* table-view-4.jspkg in Copy Files */,
 				05DB1B0F28674B38005FEB52 /* storage-array-0.jspkg in Copy Files */,
 				05DB1B1028674B38005FEB52 /* storage-dict-0.jspkg in Copy Files */,
@@ -417,6 +419,7 @@
 		05DB1B0D28674B10005FEB52 /* storage-dict-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-dict-0.jspkg"; sourceTree = "<group>"; };
 		05DB1B0E28674B10005FEB52 /* storage-array-0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-array-0.jspkg"; sourceTree = "<group>"; };
 		05DB6EFB252F210000ADA7AD /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
+		05E43B77286DF58F0059CDF3 /* storage-map-table0.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "storage-map-table0.jspkg"; sourceTree = "<group>"; };
 		05ED0F3225C8FBA100D00BBC /* graphics.jspkg */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = graphics.jspkg; sourceTree = "<group>"; };
 		05F7AE43251874820077F527 /* JSTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7AE46251874820077F527 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -582,6 +585,7 @@
 				05889766281B539D001A6E67 /* storage-table-4.jspkg */,
 				05114A3F2855646C003DD8EB /* storage-table-5.jspkg */,
 				059C0AA4279D420500E7B594 /* storage-table-6.jspkg */,
+				05E43B77286DF58F0059CDF3 /* storage-map-table0.jspkg */,
 				05150DF727240961001C66AE /* symbol.js */,
 				05150DF827240961001C66AE /* symbol.ts */,
 				059C0AA6279D421500E7B594 /* table-view-0.jspkg */,
