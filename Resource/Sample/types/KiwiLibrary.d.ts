@@ -104,7 +104,8 @@ declare namespace LogLevel {
 }
 declare enum SortOrder {
   decreasing = 1,
-  increasing = 0
+  increasing = -1,
+  none = 0
 }
 declare namespace SortOrder {
   function description(param: SortOrder): string ;
@@ -588,6 +589,7 @@ interface Math {
 }
 declare function int(value: number): number;
 declare function compareNumbers(n0: number, n1: number): ComparisonResult;
+declare function compareStrings(s0: string, s1: string): ComparisonResult;
 /**
  * Debug.ts
  */

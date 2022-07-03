@@ -1,10 +1,4 @@
 {
-	party: {
-		class:				"Set"
-		values: [
-			2
-		]
-	}
 	members: {
 		class:				"Table"
 		id:					"members"
@@ -30,7 +24,7 @@
 				hitPoint:	1
 		  },
 		  {
-				mid:		4
+				mid:		0
 				name:		"Charlie Watts"
 				hitPoint:	1
 		  }

@@ -1,9 +1,6 @@
 top: VBox {
 	storage: Storage {
 		name:	"storage"
-		sets: {
-			party:		"party"
-		}
 		tables: {
 			members:	"members"
 		}
@@ -24,8 +21,13 @@ top: VBox {
 			self.reload() ;
         %}
 		filter: Event(record) %{
-			let party = top.storage.set("party") ;
-			return party.contains(record.mid) ;
+			return record.mid > 0 ;
+		%}
+		sortOrder: SortOrder.increasing
+		compare: Event(rec0, rec1) %{
+			let res = compareNumbers(rec0.mid, rec1.mid) ;
+			console.log("party: comp " + rec0.mid + ", " + rec1.mid + "->" + res) ;
+			return res ;
 		%}
 		pressed: Event(record, field) %{
 			if(record.mid > 0){
@@ -51,12 +53,17 @@ top: VBox {
 			self.reload() ;
         %}
 		filter: Event(record) %{
-			let party = top.storage.set("party") ;
-			return !party.contains(record.mid) ;
+			return record.mid == 0 ;
+		%}
+		sortOrder: SortOrder.increasing
+		compare: Event(rec0, rec1) %{
+			let res = compareStrings(rec0.name, rec1.name) ;
+			console.log("party: comp " + rec0.name + ", " + rec1.name + "->" + res) ;
+			return res ;
 		%}
 		pressed: Event(record, field) %{
-			let party = top.storage.set("party") ;
-			let count = party.count ;
+			let members = top.storage.table("members") ;
+			let count = members.recordCount ;
 			if(count < 6){
 				record.mid = count + 1 ;
 				top.party_table.reload() ;
