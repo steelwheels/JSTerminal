@@ -2,7 +2,6 @@ top: VBox {
     storage: Storage {
         name: "main"
 		tables: {
-			party:   "data.party",
 			members: "data.members"
 		}
     }
@@ -25,9 +24,16 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.storage.table("party") ;
+			self.dataTable = top.storage.table("members") ;
 			self.reload() ;
 		%}
+		sortOrder: SortOrder.increasing
+		compare: Event(rec0, rec1) %{
+            return compareNumbers(rec0.mid, rec1.mid) ;
+        %}
+        filter: Event(rec) %{
+            return (rec.mid > 0) ;
+        %}
     }
     editParty: HBox {
 	    join_button: Button {
@@ -36,13 +42,16 @@ top: VBox {
 			return didsel ;
 		%}
 		pressed: Event() %{
-			let recs = top.memberTable.selectedRecords() ;
-			let inc  = 0 ;
-			for(rec of recs){
-				/* Assign pid */
-				rec.pid =  top.partyTable.rowCount + inc ;
-				inc     += 1 ;
+			let rec = top.memberTable.selectedRecord() ;
+			if(rec == null){
+				return ;
 			}
+			let curnum  = top.partyTable.dataTable.recordCount ;
+			if(curnum >= 6){
+				return ;
+			}
+			rec.mid = curnum + 1 ; // mid is started from 1
+			console.log("new-mid = " + rec.mid) ;
 			top.partyTable.reload() ;
 			top.memberTable.reload() ;
 		%}
@@ -53,10 +62,10 @@ top: VBox {
 			return didsel ;
 		%}
 		pressed: Event() %{
-			let recs = top.partyTable.selectedRecords() ;
-			for(rec of recs){
-				/* Release pid */
-				rec.pid = 0 ;
+			let rec = top.partyTable.selectedRecord() ;
+			if(rec != null){
+				/* Release mid */
+				rec.mid = 0 ;
 				top.partyTable.reload() ;
 				top.memberTable.reload() ;
 			}
@@ -80,6 +89,13 @@ top: VBox {
 			self.dataTable = top.storage.table("members") ;
 			self.reload() ;
 		%}
+		sortOrder: SortOrder.increasing
+		compare: Event(rec0, rec1) %{
+            return compareStrings(rec0.name, rec1.name) ;
+        %}
+        filter: Event(rec) %{
+            return (rec.mid == 0) ;
+        %}
     }
     change_member: HBox {
 	    add_button: Button {
@@ -98,7 +114,7 @@ top: VBox {
 			return didsel ;
 		%}
 		pressed: Event() %{
-                        top.memberTable.removeSelectedRows() ;
+			top.memberTable.removeSelectedRecord() ;
 		%}
 	    }
     }

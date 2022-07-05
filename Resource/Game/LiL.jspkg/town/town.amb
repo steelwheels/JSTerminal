@@ -2,7 +2,6 @@ top: VBox {
     storage: Storage {
         name: "main"
 		tables: {
-			party:   "data.party",
 			members: "data.members"
 		}
     }
@@ -23,8 +22,15 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.storage.table("party") ;
+			self.dataTable = top.storage.table("members") ;
 			self.reload() ;
+		%}
+		sortOrder: SortOrder.increasing
+		compare: Event(rec0, rec1) %{
+			return compareNumbers(rec0.mid, rec1.mid) ;
+		%}
+		filter: Event(rec) %{
+			return (rec.mid > 0) ;
 		%}
     }
     tavern_button: Button {
@@ -61,9 +67,9 @@ top: VBox {
     ret_button: Button {
         title:  "Opening"
         pressed: Event() %{
-			let table = top.storage.table("party") ;
+			let members = top.storage.table("members") ;
 			console.print("Save table ... ") ;
-			if(table.save()){
+			if(members.save()){
 				console.print("done\n") ;
 			} else {
 				console.print("fail\n") ;

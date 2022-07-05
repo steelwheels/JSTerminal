@@ -36,14 +36,12 @@ top: VBox {
 				return selected ;
 			%}
 			pressed: Event() %{
-				/*
-				let recs = top.table.selectedRecords() ;
-				console.log("selected recs: " + recs.length) ;
-				for(rec of recs){
-					console.log("rec: " + rec.toString()) ;
+				let rec = top.table.selectedRecord() ;
+				if(rec == null){
+					return ;
 				}
-				*/
-				top.table.removeSelectedRows() ;
+				console.log("rec: " + rec.toString()) ;
+				top.table.removeSelectedRecord() ;
         	%}
     	}
 	save_button: Button {

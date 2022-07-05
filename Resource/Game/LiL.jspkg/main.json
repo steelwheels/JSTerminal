@@ -1,9 +1,5 @@
 {
 	data: {
-		party: {
-			class:	"segment",
-			file:	"data/party.json"
-		}
 		members: {
 			class:	"segment",
 			file:	"data/members.json"
