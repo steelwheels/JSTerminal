@@ -6,13 +6,8 @@
 function main(args) {
     console.print("# storage-mapping-0\n");
     let result = 0;
-    let storage = Storage("storage");
-    if (storage == null) {
-        console.print("Failed to allocate storage\n");
-        return -1;
-    }
     /* allocate mapping table */
-    let table = MappingTableInStorage("members", storage);
+    let table = MappingTable("storage", "members");
     if (table == null) {
         console.print("Failed to allocate table\n");
         return -1;

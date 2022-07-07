@@ -5,13 +5,7 @@
 /// <reference path="../types/KiwiLibrary.d.ts"/>
 function main(args) {
     console.print("# storage-table-0\n");
-    let storage = Storage("storage");
-    if (storage == null) {
-        console.print("Failed to allocate storage\n");
-        return -1;
-    }
-    console.print("dump: " + storage.toString());
-    let table = TableInStorage("storage", storage);
+    let table = Table("storage", "table");
     if (table == null) {
         console.print("Failed to allocate table\n");
         return -1;

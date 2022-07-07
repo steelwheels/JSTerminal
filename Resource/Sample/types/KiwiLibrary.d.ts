@@ -498,8 +498,8 @@ declare function Storage(path: string): StorageIF | null ;
 declare function ArrayInStorage(path: string, storage: StorageIF): ArrayIF | null ;
 declare function SetInStorage(path: string, storage: StorageIF): SetIF | null ;
 declare function DictionaryInStorage(path: string, storage: StorageIF): DictionaryIF | null ;
-declare function TableInStorage(path: string, storage: StorageIF): TableIF | null ;
-declare function MappingTableInStorage(path: string, storage: StorageIF): MappingTableIF | null ;
+declare function Table(storage: string, path: string): TableIF | null ;
+declare function MappingTable(storage: string, path: string): MappingTableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

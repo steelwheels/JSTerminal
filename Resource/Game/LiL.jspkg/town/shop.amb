@@ -2,7 +2,7 @@ top: VBox {
 	storage: Storage {
 		name:	"main"
 		tables: {
-			weapons:	"data.shop.weapons"
+			members:	"data.members"
 		}
 	}
 
@@ -10,19 +10,26 @@ top: VBox {
 		name: "shop_title"
 	}
 
-	weaponTable: TableView {
-		hasHeader:			true
-		isSelectable:		true
-		visibleRowCount:	10
-		fieldNames: [
-			{field: "short_name", title: "Short name"},
-			{field: "long_name",  title: "Long name"}
-		]
+    member_menu: PopupMenu {
+		items: ["item-a", "item-b", "item-c"]
 		init: Init %{
-			self.dataTable = top.storage.table("weapons") ;
-			self.reload() ;
+			let names = []
+			let table = top.storage.table("members") ;
+			let count = table.recordCount ;
+			for(let i=0 ; i<count ; i++){
+				let rec = table.record(i) ;
+				if(rec.mid > 0){
+					names.push(rec.name) ;
+				}
+			}
+			self.items = names ;
+			console.log("names = " + names) ;
 		%}
-	}
+		selected: Event(index) %{
+			console.log("selected = " + index) ;
+			top.index = index ;
+		%}
+    }
 
 	ret_button: Button {
 		title:  "Return to town"

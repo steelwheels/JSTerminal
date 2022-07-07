@@ -42,12 +42,7 @@ export function can_get_job(job: job_t, attr: attr_t): boolean
 }
 
 export function load_init_status(race: race_t): RecordIF | null {
-	let storage = Storage("main") ;
-	if(storage == null){
-		console.error("Failed to load storage\n") ;
-		return null ;
-	}
-	let table = TableInStorage("data.status.initStatus", storage) ;
+	let table = Table("main", "data.status.initStatus") ;
 	if(table != null){
 		let recs = table.search(race, "race") ;
 		if(recs != null){
@@ -60,12 +55,7 @@ export function load_init_status(race: race_t): RecordIF | null {
 }
 
 export function has_status_for_job(job: job_t, srcstatus: RecordIF): boolean {
-	let storage = Storage("main") ;
-	if(storage == null){
-		console.error("Failed to load storage\n") ;
-		return false ;
-	}
-	let table = TableInStorage("data.status.job_requirement", storage) ;
+	let table = Table("main", "data.status.job_requirement") ;
 	if(table != null){
 		let result = false ;
 		let recs   = table.search(job, "job") ;

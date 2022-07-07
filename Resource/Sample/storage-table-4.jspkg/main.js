@@ -5,18 +5,12 @@
 /// <reference path="../types/KiwiLibrary.d.ts"/>
 function main(args) {
     console.print("# storage-table-4\n");
-    let storage = Storage("storage");
-    if (storage == null) {
-        console.print("Failed to allocate storage\n");
-        return -1;
-    }
-    console.print("dump: " + storage.toString());
-    let table0 = TableInStorage("table0", storage);
+    let table0 = Table("storage", "table0");
     if (table0 == null) {
         console.print("Failed to allocate table0\n");
         return -1;
     }
-    let table1 = TableInStorage("table1", storage);
+    let table1 = Table("storage", "table1");
     if (table1 == null) {
         console.print("Failed to allocate table1\n");
         return -1;

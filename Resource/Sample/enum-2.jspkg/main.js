@@ -6,12 +6,7 @@
 /// <reference path="../types/KiwiComponent.d.ts"/>
 function main(args) {
     console.print("# enum-2\n");
-    let storage = Storage("storage");
-    if (storage == null) {
-        console.error("Failed to load storage\n");
-        return -1;
-    }
-    let table = TableInStorage("root", storage);
+    let table = Table("storage", "root");
     if (table == null) {
         console.error("Failed to allocate table\n");
         return -1;

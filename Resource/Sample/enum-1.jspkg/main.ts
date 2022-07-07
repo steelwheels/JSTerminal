@@ -12,13 +12,7 @@ function main(args: string[])
     console.print(" .mon	= " + Weekday.mon + "\n");
     console.print(" .tue	= " + Weekday.tue + "\n");
 
-	let storage = Storage("storage") ;
-	if(storage == null){
-			console.error("[Error] Failed to load\n") ;
-			return -1 ;
-	}
-
-	let table = TableInStorage("root", storage) ;
+	let table = Table("storage", "root") ;
 	if(table == null){
 			console.error("[Error] Failed to generate table\n") ;
 			return -1 ;

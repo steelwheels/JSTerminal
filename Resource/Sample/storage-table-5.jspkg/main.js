@@ -11,12 +11,12 @@ function main(args) {
         console.print("Failed to allocate storage\n");
         return -1;
     }
-    let party = TableInStorage("party", storage);
+    let party = Table("storage", "party");
     if (party == null) {
         console.error("Failed to allocate party table\n");
         return -1;
     }
-    let members = TableInStorage("members", storage);
+    let members = Table("storage", "members");
     if (members == null) {
         console.error("Failed to allocate members table\n");
         return -1;
