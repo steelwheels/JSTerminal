@@ -9,7 +9,7 @@ function main(args) {
     console.print(" .sun	= " + Weekday.sun + "\n");
     console.print(" .mon	= " + Weekday.mon + "\n");
     console.print(" .tue	= " + Weekday.tue + "\n");
-    let table = Table("storage", "root");
+    let table = TableStorage("storage", "root");
     if (table == null) {
         console.error("[Error] Failed to generate table\n");
         return -1;

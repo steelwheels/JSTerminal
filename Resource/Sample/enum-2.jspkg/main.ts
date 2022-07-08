@@ -9,7 +9,7 @@ function main(args : [string])
 {
 	console.print("# enum-2\n") ;
 
-	let table = Table("storage", "root") ;
+	let table = TableStorage("storage", "root") ;
 	if(table == null){
 			console.error("Failed to allocate table\n") ;
 			return -1 ;

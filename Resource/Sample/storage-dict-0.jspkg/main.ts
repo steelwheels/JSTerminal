@@ -9,12 +9,7 @@ function main(args : [string])
 	console.print("# storage-dict-0\n") ;
 	let result = 0 ;
 
-	let storage = Storage("storage") ;
-	if(storage == null){
-		console.print("Failed to allocate storage\n") ;
-		return -1 ;
-	}
-	let dict0 = DictionaryInStorage("dict0", storage) ;
+	let dict0 = DictionaryStorage("storage", "dict0") ;
 	if(dict0 == null){
 		console.print("Failed to allocate dictionary\n") ;
 		return -1 ;

@@ -9,12 +9,7 @@ function main(args : [string])
 	console.print("# storage-arr-0\n") ;
 	let result = 0 ;
 
-	let storage = Storage("storage") ;
-	if(storage == null){
-		console.print("Failed to allocate storage\n") ;
-		return -1 ;
-	}
-	let array0 = ArrayInStorage("array0", storage) ;
+	let array0 = ArrayStorage("storage", "array0") ;
 	if(array0 == null){
 		console.print("Failed to allocate array\n") ;
 		return -1 ;

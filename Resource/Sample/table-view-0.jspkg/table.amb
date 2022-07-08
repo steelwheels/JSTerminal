@@ -8,7 +8,7 @@ top: VBox {
 			{field:"c2", title:"column 2"}
 		]
 		init: Init %{
-	        let table = Table("storage", "root") ;
+	        let table = TableStorage("storage", "root") ;
 	        if(table == null){
 		        console.log("Failed to allocate table") ;
 	        }

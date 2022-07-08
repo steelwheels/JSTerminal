@@ -10,7 +10,7 @@ function main(args : [string])
 	let result = 0 ;
 
 	/* allocate mapping table */
-	let table = MappingTable("storage", "members") ;
+	let table = MappingTableStorage("storage", "members") ;
 	if(table == null){
 		console.print("Failed to allocate table\n") ;
 		return -1 ;

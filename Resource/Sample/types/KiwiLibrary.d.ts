@@ -495,11 +495,11 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 
 declare function Storage(path: string): StorageIF | null ;
-declare function ArrayInStorage(path: string, storage: StorageIF): ArrayIF | null ;
-declare function SetInStorage(path: string, storage: StorageIF): SetIF | null ;
-declare function DictionaryInStorage(path: string, storage: StorageIF): DictionaryIF | null ;
-declare function Table(storage: string, path: string): TableIF | null ;
-declare function MappingTable(storage: string, path: string): MappingTableIF | null ;
+declare function ArrayStorage(sotrage: string, path: string): ArrayIF | null ;
+declare function SetStorage(storage: string, path: string): SetIF | null ;
+declare function DictionaryStorage(storage: string, path: string): DictionaryIF | null ;
+declare function TableStorage(storage: string, path: string): TableIF | null ;
+declare function MappingTableStorage(storage: string, path: string): MappingTableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

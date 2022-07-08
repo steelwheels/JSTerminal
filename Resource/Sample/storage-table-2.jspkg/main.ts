@@ -8,7 +8,7 @@ function main(args : [string])
 {
 	console.print("# storage-table-2\n") ;
 
-	let table = Table("root", "character") ;
+	let table = TableStorage("root", "character") ;
 	if(table == null){
 		console.print("Failed to allocate table\n") ;
 		return -1 ;

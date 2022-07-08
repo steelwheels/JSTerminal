@@ -15,13 +15,13 @@ function main(args : [string])
 		return -1 ;
 	}
 
-	let party = Table("storage", "party") ;
+	let party = TableStorage("storage", "party") ;
 	if(party == null){
 			console.error("Failed to allocate party table\n") ;
 			return -1 ;
 	}
 
-	let members = Table("storage", "members") ;
+	let members = TableStorage("storage", "members") ;
 	if(members == null){
 			console.error("Failed to allocate members table\n") ;
 			return -1 ;

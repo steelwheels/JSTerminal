@@ -6,12 +6,7 @@
 function main(args) {
     console.print("# storage-set-0\n");
     let result = 0;
-    let storage = Storage("storage");
-    if (storage == null) {
-        console.print("Failed to allocate storage\n");
-        return -1;
-    }
-    let set0 = SetInStorage("set0", storage);
+    let set0 = SetStorage("storage", "set0");
     if (set0 == null) {
         console.print("Failed to allocate set\n");
         return -1;
