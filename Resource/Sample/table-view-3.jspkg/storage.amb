@@ -8,7 +8,7 @@ top: VBox {
     quit_button: Button {
 		title: "Quit"
 		pressed: Event() %{
-			let str = top.storage.table0.toString() ;
+			let str = top.storage.table("table0").toString() ;
 			console.print("table0 = " + str + "\n") ;
 			leaveView(1) ;
         %}

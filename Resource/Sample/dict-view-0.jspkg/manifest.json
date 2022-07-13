@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		dict_storage: "dict-storage.amb"
+	}
+	storages: {
+		storage: "storage.json"
+	}
+}
+

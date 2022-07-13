@@ -1,0 +1,25 @@
+top: VBox {
+	dict: Dictionary {
+		storage: "storage"
+		path:    "dict0"
+		init: Init %{
+			console.log("add value") ;
+			self.set("Hello", "d") ;
+		%}
+	}
+    quit_button: Button {
+		title: "Quit"
+		count: Listner(cnt: top.dict.count) %{
+			console.log("* count = " + cnt) ;
+			let keys = top.dict.keys ;
+			for(let key of keys){
+				let val = top.dict.value(key) ;
+				console.log(" " + key + " = " + val) ;
+			}
+		%}
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+	}
+}
+

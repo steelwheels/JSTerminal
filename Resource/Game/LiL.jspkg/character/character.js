@@ -40,7 +40,7 @@ var Character;
     }
     Character.can_get_job = can_get_job;
     function load_init_status(race) {
-        let table = Table("main", "data.status.initStatus");
+        let table = TableStorage("main", "data.status.initStatus");
         if (table != null) {
             let recs = table.search(race, "race");
             if (recs != null) {
@@ -54,7 +54,7 @@ var Character;
     }
     Character.load_init_status = load_init_status;
     function has_status_for_job(job, srcstatus) {
-        let table = Table("main", "data.status.job_requirement");
+        let table = TableStorage("main", "data.status.job_requirement");
         if (table != null) {
             let result = false;
             let recs = table.search(job, "job");
