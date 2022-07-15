@@ -1,0 +1,10 @@
+{
+	application: "main.js"
+	subviews: {
+		table: "table.amb"
+	}
+	storages: {
+		storage: "storage.json"
+	}
+}
+

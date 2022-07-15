@@ -2,9 +2,12 @@ top: VBox {
 	dict: Dictionary {
 		storage: "storage"
 		path:    "dict0"
-		init: Init %{
+	}
+    add_button: Button {
+		title: "Add"
+		pressed: Event() %{
 			console.log("add value") ;
-			self.set("Hello", "d") ;
+			top.dict.set("Hello", "d") ;
 		%}
 	}
     quit_button: Button {

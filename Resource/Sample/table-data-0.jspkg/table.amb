@@ -1,0 +1,32 @@
+top: VBox {
+	table: Table {
+		storage: "storage"
+		path:    "root"
+		
+		l_rcoount: Listner(count: self.recordCount) %{
+			console.log("recordCount: " + self.recordCount) ;
+		%}
+		l_fnames: Listner(fnames: self.fieldNames) %{
+			console.log("field-names: " + self.fieldNames) ;
+		%}
+	}
+    add_button: Button {
+		title: "Add"
+		pressed: Event() %{
+			console.log("add record") ;
+
+			let newrec = top.table.newRecord() ;
+			newrec.c0 = 30 ;
+			newrec.c1 = 31 ;
+			newrec.c2 = 32 ;
+			top.table.append(newrec) ;
+		%}
+	}
+    quit_button: Button {
+		title: "Quit"
+		pressed: Event() %{
+			leaveView(1) ;
+		%}
+	}
+}
+
