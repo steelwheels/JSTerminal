@@ -1,19 +1,17 @@
 top: VBox {
-	storage: Storage {
-		name:	"storage"
-		tables: {
-			party:	"party"
-		}
+	table_data: Table {
+		storage:	"storage"
+		path:		"party"
 	}
 
-	table: TableView {
+	table_view: TableView {
 		hasHeader:			true
 		isSelectable:		true
 		fieldNames: [
 			{title:"Name", field:"name"}
 		]
 		init: Init %{
-			self.dataTable = top.storage.table("party") ;
+			self.dataTable = top.table_data.table() ;
 			self.reload() ;
         %}
 		filter: Event(record) %{
@@ -29,7 +27,7 @@ top: VBox {
 	quit_button: Button {
    		title: "Quit"
 		pressed: Event() %{
-			leaveView(1) ;
+			leaveView(0) ;
 		%}
     }
 }

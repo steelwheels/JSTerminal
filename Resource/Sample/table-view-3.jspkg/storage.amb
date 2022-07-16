@@ -1,16 +1,50 @@
 top: VBox {
-    storage: Storage {
-		name: "storage"
-		tables: {
-			table0: "root"
-		}
+	table_data: Table {
+		storage: "storage"
+		path:	 "root"
+	}
+
+	table_view: TableView {
+		hasHeader:			true
+		isSelectable:		true
+		fieldNames: [
+			{title:"col-0", field:"c0"},
+			{title:"col-1", field:"c1"},
+			{title:"col-2", field:"c2"}
+		]
+		init: Init %{
+			self.dataTable = top.table_data.table() ;
+        %}
+		update: Listner(cnt: top.table_data.recordCount) %{
+			console.log("Table updated") ;
+			self.reload() ;
+		%}
+		filter: Event(record) %{
+			console.log("filter: " + record.toString()) ;
+			return true ;
+		%}
+		pressed: Event(record, field) %{
+			console.log("record = " + record + "\n") ;
+			console.log("field  = " + field  + "\n") ;
+		%}
     }
+
+    add_button: Button {
+		title: "Add"
+		pressed: Event() %{
+			let newrec = top.table_data.newRecord() ;
+			let count  = top.table_data.recordCount ;
+			newrec.c0 = count * 10 + 0 ;
+			newrec.c1 = count * 10 + 1 ;
+			newrec.c2 = count * 10 + 2 ;
+			top.table_data.append(newrec) ;
+        %}
+    }
+
     quit_button: Button {
 		title: "Quit"
 		pressed: Event() %{
-			let str = top.storage.table("table0").toString() ;
-			console.print("table0 = " + str + "\n") ;
-			leaveView(1) ;
+			leaveView(0) ;
         %}
     }
 }

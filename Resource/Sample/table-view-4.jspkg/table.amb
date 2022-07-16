@@ -1,9 +1,7 @@
 top: VBox {
-	storage: Storage {
-		name:	"storage"
-		tables: {
-			members:	"members"
-		}
+	table_data: Table {
+		storage:	"storage"
+		path:		"members"
 	}
 
 	party_label: Label {
@@ -17,7 +15,7 @@ top: VBox {
 			{title:"Hit point",	field:"hitPoint"}
 		]
 		init: Init %{
-			self.dataTable = top.storage.table("members") ;
+			self.dataTable = top.table_data.table() ;
 			self.reload() ;
         %}
 		filter: Event(record) %{
@@ -49,7 +47,7 @@ top: VBox {
 			{title:"Hit point",	field:"hitPoint"}
 		]
 		init: Init %{
-			self.dataTable = top.storage.table("members") ;
+			self.dataTable = top.table_data.table() ;
 			self.reload() ;
         %}
 		filter: Event(record) %{
@@ -62,7 +60,7 @@ top: VBox {
 			return res ;
 		%}
 		pressed: Event(record, field) %{
-			let members = top.storage.table("members") ;
+			let members = top.table_data.table() ;
 			let count = members.recordCount ;
 			if(count < 6){
 				record.mid = count + 1 ;
