@@ -1,10 +1,8 @@
 top: VBox {
-    storage: Storage {
-        name: "main"
-		tables: {
-			members: "data.members"
-		}
-    }
+	members: Table {
+        storage: "main"
+		path:	 "data.members"
+	}
 
     title: ImageView {
         name: "tavern_title"
@@ -24,7 +22,7 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.storage.table("members") ;
+			self.dataTable = top.members.table() ;
 			self.reload() ;
 		%}
 		sortOrder: SortOrder.increasing
@@ -86,7 +84,7 @@ top: VBox {
                 {field:"magicPoint",    title:"MP"}
         ]
 		init: Init %{
-			self.dataTable = top.storage.table("members") ;
+			self.dataTable = top.members.table() ;
 			self.reload() ;
 		%}
 		sortOrder: SortOrder.increasing
@@ -103,7 +101,7 @@ top: VBox {
 		pressed: Event() %{
 			let record = enterView("gym", null) ;
 			if(isRecord(record)){
-				top.storage.table("members").append(record) ;
+				top.members.table().append(record) ;
 				top.memberTable.reload() ;
 			}
 		%}
@@ -121,7 +119,7 @@ top: VBox {
     quit_button: Button {
         title:  "Quit"
         pressed: Event() %{
-		top.storage.table("members").save() ;
+		top.members.table().save() ;
 		leaveView(0) ;
         %}
     }

@@ -1,9 +1,7 @@
 top: VBox {
-	storage: Storage {
-		name:	"main"
-		tables: {
-			members:	"data.members"
-		}
+	members: Table {
+		storage:	"main"
+		path:		"data.members"
 	}
 
 	title: ImageView {
@@ -14,7 +12,7 @@ top: VBox {
 		items: ["item-a", "item-b", "item-c"]
 		init: Init %{
 			let names = []
-			let table = top.storage.table("members") ;
+			let table = top.members.table() ;
 			let count = table.recordCount ;
 			for(let i=0 ; i<count ; i++){
 				let rec = table.record(i) ;

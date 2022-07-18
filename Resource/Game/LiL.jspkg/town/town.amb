@@ -1,10 +1,8 @@
 top: VBox {
-    storage: Storage {
-        name: "main"
-		tables: {
-			members: "data.members"
-		}
-    }
+	members: Table {
+		storage:	"main"
+		path:		"data.members"
+	}
 
     title: ImageView {
         name: "town_title"
@@ -22,7 +20,7 @@ top: VBox {
 					{field:"magicPoint",    title:"MP"}
 			]
 		init: Init %{
-			self.dataTable = top.storage.table("members") ;
+			self.dataTable = top.members.table() ;
 			self.reload() ;
 		%}
 		sortOrder: SortOrder.increasing
@@ -67,7 +65,7 @@ top: VBox {
     ret_button: Button {
         title:  "Opening"
         pressed: Event() %{
-			let members = top.storage.table("members") ;
+			let members = top.members.table() ;
 			console.print("Save table ... ") ;
 			if(members.save()){
 				console.print("done\n") ;

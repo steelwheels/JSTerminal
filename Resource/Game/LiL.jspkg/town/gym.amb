@@ -1,10 +1,11 @@
 top: VBox {
-	storage: Storage {
-		name:	"main"
-		tables: {
-			init_status: "data.status.init_status",
-			members:	 "data.members"
-		}
+	init_status: Table {
+		storage: "main"
+		path:	"data.status.init_status"
+	}
+	members: Table {
+		storage: "main"
+		path:	 "data.members"
 	}
 
 	bonus:		10
@@ -12,7 +13,7 @@ top: VBox {
 	race:		Init    %{ return race_t.human ;  %}
 	job:		Init    %{ return job_t.fighter ; %}
 	status:		Init    %{
-		let table   = top.storage.table("init_status") ;
+		let table   = top.init_status.table() ;
 		let records = table.search(race_t.human, "race") ;
 		return first(records) ;
 	%}
@@ -269,7 +270,7 @@ top: VBox {
 				return (name.length > 0) && (race != null) && (job != null) ;
 			%}
 			pressed: Event() %{
-				let table  = top.storage.table("members") ;
+				let table  = top.members.table() ;
 				let newrec = table.newRecord() ;
 				newrec.setValue(top.name,	"name") ;
 				newrec.setValue(top.race,	"race") ;
@@ -292,7 +293,7 @@ top: VBox {
 	%}
 
 	initialize_status: Func(race) %{
-		let table   = top.storage.table("init_status") ;
+		let table   = top.init_status.table() ;
 		let records = table.search(race, "race") ;
 		let status  = first(records) ;
 
