@@ -1,16 +1,23 @@
 top: VBox {
-    index: 0
     menu: PopupMenu {
-		items: ["item-a", "item-b", "item-c"]
-		selected: Event(index) %{
-			console.log("selected = " + index) ;
-			top.index = index ;
+		items: [
+			{title: "item-a", value: 0},
+			{title: "item-b", value: 1},
+			{title: "item-c", value: 2}
+		]
+		selected: Event(value) %{
+			console.log("selected = " + value) ;
 		%}
     }
+	add_button: Button {
+		title:   "Add menu item"
+        pressed: Event() %{
+			top.menu.addItem("item-d", 3) ;
+        %}
+	}
     ok_button: Button {
 		title:   "OK"
         pressed: Event() %{
-			console.log("pressed: OK -> " + top.index) ;
 	    	leaveView(1) ;
         %}
     }

@@ -30,12 +30,14 @@ top: VBox {
 		filter: Event(rec) %{
 			return (rec.mid > 0) ;
 		%}
+		l_update: Listner(update: top.members.update) %{
+			self.reload() ;
+		%}
     }
     tavern_button: Button {
         title:  "Tavern"
         pressed: Event() %{
 			enterView("tavern", null) ;
-			top.partyTable.reload() ;
         %}
     }
     inn_button: Button {

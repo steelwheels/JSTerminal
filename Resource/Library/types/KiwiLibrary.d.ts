@@ -397,7 +397,7 @@ interface RecordIF {
 	fieldNames:		string[] ;
 
 	value(name: string):			any ;
-	setValue(value: any, name: string):	boolean ;
+	setValue(value: any, name: string):	void ;
 
 	toString(): 		string ;
 }

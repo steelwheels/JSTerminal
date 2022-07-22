@@ -32,6 +32,9 @@ top: VBox {
         filter: Event(rec) %{
             return (rec.mid > 0) ;
         %}
+		l_update: Listner(update: top.members.update) %{
+			self.reload() ;
+		%}
     }
     editParty: HBox {
 	    join_button: Button {
@@ -49,9 +52,6 @@ top: VBox {
 				return ;
 			}
 			rec.mid = curnum + 1 ; // mid is started from 1
-			console.log("new-mid = " + rec.mid) ;
-			top.partyTable.reload() ;
-			top.memberTable.reload() ;
 		%}
 	    }
 	    leave_button: Button {
@@ -64,8 +64,6 @@ top: VBox {
 			if(rec != null){
 				/* Release mid */
 				rec.mid = 0 ;
-				top.partyTable.reload() ;
-				top.memberTable.reload() ;
 			}
 		%}
 	    }
@@ -94,6 +92,9 @@ top: VBox {
         filter: Event(rec) %{
             return (rec.mid == 0) ;
         %}
+		l_update: Listner(update: top.members.update) %{
+			self.reload() ;
+		%}
     }
     change_member: HBox {
 	    add_button: Button {
@@ -102,7 +103,6 @@ top: VBox {
 			let record = enterView("gym", null) ;
 			if(isRecord(record)){
 				top.members.table().append(record) ;
-				top.memberTable.reload() ;
 			}
 		%}
 	    }
