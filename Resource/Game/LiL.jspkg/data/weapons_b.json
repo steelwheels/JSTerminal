@@ -1,0 +1,21 @@
+{
+	class: "Table",
+	defaultFields: {
+		weapon_id:		0
+		uknown:			false
+		countw:			0
+	}
+	records: [
+	  {
+			weapon_id:		weapon_t.short_sword,
+			unknown:		true
+			count:			0
+	  },
+	  {
+			weapon_id:		weapon_t.long_sword,
+			unknown:		true
+			count:			0
+	  }
+	]
+}
+

@@ -3,30 +3,36 @@ top: VBox {
 		storage:	"main"
 		path:		"data.members"
 	}
+	weapons: Table {
+		storage:	"main"
+		path:		"data.list.weapons"
+	}
 
 	title: ImageView {
 		name: "shop_title"
 	}
 
-    member_menu: PopupMenu {
-		items: ["item-a", "item-b", "item-c"]
+    weapon_table: TableView {
+		hasHeader:    true
+		isSelectable: true
+		fieldNames: [
+			{field:"count",			title:"Count"},
+			{field:"long_name",     title:"Name"},
+			{field:"price",         title:"Price"}
+		]
 		init: Init %{
-			let names = []
-			let table = top.members.table() ;
-			let count = table.recordCount ;
-			for(let i=0 ; i<count ; i++){
-				let rec = table.record(i) ;
-				if(rec.mid > 0){
-					names.push(rec.name) ;
-				}
-			}
-			self.items = names ;
-			console.log("names = " + names) ;
+			self.dataTable = top.weapons.table() ;
+			self.reload() ;
 		%}
-		selected: Event(index) %{
-			console.log("selected = " + index) ;
-			top.index = index ;
+		filter: Event(rec) %{
+			return (rec.price > 0) ;
 		%}
+		virtualFields: Object {
+			count:	Func(self, record) %{
+					let wid   = record.weapon_id ;
+					return wid ;
+			%}
+		}
     }
 
 	ret_button: Button {

@@ -12,9 +12,9 @@ top: VBox {
 		text: "Party members"
     }
     partyTable: TableView {
-		hasHeader:       true
-		isSelectable:    true
-		visibleRowCount: 6
+		hasHeader:		true
+		isSelectable:	true
+		rowCount:		6
 		fieldNames: [
 					{field:"name",          title:"Name"},
 					{field:"level",         title:"Level"},
@@ -47,7 +47,7 @@ top: VBox {
 			if(rec == null){
 				return ;
 			}
-			let curnum  = top.partyTable.dataTable.recordCount ;
+			let curnum  = top.partyTable.recordCount ;
 			if(curnum >= 6){
 				return ;
 			}

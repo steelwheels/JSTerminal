@@ -4,7 +4,7 @@
 			class:	"segment",
 			file:	"data/members.json"
 		}
-		status: {
+		parameters: {
 			init_status: {
 				class:	"segment",
 				file:	"data/init_status.json"
@@ -12,6 +12,18 @@
 			job_requirement: {
 				class:	"segment",
 				file:	"data/job_requirement.json"
+			}
+		}
+		having: {
+			weapons: {
+				class:	"segment",
+				file:	"data/weapons_b.json"
+			}
+		}
+		list: {
+			weapons: {
+				class:	"segment",
+				file:	"data/weapons.json"
 			}
 		}
 	}

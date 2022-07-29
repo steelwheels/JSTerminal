@@ -1,16 +1,15 @@
 top: VBox {
+    title: ImageView {
+        name: "town_title"
+    }
 	members: Table {
 		storage:	"main"
 		path:		"data.members"
 	}
-
-    title: ImageView {
-        name: "town_title"
-    }
     party_title: Label {
 		text: "The current party"
     }
-    partyTable: TableView {
+    party_table: TableView {
 		hasHeader:    true
 		isSelectable: true
 		fieldNames: [

@@ -49,7 +49,7 @@ top: VBox {
 	selection: Int 0
     table: Table {
 		columnCount:	Int	3
-		rowCount:	Int	2
+		recordCount:	Int	2
 		cell: Icon {
 			image: String "calendar"
 			title: String "calendar"

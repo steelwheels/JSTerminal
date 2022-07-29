@@ -1,7 +1,7 @@
 top: VBox {
 	init_status: Table {
 		storage: "main"
-		path:	"data.status.init_status"
+		path:	"data.parameters.init_status"
 	}
 	members: Table {
 		storage: "main"

@@ -14,8 +14,8 @@
 		"character/weapon.js"
 	]
 	definitions: [
-		"character/weapon_t.json",
-		"character/character_t.json"
+		"data/weapons_t.json",
+		"data/character_t.json"
 	]
 	images: {
 		main_title	: "images/main.png"

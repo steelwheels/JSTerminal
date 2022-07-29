@@ -1,7 +1,27 @@
 top: VBox {
+	mid: 0
     title: ImageView {
-	name: "inn_title"
+		name: "inn_title"
     }
+	members: Table {
+		storage:	"main"
+		path:		"data.members"
+	}
+	member_selector: PopupMenu {
+		selected: Event(value) %{
+			console.log("selected = " + value) ;
+		%}
+		init: Init %{
+			let count = top.members.recordCount ;
+			for(let i=0 ; i<count ; i++){
+				let rec = top.members.record(i) ;
+				if(rec.mid > 0) {
+					self.addItem(rec.name, rec.mid) ;
+					console.log("addItem: " + rec.name + ", " + rec.mid) ;
+				}
+			}
+		%}
+	}
     ret_button: Button {
         title:  "Return to town"
         pressed: Event() %{

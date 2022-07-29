@@ -1,0 +1,48 @@
+{
+	class: "Table",
+	defaultFields: {
+		id:			weapon_t.short_sword,
+		long_name:	"sword",
+		short_name:	"",
+		price:		0
+	}
+	records: [
+	  {
+			id:				weapon_t.short_sword,
+			long_name:		"short sword",
+			short_name:		"sword",
+			price:			10
+	  },
+	  {
+			id:				weapon_t.long_sword,
+			long_name:		"long sword",
+			short_name:		"sword",
+			price:			20
+	  },
+	  {
+			id:				weapon_t.anointed_mace,
+			long_name:		"anointed mace",
+			short_name:		"knobbed stick",
+			price:			30
+	  }
+	  {
+			id:				weapon_t.anointed_flail,
+			long_name:		"anointed flail",
+			short_name:		"stick chain",
+			price:			150
+	  }
+	  {
+			id:				weapon_t.staff,
+			long_name:		"staff",
+			short_name:		"stick",
+			price:			10
+	  }
+	  {
+			id:				weapon_t.dagger,
+			long_name:		"dagger",
+			short_name:		"dagger",
+			price:			5
+	  }
+	]
+}
+

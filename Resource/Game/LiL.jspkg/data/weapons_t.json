@@ -4,6 +4,10 @@
 		weapon_t: {
 			short_sword:		0
         	long_sword:			1
+			anointed_mace:		2
+			anointed_flail:		3
+			staff:				4
+			dagger:				5
 		}
 	}
 }

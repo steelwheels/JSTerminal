@@ -22,7 +22,7 @@ top: VBox {
 			return true ;
 		%}
 		virtualFields: Object {
-			c3: Func(rec) %{
+			c3: Func(self, rec) %{
 				let c0 = rec.c0 ;
 				let c1 = rec.c1 ;
 				console.log("{c0, c1} = {" + c0 + ", " + c1 + "}") ;
