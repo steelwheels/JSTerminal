@@ -13,7 +13,6 @@ top: VBox {
     }
     partyTable: TableView {
 		hasHeader:		true
-		isSelectable:	true
 		rowCount:		6
 		fieldNames: [
 					{field:"name",          title:"Name"},
@@ -74,7 +73,6 @@ top: VBox {
     }
     memberTable: TableView {
 		hasHeader:    true
-		isSelectable: true
 		fieldNames: [
                 {field:"name",          title:"Name"},
                 {field:"level",         title:"Level"},

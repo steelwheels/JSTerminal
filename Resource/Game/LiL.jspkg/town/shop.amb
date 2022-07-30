@@ -1,7 +1,11 @@
 top: VBox {
-	members: Table {
+	global: Dictionary {
 		storage:	"main"
-		path:		"data.members"
+		path:		"data.global.dict"
+	}
+	having_weapons: Table {
+		storage:	"main"
+		path:		"data.having.weapons"
 	}
 	weapons: Table {
 		storage:	"main"
@@ -14,11 +18,10 @@ top: VBox {
 
     weapon_table: TableView {
 		hasHeader:    true
-		isSelectable: true
 		fieldNames: [
-			{field:"count",			title:"Count"},
-			{field:"long_name",     title:"Name"},
-			{field:"price",         title:"Price"}
+			{field:"count",		title:"Count"},
+			{field:"name",     	title:"Name"},
+			{field:"price",		title:"Price"}
 		]
 		init: Init %{
 			self.dataTable = top.weapons.table() ;
@@ -27,10 +30,31 @@ top: VBox {
 		filter: Event(rec) %{
 			return (rec.price > 0) ;
 		%}
+		isEnable: Func(self, record) %{
+			return top.global.value("money") >= record.price ;
+		%}
 		virtualFields: Object {
 			count:	Func(self, record) %{
-					let wid   = record.weapon_id ;
-					return wid ;
+					let hrecs = top.having_weapons.search(
+						"weapon_id", record.weapon_id) ;
+					if(hrecs.length > 0){
+						let hrec = hrecs[0] ;
+						if(isNumber(hrec.count)){
+							return hrec.count ;
+						}
+					}
+					return 0 ;
+			%}
+			name: Func(self, record) %{
+					let hrecs = top.having_weapons.search(
+						"weapon_id", record.weapon_id) ;
+					if(hrecs.length > 0){
+						let hrec = hrecs[0] ;
+						if(hrec.isKnown){
+							return record.long_name ;
+						}
+					}
+					return record.short_name ;
 			%}
 		}
     }

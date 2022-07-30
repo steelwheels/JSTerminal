@@ -1,5 +1,9 @@
 {
 	data: {
+		global: {
+			class:	"segment",
+			file:	"data/global.json"
+		}
 		members: {
 			class:	"segment",
 			file:	"data/members.json"

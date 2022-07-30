@@ -6,7 +6,6 @@ top: VBox {
 
 	table_view: TableView {
 		hasHeader:			true
-		isSelectable:		true
 		fieldNames: [
 			{title:"Name", field:"name"}
 		]

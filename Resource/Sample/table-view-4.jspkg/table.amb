@@ -9,7 +9,6 @@ top: VBox {
 	}
 	party_table: TableView {
 		hasHeader:			true
-		isSelectable:		true
 		fieldNames: [
 			{title:"Name",		field:"name"},
 			{title:"Hit point",	field:"hitPoint"}
@@ -41,7 +40,6 @@ top: VBox {
 	}
 	member_table: TableView {
 		hasHeader:			true
-		isSelectable:		true
 		fieldNames: [
 			{title:"Name",		field:"name"},
 			{title:"Hit point",	field:"hitPoint"}
