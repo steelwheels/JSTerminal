@@ -14,6 +14,7 @@ top: VBox {
 		fieldNames: [
 					{field:"name",          title:"Name"},
 					{field:"level",         title:"Level"},
+					{field:"job",         	title:"Job"},
 					{field:"hitPoint",      title:"HP"},
 					{field:"magicPoint",    title:"MP"}
 			]

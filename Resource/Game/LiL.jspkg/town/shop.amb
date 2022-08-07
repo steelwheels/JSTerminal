@@ -131,6 +131,15 @@ top: VBox {
 					newrec.count     = 1 ;
 					top.having_weapons.append(newrec) ;
 				}
+				/* Enter purchase view */
+				let isknown = false ;
+				let hrecs  = top.having_weapons.search("weapon_id", wid) ;
+				if(hrecs.length > 0){
+					isknown = hrecs[0].isKnown ;
+				}
+				enterView("purchase", {
+					weapon_id: wid, is_known: isknown
+				}) ;
 				/* Update money */
 				top.global.dictionary.money -= rec.price ;
 			}

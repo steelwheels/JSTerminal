@@ -1,0 +1,62 @@
+top: VBox
+{
+	weapon_id:	-1
+	is_known:    false
+
+	weapons: Table {
+		storage:	"main"
+		path:		"data.list.weapons"
+	}
+	members: Table {
+		storage:	"main"
+		path:		"data.members"
+	}
+
+	selected_item: HBox {
+		label: Label {
+			text: "Selected equipment: "
+		}
+		item: Label {
+			text: Listner(wid: top.weapon_id, isknown: top.is_known) %{
+				let recs = top.weapons.search("weapon_id", wid) ;
+				if(recs.length > 0){
+					return isknown ? recs[0].long_name : recs[0].short_name ;
+				} else {
+					return "unknown" ;
+				}
+			%}
+		}
+	}
+
+	selected_member: VBox {
+		label: Label {
+			text: "Select member to equip:"
+		}
+		member_table: TableView {
+			hasHeader:		true
+			fieldNames: [
+				{field:"name",		title:"Name"},
+				{field:"level",		title:"Level"},
+				{field:"job",		title:"Job"}
+			]
+			init: Init %{
+				self.dataTable = top.members.table() ;
+				self.reload() ;
+			%}
+		}
+	}
+
+	ret_button: Button {
+		title:  "Do not buy"
+		pressed: Event() %{
+			leaveView(false) ;
+		%}
+	}
+
+	init: Init %{
+		top.weapon_id = Argument.weapon_id ;
+		top.is_known  = Argument.is_known ;
+		console.log("set top.weapon_name = " + top.weapon_id + top.is_known) ;
+	%}
+}
+

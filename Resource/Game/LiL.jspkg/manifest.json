@@ -6,28 +6,30 @@
 		tavern:		"town/tavern.amb",
 		inn:     	"town/inn.amb",
 		temple:	 	"town/temple.amb",
-		shop:	 	"town/shop.amb"
+		shop:	 	"town/shop.amb",
+		purchase:	"town/purchase.amb",
 		gym:	 	"town/gym.amb"
 	}
 	libraries: [
 		"character/character.js",
-		"character/weapon.js"
+		"character/item.js"
 	]
 	definitions: [
+		"data/item_t.json",
 		"data/weapons_t.json",
 		"data/character_t.json"
 	]
 	images: {
-		main_title	: "images/main.png"
-		town_title	: "town/images/town.png"
+		main_title		: "images/main.png"
+		town_title		: "town/images/town.png"
 		tavern_title	: "town/images/tavern.png"
-		inn_title	: "town/images/inn.png"
-		shop_title	: "town/images/shop.png"
+		inn_title		: "town/images/inn.png"
+		shop_title		: "town/images/shop.png"
 		temple_title	: "town/images/temple.png"
-		gym_title	: "town/images/gym.png"
+		gym_title		: "town/images/gym.png"
 	}
 	storages: {
-		main:  		"main.json"
+		main			: "main.json"
 	}
 }
 

@@ -1,0 +1,10 @@
+{
+	class:	"enumTable",
+	definitions: {
+		item_kind_t: {
+			item_weapon:	0,
+			item_armor:		1
+		}
+	}
+}
+
