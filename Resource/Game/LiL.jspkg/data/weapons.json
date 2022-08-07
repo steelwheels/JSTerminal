@@ -4,43 +4,50 @@
 		weapon_id:			weapon_t.short_sword,
 		long_name:			"sword",
 		short_name:			"",
+		match:				"",
 		price:				0
 	}
 	records: [
 	  {
-			weapon_id:		weapon_t.short_sword,
-			long_name:		"short sword",
-			short_name:		"sword",
-			price:			100
-	  },
-	  {
 			weapon_id:		weapon_t.long_sword,
 			long_name:		"long sword",
 			short_name:		"sword",
+			match:			"F----SLN",
 			price:			200
+	  },
+	  {
+			weapon_id:		weapon_t.short_sword,
+			long_name:		"short sword",
+			short_name:		"sword",
+			match:			"F--T-SLN",
+			price:			100
 	  },
 	  {
 			weapon_id:		weapon_t.anointed_mace,
 			long_name:		"anointed mace",
 			short_name:		"knobbed stick",
+			match:			"F-P-BSLN",
 			price:			300
 	  }
 	  {
 			weapon_id:		weapon_t.anointed_flail,
 			long_name:		"anointed flail",
 			short_name:		"stick chain",
+			match:			"F-P--SLN",
 			price:			150
 	  }
 	  {
 			weapon_id:		weapon_t.staff,
 			long_name:		"staff",
 			short_name:		"stick",
+			match:			"FMPTBSLN",
 			price:			100
 	  }
 	  {
 			weapon_id:		weapon_t.dagger,
 			long_name:		"dagger",
 			short_name:		"dagger",
+			match:			"FM-T-SLN",
 			price:			50
 	  }
 	]

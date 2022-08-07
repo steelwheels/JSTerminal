@@ -19,6 +19,12 @@ top: VBox {
 				let val = top.dict.value(key) ;
 				console.log(" " + key + " = " + val) ;
 			}
+			console.log("dict.a = " + top.dict.dictionary.a) ;
+			console.log("dict.b = " + top.dict.dictionary.b) ;
+			console.log("dict.c = " + top.dict.dictionary.c) ;
+
+			top.dict.dictionary.d = "Good morning" ;
+			console.log("dict.d = " + top.dict.dictionary.d) ;
 		%}
 		pressed: Event() %{
 			leaveView(1) ;

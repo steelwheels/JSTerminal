@@ -2,12 +2,8 @@ top: VBox {
 	enter_button: Button {
 		title: "SubView"
 		pressed: Event() %{
-			let v     = enterView("sub", null) ;
-			let param = Dictionary(v) ;
-			let a     = param.number("a") ;
-			let b     = param.number("b") ;
-			let c     = param.number("c") ;
-			let sum   = a + b + c ;
+			let retval = enterView("sub", {a:10, b:20, c:30}) ;
+			let sum    = retval.a + retval.b + retval.c ;
 			console.log("a + b + c =" + sum) ;
 		%}
 	}

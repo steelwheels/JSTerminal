@@ -21,7 +21,15 @@ top: VBox {
 		fieldNames: [
 			{field:"count",		title:"Count"},
 			{field:"name",     	title:"Name"},
-			{field:"price",		title:"Price"}
+			{field:"price",		title:"Price"},
+			{field:"fmatch",	title:"F"},
+			{field:"mmatch",	title:"M"},
+			{field:"pmatch",	title:"P"},
+			{field:"tmatch",	title:"T"},
+			{field:"smatch",	title:"S"},
+			{field:"bmatch",	title:"B"},
+			{field:"nmatch",	title:"N"},
+			{field:"lmatch",	title:"L"}
 		]
 		init: Init %{
 			self.dataTable = top.weapons.table() ;
@@ -31,7 +39,7 @@ top: VBox {
 			return (rec.price > 0) ;
 		%}
 		isEnable: Func(self, record) %{
-			return top.global.value("money") >= record.price ;
+			return top.global.dictionary.money >= record.price ;
 		%}
 		virtualFields: Object {
 			count:	Func(self, record) %{
@@ -56,8 +64,78 @@ top: VBox {
 					}
 					return record.short_name ;
 			%}
+			fmatch: Func(self, record) %{
+				return self.xmatch(job_t.fighter, record) ;
+			%}
+			mmatch: Func(self, record) %{
+				return self.xmatch(job_t.mage, record) ;
+			%}
+			pmatch: Func(self, record) %{
+				return self.xmatch(job_t.priest, record) ;
+			%}
+			tmatch: Func(self, record) %{
+				return self.xmatch(job_t.thief, record) ;
+			%}
+			smatch: Func(self, record) %{
+				return self.xmatch(job_t.samurai, record) ;
+			%}
+			bmatch: Func(self, record) %{
+				return self.xmatch(job_t.bishop, record) ;
+			%}
+			nmatch: Func(self, record) %{
+				return self.xmatch(job_t.ninjya, record) ;
+			%}
+			lmatch: Func(self, record) %{
+				return self.xmatch(job_t.lord, record) ;
+			%}
 		}
+		xmatch: Func(job, record) %{
+			if(Character.is_job_in_string(job, record.match)){
+				return "Y" ;
+			} else {
+				return "N" ;
+			}
+		%}
     }
+
+	money_label: HBox {
+		title: Label {
+			text: "You have: "
+		}
+		money: Label {
+			number: Listner(global: top.global.dictionary) %{
+				return global.money ;
+			%}
+		}
+	}
+
+	buy_button: Button {
+		title: "Buy the selected item"
+		isEnabled: Listner(didsel: top.weapon_table.didSelected) %{
+			return didsel ;
+		%}
+		pressed: Event() %{
+			let rec = top.weapon_table.selectedRecord() ;
+			if(rec != null){
+				let wid      = rec.weapon_id ;
+				let haverecs = top.having_weapons.search("weapon_id", wid) ;
+				if(haverecs.length > 0){
+					/* Update weapon count */
+					haverecs[0].count += 1 ;
+    				top.weapon_table.reload() ;
+				} else {
+					/* Add new weapon */
+					let newrec =  top.having_weapons.newRecord() ;
+					newrec.weapon_id = wid ;
+					newrec.isKnown   = true ;
+					newrec.count     = 1 ;
+					top.having_weapons.append(newrec) ;
+				}
+				/* Update money */
+				top.global.dictionary.money -= rec.price ;
+			}
+		%}
+	}
 
 	ret_button: Button {
 		title:  "Return to town"

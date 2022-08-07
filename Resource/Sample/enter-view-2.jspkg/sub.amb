@@ -2,11 +2,17 @@ top: VBox {
 	quit_button: Button {
 		title: "Quit"
 		pressed: Event() %{
-			let param = Dictionary() ;
-			param.setNumber(100, "a") ;
-			param.setNumber( 10, "b") ;
-			param.setNumber(  1, "c") ;
-			leaveView(param.object) ;
+			leaveView({
+				a:		100,
+				b:		 10,
+				c:		  1
+			}) ;
+		%}
+		init: Init %{
+			let a = Argument.a ;
+			let b = Argument.b ;
+			let c = Argument.c ;
+			console.log("Argument -> " + (a + b + c)) ;
 		%}
     }
 }

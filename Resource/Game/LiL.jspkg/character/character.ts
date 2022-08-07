@@ -9,6 +9,43 @@
 
 module Character {
 
+export function job_to_char(job: job_t): string
+{
+        let result = "" ;
+        switch(job){
+        case job_t.fighter:     result = "F" ;  break ;
+        case job_t.mage:        result = "M" ;  break ;
+        case job_t.priest:      result = "P" ;  break ;
+        case job_t.thief:       result = "T" ;  break ;
+        case job_t.samurai:     result = "S" ;  break ;
+        case job_t.bishop:      result = "B" ;  break ;
+        case job_t.ninjya:      result = "N" ;  break ;
+        case job_t.lord:        result = "L" ;  break ;
+        }
+        return result ;
+}
+
+export function char_to_job(c: string): job_t | null
+{
+        let result: job_t | null = null ;
+        switch(c){
+        case "F": result = job_t.fighter ;      break ;
+        case "M": result = job_t.mage ;         break ;
+        case "P": result = job_t.priest ;       break ;
+        case "T": result = job_t.thief ;        break ;
+        case "S": result = job_t.samurai ;      break ;
+        case "B": result = job_t.bishop ;       break ;
+        case "N": result = job_t.ninjya ;       break ;
+        case "L": result = job_t.lord ;         break ;      
+        }
+        return result ;
+}
+
+export function is_job_in_string(job: job_t, str: string): boolean 
+{
+        return str.indexOf(job_to_char(job) ) >= 0 ;
+}
+
 export function can_get_job(job: job_t, attr: attr_t): boolean
 {
 	let result: boolean ;

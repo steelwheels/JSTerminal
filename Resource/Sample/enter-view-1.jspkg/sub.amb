@@ -11,6 +11,7 @@ top: VBox {
 	}
 	init: Init %{
 		console.log("sub.init") ;
+		console.log("argument = " + Argument) ;
 	%}
 }
 

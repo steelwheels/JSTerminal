@@ -2,7 +2,7 @@ top: VBox {
     enter_button: Button {
 		title: "SubView"
 		pressed: Event() %{
-			let ret = enterView("sub", "hello from main.amb") ;
+			let ret = enterView("sub", "Hello from main view") ;
 			console.log("message: " + ret.message + ", a  = "
 					 + ret.a + ", b = " + ret.b) ;
 		%}
