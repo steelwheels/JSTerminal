@@ -56,7 +56,6 @@ top: VBox
 	init: Init %{
 		top.weapon_id = Argument.weapon_id ;
 		top.is_known  = Argument.is_known ;
-		console.log("set top.weapon_name = " + top.weapon_id + top.is_known) ;
 	%}
 }
 

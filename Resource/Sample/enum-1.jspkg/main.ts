@@ -20,6 +20,16 @@ function main(args: string[])
 
 	console.print("table = " + table.toString() + "\n") ;
 
+	let count = table.recordCount ;
+	for(let i=0 ; i<count ; i++){
+		let rec = table.record(i) ;
+		if(rec != null){
+			console.print("week[" + i + "] = " + rec.value("week") + "\n") ;
+		} else {
+			console.print("week[" + i + "] = null\n")  ;
+		}
+	}
+
     return 0;
 }
 
