@@ -1,7 +1,7 @@
 top: VBox
 {
-	weapon_id:	-1
-	is_known:    false
+	weapon_id:	Init %{ return Argument.weapon_id ; %}
+	is_known:   Init %{ return Argument.is_known ;  %}
 
 	weapons: Table {
 		storage:	"main"
@@ -39,6 +39,23 @@ top: VBox
 				{field:"level",		title:"Level"},
 				{field:"job",		title:"Job"}
 			]
+			filter: Func(self, record) %{
+				let wid = top.weapon_id ;
+				if(wid < 0){
+					return false
+				}
+				let weprecs = top.weapons.search("weapon_id", wid) ;
+				if(weprecs.length < 1){
+					return false
+				}
+
+				let job = record.job ;
+				if(Character.is_job_in_string(job, weprecs[0].match)){
+					return true ;
+				} else {
+					return false ;
+				}
+			%}
 			init: Init %{
 				self.dataTable = top.members.table() ;
 				self.reload() ;
@@ -46,16 +63,19 @@ top: VBox
 		}
 	}
 
-	ret_button: Button {
-		title:  "Do not buy"
-		pressed: Event() %{
-			leaveView(false) ;
-		%}
+	buttons: HBox {
+		buy_button: Button {
+			title:  "Buy"
+			pressed: Event() %{
+				leaveView(true) ;
+			%}
+		}
+		not_buy_button: Button {
+			title:  "Do not buy"
+			pressed: Event() %{
+				leaveView(false) ;
+			%}
+		}
 	}
-
-	init: Init %{
-		top.weapon_id = Argument.weapon_id ;
-		top.is_known  = Argument.is_known ;
-	%}
 }
 

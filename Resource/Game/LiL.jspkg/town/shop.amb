@@ -137,11 +137,13 @@ top: VBox {
 				if(hrecs.length > 0){
 					isknown = hrecs[0].isKnown ;
 				}
-				enterView("purchase", {
+				let bought = enterView("purchase", {
 					weapon_id: wid, is_known: isknown
 				}) ;
 				/* Update money */
-				top.global.dictionary.money -= rec.price ;
+				if(bought){
+					top.global.dictionary.money -= rec.price ;
+				}
 			}
 		%}
 	}
