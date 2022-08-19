@@ -1,6 +1,6 @@
 top: VBox
 {
-	weapon_id:	Init %{ return Argument.weapon_id ; %}
+	weapon_id:Init %{ return Argument.weapon_id ; %}
 	is_known:   Init %{ return Argument.is_known ;  %}
 
 	weapons: Table {
@@ -37,7 +37,8 @@ top: VBox
 			fieldNames: [
 				{field:"name",		title:"Name"},
 				{field:"level",		title:"Level"},
-				{field:"job",		title:"Job"}
+				{field:"job",		title:"Job"},
+				{field:"weapon_id",	title:"Weapon"}
 			]
 			filter: Func(self, record) %{
 				let wid = top.weapon_id ;

@@ -1,32 +1,32 @@
 {
 	members: {
-		class:				"Table"
-		id:					"members"
+		class:			"Table"
+		id:				"members"
 		defaultFields: {
-			mid:			0
-			name:			"no-name"
-			hitPoint:		0
+			mid:		0
+			name:		"no-name"
+			hitPoin:	0
 		}
 		records: [
 		  {
-				mid:		1
-				name:		"Mick Jagger"
-				hitPoint:	1
+			mid:		1
+			name:		"Mick Jagger"
+			hitPoint:	1
 		  },
 		  {
-				mid:		2
-				name:		"Keith Richards"
-				hitPoint:	2
+			mid:		2
+			name:		"Keith Richards"
+			hitPoint:	2
 		  },
 		  {
-				mid:		3
-				name:		"Bill Wyman"
-				hitPoint:	1
+			mid:		3
+			name:		"Bill Wyman"
+			hitPoint:	1
 		  },
 		  {
-				mid:		0
-				name:		"Charlie Watts"
-				hitPoint:	1
+			mid:		0
+			name:		"Charlie Watts"
+			hitPoint:	1
 		  }
 		]
 	}

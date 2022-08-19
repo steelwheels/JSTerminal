@@ -2,7 +2,9 @@
 	dict0: {
 		a:	true,
 		b:	12,
-		c:	"c"
+		c:	"c",
+		e:	Axis.vertical
+		f:	Alignment.leading
 	}
 }
 

@@ -16,7 +16,7 @@ top: VBox {
 		name: "shop_title"
 	}
 
-    weapon_table: TableView {
+	weapon_table: TableView {
 		hasHeader:    true
 		fieldNames: [
 			{field:"count",		title:"Count"},
@@ -96,7 +96,7 @@ top: VBox {
 				return "N" ;
 			}
 		%}
-    }
+	}
 
 	money_label: HBox {
 		title: Label {

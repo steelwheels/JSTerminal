@@ -1,10 +1,10 @@
 {
 	party: {
-		class:				"Table"
-		id:					"party"
-		nextRecordId:		0
+		class:		"Table"
+		id:		"party"
+		nextRecordId:	0
 		defaultFields: {
-			name:			"no-name"
+			name:	"no-name"
 		}
 		records: [
 		  {
@@ -18,17 +18,17 @@
 		]
 	}
 	members: {
-		class:				"Table"
-		id:					"members"
+		class:		"Table"
+		id:		"members"
 		defaultFields: {
-			name:			"no-name"
+			name:	"no-name"
 		}
 		records: [
 		  {
-				name:		"Mick Jagger"
+			name:	"Mick Jagger"
 		  },
 		  {
-				name:		"Keith Richards"
+			name:	"Keith Richards"
 		  }
 		]
 	}

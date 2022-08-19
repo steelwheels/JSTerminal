@@ -3,14 +3,22 @@ top: VBox {
 		storage: "storage"
 		path:    "dict0"
 	}
-    add_button: Button {
+    	add_button: Button {
 		title: "Add"
 		pressed: Event() %{
 			console.log("add value") ;
 			top.dict.set("Hello", "d") ;
+			top.dict.set(Alignment.trailing, "f") ;
 		%}
 	}
-    quit_button: Button {
+    	save_button: Button {
+		title: "Save"
+		pressed: Event() %{
+			console.log("save value") ;
+			top.dict.save() ;
+		%}
+	}
+	quit_button: Button {
 		title: "Quit"
 		count: Listner(cnt: top.dict.count) %{
 			console.log("* count = " + cnt) ;
@@ -22,6 +30,7 @@ top: VBox {
 			console.log("dict.a = " + top.dict.dictionary.a) ;
 			console.log("dict.b = " + top.dict.dictionary.b) ;
 			console.log("dict.c = " + top.dict.dictionary.c) ;
+			console.log("dict.e = " + top.dict.dictionary.e) ;
 
 			top.dict.dictionary.d = "Good morning" ;
 			console.log("dict.d = " + top.dict.dictionary.d) ;

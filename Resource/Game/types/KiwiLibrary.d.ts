@@ -122,30 +122,6 @@ declare namespace TextAlign {
   function description(param: TextAlign): string ;
   const keys: string[] ;
 }
-declare enum ValueType {
-  URLType = 13,
-  arrayType = 11,
-  boolType = 1,
-  colorType = 14,
-  dateType = 4,
-  dictionaryType = 10,
-  enumType = 9,
-  imageType = 15,
-  nullType = 0,
-  numberType = 2,
-  objectType = 17,
-  pointType = 6,
-  rangeType = 5,
-  recordType = 16,
-  rectType = 8,
-  segmentType = 18,
-  sizeType = 7,
-  stringType = 3
-}
-declare namespace ValueType {
-  function description(param: ValueType): string ;
-  const keys: string[] ;
-}
 /**
  * Builtin.d.ts
  */
@@ -397,7 +373,7 @@ interface RecordIF {
 	fieldNames:		string[] ;
 
 	value(name: string):			any ;
-	setValue(value: any, name: string):	boolean ;
+	setValue(value: any, name: string):	void ;
 
 	toString(): 		string ;
 }
@@ -485,8 +461,6 @@ declare var EscapeCode: 	EscapeCodeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
 declare var Symbols:		SymbolsIF ;
 
-declare function valueType(val: any): number ; // the result defined as enum ValueType
-
 declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
 declare function Rect(x: number, y: number, width: number, height: number): RectIF ;
@@ -495,11 +469,11 @@ declare function Collection(): CollectionIF ;
 declare function URL(path: string): URLIF | null ;
 
 declare function Storage(path: string): StorageIF | null ;
-declare function ArrayInStorage(path: string, storage: StorageIF): ArrayIF | null ;
-declare function SetInStorage(path: string, storage: StorageIF): SetIF | null ;
-declare function DictionaryInStorage(path: string, storage: StorageIF): DictionaryIF | null ;
-declare function Table(storage: string, path: string): TableIF | null ;
-declare function MappingTable(storage: string, path: string): MappingTableIF | null ;
+declare function ArrayStorage(sotrage: string, path: string): ArrayIF | null ;
+declare function SetStorage(storage: string, path: string): SetIF | null ;
+declare function DictionaryStorage(storage: string, path: string): DictionaryIF | null ;
+declare function TableStorage(storage: string, path: string): TableIF | null ;
+declare function MappingTableStorage(storage: string, path: string): MappingTableIF | null ;
 
 declare function isArray(value: any): boolean ;
 declare function isBitmap(value: any): boolean ;

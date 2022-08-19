@@ -122,30 +122,6 @@ declare namespace TextAlign {
   function description(param: TextAlign): string ;
   const keys: string[] ;
 }
-declare enum ValueType {
-  URLType = 13,
-  arrayType = 11,
-  boolType = 1,
-  colorType = 14,
-  dateType = 4,
-  dictionaryType = 10,
-  enumType = 9,
-  imageType = 15,
-  nullType = 0,
-  numberType = 2,
-  objectType = 17,
-  pointType = 6,
-  rangeType = 5,
-  recordType = 16,
-  rectType = 8,
-  segmentType = 18,
-  sizeType = 7,
-  stringType = 3
-}
-declare namespace ValueType {
-  function description(param: ValueType): string ;
-  const keys: string[] ;
-}
 /**
  * Builtin.d.ts
  */
@@ -484,8 +460,6 @@ declare var Curses:     	CursesIF ;
 declare var EscapeCode: 	EscapeCodeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
 declare var Symbols:		SymbolsIF ;
-
-declare function valueType(val: any): number ; // the result defined as enum ValueType
 
 declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
