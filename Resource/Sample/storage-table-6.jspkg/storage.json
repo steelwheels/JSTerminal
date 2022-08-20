@@ -3,17 +3,20 @@
 		{
 			c0:  0,
 			c1:  1,
-			c2:  2
+			c2:  2,
+			c3:  Axis.horizontal
 		},
 		{
 			c0: 10,
 			c1: 11,
-			c2: 12
+			c2: 12,
+			c3:  Axis.vertical
 		},
 		{
 			c0: 20,
 			c1: 21,
-			c2: 22
+			c2: 22,
+			c3:  Axis.horizontal
 		}
 	]
 }

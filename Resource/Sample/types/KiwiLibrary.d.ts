@@ -453,6 +453,28 @@ interface CollectionIF {
 	toStrings(): string[] ;
 }
 
+interface SystemPreferenceIF {
+	version:		string ;
+	logLevel:		number ;
+}
+
+interface TerminalPreferenceIF {
+	width:			number ;
+	height:			number ;
+	foregroundColor:	ColorIF ;
+	backgroundColor:	ColorIF ;
+}
+
+interface UserPreferenceIF {
+	homeDirectory: 		URLIF ;
+}
+
+interface PreferenceIF {
+	system:			SystemPreferenceIF ;
+	terminal:		TerminalPreferenceIF ;
+	user:			UserPreferenceIF ;
+}
+
 /* Singleton object*/
 declare var console:		ConsoleIF ;
 declare var Color:      	ColorManagerIF ;
@@ -460,6 +482,7 @@ declare var Curses:     	CursesIF ;
 declare var EscapeCode: 	EscapeCodeIF ;
 declare var Contacts:	        ContactDatabaseIF ;
 declare var Symbols:		SymbolsIF ;
+declare var Preference:		PreferenceIF ;
 
 declare function Pipe(): PipeIF ;
 declare function Point(x: number, y: number): PointIF ;
