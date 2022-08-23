@@ -4,23 +4,27 @@
 		defaultFields: {
 			c0:		0,
 			c1:		0,
-			c2:		0
+			c2:		0,
+			axis:		Axis.vertical
 		},
 		records: [
 			{
-				c0:  0,
-				c1:  1,
-				c2:  2
+				c0:  	0,
+				c1:  	1,
+				c2:  	2,
+				axis:	Axis.vertical
 			},
 			{
-				c0: 10,
-				c1: 11,
-				c2: 12
+				c0: 	10,
+				c1: 	11,
+				c2: 	12,
+				axis:	Axis.horizontal
 			},
 			{
-				c0: 20,
-				c1: 21,
-				c2: 22
+				c0: 	20,
+				c1: 	21,
+				c2: 	22,
+				axis:	Axis.vertical
 			}
 		]
 	}

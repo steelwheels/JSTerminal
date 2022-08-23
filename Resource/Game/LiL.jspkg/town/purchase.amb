@@ -1,82 +1,117 @@
 top: VBox
 {
-	weapon_id:Init %{ return Argument.weapon_id ; %}
-	is_known:   Init %{ return Argument.is_known ;  %}
+  weapon_id:  Init %{ return Argument.weapon_id ; %}
+  is_known:   Init %{ return Argument.is_known ;  %}
 
-	weapons: Table {
-		storage:	"main"
-		path:		"data.list.weapons"
-	}
-	members: Table {
-		storage:	"main"
-		path:		"data.members"
-	}
+  weapons: Table {
+	storage:	"main"
+	path:		"data.list.weapons"
 
-	selected_item: HBox {
-		label: Label {
-			text: "Selected equipment: "
+	get_name: Func(weapon_id) %{
+		let recs    = top.weapons.search("weapon_id", weapon_id) ;
+		let isknown = top.having_weapons.is_known(weapon_id) ;
+		let result = "" ;
+		if(recs.length > 0){
+			result = isknown ? recs[0].long_name
+				       : recs[0].short_name ;
+		} else {
+			result = "Unknown" ;
 		}
-		item: Label {
-			text: Listner(wid: top.weapon_id, isknown: top.is_known) %{
-				let recs = top.weapons.search("weapon_id", wid) ;
-				if(recs.length > 0){
-					return isknown ? recs[0].long_name : recs[0].short_name ;
+		return result ;
+	%}
+  }
+
+  having_weapons: Table {
+	storage:	"main"
+	path:		"data.having.weapons"
+	is_known: Func(weapon_id) %{
+		let recs = top.having_weapons.search("weapon_id", weapon_id) ;
+		if(recs.length > 0){
+			return recs[0].isKnown ;
+		} else {
+			console.log("Failed to search weapon: " + weapon_id) ;
+			return false ;
+		}
+	%}
+  }
+
+  members: Table {
+	storage:	"main"
+	path:		"data.members"
+  }
+
+  selected_item: HBox {
+	label: Label {
+		text: "Selected equipment: "
+	}
+	item: Label {
+		text: Listner(weapon_id: top.weapon_id, isknown: top.is_known) %{
+			return top.weapons.get_name(weapon_id) ;
+		%}
+	}
+  }
+
+  selected_member: VBox {
+	label: Label {
+		text: "Select member to equip:"
+	}
+	member_table: TableView {
+		hasHeader:		true
+		fieldNames: [
+			{field:"name",		title:"Name"},
+			{field:"level",		title:"Level"},
+			{field:"job",		title:"Job"},
+			{field:"weapon_name",	title:"Weapon"}
+		]
+		virtualFields: Object {
+			weapon_name: Func(self, record) %{
+				let weapon_id = record.weapon_id ;
+				if(isNumber(weapon_id)){
+				    	return top.weapons.get_name(weapon_id) ;
 				} else {
-					return "unknown" ;
+					return "" ; // No weapon
 				}
 			%}
 		}
-	}
+		filter: Func(self, record) %{
+			/* Return true when the member can wear the weapon */
+			let weapon_id = top.weapon_id ;
+			if(!isNumber(weapon_id) || weapon_id < 0){
+				return false ;
+			}
 
-	selected_member: VBox {
-		label: Label {
-			text: "Select member to equip:"
-		}
-		member_table: TableView {
-			hasHeader:		true
-			fieldNames: [
-				{field:"name",		title:"Name"},
-				{field:"level",		title:"Level"},
-				{field:"job",		title:"Job"},
-				{field:"weapon_id",	title:"Weapon"}
-			]
-			filter: Func(self, record) %{
-				let wid = top.weapon_id ;
-				if(wid < 0){
-					return false
-				}
-				let weprecs = top.weapons.search("weapon_id", wid) ;
-				if(weprecs.length < 1){
-					return false
-				}
+			let wrecs = top.weapons.search("weapon_id",weapon_id);
+			if(wrecs.length < 1){
+				return false
+			}
 
-				let job = record.job ;
-				if(Character.is_job_in_string(job, weprecs[0].match)){
-					return true ;
-				} else {
-					return false ;
-				}
-			%}
-			init: Init %{
-				self.dataTable = top.members.table() ;
-				self.reload() ;
-			%}
-		}
+			let job = record.job ;
+			if(Character.is_job_in_string(job, wrecs[0].match)){
+				return true ;
+			} else {
+				return false ;
+			}
+		%}
+		init: Init %{
+			self.dataTable = top.members.table() ;
+			self.reload() ;
+		%}
 	}
+  }
 
-	buttons: HBox {
-		buy_button: Button {
-			title:  "Buy"
-			pressed: Event() %{
-				leaveView(true) ;
-			%}
-		}
-		not_buy_button: Button {
-			title:  "Do not buy"
-			pressed: Event() %{
-				leaveView(false) ;
-			%}
-		}
+  buttons: HBox {
+	buy_button: Button {
+		title:  "Buy"
+		pressed: Event() %{
+			leaveView(true) ;
+		%}
 	}
+	not_buy_button: Button {
+		title:  "Do not buy"
+		pressed: Event() %{
+			leaveView(false) ;
+		%}
+	}
+  }
 }
 

@@ -4,6 +4,7 @@
  */
 /// <reference path="../types/KiwiLibrary.d.ts"/>
 function main(args) {
+    let result = true;
     console.print("# storage-table-0\n");
     let table = TableStorage("storage", "table");
     if (table == null) {
@@ -24,35 +25,38 @@ function main(args) {
         console.print("Error\n");
     }
     printTable(table);
+    console.print("Update content of record[0] -> ");
+    let rec0 = table.record(0);
+    if (rec0 != null) {
+        if (rec0.value("axis") == Axis.horizontal) {
+            console.print("from horizontal to vertical\n");
+            rec0.setValue(Axis.vertical, "axis");
+        }
+        else {
+            console.print("from vertical to horizontal\n");
+            rec0.setValue(Axis.horizontal, "axis");
+        }
+    }
+    else {
+        console.print("[Error] No record[0]\n");
+        result = false;
+    }
     console.print("save table -> ");
     if (table.save()) {
         console.print("OK\n");
     }
     else {
         console.print("Error\n");
+        result = false;
+    }
+    if (result) {
+        console.print("SUMMARY: OK\n");
+    }
+    else {
+        console.print("SUMMARY: Error\n");
     }
     return 0;
 }
 function printTable(table) {
-    let count = table.recordCount;
-    for (let i = 0; i < count; i++) {
-        let record = table.record(i);
-        if (record != null) {
-            console.print("Record[" + i + "]\n");
-            let fnames = record.fieldNames;
-            console.print(" field-names : " + fnames + "\n");
-            for (let fname of fnames) {
-                let val = record.value(fname);
-                if (val != null) {
-                    console.print(fname + ": " + val + "\n");
-                }
-                else {
-                    console.print(fname + ": <none>\n");
-                }
-            }
-        }
-        else {
-            console.print("[Error] No record at " + i + "\n");
-        }
-    }
+    console.print(table.toString());
 }

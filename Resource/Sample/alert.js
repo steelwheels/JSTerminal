@@ -6,7 +6,7 @@
 /// <reference path="types/KiwiComponent.d.ts"/>
 function main(args) {
     console.print("Hello\n");
-    let result = alert("Hello, world");
+    let result = alert(AlertType.informational, "Hello, world");
     console.print("result = " + result + "\n");
     return 0;
 }

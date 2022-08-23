@@ -1,20 +1,20 @@
 {
 	class: "Table",
 	defaultFields: {
-		weapon_id:		0
-		isKnown:			false
-		count:			0
+		weapon_id:	0
+		isKnown:	false
+		count:		0
 	}
 	records: [
 	  {
-			weapon_id:		weapon_t.short_sword,
-			isKnown:		false
-			count:			1
+		weapon_id:	weapon_t.short_sword,
+		isKnown:	false
+		count:		1
 	  },
 	  {
-			weapon_id:		weapon_t.long_sword,
-			isKnown:		true
-			count:			2
+		weapon_id:	weapon_t.long_sword,
+		isKnown:	true
+		count:		2
 	  }
 	]
 }

@@ -7,6 +7,15 @@ declare namespace AccessType {
   function description(param: AccessType): string ;
   const keys: string[] ;
 }
+declare enum AlertType {
+  critical = 3,
+  informational = 1,
+  warning = 2
+}
+declare namespace AlertType {
+  function description(param: AlertType): string ;
+  const keys: string[] ;
+}
 declare enum Alignment {
   center = 3,
   fill = 2,

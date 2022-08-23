@@ -1,11 +1,11 @@
 {
 	class: "Table",
 	defaultFields: {
-		weapon_id:			weapon_t.short_sword,
-		long_name:			"sword",
-		short_name:			"",
-		match:				"",
-		price:				0
+		weapon_id:		weapon_t.short_sword,
+		long_name:		"sword",
+		short_name:		"",
+		match:			"",
+		price:			0
 	}
 	records: [
 	  {
