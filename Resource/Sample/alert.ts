@@ -8,7 +8,8 @@
 function main(args : string[]): number
 {
 	console.print("Hello\n") ;
-	let result = alert(AlertType.informational, "Hello, world") ;
+	let result = alert(AlertType.informational, "Hello, world",
+							["OK", "Cancel"]) ;
 	console.print("result = " + result + "\n") ;
 	return 0 ;
 }
